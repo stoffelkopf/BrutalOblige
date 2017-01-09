@@ -1,0 +1,50 @@
+function create_mapinfo()
+  
+  gui.printf("Mapinfo code is running)
+
+  local data =
+  {
+    "#\n"
+    "# MAPINFO LUMP created by OBLIGE\n"
+    "#\n\n"
+  }
+
+  --- level names ---
+
+  local strings_marker = false;
+
+  each L in GAME.levels do
+    local prefix = PARAM.bex_map_prefix
+
+    if L.description and prefix then --keep the prefix stuff from the bex incase something else relies on it
+      local id
+
+      if string.sub(L.name, 1, 1) == 'E' then
+        -- Doom I : ExMy
+        id = "map" .. L.name
+
+      else
+        local pos = 4
+        if string.sub(L.name, pos, pos) == '0' then
+          pos = pos + 1
+        end
+
+        -- Doom II / Final Doom : HUSTR_%d
+        id = "map" .. string.sub(L.name, pos)
+      end
+
+      local text = L.name .. " '" .. L.description .."'";
+
+      if not strings_marker then
+        table.insert(data, "[STRINGS]\n")
+        strings_marker = true
+      end
+
+      table.insert(data, string.format("%s = %s\n", id, text))
+    end
+  end -- for L
+
+  table.insert(data, "\n");
+
+  gui.wad_add_text_lump("MAPINFO", data);
+end
