@@ -21,9 +21,11 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 
 1) Download Oblige if you haven't already (at time of writing the most up to date version is 6.20, I imagine this addon should remain compatible with future versions but I can't be sure). Also make sure you have the latest Brutal Doom (v20b).
 
-2) Download the zip file at the end of this post.
+2) Download or clone this repository.
 
-3) Unzip, there should be two folders called data and modules. There should also be data and module folders in your Oblige directory. Move or copy the files from my addon to the respective Oblige folders.
+3) Add all the folders to a zip folder (if you didn't download it as a zip anyway) and rename it to change the extension from .zip to .pk3
+
+4) Copy or move the pk3 to Oblige's addon directory. This will be in the same place as Oblige.exe on Windows or /usr/share/oblige/addons on Linux.
 
 4) Run Oblige. Under the game settings you should be able to set the game to Brutal Doom.
 
