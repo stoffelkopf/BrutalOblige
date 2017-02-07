@@ -19,7 +19,7 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 
 **How to use**
 
-1) Download Oblige if you haven't already (at time of writing the most up to date version is 6.20, I imagine this addon should remain compatible with future versions but I can't be sure). Also make sure you have the latest Brutal Doom (v20b).
+1) Download Oblige if you haven't already (at time of writing the most up to date version is 7.5, I imagine this addon should remain compatible with future versions but I can't be sure). Also make sure you have the latest Brutal Doom (v20b).
 
 2) Download or clone this repository.
 
@@ -27,9 +27,7 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 
 4) Copy or move the pk3 to Oblige's addon directory. This will be in the same place as Oblige.exe on Windows or /usr/share/oblige/addons on Linux.
 
-4) Run Oblige. Under the game settings you should be able to set the game to Brutal Doom.
-
-5) On the right, check the box for Nightmare Monsters (or not if you don't want them obviously).
+5) Run Oblige, select Menu, Addon List and check the box for BrutalOblige. Restart Oblige, Brutal Doom should now appear as an option in the game menu.
 
 6) Click build to generate a wad with the new maps.
 
@@ -72,7 +70,6 @@ As for the starter pack check the box and bfriend1.pk3 should load automatically
 
 **Known issues**
 
-* Under certain circumstances Nightmare Imps spawn regular Imp gibs or corpses when killed.
 * Somewhere along the line it stopped working with Zandronum. I'm willing to attempt to fix this is anyone asks but if not, screw Zandronum.
 * This is just an addon so any known issues with Oblige or Brutal Doom will still be present.
 * Duke Nukem theme will never appear in random. This is to do with the awful hack I've used to do the posters so I can't really fix this I'm afraid.
@@ -80,6 +77,7 @@ As for the starter pack check the box and bfriend1.pk3 should load automatically
 * D4 Machine gun can't be dual wielded, this was a deliberate decision, let me know if you disagree with it.
 * If you use the starter pack the music will always be randomised regardless of your settings.
 * If you get "Script error, "brutalv20b.pk3:cvarinfo" line 1: cvar 'bd_bloodamount' already exists" then you are loading brutal doom twice. Try loading *just* the generated wad, it should pull in brutal automatically.
+* Sometimes you get an unexpected value in pairs error. I'm trying to find out what is causing it but until then it is only happening some of the time. So just keep trying until it works.
 
 [Screenshots](http://imgur.com/a/SRr9f)
 

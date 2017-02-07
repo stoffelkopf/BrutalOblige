@@ -107,6 +107,7 @@ BRUTALDOOM.SECRET_EXITS = { }
 STARTERPACK = { }
 
 gui.import("brutalthemes") --this has to come after the tables are declared
+gui.import("hereticbrutal")
 
 BRUTALDOOM.YES_NO =
 {
@@ -136,6 +137,7 @@ BRUTALDOOM.IWADS =
     "Plutonia.wad", "Plutonia"
     "doom_complete.pk3",    "Doom Complete"
     "freedoom2.wad",    "Freedoom 2"
+	--"heretic.wad",	"Heretic" Nowhere near ready yet!
 }
 
 BRUTALDOOM.MONSTERS =
@@ -3078,6 +3080,13 @@ BRUTALDOOM.doom_completesongs =
     "p_runnin", "p_runni2", "p_stalks", "p_stlks2", "p_stlks3", "p_countd", "p_count2", "p_betwee", "p_doom", "p_doom2", "p_the_da", "p_theda2", "p_theda3", "p_shawn", "p_shawn2", "p_shawn3", "p_ddtblu", "p_ddtbl2", "p_ddtbl3", "p_in_cit", "p_dead", "p_dead2", "p_romero", "p_romer2", "p_messag", "p_messg2", "p_ampie", "p_adrian", "p_tense", "p_openin", "p_evil", "p_ultima"
 }
 
+BRUTALDOOM.zd64music =
+{
+	"MAPWD01", "MAPWD02", "MAPWD03", "MAPWD04", "MAPWD05", "MAPWD06", "MAPWD07", "MAPWD08", "MAPWD09", "MAPWD10", "MAPWD11", "MAPWD12",
+	"MAPWD13", "MAPWD14", "MAPWD15", "MAPWD16", "MAPWD17", "MAPWD18", "MAPWD19", "MAPWD20", "MAPWD21", "MAPWD22", "MAPWD23", "MAPWD24",
+	"MAPWD25", "MAPWD26", "MAPWD27", "MAPWD28", "MAPWD29", "MAPWD30", "MAPWD31", "MAPWD32"
+}
+
 BRUTALDOOM.musicpresets =
 {
     "iwad", "All music in the iwad"
@@ -3098,6 +3107,9 @@ function BRUTALDOOM.mergesongs()
     end
     if BRUTALDOOM.PARAMETERS.musicpreset == "idkfa" or BRUTALDOOM.PARAMETERS.musicpreset == "doom1" then --just doom1 songs
         BRUTALDOOM.music.songs=BRUTALDOOM.doom1songs
+    end
+	if BRUTALDOOM.PARAMETERS.musicpreset == "ZD64MUSIC" then --just the songs in ZD64MUSIC.PK3, which are named differently.
+        BRUTALDOOM.music.songs=BRUTALDOOM.zd64music
     end
     gui.printf("iwad: " .. BRUTALDOOM.PARAMETERS.iwad ..'\n')
     gui.printf("Music preset: " .. BRUTALDOOM.PARAMETERS.musicpreset ..'\n')
@@ -4754,6 +4766,10 @@ function BRUTALDOOM.texturesetup()
     '{\n'
     '        Patch FRKODO1B, 0, 0\n'
     '}\n'
+	'Texture LONGWALL, 256, 128\n'
+	'{\n'
+	'	Patch FLNGWALL, 0, 0\n'
+	'}\n'
   }
   local plutoniadata =
   {
@@ -4792,14 +4808,18 @@ function BRUTALDOOM.texturesetup()
         '	Patch BOSFA0, 47, 49\n'
         '}\n'
   }
-  if BRUTALDOOM.PARAMETERS.iwad != "Tnt.wad" and BRUTALDOOM.PARAMETERS.iwad != "doom_complete.pk3" then
-      combine(data,tntdata)
-  end
-  if BRUTALDOOM.PARAMETERS.iwad != "doom_complete.pk3" then
-      combine(data,doom1data)
-  end
-  if BRUTALDOOM.PARAMETERS.iwad != "Plutonia.wad" and BRUTALDOOM.PARAMETERS.iwad != "doom_complete.pk3" then
-      combine(data,plutoniadata)
+  if BRUTALDOOM.PARAMETERS.iwad != "heretic.wad" then
+	  if BRUTALDOOM.PARAMETERS.iwad != "Tnt.wad" and BRUTALDOOM.PARAMETERS.iwad != "doom_complete.pk3" then
+		  combine(data,tntdata)
+	  end
+	  if BRUTALDOOM.PARAMETERS.iwad != "doom_complete.pk3" then
+		  combine(data,doom1data)
+	  end
+	  if BRUTALDOOM.PARAMETERS.iwad != "Plutonia.wad" and BRUTALDOOM.PARAMETERS.iwad != "doom_complete.pk3" then
+		  combine(data,plutoniadata)
+	  end
+  else
+      heretic_freetexture();
   end
     gui.wad_add_text_lump("TEXTURES", data);
     
@@ -5258,6 +5278,9 @@ function BRUTALDOOM.all_done()
   if BRUTALDOOM.PARAMETERS.iwad == 'freedoom2.wad' then
       BRUTALDOOM.freedoom_language();
   end
+  if BRUTALDOOM.PARAMETERS.iwad == "heretic.wad" then
+	heretic_monstersetup();
+  end
   BRUTALDOOM.create_mapinfo();
 end
 
@@ -5375,10 +5398,10 @@ BRUTALDOOM.WEAPONS =
 	    damage=100
 	    splash={60,45,30,30,20,10}
 	    attack="missile"
-	    ammo="grenade"
+	    ammo="rocket"
 	    per=1
 	    rarity=2
-	    give={ {ammo="grenade",count=6} }
+	    give={ {ammo="rocket",count=6} }
 	}
 	railgun =
 	{
@@ -5438,7 +5461,7 @@ BRUTALDOOM.WEAPONS =
 	    per=1
 	    give={ {ammo="clip",count=600} }
 	}
-        oldskoolplasma =
+        --[[oldskoolplasma =
         {
             id = 322
             level = 6 --regular plasma rifle is 5
@@ -5451,7 +5474,7 @@ BRUTALDOOM.WEAPONS =
             per = 1
             give = { {ammo="cell",count=40} }
             bonus_ammo = 40
-        }
+        }]]--
 }
 
 BRUTALDOOM4.WEAPONS =
@@ -5623,8 +5646,6 @@ local data =
                 '//$Category "Weapons"\n'
                 '//$EditorSprite "GLAPA0"\n'
                 'Tag "Grenade Launcher"\n'
-		'Weapon.AmmoType1 "GrenadeAmmo"\n'
-		'Weapon.AmmoType2 "GrenadeAmmo"\n'
 		'Inventory.PickupMessage "You got the grenade launcher!"\n'
 		'Weapon.SlotNumber 5\n'
                 'States\n'
@@ -6870,6 +6891,10 @@ function STARTERPACK.decorate()
 		    	'Stop\n'
 		  '}\n'
 		'}\n'
+        'actor ObligeGermanDog : GermanDog Replaces GermanDog\n'
+        '{\n'
+        '-CANUSEWALLS\n'
+        '}\n'
 	}
 
 
@@ -7196,7 +7221,7 @@ STARTERPACK.MONSTERS =
     id = 4395
     r = 12
     h = 28 
-    level = 1
+    level = 2
     theme = "wolf"
     prob = 60
     health = 80

@@ -11,6 +11,13 @@ BRUTALDOOM.LIQUIDS =
 {
   flem1 = { mat="SNOT1", light=172, special=5,  damage=10 }
   flem2 = { mat="SNOT4", light=172, special=5,  damage=10 }
+  
+  --heretic-------------------------
+  --water  = { mat="FLTFLWW1", light_add=16, special=0 }
+  water2 = { mat="FLTWAWA1", light_add=16, special=0 }
+  hsludge = { mat="FLTSLUD1", light_add=16, special=16, damage=20 }
+  hlava   = { mat="FLATHUH1", light_add=24, special=16, damage=20 }
+  hmagma  = { mat="FLTLAVA1", light_add=16, special=16, damage=20 }
 }
 
 BRUTALDOOM.MATERIALS =
@@ -191,6 +198,172 @@ BRUTALDOOM.MATERIALS =
   A_CAMO4 =  { t="A-CAMO4",  f="FLOOR7_2" }
   
   PLUTONIADOOR  = { t="A-BROWN4", f="CEIL5_2" }
+  
+  --heretic stuff--
+  -- walls --
+
+  BANNER1  = { t="BANNER1",  f="FLOOR03" }
+  BANNER2  = { t="BANNER2",  f="FLOOR03" }
+  BANNER3  = { t="BANNER3",  f="FLAT520" }
+  BANNER4  = { t="BANNER4",  f="FLAT520" }
+  BANNER5  = { t="BANNER5",  f="FLOOR25" }
+  BANNER6  = { t="BANNER6",  f="FLOOR25" }
+  BANNER7  = { t="BANNER7",  f="FLOOR00" }
+  BANNER8  = { t="BANNER8",  f="FLOOR00" }
+  BLUEFRAG = { t="BLUEFRAG", f="FLOOR16" }
+  BRWNRCKS = { t="BRWNRCKS", f="FLOOR17" }
+
+  CELTIC   = { t="CELTIC",   f="FLOOR06" }
+  CHAINMAN = { t="CHAINMAN", f="FLAT520" }
+  CSTLMOSS = { t="CSTLMOSS", f="FLOOR03" }
+  CSTLRCK  = { t="CSTLRCK",  f="FLOOR03" }
+  CTYSTCI1 = { t="CTYSTCI1", f="FLOOR11" }
+  CTYSTCI2 = { t="CTYSTCI2", f="FLOOR11" }
+  CTYSTCI4 = { t="CTYSTCI4", f="FLOOR11" }
+  CTYSTUC1 = { t="CTYSTUC1", f="FLOOR11" }
+  CTYSTUC2 = { t="CTYSTUC2", f="FLOOR11" }
+  CTYSTUC3 = { t="CTYSTUC3", f="FLOOR11" }
+  CTYSTUC4 = { t="CTYSTUC4", f="FLOOR11" }
+  CTYSTUC5 = { t="CTYSTUC5", f="FLOOR11" }
+
+  DMNMSK   = { t="DMNMSK",   f="FLAT521" }
+  DOOREXIT = { t="DOOREXIT", f="FLAT520" }
+  DOORSTON = { t="DOORSTON", f="FLOOR30" }
+  DOORWOOD = { t="DOORWOOD", f="FLAT507" }
+  DRIPWALL = { t="DRIPWALL", f="FLOOR27" }
+
+  GRNBLOK1 = { t="GRNBLOK1", f="FLOOR19" }
+  GRNBLOK2 = { t="GRNBLOK2", f="FLOOR19" }
+  GRNBLOK3 = { t="GRNBLOK3", f="FLOOR19" }
+  GRNBLOK4 = { t="GRNBLOK4", f="FLOOR19" }
+  GRSKULL1 = { t="GRSKULL1", f="FLAT521" }
+  GRSKULL2 = { t="GRSKULL2", f="FLAT521" }
+  GRSKULL3 = { t="GRSKULL3", f="FLAT521" }
+  GRSTNPB  = { t="GRSTNPB",  f="FLAT520" }
+  GRSTNPBV = { t="GRSTNPBV", f="FLAT520" }
+  GRSTNPBW = { t="GRSTNPBW", f="FLAT520" }
+  HORSES1  = { t="HORSES1",  f="FLAT520" }
+
+  LOOSERCK = { t="LOOSERCK", f="FLOOR04" }
+  METL1    = { t="METL1",    f="FLOOR29" }
+  METL2    = { t="METL2",    f="FLOOR28" }
+  MOSAIC1  = { t="MOSAIC1",  f="FLAT502" }
+  MOSAIC2  = { t="MOSAIC2",  f="FLAT502" }
+  MOSAIC3  = { t="MOSAIC3",  f="FLAT502" }
+  MOSAIC4  = { t="MOSAIC4",  f="FLAT502" }
+  MOSAIC5  = { t="MOSAIC5",  f="FLAT502" }
+  MOSSRCK1 = { t="MOSSRCK1", f="FLOOR05" }
+
+  ORNGRAY  = { t="ORNGRAY",  f="FLAT504" }
+  RCKSNMUD = { t="RCKSNMUD", f="FLOOR01" }
+  REDWALL  = { t="REDWALL",  f="FLOOR09" }
+  ROOTWALL = { t="ROOTWALL", f="FLAT506" }
+
+  SAINT1   = { t="SAINT1",   f="FLAT523" }
+  SANDSQ2  = { t="SANDSQ2",  f="FLOOR06" }
+  SKULLSB1 = { t="SKULLSB1", f="FLOOR30" }
+  SNDBLCKS = { t="SNDBLCKS", f="FLOOR06" }
+  SNDCHNKS = { t="SNDCHNKS", f="FLAT522" }
+  SNDPLAIN = { t="SNDPLAIN", f="FLOOR25" }
+  SPINE1   = { t="SPINE1",   f="FLOOR25" }
+  SPINE2   = { t="SPINE2",   f="FLOOR25" }
+
+  SQPEB1   = { t="SQPEB1",   f="FLAT504" }
+  SQPEB2   = { t="SQPEB2",   f="FLOOR27" }
+  STNGLS1  = { t="STNGLS1",  f="FLOOR30" }
+  STNGLS2  = { t="STNGLS2",  f="FLOOR30" }
+  STNGLS3  = { t="STNGLS3",  f="FLOOR30" }
+
+  TMBSTON1 = { t="TMBSTON1", f="FLAT521" }
+  TMBSTON2 = { t="TMBSTON2", f="FLAT521" }
+  TRISTON1 = { t="TRISTON1", f="FLOOR00" }
+  TRISTON2 = { t="TRISTON2", f="FLOOR17" }
+  WOODWL   = { t="WOODWL",   f="FLOOR10" }
+
+  -- switches --
+
+  SW1OFF   = { t="SW1OFF",   f="FLOOR28" }
+  SW1ON    = { t="SW1ON",    f="FLOOR28" }
+
+  -- floors --
+
+  FLAT500  = { f="FLAT500", t="SQPEB1" }
+  FLAT502  = { f="FLAT502", t="BLUEFRAG" }
+  FLAT503  = { f="FLAT503", t="SQPEB1" }
+  FLAT504  = { f="FLAT504", t="SQPEB1" }
+  FLAT506  = { f="FLAT506", t="ROOTWALL" }
+  FLAT507  = { f="FLAT507", t="DOORWOOD" }
+  FLAT508  = { f="FLAT508", t="DOORWOOD" }
+  FLAT509  = { f="FLAT509", t="LOOSERCK" }
+  FLAT510  = { f="FLAT510", t="BRWNRCKS" }
+
+  FLAT512  = { f="FLAT512", t="GRNBLOK1" }
+  FLAT513  = { f="FLAT513", t="GRNBLOK1" }
+  FLAT516  = { f="FLAT516", t="LOOSERCK" }
+  FLAT517  = { f="FLAT517", t="BLUEFRAG" }
+  FLAT520  = { f="FLAT520", t="CSTLRCK" }
+  FLAT521  = { f="FLAT521", t="SQPEB1" }
+  FLAT522  = { f="FLAT522", t="SNDCHNKS" }
+  FLAT523  = { f="FLAT523", t="GRSTNPB" }
+
+  FLOOR00  = { f="FLOOR00", t="TRISTON1" }
+  FLOOR01  = { f="FLOOR01", t="LOOSERCK" }
+  FLOOR03  = { f="FLOOR03", t="CSTLRCK" }
+  FLOOR04  = { f="FLOOR04", t="CSTLRCK" }
+  FLOOR05  = { f="FLOOR05", t="MOSSRCK1" }
+  FLOOR06  = { f="FLOOR06", t="SANDSQ2" }
+  FLOOR07  = { f="FLOOR07", t="MOSAIC1" }
+  FLOOR08  = { f="FLOOR08", t="CHAINSD" }
+  FLOOR09  = { f="FLOOR09", t="REDWALL" }
+  FLOOR10  = { f="FLOOR10", t="WOODWL" }
+  FLOOR11  = { f="FLOOR11", t="WOODWL" }
+  FLOOR12  = { f="FLOOR12", t="WOODWL" }
+  FLOOR16  = { f="FLOOR16", t="BLUEFRAG" }
+  FLOOR17  = { f="FLOOR17", t="BRWNRCKS" }
+  FLOOR18  = { f="FLOOR18", t="GRNBLOK1" }
+  FLOOR19  = { f="FLOOR19", t="GRNBLOK1" }
+
+  FLOOR20  = { f="FLOOR20", t="SQPEB2" }
+  FLOOR21  = { f="FLOOR21", t="CHAINSD" }
+  FLOOR22  = { f="FLOOR22", t="CHAINSD" }
+  FLOOR23  = { f="FLOOR23", t="CHAINSD" }
+  FLOOR24  = { f="FLOOR24", t="CHAINSD" }
+  FLOOR25  = { f="FLOOR25", t="SPINE2" }
+  FLOOR26  = { f="FLOOR26", t="CHAINSD" }
+  FLOOR27  = { f="FLOOR27", t="SANDSQ2" }
+  FLOOR28  = { f="FLOOR28", t="METL2" }
+  FLOOR29  = { f="FLOOR29", t="METL1" }
+  FLOOR30  = { f="FLOOR30", t="METL1" }
+
+  -- rails --
+
+  WOODGATE = { t="WDGAT64", rail_h=64 }
+
+  GATE_BIG = { t="GATMETL",  rail_h=128 }
+  GATMETL2 = { t="GATMETL2", rail_h=32 }
+  GATMETL3 = { t="GATMETL3", rail_h=32 }
+  GATMETL4 = { t="GATMETL4", rail_h=64 }
+  GATMETL5 = { t="GATMETL5", rail_h=128 }
+
+  WEB1_B = { t="WEB1_B", rail_h=32 }
+  WEB1_F = { t="WEB1_F", rail_h=32 }
+  WEB2_B = { t="WEB2_B", rail_h=32 }
+  WEB2_F = { t="WEB2_F", rail_h=32 }
+  WEB3_M = { t="WEB3_M", rail_h=32 }
+
+  -- liquids / animated --
+
+  -- TODO: simplify this
+  LAVA1    = { t="LAVA1",    f="FLAT506" }
+  LAVAFL1  = { t="LAVAFL1",  f="FLATHUH1" }
+  WATRWAL1 = { t="WATRWAL1", f="FLTFLWW1" }
+
+  FLATHUH1 = { f="FLATHUH1", t="LAVAFL1"  }
+  FLTFLWW1 = { f="FLTFLWW1", t="WATRWAL1" }
+  FLTLAVA1 = { f="FLTLAVA1", t="LAVA1"    }
+  FLTSLUD1 = { f="FLTSLUD1", t="LAVA1"    }
+  FLTTELE1 = { f="FLTTELE1", t="CHAINSD"  }
+  FLTWAWA1 = { f="FLTWAWA1", t="WATRWAL1" }
 }
 
 BRUTALDOOM.THEMES =
@@ -385,6 +558,82 @@ BRUTALDOOM.THEMES =
 	  MARBFAC3 = "ZZWOLF3"
 	  MARBFACE = "ZZWOLF4"
 	}
+  }
+  
+  --heretic---------------------------------------
+  h_urban =
+  {
+	prob = 10
+  
+	entity_remap =
+    {
+	  k_red    = "ks_red"
+      k_blue   = "ks_blue"
+      k_yellow = "ks_yellow"
+    }
+	
+    liquids =
+    {
+      water  = 50
+      hsludge = 15
+      hlava   = 5
+    }
+
+    facades =
+    {
+      GRSTNPB = 50
+    }
+	
+	monster_prefs =
+    {
+	}
+	
+	prefab_remap =
+	{
+	  BIGDOOR1 = "DOORWOOD"
+	  BIGDOOR2 = "DOORWOOD"
+	  BIGDOOR3 = "DOORWOOD"
+	  BIGDOOR4 = "DOORWOOD"
+	  
+	  LITE4 = "WOODWL"
+	  
+	  SUPPORT4 = "ORNGRAY"
+	  LIFTFLAT = "FLOOR04"
+	  TEKWALL4 = "CHAINSD"
+	}
+	
+  }
+
+
+  h_castle =
+  {
+    liquids =
+    {
+      hlava   = 50
+      hmagma  = 20
+      hsludge = 5
+    }
+
+    facades =
+    {
+      CSTLRCK  = 50
+      GRNBLOK1 = 30
+    }
+	
+	prefab_remap =
+	{
+	  BIGDOOR1 = "DOORWOOD"
+	  BIGDOOR2 = "DOORWOOD"
+	  BIGDOOR3 = "DOORWOOD"
+	  BIGDOOR4 = "DOORWOOD"
+	  
+	  LITE4 = "WOODWL"
+	  
+	  SUPPORT4 = "ORNGRAY"
+	  LIFTFLAT = "FLOOR04"
+	  TEKWALL4 = "CHAINSD"
+	}
+	
   }
 
 }
@@ -759,6 +1008,305 @@ BRUTALDOOM.ROOM_THEMES =
       SP_ROCK1 = 10
     }
   }
+  
+    --heretic-------------------------------------------
+  h_urban_House1 =
+  {
+	prob = 50
+    env = "building"
+
+    walls =
+    {
+      CTYSTCI2 = 20
+      CTYSTCI4 = 40
+    }
+
+    floors =
+    {
+      FLOOR03 = 50
+      FLOOR06 = 50
+      FLOOR10 = 50
+    }
+
+    ceilings =
+    {
+      FLAT521 = 50
+      FLAT523 = 50
+    }
+  }
+
+
+  h_urban_House2 =
+  {
+	prob = 50
+    env = "building"
+
+    walls =
+    {
+      CTYSTUC4 = 50
+    }
+
+    floors =
+    {
+      FLOOR03 = 50
+      FLOOR06 = 50
+      FLOOR10 = 50
+    }
+
+    ceilings =
+    {
+      FLAT521 = 50
+      FLAT523 = 50
+    }
+  }
+
+
+  h_urban_Stone =
+  {
+	prob = 50
+    env = "building"
+
+    walls =
+    {
+      GRSTNPB = 50
+    }
+
+    floors =
+    {
+      FLOOR00 = 50
+      FLOOR19 = 50
+      FLAT522 = 50
+      FLAT523 = 50
+    }
+
+    ceilings =
+    {
+      FLAT520 = 50
+      FLAT523 = 50
+    }
+  }
+
+
+  h_urban_Wood =
+  {
+	prob = 50
+    env = "building"
+
+    walls =
+    {
+      WOODWL = 50
+    }
+
+    floors =
+    {
+      FLAT508 = 20
+      FLOOR11 = 20
+      FLOOR03 = 50
+      FLOOR06 = 50
+    }
+
+    ceilings =
+    {
+      FLOOR10 = 50
+      FLOOR11 = 30
+      FLOOR01 = 50
+    }
+  }
+
+
+  h_urban_Cave =
+  {
+	prob = 50
+    env = "cave"
+
+    naturals =
+    {
+      LOOSERCK=20, LAVA1=20, BRWNRCKS=20
+    }
+  }
+
+
+  h_urban_Outdoors =
+  {
+	prob = 50
+    env = "outdoor"
+
+    floors =
+    {
+      FLOOR00=20, FLOOR27=30, FLOOR18=50,
+      FLAT522=10, FLAT523=20,
+    }
+
+    naturals =
+    {
+      FLOOR17=50, FLAT509=20, FLAT510=20,
+      FLAT513=20, FLAT516=35, 
+    }
+  }
+
+
+  ---- CASTLE THEME --------------------------------
+
+  h_castle_Green =
+  {
+	prob = 50
+    env = "building"
+
+    walls =
+    {
+      GRNBLOK1 = 50
+      MOSSRCK1 = 50
+    }
+
+    floors =
+    {
+      FLOOR19 = 20
+      FLOOR27 = 50
+      FLAT520 = 50
+      FLAT521 = 50
+    }
+
+    ceilings =
+    {
+      FLOOR05 = 50
+      FLAT512 = 50
+    }
+  }
+
+
+  h_castle_Gray =
+  {
+	prob = 50
+    env = "building"
+
+    walls =
+    {
+      CSTLRCK  = 50
+      TRISTON1 = 50
+    }
+
+    floors =
+    {
+      FLAT503 = 50
+      FLAT522 = 50
+      FLOOR10 = 50
+    }
+
+    ceilings =
+    {
+      FLOOR04 = 50
+      FLAT520 = 50
+    }
+  }
+
+
+  h_castle_Orange =
+  {
+	prob = 50
+    env = "building"
+
+    walls =
+    {
+      SQPEB2   = 50
+      TRISTON2 = 50
+    }
+
+    floors =
+    {
+      FLOOR01 = 50
+      FLOOR03 = 50
+      FLOOR06 = 20
+    }
+
+    ceilings =
+    {
+      FLAT523 = 50
+      FLOOR17 = 50
+    }
+  }
+
+
+  -- TODO : these are same as urban theme, differentiate them!
+
+  h_castle_Cave =
+  {
+	prob = 50
+    env = "cave"
+
+    naturals =
+    {
+      LOOSERCK=20, LAVA1=20, BRWNRCKS=20
+    }
+  }
+
+
+  h_castle_Outdoors =
+  {
+	prob = 50
+    env = "outdoor"
+
+    floors =
+    {
+      FLOOR00=20, FLOOR27=30, FLOOR18=50,
+      FLAT522=10, FLAT523=20,
+    }
+
+    naturals =
+    {
+      FLOOR17=50, FLAT509=20, FLAT510=20,
+      FLAT513=20, FLAT516=35, 
+    }
+  }
+  h_urban_Hallway =
+  {
+	prob = 50
+    env = "hallway"
+
+    walls =
+    {
+      GRSTNPB  = 60
+      SANDSQ2  = 20
+      SNDCHNKS = 20
+    }
+
+    floors =
+    {
+      FLOOR00 = 50
+      FLOOR18 = 50
+      FLAT521 = 50
+      FLAT506 = 50
+    }
+
+    ceilings =
+    {
+      FLAT523 = 50
+    }
+  }
+  h_urban_Hallway =
+  {
+	prob = 50
+    env = "hallway"
+
+    walls =
+    {
+      GRSTNPB  = 60
+      SANDSQ2  = 20
+      SNDCHNKS = 20
+    }
+
+    floors =
+    {
+      FLOOR00 = 50
+      FLOOR18 = 50
+      FLAT521 = 50
+      FLAT506 = 50
+    }
+
+    ceilings =
+    {
+      FLAT523 = 50
+    }
+  }
 }
 
 OB_THEMES["satanshankerchief"] =
@@ -789,6 +1337,27 @@ OB_THEMES["wolf"] =
   name_class = "URBAN"
 
   -- this theme is special, hence no mixed_prob
+}
+
+OB_THEMES["h_urban"] =
+{
+  label = _(" Heretic Urban")
+  priority = 2
+  game = { brutaldoom = 0, brutal64 = 0 }
+  name_theme = "URBAN"
+  mixed_prob = 0
+  shown = False
+}
+
+
+OB_THEMES["h_castle"] =
+{
+  label = _("Castle")
+  priority = 2
+  game = { brutaldoom = 0, brutal64 = 0 }
+  name_theme = "GOTHIC"
+  mixed_prob = 0
+  shown = False
 }
 
 ---STARTERPACK
@@ -1037,7 +1606,8 @@ STARTERPACK.THEMES =
     {
       BrutalSS = 70
 	  ClassicSS = 100
-	  GermanDog = 70
+	  GermanDog = 40
+      --remove all non wolfenstein monsters
 	  zombie = 0
 	  shooter = 0
 	  imp = 0
@@ -1055,6 +1625,15 @@ STARTERPACK.THEMES =
 	  arach = 0
 	  vile = 0
 	  pain = 0
+      Belphegor = 0
+      Juggernaut = 0
+      EvilMarine = 0
+      EasyMarine = 0
+      DarkImp = 0
+      Epic2Alien = 0
+      Zyberdemon = 0
+      D4caco = 0
+      EnemyMarine3 = 0
     }
 	
 	prefab_remap = BRUTALDOOM.THEMES.wolf.prefab_remap

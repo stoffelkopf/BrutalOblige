@@ -1,9 +1,26 @@
 gui.import("brutaldoom")
-gui.import("brutalthemes")
+--gui.import("brutalthemes")
+gui.import("hereticbrutal")
+
+BRUTAL64 = { }
+
+BRUTAL64.MATERIALS = BRUTALDOOM.MATERIALS
+BRUTAL64.LIQUIDS = BRUTALDOOM.LIQUIDS
+BRUTAL64.ENTITIES = BRUTALDOOM.ENTITIES
+BRUTAL64.THEMES = BRUTALDOOM.THEMES
+BRUTAL64.ROOM_THEMES = BRUTALDOOM.ROOM_THEMES
 
 local modversion = "bd64gamev2.pk3"
 
-BRUTAL64 = { }
+BRUTAL64.music = 
+{
+	songs = { }
+}
+BRUTAL64.music.songs = BRUTALDOOM.music.songs
+
+gui.import("brutal64maps")
+gui.import("brutal64/brutal64mapinfo")
+gui.import("brutal64/brutal64getlevels")
 
 function BRUTAL64.gameinfo()
 
@@ -88,7 +105,7 @@ BRUTAL64.MONSTERS =
     r = 31
     h = 56 
     level = 4
-    prob = 50
+    prob = 40
     health = 700
     damage = 5
     attack = "missile"
@@ -120,7 +137,7 @@ BRUTAL64.MONSTERS =
     r = 20
     h = 56 
     level = 6
-    prob = 10
+    prob = 30
     crazy_prob = 20
     health = 800
     damage = 20
@@ -238,9 +255,9 @@ BRUTAL64.WEAPONS =
 		accuracy = 80
 		damage = 170
 		splash = { 65,20,5 }
-		ammo = "Cell"
+		ammo = "cell"
 		per = 1
-		give = { {ammo="Cell",count=40} }
+		give = { {ammo="cell",count=40} }
 		bonus_ammo = 5
     }
 }
@@ -257,12 +274,22 @@ BRUTAL64.PICKUPS =
   }
 }
 
+function BRUTAL64.setup()
+	gui.printf("running brutal64 setup\n");
+end
+
 function BRUTAL64.all_done()
 	DOOM.all_done();
 	BRUTALDOOM.texturesetup();
 	BRUTAL64.gameinfo();
 	BRUTAL64.monstersdecorate();
 	BRUTAL64.weaponsdecorate();
+	BRUTAL64.create_mapinfo();
+	gui.printf("OB_THEMES:\n" .. table.tostring(OB_THEMES) ..'\n')
+	if BRUTALDOOM.PARAMETERS.iwad == "heretic.wad" then
+		heretic64_monstersetup();
+		heretic_soundsetup();
+	end
 end
 
 OB_GAMES["brutal64"] =
@@ -279,16 +306,12 @@ OB_GAMES["brutal64"] =
   {
 	BRUTAL64
 	BRUTALDOOM.PARAMETERS
-	BRUTALDOOM.MATERIALS
-	BRUTALDOOM.LIQUIDS
-	BRUTALDOOM.ENTITIES
-	BRUTALDOOM.THEMES
-	BRUTALDOOM.ROOM_THEMES
   }
 
   hooks =
   {
-    get_levels = DOOM.get_levels
+    setup = BRUTAL64.setup
+    get_levels = BRUTAL64.get_levels
     end_level  = DOOM.end_level
     all_done   = BRUTAL64.all_done
   }
