@@ -23,7 +23,9 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 
 2) Download or clone this repository.
 
-3) Add all the folders to a zip folder (if you didn't download it as a zip anyway) and rename it to change the extension from .zip to .pk3
+3) Add all the folders to a zip folder and rename it to change the extension from .zip to .pk3
+
+Note that if you downloaded this from github rather than cloning the repo you can't just rename that .zip, first you must unzip it, then put the folders that are *inside* the BrutalOblige-whatever folder that comes out into a zip.
 
 4) Copy or move the pk3 to Oblige's addon directory. This will be in the same place as Oblige.exe on Windows or /usr/share/oblige/addons on Linux.
 
