@@ -91,6 +91,51 @@ local genericgrenadestate = [[
                     TNT1 A 0 A_Print("No Grenades Left.")
                     Goto Ready
                 ]]
+				
+local chexkeys = [[
+		ACTOR ChexBlueCard : CustomInventory 331
+		{
+		  Inventory.PickupMessage "$GOTBLUECARD"
+		  States
+		  {
+		  Spawn:
+		    BCKY A 10
+		    BCKY B 10 Bright
+		    Loop
+		   Pickup:
+			 TNT1 A 0 A_GiveInventory("BlueCard", 1)
+			 Stop
+		  }
+		}
+		ACTOR ChexRedCard : CustomInventory 332
+		{
+		  Inventory.PickupMessage "$GOTREDCARD"
+		  States
+		  {
+		  Spawn:
+		    RCKY A 10
+		    RCKY B 10 Bright
+		    Loop
+		   Pickup:
+			 TNT1 A 0 A_GiveInventory("RedCard", 1)
+			 Stop
+		  }
+		}
+		ACTOR ChexYellowCard : CustomInventory 333
+		{
+		  Inventory.PickupMessage "$GOTYELWCARD"
+		  States
+		  {
+		  Spawn:
+		    YCKY A 10
+		    YCKY B 10 Bright
+		    Loop
+		   Pickup:
+			 TNT1 A 0 A_GiveInventory("YellowCard", 1)
+			 Stop
+		  }
+		}
+		]]
 
 BRUTALDOOM = { }
 
@@ -5287,7 +5332,6 @@ end
 function BRUTALITY.all_done()
   BRUTALITY.decorate();
   BRUTALDOOM4.caco();
-  --BRUTALDOOM4.decorateweapons();
   BRUTALDOOM.flem_nukage();
   DOOM.all_done();
   BRUTALDOOM.epic();
@@ -5565,14 +5609,14 @@ BRUTALDOOM.PICKUPS =
     give = { {ammo="grenade",count=5} } --actually it only gives 1 but this was the only way to stop Oblige flooding maps with them
   }
 
-  grenade_box =
+  --[[grenade_box =
   {
     id = 301
     kind = "ammo"
     rank = 5
-    --add_prob = 10 --left out because it looks like a regular grenade and makes the player a bit overpowered
+    add_prob = 10 
     give = { {ammo="grenade",count=10} }
-  }
+  }]]--left out because it looks like a regular grenade and makes the player a bit overpowered
 
   
   Skel_Poster =
@@ -5584,7 +5628,6 @@ BRUTALDOOM.PICKUPS =
       rank = 1
       add_prob = 20
       give = { {health=10} }
-      --theme = "nukem"
       theme_prob = 200
   }
 }
@@ -6021,7 +6064,7 @@ local data =
                 '}\n'
                 '}\n'
                 '\n'
-                'actor SkelPosterDecal\n'
+        'actor SkelPosterDecal\n'
 		'{\n'
 		  'Radius 2\n'
 		  'Height 2\n'
@@ -6074,49 +6117,9 @@ local data =
 			'TNT1 A -1\n'
 		    	'Stop\n'
 		  '}\n'
-		'}\n'
-		'ACTOR ChexBlueCard : CustomInventory 331\n'
-		'{\n'
-		'  Inventory.PickupMessage "$GOTBLUECARD"\n'
-		'  States\n'
-		'  {\n'
-		'  Spawn:\n'
-		'    BCKY A 10\n'
-		'    BCKY B 10 Bright\n'
-		'    Loop\n'
-		'   Pickup:\n'
-		'	 TNT1 A 0 A_GiveInventory("BlueCard", 1)\n'
-		'	 Stop\n'
-		'  }\n'
-		'}\n'
-		'ACTOR ChexRedCard : CustomInventory 332\n'
-		'{\n'
-		'  Inventory.PickupMessage "$GOTREDCARD"\n'
-		'  States\n'
-		'  {\n'
-		'  Spawn:\n'
-		'    RCKY A 10\n'
-		'    RCKY B 10 Bright\n'
-		'    Loop\n'
-		'   Pickup:\n'
-		'	 TNT1 A 0 A_GiveInventory("RedCard", 1)\n'
-		'	 Stop\n'
-		'  }\n'
-		'}\n'
-		'ACTOR ChexYellowCard : CustomInventory 333\n'
-		'{\n'
-		'  Inventory.PickupMessage "$GOTYELWCARD"\n'
-		'  States\n'
-		'  {\n'
-		'  Spawn:\n'
-		'    YCKY A 10\n'
-		'    YCKY B 10 Bright\n'
-		'    Loop\n'
-		'   Pickup:\n'
-		'	 TNT1 A 0 A_GiveInventory("YellowCard", 1)\n'
-		'	 Stop\n'
-		'  }\n'
-		'}\n'
+		'}\n',
+		chexkeys
+		
 	}
     gui.wad_add_text_lump("DECORATE", data);
 
@@ -6169,18 +6172,35 @@ local data =
 		'{\n'
 		'}\n'
 		'\n'
-                'actor NilBrutalPistolOblige : PistolAmmo 320\n'
+        'actor NilBrutalPistolOblige : PistolAmmo 320\n'
 		'{\n'
 		'}\n'
 		'\n'
-                'actor Clip2 : PistolAmmo\n'
+        'actor Clip2 : PistolAmmo\n'
 		'{\n'
 		'}\n'
 		'\n'
-                'actor NilD4MachinegunOblige : ChaingunWeaponSpawner 314\n'
+        'actor NilD4MachinegunOblige : ChaingunWeaponSpawner 314\n'
 		'{\n'
 		'}\n'
 		'\n'
+		'actor NilD4UpgradeBotOblige : ChaingunWeaponSpawner 315\n'
+		'{\n'
+		'}\n'
+		'\n'
+		'actor NilD4GaussCannonOblige : LauncherWeaponSpawner 317\n'
+		'{\n'
+		'}\n'
+		'\n'
+		'actor NilBuzzsawOblige : ChaingunWeaponSpawner 321\n'
+		'{\n'
+		'}\n'
+		'\n'
+		'actor NilPosterOblige : PistolAmmo 323\n'
+		'{\n'
+		'}\n'
+		'\n',
+		chexkeys
 	}
       gui.wad_add_text_lump("DECORATE", data);
 end

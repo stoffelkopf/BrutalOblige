@@ -814,6 +814,24 @@ BRUTALDOOM.ROOM_THEMES =
       CHEXROCK = 100
       CHEXROCK2 = 50
     }
+	
+	walls =
+    {
+      CHEXROCK = 100
+      CHEXROCK2 = 50
+    }
+	
+	floors =
+    {
+      CHEXOUTDOOR1 = 50
+      CHEXOUTDOOR2 = 20
+      CHEXOUTDOOR3 = 20
+      CHEXOUTDOOR4 = 20
+      CHEXOUTDOOR5 = 40
+      FLOOR4_8 = 10
+      FLOOR5_4 = 20
+      FLOOR5_4 = 20
+    }
   }
 
 
@@ -1007,6 +1025,20 @@ BRUTALDOOM.ROOM_THEMES =
       ROCK4 = 50
       SP_ROCK1 = 10
     }
+	
+	walls =
+    {
+      ROCK4 = 50
+      SP_ROCK1 = 10
+    }
+	
+	floors =
+    {
+      MFLR8_1 = 20
+      FLAT1_1 = 10
+      RROCK13 = 20
+    }
+	
   }
   
     --heretic-------------------------------------------
@@ -1123,6 +1155,17 @@ BRUTALDOOM.ROOM_THEMES =
     {
       LOOSERCK=20, LAVA1=20, BRWNRCKS=20
     }
+	
+	walls =
+    {
+      LOOSERCK=20, LAVA1=20, BRWNRCKS=20
+    }
+	
+	floors =
+    {
+      FLOOR00=20, FLOOR27=30, FLOOR18=50,
+      FLAT522=10, FLAT523=20,
+    }
   }
 
 
@@ -1236,6 +1279,17 @@ BRUTALDOOM.ROOM_THEMES =
     naturals =
     {
       LOOSERCK=20, LAVA1=20, BRWNRCKS=20
+    }
+	
+	walls =
+    {
+      LOOSERCK=20, LAVA1=20, BRWNRCKS=20
+    }
+	
+	floors =
+    {
+      FLOOR00=20, FLOOR27=30, FLOOR18=50,
+      FLAT522=10, FLAT523=20,
     }
   }
 
