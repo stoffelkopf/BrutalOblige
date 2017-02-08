@@ -5287,7 +5287,7 @@ end
 function BRUTALITY.all_done()
   BRUTALITY.decorate();
   BRUTALDOOM4.caco();
-  BRUTALDOOM4.decorateweapons();
+  --BRUTALDOOM4.decorateweapons();
   BRUTALDOOM.flem_nukage();
   DOOM.all_done();
   BRUTALDOOM.epic();
