@@ -16,8 +16,8 @@ BRUTALDOOM.LIQUIDS =
   --water  = { mat="FLTFLWW1", light_add=16, special=0 }
   water2 = { mat="FLTWAWA1", light_add=16, special=0 }
   hsludge = { mat="FLTSLUD1", light_add=16, special=16, damage=20 }
-  hlava   = { mat="FLATHUH1", light_add=24, special=16, damage=20 }
-  hmagma  = { mat="FLTLAVA1", light_add=16, special=16, damage=20 }
+  HLAVA   = { mat="FLATHUH1", light_add=24, special=16, damage=20 }
+  hmagma  = { mat="FLTHLAVA", light_add=16, special=16, damage=20 }
 }
 
 BRUTALDOOM.MATERIALS =
@@ -354,14 +354,14 @@ BRUTALDOOM.MATERIALS =
   -- liquids / animated --
 
   -- TODO: simplify this
-  LAVA1    = { t="LAVA1",    f="FLAT506" }
+  HLAVA    = { t="HLAVA",    f="FLAT506" }
   LAVAFL1  = { t="LAVAFL1",  f="FLATHUH1" }
   WATRWAL1 = { t="WATRWAL1", f="FLTFLWW1" }
 
   FLATHUH1 = { f="FLATHUH1", t="LAVAFL1"  }
   FLTFLWW1 = { f="FLTFLWW1", t="WATRWAL1" }
-  FLTLAVA1 = { f="FLTLAVA1", t="LAVA1"    }
-  FLTSLUD1 = { f="FLTSLUD1", t="LAVA1"    }
+  FLTHLAVA = { f="FLTHLAVA", t="HLAVA"    }
+  FLTSLUD1 = { f="FLTSLUD1", t="HLAVA"    }
   FLTTELE1 = { f="FLTTELE1", t="CHAINSD"  }
   FLTWAWA1 = { f="FLTWAWA1", t="WATRWAL1" }
 }
@@ -576,7 +576,7 @@ BRUTALDOOM.THEMES =
     {
       water  = 50
       hsludge = 15
-      hlava   = 5
+      HLAVA   = 5
     }
 
     facades =
@@ -609,7 +609,7 @@ BRUTALDOOM.THEMES =
   {
     liquids =
     {
-      hlava   = 50
+      HLAVA   = 50
       hmagma  = 20
       hsludge = 5
     }
@@ -1153,12 +1153,12 @@ BRUTALDOOM.ROOM_THEMES =
 
     naturals =
     {
-      LOOSERCK=20, LAVA1=20, BRWNRCKS=20
+      LOOSERCK=20, HLAVA=20, BRWNRCKS=20
     }
 	
 	walls =
     {
-      LOOSERCK=20, LAVA1=20, BRWNRCKS=20
+      LOOSERCK=20, HLAVA=20, BRWNRCKS=20
     }
 	
 	floors =
@@ -1278,12 +1278,12 @@ BRUTALDOOM.ROOM_THEMES =
 
     naturals =
     {
-      LOOSERCK=20, LAVA1=20, BRWNRCKS=20
+      LOOSERCK=20, HLAVA=20, BRWNRCKS=20
     }
 	
 	walls =
     {
-      LOOSERCK=20, LAVA1=20, BRWNRCKS=20
+      LOOSERCK=20, HLAVA=20, BRWNRCKS=20
     }
 	
 	floors =

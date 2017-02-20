@@ -173,6 +173,7 @@ BRUTALDOOM.PARAMETERS =
     iwad = 'Doom2.wad'
     musicpreset = 'iwad'
 	brutalversion = "brutalv20b.pk3"
+	brutalityversion = "Project Brutality 2.03.pk3"
 }
 
 BRUTALDOOM.IWADS =
@@ -3095,7 +3096,12 @@ function BRUTALITY.decorate()
 		'{\n'
 		'}\n'
 		'\n'
-		--313 is classic wolfenstein (see starterpack)
+		'actor classicwolf : WolfensteinSS 313\n'
+		'{\n'
+                '//$Category "Monsters/Wolfenstein"\n'
+                '//$EditorSprite "SSWVA1"\n'
+                'Tag "Vanilla Wolfenstein 3D SS"\n'
+		'}\n'
 	}
     gui.wad_add_text_lump("BRUMONS", data);
 end
@@ -3208,13 +3214,23 @@ function BRUTALITY.gameinfo()
   local data =
 	{
 	  '//ZDoom GAMEINFO lump for Brutal Oblige\n'
-	  'IWAD="Doom2.wad"\n'
 	}
 
-  table.insert(data,'LOAD="Project\ Brutality\ 2.03.pk3","hellonearthstarterpack.wad","bfriend1.pk3"')
-  
-  if BRUTALDOOM.PARAMETERS.doom_metal == true then
+  table.insert(data,'IWAD="' .. BRUTALDOOM.PARAMETERS.iwad .. '"\n')
+
+  table.insert(data,'LOAD="' .. BRUTALDOOM.PARAMETERS.brutalityversion .. '","bfriend1.pk3"')
+--throws no error if not found so load it regardless of if that module's actually being used
+  if BRUTALDOOM.PARAMETERS.starterpack == true then
+      table.insert(data,',"hellonearthstarterpack.wad"')
+  end
+  if BRUTALDOOM.PARAMETERS.musicpreset == "doommetal" then
       table.insert(data,',"DoomMetalVol4.wad"')
+  end
+  if BRUTALDOOM.PARAMETERS.musicpreset == "idkfa" then
+      table.insert(data,',"IDKFAv2.wad"')
+  end
+  if BRUTALDOOM.PARAMETERS.musicpreset == "ZD64MUSIC" then
+      table.insert(data,',"ZD64MUSIC.PK3"')
   end
   
   table.insert(data,'\n')
@@ -5126,6 +5142,10 @@ Intermission BrutalDoomCast
   end
     --after this dest[1-#src] are the music tracks
     dest[31] = "d_evil" --map 31 always wolf themed
+	
+	if OB_CONFIG.game == "brutality" then
+		dest[30] = "TitleMap" --Brutality Theme for final level
+	end
 
   local firstmap = 1
   local mapnum = 1
@@ -5419,8 +5439,8 @@ BRUTALDOOM.WEAPONS =
 	HandGrenade =
 	{
 	    id=299
-	    pref=20
-	    --add_prob=20
+	    pref=1
+	    add_prob=1
 	    --start_prob=10
 	    rate=1
 	    damage=70
@@ -5435,8 +5455,8 @@ BRUTALDOOM.WEAPONS =
 	{
 	    id=298
 	    level = 3
-    	    pref = 30
-    	    add_prob = 25
+    	pref = 30
+    	add_prob = 25
 	    --start_prob=10
 	    rate=1
 	    damage=100
@@ -5451,8 +5471,8 @@ BRUTALDOOM.WEAPONS =
 	{
 	    id=297
 	    level = 5
-    	    pref = 30
-    	    add_prob = 15
+    	pref = 30
+    	add_prob = 15
 	    --start_prob=10
 	    rate=1
 	    damage=1000
@@ -5521,6 +5541,11 @@ BRUTALDOOM.WEAPONS =
         }]]--
 }
 
+BRUTALDOOM.AMMOS = --might not be neccessary
+{
+	grenade = { start_bonus = 1  }
+}
+
 BRUTALDOOM4.WEAPONS =
 {
     D4Machinegun =
@@ -5574,7 +5599,7 @@ BRUTALDOOM4.WEAPONS =
 
 BRUTALDOOM.NICE_ITEMS =
 {
-  goggles = REMOVE_ME --seem to be broken in v20b and were never that useful in oblige maps anyway
+	goggles = REMOVE_ME --seem to be broken in v20b and were never that useful in oblige maps anyway
 }
 
 BRUTALFRIENDS.NICE_ITEMS =
@@ -5605,20 +5630,19 @@ BRUTALDOOM.PICKUPS =
   {
     id = 300
     kind = "ammo"
-    add_prob = 1
+    add_prob = 10
     give = { {ammo="grenade",count=5} } --actually it only gives 1 but this was the only way to stop Oblige flooding maps with them
   }
 
-  --[[grenade_box =
+  --[[grenade_box = --left out because it looks like a regular grenade and makes the player a bit overpowered
   {
     id = 301
     kind = "ammo"
     rank = 5
     add_prob = 10 
     give = { {ammo="grenade",count=10} }
-  }]]--left out because it looks like a regular grenade and makes the player a bit overpowered
+  }]]--
 
-  
   Skel_Poster =
   {
       id = 323
@@ -5637,7 +5661,7 @@ BRUTALDOOM.PLAYER_MODEL =
 {
     doomer =
     {
-        stats   = { health=0, bullet=0, shell=0, rocket=0, cell=0 }
+        stats   = { health=0, bullet=0, shell=0, rocket=0, cell=0, grenade=0 }
         weapons = { fist=1, pistol=1, HandGrenade=1 }
     }
 }
@@ -7085,7 +7109,7 @@ function STARTERPACK.decorate()
     gui.wad_add_text_lump("DECALDEF", decaldata);
 end
 
-STARTERPACK.PICKUPS =
+--[[STARTERPACK.PICKUPS =
 {
 	  nukembanners =
 	  {
@@ -7142,7 +7166,7 @@ STARTERPACK.EXTRASTUFF =
 		theme = "urban"
 		theme_prob = 50
 	  }
-}
+}]]--
 
 --function STARTERPACK.bannersetup()
 --  gui.printf("starterpack banner setup starts here\n")
