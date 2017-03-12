@@ -166,7 +166,7 @@ BRUTAL64.MONSTERS =
     nasty = true
     infight_damage = 18
   }
-  --seperate the zombie chaingunner and zombie marine
+  --Seperate the zombie chaingunner and zombie marine
   gunner = REMOVE_ME
   Chaingunner64 =
   {
@@ -205,6 +205,29 @@ BRUTAL64.MONSTERS =
     disloyal = true
     trap_factor = 2.4
     infight_damage = 25
+  }
+  --Give Oblige the correct proportions for the 64 spiderdemon
+  Spiderdemon = REMOVE_ME
+  Spiderdemon64 = 
+  {
+    id = 7
+    r = 62
+    h = 100
+    level = 9
+    boss_type = "tough"
+    boss_prob = 15
+    boss_limit = 1 -- because they infight
+    prob = 1.0
+    crazy_prob = 10
+    health = 3000
+    damage = 100
+    attack = "hitscan"
+    density = 0.1
+    min_weapon = 5
+    weap_prefs = { bfg=10.0 }
+    room_size = "large"
+    infight_damage = 700
+    boss_replacement = "Cyberdemon"
   }
 }
 

@@ -198,7 +198,11 @@ BRUTALDOOM.MATERIALS =
   A_CAMO4 =  { t="A-CAMO4",  f="FLOOR7_2" }
   
   PLUTONIADOOR  = { t="A-BROWN4", f="CEIL5_2" }
-  
+}
+
+
+BRUTALDOOM.HMATERIALS =
+{
   --heretic stuff--
   -- walls --
 

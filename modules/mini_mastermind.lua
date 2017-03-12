@@ -16,15 +16,24 @@
 --
 ------------------------------------------------------------------------
 
---Will properly implement for brutal later
-
---[[
 MINI_MASTERMIND = {}
 
 
 function MINI_MASTERMIND.setup(self)
-  -- this will be checked in engines/boom.lua
-  PARAM.mini_mastermind = true
+  if OB_CONFIG.game == "brutaldoom" then
+    -- make smaller via decorate
+	-- also requires the bits that fly off
+  elseif OB_CONFIG.game == "brutality" then
+    -- would require doing all the variants
+	-- frankly I can't be arsed, if you really want this feature do it yourself as a pull request
+  elseif OB_CONFIG.game == "brutal64" then
+    -- make smaller via decorate
+	MINI_MASTERMIND.setupforb64()
+  else
+	-- leave normal behaviour for normal doom
+    -- this will be checked in engines/boom.lua
+    PARAM.mini_mastermind = true
+  end
 end
 
 
@@ -41,10 +50,26 @@ OB_MODULES["mini_mastermind"] =
   }
 
   tooltip=_(
-    "Makes the Spider Mastermind smaller via a DEHACKED lump, " ..
+    "Makes the Spider Mastermind smaller" ..
     "which allows her to be placed in maps more often " ..
     "(her default size is so large that there is rarely enough space)")
 
 }
 
-]]--
+function MINI_MASTERMIND.setupforb64()
+  local data =
+  {
+    'Actor Small64MasterMind : 64SpiderMastermind replaces 64SpiderMastermind\n'
+	'{\n'
+	'scale 1.2//1.5 in default brutal64\n'
+	'radius 50//62 in default brutal64\n'
+	'height 80//100 in default brutal64\n'
+	'}\n'
+  }
+  gui.wad_add_text_lump("DECORATE", data);
+  --update the monster table
+  local info = GAME.MONSTERS["Spiderdemon"]
+  if info and info.r > 50 then
+    info.r = 50
+  end
+end
