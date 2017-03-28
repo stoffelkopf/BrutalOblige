@@ -618,6 +618,11 @@ function STARTERPACK.create_mapinfo()
         sky1 = 'sky1 = "CHEXSKY' .. n .. '"'
         enterpic = '"CHEXINT"'
       end
+	  
+	  --Universal Intermission Screen
+	  if OB_MODULES["universal_intermissions"].enabled == true then
+		enterpic = '"$BINTM"'
+	  end
 
       sky1 = sky1 .. '\n' --put in the newline here for convinience
       enterpic = enterpic .. '\n'
