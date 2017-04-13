@@ -187,7 +187,7 @@ BRUTALDOOM.IWADS =
     "Plutonia.wad", "Plutonia"
     "doom_complete.pk3",    "Doom Complete"
     "freedoom2.wad",    "Freedoom 2"
-	--"heretic.wad",	"Heretic" Nowhere near ready yet!
+	"heretic.wad",	"Heretic" --Nowhere near ready yet!
 }
 
 BRUTALDOOM.MONSTERS =
@@ -474,6 +474,7 @@ BRUTALFRIENDS.MONSTERS =
 --decorate definition
 function BRUTALDOOM.decorate()
 	gui.wad_insert_file("brutaloblige/decorates/BrutalMonsters.dec","BRUMONS");
+	gui.wad_insert_file("brutaloblige/decorates/DarkImp.dec","DARKIMPD");
 end
 
 function BRUTALDOOM4.caco()
@@ -1440,6 +1441,7 @@ function BRUTALDOOM.all_done()
   end
   if BRUTALDOOM.PARAMETERS.iwad == "heretic.wad" then
 	heretic_monstersetup();
+	heretic_iwadsetup();
   end
   if OB_MODULES["universal_intermissions"].enabled == true then
 	BRUTALDOOM.createintm();

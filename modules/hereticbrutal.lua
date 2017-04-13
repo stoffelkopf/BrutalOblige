@@ -6,6 +6,10 @@ Merges in all the patches from freedoom and creates the appropriate texture lump
 function heretic_themes()
 end
 
+function heretic_iwadsetup()
+	gui.wad_insert_file("brutaloblige/iwadinfo.txt","iwadinfo");
+end
+
 function heretic_monstersetup()
 	local data =
 	{

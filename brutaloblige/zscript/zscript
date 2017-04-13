@@ -1,0 +1,12 @@
+class BrutalObligeHandler : EventHandler
+{
+	// get all monsters
+	override void WorldThingSpawned(WorldEvent e)
+	{
+		if (( e.Thing.bIsMonster && !(e.Thing is "PlayerPawn") ))
+		{
+			//do something to the monsters
+			//e.Thing.A_
+		}
+	}
+}

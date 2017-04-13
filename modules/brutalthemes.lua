@@ -16,7 +16,7 @@ BRUTALDOOM.LIQUIDS =
   --water  = { mat="FLTFLWW1", light_add=16, special=0 }
   water2 = { mat="FLTWAWA1", light_add=16, special=0 }
   hsludge = { mat="FLTSLUD1", light_add=16, special=16, damage=20 }
-  HLAVA   = { mat="FLATHUH1", light_add=24, special=16, damage=20 }
+  hlava   = { mat="FLATHUH1", light_add=24, special=16, damage=20 }
   hmagma  = { mat="FLTHLAVA", light_add=16, special=16, damage=20 }
 }
 
