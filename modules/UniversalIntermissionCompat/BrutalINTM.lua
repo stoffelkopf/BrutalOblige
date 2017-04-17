@@ -231,3 +231,19 @@ function BRUTALDOOM.createintm()
 	end
 	
 end
+
+function BRUTALDOOM.checkuintm()
+	if table.containsKey(OB_MODULES,"universal_intermissions")
+	then
+		if OB_MODULES["universal_intermissions"].enabled == true then
+			gui.printf('UI module being used\n');
+			BRUTALDOOM.PARAMETERS.usingui = true;
+		else
+			gui.printf('UI module exists but not using\n');
+			BRUTALDOOM.PARAMETERS.usingui = false;
+		end
+	else
+		gui.printf("UI module doesn't exist\n");
+		BRUTALDOOM.PARAMETERS.usingui = false;
+	end
+end

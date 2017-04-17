@@ -1,5 +1,3 @@
---curent highest used id number 333 (Chex yellow key)
-
 math.randomseed( os.time() ) --get some randomisation
 math.random()
 math.random()
@@ -156,6 +154,7 @@ gui.import("hereticbrutal")
 gui.import("brutality")
 gui.import("starterpack")
 gui.import("UniversalIntermissionCompat/BrutalINTM")
+gui.import("functions/tablecontains")
 
 BRUTALDOOM.YES_NO =
 {
@@ -178,6 +177,7 @@ BRUTALDOOM.PARAMETERS =
     musicpreset = 'iwad'
 	brutalversion = "brutalv20b.pk3"
 	brutalityversion = "Project Brutality 2.03.pk3"
+	usingui = false
 }
 
 BRUTALDOOM.IWADS =
@@ -187,7 +187,7 @@ BRUTALDOOM.IWADS =
     "Plutonia.wad", "Plutonia"
     "doom_complete.pk3",    "Doom Complete"
     "freedoom2.wad",    "Freedoom 2"
-	--"heretic.wad",	"Heretic" --Nowhere near ready yet!
+	"heretic.wad",	"Heretic" --Nowhere near ready yet!
 }
 
 BRUTALDOOM.MONSTERS =
@@ -979,12 +979,6 @@ BRUTALDOOM.MAPINFO = { }
 
 function BRUTALDOOM.create_mapinfo()
     gui.printf("Mapinfo code is starting\n");
-	
-	if OB_MODULES["universal_intermissions"].enabled == true then
-		gui.printf('Using UI\n');
-	else
-		gui.printf('Not using UI\n');
-	end
     
 local castcall =
 [[
@@ -1275,7 +1269,7 @@ Intermission BrutalDoomCast
       end
 	  
 	  --Universal Intermission Screen
-	  if OB_MODULES["universal_intermissions"].enabled == true then
+	  if BRUTALDOOM.PARAMETERS.usingui == true then
 		enterpic = '"$BINTM"'
 	  end
       
@@ -1402,7 +1396,7 @@ for i = 1, (#data) do --for every value in data
       data[i] = string.gsub(data[i], '"d_openin"//changeifdoommetal','"d_e3m8"')
   end
   --change interpics for babel and dis if using Universial Intermissions
-  if OB_MODULES["universal_intermissions"].enabled == true then
+  if BRUTALDOOM.PARAMETERS.usingui == true then
 	data[i] = string.gsub(data[i], '"INTERPIC"//changeifdoomcomplete','"$BINTM"')
   end
   if BRUTALDOOM.PARAMETERS.iwad == "doom_complete.pk3" then
@@ -1443,7 +1437,7 @@ function BRUTALDOOM.all_done()
 	heretic_monstersetup();
 	heretic_iwadsetup();
   end
-  if OB_MODULES["universal_intermissions"].enabled == true then
+  if BRUTALDOOM.PARAMETERS.usingui == true then
 	BRUTALDOOM.createintm();
   end
   BRUTALDOOM.create_mapinfo();
@@ -1757,6 +1751,9 @@ BRUTALDOOM.PLAYER_MODEL =
 }
 
 function BRUTALDOOM.setup()
+
+gui.printf("Universal Intermission check:\n");
+BRUTALDOOM.checkuintm();
     
 BRUTALDOOM.setsecretexits();
     
