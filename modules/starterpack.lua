@@ -620,7 +620,7 @@ function STARTERPACK.create_mapinfo()
       end
 	  
 	  --Universal Intermission Screen
-	  if OB_MODULES["universal_intermissions"].enabled == true then
+	  if BRUTALDOOM.PARAMETERS.usingui == true then
 		enterpic = '"$BINTM"'
 	  end
 
