@@ -187,7 +187,7 @@ BRUTALDOOM.IWADS =
     "Plutonia.wad", "Plutonia"
     "doom_complete.pk3",    "Doom Complete"
     "freedoom2.wad",    "Freedoom 2"
-	"heretic.wad",	"Heretic" --Nowhere near ready yet!
+	--"heretic.wad",	"Heretic" --Nowhere near ready yet!
 }
 
 BRUTALDOOM.MONSTERS =
