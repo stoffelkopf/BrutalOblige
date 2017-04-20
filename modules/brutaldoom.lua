@@ -90,7 +90,7 @@ local genericgrenadestate = [[
                     Goto Ready
                 ]]
 				
-local chexkeys = [[
+chexkeys = [[
 		ACTOR ChexBlueCard : CustomInventory 331
 		{
 		  Inventory.PickupMessage "$GOTBLUECARD"
