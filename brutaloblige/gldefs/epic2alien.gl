@@ -1,0 +1,14 @@
+FlickerLight2 StealthFighterAttack
+{
+Color 1.0 0.8 0.2
+Size 40
+SecondarySize 48
+Interval 1
+Offset 0 40 0
+}
+
+Object ObligeEpic2Alien
+{
+Frame EPTAF { Light StealthFighterAttack }
+Frame EPTAG { Light StealthFighterAttack }
+}

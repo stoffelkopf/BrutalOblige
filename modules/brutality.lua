@@ -1,9 +1,15 @@
+gui.import("functions/filereading")
+
 BRUTALITY.MONSTERS =
 {
 	--remove the no longer needed brutal monsters
 	Belphegor = REMOVE_ME
 	DarkImp = REMOVE_ME
 	Juggernaut = REMOVE_ME
+	
+	--remove individual brutal monsters now handled by spawners
+	D4caco = REMOVE_ME
+	ClassicSS = REMOVE_ME
 
 	  Trite =
 	  {
@@ -179,6 +185,8 @@ local data =
 	{
 		'//Brutality additions\n'
 		'#include "BRUMONS" \n'
+		'#include "PBMBSPN" \n'
+		'#include "PBENSPN" \n'
 		'//weapons\n\n'
 		'actor NilHandGrenadesOblige : PistolAmmo 299\n'
 		'{\n'
@@ -235,4 +243,6 @@ local data =
 		chexkeys
 	}
       gui.wad_add_text_lump("DECORATE", data);
+	  gui.wad_insert_file("brutaloblige/decorates/brutality/rawmeatball.dec","PBMBSPN");
+	  gui.wad_insert_file("brutaloblige/decorates/brutality/evilnazispawner.dec","PBENSPN");
 end

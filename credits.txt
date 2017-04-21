@@ -1,3 +1,10 @@
-http://www.moddb.com/mods/brutal-doom/addons/mersers-sprites-enhancements
+Doom 4 style Cacodemons - Merser - http://www.moddb.com/mods/brutal-doom/addons/mersers-sprites-enhancements
 
-Universal Doom II intermission screen - Spaceman333
+Zyberdemon sprites - 00_Zombie_00
+
+epic 2 alien - code already in Brutal Doom, everything else taken from Realm667's StealthFighter -
+Submitted: Tormentor667
+Decorate: Bouncy
+GLDEFs: Dreadopp
+Sounds: Id Software
+Sprites: The Innocent Crew

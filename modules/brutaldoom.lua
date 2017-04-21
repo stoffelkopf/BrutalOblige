@@ -155,6 +155,7 @@ gui.import("brutality")
 gui.import("starterpack")
 gui.import("UniversalIntermissionCompat/BrutalINTM")
 gui.import("functions/tablecontains")
+gui.import("functions/filereading")
 
 BRUTALDOOM.YES_NO =
 {
@@ -487,6 +488,10 @@ end
 
 function BRUTALDOOM.epic()
   gui.wad_merge_sections("brutaloblige/brutaloblige.wad");
+  gui.wad_insert_file("brutaloblige/SNDINFO","SNDINFO");
+  gui.wad_insert_file("brutaloblige/gldefs/epic2alien.gl","GLDEFS");
+  gui.wad_insert_file("brutaloblige/sounds/DSGSSIT","DSGSSIT");
+  gui.wad_insert_file("brutaloblige/sounds/DSGSDTH","DSGSDTH");
 end
 
 BRUTALDOOM.music =

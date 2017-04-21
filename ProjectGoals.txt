@@ -54,9 +54,9 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 
 ### Monsters
 
-**Done:** Everything from core Brutal that isn't already in Brutality, Trites, Shadows.
+**Done:** Everything from core Brutal that isn't already in PB, Trites, Shadows.
 
-**Future:** Nothing, Brutality does monster variety well enough by itself.
+**Future:** Incorporate the new monsters into PB's dynamic spawners rather than as seperate entities.
 
 ### Themes
 
