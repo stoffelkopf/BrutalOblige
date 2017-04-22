@@ -148,6 +148,7 @@ function BRUTALITY.decorate()
 		'}\n'
 	}
     gui.wad_add_text_lump("BRUMONS", data);
+	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
 end
 
 function BRUTALITY.gameinfo()
@@ -187,6 +188,7 @@ local data =
 		'#include "BRUMONS" \n'
 		'#include "PBMBSPN" \n'
 		'#include "PBENSPN" \n'
+		'#include "PBIMSPN" \n'
 		'//weapons\n\n'
 		'actor NilHandGrenadesOblige : PistolAmmo 299\n'
 		'{\n'
@@ -245,4 +247,5 @@ local data =
       gui.wad_add_text_lump("DECORATE", data);
 	  gui.wad_insert_file("brutaloblige/decorates/brutality/rawmeatball.dec","PBMBSPN");
 	  gui.wad_insert_file("brutaloblige/decorates/brutality/evilnazispawner.dec","PBENSPN");
+	  gui.wad_insert_file("brutaloblige/decorates/brutality/impspawner.dec","PBIMSPN");
 end

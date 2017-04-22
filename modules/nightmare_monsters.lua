@@ -17,6 +17,7 @@ NIGHTMARE.MONSTERS =
 	    weap_prefs = { launch=0.2 }
 	    species = "demon"
 	    room_size = "any"
+		project_brutaliy="false"
 	  }
 	  nightmare_imp =
 	  {
@@ -29,6 +30,7 @@ NIGHTMARE.MONSTERS =
 	    health = 60
 	    damage = 30
 	    attack = "missile"
+		project_brutaliy="spawner"
 	  }
 	  nightmare_trite =
 	  {
@@ -1516,7 +1518,8 @@ elseif OB_CONFIG.game == "brutality" then
 		'}\n'
 		'\n'
 		--Imp---Brutality----------------------------------------------------------------------------------
-		'actor nightmare_imp : DoomImp 256\n'
+		--Handled by brutality spawners hence no spawn number
+		'actor nightmare_imp : DoomImp\n'
 		'{\n'
                 '//$Category "Monsters/Nightmare Monsters"\n'
                 '//$EditorSprite "TROOA1"\n'
@@ -2830,7 +2833,7 @@ function NIGHTMARE.setup(self)
   for name,_ in pairs(NIGHTMARE.MONSTERS) do
     local M = GAME.MONSTERS[name]
 
-    if M.project_brutality == "false" or OB_CONFIG.game == "brutality" then    --don't include trite etc for not pb
+    if M.project_brutality != "true" or OB_CONFIG.game == "brutality" then    --don't include trite etc for not pb
 
 	    if M and qty == "less" then
 	      M.prob = M.prob / 2

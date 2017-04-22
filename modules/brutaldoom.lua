@@ -476,6 +476,7 @@ BRUTALFRIENDS.MONSTERS =
 function BRUTALDOOM.decorate()
 	gui.wad_insert_file("brutaloblige/decorates/BrutalMonsters.dec","BRUMONS");
 	gui.wad_insert_file("brutaloblige/decorates/DarkImp.dec","DARKIMPD");
+	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
 end
 
 function BRUTALDOOM4.caco()

@@ -1,3 +1,5 @@
+version 2.4
+
 class BrutalObligeHandler : EventHandler
 {
 	// get all monsters
@@ -7,6 +9,46 @@ class BrutalObligeHandler : EventHandler
 		{
 			//do something to the monsters
 			//e.Thing.A_
+		}
+	}
+}
+
+
+//Add a BrutalObligeActor with exciting new functions
+class BrutalObligeActor : Actor
+{
+	virtual void A_SpawnIfExists(string type, string default, float xofs, float yofs, float zofs, float xvel, float yvel, float zvel, float angle, int flags, int failchance, int tid)
+	{
+		string classname = type;
+		class<Actor> cls = classname;
+		if (cls)
+		{
+			A_SpawnItemEx(cls, xofs, yofs, zofs, xvel, yvel, zvel, angle, flags, failchance, tid);
+		}
+		else
+		{
+			A_SpawnItemEx(default, xofs, yofs, zofs, xvel, yvel, zvel, angle, flags, failchance, tid);
+		}
+	}
+	
+	virtual void A_SpawnRandom(string type1, string type2, float xofs, float yofs, float zofs, float xvel, float yvel, float zvel, float angle, int flags, int failchance, int tid)
+	{
+		string classname = type1;
+		class<Actor> cls = classname;
+		if (cls)
+		{
+			if (random(1,2) == 2)
+			{
+				A_SpawnItemEx(cls, xofs, yofs, zofs, xvel, yvel, zvel, angle, flags, failchance, tid);
+			}
+			else
+			{
+			A_SpawnItemEx(type2, xofs, yofs, zofs, xvel, yvel, zvel, angle, flags, failchance, tid);
+			}
+		}
+		else
+		{
+			A_SpawnItemEx(type2, xofs, yofs, zofs, xvel, yvel, zvel, angle, flags, failchance, tid);
 		}
 	}
 }
