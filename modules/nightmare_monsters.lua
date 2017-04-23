@@ -17,7 +17,7 @@ NIGHTMARE.MONSTERS =
 	    weap_prefs = { launch=0.2 }
 	    species = "demon"
 	    room_size = "any"
-		project_brutaliy="false"
+		project_brutaliy="spawner"
 	  }
 	  nightmare_imp =
 	  {
@@ -1273,7 +1273,7 @@ if OB_CONFIG.game == "brutaldoom" then
 elseif OB_CONFIG.game == "brutality" then
   data =
 	{
-		'actor nightmare_spectre : Demon 255\n' --BullDemon 255\n'
+		'actor nightmare_spectre : Demon\n' --handled by spawner hence no spawn number
 		'{\n'
                 '//$Category "Monsters/Nightmare Monsters"\n'
                 '//$EditorSprite "SARGA1"\n'

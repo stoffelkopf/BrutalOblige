@@ -189,6 +189,7 @@ local data =
 		'#include "PBMBSPN" \n'
 		'#include "PBENSPN" \n'
 		'#include "PBIMSPN" \n'
+		'#include "PBBDSPN" \n'
 		'//weapons\n\n'
 		'actor NilHandGrenadesOblige : PistolAmmo 299\n'
 		'{\n'
@@ -248,4 +249,5 @@ local data =
 	  gui.wad_insert_file("brutaloblige/decorates/brutality/rawmeatball.dec","PBMBSPN");
 	  gui.wad_insert_file("brutaloblige/decorates/brutality/evilnazispawner.dec","PBENSPN");
 	  gui.wad_insert_file("brutaloblige/decorates/brutality/impspawner.dec","PBIMSPN");
+	  gui.wad_insert_file("brutaloblige/decorates/brutality/bulldemonspawner.dec","PBBDSPN");
 end
