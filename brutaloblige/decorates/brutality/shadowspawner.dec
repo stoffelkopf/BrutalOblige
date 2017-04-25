@@ -1,0 +1,104 @@
+Actor BrutalObligeshadowSpawner : BrutalObligeActor 312
+{
++NOTDMATCH
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1 ACS_NamedExecuteAlways("StarterPackDynamicProgressionFix",0)
+TNT1 A 1 ACS_NamedExecuteAlways("SpawnerScript",0)
+TNT1 A 1 A_Jump(256,"Deciding")
+Deciding:
+TNT1 A 1
+loop
+Spawner1:
+		TNT1 A 1 A_Jump(136, 3)
+		TNT1 A 0 A_SpawnItemEx("shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 2
+		TNT1 A 0 A_SpawnIfExists("nightmare_shadow","shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0)
+		Stop
+Spawner2:
+ReplaceToggle:
+TNT1 A 0 A_SpawnItemEx("shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+Spawner3:
+		TNT1 A 1 A_Jump(128, 3)
+		TNT1 A 0 A_SpawnItemEx("shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 2
+		TNT1 A 0 A_SpawnIfExists("nightmare_shadow","shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0)
+		Stop
+Spawner4:
+TNT1 A 2
+TNT1 A 1 A_SpawnIfExists("nightmare_shadow","shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0)
+stop
+Spawner5:
+TNT1 A 1 A_SpawnItemEx("shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+stop
+Spawner6:
+		TNT1 A 1
+		TNT1 A 0 A_SpawnItemEx("shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+Spawner7:
+		TNT1 A 1 A_Jump(102, 3)
+		TNT1 A 0 A_SpawnItemEx("shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 2
+		TNT1 A 0 A_SpawnIfExists("nightmare_shadow","shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0)
+		Stop
+Spawner8:
+		TNT1 A 0 A_Jump(136, 2)
+		TNT1 A 0 A_SpawnItemEx("shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 2
+		TNT1 A 0 A_SpawnIfExists("nightmare_shadow","shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0)
+		Stop
+Spawner9:
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 1, "EarlyLevelSpawn")
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 5, "EarlyLevelSpawn")
+		
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 2, "LowLevelSpawn")
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 6, "LowLevelSpawn")
+		
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 3, "MidLevelSpawn")
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 7, "MidLevelSpawn")
+		
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 4, "HighLevelSpawn")
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") >= 8, "HighLevelSpawn")
+		Goto LowLevelSpawn
+	EarlyLevelSpawn:
+		TNT1 A 0 A_SpawnItemEx("shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+	LowLevelSpawn:
+		TNT1 A 1 A_Jump(64, 3)
+		TNT1 A 0 A_SpawnItemEx("shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+	MidLevelSpawn:
+		TNT1 A 1 A_Jump(102, 3)
+		TNT1 A 0 A_SpawnItemEx("shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 2
+		TNT1 A 0 A_SpawnIfExists("nightmare_shadow","shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0)
+		Stop
+	HighLevelSpawn:
+		TNT1 A 0 A_Jump(136, 2)
+		TNT1 A 0 A_SpawnItemEx("shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 2
+		TNT1 A 0 A_SpawnIfExists("nightmare_shadow","shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0)
+		Stop
+Spawner10:
+TNT1 A 1 A_SpawnItemEx("shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+stop
+Spawner11:
+TNT1 A 1 A_SpawnItemEx("shadow",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+stop
+}
+}

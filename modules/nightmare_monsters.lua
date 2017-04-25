@@ -2769,6 +2769,50 @@ elseif OB_CONFIG.game == "brutality" then
 			'Damage 4\n'
 		'}\n'
 		'\n'
+		--Shadow--Brutality-----------------------------------
+		'actor nightmare_shadow : Shadow \n'
+		'{\n'
+		'//$Category "Monsters/Nightmare Monsters"\n'
+		'//$EditorSprite "SHDWA1"\n'
+		'Tag "Nightmare Shadow"\n'
+		'RenderStyle Subtract\n'
+		'MissileType nightmare_shadowball\n'
+		'Speed 10\n'
+		'States\n'
+		'{\n'
+		'	See:\n'
+		'		SHDW A 15\n'
+		'		SHDW AAA 1 A_Chase\n'
+		'		SHDW A 0 A_SpawnItemEx("ShadowGhostA", 0, 0, 0, 0, 0, 0, 0, 128 | SXF_TRANSFERRENDERSTYLE)\n'
+		'		SHDW BBB 1 A_Chase\n'
+		'		SHDW B 0 A_SpawnItemEx("ShadowGhostB", 0, 0, 0, 0, 0, 0, 0, 128 | SXF_TRANSFERRENDERSTYLE)\n'
+		'		SHDW CCC 1 A_Chase\n'
+		'		SHDW C 0 A_SpawnItemEx("ShadowGhostC", 0, 0, 0, 0, 0, 0, 0, 128 | SXF_TRANSFERRENDERSTYLE)\n'
+		'		SHDW DDD 1 A_Chase\n'
+		'		SHDW D 0 A_SpawnItemEx("ShadowGhostD", 0, 0, 0, 0, 0, 0, 0, 128 | SXF_TRANSFERRENDERSTYLE)\n'
+		'		SHDW AAA 1 A_Chase\n'
+		'		SHDW A 0 A_SpawnItemEx("ShadowGhostA", 0, 0, 0, 0, 0, 0, 0, 128 | SXF_TRANSFERRENDERSTYLE)\n'
+		'		SHDW BBB 1 A_Chase\n'
+		'		SHDW B 0 A_SpawnItemEx("ShadowGhostB", 0, 0, 0, 0, 0, 0, 0, 128 | SXF_TRANSFERRENDERSTYLE)\n'
+		'		SHDW CCC 1 A_Chase\n'
+		'		SHDW C 0 A_SpawnItemEx("ShadowGhostC", 0, 0, 0, 0, 0, 0, 0, 128 | SXF_TRANSFERRENDERSTYLE)\n'
+		'		SHDW DDD 1 A_Chase\n'
+		'		SHDW D 0 A_SpawnItemEx("ShadowGhostD", 0, 0, 0, 0, 0, 0, 0, 128 | SXF_TRANSFERRENDERSTYLE)\n'
+		'		Goto See+1\n'
+		'}\n'
+		'}\n'
+		'\n'
+		'actor nightmare_shadowball : ShadowBall \n'
+		'{\n'
+		'RenderStyle Subtract\n'
+		'Damage 4\n'
+		'States\n'
+		'{\n'
+		'Spawn: \n'
+		'	SBAL ABC 4 BRIGHT A_SpawnItemEx("ShadowTrail", 0, 0, 0, 0, 0, 0, 0, 128)\n'
+		'	Loop\n'
+		'}\n'
+		'}\n'
 	}
 else
   data =
@@ -2833,7 +2877,6 @@ function NIGHTMARE.setup(self)
   for name,_ in pairs(NIGHTMARE.MONSTERS) do
     local M = GAME.MONSTERS[name]
 
-    if M.project_brutality != "true" or OB_CONFIG.game == "brutality" then    --don't include trite etc for not pb
 
 	    if M and qty == "less" then
 	      M.prob = M.prob / 2
@@ -2849,7 +2892,8 @@ function NIGHTMARE.setup(self)
 	    if M and OB_CONFIG.game == "edge" then
 	      M.id = EDGE_IDS[name]
 	    end
-    else
+		
+    if OB_CONFIG.game == "brutality" then    --handle by spawners in pb
 	M.prob = 0
     end
   end

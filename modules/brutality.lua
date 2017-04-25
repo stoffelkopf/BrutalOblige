@@ -46,9 +46,9 @@ function BRUTALITY.decorate()
 
   local data =
 	{
-		'actor ObligeTrite : Trite 303\n'
+		'/*actor ObligeTrite : Trite 303\n'
 		'{\n'
-		'}\n'
+		'}*/\n'
 		'\n'
 		'actor ObligeFlemoid1 : Flemoid1 304\n'
 		'{\n'
@@ -135,11 +135,6 @@ function BRUTALITY.decorate()
 		'{\n'
 		'}\n'
 		'\n'
-		--from pb's decorate.realm667monsters
-		'actor ObligeShadow : Shadow 312\n'
-		'{\n'
-		'}\n'
-		'\n'
 		'actor classicwolf : WolfensteinSS 313\n'
 		'{\n'
                 '//$Category "Monsters/Wolfenstein"\n'
@@ -190,6 +185,8 @@ local data =
 		'#include "PBENSPN" \n'
 		'#include "PBIMSPN" \n'
 		'#include "PBBDSPN" \n'
+		'#include "PBTRSPN" \n'
+		'#include "PBSHSPN" \n'
 		'//weapons\n\n'
 		'actor NilHandGrenadesOblige : PistolAmmo 299\n'
 		'{\n'
@@ -250,4 +247,6 @@ local data =
 	  gui.wad_insert_file("brutaloblige/decorates/brutality/evilnazispawner.dec","PBENSPN");
 	  gui.wad_insert_file("brutaloblige/decorates/brutality/impspawner.dec","PBIMSPN");
 	  gui.wad_insert_file("brutaloblige/decorates/brutality/bulldemonspawner.dec","PBBDSPN");
+	  gui.wad_insert_file("brutaloblige/decorates/brutality/tritespawner.dec","PBTRSPN");
+	  gui.wad_insert_file("brutaloblige/decorates/brutality/shadowspawner.dec","PBSHSPN");
 end
