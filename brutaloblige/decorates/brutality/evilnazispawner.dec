@@ -1,6 +1,13 @@
 //The name is from PB, personally I question if there is any other type of Nazi
-Actor BrutalObligeEvilNaziSpawner replaces ObligeSS
+Actor BrutalObligeEvilNaziSpawner : PBZspawner 311
 {
+	PBZSpawner.tiers 2
+	PBZSpawner.tier1 "classicwolf"
+	PBZSpawner.tier2 "Nazi"
+}
+
+
+/*{
 +NOTDMATCH
 States
 {
@@ -73,4 +80,4 @@ Spawner11:
 TNT1 A 1 A_SpawnItemEx("classicwolf",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
 stop
 }
-}
+}*/

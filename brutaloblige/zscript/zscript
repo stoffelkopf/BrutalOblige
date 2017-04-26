@@ -67,6 +67,8 @@ Class PBZspawner : BrutalObligeActor
 	string tier1, tier2, tier3, tier4, tier5, tier6, tier7, tier8, tier9, tier10, tier11, tier12;
 	string dtier1, dtier2, dtier3, dtier4, dtier5, dtier6, dtier7, dtier8, dtier9, dtier10, dtier11, dtier12;
 	
+	StateLabel jumpsto;
+	
 	Property tiers: tiers;
 	Property tier1: tier1;
 	Property tier2: tier2;
@@ -128,13 +130,100 @@ Class PBZspawner : BrutalObligeActor
 	States
 	{
 		Spawn:
-		TNT1 A 0;
-		TNT1 A 1 PBZspawnthing();
-		TNT1 A 1;
+			TNT1 A 0;
+			TNT1 A 1 PBZSpawnjump();
+			TNT1 A 1 A_Jump(256,jumpsto);
+			TNT1 A 1;
+		stop;
+		Spawner1:
+			TNT1 A 0;
+			TNT1 A 1 PBZspawnthing(1);
+			TNT1 A 1;
+		stop;
+		spawner2:
+			TNT1 A 0;
+			TNT1 A 1 PBZspawnthing(2);
+			TNT1 A 1;
+		stop;
+		spawner3:
+			TNT1 A 0;
+			TNT1 A 1 PBZspawnthing(3);
+			TNT1 A 1;
+		stop;
+		spawner4:
+			TNT1 A 0;
+			TNT1 A 1 PBZspawnthing(4);
+			TNT1 A 1;
+		stop;
+		spawner5:
+			TNT1 A 0;
+			TNT1 A 1 PBZspawnthing(5);
+			TNT1 A 1;
+		stop;
+		spawner6:
+			TNT1 A 0;
+			TNT1 A 1 PBZspawnthing(6);
+			TNT1 A 1;
+		stop;
+		spawner7:
+			TNT1 A 0;
+			TNT1 A 1 PBZspawnthing(7);
+			TNT1 A 1;
+		stop;
+		spawner8:
+			TNT1 A 0;
+			TNT1 A 1 PBZspawnthing(8);
+			TNT1 A 1;
+		stop;
+		spawner9:
+			TNT1 A 0;
+			TNT1 A 1 PBZspawnthing(9);
+			TNT1 A 1;
+		stop;
+		spawner10:
+			TNT1 A 0;
+			TNT1 A 1 PBZspawnthing(10);
+			TNT1 A 1;
+		stop;
+		spawner11:
+			TNT1 A 0;
+			TNT1 A 1 PBZspawnthing(11);
+			TNT1 A 1;
+		stop;
+		spawner12:
+			TNT1 A 0;
+			TNT1 A 1 PBZspawnthing(12);
+			TNT1 A 1;
 		stop;
 	}
 	
-	virtual void PBZspawnthing()
+	virtual void PBZspawnjump()
+	{
+		
+		int levelnum;
+		levelnum = A_GetLevelNumber() / 2 - 1;
+		
+		if (levelnum < 1) {levelnum = 1;}
+		if (levelnum > (tiers) ) {levelnum = (tiers);}
+		
+		//jump to the spawn state
+		if (levelnum == 1) {jumpsto="Spawner1";}
+		if (levelnum == 2) {jumpsto="spawner2";}
+		if (levelnum == 3) {jumpsto="spawner3";}
+		if (levelnum == 4) {jumpsto="spawner4";}
+		if (levelnum == 5) {jumpsto="spawner5";}
+		if (levelnum == 6) {jumpsto="spawner6";}
+		if (levelnum == 7) {jumpsto="spawner7";}
+		if (levelnum == 8) {jumpsto="spawner8";}
+		if (levelnum == 9) {jumpsto="spawner9";}
+		if (levelnum == 10) {jumpsto="spawner10";}
+		if (levelnum == 11) {jumpsto="spawner11";}
+		if (levelnum == 12) {jumpsto="spawner12";}
+		
+		//A_SpawnIfExists(spawns[levelnum][0],spawns[levelnum][1],0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0);
+	}
+	
+	virtual void PBZspawnthing(int level)
 	{
 		string spawns[12][12];
 		spawns[0][0] = tier1;
@@ -209,12 +298,6 @@ Class PBZspawner : BrutalObligeActor
 		else
 		{spawns[11][1] = dtier12;}
 		
-		int levelnum;
-		levelnum = A_GetLevelNumber() / 2 - 1;
-		
-		if (levelnum < 0) {levelnum = 0;}
-		if (levelnum > (tiers - 1) ) {levelnum = (tiers - 1);}
-		
-		A_SpawnIfExists(spawns[levelnum][0],spawns[levelnum][1],0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0);
+		A_SpawnIfExists(spawns[level-1][0],spawns[level-1][1],0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0);
 	}
 }
