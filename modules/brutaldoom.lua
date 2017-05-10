@@ -155,6 +155,7 @@ gui.import("brutality")
 gui.import("starterpack")
 gui.import("UniversalIntermissionCompat/BrutalINTM")
 gui.import("functions/tablecontains")
+gui.import("functions/filereading")
 
 BRUTALDOOM.YES_NO =
 {
@@ -475,6 +476,7 @@ BRUTALFRIENDS.MONSTERS =
 function BRUTALDOOM.decorate()
 	gui.wad_insert_file("brutaloblige/decorates/BrutalMonsters.dec","BRUMONS");
 	gui.wad_insert_file("brutaloblige/decorates/DarkImp.dec","DARKIMPD");
+	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
 end
 
 function BRUTALDOOM4.caco()
@@ -487,6 +489,10 @@ end
 
 function BRUTALDOOM.epic()
   gui.wad_merge_sections("brutaloblige/brutaloblige.wad");
+  gui.wad_insert_file("brutaloblige/SNDINFO","SNDINFO");
+  gui.wad_insert_file("brutaloblige/gldefs/epic2alien.gl","GLDEFS");
+  gui.wad_insert_file("brutaloblige/sounds/DSGSSIT","DSGSSIT");
+  gui.wad_insert_file("brutaloblige/sounds/DSGSDTH","DSGSDTH");
 end
 
 BRUTALDOOM.music =
@@ -979,6 +985,7 @@ BRUTALDOOM.MAPINFO = { }
 
 function BRUTALDOOM.create_mapinfo()
     gui.printf("Mapinfo code is starting\n");
+	
     
 local castcall =
 [[
@@ -1338,6 +1345,7 @@ Intermission BrutalDoomCast
       table.insert(data, string.format("%s %s\n{\n", "map", text))
       --enter map information
       table.insert(data, sky1)
+	  table.insert(data, 'LevelNum = ' .. mapnum .. "\n")
       table.insert(data, 'EnterPic = ' .. enterpic)
       table.insert(data, 'ExitPic = ' .. enterpic)
       table.insert(data, 'cluster = 10\n')
@@ -1351,7 +1359,7 @@ Intermission BrutalDoomCast
   else
     table.insert(data, 'next = EndSequence, "Brutal_FinalIntermission"\n') --last map ends the game unless it is a secret level (ie anything more or less than full game)
   end
-  table.insert(data, "\n}\n"); --close final map definition
+  table.insert(data, "}\n"); --close final map definition
   
   --insert final intermission
   table.insert(data, castcall)

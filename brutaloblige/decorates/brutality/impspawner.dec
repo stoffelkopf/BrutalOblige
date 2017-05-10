@@ -1,0 +1,261 @@
+Actor BrutalObligeDemonTrooperSpawner : BrutalObligeActor replaces DoomImp
+{
++NOTDMATCH
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1 ACS_NamedExecuteAlways("StarterPackDynamicProgressionFix",0)
+TNT1 A 1 ACS_NamedExecuteAlways("SpawnerScript",0)
+TNT1 A 1 A_Jump(256,"Deciding")
+Deciding:
+TNT1 A 1
+loop
+Spawner1:
+		TNT1 A 1 A_Jump(152, 3)
+		TNT1 A 0 A_SpawnItemEx("Imp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(150, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant2",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(140, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant3",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(96, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant1",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(128, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("STDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(128, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("NamiDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(128, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("VoidDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("NetherDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+Spawner2:
+ReplaceToggle:
+TNT1 A 0 A_SpawnItemEx("Imp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+Spawner3:
+		TNT1 A 1 A_Jump(224, 3)
+		TNT1 A 0 A_SpawnItemEx("Imp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(150, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant2",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(140, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant3",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant1",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+Spawner4:
+		TNT1 A 1 A_Jump(128, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("STDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(128, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("NamiDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(128, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("VoidDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("NetherDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+Spawner5:
+		TNT1 A 1 A_Jump(64, 3)
+		TNT1 A 0 A_SpawnItemEx("Imp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant2",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+Spawner6:
+		TNT1 A 0 A_Jump(96, 2)
+		TNT1 A 0 A_SpawnItemEx("Imp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(96, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant2",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant3",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+Spawner7:
+		TNT1 A 0 A_Jump(192, 2)
+		TNT1 A 0 A_SpawnItemEx("Imp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(160, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant2",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(160, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant3",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(32, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant1",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("STDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+Spawner8:
+		TNT1 A 1 A_Jump(128, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("STDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(128, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("NamiDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(96, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("VoidDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(32, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("NetherDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(16, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant3",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant1",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+Spawner9:
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 1, "EarlyLevelSpawn")
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 5, "EarlyLevelSpawn")
+		
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 2, "LowLevelSpawn")
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 6, "LowLevelSpawn")
+		
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 3, "MidLevelSpawn")
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 7, "MidLevelSpawn")
+		
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") == 4, "HighLevelSpawn")
+		TNT1 A 1 A_JumpIf(CallACS("GetLevelNumber") >= 8, "HighLevelSpawn")
+		Goto LowLevelSpawn
+	EarlyLevelSpawn:
+		TNT1 A 0 A_Jump(64, 2)
+		TNT1 A 0 A_SpawnItemEx("Imp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant2",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+	LowLevelSpawn:
+		TNT1 A 1 A_Jump(96, 3)
+		TNT1 A 0 A_SpawnItemEx("Imp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(96, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant2",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant3",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+	MidLevelSpawn:
+		TNT1 A 1 A_Jump(192, 3)
+		TNT1 A 0 A_SpawnRandom("nightmare_imp","Imp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(160, 2)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant2",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(182, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnRandom("nightmare_imp","DNImpVariant3",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(48, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant1",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+		TNT1 AAA 0
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("STDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+	HighLevelSpawn:
+		TNT1 A 1 A_Jump(128, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnRandom("nightmare_imp","STDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0)
+		stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(128, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("NamiDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(96, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("VoidDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(32, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleDarkImps",0)
+		TNT1 A 0 A_SpawnItemEx("NetherDarkImp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 1 A_Jump(16, 3)
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant3",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		stop
+		TNT1 AAA 0
+		TNT1 A 2 ACS_NamedExecuteAlways("ToggleBrownImps",0)
+		TNT1 A 0 A_SpawnItemEx("DNImpVariant1",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+		Stop
+Spawner10:
+TNT1 A 1 A_SpawnItemEx("Imp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+stop
+Spawner11:
+TNT1 A 1 A_SpawnItemEx("nightmare_imp",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
+stop
+}
+}
+
+Actor BrutalityNightmareImpReplacer : BrutalObligeDemonTrooperSpawner 256 {}

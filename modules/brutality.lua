@@ -1,9 +1,15 @@
+gui.import("functions/filereading")
+
 BRUTALITY.MONSTERS =
 {
 	--remove the no longer needed brutal monsters
 	Belphegor = REMOVE_ME
 	DarkImp = REMOVE_ME
 	Juggernaut = REMOVE_ME
+	
+	--remove individual brutal monsters now handled by spawners
+	D4caco = REMOVE_ME
+	ClassicSS = REMOVE_ME
 
 	  Trite =
 	  {
@@ -40,9 +46,9 @@ function BRUTALITY.decorate()
 
   local data =
 	{
-		'actor ObligeTrite : Trite 303\n'
+		'/*actor ObligeTrite : Trite 303\n'
 		'{\n'
-		'}\n'
+		'}*/\n'
 		'\n'
 		'actor ObligeFlemoid1 : Flemoid1 304\n'
 		'{\n'
@@ -125,15 +131,6 @@ function BRUTALITY.decorate()
 		'{\n'
 		'}\n'
 		'\n'
-		'actor ObligeSS : Nazi 311\n'
-		'{\n'
-		'}\n'
-		'\n'
-		--from pb's decorate.realm667monsters
-		'actor ObligeShadow : Shadow 312\n'
-		'{\n'
-		'}\n'
-		'\n'
 		'actor classicwolf : WolfensteinSS 313\n'
 		'{\n'
                 '//$Category "Monsters/Wolfenstein"\n'
@@ -142,6 +139,8 @@ function BRUTALITY.decorate()
 		'}\n'
 	}
     gui.wad_add_text_lump("BRUMONS", data);
+	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
+	gui.wad_insert_file("brutaloblige/zscript/wolfmons.zscript","WOLFMONS");
 end
 
 function BRUTALITY.gameinfo()
@@ -179,6 +178,12 @@ local data =
 	{
 		'//Brutality additions\n'
 		'#include "BRUMONS" \n'
+		'#include "PBMBSPN" \n'
+		'#include "PBENSPN" \n'
+		'#include "PBIMSPN" \n'
+		'#include "PBBDSPN" \n'
+		'#include "PBTRSPN" \n'
+		'#include "PBSHSPN" \n'
 		'//weapons\n\n'
 		'actor NilHandGrenadesOblige : PistolAmmo 299\n'
 		'{\n'
@@ -235,4 +240,10 @@ local data =
 		chexkeys
 	}
       gui.wad_add_text_lump("DECORATE", data);
+	  gui.wad_insert_file("brutaloblige/decorates/brutality/rawmeatball.dec","PBMBSPN");
+	  gui.wad_insert_file("brutaloblige/decorates/brutality/evilnazispawner.dec","PBENSPN");
+	  gui.wad_insert_file("brutaloblige/decorates/brutality/impspawner.dec","PBIMSPN");
+	  gui.wad_insert_file("brutaloblige/decorates/brutality/bulldemonspawner.dec","PBBDSPN");
+	  gui.wad_insert_file("brutaloblige/decorates/brutality/tritespawner.dec","PBTRSPN");
+	  gui.wad_insert_file("brutaloblige/decorates/brutality/shadowspawner.dec","PBSHSPN");
 end

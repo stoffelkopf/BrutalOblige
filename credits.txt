@@ -8,3 +8,7 @@ Decorate: Bouncy
 GLDEFs: Dreadopp
 Sounds: Id Software
 Sprites: The Innocent Crew
+
+Wolfenstein SS firing rotation sprites - DoomJedi
+SS firing rotation sprites - ItsNatureToDie
+SS pain rotation sprites - PSTrooper

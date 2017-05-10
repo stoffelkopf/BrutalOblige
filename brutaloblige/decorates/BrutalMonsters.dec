@@ -52,11 +52,11 @@ actor ObligeEpic2Alien : Epic2Alien 309
 //$Category "Monsters"
 //$EditorSprite "EPTAA1"
 Tag "Epic 2 Alien"
-SeeSound "chainguy/sight"
-PainSound "chainguy/pain"
-DeathSound "chainguy/death"
-ActiveSound "chainguy/active"
-AttackSound "chainguy/attack"
+SeeSound "epic2alien/sight"
+//PainSound "chainguy/pain"
+DeathSound "epic2alien/death"
+//ActiveSound "chainguy/active"
+//AttackSound "chainguy/attack"
 Obituary "%o never saw their attacker"
 States
 {
