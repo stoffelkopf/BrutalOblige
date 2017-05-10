@@ -1,5 +1,7 @@
 version 2.4
 
+#include "wolfmons"
+
 class BrutalObligeHandler : EventHandler
 {
 	// get all monsters
@@ -199,12 +201,37 @@ Class PBZspawner : BrutalObligeActor
 	
 	virtual void PBZspawnjump()
 	{
+		//BrutalSpawnBalance is the Cvar, atw menudef defines the levels as follows
+		/*
+		1, "Default Random"
+		2, "Brutal Doom Classic"
+		3, "Alternative"
+		4, "Death Wish"
+		5, "Tier I"
+		6, "Tier II"
+		7, "Tier III"
+		8, "Tier IV"
+		9, "Dynamic Progression"
+		*/
+		
+		CVar spawnsettingcvar = CVar.FindCVar('BrutalSpawnBalance');
+		int spawntype = spawnsettingcvar.GetInt();
 		
 		int levelnum;
-		levelnum = A_GetLevelNumber() / 2 - 1;
+		
+		switch(spawntype)
+		{
+			default: levelnum = random(1,tiers); break; //totally random
+			case 5: levelnum = 1; break; //tier 1
+			case 6: levelnum = 2; break; //tier 2
+			case 7: levelnum = 3; break; //tier 3
+			case 8: levelnum = 4; break; //tier 4
+			case 9: levelnum = A_GetLevelNumber() / 2 - 1; break; //dynamic progression
+		}
 		
 		if (levelnum < 1) {levelnum = 1;}
 		if (levelnum > (tiers) ) {levelnum = (tiers);}
+		
 		
 		//jump to the spawn state
 		if (levelnum == 1) {jumpsto="Spawner1";}

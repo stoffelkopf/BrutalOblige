@@ -32,7 +32,10 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 * Dark Imp; needs more and better death states.
 * Epic 2 Alien; could use the sounds from epic 2.
 
-**Future:** If there are more unused monsters in Brutal Doom V21 I'll be all over them!
+**Future:**
+
+* Respect purist settings
+* If there are more unused monsters in Brutal Doom V21, and it looks like there will be, I'll be all over them!
 
 ### Weapons
 
