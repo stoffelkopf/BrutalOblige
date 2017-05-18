@@ -25,6 +25,8 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 
 3) Add all the folders to a zip folder (if you didn't download it as a zip anyway) and rename it to change the extension from .zip to .pk3
 
+Note that if you downloaded this from github rather than cloning the repo you can't just rename that .zip, first you must unzip it, then put the folders that are *inside* the BrutalOblige-whatever folder that comes out into a zip.
+
 4) Copy or move the pk3 to Oblige's addon directory. This will be in the same place as Oblige.exe on Windows or /usr/share/oblige/addons on Linux.
 
 5) Run Oblige, select Menu, Addon List and check the box for BrutalOblige. Restart Oblige, Brutal Doom should now appear as an option in the game menu.
