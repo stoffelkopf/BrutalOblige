@@ -134,6 +134,10 @@ chexkeys = [[
 		  }
 		}
 		]]
+        
+PuristRailGunReloadDecorate = [[
+    RAIF B 6 //A_CheckForReload(4, "Reloaded")
+    ]]
 
 BRUTALDOOM = { }
 
@@ -179,6 +183,8 @@ BRUTALDOOM.PARAMETERS =
 	brutalversion = "brutalv20b.pk3"
 	brutalityversion = "Project Brutality 2.03.pk3"
 	usingui = false
+    playerclass = "Doomer"
+    PuristRailGunReload = "None"
 }
 
 BRUTALDOOM.IWADS =
@@ -189,6 +195,18 @@ BRUTALDOOM.IWADS =
     "doom_complete.pk3",    "Doom Complete"
     "freedoom2.wad",    "Freedoom 2"
 	--"heretic.wad",	"Heretic" --Nowhere near ready yet!
+}
+
+BRUTALDOOM.PLAYERCLASSES =
+{
+    "Doomer",   "Modern"
+    "Purist",   "Classic"
+}
+
+BRUTALDOOM.PURISTRAILGUNRELOADOPTIONS =
+{
+    "Skulltag",   "Skulltag"
+    "None",   "None"
 }
 
 BRUTALDOOM.MONSTERS =
@@ -1157,6 +1175,7 @@ Intermission BrutalDoomCast
     "// MAPINFO LUMP created by OBLIGE\n"
     "//\n"
     "//Secret exits are in maps " .. tostring(secretexit1) .. ', ' .. tostring(secretexit2) .. ' and ' .. tostring(secretexit3) .. '\n'
+    '\n'
     "clearepisodes\n\n"
     'episode bom01\n'
     '{\n'
@@ -1425,7 +1444,37 @@ end
 
 end
 
+function BRUTALDOOM.createkeyconf()
+local confdata =
+	{
+	'setslot 1 Chain_Saw ClassicModernSaw Melee_Attacks ClassicFist ClassicSaw\n'
+	'setslot 2 DualRifles Rifle  BrutalPistol ClassicPistol MP40 BrutalPistolOblige\n'
+	'setslot 3 Shot_Gun SSG ClassicShotgun ClassicSSG\n'
+	'setslot 4 MiniGun ClassicChaingun HitlersBuzzsaw MG42Oblige D4Machinegun\n'
+	'setslot 5 GrenadeLauncher Rocket_Launcher ClassicRocketLauncher GrenadeLauncherOblige SkulltagGrenadeLauncher\n'
+	'setslot 6 RailGun DualPlasmaRifles Plasma_Gun ClassicPlasmaRifle OldSkoolPlasmaRifle RailGunOblige SkulltagRailGun PuristRailGun UnrestrictedZorcher\n'
+	'setslot 7 BFG10k BIG_FUCKING_GUN VanillaBFG9000 BFG10KOblige SkulltagBFG10k D4GaussCannon\n'
+	'setslot 8 HellishMissileLauncher\n'
+	'setslot 9 FlameCannon\n'
+	'setslot 0 HandGrenades HandGrenadesOblige\n'
+    }
+
+    --[['clearplayerclasses\n' --because Brutal uses a keyconf for this I have to as well. If I put it in mapinfo the keyconf overwrites it.
+    'addplayerclass ' .. BRUTALDOOM.PARAMETERS.playerclass .. '\n'
+	}]]--
+    
+    
+    gui.wad_add_text_lump("KEYCONF", confdata);
+end
+
+function BRUTALDOOM.respectplayerclass()
+    if BRUTALDOOM.PARAMETERS.playerclass == "Purist" then
+        BRUTALDOOM.WEAPONS.pistol.add_prob = 0
+    end
+end
+
 function BRUTALDOOM.all_done()
+  BRUTALDOOM.weaponsdecorate();
   BRUTALDOOM.decorate();
   BRUTALDOOM4.caco();
   BRUTALDOOM4.decorateweapons();
@@ -1450,6 +1499,7 @@ function BRUTALDOOM.all_done()
 	BRUTALDOOM.createintm();
   end
   BRUTALDOOM.create_mapinfo();
+  BRUTALDOOM.createkeyconf();
 end
 
 function BRUTALITY.all_done()
@@ -1760,12 +1810,24 @@ BRUTALDOOM.PLAYER_MODEL =
 }
 
 function BRUTALDOOM.setup()
+    
+    --BRUTALDOOM.respectplayerclass();
+        
+    gui.printf("Universal Intermission check:\n");
+    BRUTALDOOM.checkuintm();
+        
+    BRUTALDOOM.setsecretexits();
+end
 
-gui.printf("Universal Intermission check:\n");
-BRUTALDOOM.checkuintm();
-    
-BRUTALDOOM.setsecretexits();
-    
+function BRUTALDOOM.weaponsdecorate()
+    if BRUTALDOOM.PARAMETERS.PuristRailGunReload == "Skulltag" then
+        PuristRailGunReloadDecorate = 'RAIF B 6 A_CheckForReload(4, "Reloaded")\n'
+    elseif BRUTALDOOM.PARAMETERS.PuristRailGunReload == "None" then
+        PuristRailGunReloadDecorate = 'RAIF B 6 A_Jump(256, "Reloaded")\n'
+    elseif BRUTALDOOM.PARAMETERS.PuristRailGunReload == "Every" then
+        PuristRailGunReloadDecorate = 'RAIF B 6\n'
+end
+
 local pistolpickupmessage = {
     "You got the Pistol! Woop-de-fucking-do!",
     "You got a tiny pistol! It'll look great next to your assault rifle!",
@@ -1812,23 +1874,146 @@ local data =
 		'Inventory.PickupMessage "You got the grenade launcher!"\n'
 		'Weapon.SlotNumber 5\n'
                 'States\n'
-                '{\n', 
+                '{\n',
+                'Ready:\n'
+                    'TNT1 A 0 A_JumpIfInventory("IsPlayingAsPurist", 1, "PuristGun")\n'
+                    'TNT1 A 0 A_PlaySound("RLANDRAW")\n'
+                    'GLSW ABC 1\n'
+                    'TNT1 AAAA 0 //removed 1 frame to compensate for the frame added by the purist\n'
+                    'TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")\n'
+                    'TNT1 A 0 A_JumpIfInventory("Salute1", 1, "Salute")\n'
+                    'TNT1 A 0 A_JumpIfInventory("Salute2", 1, "Salute")\n'
+                    'TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")\n'
+                    'GLAN A 1 A_WeaponReady\n'
+                    'Goto Ready+7\n'
+                'PuristGun:\n'
+                    'TNT1 A 1\n'
+                    'TNT1 A 0 A_GiveInventory("SkulltagGrenadeLauncher", 1)\n'
+                    'TNT1 A 0 A_TakeInventory("GrenadeLauncherOblige", 1)\n'
+                    'TNT1 A 10\n'
+                    'Goto Ready2\n'
                 generickickstate,
                 '\n}\n'
 		'\n}\n'
 		'\n'
+        'ACTOR SkulltagGrenadeLauncher : DoomWeapon\n'
+        '{\n'
+        '  SpawnID 163\n'
+        '  Radius 20\n'
+        '  Height 16\n'
+        '  Weapon.Selectionorder 2500\n'
+        '  +WEAPON.NOAUTOFIRE\n'
+        '  +WEAPON.NOAUTOAIM\n'
+        '  Weapon.AmmoUse 1\n'
+        '  Weapon.AmmoGive 2\n'
+        '  Weapon.AmmoType "RocketAmmo"\n'
+        '  Weapon.Kickback 100\n'
+        '  Weapon.SlotNumber 5\n'
+        '  Inventory.PickupMessage "$PICKUP_GRENADELAUNCHER" // "You got the grenade launcher!"\n'
+        '\n'
+        '  States\n'
+        '  {\n'
+        '  Spawn:\n'
+        '    GLAU A -1\n'
+        '    Stop\n'
+        '  Ready:\n'
+        '    GRLG A 1 A_WeaponReady\n'
+        '    Loop\n'
+        '  Deselect:\n'
+        '    GRLG A 1 A_Lower\n'
+        '    Loop\n'
+        '  Select: \n'
+        '    GRLG A 1 A_Raise\n'
+        '    Loop\n'
+        '  Fire: \n'
+        '    GRLG B 8 A_GunFlash\n'
+        '    GRLG B 12 A_FireCustomMissile("ShortGrenade",0, 1, 0, 0)\n'
+        '    GRLG B 0 A_ReFire\n'
+        '    Goto Ready \n'
+        '  Flash: \n'
+        '    GRLF A 3 bright A_Light1\n'
+        '    GRLF B 4 bright\n'
+        '    GRLF C 4 bright A_Light2\n'
+        '    GRLF D 4 bright A_Light2\n'
+        '    Goto LightDone\n'
+        '  }\n'
+        '}\n'
+        '\n'
 		'actor RailGunOblige : RailGun 297\n'
 		'{\n'
-                '//$Category "Weapons"\n'
-                '//$EditorSprite "SRCGA0"\n'
-                'Tag "Rail Gun"\n'
+        '//$Category "Weapons"\n'
+        '//$EditorSprite "SRCGA0"\n'
+        'Tag "Rail Gun"\n'
 		'Weapon.SlotNumber 6\n'
                 'States\n'
                 '{\n'
+                'Ready:\n'
+                    'TNT1 A 0 A_JumpIfInventory("IsPlayingAsPurist", 1, "PuristGun")\n'
+                    'RAIS ABC 1\n'
+                    'TNT1 AA 0 //removed one frame here to compensate for the one added by the purist gun\n'
+                    'TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")\n'
+                    'TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")\n'
+                    'TNT1 A 0 A_JumpIfInventory("Salute1", 1, "Salute")\n'
+                    'TNT1 A 0 A_JumpIfInventory("Salute2", 1, "Salute")\n'
+                    'TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")\n'
+                    'TNT1 A 0 A_JumpIfInventory("RailgunAmmo",1,2)\n'
+                    'Goto Reload\n'
+                    'TNT1 AAAA 0\n'
+                    'RAIL A 1 A_WeaponReady\n'
+                    'Goto Ready+4\n'
+                'PuristGun:\n'
+                    'TNT1 A 1\n'
+                    'TNT1 A 0 A_GiveInventory("PuristRailgun", 1)\n'
+                    'TNT1 A 0 A_TakeInventory("RailGunOblige", 1)\n'
+                    'TNT1 A 10\n'
+                    'Goto Ready2\n'
                 ,generickickstate,
                 '\n}\n'
 		'}\n'
 		'\n'
+        'ACTOR PuristRailgun : DoomWeapon\n'
+        '{\n'
+        '  SpawnID 164\n'
+        '  Radius 20\n'
+        '  Height 16\n'
+        '  Weapon.Selectionorder 100\n'
+        '  Weapon.AmmoUse 10\n'
+        '  Weapon.AmmoGive 40\n'
+        '  Weapon.AmmoType "Cell"\n'
+        "  Weapon.SlotNumber 6 // This line isn't in skulltag.pk3, which instead defines the slot directly in DoomPlayer\n"
+        '  Inventory.Pickupmessage "You got the railgun!"\n'
+        '  Obituary "%o was railed by %k."\n'
+        '  States\n'
+        '  {\n'
+        '  Ready:\n'
+        '    RAIL A 1 A_WeaponReady\n'
+        '    Loop\n'
+        '  Deselect:\n'
+        '    RAIL A 1 A_Lower\n'
+        '    Loop\n'
+        '  Select:\n'
+        '    RAIL A 1 A_Raise\n'
+        '    Loop\n'
+        '  Fire:\n'
+        '    RAIF A 12 A_FireRailgun\n'
+        ,PuristRailGunReloadDecorate,
+        '    RAIR ABCDEDCB 6\n'
+        '    RAIR A 6 A_ResetReloadCounter\n'
+        '  Reloaded:\n'
+        '    RAIL A 6\n'
+        '    RAIL M 0 A_ReFire\n'
+        '    Goto Ready\n'
+        '  Flash:\n'
+        '    TNT1 A 5 bright A_Light1\n'
+        '    TNT1 A 5 bright A_Light2\n'
+        '    TNT1 A 0 bright A_Light0\n'
+        '    Goto LightDone\n'
+        '  Spawn:\n'
+        '    SRCG A -1\n'
+        '    Stop\n'
+        '  }\n'
+        '}\n'
+        '\n'
 		'actor BFG10KOblige : BFG10K 296\n'
 		'{\n'
                 '//$Category "Weapons"\n'
@@ -1837,10 +2022,112 @@ local data =
                 'Weapon.SlotNumber 7\n'
                 'States\n'
                 '{\n'
-                ,generickickstate,
+                    'Ready:\n'
+                        'TNT1 A 0 A_JumpIfInventory("IsPlayingAsPurist", 1, "PuristGun")\n'
+                        'Goto Steady\n'
+                    'PuristGun:\n'
+                        'TNT1 A 1\n'
+                        'TNT1 A 0 A_GiveInventory("SkulltagBFG10K", 1)\n'
+                        'TNT1 A 0 A_TakeInventory("BFG10KOblige", 1)\n'
+                        'TNT1 A 10\n'
+                        'Goto Steady\n'
+                    ,generickickstate,
                 '\n}\n'
 		'}\n'
 		'\n'
+        'ACTOR SkulltagBFG10K : DoomWeapon\n'
+        '{\n'
+            'SpawnID 165\n'
+            'Radius 20\n'
+            'Height 20\n'
+            'Weapon.Selectionorder 2800\n'
+            'Weapon.AmmoUse 5\n'
+            'Weapon.AmmoGive 40\n'
+            'Weapon.AmmoType "Cell"\n'
+            'Weapon.Kickback 100\n'
+            'Weapon.SlotNumber 7\n'
+            'Inventory.Pickupmessage "You got the BFG10000!  Hell, yes!"\n'
+            '+WEAPON.NOAUTOFIRE\n'
+            '+WEAPON.NOLMS\n'
+            'States\n'
+            '{\n'
+            'Spawn:\n'
+            '   BFG2 A -1\n'
+            '   Stop\n'
+            'Ready:\n'
+            '   BG2G A 0 A_PlaySound ("weapons/bfg10kidle")\n'
+            '   BG2G A 1 A_WeaponReady\n'
+            '   BG2G A 1 A_WeaponReady\n'
+            '   BG2G A 1 A_WeaponReady\n'
+            '   BG2G B 1 A_WeaponReady\n'
+            '   BG2G B 1 A_WeaponReady\n'
+            '   BG2G B 1 A_WeaponReady\n'
+            '   BG2G C 1 A_WeaponReady\n'
+            '   BG2G C 1 A_WeaponReady\n'
+            '   BG2G C 1 A_WeaponReady\n'
+            '   BG2G D 1 A_WeaponReady\n'
+            '   BG2G D 1 A_WeaponReady\n'
+            '   BG2G D 1 A_WeaponReady\n'
+            '   Loop\n'
+            'Deselect:\n'
+            '   BG2G E 1 A_Lower\n'
+            '   Loop\n'
+            'Select:\n'
+            '   BG2G E 1 A_Raise\n'
+            '   Loop\n'
+            'Fire:\n'
+            '   BG2G E 20 A_PlaySound ("weapons/bfg10kf")\n'
+            '   BG2G F 4\n'
+            '   BG2G G 1\n'
+            '   BG2G H 1\n'
+            '   BG2G I 1\n'
+            '   BG2G J 1\n'
+            '   Goto Hold\n'
+            'Hold:\n'
+            '   BG2G K 2 A_GunFlash\n'
+            '   BG2G L 2 A_FireBullets(0,0,1,0,"BFG10kShot")\n'
+            '   BG2G M 2\n'
+            '   BG2G N 0 A_ReFire\n'
+            '   BG2G O 35 A_PlaySound ("weapons/bfg10kcool")\n'
+            '   Goto Ready\n'
+            'Flash:\n'
+            '   TNT1 A 2 Bright A_Light1\n'
+            '   TNT1 A 3 Bright\n'
+            '   Goto LightDone\n'
+            '   Stop\n'
+        '  }\n'
+        '}\n'
+        'ACTOR BFG10kShot\n'
+        '{\n'
+        '  SpawnID 217\n'
+        '  Radius 11\n'
+        '  Height 8\n'
+        '  Speed 20\n'
+        '  Damage 160\n'
+        '  DamageType BFG10k\n'
+        '  +NOBLOCKMAP\n'
+        '  +NOGRAVITY\n'
+        '  +ACTIVATEIMPACT\n'
+        '  +ACTIVATEPCROSS\n'
+        '  +NOTELEPORT \n'
+        '  +PUFFONACTORS\n'
+        '  +PUFFGETSOWNER\n'
+        '  +FORCERADIUSDMG\n'
+        '  Renderstyle Add\n'
+        '  Alpha 0.75\n'
+        '  SeeSound "weapons/bfg10kx"\n'
+        '  AttackSound "weapons/bfg10kx"\n'
+        '  Obituary "%o was blasted by %k' .. "'" .. 's BFG10K."\n'
+        '  States\n'
+        '  {\n'
+        '  Spawn:\n'
+        '    BFE1 A 0 Bright\n'
+        '    BFE1 A 3 Bright A_Detonate\n'
+        '    BFE1 BCDEF 3 Bright\n'
+        '    Stop\n'
+        '  }\n'
+        '}\n'
+        '\n'
                 'ACTOR BrutalPistolOblige : Weapon 320\n'
                 '{\n'
                 '//$Category "Weapons"\n'
@@ -1895,10 +2182,11 @@ local data =
                 '	Goto Flash\n'
                 '	\n'
                 '	Ready:\n'
+                '        TNT1 A 0 A_JumpIfInventory("IsPlayingAsPurist", 1, "PuristGun")\n'
                 '        //TNT1 A 1 A_JumpIfInventory("GoFatality", 1, "Steady")\n'
                 '        TNT1 A 0 A_PlaySound("CLIPIN")\n'
                 '        PISS AB 1\n'
-                '        TNT1 AAAAAAAA 0\n'
+                '        TNT1 AAAAAAA 0//removed one frame here to compensate for the one added by the purist check\n'
                 '        TNT1 A 0 //A_JumpIfInventory("BDPistolAmmo",1,2)\n'
                 '        //Goto Reload\n'
                 '        TNT1 AAAA 0\n'
@@ -2060,6 +2348,12 @@ local data =
                 '		TNT1 A 0 A_Print("No Grenades Left.")\n'
                 '		Goto REady+6	\n'
                 ,generickickstate,
+                'PuristGun:\n'
+                        'TNT1 A 1\n'
+                        'TNT1 A 0 A_GiveInventory("ClassicPistol", 1)\n'
+                        'TNT1 A 0 A_TakeInventory("BrutalPistolOblige", 1)\n'
+                        'TNT1 A 10\n'
+                        'Goto Steady\n'
                 '	}\n'
                 '}\n'
                 'actor MG42Oblige : HitlersBuzzsaw 321\n'
@@ -2243,22 +2537,6 @@ local data =
 	}
     gui.wad_add_text_lump("DECORATE", data);
 
-local confdata =
-	{
-	'setslot 1 Chain_Saw ClassicModernSaw Melee_Attacks ClassicFist ClassicSaw\n'
-	'setslot 2 DualRifles Rifle  BrutalPistol ClassicPistol MP40 BrutalPistolOblige\n'
-	'setslot 3 Shot_Gun SSG ClassicShotgun ClassicSSG\n'
-	'setslot 4 MiniGun ClassicChaingun HitlersBuzzsaw MG42Oblige D4Machinegun\n'
-	'setslot 5 GrenadeLauncher Rocket_Launcher ClassicRocketLauncher GrenadeLauncherOblige\n'
-	'setslot 6 RailGun DualPlasmaRifles Plasma_Gun ClassicPlasmaRifle OldSkoolPlasmaRifle RailGunOblige UnrestrictedZorcher\n'
-	'setslot 7 BFG10k BIG_FUCKING_GUN VanillaBFG9000 BFG10KOblige D4GaussCannon\n'
-	'setslot 8 HellishMissileLauncher\n'
-	'setslot 9 FlameCannon\n'
-	'setslot 0 HandGrenades HandGrenadesOblige\n'
-
-	}
-    gui.wad_add_text_lump("KEYCONF", confdata);
-
 end
 
 function BRUTALDOOM.flem_nukage()
@@ -2404,6 +2682,11 @@ OB_MODULES["brutaltweaks"] =
   }
   options =
   {
+      PuristRailGunReload =
+      {
+          label="Purist Railgun Reloading"
+          choices=BRUTALDOOM.PURISTRAILGUNRELOADOPTIONS
+      }
       iwad =
       {
           label="iwad"
