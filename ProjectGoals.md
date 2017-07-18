@@ -113,9 +113,12 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 
 ### Weapons
 
-**Done:** Assault Rifle, Unmaker plus ammo, Alpha Unmaker.
+**Done:**
 
-**Future:** I plan to implement the three Unmaker keys via the use of three prebuilt maps, each containing just a key, which are accessed by (randomly placed) secret exits.
+* Assault Rifle, Unmaker plus ammo, Alpha Unmaker.
+* Unmaker keys added in 3 secret levels.
+
+**Future:**
 
 ### Other
 

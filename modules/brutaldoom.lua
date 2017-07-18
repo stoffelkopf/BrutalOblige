@@ -135,7 +135,7 @@ chexkeys = [[
 		}
 		]]
         
-PuristRailGunReloadDecorate = [[
+puristrailgunreloadDecorate = [[
     RAIF B 6 //A_CheckForReload(4, "Reloaded")
     ]]
 
@@ -184,7 +184,7 @@ BRUTALDOOM.PARAMETERS =
 	brutalityversion = "Project Brutality 2.03.pk3"
 	usingui = false
     playerclass = "Doomer"
-    PuristRailGunReload = "None"
+    puristrailgunreload = "None"
 }
 
 BRUTALDOOM.IWADS =
@@ -1820,11 +1820,11 @@ function BRUTALDOOM.setup()
 end
 
 function BRUTALDOOM.weaponsdecorate()
-    if BRUTALDOOM.PARAMETERS.PuristRailGunReload == "Skulltag" then
+    if BRUTALDOOM.PARAMETERS.puristrailgunreload == "Skulltag" then
         PuristRailGunReloadDecorate = 'RAIF B 6 A_CheckForReload(4, "Reloaded")\n'
-    elseif BRUTALDOOM.PARAMETERS.PuristRailGunReload == "None" then
+    elseif BRUTALDOOM.PARAMETERS.puristrailgunreload == "None" then
         PuristRailGunReloadDecorate = 'RAIF B 6 A_Jump(256, "Reloaded")\n'
-    elseif BRUTALDOOM.PARAMETERS.PuristRailGunReload == "Every" then
+    elseif BRUTALDOOM.PARAMETERS.puristrailgunreload == "Every" then
         PuristRailGunReloadDecorate = 'RAIF B 6\n'
 end
 
@@ -2682,7 +2682,7 @@ OB_MODULES["brutaltweaks"] =
   }
   options =
   {
-      PuristRailGunReload =
+      puristrailgunreload =
       {
           label="Purist Railgun Reloading"
           choices=BRUTALDOOM.PURISTRAILGUNRELOADOPTIONS

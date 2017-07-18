@@ -1,3 +1,7 @@
+ukeyexit1 = math.random(1,9)
+ukeyexit2 = math.random(11,19)
+ukeyexit3 = math.random(20,29)
+
 local castcall =
 [[
 Intermission Brutal64_FinalIntermission
@@ -158,19 +162,84 @@ Intermission Brutal64Cast
     }
 ]]
 
+function BRUTAL64.setukeyexits()
+ 
+    --set ukeyexits to not conflict with the secret exits
+  while secretexit1 == ukeyexit1 do
+      ukeyexit1 = math.random(1,9)
+  end
+  while secretexit2 == ukeyexit2 do
+      ukeyexit2 = math.random(11,19)
+  end
+  while secretexit3 == ukeyexit3 do
+      ukeyexit3 = math.random(20,29)
+  end
+    
+  if ukeyexit1 == 1 then GAME.SECRET_EXITS.BOM01 = true end --there must be a better way but I don't know it
+  if ukeyexit1 == 2 then GAME.SECRET_EXITS.BOM02 = true end
+  if ukeyexit1 == 3 then GAME.SECRET_EXITS.BOM03 = true end
+  if ukeyexit1 == 4 then GAME.SECRET_EXITS.BOM04 = true end
+  if ukeyexit1 == 5 then GAME.SECRET_EXITS.BOM05 = true end
+  if ukeyexit1 == 6 then GAME.SECRET_EXITS.BOM06 = true end
+  if ukeyexit1 == 7 then GAME.SECRET_EXITS.BOM07 = true end
+  if ukeyexit1 == 8 then GAME.SECRET_EXITS.BOM08 = true end
+  if ukeyexit1 == 9 then GAME.SECRET_EXITS.BOM09 = true end
+  if ukeyexit1 == 10 then GAME.SECRET_EXITS.BOM10 = true end
+  if ukeyexit2 == 11 then GAME.SECRET_EXITS.BOM11 = true end
+  if ukeyexit2 == 12 then GAME.SECRET_EXITS.BOM12 = true end
+  if ukeyexit2 == 13 then GAME.SECRET_EXITS.BOM13 = true end
+  if ukeyexit2 == 14 then GAME.SECRET_EXITS.BOM14 = true end
+  if ukeyexit2 == 15 then GAME.SECRET_EXITS.BOM15 = true end
+  if ukeyexit2 == 16 then GAME.SECRET_EXITS.BOM16 = true end
+  if ukeyexit2 == 17 then GAME.SECRET_EXITS.BOM17 = true end
+  if ukeyexit2 == 18 then GAME.SECRET_EXITS.BOM18 = true end
+  if ukeyexit2 == 19 then GAME.SECRET_EXITS.BOM19 = true end
+  if ukeyexit3 == 20 then GAME.SECRET_EXITS.BOM20 = true end
+  if ukeyexit3 == 21 then GAME.SECRET_EXITS.BOM21 = true end
+  if ukeyexit3 == 22 then GAME.SECRET_EXITS.BOM22 = true end
+  if ukeyexit3 == 23 then GAME.SECRET_EXITS.BOM23 = true end
+  if ukeyexit3 == 24 then GAME.SECRET_EXITS.BOM24 = true end
+  if ukeyexit3 == 25 then GAME.SECRET_EXITS.BOM25 = true end
+  if ukeyexit3 == 26 then GAME.SECRET_EXITS.BOM26 = true end
+  if ukeyexit3 == 27 then GAME.SECRET_EXITS.BOM27 = true end
+  if ukeyexit3 == 28 then GAME.SECRET_EXITS.BOM28 = true end
+  if ukeyexit3 == 29 then GAME.SECRET_EXITS.BOM29 = true end
+  gui.printf('Secret exit table:\n' .. table.tostring(GAME.SECRET_EXITS) .. '\n')
+end
+
 function BRUTAL64.create_mapinfo()
   gui.printf("Brutal 64 Mapinfo code is starting\n");
+  
   local data =
   {
     "//\n"
     "// MAPINFO LUMP created by OBLIGE\n"
     "//\n"
-    "//Secret exits are in maps " .. tostring(secretexit1) .. ', ' .. tostring(secretexit2) .. ' and ' .. tostring(secretexit3) .. '\n'
+    "//Exits to secret levels are in maps " .. tostring(secretexit1) .. ', ' .. tostring(secretexit2) .. ' and ' .. tostring(secretexit3) .. '\n'
+    "//Exits to Unmaker Keys are in maps " .. tostring(ukeyexit1) .. ', ' .. tostring(ukeyexit2) .. ' and ' .. tostring(ukeyexit3) .. '\n'
     "clearepisodes\n\n"
     'episode bom01\n'
     '{\n'
     'name = "Brutal Oblige"\n'
     '}\n\n'
+    'map UKEY01 "???"\n'
+    '{\n'
+    'next = "BOM0' .. tostring(ukeyexit1 + 1) .. '"\n'
+    'cluster = 10\n'
+    'NoIntermission\n'
+    '}\n'
+    'map UKEY02 "???"\n'
+    '{\n'
+    'next = "BOM0' .. tostring(ukeyexit2 + 1) .. '"\n'
+    'cluster = 10\n'
+    'NoIntermission\n'
+    '}\n'
+    'map UKEY03 "???"\n'
+    '{\n'
+    'next = "BOM0' .. tostring(ukeyexit3 + 1) .. '"\n'
+    'cluster = 10\n'
+    'NoIntermission\n'
+    '}\n'
   }
 
   --- music ---
@@ -224,10 +293,6 @@ function BRUTAL64.create_mapinfo()
         sky1 = 'sky1 = "RSKY3'
       elseif L.theme_name == "urban" then
         sky1 = 'sky1 = "RSKY2'
-      elseif L.theme_name == "satanshankerchief" then --may need to be removed
-	local n = rand.irange(1,3)
-        sky1 = 'sky1 = "CHEXSKY' .. n
-        enterpic = '"CHEXINT"'
       end
       
       --roll for extra sky --may not work
@@ -249,8 +314,18 @@ function BRUTAL64.create_mapinfo()
             table.insert(data, 'next = "EndGame3"\n')
 	  end
 	end
+        if mapnum == ukeyexit1 + 1 then
+            table.insert(data, 'secretnext = "UKEY01"\n')
+        end
+        if mapnum == ukeyexit3 + 1 then
+            table.insert(data, 'secretnext = "UKEY03"\n')
+        end
         if mapnum >=11 and mapnum < 21 then--mapnum == 17 then --map 16 has the secret exit to wolf levels. Number is 1 higher because this is inserted at the start of the next map.
-          table.insert(data, 'secretnext = "BOM31"\n')
+          if mapnum == ukeyexit2 + 1 then
+            table.insert(data, 'secretnext = "UKEY02"\n')
+          else
+            table.insert(data, 'secretnext = "BOM31"\n')
+          end
         end
         if mapnum == 32 then --first secret level (wolf)
           table.insert(data, 'next = "BOM' .. tostring(secretexit2 + 1) .. '"\n')

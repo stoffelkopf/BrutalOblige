@@ -2,6 +2,8 @@ gui.import("brutaldoom")
 --gui.import("brutalthemes")
 gui.import("hereticbrutal")
 
+puristrailgunreload={}
+
 BRUTAL64 = { }
 
 BRUTAL64.MATERIALS = BRUTALDOOM.MATERIALS
@@ -297,8 +299,15 @@ BRUTAL64.PICKUPS =
   }
 }
 
+function BRUTAL64.ukeymaps()
+    gui.wad_transfer_map("brutaloblige/maps/UKEY01.wad","UKEY01","UKEY01");
+    gui.wad_transfer_map("brutaloblige/maps/UKEY02.wad","UKEY02","UKEY02");
+    gui.wad_transfer_map("brutaloblige/maps/UKEY03.wad","UKEY03","UKEY03");
+end
+
 function BRUTAL64.setup()
 	gui.printf("running brutal64 setup\n");
+    BRUTAL64.setukeyexits();
 end
 
 function BRUTAL64.all_done()
@@ -307,6 +316,7 @@ function BRUTAL64.all_done()
 	BRUTAL64.gameinfo();
 	BRUTAL64.monstersdecorate();
 	BRUTAL64.weaponsdecorate();
+    BRUTAL64.ukeymaps();
 	BRUTAL64.create_mapinfo();
 	gui.printf("OB_THEMES:\n" .. table.tostring(OB_THEMES) ..'\n')
 	if BRUTALDOOM.PARAMETERS.iwad == "heretic.wad" then
