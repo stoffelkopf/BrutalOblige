@@ -1,0 +1,9 @@
+#include "zcommon.acs"
+
+script 1 (VOID)
+{
+	FadeTo(255,255,255,1.0,4.0);
+	PlaySound(0,"UNMAKER");
+	Delay(4*35);
+	Exit_Normal(0);
+}

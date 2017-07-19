@@ -101,6 +101,8 @@ skill4=true;
 skill5=true;
 renderstyle="";
 special=243;
+special=226;
+arg0=1;
 }
 
 linedef//#0
