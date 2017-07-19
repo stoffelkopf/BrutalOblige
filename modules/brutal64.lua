@@ -300,9 +300,24 @@ BRUTAL64.PICKUPS =
 }
 
 function BRUTAL64.ukeymaps()
-    gui.wad_transfer_map("brutaloblige/maps/UKEY01.wad","UKEY01","UKEY01");
-    gui.wad_transfer_map("brutaloblige/maps/UKEY02.wad","UKEY02","UKEY02");
-    gui.wad_transfer_map("brutaloblige/maps/UKEY03.wad","UKEY03","UKEY03");
+    
+    --UKEY01--
+    gui.wad_insert_file("brutaloblige/maps/UnmakerKeys/1/UKEY01.dat","UKEY01");
+    gui.wad_insert_file("brutaloblige/maps/UnmakerKeys/1/TEXTMAP.txt","TEXTMAP");
+    gui.wad_insert_file("brutaloblige/maps/UnmakerKeys/1/BEHAVIOR.dat","BEHAVIOR"); -- yes without a u
+    gui.wad_insert_file("brutaloblige/maps/UnmakerKeys/1/ENDMAP.dat","ENDMAP");
+    
+    --UKEY02--
+    gui.wad_insert_file("brutaloblige/maps/UnmakerKeys/2/UKEY02.dat","UKEY02");
+    gui.wad_insert_file("brutaloblige/maps/UnmakerKeys/2/TEXTMAP.txt","TEXTMAP");
+    gui.wad_insert_file("brutaloblige/maps/UnmakerKeys/2/BEHAVIOR.dat","BEHAVIOR");
+    gui.wad_insert_file("brutaloblige/maps/UnmakerKeys/2/ENDMAP.dat","ENDMAP");
+    
+    --UKEY03--
+    gui.wad_insert_file("brutaloblige/maps/UnmakerKeys/3/UKEY03.dat","UKEY03");
+    gui.wad_insert_file("brutaloblige/maps/UnmakerKeys/3/TEXTMAP.txt","TEXTMAP");
+    gui.wad_insert_file("brutaloblige/maps/UnmakerKeys/3/BEHAVIOR.dat","BEHAVIOR");
+    gui.wad_insert_file("brutaloblige/maps/UnmakerKeys/3/ENDMAP.dat","ENDMAP");
 end
 
 function BRUTAL64.setup()
