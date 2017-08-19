@@ -486,9 +486,9 @@ function BRUTALDOOM4.caco()
 	gui.wad_insert_file("brutaloblige/decorates/D4Caco.dec","DECORATE");
 end
 
-function BRUTALDOOM4.decorateweapons()
+--[[function BRUTALDOOM4.decorateweapons()
 	gui.wad_insert_file("brutaloblige/decorates/D4Weapons.dec","DECORATE");
-end
+end]]--
 
 function BRUTALDOOM.epic()
   gui.wad_merge_sections("brutaloblige/brutaloblige.wad");
@@ -496,6 +496,10 @@ function BRUTALDOOM.epic()
   gui.wad_insert_file("brutaloblige/gldefs/epic2alien.gl","GLDEFS");
   gui.wad_insert_file("brutaloblige/sounds/DSGSSIT","DSGSSIT");
   gui.wad_insert_file("brutaloblige/sounds/DSGSDTH","DSGSDTH");
+end
+
+function BRUTALDOOM.castcalldecorate()
+	gui.wad_insert_file("brutaloblige/decorates/CastCall/BrutalCastCall.dec","DECORATE");
 end
 
 BRUTALDOOM.music =
@@ -1052,13 +1056,13 @@ Intermission BrutalDoomCast
     	}
     	Cast
     	{
-    		CastClass = "ObligeEasyMarine"
+    		CastClass = "CastCallEasyMarine"
     		CastName = "Evil Grunt"
     		AttackSound = "Missile", 1, "grunt/attack"
     	}
         Cast
     	{
-    		CastClass = "EvilMarine"
+    		CastClass = "CastCallEvilMarine"
     		CastName = "Evil Marine"
     		AttackSound = "Missile", 1, "PLSM9"
     	}
@@ -1076,7 +1080,7 @@ Intermission BrutalDoomCast
     	}
     	Cast
     	{
-    		CastClass = "ObligeBelphegor"
+    		CastClass = "CastCallBelphegor"
     		CastName = "Belphegor"
     		AttackSound = "Missile", 1, "baron/attack"
     	}
@@ -1123,7 +1127,7 @@ Intermission BrutalDoomCast
     	}
     	Cast
     	{
-    		CastClass = "ObligeJuggernaut"
+    		CastClass = "CastCallHectebus"
     		CastName = "Juggernaut"
     		AttackSound = "Missile", 1, "weapons/rocklf"
     		AttackSound = "Missile", 3, "weapons/rocklf"
@@ -1456,7 +1460,7 @@ function BRUTALDOOM.all_done()
   BRUTALDOOM.weaponsdecorate();
   BRUTALDOOM.decorate();
   BRUTALDOOM4.caco();
-  BRUTALDOOM4.decorateweapons();
+  --BRUTALDOOM4.decorateweapons();
   BRUTALDOOM.flem_nukage();
   DOOM.all_done();
   BRUTALDOOM.epic();
@@ -1479,6 +1483,7 @@ function BRUTALDOOM.all_done()
   end
   BRUTALDOOM.create_mapinfo();
   BRUTALDOOM.createkeyconf();
+  BRUTALDOOM.castcalldecorate();
 end
 
 function BRUTALITY.all_done()
@@ -1678,7 +1683,7 @@ BRUTALDOOM.AMMOS = --might not be neccessary
 	grenade = { start_bonus = 1  }
 }
 
-BRUTALDOOM4.WEAPONS =
+--[[BRUTALDOOM4.WEAPONS =
 {
     D4Machinegun =
     {
@@ -1726,7 +1731,7 @@ BRUTALDOOM4.WEAPONS =
       give = { {ammo="cell",count=50} }
       bonus_ammo = 40
   }
-}
+}]]--
 
 
 BRUTALDOOM.NICE_ITEMS =

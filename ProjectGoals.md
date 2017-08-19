@@ -116,8 +116,6 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 * Assault Rifle, Unmaker plus ammo, Alpha Unmaker.
 * Unmaker keys added in 3 secret levels.
 
-**Future:**
-
 ### Other
 
 **Done:** 64 monsters in final cast call.
@@ -149,7 +147,6 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 **Partially done:**
 
 * Chaingun Cyberdemon (Zyberdemon). The monster works but is never actually put in any maps.
-* Doom 4 weapons and upgrade station. Need to work on balance.
 * Eygpt theme which can work with or without final doom patches.
 
 **Future:**
