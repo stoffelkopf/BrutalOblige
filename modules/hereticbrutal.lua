@@ -152,6 +152,7 @@ end
 function heretic_freetexture()
 	gui.wad_merge_sections("brutaloblige/freedoomtextures.wad")
 	gui.wad_merge_sections("brutaloblige/freedoomsprites1.wad")
+    gui.wad_merge_sections("brutaloblige/freedoomsprites2.wad")
 	local data =
 	{
     'Texture "AASHITTY", 64, 64\n'
