@@ -2,6 +2,12 @@
         --STARTERPACK--
 -----------------------------------------------------------------------------
 
+STARTERPACK.ENTITIES =
+{
+  starterpacktank = { id=4184, r=42, h=56 }
+  panzertank = { id=4383, r=42, h=56 }
+}
+
 --Banners etc----------------------------------------------------------
 function STARTERPACK.decorate()
 

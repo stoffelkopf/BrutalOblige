@@ -1774,9 +1774,6 @@ BRUTALDOOM.PLAYER_MODEL =
 }
 
 function BRUTALDOOM.setup()
-    
-    --BRUTALDOOM.respectplayerclass();
-        
     gui.printf("Universal Intermission check:\n");
     BRUTALDOOM.checkuintm();
         
@@ -1790,7 +1787,7 @@ function BRUTALDOOM.weaponsdecorate()
         PuristRailGunReloadDecorate = 'RAIF B 6 A_Jump(256, "Reloaded")\n'
     elseif BRUTALDOOM.PARAMETERS.puristrailgunreload == "Every" then
         PuristRailGunReloadDecorate = 'RAIF B 6\n'
-end
+    end
 
 local pistolpickupmessage = {
     "You got the Pistol! Woop-de-fucking-do!",
