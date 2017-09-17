@@ -195,7 +195,7 @@ OB_MODULES["brutal_weapon_control"] =
     {
         label="Grenade Launcher",
         choices=CTL_BRUTAL.WEAPON_CHOICES,
-        tooltip="The grenade launcher from skulltag. Unlike skulltag it launches actual grenades rather than using rocket ammo."
+        tooltip="The grenade launcher from skulltag."
     }
     railgun =
     {
@@ -215,7 +215,7 @@ OB_MODULES["brutal_weapon_control"] =
         choices=CTL_BRUTAL.WEAPON_CHOICES
         tooltip="The MG 42 was first manufactured in the year 1942 by Mauser in Oberndorf, Germany with the aim of simplifying production of the technically sound but expensive and manpower-intensive MG-34. It was designed to be used as a general-purpose machine gun (GPMG) and could be mounted on a tripod with a belt feed or utilized in the light machine gun role with a bi-pod and a 50-round belt drum feed. It had several nicknames including Hitler's Zipper and Hitler's Buzzsaw, originating from the fearsome 1,200 RPM fire rate, fast enough that individual shots blended together to make a distinctive tearing or ripping sound."
     }
-    D4Machinegun =
+    --[[D4Machinegun =
     {
         label="Doom 4 Machinegun",
         choices=CTL_BRUTAL.WEAPON_CHOICES
@@ -226,7 +226,7 @@ OB_MODULES["brutal_weapon_control"] =
         label="Doom 4 Gauss Cannon",
         choices=CTL_BRUTAL.WEAPON_CHOICES
         tooltip="A very powerful plasma based weapon."
-    }
+    }]]--
   }
 }
 

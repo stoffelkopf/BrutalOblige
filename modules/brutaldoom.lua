@@ -2610,6 +2610,8 @@ OB_GAMES["brutality"] =
 OB_MODULES["brutaltweaks"] =
 {
   label = "Brutal Doom Tweaks"
+  
+  side = "left"
 
   game = { brutaldoom=1, brutal64=1 }
   playmode = { sp=1, coop=1 }
@@ -2627,7 +2629,7 @@ OB_MODULES["brutaltweaks"] =
   {
       puristrailgunreload =
       {
-          label="Purist Railgun Reloading"
+          label="Purist Railgun\n Reloading"
           choices=BRUTALDOOM.PURISTRAILGUNRELOADOPTIONS
       }
       iwad =

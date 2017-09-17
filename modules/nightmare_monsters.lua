@@ -2980,7 +2980,7 @@ end
 
 OB_MODULES["nightmare_mon_control"] =
 {
-  label = "Nightmare Monsters : Fine Control"
+  label = "Nightmare Monsters: Fine Control"
 
   mod = "nightmare_mons"
 
@@ -3000,7 +3000,7 @@ OB_MODULES["nightmare_mon_control"] =
 
 OB_MODULES["nightmare_mon_control_brutality"] =
 {
-  label = "Nightmare Monsters : Project Brutality"
+  label = "Nightmare Monsters:\nProject Brutality"
 
   mod = "nightmare_mons"
 

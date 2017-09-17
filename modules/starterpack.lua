@@ -6,6 +6,8 @@ STARTERPACK.ENTITIES =
 {
   starterpacktank = { id=4184, r=42, h=56 }
   panzertank = { id=4383, r=42, h=56 }
+  
+  trashbag = { id=710, r=12, h=16 }
 }
 
 --Banners etc----------------------------------------------------------
@@ -908,13 +910,13 @@ OB_MODULES["starterpack_wolfenstein_control"] =
   {
     ClassicSS =
     {
-        label="Classic Wolfenstein SS",
+        label="Classic SS guard",
         choices=STARTERPACK.CONTROL_CHOICES
         tooltip="The SS guard as he appears in vanilla Doom 2 and,you know, Wolfenstein."
     }
     BrutalSS =
     {
-        label="Brutal Wolfenstein SS",
+        label="Brutal SS guard",
         choices=STARTERPACK.CONTROL_CHOICES
         tooltip="The SS guard as he appears in Brutal Doom."
     }
