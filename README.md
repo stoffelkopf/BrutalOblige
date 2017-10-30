@@ -79,7 +79,7 @@ As for the starter pack check the box and bfriend1.pk3 should load automatically
 * D4 Machine gun can't be dual wielded, this was a deliberate decision, let me know if you disagree with it.
 * If you use the starter pack the music will always be randomised regardless of your settings.
 * If you get "Script error, "brutalv20b.pk3:cvarinfo" line 1: cvar 'bd_bloodamount' already exists" then you are loading brutal doom twice. Try loading *just* the generated wad, it should pull in brutal automatically.
-* Sometimes you get an unexpected value in pairs error. I'm trying to find out what is causing it but until then it is only happening some of the time. So just keep trying until it works.
+* ~~Sometimes you get an unexpected value in pairs error. I'm trying to find out what is causing it but until then it is only happening some of the time. So just keep trying until it works.~~ I think I've got this one. I'd set the ammo type to clip rather than bullet for the mg42. As there was no clip ammo type the pickup placing script couldn't handle it.
 
 [Screenshots](http://imgur.com/a/SRr9f)
 

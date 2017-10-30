@@ -1658,9 +1658,9 @@ BRUTALDOOM.WEAPONS =
 	    rate=1
 	    damage=1000
 	    attack="hitscan"
-	    ammo="clip" --not really but no existing ammo type
+	    ammo="bullet" --not really but no existing ammo type
 	    per=1
-	    give={ {ammo="clip",count=600} }
+	    give={ {ammo="bullet",count=600} }
 	}
         --[[oldskoolplasma =
         {
@@ -1739,18 +1739,18 @@ BRUTALDOOM.NICE_ITEMS =
 	goggles = REMOVE_ME --seem to be broken in v20b and were never that useful in oblige maps anyway
 }
 
-BRUTALDOOM.PICKUPS =
-{
-  -- AMMO --
+BRUTALDOOM.PICKUPS = DOOM.PICKUPS
 
-  grenade =
+BRUTALDOOM.PICKUPS.grenade =
   {
     id = 300
     kind = "ammo"
     add_prob = 10
     give = { {ammo="grenade",count=5} } --actually it only gives 1 but this was the only way to stop Oblige flooding maps with them
+    start_prob = 0
   }
-  Skel_Poster =
+  
+BRUTALDOOM.PICKUPS.Skel_Poster =
   {
       id = 323
       r = 36
@@ -1760,8 +1760,8 @@ BRUTALDOOM.PICKUPS =
       add_prob = 20
       give = { {health=10} }
       theme_prob = 200
+      start_prob = 0
   }
-}
 
 
 BRUTALDOOM.PLAYER_MODEL =

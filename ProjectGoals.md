@@ -151,6 +151,7 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 
 **Future:**
 
+* Properly document what all the options do.
 * More monsters from Chex/Chex 3. In brutal style of course.
 
 ## Pipe dreams, stuff that will probably never work but I'll give it a go anyway
