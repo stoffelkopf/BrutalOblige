@@ -486,10 +486,6 @@ function BRUTALDOOM4.caco()
 	gui.wad_insert_file("brutaloblige/decorates/D4Caco.dec","DECORATE");
 end
 
---[[function BRUTALDOOM4.decorateweapons()
-	gui.wad_insert_file("brutaloblige/decorates/D4Weapons.dec","DECORATE");
-end]]--
-
 function BRUTALDOOM.epic()
   gui.wad_merge_sections("brutaloblige/brutaloblige.wad");
   gui.wad_insert_file("brutaloblige/SNDINFO","SNDINFO");
@@ -1460,7 +1456,6 @@ function BRUTALDOOM.all_done()
   BRUTALDOOM.weaponsdecorate();
   BRUTALDOOM.decorate();
   BRUTALDOOM4.caco();
-  --BRUTALDOOM4.decorateweapons();
   BRUTALDOOM.flem_nukage();
   DOOM.all_done();
   BRUTALDOOM.epic();
@@ -1682,57 +1677,6 @@ BRUTALDOOM.AMMOS = --might not be neccessary
 {
 	grenade = { start_bonus = 1  }
 }
-
---[[BRUTALDOOM4.WEAPONS =
-{
-    D4Machinegun =
-    {
-        id = 314
-        level = 3
-        pref = 50
-        add_prob = 0 --stupidly op, remove for now sort out later
-        start_prob = 0
-        attack = "hitscan"
-        rate = 9.0 --chaingun is 8.5
-        damage = 10
-        ammo = "bullet"
-        per = 1
-        give = { {ammo="bullet",count=20} }
-        bonus_ammo = 50
-    }
-    D4UpgradeStation = --treating this as a weapon works well enough
-  {
-    id = 315
-    level = 4
-    pref = 50
-    add_prob = 0
-    start_prob = 0
-    attack = "hitscan"
-    rate = 8.5
-    damage = 10
-    ammo = "bullet"
-    per = 1
-    give = { {ammo="bullet",count=20} }
-    bonus_ammo = 10
-  }
-  D4GaussCannon =
-  {
-      id = 317
-      level = 8
-      pref = 10
-      add_prob = 0
-      mp_prob = 0
-      attack = "missile"
-      rate = 1
-      damage = 50
-      splash = { 50,20,5 }
-      ammo = "cell"
-      per = 15
-      give = { {ammo="cell",count=50} }
-      bonus_ammo = 40
-  }
-}]]--
-
 
 BRUTALDOOM.NICE_ITEMS =
 {

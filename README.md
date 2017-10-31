@@ -12,7 +12,6 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 * Wolfenstein theme fixed so that it is populated by SS guards (if you run a Wolf themed map made without this addon it is filled with evil marines)
 * Satan's Hankerchief theme; did someone order Brutal Chex Quest? Features textures from everyone's favourite cereal based fps and 4 different types of flemoids to zorch your way through.
 * Nightmare Monsters; a separate module I've made which adds the Nightmare Demon from PSX Doom and the Nightmare Imp from Doom64. This can be used without Brutal Doom but if used with the monsters have more and gorier death states.
-* Machine Gun and Gauss Canon from Doom 4, upgrade stations appear as well! Credit to Necronixxis for the sprites.
 * Doom 4 style cacodemons can appear. This is an additional monster, classic cacos remain intact. Credit to [Merser](http://www.moddb.com/mods/brutal-doom/addons/mersers-sprites-enhancements) for the sprites and code for this one.
 * Kicking with the new weapons is no longer invisible.
 * Support for SGtMarkIV's Brutal Friends addon, this has it's own section for full details.
