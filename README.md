@@ -1,3 +1,5 @@
+**This has not yet been updated to support the Brutal Doom 21 public beta version!** I will be working on V21 support but I haven't got there yet. Hopefully I will have something ready by the time V21 comes out of beta.
+
 # BrutalOblige
 
 For those of you who don't know [Oblige](http://oblige.sourceforge.net/) is a random map generator for Doom. It's really good and you should check it out.

@@ -372,7 +372,7 @@ BRUTALDOOM.HMATERIALS =
 
 BRUTALDOOM.THEMES =
 {
-  egypt2 =
+  --[[egypt2 =
   {
     liquids =
     {
@@ -442,7 +442,7 @@ BRUTALDOOM.THEMES =
 
 --Any rocky/stonelike/metal doors (IE METALDR) would do great for this theme -Chris
 
-  }
+  }]]--
   
   satanshankerchief = 
   {
@@ -643,10 +643,9 @@ BRUTALDOOM.THEMES =
 }
 
 
-
 BRUTALDOOM.ROOM_THEMES =
 {
-  egypt2_Tomb =
+  --[[egypt2_Tomb =
   {
     env  = "building"
     prob = 50
@@ -779,7 +778,7 @@ BRUTALDOOM.ROOM_THEMES =
       RROCK18  = 20
       ASHWALL2 = 10
     }
-  }
+  }]]--
   
   satanshankerchief_Indoors =
   {
@@ -1366,6 +1365,33 @@ BRUTALDOOM.ROOM_THEMES =
     }
   }
 }
+
+--egypt theme clones that from Oblige theme for tnt with a few adjustments
+BRUTALDOOM.THEMES.egypt2=TNT.THEMES.egypt
+BRUTALDOOM.THEMES.egypt2.prefab_remap =
+    {
+      DOORBLU  = "DOORBLU2"
+      DOORRED  = "DOORRED2"
+      DOORYEL  = "DOORYEL2"
+
+      SILVER3  = "MURAL1"
+      GATE3    = "FLAT22"
+      GATE4    = "FLAT22"
+      REDWALL  = "DOKGRIR"
+      SW1COMP  = "SW1CMT"
+	  
+	  BIGDOOR1 = "METALDR"
+	  BIGDOOR2 = "METALDR"
+	  BIGDOOR3 = "METALDR"
+	  BIGDOOR4 = "METALDR"
+	  BIGDOOR5 = "METALDR"
+	  BIGDOOR6 = "METALDR"
+	  BIGDOOR7 = "METALDR"
+    }
+BRUTALDOOM.ROOM_THEMES.egypt2_Tomb=TNT.ROOM_THEMES.egypt_Tomb
+BRUTALDOOM.ROOM_THEMES.egypt2_Hallway=TNT.ROOM_THEMES.egypt_Hallway
+BRUTALDOOM.ROOM_THEMES.egypt2_Outdoors=TNT.ROOM_THEMES.egypt_Outdoors
+BRUTALDOOM.ROOM_THEMES.egypt2_Cave=TNT.ROOM_THEMES.egypt_Cave
 
 OB_THEMES["satanshankerchief"] =
 {
@@ -2003,4 +2029,5 @@ OB_THEMES["nukem"] =
   mod="brutal_starterpack"
   name_class = "URBAN"
   mixed_prob = 0
+  shown = False --if this is true it shows even without STARTERPACK being in use, which causes errors. Need to find a good solution.
 }

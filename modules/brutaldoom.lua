@@ -159,6 +159,7 @@ gui.import("brutality")
 gui.import("starterpack")
 gui.import("UniversalIntermissionCompat/BrutalINTM")
 gui.import("functions/tablecontains")
+gui.import("functions/tablemerge")
 gui.import("functions/filereading")
 --brutal friends imported at the end so it can inherit monster probs from the easy marine
 
@@ -1683,7 +1684,7 @@ BRUTALDOOM.NICE_ITEMS =
 	goggles = REMOVE_ME --seem to be broken in v20b and were never that useful in oblige maps anyway
 }
 
-BRUTALDOOM.PICKUPS = DOOM.PICKUPS
+--BRUTALDOOM.PICKUPS = DOOM.PICKUPS
 
 BRUTALDOOM.PICKUPS.grenade =
   {
