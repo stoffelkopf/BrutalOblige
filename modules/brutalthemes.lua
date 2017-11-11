@@ -198,6 +198,23 @@ BRUTALDOOM.MATERIALS =
   A_CAMO4 =  { t="A-CAMO4",  f="FLOOR7_2" }
   
   PLUTONIADOOR  = { t="A-BROWN4", f="CEIL5_2" }
+  
+  --textures in V21Beta--
+  TNTDOOR1  = { t="TNTDOOR1",  f="FLAT23" }
+  TNTDOOR2  = { t="TNTDOOR2",  f="FLAT23" }
+  TNTDOOR1S  = { t="TNTDOOR1S",  f="FLAT23" }
+  
+  DSAND1  = { t="CLIFF05B",  f="DSAND1" }
+  DSAND2  = { t="CLIFF05B",  f="DSAND2" }
+  DSAND3  = { t="CLIFF05B",  f="DSAND3" }
+  DSAND4  = { t="CLIFF05B",  f="DSAND4" }
+  DSAND5  = { t="CLIFF05B",  f="DSAND5" }
+  
+  BUNKER01  = { t="BUNKER01",  f="FLOOR4_8" }
+  BUNKER02  = { t="BUNKER02",  f="FLOOR4_8" }
+  BUNKER03  = { t="BUNKER03",  f="FLOOR4_8" }
+  BUNKER04  = { t="BUNKER04",  f="FLOOR4_8" }
+  BUNKER05  = { t="BUNKER05",  f="FLOOR4_8" }
 }
 
 
@@ -372,78 +389,6 @@ BRUTALDOOM.HMATERIALS =
 
 BRUTALDOOM.THEMES =
 {
-  --[[egypt2 =
-  {
-    liquids =
-    {
-      slime = 60
-      blood = 30
-      water = 20
-      lava  = 10
-    }
-
-    entity_remap =
-    {
-      k_red    = "ks_red"
-      k_blue   = "ks_blue"
-      k_yellow = "ks_yellow"
-    }
-
-    facades =
-    {
-      SMSTONE6 = 30
-      STONEW1  = 20
-      STWALL   = 20
-      CAVERN1  = 10
-
-      BIGBRIK1 = 30
-      BSTONE2  = 20
-      BRICK4   = 10
-    }
-
-    prefab_remap =
-    {
-      DOORBLU  = "DOORBLU2"
-      DOORRED  = "DOORRED2"
-      DOORYEL  = "DOORYEL2"
-
-      SILVER3  = "MURAL1"
-      GATE3    = "FLAT22"
-      GATE4    = "FLAT22"
-      REDWALL  = "DOKGRIR"
-      SW1COMP  = "SW1CMT"
-	  
-	  BIGDOOR1 = "METALDR"
-	  BIGDOOR2 = "METALDR"
-	  BIGDOOR3 = "METALDR"
-	  BIGDOOR4 = "METALDR"
-	  BIGDOOR5 = "METALDR"
-	  BIGDOOR6 = "METALDR"
-	  BIGDOOR7 = "METALDR"
-    }
-
-    outdoor_torches =
-    {
-      blue_torch = 50
-      green_torch = 50
-      red_torch = 50
-      candelabra = 20
-    }
-
---Mostly based on what is seen in TNT.WAD MAP31
-    monster_prefs =
-    {
-      gunner = 1.2
-      mancubus = 1.3
-      demon   = 1.5
-    }
-
-    archy_arches = true
-
---Any rocky/stonelike/metal doors (IE METALDR) would do great for this theme -Chris
-
-  }]]--
-  
   satanshankerchief = 
   {
     liquids =
@@ -645,141 +590,6 @@ BRUTALDOOM.THEMES =
 
 BRUTALDOOM.ROOM_THEMES =
 {
-  --[[egypt2_Tomb =
-  {
-    env  = "building"
-    prob = 50
-
-    walls =
-    {
-      STWALL  = 30
-      BIGWALL = 20
-      STONEW1 = 20
-      STONEW5 = 10
-      LONGWALL = 5
-
-      BRICK7   = 30
-      BRICK4   = 20
-      BRICK5   = 10
-    }
-
-    floors =
-    {
-      RROCK14  = 20
-      FLAT1_2  = 20
-      FLOOR5_4 = 20
-      MFLR8_1  = 20
-
-      FLAT5_5 = 10
-      RROCK12 = 10
-      FLAT8   = 10
-      SLIME13 = 10
-    }
-
-    ceilings =
-    {
-      FLAT8    = 20
-      FLAT1_1  = 20
-      FLOOR6_2 = 20
-
-      RROCK11 = 10
-      RROCK12 = 10
-      RROCK15 = 10
-      CEIL1_1 = 5
-    }
-  }
-
-
-  egypt2_Hallway =
-  {
-    env  = "hallway"
-    prob = 50
-
-    walls =
-    {
-      STWALL = 30
-      MURAL1 = 15
-      MURAL2 = 15
-      STONE6 = 10
-      BIGMURAL = 5
-    }
-
-    floors =
-    {
-      FLAT5 = 30
-      FLAT1_1 = 30
-      FLAT1_2 = 30
-      FLAT8   = 20
-      FLOOR5_3 = 20
-    }
-
-    ceilings =
-    {
-      FLAT5 = 20
-      FLAT1_1 = 20
-      FLAT1_2 = 20
-      FLAT8   = 20
-      RROCK12 = 20
-      RROCK15 = 20
-      CEIL1_1 = 20
-    }
-  }
-
-
-  egypt2_Outdoors =
-  {
-    env  = "outdoor"
-    prob = 50
-
-    floors =
-    {
-      RROCK09 = 30
-      RROCK16 = 30
-      RROCK13 = 20
-      RROCK04 = 20
-      MFLR8_3 = 20
-      RROCK03 = 10
-      RROCK19 = 10
-    }
-
-    naturals =
-    {
-      ROCK3 = 25
-      ROCK4 = 25
-      ROCK5 = 25
-    }
-  }
-
-
-  egypt2_Cave =
-  {
-    env  = "cave"
-    prob = 50
-
-    walls =
-    {
-      ALTAQUA  = 20
-      ASHWALL7 = 20
-      TANROCK7 = 20
-      TANROCK8 = 20
-
-      ROCK4   = 20
-      BSTONE1 = 20
-      STONE6  = 20
-    }
-
-    floors =
-    {
-      BSTONE1 = 20
-      FLAT10  = 20
-      STONE4  = 20
-
-      SP_ROCK1 = 20 -- MFLR8_3
-      RROCK18  = 20
-      ASHWALL2 = 10
-    }
-  }]]--
-  
   satanshankerchief_Indoors =
   {
     prob = 50
@@ -1392,6 +1202,78 @@ BRUTALDOOM.ROOM_THEMES.egypt2_Tomb=TNT.ROOM_THEMES.egypt_Tomb
 BRUTALDOOM.ROOM_THEMES.egypt2_Hallway=TNT.ROOM_THEMES.egypt_Hallway
 BRUTALDOOM.ROOM_THEMES.egypt2_Outdoors=TNT.ROOM_THEMES.egypt_Outdoors
 BRUTALDOOM.ROOM_THEMES.egypt2_Cave=TNT.ROOM_THEMES.egypt_Cave
+
+BRUTALDOOM.THEMES.egypt2.monster_prefs =
+{
+    gunner = 1.2
+    mancubus = 1.3
+    demon   = 1.3
+    mummy = 2.0
+    Labguy = 0.1
+    HeadlessZombie = 1.9 --Serious Sam had ancient Egypt themed levels and headless enemies so this seems appropriate
+    Zyberdemon = 1.2
+}
+
+BRUTALDOOM.ROOM_THEMES.egypt2_Outdoors.floors =
+{
+    DSAND1 = 40
+    DSAND2 = 40
+    DSAND3 = 30
+    DSAND4 = 30
+    DSAND5 = 30
+    RROCK03 = 10
+    RROCK19 = 10
+}
+
+--Edits and additions to existing themes--
+DOOM.THEMES.tech.prefab_remap =
+{
+    BIGDOOR5 = "TNTDOOR2"
+    BIGDOOR6 = "TNTDOOR2"
+    BIGDOOR7 = "TNTDOOR2"
+}
+DOOM.THEMES.tech.monster_prefs =
+{
+    zombie  = 1.5
+    shooter = 1.2
+    arach   = 1.5
+    Labguy = 1.5
+    AncientArachnotron = 0.1
+    Volcabus = 0.1
+}
+DOOM.THEMES.tech.facades =
+{      
+    BROWN1   = 40
+    STARTAN3 = 40
+    STARG3   = 40
+    STARGR2  = 40
+    STARBR2  = 30
+    
+    BROWN96  = 25
+    BROWNGRN = 25
+    SLADWALL = 20
+    METAL2   = 10
+    METAL1   = 5
+    
+    BUNKER01 = 30
+    BUNKER02 = 30
+    BUNKER03 = 30
+    BUNKER05 = 30
+}
+DOOM.THEMES.tech.fences.BROWN144 = 0 --doesn't tile properly on y
+DOOM.ROOM_THEMES.tech_Gray.walls =
+{
+    GRAY1 = 50
+    GRAY4 = 30
+    GRAY7 = 30
+    ICKWALL1 = 40
+    ICKWALL3 = 20
+    
+    BUNKER01 = 30
+    BUNKER02 = 30
+    BUNKER03 = 30
+    BUNKER05 = 30
+}
 
 OB_THEMES["satanshankerchief"] =
 {
