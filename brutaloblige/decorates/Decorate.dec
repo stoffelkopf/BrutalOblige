@@ -1,0 +1,4 @@
+//Brutal Doom additions
+#include "BRUMONS"
+#include "BRUWEPS"
+#include "CHEXKEYS"

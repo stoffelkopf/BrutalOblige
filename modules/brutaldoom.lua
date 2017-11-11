@@ -8,132 +8,6 @@ secretexit3 = math.random(20,29)
 
 local boss1 = "cyberdemon"
 local boss2 = "mastermind"
-
-local generickickstate = [[
-                DoKick:
-                	TNT1 A 0
-                	TNT1 A 0 A_Takeinventory("Zoomed",1)
-                        TNT1 A 0 A_ZoomFactor(1.0)
-                        TNT1 A 0 A_Takeinventory("ADSmode",1)
-                	NULL A 0 A_JumpIf (momZ > 0, "AirKick")
-                	NULL A 0 A_JumpIf (momZ < 0, "AirKick")
-                	RIFF A 0 A_FireCustomMissile("KickAttackDetectDowned", 0, 0, 0, 0)
-                        TNT1 A 0 A_jumpifinventory("PowerStrength",1,"BerserkerKick")
-                	TNT1 A 0 A_PlaySound("KICK")
-                	TNT1 A 0 SetPlayerProperty(0,1,0)
-                	KICK BCD 1
-                	RIFF A 0 A_FireCustomMissile("KickAttack", 0, 0, 0, -7)
-                        KICK H 5
-                	KICK A 0 A_Takeinventory("Kicking",1)
-                	KICK I 1
-                	KICK GFEDCBA 1
-                	TNT1 A 0 SetPlayerProperty(0,0,0)
-                	TNT1 A 0 A_JumpIfInventory("GoFatality", 1, "Steady")
-                	Goto Ready
-                BerserkerKick:
-                	TNT1 A 0 A_PlaySound("KICK")
-                	TNT1 A 0 SetPlayerProperty(0,1,0)
-                	KICK BCD 1
-                        RIFF A 0 A_FireCustomMissile("SuperKickAttack", 0, 0, 0, -7)
-                        KICK H 5
-                	KICK A 0 A_Takeinventory("Kicking",1)
-                	KICK I 1
-                	KICK GFEDCBA 1
-                	TNT1 A 0 SetPlayerProperty(0,0,0)
-                	TNT1 A 0 A_JumpIfInventory("GoFatality", 1, "Steady")
-                	Goto Ready
-                AirKick:
-                        TNT1 A 0 A_jumpifinventory("PowerStrength",1,"SuperAirKick")
-                	TNT1 A 0 A_PlaySound("KICK")
-                	TNT1 A 0 A_Recoil (-6)
-                        KICK JKLMN 1
-                        RIFF A 0 A_FireCustomMissile("AirKickAttack", 0, 0, 0, -31)
-                        KICK O 3
-                	KICK A 0 A_Takeinventory("Kicking",1)
-                	KICK PQRST 2
-                        TNT1 A 0 A_JumpIfInventory("GoFatality", 1, "Steady")
-                	Goto Ready
-                SuperAirKick:
-                	TNT1 A 0 A_PlaySound("KICK")
-                	TNT1 A 0 A_Recoil (-6)
-                	KICK JKLMN 1
-                        RIFF A 0 A_FireCustomMissile("SuperAirKickAttack", 0, 0, 0, -31)
-                        KICK O 3
-                	KICK A 0 A_Takeinventory("Kicking",1)
-                	KICK PQRST 2
-                	TNT1 A 0 A_JumpIfInventory("GoFatality", 1, "Steady")
-                	Goto Ready
-                ]]
-                
-local genericgrenadestate = [[
-                TossGrenade:
-                    TNT1 A 0
-                    TNT1 A 0 A_TakeInventory("TossGrenade", 1)
-                    TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, 1)
-                    Goto NoGrenade
-                    GRTH ABCD 1
-                    TNT1 A 0 A_GiveInventory("FiredGrenade", 1)
-                    TNT1 A 0 A_PLaySound ("GRNPIN")
-                    GRTH EEFG 1
-                    TNT1 A 0 A_PLaySound ("GRNTOSS")
-                    GRTH HI 1
-                    TNT1 A 0 A_TakeInventory("GrenadeAmmo", 1)
-                    TNT1 A 0 A_FireCustomMissile("HandGrenade", random(-2,2), 0, 0, 0, 0, 0)
-                    TNT1 A 0 A_TakeInventory("FiredGrenade", 1)
-                    GRTH JKLM 1
-                    TNT1 A 1
-                    TNT1 A 0 A_TakeInventory("TossGrenade", 1)
-                    Goto Ready
-                NoGrenade:
-                    TNT1 A 0
-                    TNT1 A 0 A_Print("No Grenades Left.")
-                    Goto Ready
-                ]]
-				
-chexkeys = [[
-		ACTOR ChexBlueCard : CustomInventory 331
-		{
-		  Inventory.PickupMessage "$GOTBLUECARD"
-		  States
-		  {
-		  Spawn:
-		    BCKY A 10
-		    BCKY B 10 Bright
-		    Loop
-		   Pickup:
-			 TNT1 A 0 A_GiveInventory("BlueCard", 1)
-			 Stop
-		  }
-		}
-		ACTOR ChexRedCard : CustomInventory 332
-		{
-		  Inventory.PickupMessage "$GOTREDCARD"
-		  States
-		  {
-		  Spawn:
-		    RCKY A 10
-		    RCKY B 10 Bright
-		    Loop
-		   Pickup:
-			 TNT1 A 0 A_GiveInventory("RedCard", 1)
-			 Stop
-		  }
-		}
-		ACTOR ChexYellowCard : CustomInventory 333
-		{
-		  Inventory.PickupMessage "$GOTYELWCARD"
-		  States
-		  {
-		  Spawn:
-		    YCKY A 10
-		    YCKY B 10 Bright
-		    Loop
-		   Pickup:
-			 TNT1 A 0 A_GiveInventory("YellowCard", 1)
-			 Stop
-		  }
-		}
-		]]
         
 puristrailgunreloadDecorate = [[
     RAIF B 6 //A_CheckForReload(4, "Reloaded")
@@ -172,6 +46,7 @@ BRUTALDOOM.YES_NO =
 BRUTALDOOM.VERSIONS = 
 {
 	"brutalv20b.pk3",	"V20b"
+    "bd21testnov01.pk3",    "V21Beta"
 }
 
 BRUTALDOOM.PARAMETERS =
@@ -182,7 +57,7 @@ BRUTALDOOM.PARAMETERS =
 	brutalfriends = false
     iwad = 'Doom2.wad'
     musicpreset = 'iwad'
-	brutalversion = "brutalv20b.pk3"
+	brutalversion = "bd21testnov01.pk3"
 	brutalityversion = "Project Brutality 2.03.pk3"
 	usingui = false
     playerclass = "Doomer"
@@ -365,7 +240,7 @@ BRUTALDOOM.MONSTERS =
 	    r = 25
 	    h = 56 
 	    level = 1
-	    prob = 65
+	    prob = 0
 	    health = 120
 	    damage = 3
 	    attack = "missile"
@@ -453,6 +328,91 @@ BRUTALDOOM.MONSTERS =
           room_size = "large"
 		  boss_replacement = "Cyberdemon"
       }
+     --V21Beta monsters
+     HeadlessZombie =
+     {
+        id = 334
+        r = DOOM.MONSTERS.zombie.r
+        h = DOOM.MONSTERS.zombie.h
+        level = DOOM.MONSTERS.zombie.level
+        prob = 5
+        health = 150
+        damage = DOOM.MONSTERS.zombie.damage
+        attack = DOOM.MONSTERS.zombie.attack
+        give = DOOM.MONSTERS.zombie.give
+        density = DOOM.MONSTERS.zombie.density
+        room_size = DOOM.MONSTERS.zombie.room_size
+        disloyal = DOOM.MONSTERS.zombie.disloyal
+        trap_factor = DOOM.MONSTERS.zombie.trap_factor
+        infight_damage = DOOM.MONSTERS.zombie.infight_damage
+     }
+     Labguy =
+     {
+        id = 335
+        r = DOOM.MONSTERS.zombie.r
+        h = DOOM.MONSTERS.zombie.h
+        level = DOOM.MONSTERS.zombie.level
+        prob = 50
+        health = 100
+        damage = DOOM.MONSTERS.zombie.damage
+        attack = "melee"
+        density = DOOM.MONSTERS.zombie.density
+        room_size = DOOM.MONSTERS.zombie.room_size
+        disloyal = DOOM.MONSTERS.zombie.disloyal
+        trap_factor = DOOM.MONSTERS.zombie.trap_factor
+        infight_damage = DOOM.MONSTERS.zombie.infight_damage
+     }
+     AncientArachnotron =
+     {
+        id = 336
+        r = DOOM.MONSTERS.arach.r
+        h = DOOM.MONSTERS.arach.h
+        level = DOOM.MONSTERS.arach.level
+        prob = DOOM.MONSTERS.arach.prob
+        health = 800
+        damage = DOOM.MONSTERS.arach.damage
+        attack = DOOM.MONSTERS.arach.attack
+        give = DOOM.MONSTERS.arach.give
+        density = DOOM.MONSTERS.arach.density
+        room_size = DOOM.MONSTERS.arach.room_size
+        disloyal = DOOM.MONSTERS.arach.disloyal
+        trap_factor = DOOM.MONSTERS.arach.trap_factor
+        infight_damage = DOOM.MONSTERS.arach.infight_damage
+     }
+     Volcabus =
+     {
+        id = 337
+        r = DOOM.MONSTERS.mancubus.r
+        h = DOOM.MONSTERS.mancubus.h
+        level = DOOM.MONSTERS.mancubus.level
+        prob = DOOM.MONSTERS.mancubus.prob
+        health = 1050
+        damage = DOOM.MONSTERS.mancubus.damage
+        attack = DOOM.MONSTERS.mancubus.attack
+        give = DOOM.MONSTERS.mancubus.give
+        density = DOOM.MONSTERS.mancubus.density
+        room_size = DOOM.MONSTERS.mancubus.room_size
+        disloyal = DOOM.MONSTERS.mancubus.disloyal
+        trap_factor = DOOM.MONSTERS.mancubus.trap_factor
+        infight_damage = DOOM.MONSTERS.mancubus.infight_damage
+     }
+     Mummy = --needs a bit of tweaking
+     {
+        id = 338
+        r = DOOM.MONSTERS.revenant.r
+        h = 48
+        level = 2
+        prob = 50
+        health = 200
+        damage = 0.4
+        attack = "melee"
+        density = 0.85
+        weap_min_damage = 40
+        weap_prefs = { launch=0.3 }
+        room_size = "any"
+        infight_damage = 3.5
+     }
+     
 }
 
 BRUTALDOOM4.MONSTERS =
@@ -463,7 +423,7 @@ BRUTALDOOM4.MONSTERS =
     r = 31
     h = 56 
     level = 3
-    prob = 50
+    prob = 0
     health = 400
     damage = 5
     attack = "missile"
@@ -477,7 +437,10 @@ BRUTALDOOM4.MONSTERS =
 
 --decorate definition
 function BRUTALDOOM.decorate()
-	gui.wad_insert_file("brutaloblige/decorates/BrutalMonsters.dec","BRUMONS");
+    gui.wad_insert_file("brutaloblige/decorates/Decorate.dec","DECORATE");
+    gui.wad_insert_file("brutaloblige/decorates/BrutalMonsters.dec","BRUMONS");
+	gui.wad_insert_file("brutaloblige/decorates/BrutalWeapons.dec","BRUWEPS");
+    gui.wad_insert_file("brutaloblige/decorates/ChexKeys.dec","CHEXKEYS");
 	gui.wad_insert_file("brutaloblige/decorates/DarkImp.dec","DARKIMPD");
 	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
     gui.wad_insert_file("brutaloblige/zscript/wolfmons.zscript","WOLFMONS");
@@ -1454,7 +1417,7 @@ function BRUTALDOOM.respectplayerclass()
 end
 
 function BRUTALDOOM.all_done()
-  BRUTALDOOM.weaponsdecorate();
+  --BRUTALDOOM.weaponsdecorate();
   BRUTALDOOM.decorate();
   BRUTALDOOM4.caco();
   BRUTALDOOM.flem_nukage();
@@ -1478,7 +1441,7 @@ function BRUTALDOOM.all_done()
 	BRUTALDOOM.createintm();
   end
   BRUTALDOOM.create_mapinfo();
-  BRUTALDOOM.createkeyconf();
+  --BRUTALDOOM.createkeyconf(); --keyconf no longer needed in V21. Praise be!
   BRUTALDOOM.castcalldecorate();
 end
 
@@ -1631,52 +1594,40 @@ BRUTALDOOM.WEAPONS =
 	    give = { {ammo="cell",count=40} }
 	    bonus_ammo = 40
 	  }
-        pistol =
-        {
-            id = 320
-            level = 1
-            add_prob = 5
-            pref = 5
-            attack = "hitscan"
-            rate = 1.8
-            damage = 10
-            ammo = "bullet"
-            give = { {ammo="bullet",count=15} }
-            per = 1
-        }
-        mg42 =
-	{
-	    id=321
-	    level = 9
-    	    pref = 1
-    	    add_prob = 2
-	    start_prob=0
-	    rate=1
-	    damage=1000
-	    attack="hitscan"
-	    ammo="bullet" --not really but no existing ammo type
-	    per=1
-	    give={ {ammo="bullet",count=600} }
-	}
-        --[[oldskoolplasma =
-        {
-            id = 322
-            level = 6 --regular plasma rifle is 5
-            pref = 30
-            add_prob = 15
-            attack = "missile"
-            rate = 11
-            damage = 20
-            ammo = "cell"
-            per = 1
-            give = { {ammo="cell",count=40} }
-            bonus_ammo = 40
-        }]]--
+    pistol =
+    {
+        id = 320
+        level = 1
+        add_prob = 5
+        pref = 5
+        attack = "hitscan"
+        rate = 1.8
+        damage = 10
+        ammo = "clip1"
+        give = { {ammo="clip1",count=15} }
+        per = 1
+    }
+    smg =
+    {
+        id = 339
+        level = 1
+        pref = 70
+        upgrades = "pistol"
+        add_prob = 45
+        attack = "hitscan"
+        rate = 8.5
+        accuracy = 90
+        damage = 8
+        ammo = "clip1"
+        per = 1
+        give = { {ammo="clip1",count=20} }
+    }
 }
 
 BRUTALDOOM.AMMOS = --might not be neccessary
 {
 	grenade = { start_bonus = 1  }
+    clip1 = { start_bonus = 15 }
 }
 
 BRUTALDOOM.NICE_ITEMS =
@@ -1684,7 +1635,7 @@ BRUTALDOOM.NICE_ITEMS =
 	goggles = REMOVE_ME --seem to be broken in v20b and were never that useful in oblige maps anyway
 }
 
---BRUTALDOOM.PICKUPS = DOOM.PICKUPS
+BRUTALDOOM.PICKUPS = {}
 
 BRUTALDOOM.PICKUPS.grenade =
   {
@@ -1707,6 +1658,14 @@ BRUTALDOOM.PICKUPS.Skel_Poster =
       theme_prob = 200
       start_prob = 0
   }
+  
+BRUTALDOOM.PICKUPS.clip1 =
+{
+    id = 342
+    kind = "ammo"
+    add_prob = 30
+    give = { {ammo="clip1",count=10} }
+}
 
 
 BRUTALDOOM.PLAYER_MODEL =
@@ -1748,135 +1707,6 @@ local pistolpickupmessage = {
     
 local data =
 	{
-		'//Brutal Doom additions\n'
-		'#include "BRUMONS" \n'
-		'//weapons\n\n'
-		'actor HandGrenadesOblige : HandGrenades 299\n'
-		'{\n'
-                '//$Category "Weapons"\n'
-                '//$EditorSprite "GRNDH0"\n'
-                'Tag "Hand Grenades"\n'
-		'}\n'
-		'\n'
-		'actor GrenadeAmmoOblige : GrenadeAmmo 300\n'
-		'{\n'
-                '//$Category "Ammunition"\n'
-                '//$EditorSprite "GRNDH0"\n'
-                'Tag "Grenade"\n'
-		'}\n'
-		'\n'
-		'actor GrenadeBoxOblige : GrenadeBox 301\n'
-		'{\n'
-                '//$Category "Ammunition"\n'
-                '//$EditorSprite "GRNDH0"\n'
-                'Tag "Grenade Box"\n'
-		'}\n'
-		'\n'
-		'actor GrenadeLauncherOblige : GrenadeLauncher 298\n'
-		'{\n'
-                '//$Category "Weapons"\n'
-                '//$EditorSprite "GLAPA0"\n'
-                'Tag "Grenade Launcher"\n'
-		'Inventory.PickupMessage "You got the grenade launcher!"\n'
-		'Weapon.SlotNumber 5\n'
-                'States\n'
-                '{\n',
-                'Ready:\n'
-                    'TNT1 A 0 A_JumpIfInventory("IsPlayingAsPurist", 1, "PuristGun")\n'
-                    'TNT1 A 0 A_PlaySound("RLANDRAW")\n'
-                    'GLSW ABC 1\n'
-                    'TNT1 AAAA 0 //removed 1 frame to compensate for the frame added by the purist\n'
-                    'TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")\n'
-                    'TNT1 A 0 A_JumpIfInventory("Salute1", 1, "Salute")\n'
-                    'TNT1 A 0 A_JumpIfInventory("Salute2", 1, "Salute")\n'
-                    'TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")\n'
-                    'GLAN A 1 A_WeaponReady\n'
-                    'Goto Ready+7\n'
-                'PuristGun:\n'
-                    'TNT1 A 1\n'
-                    'TNT1 A 0 A_GiveInventory("SkulltagGrenadeLauncher", 1)\n'
-                    'TNT1 A 0 A_TakeInventory("GrenadeLauncherOblige", 1)\n'
-                    'TNT1 A 10\n'
-                    'Goto Ready2\n'
-                generickickstate,
-                '\n}\n'
-		'\n}\n'
-		'\n'
-        'ACTOR SkulltagGrenadeLauncher : DoomWeapon\n'
-        '{\n'
-        '  SpawnID 163\n'
-        '  Radius 20\n'
-        '  Height 16\n'
-        '  Weapon.Selectionorder 2500\n'
-        '  +WEAPON.NOAUTOFIRE\n'
-        '  +WEAPON.NOAUTOAIM\n'
-        '  Weapon.AmmoUse 1\n'
-        '  Weapon.AmmoGive 2\n'
-        '  Weapon.AmmoType "RocketAmmo"\n'
-        '  Weapon.Kickback 100\n'
-        '  Weapon.SlotNumber 5\n'
-        '  Inventory.PickupMessage "$PICKUP_GRENADELAUNCHER" // "You got the grenade launcher!"\n'
-        '\n'
-        '  States\n'
-        '  {\n'
-        '  Spawn:\n'
-        '    GLAU A -1\n'
-        '    Stop\n'
-        '  Ready:\n'
-        '    GRLG A 1 A_WeaponReady\n'
-        '    Loop\n'
-        '  Deselect:\n'
-        '    GRLG A 1 A_Lower\n'
-        '    Loop\n'
-        '  Select: \n'
-        '    GRLG A 1 A_Raise\n'
-        '    Loop\n'
-        '  Fire: \n'
-        '    GRLG B 8 A_GunFlash\n'
-        '    GRLG B 12 A_FireCustomMissile("ShortGrenade",0, 1, 0, 0)\n'
-        '    GRLG B 0 A_ReFire\n'
-        '    Goto Ready \n'
-        '  Flash: \n'
-        '    GRLF A 3 bright A_Light1\n'
-        '    GRLF B 4 bright\n'
-        '    GRLF C 4 bright A_Light2\n'
-        '    GRLF D 4 bright A_Light2\n'
-        '    Goto LightDone\n'
-        '  }\n'
-        '}\n'
-        '\n'
-		'actor RailGunOblige : RailGun 297\n'
-		'{\n'
-        '//$Category "Weapons"\n'
-        '//$EditorSprite "SRCGA0"\n'
-        'Tag "Rail Gun"\n'
-		'Weapon.SlotNumber 6\n'
-                'States\n'
-                '{\n'
-                'Ready:\n'
-                    'TNT1 A 0 A_JumpIfInventory("IsPlayingAsPurist", 1, "PuristGun")\n'
-                    'RAIS ABC 1\n'
-                    'TNT1 AA 0 //removed one frame here to compensate for the one added by the purist gun\n'
-                    'TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")\n'
-                    'TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")\n'
-                    'TNT1 A 0 A_JumpIfInventory("Salute1", 1, "Salute")\n'
-                    'TNT1 A 0 A_JumpIfInventory("Salute2", 1, "Salute")\n'
-                    'TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")\n'
-                    'TNT1 A 0 A_JumpIfInventory("RailgunAmmo",1,2)\n'
-                    'Goto Reload\n'
-                    'TNT1 AAAA 0\n'
-                    'RAIL A 1 A_WeaponReady\n'
-                    'Goto Ready+4\n'
-                'PuristGun:\n'
-                    'TNT1 A 1\n'
-                    'TNT1 A 0 A_GiveInventory("PuristRailgun", 1)\n'
-                    'TNT1 A 0 A_TakeInventory("RailGunOblige", 1)\n'
-                    'TNT1 A 10\n'
-                    'Goto Ready2\n'
-                ,generickickstate,
-                '\n}\n'
-		'}\n'
-		'\n'
         'ACTOR PuristRailgun : DoomWeapon\n'
         '{\n'
         '  SpawnID 164\n'
@@ -1920,470 +1750,6 @@ local data =
         '  }\n'
         '}\n'
         '\n'
-		'actor BFG10KOblige : BFG10K 296\n'
-		'{\n'
-                '//$Category "Weapons"\n'
-                '//$EditorSprite "bfg2A0"\n'
-                'Tag "BFG10k"\n'
-                'Weapon.SlotNumber 7\n'
-                'States\n'
-                '{\n'
-                    'Ready:\n'
-                        'TNT1 A 0 A_JumpIfInventory("IsPlayingAsPurist", 1, "PuristGun")\n'
-                        'Goto Steady\n'
-                    'PuristGun:\n'
-                        'TNT1 A 1\n'
-                        'TNT1 A 0 A_GiveInventory("SkulltagBFG10K", 1)\n'
-                        'TNT1 A 0 A_TakeInventory("BFG10KOblige", 1)\n'
-                        'TNT1 A 10\n'
-                        'Goto Steady\n'
-                    ,generickickstate,
-                '\n}\n'
-		'}\n'
-		'\n'
-        'ACTOR SkulltagBFG10K : DoomWeapon\n'
-        '{\n'
-            'SpawnID 165\n'
-            'Radius 20\n'
-            'Height 20\n'
-            'Weapon.Selectionorder 2800\n'
-            'Weapon.AmmoUse 5\n'
-            'Weapon.AmmoGive 40\n'
-            'Weapon.AmmoType "Cell"\n'
-            'Weapon.Kickback 100\n'
-            'Weapon.SlotNumber 7\n'
-            'Inventory.Pickupmessage "You got the BFG10000!  Hell, yes!"\n'
-            '+WEAPON.NOAUTOFIRE\n'
-            '+WEAPON.NOLMS\n'
-            'States\n'
-            '{\n'
-            'Spawn:\n'
-            '   BFG2 A -1\n'
-            '   Stop\n'
-            'Ready:\n'
-            '   BG2G A 0 A_PlaySound ("weapons/bfg10kidle")\n'
-            '   BG2G A 1 A_WeaponReady\n'
-            '   BG2G A 1 A_WeaponReady\n'
-            '   BG2G A 1 A_WeaponReady\n'
-            '   BG2G B 1 A_WeaponReady\n'
-            '   BG2G B 1 A_WeaponReady\n'
-            '   BG2G B 1 A_WeaponReady\n'
-            '   BG2G C 1 A_WeaponReady\n'
-            '   BG2G C 1 A_WeaponReady\n'
-            '   BG2G C 1 A_WeaponReady\n'
-            '   BG2G D 1 A_WeaponReady\n'
-            '   BG2G D 1 A_WeaponReady\n'
-            '   BG2G D 1 A_WeaponReady\n'
-            '   Loop\n'
-            'Deselect:\n'
-            '   BG2G E 1 A_Lower\n'
-            '   Loop\n'
-            'Select:\n'
-            '   BG2G E 1 A_Raise\n'
-            '   Loop\n'
-            'Fire:\n'
-            '   BG2G E 20 A_PlaySound ("weapons/bfg10kf")\n'
-            '   BG2G F 4\n'
-            '   BG2G G 1\n'
-            '   BG2G H 1\n'
-            '   BG2G I 1\n'
-            '   BG2G J 1\n'
-            '   Goto Hold\n'
-            'Hold:\n'
-            '   BG2G K 2 A_GunFlash\n'
-            '   BG2G L 2 A_FireBullets(0,0,1,0,"BFG10kShot")\n'
-            '   BG2G M 2\n'
-            '   BG2G N 0 A_ReFire\n'
-            '   BG2G O 35 A_PlaySound ("weapons/bfg10kcool")\n'
-            '   Goto Ready\n'
-            'Flash:\n'
-            '   TNT1 A 2 Bright A_Light1\n'
-            '   TNT1 A 3 Bright\n'
-            '   Goto LightDone\n'
-            '   Stop\n'
-        '  }\n'
-        '}\n'
-        'ACTOR BFG10kShot\n'
-        '{\n'
-        '  SpawnID 217\n'
-        '  Radius 11\n'
-        '  Height 8\n'
-        '  Speed 20\n'
-        '  Damage 160\n'
-        '  DamageType BFG10k\n'
-        '  +NOBLOCKMAP\n'
-        '  +NOGRAVITY\n'
-        '  +ACTIVATEIMPACT\n'
-        '  +ACTIVATEPCROSS\n'
-        '  +NOTELEPORT \n'
-        '  +PUFFONACTORS\n'
-        '  +PUFFGETSOWNER\n'
-        '  +FORCERADIUSDMG\n'
-        '  Renderstyle Add\n'
-        '  Alpha 0.75\n'
-        '  SeeSound "weapons/bfg10kx"\n'
-        '  AttackSound "weapons/bfg10kx"\n'
-        '  Obituary "%o was blasted by %k' .. "'" .. 's BFG10K."\n'
-        '  States\n'
-        '  {\n'
-        '  Spawn:\n'
-        '    BFE1 A 0 Bright\n'
-        '    BFE1 A 3 Bright A_Detonate\n'
-        '    BFE1 BCDEF 3 Bright\n'
-        '    Stop\n'
-        '  }\n'
-        '}\n'
-        '\n'
-                'ACTOR BrutalPistolOblige : Weapon 320\n'
-                '{\n'
-                '//$Category "Weapons"\n'
-                'Tag "Shitty Pistol"\n'
-                '	Weapon.AmmoUse1 0\n'
-                '	Weapon.AmmoGive1 0\n'
-                '	Weapon.AmmoUse2 0\n'
-                '	Weapon.AmmoGive2 15\n'
-                '	Weapon.AmmoType1 "Clip2"\n'
-                '	Weapon.AmmoType2 "BDPistolAmmo"\n'
-                '	Obituary "%k shot %o down with a pistol."\n'
-                '       Weapon.SlotNumber 2\n'
-                '    AttackSound "None"\n'
-                '    Inventory.PickupSound "CLIPIN"\n'
-                '	Inventory.Pickupmessage "',pistolpickupmessage[math.random(1,#pistolpickupmessage)],'"\n'
-                '	+WEAPON.WIMPY_WEAPON\n'
-                '    +WEAPON.NOAUTOAIM\n'
-                '    +WEAPON.NOAUTOFIRE\n'
-                '	+WEAPON.CHEATNOTWEAPON\n'
-                '    +FORCEXYBILLBOARD\n'
-                '	Scale 0.9\n'
-                '	States\n'
-                '	{\n'
-                '       Steady:\n'
-                '       TNT1 A 1\n'
-                '       Goto Ready\n'
-                '	PickUp:\n'
-                '	TNT1 A 0\n'
-                '	TNT1 A 0 A_Playsound("PICKUPONELINER")\n'
-                '	TNT1 A 0\n'
-                '	Stop\n'
-                '	\n'
-                '	\n'
-                '	Flash:\n'
-                '	TNT1 A 0\n'
-                '	TNT1 A 0 A_JumpIfInventory("FlashlightAction", 1, "CheckFlashlight")\n'
-                '	TNT1 A 1\n'
-                '	TNT1 A 0 A_JumpIfInventory("IsFlashlightOn", 1, "FlashOn")\n'
-                '	Goto Flash\n'
-                '	FlashOn:\n'
-                '	TNT1 A 0 A_FireCustomMissile("FlashlightProjectile", 0, 0, 0, 0, 0, 0)\n'
-                '	TNT1 A 0 A_FireCustomMissile("FlashlightSource", 0, 0, 0, 0, 0, 0)\n'
-                '	Goto Flash \n'
-                '	CheckFlashLight:\n'
-                '	TNT1 A 1\n'
-                '	TNT1 A 0 A_TakeInventory("FlashlightAction")\n'
-                '	TNT1 A 0 A_JumpIfInventory("IsFlashlightOn", 1, "TurnOffFlashlight")\n'
-                '	TNT1 A 0 A_GiveInventory("IsFlashlightOn", 1)\n'
-                '	Goto Flash\n'
-                '	TurnOffFlashlight:\n'
-                '	TNT1 A 0 A_TakeInventory("IsFlashlightOn", 1)\n'
-                '	Goto Flash\n'
-                '	\n'
-                '	Ready:\n'
-                '        TNT1 A 0 A_JumpIfInventory("IsPlayingAsPurist", 1, "PuristGun")\n'
-                '        //TNT1 A 1 A_JumpIfInventory("GoFatality", 1, "Steady")\n'
-                '        TNT1 A 0 A_PlaySound("CLIPIN")\n'
-                '        PISS AB 1\n'
-                '        TNT1 AAAAAAA 0//removed one frame here to compensate for the one added by the purist check\n'
-                '        TNT1 A 0 //A_JumpIfInventory("BDPistolAmmo",1,2)\n'
-                '        //Goto Reload\n'
-                '        TNT1 AAAA 0\n'
-                '\n'
-                '        TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")\n'
-                '        TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")\n'
-                '		TNT1 A 0 A_JumpIfInventory("Salute1", 1, "Salute")\n'
-                '		TNT1 A 0 A_JumpIfInventory("Salute2", 1, "Salute")\n'
-                '        TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")\n'
-                '		TNT1 A 0 A_JumpIfInventory("TossGrenade",1,"TossGrenade")\n'
-                '		PISG A 1 A_WeaponReady\n'
-                '		TNT1 A 0 A_GunFlash\n'
-                '		Goto Ready+9\n'
-                '	Deselect:\n'
-                '        PISS BA 1\n'
-                '		TNT1 AAAAAAAAAAAAAAAAAA 0 A_Lower\n'
-                '		TNT1 A 0 A_TakeInventory("TossGrenade", 1)\n'
-                '		TNT1 A 1 A_Lower\n'
-                '		Wait\n'
-                '	Select:\n'
-                '	\n'
-                '	TNT1 A 0 A_Takeinventory("FistsSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("SawSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("ShotgunSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("SSGSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("MinigunSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("PlasmaGunSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("RocketLauncherSelected",1)\n'
-                '    TNT1 A 0 A_Takeinventory("GrenadeLauncherSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("BFGSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("BFG10kSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("RailGunSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("SubMachineGunSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("RevenantLauncherSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("LostSoulSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("FlameCannonSelected",1)\n'
-                '	TNT1 A 0 A_Takeinventory("HasBarrel",1)\n'
-                '	\n'
-                '		TNT1 A 0 A_Raise\n'
-                '		Wait\n'
-                '    Fire:\n'
-                '        TNT1 A 0 A_JumpIfInventory("BDPistolAmmo",1,2)\n'
-                '        Goto Reload\n'
-                '        TNT1 AAAA 0\n'
-                '        TNT1 A 0 A_PlaySound("weapons/rifle")\n'
-                '		TNT1 A 0 A_FireCustomMissile("YellowFlareSpawn",0,0,0,0)\n'
-                '		PISF A 1 BRIGHT A_FireBullets (2, 2, -1, 11, "HitPuff")\n'
-                '        RIFF A 0 A_FireCustomMissile("Tracer", random(-2,2), 0, -1, 0)\n'
-                '		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)\n'
-                '		TNT1 A 0 A_Takeinventory("BDPistolAmmo",1)\n'
-                '        PISF B 1\n'
-                '		TNT1 A 0 A_FireCustomMissile("RifleCaseSpawn",5,0,8,-9)\n'
-                '		PISF C 1 A_WeaponReady(1)\n'
-                '		PISG A 7 A_WeaponReady(1)\n'
-                '		Goto Ready+6\n'
-                '		\n'
-                '	NoAmmo:\n'
-                '	PISG A 1\n'
-                '	Goto Ready+10\n'
-                '	\n'
-                '    Reload:\n'
-                '		PISG A 1 A_WeaponReady\n'
-                '		TNT1 A 0 A_Takeinventory("Reloading",1)\n'
-                '		TNT1 A 0 A_Takeinventory("ADSmode",1)\n'
-                '		TNT1 A 0 A_JumpIfInventory("BDPistolAmmo",15,26)\n'
-                '\n'
-                '        TNT1 A 0 A_JumpIfInventory("Clip2",1,3)\n'
-                '        Goto NoAmmo\n'
-                '        TNT1 AAA 0\n'
-                '		TNT1 A 0 A_Takeinventory("Zoomed",1)\n'
-                '        TNT1 A 0 A_ZoomFactor(1.0)\n'
-                '        TNT1 A 0 A_PlaySound("Reload")\n'
-                '		TNT1 A 0 A_GiveInventory ("Pumping", 1)\n'
-                '		TNT1 A 0 A_Takeinventory("Reloading",1)\n'
-                '		RIFR C 0 A_FireCustomMissile("EmptyClip2Spawn",-5,0,8,-4)\n'
-                '        PISR A 6 \n'
-                '        PISR BCDEFG 3\n'
-                '		\n'
-                '		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAA 0\n'
-                '		TNT1 A 0 A_JumpIfInventory("BDPistolAmmo",15,15)\n'
-                '		TNT1 A 0 A_JumpIfInventory("Clip2",1,3)\n'
-                '		Goto Ready+6\n'
-                '        TNT1 AAAAAA 0\n'
-                '		TNT1 A 0 A_Giveinventory("BDPistolAmmo",1)\n'
-                '		TNT1 A 0 A_Takeinventory("Clip2",1)\n'
-                '		Goto Reload+28\n'
-                '		\n'
-                '		TNT1 AAAAAAAAAA 0\n'
-                '		TNT1 A 0 A_Takeinventory("Reloading",1)\n'
-                '        Goto Ready+6\n'
-                '		TNT1 AAAA 0\n'
-                '				TNT1 A 0 A_Takeinventory("Reloading",1)\n'
-                '        Goto Ready+6\n'
-                ' 	Spawn:\n'
-                '		PIST A -1\n'
-                '		Stop\n'
-                '	Taunt:\n'
-                '		TNT1 A 0 A_Takeinventory("Zoomed",1)\n'
-                '        TNT1 A 0 A_ZoomFactor(1.0)\n'
-                '		TNT1 A 0 A_Takeinventory("Taunting",1)\n'
-                '		TNT1 A 0 A_JumpIfInventory("RealismMode", 1, "CheckGrab")\n'
-                '        TNT1 A 10\n'
-                '		FUCK A 1\n'
-                '		TNT1 A 0 BRIGHT A_FireCustomMissile("Taunter", 0, 0, -1, 0)\n'
-                '		TNT1 A 0 BRIGHT A_FireCustomMissile("Taunter", -9, 0, -1, 0)\n'
-                '		TNT1 A 0 BRIGHT A_FireCustomMissile("Taunter", 9, 0, -1, 0)\n'
-                '        FUCK B 1 A_PlaySound("FUCK", 2)\n'
-                '        FUCK CD 1 A_AlertMonsters\n'
-                '		FUCK E 15 A_Takeinventory("Taunting",1)\n'
-                '        FUCK DCBA 1\n'
-                '        TNT1 A 10\n'
-                '		Goto Ready\n'
-                '	Salute:\n'
-                '	    TNT1 A 0 SetPlayerProperty(0,1,0)\n'
-                '		TNT1 A 0 A_ALertMonsters\n'
-                '		SALU ABCDEDCDEDCDEDCBA 4\n'
-                '		TNT1 A 0 A_TakeInventory("Salute1",1)\n'
-                '		TNT1 A 0 A_TakeInventory("Salute2",1)\n'
-                '		TNT1 A 0 SetPlayerProperty(0,0,0)\n'
-                '		Goto Ready\n'
-                '		\n'
-                '	CheckGrab:\n'
-                '	    TNT1 A 0 \n'
-                '		TNT1 A 0 A_JumpIfTargetInLOS("CheckDistanceGrab")\n'
-                '		Goto Ready+6\n'
-                '	CheckDistanceGrab:\n'
-                '	    TNT1 A 0 \n'
-                '		TNT1 A 0 A_JumpIfCloser(100, "Grab")\n'
-                '		Goto Ready+6\n'
-                '	CheckIfCanGrab:\n'
-                '	    TNT1 A 0 \n'
-                '		TNT1 A 0 A_JumpIfInTargetInventory("CanGrab", 1, "Grab")\n'
-                '		Goto Ready+6	\n'
-                '	Grab:\n'
-                '	    PKUP ABC 2\n'
-                '		TNT1 A 0 A_CustomMissile("PickupProjectile")\n'
-                '		PKUP DEF 2\n'
-                '		Goto Ready\n'
-                '	TossGrenade:	\n'
-                '		TNT1 A 0\n'
-                '		TNT1 A 0 A_TakeInventory("TossGrenade", 1)\n'
-                '		TNT1 A 0 A_JumpIfInventory("GrenadeAmmo", 1, 1)\n'
-                '		Goto NoGrenade\n'
-                '		GRTH ABCD 1\n'
-                '		TNT1 A 0 A_GiveInventory("FiredGrenade", 1)\n'
-                '		TNT1 A 0 A_PLaySound ("GRNPIN")\n'
-                '		GRTH EEFG 1\n'
-                '		TNT1 A 0 A_PLaySound ("GRNTOSS")\n'
-                '		GRTH HI 1\n'
-                '		TNT1 A 0 A_TakeInventory("GrenadeAmmo", 1)\n'
-                '		TNT1 A 0 A_FireCustomMissile("HandGrenade", random(-2,2), 0, 0, 0, 0, 0)\n'
-                '	    TNT1 A 0 A_TakeInventory("FiredGrenade", 1)\n'
-                '		GRTH JKLM 1\n'
-                '		TNT1 A 1 \n'
-                '		TNT1 A 0 A_TakeInventory("TossGrenade", 1)\n'
-                '		Goto Ready	\n'
-                '	NoGrenade:\n'
-                '		TNT1 A 0\n'
-                '		TNT1 A 0 A_Print("No Grenades Left.")\n'
-                '		Goto REady+6	\n'
-                ,generickickstate,
-                'PuristGun:\n'
-                        'TNT1 A 1\n'
-                        'TNT1 A 0 A_GiveInventory("ClassicPistol", 1)\n'
-                        'TNT1 A 0 A_TakeInventory("BrutalPistolOblige", 1)\n'
-                        'TNT1 A 10\n'
-                        'Goto Steady\n'
-                '	}\n'
-                '}\n'
-                'actor MG42Oblige : HitlersBuzzsaw 321\n'
-		'{\n'
-                '//$Category "Weapons"\n'
-                'Tag "MG42"\n'
-                'Weapon.SlotNumber 4\n'
-		'}\n'
-                '\n'
-                'actor OldSkoolPlasmaRifle : ClassicPlasmaRifle\n'
-                '{\n'
-                '   states\n'
-                '   {\n'
-                '   Steady:\n'
-                '   Ready:\n'
-                '        TNT1 A 0 A_JumpIfInventory("TossGrenade",1,"TossGrenade")\n'
-                '        TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")\n'
-                '        3LSG A 1 A_WeaponReady\n'
-                '        Loop\n'
-                '   Select:\n'
-                '        TNT1 A 0 A_Giveinventory("HasPlasmaWeapon",1)\n'
-                '        3LSG A 1 A_Raise\n'
-                '        Loop\n'
-                '    Deselect:\n'
-                '        TNT1 A 0 A_Takeinventory("HasPlasmaWeapon",1)\n'
-                '        3LSG A 1 A_Lower\n'
-                '        Loop\n',
-                generickickstate,
-                genericgrenadestate,
-                '   Fire:\n'
-                '    TNT1 A 0 A_FireCustomMissile("OldSkoolPlasmaBall", 0, 1, 0, -10)\n'
-                '    3LSF EF 1 BRIGHT\n'
-                '    3KPL A 1\n'
-                '    TNT1 A 0 A_Refire\n'
-                '    3KPL ABCDEFF 1\n'
-                '    3KPL G 6\n'
-                '    3KPL FFEDCBA 1\n'
-                '    Goto Ready\n'
-                '   }\n'
-                '}\n'
-                '\n'
-                'actor OldSkoolPlasmaBall : ClassicPlasmaBall\n'
-                '{\n'
-                    'Decal "SmallerScorch"\n'
-                '}\n'
-                'actor LethalZorch : ClassicPlasmaBall\n'
-                '{\n'
-                'Translation "192:207=16:31"\n'
-                'Decal "SmallerScorch"\n'
-                'States\n'
-                '{\n'
-                '	Spawn2:\n'
-                '		PLSS ABAB 1 Bright A_SpawnItem("RedFlareSmall")\n'
-                '		Loop\n'
-                '	Death:\n'
-                '	    TNT1 A 0\n'
-                '		TNT1 A 0 A_CustomMissile ("zorchfire", 0, 0, random (0, 360), 2, random (0, 360))\n'
-                '		TNT1 AAAAA 0 A_CustomMissile ("zorchparticle", 0, 0, random (0, 360), 2, random (0, 360))\n'
-                '		PLSE ABC 2 BRIGHT A_SpawnItem("RedFlare")\n'
-                '		PLSE DE 2 Bright A_SpawnItem("RedFlareSmall")\n'
-                '		Stop\n'
-                '}\n'
-                '}\n'
-                'actor zorchfire : BluePlasmaFire\n'
-                '{\n'
-                'Translation "192:207=16:31"\n'
-                '}\n'
-                'actor zorchparticle : BluePlasmaParticle\n'
-                '{\n'
-                'Translation "192:207=16:31"\n'
-                '}\n'
-                '\n'
-                'Actor UnrestrictedZorcher : OldSkoolPlasmaRifle\n'
-                '{\n'
-                'Inventory.Pickupmessage "Set zorchers to kill! (Slot 6)"\n'
-                'States\n'
-                '	{\n'
-                '	Ready:\n'
-                '		ZORC A 1 A_WeaponReady\n'
-                '		Loop\n'
-                '	Deselect:\n'
-                '                TNT1 A 0 A_Takeinventory("HasPlasmaWeapon",1)\n'
-                '		ZORC A 1 A_Lower\n'
-                '		Loop\n'
-                '	Select:\n'
-                '                TNT1 A 0 A_Giveinventory("HasPlasmaWeapon",1)\n'
-                '		ZORC A 1 A_Raise\n'
-                '		Loop\n'
-                '	Fire:\n'
-                '		TNT1 A 0 A_FireCustomMissile("LethalZorch", 0, 1, 0, -10)\n'
-                '		ZORC CD 1 BRIGHT\n'
-                '		ZORC CD 1\n'
-                '		TNT1 A 0 A_Refire\n'
-                '		ZORC CDAB 1\n'
-                '		ZORC AB 6\n'
-                '		ZORC A 1\n'
-                '		Goto Ready\n'
-                '	Spawn:\n'
-                '		ZORP A -1\n'
-                '		Stop\n'
-                '	}\n'
-                '}\n'
-                '\n'
-                'actor zorcheronground 322\n'
-                '{\n'
-                '//$Category "Weapons"\n'
-                '//$EditorSprite "ZORPA0"\n'
-                'Tag "93 series Plasma Rifle/Unrestricted Zorcher"\n'
-                'States\n'
-                '{\n'
-                    'Spawn:\n'
-                    'TNT1 A 0 A_CheckProximity("Chexspawn","ObligeFlemoid1",32767,1,CPXF_NOZ | CPXF_COUNTDEAD)\n'
-                    'TNT1 A 0 A_CheckProximity("Chexspawn","ObligeFlemoid2",32767,1,CPXF_NOZ | CPXF_COUNTDEAD)\n'
-                    'TNT1 A 0 A_CheckProximity("Chexspawn","ObligeFlemoid3",32767,1,CPXF_NOZ | CPXF_COUNTDEAD)\n'
-                    'TNT1 A 0 A_CheckProximity("Chexspawn","ObligeQuadrumpus",32767,1,CPXF_NOZ | CPXF_COUNTDEAD)\n'
-                    'TNT1 A 1\n'
-                    'TNT1 A 0 A_SpawnItem("OldSkoolPlasmaRifle",0,0)\n'
-                    'stop\n'
-                    'Chexspawn:\n'
-                    'TNT1 A 0 A_SpawnItem("UnrestrictedZorcher",0,0)\n'
-                    'stop\n'
-                '}\n'
-                '}\n'
-                '\n'
         'actor SkelPosterDecal\n'
 		'{\n'
 		  'Radius 2\n'
@@ -2404,41 +1770,6 @@ local data =
 		    'stop\n'
 		  '}\n'
 		'}\n'
-		'actor SkelPosterPainter 323\n'
-		'{\n'
-		  '//$Category decals\n'
-		  'Radius 36\n'
-		  'Height 2\n'
-		  '+NOINTERACTION\n'
-		  '+NOGRAVITY\n'
-		  'States\n'
-		  '{\n'
-		  'Spawn:\n'
-			'TNT1 A 0 A_SpawnItem("Stimpack",0,0)\n'
-			'TNT1 A 0 A_JumpIf(ceilingz-floorz<height,"End")\n'
-			'TNT1 A 0 A_Jump(256,"Angle1","Angle2","Angle3","Angle4")\n'
-			'Goto Paint\n'
-		  'Angle1:\n'
-		    	'TNT1 A 0 A_SetAngle(0)\n'
-		    	'Goto Paint\n'
-		  'Angle2:\n'
-		    	'TNT1 A 0 A_SetAngle(90)\n'
-		    	'Goto Paint\n'
-		  'Angle3:\n'
-		    	'TNT1 A 0 A_SetAngle(180)\n'
-		    	'Goto Paint\n'
-		  'Angle4:\n'
-		    	'TNT1 A 0 A_SetAngle(270)\n'
-		    	'Goto Paint\n'
-		  'Paint:\n'
-		    	'TNT1 A 1 A_SpawnItemEx ("SkelPosterDecal", 0, 0, 75, 100, 0, 0, 0, 0, 0)\n'
-		    	'Goto End\n'
-		  'End:\n'
-			'TNT1 A -1\n'
-		    	'Stop\n'
-		  '}\n'
-		'}\n',
-		chexkeys
 		
 	}
     gui.wad_add_text_lump("DECORATE", data);

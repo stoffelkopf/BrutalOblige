@@ -63,6 +63,31 @@ class BrutalObligeActor : Actor
 	}
 }
 
+Class BrutalObligeWeaponPlacer : BrutalObligeActor
+{
+    string weapon, defaultweapon, purist;
+    
+    Property weapon: weapon;
+    Property defaultweapon: defaultweapon;
+    Property purist: purist;
+    
+    Default
+    {
+        //$Category "Weapons"
+        BrutalObligeWeaponPlacer.weapon "";
+        BrutalObligeWeaponPlacer.defaultweapon "";
+        BrutalObligeWeaponPlacer.purist "";
+    }
+    
+    States
+    {
+        Spawn:
+            TNT1 A 0;
+            TNT1 A 0 A_SpawnIfExists(weapon,defaultweapon,0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288, 0, 0);
+        Stop;
+    }
+}
+
 Class PBZspawner : BrutalObligeActor
 {
 	int tiers;

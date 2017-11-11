@@ -209,24 +209,6 @@ OB_MODULES["brutal_weapon_control"] =
         choices=CTL_BRUTAL.WEAPON_CHOICES
         tooltip="The biggest fucking gun around. Weirdly B.F.Gs 9001-9999 never made it into skulltag."
     }
-    mg42 =
-    {
-        label="MG42",
-        choices=CTL_BRUTAL.WEAPON_CHOICES
-        tooltip="The MG 42 was first manufactured in the year 1942 by Mauser in Oberndorf, Germany with the aim of simplifying production of the technically sound but expensive and manpower-intensive MG-34. It was designed to be used as a general-purpose machine gun (GPMG) and could be mounted on a tripod with a belt feed or utilized in the light machine gun role with a bi-pod and a 50-round belt drum feed. It had several nicknames including Hitler's Zipper and Hitler's Buzzsaw, originating from the fearsome 1,200 RPM fire rate, fast enough that individual shots blended together to make a distinctive tearing or ripping sound."
-    }
-    --[[D4Machinegun =
-    {
-        label="Doom 4 Machinegun",
-        choices=CTL_BRUTAL.WEAPON_CHOICES
-        tooltip="Roughly on par with the assault rifle in terms of raw power but with one important difference; it never needs reloading."
-    }
-    D4GaussCannon =
-    {
-        label="Doom 4 Gauss Cannon",
-        choices=CTL_BRUTAL.WEAPON_CHOICES
-        tooltip="A very powerful plasma based weapon."
-    }]]--
   }
 }
 

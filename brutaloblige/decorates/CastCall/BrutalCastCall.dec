@@ -50,7 +50,7 @@ Missile:
 }
 }
 
-Actor CastCallBelphegor : Belphegor
+Actor CastCallBelphegor : Belphegor2
 {
 States
 {
@@ -71,7 +71,7 @@ States
 }
 }
 
-Actor CastCallHectebus : Hectebus
+Actor CastCallHectebus : Juggernaut
 {
 States
 {
