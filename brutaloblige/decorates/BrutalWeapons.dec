@@ -75,12 +75,20 @@ ACTOR SkulltagGrenadeLauncher : DoomWeapon
 
 actor RailGunOblige : RailgunSpawner 297
 {
-//$Category "Weapons"
-//$EditorSprite "SRCGA0"
-Tag "Rail Gun"
+    //$Category "Weapons"
+    //$EditorSprite "SRCGA0"
+    Tag "Rail Gun"
+    /*States
+    {
+        Purist:
+            TNT1 A 0 A_GiveInventory("PuristRailgun", 1)
+            TNT1 A 0 A_GiveInventory("AmmoCell", 50)
+            Stop
+    }*/
 }
 
-ACTOR PuristRailgun : DoomWeapon
+//The PuristRailgun is made in a script so the reload mode can be set based on user preferences
+/*ACTOR PuristRailgun : DoomWeapon
 {
   SpawnID 164
   Radius 20
@@ -121,7 +129,7 @@ RAIF B 6 A_Jump(256, "Reloaded")
     SRCG A -1
     Stop
   }
-}
+}*/
 
 actor BFG10KOblige : BFG10KSpawner 296
 {
@@ -291,3 +299,71 @@ ACTOR AssaultShotgunOblige : BrutalObligeWeaponPlacer 340 //this one doesn't hav
 Actor UnmakerOblige : UnmakerSpawner 341 {}
 
 Actor Clip1DropOblige : Clip1Drop 342 {}
+
+
+//spawners edited to not be random
+//this lets Oblige model levels knowing which weapons are in them.
+
+Actor SSGSpawnerReplacerOblige : SSGSpawnerReplacer Replaces SSGSpawnerReplacer
+{
+    States
+    {
+        Spawn:
+		TNT1 A 0
+		MARN A 0 ACS_ExecuteAlways(791, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		SGN2 A 2
+		//TNT1 A 0 A_Jump(48, "Spawn2") //This would be a random jump to the Assault Shotgun
+    }
+}
+
+Actor ChaingunSpawnerReplacerOblige : ChaingunSpawnerReplacer Replaces ChaingunSpawnerReplacer
+{
+    States
+    {
+        Spawn:
+		TNT1 A 0
+		MARN A 0 ACS_ExecuteAlways(791, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		MGUN A 2
+		//TNT1 A 0 A_Jump(64, "Spawn2", "Spawn3") //Would be a random jump to either the Smg or MachineGun
+    }
+}
+
+Actor RLSpawnerReplacerOblige : RLSpawnerReplacer Replaces RLSpawnerReplacer
+{
+    States
+    {
+        Spawn:
+		TNT1 A 0
+		MARN A 0 ACS_ExecuteAlways(791, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		MGUN A 2
+		//TNT1 A 0 A_Jump(48, "Spawn2") //Would be a random jump to the Grenade Launcher
+    }
+}
+
+Actor PlasmagunReplacerOblige : PlasmagunReplacer Replaces PlasmagunReplacer
+{
+    States
+    {
+        Spawn:
+		PLAS A 0
+		MARN A 0 ACS_ExecuteAlways(791, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		PLAS A 2
+		//TNT1 A 0 A_Jump(48, "Spawn2") //Would be a random jump to the Railgun
+    }
+}
+
+Actor BFGReplacerOblige : BFGReplacer Replaces BFGReplacer
+{
+    States
+    {
+        Spawn:
+		PLAS A 0
+		BFUG A 0 Thing_ChangeTID(0,736)
+		MARN A 0 ACS_ExecuteAlways(791, 0, 0, 0, 0)//Check if advanced decorations are disabled.
+		BFUG A 3
+		
+		TNT1 A 0 A_JumpIfInventory("NaziVerificate1", 1, "MG42") //Leave the (non-random) switch to MG42 if on a Wolfenstein level
+		//TNT1 A 0 A_Jump(48, "BFG10K")
+		//TNT1 A 0 A_Jump(4, "Unmaker")
+    }
+}

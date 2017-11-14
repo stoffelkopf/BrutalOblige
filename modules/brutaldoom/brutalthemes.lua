@@ -1209,7 +1209,6 @@ BRUTALDOOM.THEMES.egypt2.monster_prefs =
     mancubus = 1.3
     demon   = 1.3
     mummy = 2.0
-    Labguy = 0.1
     HeadlessZombie = 1.9 --Serious Sam had ancient Egypt themed levels and headless enemies so this seems appropriate
     Zyberdemon = 1.2
 }
@@ -1238,8 +1237,6 @@ DOOM.THEMES.tech.monster_prefs =
     shooter = 1.2
     arach   = 1.5
     Labguy = 1.5
-    AncientArachnotron = 0.1
-    Volcabus = 0.1
 }
 DOOM.THEMES.tech.facades =
 {      
@@ -1903,7 +1900,7 @@ STARTERPACK.ROOM_THEMES =
 
 }
 
-OB_THEMES["nukem"] =
+--[[OB_THEMES["nukem"] =
 {
   label = "Duke Nukem"
   priority = 1
@@ -1912,4 +1909,4 @@ OB_THEMES["nukem"] =
   name_class = "URBAN"
   mixed_prob = 0
   shown = False --if this is true it shows even without STARTERPACK being in use, which causes errors. Need to find a good solution.
-}
+}]]--
