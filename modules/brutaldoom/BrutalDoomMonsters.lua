@@ -93,8 +93,6 @@ BRUTALDOOM.MONSTERS =
 	    r = 20
 	    h = 64 
 	    level = 7
-        boss_type = "minor"
-        boss_prob = 50
 	    prob = 20
 	    crazy_prob = 20
 	    health = 400
@@ -119,7 +117,7 @@ BRUTALDOOM.MONSTERS =
 	    damage = 75
 	    attack = "hitscan"
 	    cage_factor = 0  -- never put in cages
-	    density = 1.0
+	    density = 0.5
         infight_damage = 8.0
 	  }
 	BrutalSS = --the script often fails in Oblige levels hence this as well
@@ -134,7 +132,7 @@ BRUTALDOOM.MONSTERS =
 	    damage = 20
 	    attack = "hitscan"
 	    cage_factor = 0  -- never put in cages
-	    density = 1.5
+	    density = 1.0
 	    theme = "wolf"
         give = { {weapon="Mp40"}, {ammo="bullet",count=20} }
 	  }
@@ -144,13 +142,13 @@ BRUTALDOOM.MONSTERS =
 	    r = 14
 	    h = 56 
 	    level = 4
-	    prob = 8
+	    prob = 7
 	    crazy_prob = 7
 	    health = 80
 	    damage = 5
 	    attack = "hitscan"
 	    cage_factor = 0  -- never put in cages
-	    density = 1.0
+	    density = 0.5
         infight_damage = 8.0
 	  }
 	  DarkImp =
@@ -300,7 +298,7 @@ BRUTALDOOM.MONSTERS =
         r = DOOM.MONSTERS.arach.r
         h = DOOM.MONSTERS.arach.h
         level = DOOM.MONSTERS.arach.level+1
-        prob = DOOM.MONSTERS.arach.prob*0.7
+        prob = 8
         health = 800
         damage = DOOM.MONSTERS.arach.damage
         attack = DOOM.MONSTERS.arach.attack
@@ -310,6 +308,7 @@ BRUTALDOOM.MONSTERS =
         disloyal = DOOM.MONSTERS.arach.disloyal
         trap_factor = DOOM.MONSTERS.arach.trap_factor
         infight_damage = DOOM.MONSTERS.arach.infight_damage
+        weap_min_damage = 90
      }
      Volcabus =
      {
@@ -317,7 +316,7 @@ BRUTALDOOM.MONSTERS =
         r = DOOM.MONSTERS.mancubus.r
         h = DOOM.MONSTERS.mancubus.h
         level = DOOM.MONSTERS.mancubus.level+1
-        prob = DOOM.MONSTERS.mancubus.prob*0.7
+        prob = 10
         health = 1050
         damage = DOOM.MONSTERS.mancubus.damage*1.2
         attack = DOOM.MONSTERS.mancubus.attack
@@ -327,6 +326,7 @@ BRUTALDOOM.MONSTERS =
         disloyal = DOOM.MONSTERS.mancubus.disloyal
         trap_factor = DOOM.MONSTERS.mancubus.trap_factor
         infight_damage = DOOM.MONSTERS.mancubus.infight_damage
+        weap_min_damage = 110
      }
      Mummy = --needs a bit of tweaking
      {
@@ -342,6 +342,42 @@ BRUTALDOOM.MONSTERS =
         weap_min_damage = 40
         room_size = "any"
         infight_damage = 3.5
+     }
+     --Seperate Rifle and Pistol Zombie so Oblige can model them more accurately
+     zombie = REMOVE_ME
+     PistolZombie = 
+     {
+         id = 344
+         r = 20
+         h = 56 
+         level = 1
+         prob = 60
+         health = 50
+         damage = 1.2
+         attack = "hitscan"
+         give = { {weapon="bdpistol"}, {ammo="clip1",count=10} }
+         density = 1.7
+         room_size = "small"
+         disloyal = true
+         trap_factor = 0.01
+         infight_damage = 1.9
+     }
+     RifleZombie = 
+     {
+         id = 343
+         r = 20
+         h = 56 
+         level = 1
+         prob = 60
+         health = 50
+         damage = 1.8
+         attack = "hitscan"
+         give = { {weapon="AssaultRifle"}, {ammo="bullet",count=10} }
+         density = 1.7
+         room_size = "small"
+         disloyal = true
+         trap_factor = 0.01
+         infight_damage = 2.2
      }
      
 }

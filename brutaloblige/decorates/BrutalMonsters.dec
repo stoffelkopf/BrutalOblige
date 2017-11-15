@@ -357,3 +357,32 @@ states
 		Loop
     }
 }
+actor ObligeRifleZombie : RifleZombie 343
+{
+//$Category "Monsters"
+//$EditorSprite "PSSSB1"
+Tag "Rifle Zombie"
+States
+{
+    Spawn:
+		PSSS B 1
+		TNT1 A 0 A_GiveInventory("SKZombieman", 1)
+		TNT1 A 0 A_GiveInventory("TypeZombieMan", 1)
+		TNT1 A 0 A_TakeInventory("ZombiemanAmmo", 20)
+		TNT1 A 0 A_GiveInventory("ZombieManAmmo", random(1,10))
+		TNT1 A 0 ACS_ExecuteAlways(728)//Check if new monsters are disabled
+		TNT1 A 0 ACS_ExecuteAlways(796, 0, 0, 0, 0)//Check if Vanilla Mode is activated
+		PSSS B 2
+		TNT1 A 0 A_JumpIfInventory("nonewenemies", 1, "Stand")
+		//TNT1 A 0 A_Jump(1, "ReplaceAxeman")
+		//TNT1 A 0 A_Jump(1, "ReplaceBeheaded")
+		//TNT1 A 0 A_Jump(140, "ReplacePistol")
+	Goto Stand
+}
+}
+actor ObligePistolZombie : PistolZombie 344
+{
+//$Category "Monsters"
+//$EditorSprite "PONHB1"
+Tag "Pistol Zombie"
+}
