@@ -1,6 +1,3 @@
-actor ObligeBlurSphere : Blursphere 318
-{
-}
 ACTOR FriendBJ : SwitchableDecoration
 {
 	Scale 1.0

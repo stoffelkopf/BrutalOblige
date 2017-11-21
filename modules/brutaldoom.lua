@@ -27,7 +27,9 @@ BRUTALDOOM.SECRET_EXITS = { }
 
 STARTERPACK = { }
 
-gui.import("brutaldoom/brutalthemes") --this has to come after the tables are declared
+gui.import("brutaldoom/BrutalDoomMaterials") --this all has to come after the tables are declared
+gui.import("brutaldoom/BrutalDoomThemes")
+gui.import("brutaldoom/BrutalDoomPickups")
 gui.import("hereticbrutal")
 gui.import("brutality")
 gui.import("starterpack")
@@ -113,6 +115,7 @@ function BRUTALDOOM.decorate()
     gui.wad_insert_file("brutaloblige/decorates/Decorate.dec","DECORATE");
     gui.wad_insert_file("brutaloblige/decorates/BrutalMonsters.dec","BRUMONS");
 	gui.wad_insert_file("brutaloblige/decorates/BrutalWeapons.dec","BRUWEPS");
+    gui.wad_insert_file("brutaloblige/decorates/BrutalPickups.dec","BRUPUPS");
     gui.wad_insert_file("brutaloblige/decorates/ChexKeys.dec","CHEXKEYS");
 	gui.wad_insert_file("brutaloblige/decorates/DarkImp.dec","DARKIMPD");
 	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
@@ -663,42 +666,7 @@ end
 ----------------------------------------------------------------
 gui.import("brutaldoom/BrutalDoomWeapons");
 
-BRUTALDOOM.NICE_ITEMS =
-{
-	goggles = REMOVE_ME --seem to be broken in v20b and were never that useful in oblige maps anyway
-}
 
-BRUTALDOOM.PICKUPS = {}
-
-BRUTALDOOM.PICKUPS.grenade =
-  {
-    id = 300
-    kind = "ammo"
-    add_prob = 10
-    give = { {ammo="grenade",count=5} } --actually it only gives 1 but this was the only way to stop Oblige flooding maps with them
-    start_prob = 0
-  }
-  
-BRUTALDOOM.PICKUPS.Skel_Poster =
-  {
-      id = 323
-      r = 36
-      h = 128
-      kind = "health"  --not ideal but it works
-      rank = 1
-      add_prob = 20
-      give = { {health=10} }
-      theme_prob = 200
-      start_prob = 0
-  }
-  
-BRUTALDOOM.PICKUPS.clip1 =
-{
-    id = 342
-    kind = "ammo"
-    add_prob = 30
-    give = { {ammo="clip1",count=10} }
-}
 
 
 BRUTALDOOM.PLAYER_MODEL =

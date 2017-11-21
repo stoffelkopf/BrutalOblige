@@ -450,4 +450,25 @@ BRUTALDOOM.MONSTERS =
          room_size = "large"
          theme = { urban = true, egypt2 = true }
      }
+     --Since I replaced the chaingun with the minigun in the weapons table I need to edit the chaingunner monster
+     gunner =
+     {
+         id = DOOM.MONSTERS.gunner.id
+         r = DOOM.MONSTERS.gunner.r
+         h = DOOM.MONSTERS.gunner.h
+         level = DOOM.MONSTERS.gunner.level
+         prob = DOOM.MONSTERS.gunner.prob
+         health = DOOM.MONSTERS.gunner.health
+         damage = DOOM.MONSTERS.gunner.damage
+         attack = DOOM.MONSTERS.gunner.attack
+         give = { {weapon="Minigun"}, {ammo="bullet",count=10} }
+         weap_needed = { AssaultRifle=true }
+         weap_min_damage = DOOM.MONSTERS.gunner.weap_min_damage
+         density = DOOM.MONSTERS.gunner.density
+         species = DOOM.MONSTERS.gunner.species
+         room_size = DOOM.MONSTERS.gunner.room_size
+         disloyal = DOOM.MONSTERS.gunner.disloyal
+         trap_factor = DOOM.MONSTERS.gunner.trap_factor
+         infight_damage = DOOM.MONSTERS.gunner.infight_damage
+     }
 }
