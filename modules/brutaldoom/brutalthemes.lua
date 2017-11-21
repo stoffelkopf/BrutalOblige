@@ -1225,6 +1225,9 @@ BRUTALDOOM.ROOM_THEMES.egypt2_Outdoors.floors =
 }
 
 --Edits and additions to existing themes--
+--tech
+--BRUTALDOOM.THEMES.tech = DOOM.THEMES.tech
+--BRUTALDOOM.ROOM_THEMES.tech = DOOM.ROOM_THEMES.tech
 DOOM.THEMES.tech.prefab_remap =
 {
     BIGDOOR5 = "TNTDOOR2"
@@ -1233,7 +1236,7 @@ DOOM.THEMES.tech.prefab_remap =
 }
 DOOM.THEMES.tech.monster_prefs =
 {
-    zombie  = 1.5
+    PistolZombie  = 1.5
     shooter = 1.2
     arach   = 1.5
     Labguy = 1.5
@@ -1270,6 +1273,16 @@ DOOM.ROOM_THEMES.tech_Gray.walls =
     BUNKER02 = 30
     BUNKER03 = 30
     BUNKER05 = 30
+}
+--Urban
+DOOM.THEMES.urban.monster_prefs =
+{
+    revenant = 1.2
+    knight   = 1.5
+    gunner   = 1.5
+    ZombieMainBattleTank = 1.1
+    ZombieLightTank = 1.2
+    ZombieMech = 1.1
 }
 
 OB_THEMES["satanshankerchief"] =

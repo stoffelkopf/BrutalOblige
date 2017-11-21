@@ -47,68 +47,83 @@ actor ObligeEasyMarine : EasyMarine 307
 //$EditorSprite "PLAYA1"
 Tag "Evil Grunt"
 }
-actor ObligeEpic2Alien : Epic2Alien 309
+actor ObligeEpic2Alien : BrutalObligeMonster 309
 {
-//$Category "Monsters"
-//$EditorSprite "EPTAA1"
-Tag "Epic 2 Alien"
-SeeSound "epic2alien/sight"
-//PainSound "chainguy/pain"
-DeathSound "epic2alien/death"
-//ActiveSound "chainguy/active"
-//AttackSound "chainguy/attack"
-Obituary "%o never saw their attacker"
-States
-{
-See:
-TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
-TNT1 AAAAAAAAAAAAAAAAAAA 1 A_Chase("","")
-TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
-EPTA ABCD 1 A_Chase
-TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
-TNT1 AAAAAAAAAAAAAAAAAAA 1 A_Chase("","")
-TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
-EPTA ABCD 1 A_Chase
-EPTA ABCD 1 A_Chase("","")
-TNT1 AAAAAAAAAAAAAAAAAAA 1 A_Chase("","")
-EPTA ABCDABCD 1 A_Chase
-Loop
-Missile:
-EPTA E 9 A_FaceTarget
-EPTA F 4 A_FaceTarget
-EPTA G 4 BRIGHT A_CPosAttack
-EPTA E 9 A_FaceTarget
-EPTA F 4 A_FaceTarget
-EPTA G 4 BRIGHT A_CPosAttack
-EPTA E 9 A_FaceTarget
-EPTA F 4 A_FaceTarget
-EPTA G 4 BRIGHT A_CPosAttack
-EPTA E 9 A_FaceTarget
-EPTA F 4 A_FaceTarget
-EPTA G 4 BRIGHT A_CPosAttack
-Goto See
-Pain:
-EPTA H 3 A_Pain
-Goto See
-Death:
-EPTA I 5
-EPTA J 5 A_Scream
-EPTA K 5 A_NoBlocking
-EPTA L 5
-EPTA M -1
-Stop
-XDeath:
-EPTA N 5 
-EPTA O 5 A_XScream
-EPTA P 5 A_NoBlocking
-EPTA QRSTU 5
-EPTA V -1
-Stop
-Raise:
-EPTA M 5
-EPTA LKJI 5
-Goto See 
-}
+    //$Category "Monsters"
+    //$EditorSprite "EPTAA1"
+    Health 80
+	Radius 20
+	Height 56
+	Speed 9
+	PainChance 170
+	damagefactor "shotgun", 0.6
+	damagefactor "Minigun", 0.6
+	damagefactor "saw", 0.8
+	damagefactor "cut", 0.8
+	damagefactor "explosiveimpact", 0.4
+	Monster
+	+FLOORCLIP
+    Tag "Epic 2 Alien"
+    SeeSound "epic2alien/sight"
+    //PainSound "chainguy/pain"
+    DeathSound "epic2alien/death"
+    //ActiveSound "chainguy/active"
+    //AttackSound "chainguy/attack"
+    Obituary "%o never saw their attacker"
+    States
+    {
+        Spawn:
+            TNT1 A 1 A_Look
+            Loop
+        See:
+            TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
+            TNT1 AAAAAAAAAAAAAAAAAAA 1 A_Chase("","")
+            TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+            EPTA ABCD 1 A_Chase
+            TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
+            TNT1 AAAAAAAAAAAAAAAAAAA 1 A_Chase("","")
+            TNT1 A 0 A_ChangeFlag("SHOOTABLE", 1)
+            EPTA ABCD 1 A_Chase
+            EPTA ABCD 1 A_Chase("","")
+            TNT1 AAAAAAAAAAAAAAAAAAA 1 A_Chase("","")
+            EPTA ABCDABCD 1 A_Chase
+            Loop
+        Missile:
+            EPTA E 9 A_FaceTarget
+            EPTA F 4 A_FaceTarget
+            EPTA G 4 BRIGHT A_CPosAttack
+            EPTA E 9 A_FaceTarget
+            EPTA F 4 A_FaceTarget
+            EPTA G 4 BRIGHT A_CPosAttack
+            EPTA E 9 A_FaceTarget
+            EPTA F 4 A_FaceTarget
+            EPTA G 4 BRIGHT A_CPosAttack
+            EPTA E 9 A_FaceTarget
+            EPTA F 4 A_FaceTarget
+            EPTA G 4 BRIGHT A_CPosAttack
+            Goto See
+        Pain:
+            EPTA H 3 A_Pain
+            Goto See
+        Death:
+            EPTA I 5
+            EPTA J 5 A_Scream
+            EPTA K 5 A_NoBlocking
+            EPTA L 5
+            EPTA M -1
+            Stop
+        XDeath:
+            EPTA N 5 
+            EPTA O 5 A_XScream
+            EPTA P 5 A_NoBlocking
+            EPTA QRSTU 5
+            EPTA V -1
+            Stop
+        Raise:
+            EPTA M 5
+            EPTA LKJI 5
+            Goto See 
+    }
 }
 
 actor ObligeQuadrumpus : Quadrumpus 310

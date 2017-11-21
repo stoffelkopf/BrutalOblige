@@ -111,7 +111,7 @@ BRUTALDOOM.MONSTERS =
 	    r = 20 --the evil marine is actually 14 but I've left it as 20 incase it does somehow end up as an ss guard.
 	    h = 56 
 	    level = 8
-	    prob = 4
+	    prob = 2
 	    crazy_prob = 7
 	    health = 200
 	    damage = 75
@@ -142,7 +142,7 @@ BRUTALDOOM.MONSTERS =
 	    r = 14
 	    h = 56 
 	    level = 4
-	    prob = 7
+	    prob = 4
 	    crazy_prob = 7
 	    health = 80
 	    damage = 5
@@ -279,7 +279,7 @@ BRUTALDOOM.MONSTERS =
         r = DOOM.MONSTERS.zombie.r
         h = DOOM.MONSTERS.zombie.h
         level = DOOM.MONSTERS.zombie.level
-        prob = 20
+        prob = 50
         health = 100
         damage = DOOM.MONSTERS.zombie.damage
         attack = "melee"
@@ -379,5 +379,75 @@ BRUTALDOOM.MONSTERS =
          trap_factor = 0.01
          infight_damage = 2.2
      }
-     
+     --Vehicles
+     ZombieMainBattleTank =
+     {
+         id = 9951
+         r = 64
+         h = 100
+         level = 5
+         prob = 2.5
+         crazy_prob = 15
+         health = 4000
+         damage = 150
+         attack = "missile"
+         density = 0.1
+         weap_needed = { launch=true }
+         room_size = "large"
+         cage_factor = 0 
+         theme = { urban = true, egypt2 = true }
+     }
+     ZombieLightTank =
+     {
+         id = 9950
+         r = 64
+         h = 100
+         level = 5
+         prob = 4
+         crazy_prob = 20
+         health = 2000
+         damage = 100
+         attack = "missile"
+         density = 0.1
+         weap_needed = { launch=true }
+         room_size = "large"
+         cage_factor = 0
+         theme = { urban = true, egypt2 = true }
+     }
+     ZombieHelicopter =
+     {
+         id = 9953
+         r = 56
+         h = 150 --actually 96 but made higher so it doesn't put it in rooms where it has no room to fly
+         level = 5
+         prob = 2.5
+         crazy_prob = 15
+         health = 1000
+         damage = 120
+         attack = "missile"
+         weap_needed = { launch=true }
+         room_size = "large"
+         cage_factor = 0
+         float = true
+         theme = { urban = true, egypt2 = true }
+     }
+     ZombieMech = --basically copied from the default Cyberdemon, to which it is very similar
+     {
+         id = 9954
+         r = 48
+         h = 160
+         level = 7
+         boss_type = "tough"
+         boss_prob = 50
+         prob = 1.6
+         crazy_prob = 10
+         health = 3000
+         damage = 125
+         attack = "missile"
+         density = 0.1
+         weap_min_damage = 150
+         weap_prefs = { bfg=10.0 }
+         room_size = "large"
+         theme = { urban = true, egypt2 = true }
+     }
 }
