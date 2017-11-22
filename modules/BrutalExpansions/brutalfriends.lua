@@ -23,22 +23,13 @@ end
 
 BRUTALFRIENDS.NICE_ITEMS =
 {
-    invis = REMOVE_ME
-    replacementinvis =
-  {
-    id = 318
-    kind = "powerup"
-    add_prob = 5
-    secret_prob = 50 --vanilla is 70
-    time_limit = 100
-  }
-  FriendTeleportBeacon =
-  {
-    id = 2024
-    kind = "other"
-    add_prob = 5
-    secret_prob = 110
-  }
+    FriendTeleportBeacon =
+    {
+        id = 2024
+        kind = "other"
+        add_prob = 5
+        secret_prob = 110
+    }
 }
 
 OB_MODULES["brutalfriends"] =
