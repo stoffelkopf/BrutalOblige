@@ -34,6 +34,7 @@ gui.import("hereticbrutal")
 gui.import("brutality")
 gui.import("starterpack")
 gui.import("UniversalIntermissionCompat/BrutalINTM")
+gui.import("ExtraKeysCompat/BrutalExtraKeys")
 gui.import("functions/tablecontains")
 gui.import("functions/tablemerge")
 gui.import("functions/filereading")
@@ -62,6 +63,7 @@ BRUTALDOOM.PARAMETERS =
 	brutalversion = "bd21testnov01.pk3"
 	brutalityversion = "Project Brutality 2.03.pk3"
 	usingui = false
+    usingextrakeys = false
     playerclass = "Doomer"
     puristrailgunreload = "None"
 }
@@ -692,6 +694,9 @@ BRUTALDOOM.PLAYER_MODEL =
 function BRUTALDOOM.setup()
     gui.printf("Universal Intermission check:\n");
     BRUTALDOOM.checkuintm();
+    
+    gui.printf("ExtraKeys check:\n");
+    BRUTALDOOM.checkextrakeys();
         
     BRUTALDOOM.setsecretexits();
 end

@@ -57,7 +57,8 @@ function NIGHTMARE.decorate()
 	}
 
 if OB_CONFIG.game == "brutaldoom" then
-  data =
+    gui.wad_insert_file("NightmareMonsters/decorates/BrutalDoomNightmareMonsters.dec","DECORATE");
+  --[[data =
 	{
 		--nightmare spectre
 		'actor nightmare_spectre : Demon 255\n' --BullDemon 255\n'
@@ -1269,9 +1270,10 @@ if OB_CONFIG.game == "brutaldoom" then
 		'Decal DoomImpScorch\n'
 		'}\n'
 		'\n'
-	}
+	}--]]
 elseif OB_CONFIG.game == "brutality" then
-  data =
+    gui.wad_insert_file("NightmareMonsters/decorates/ProjectBrutalityNightmareMonsters.dec","DECORATE");
+  --[[data =
 	{
 		'actor nightmare_spectre : Demon\n' --handled by spawner hence no spawn number
 		'{\n'
@@ -2813,9 +2815,10 @@ elseif OB_CONFIG.game == "brutality" then
 		'	Loop\n'
 		'}\n'
 		'}\n'
-	}
+	}--]]
 else
-  data =
+    gui.wad_insert_file("NightmareMonsters/decorates/DoomNightmareMonsters.dec","DECORATE");
+  --[[data =
 	{
 		'actor nightmare_spectre : Demon 255\n'
 		'{\n'
@@ -2850,11 +2853,11 @@ else
 		'Decal DoomImpScorch\n'
 		'}\n'
 		'\n'
-	}
+	}]]--
 
 end
 
-  gui.wad_add_text_lump("DECORATE", data);
+  --gui.wad_add_text_lump("DECORATE", data);
 end
 
 NIGHTMARE.PARAMETERS =

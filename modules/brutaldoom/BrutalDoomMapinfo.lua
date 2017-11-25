@@ -360,6 +360,9 @@ Intermission BrutalDoomCast
 	  table.insert(data, 'LevelNum = ' .. mapnum .. "\n")
       table.insert(data, 'EnterPic = ' .. enterpic)
       table.insert(data, 'ExitPic = ' .. enterpic)
+	  if BRUTALDOOM.PARAMETERS.usingextrakeys == true then
+		table.insert(data, 'Translator = "OBXLAT"')
+	  end
       table.insert(data, 'cluster = 10\n')
       table.insert(data, 'music = "' .. dest[mapnum] .. '"\n')
       mapnum = mapnum + 1

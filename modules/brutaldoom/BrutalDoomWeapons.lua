@@ -52,10 +52,10 @@ BRUTALDOOM.WEAPONS =
 	    rarity=2
 	    give={ {ammo="cell",count=50} }
 	}
-        bfg10k =
-	  {
-	    id = 296
-	    level = 8
+    bfg10k =
+    {
+        id = 296
+        level = 8
 	    pref = 15
 	    add_prob = 20
 	    mp_prob = 6
@@ -67,7 +67,7 @@ BRUTALDOOM.WEAPONS =
 	    per = 40
 	    give = { {ammo="cell",count=40} }
 	    bonus_ammo = 40
-	  }
+    }
     bdpistol =
     {
         id = 320
@@ -144,6 +144,20 @@ BRUTALDOOM.WEAPONS =
         attack = "melee"
         rate = 1.5
         damage = 52 --actually random(50,55)
+    }
+    AssaultShotgun =
+    {
+        id = 340
+        level = 2
+        pref = 30
+        add_prob = 35
+        attack = "hitscan"
+        rate = 5.0
+        accuracy = 70
+        damage = 70
+        ammo = "shell"
+        per = 1
+        give = { {ammo="shell",count=10} }
     }
 }
 

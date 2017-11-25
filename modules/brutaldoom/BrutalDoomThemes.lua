@@ -885,7 +885,7 @@ BRUTALDOOM.THEMES.tech.facades =
 }
 BRUTALDOOM.THEMES.tech.fences.BROWN144 = 0 --doesn't tile properly on y
 BRUTALDOOM.ROOM_THEMES.tech_Gray = DOOM.ROOM_THEMES.tech_Gray
-DOOM.ROOM_THEMES.tech_Gray.walls =
+BRUTALDOOM.ROOM_THEMES.tech_Gray.walls =
 {
     GRAY1 = 50
     GRAY4 = 30
