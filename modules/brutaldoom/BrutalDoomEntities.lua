@@ -8,4 +8,7 @@ BRUTALDOOM.ENTITIES =
     PropHangingPlant1 = { id=349 }
     PropHangingPlant2 = { id=350 }
     PropHangingPots = { id=351 }
+    
+    --Urban Junk
+    DestroyedCar = { id=11004 }
 }
