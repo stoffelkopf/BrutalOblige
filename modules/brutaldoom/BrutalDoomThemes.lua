@@ -1,14 +1,4 @@
 -------------------Themes---------------------------
-BRUTALDOOM.ENTITIES =
-{
-  --- KEYS ---
-
-  kc_red     = { id=332 }
-  kc_yellow  = { id=333  }
-  kc_blue    = { id=331  }
-}
-
-
 BRUTALDOOM.THEMES =
 {
   satanshankerchief = 

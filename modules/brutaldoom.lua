@@ -30,6 +30,7 @@ STARTERPACK = { }
 gui.import("brutaldoom/BrutalDoomMaterials") --this all has to come after the tables are declared
 gui.import("brutaldoom/BrutalDoomThemes")
 gui.import("brutaldoom/BrutalDoomPickups")
+gui.import("brutaldoom/BrutalDoomEntities")
 gui.import("hereticbrutal")
 gui.import("brutality")
 gui.import("starterpack")
@@ -119,6 +120,7 @@ function BRUTALDOOM.decorate()
 	gui.wad_insert_file("brutaloblige/decorates/BrutalWeapons.dec","BRUWEPS");
     gui.wad_insert_file("brutaloblige/decorates/BrutalPickups.dec","BRUPUPS");
     gui.wad_insert_file("brutaloblige/decorates/ChexKeys.dec","CHEXKEYS");
+    gui.wad_insert_file("brutaloblige/decorates/ChexProps.dec","CHEXPROP");
 	gui.wad_insert_file("brutaloblige/decorates/DarkImp.dec","DARKIMPD");
 	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
     gui.wad_insert_file("brutaloblige/zscript/wolfmons.zscript","WOLFMONS");

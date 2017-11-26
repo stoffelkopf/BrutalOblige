@@ -213,6 +213,12 @@ BRUTALDOOM.MATERIALS =
   APOCTX1B = { t="INDUS4", f="APOCTX1B" }
   APOCTX2 = { t="INDUS4", f="APOCTX2" }
   APOCTX3 = { t="INDUS4", f="APOCTX3" }
+  
+  NEWDOR1 = { t="NEWDOR1", f="FLAT5_2" }
+  NEWDOR2 = { t="NEWDOR2", f="FLAT23" }
+  NEWDOR3 = { t="NEWDOR3", f="FLAT23" }
+  NEWDOR4 = { t="NEWDOR4", f="FLAT23" }
+  NEWDOR4B = { t="NEWDOR4B", f="FLAT23" }
 }
 
 
