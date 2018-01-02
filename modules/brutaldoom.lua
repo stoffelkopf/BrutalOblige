@@ -1684,7 +1684,7 @@ BRUTALDOOM.NICE_ITEMS =
 	goggles = REMOVE_ME --seem to be broken in v20b and were never that useful in oblige maps anyway
 }
 
---BRUTALDOOM.PICKUPS = DOOM.PICKUPS
+BRUTALDOOM.PICKUPS = DOOM.PICKUPS
 
 BRUTALDOOM.PICKUPS.grenade =
   {
