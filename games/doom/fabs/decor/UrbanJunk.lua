@@ -12,5 +12,12 @@ PREFABS.Decor_DestroyedCar =
   size = 128
 
   where  = "point"
+  
+  thing_11004 = 
+  {
+    DestroyedCarBlue = 50
+    DestroyedCarRed = 50
+    DestroyedCarGray = 50
+  }
 }
 

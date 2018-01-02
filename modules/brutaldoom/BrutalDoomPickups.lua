@@ -16,30 +16,30 @@ BRUTALDOOM.NICE_ITEMS =
     {
         id = 345
         kind = "other"
-        add_prob = 7
+        add_prob = 6
         start_prob = 0
         closet_prob = 15
-        secret_prob = 40
+        secret_prob = 20
         level = 2
     }
     CapturedMarineMinigun =
     {
         id = 346
         kind = "other"
-        add_prob = 7
+        add_prob = 6
         start_prob = 0
         closet_prob = 15
-        secret_prob = 40
+        secret_prob = 20
         level = 4
     }
     CapturedMarinePlasma =
     {
         id = 347
         kind = "other"
-        add_prob = 7
+        add_prob = 6
         start_prob = 0
         closet_prob = 15
-        secret_prob = 40
+        secret_prob = 20
         level = 6
     }
     berserk = --I've made this much more likely to appear just because it's fun

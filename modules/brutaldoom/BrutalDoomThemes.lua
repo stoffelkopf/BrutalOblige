@@ -73,9 +73,7 @@ BRUTALDOOM.THEMES =
       Flemoid2 = 2.0
       Flemoid3 = 1.5
     }
-
-    archy_arches = true
-    techy_doors = true
+    
   }
   
   --wolfenstein
@@ -899,6 +897,23 @@ BRUTALDOOM.THEMES.urban.monster_prefs =
     ZombieMainBattleTank = 1.1
     ZombieLightTank = 1.2
     ZombieMech = 1.1
+}
+BRUTALDOOM.THEMES.urban.passable_decor =
+{
+    UrbanRubble = 100
+        
+    gibs = 20
+    pool_blood_1 = 20
+    pool_blood_2 = 20
+    pool_brains  = 10
+
+    gibbed_player = 10
+    dead_player = 10
+    dead_zombie = 3
+    dead_shooter = 3
+    dead_imp = 3
+    dead_demon = 1
+    dead_caco  = 1
 }
 BRUTALDOOM.ROOM_THEMES.urban_Outdoors_generic=DOOM.ROOM_THEMES.urban_Outdoors_generic
 BRUTALDOOM.ROOM_THEMES.urban_Outdoors_generic.floors =

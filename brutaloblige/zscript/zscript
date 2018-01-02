@@ -19,6 +19,7 @@ class BrutalObligeHandler : EventHandler
 //Add a BrutalObligeActor with exciting new functions
 class BrutalObligeActor : Actor
 {
+    //for spawning things in the map
 	virtual void A_SpawnIfExists(string type, string default, float xofs, float yofs, float zofs, float xvel, float yvel, float zvel, float angle, int flags, int failchance, int tid)
 	{
 		string classname = type;
@@ -54,12 +55,28 @@ class BrutalObligeActor : Actor
 		}
 	}
 	
+	//for getting level info dynamically
 	virtual int A_GetLevelNumber()
 	{
 		//level.MapName - lump name
 		//level.LevelName - nice name
 		//level.levelnum - integer number
 		return level.levelnum;
+	}
+	
+	//for gore
+	virtual void A_SpawnProjectileGib(class<Actor> missiletype, double spawnheight = 32, double spawnofs_xy = 0, double angle = 0, int flags = 0, double pitch = 0, int ptr = AAPTR_TARGET)
+	{
+        Actor gib = A_SpawnProjectile(missiletype, spawnheight, spawnofs_xy, angle, flags, pitch, ptr);
+		
+		if (gib != null)
+		{
+			gib.A_SetRenderStyle(1,GetRenderStyle ());
+			gib.Scale.X=self.Scale.X;
+			gib.Scale.Y=self.Scale.Y;
+			//gib.A_SetTranslation(self.Translation);
+		}
+		
 	}
 }
 

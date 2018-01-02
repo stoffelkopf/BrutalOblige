@@ -50,7 +50,7 @@ BRUTALDOOM.YES_NO =
 BRUTALDOOM.VERSIONS = 
 {
 	"brutalv20b.pk3",	"V20b"
-    "bd21testnov5.pk3",    "V21Beta"
+    "bd21testdec16.pk3",    "V21Beta"
 }
 
 BRUTALDOOM.PARAMETERS =
@@ -528,22 +528,9 @@ gui.import("brutaldoom/BrutalDoomMapinfo")
 function BRUTALDOOM.createkeyconf()
 local confdata =
 	{
-	'setslot 1 Chain_Saw ClassicModernSaw Melee_Attacks ClassicFist ClassicSaw\n'
-	'setslot 2 DualRifles Rifle  BrutalPistol ClassicPistol MP40 BrutalPistolOblige\n'
-	'setslot 3 Shot_Gun SSG ClassicShotgun ClassicSSG\n'
-	'setslot 4 MiniGun ClassicChaingun HitlersBuzzsaw MG42Oblige D4Machinegun\n'
-	'setslot 5 GrenadeLauncher Rocket_Launcher ClassicRocketLauncher GrenadeLauncherOblige SkulltagGrenadeLauncher\n'
-	'setslot 6 RailGun DualPlasmaRifles Plasma_Gun ClassicPlasmaRifle OldSkoolPlasmaRifle RailGunOblige SkulltagRailGun PuristRailGun UnrestrictedZorcher\n'
-	'setslot 7 BFG10k BIG_FUCKING_GUN VanillaBFG9000 BFG10KOblige SkulltagBFG10k D4GaussCannon\n'
-	'setslot 8 HellishMissileLauncher\n'
-	'setslot 9 FlameCannon\n'
-	'setslot 0 HandGrenades HandGrenadesOblige\n'
-    }
-
-    --[['clearplayerclasses\n' --because Brutal uses a keyconf for this I have to as well. If I put it in mapinfo the keyconf overwrites it.
-    'addplayerclass ' .. BRUTALDOOM.PARAMETERS.playerclass .. '\n'
-	}]]--
-    
+	'addslot 5 SkulltagGrenadeLauncher\n'
+	'addslot 6 SkulltagRailGun PuristRailGun\n'
+    }    
     
     gui.wad_add_text_lump("KEYCONF", confdata);
 end
@@ -579,7 +566,7 @@ function BRUTALDOOM.all_done()
 	BRUTALDOOM.createintm();
   end
   BRUTALDOOM.create_mapinfo();
-  --BRUTALDOOM.createkeyconf(); --keyconf no longer needed in V21. Praise be!
+  --BRUTALDOOM.createkeyconf();
   BRUTALDOOM.castcalldecorate();
 end
 
