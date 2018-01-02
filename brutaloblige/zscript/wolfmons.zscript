@@ -2,7 +2,7 @@ class semiclassicwolf : WolfensteinSS
 {
 	Default
 	{
-		Translation "192:207=240:247", "240:247=0:0";
+		Translation "WolfBlueToBlack";
 		Health 75;
 		Speed 10;
 	}

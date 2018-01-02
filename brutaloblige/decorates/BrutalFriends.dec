@@ -477,12 +477,12 @@ ACTOR FriendBJPathfinder
 		Stop
 	}
 }
-Actor EnemyMarine3: EasyMarine 319
+Actor EnemyMarine3: EvilMarineRifle 319
 {
 //$Category "Monsters/Evil Marines"
 //$EditorSprite "NPM2A1"
 Tag "Evil Grunt (alt)"
-Translation "112:127=[64,64,64]:[0,0,0]"
+Translation "EvilMarine"
 PainSound "DSIPAIN"
 DeathSound "DSIDETH"
 ActiveSound ""

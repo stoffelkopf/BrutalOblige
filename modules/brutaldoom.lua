@@ -50,7 +50,7 @@ BRUTALDOOM.YES_NO =
 BRUTALDOOM.VERSIONS = 
 {
 	"brutalv20b.pk3",	"V20b"
-    "bd21testdec16.pk3",    "V21Beta"
+    "bd21test-dec31.pk3",    "V21Beta"
 }
 
 BRUTALDOOM.PARAMETERS =
@@ -61,7 +61,7 @@ BRUTALDOOM.PARAMETERS =
 	brutalfriends = false
     iwad = 'Doom2.wad'
     musicpreset = 'iwad'
-	brutalversion = "bd21testnov01.pk3"
+	brutalversion = "bd21test-dec31.pk3"
 	brutalityversion = "Project Brutality 2.03.pk3"
 	usingui = false
     usingextrakeys = false
@@ -124,6 +124,7 @@ function BRUTALDOOM.decorate()
 	gui.wad_insert_file("brutaloblige/decorates/DarkImp.dec","DARKIMPD");
 	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
     gui.wad_insert_file("brutaloblige/zscript/wolfmons.zscript","WOLFMONS");
+    gui.wad_insert_file("brutaloblige/TRNSLATE","TRNSLATE");
 end
 
 function BRUTALDOOM4.caco()

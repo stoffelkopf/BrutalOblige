@@ -332,6 +332,7 @@ function BRUTAL64.all_done()
 	BRUTAL64.monstersdecorate();
 	BRUTAL64.weaponsdecorate();
     BRUTAL64.ukeymaps();
+    gui.wad_insert_file("brutaloblige/TRNSLATE","TRNSLATE");
 	BRUTAL64.create_mapinfo();
 	gui.printf("OB_THEMES:\n" .. table.tostring(OB_THEMES) ..'\n')
 	if BRUTALDOOM.PARAMETERS.iwad == "heretic.wad" then

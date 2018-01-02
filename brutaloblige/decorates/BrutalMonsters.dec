@@ -41,7 +41,7 @@ actor ObligeFlemoid3 : Flemoid3 306
 Tag "Armored Flemoidus Bipedicus"
 }
 
-actor ObligeEasyMarine : EasyMarine 307
+actor ObligeEasyMarine : EvilMarineRifle 307
 {
 //$Category "Monsters/Evil Marines"
 //$EditorSprite "PLAYA1"
@@ -400,4 +400,10 @@ actor ObligePistolZombie : PistolZombie 344
 //$Category "Monsters"
 //$EditorSprite "PONHB1"
 Tag "Pistol Zombie"
+}
+actor ObligeEvilMarinePlasma : EvilMarinePlasma replaces WolfensteinSS
+{
+    //$Category "Monsters/Evil Marines"
+    //$EditorSprite "PLAYA1"
+    Tag "Evil Marine"
 }
