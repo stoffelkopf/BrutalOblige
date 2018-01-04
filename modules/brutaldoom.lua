@@ -93,25 +93,6 @@ BRUTALDOOM.PURISTRAILGUNRELOADOPTIONS =
 
 gui.import("brutaldoom/BrutalDoomMonsters")
 
-BRUTALDOOM4.MONSTERS =
-{
- D4caco =
-  {
-    id = 316
-    r = 31
-    h = 56 
-    level = 3
-    prob = 0
-    health = 400
-    damage = 5
-    attack = "missile"
-    density = 0.5
-    min_weapon = 1
-    float = true
-    room_size = "large"
-  }   
-}
-
 
 --decorate definition
 function BRUTALDOOM.decorate()

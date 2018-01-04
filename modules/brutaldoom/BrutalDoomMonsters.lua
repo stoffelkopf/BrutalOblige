@@ -260,7 +260,7 @@ BRUTALDOOM.MONSTERS =
         r = DOOM.MONSTERS.zombie.r
         h = DOOM.MONSTERS.zombie.h
         level = DOOM.MONSTERS.zombie.level
-        prob = 1
+        prob = 0.5
         health = 150
         damage = DOOM.MONSTERS.zombie.damage
         attack = DOOM.MONSTERS.zombie.attack
@@ -471,4 +471,45 @@ BRUTALDOOM.MONSTERS =
          trap_factor = DOOM.MONSTERS.gunner.trap_factor
          infight_damage = DOOM.MONSTERS.gunner.infight_damage
      }
+     --Redefine Caco to not appear in Urban theme, where the D4 caco replaces it
+     caco =
+    {
+        id = DOOM.MONSTERS.caco.id
+        r = DOOM.MONSTERS.caco.r
+        h = DOOM.MONSTERS.caco.h
+        level = DOOM.MONSTERS.caco.level
+        prob = DOOM.MONSTERS.caco.prob
+        health = DOOM.MONSTERS.caco.health
+        damage = DOOM.MONSTERS.caco.damage
+        attack = DOOM.MONSTERS.caco.attack
+        density = DOOM.MONSTERS.caco.density
+        weap_min_damage = DOOM.MONSTERS.caco.weap_min_damage
+        float = DOOM.MONSTERS.caco.float
+        room_size = DOOM.MONSTERS.caco.room_size
+        trap_factor = DOOM.MONSTERS.caco.trap_factor
+        infight_damage = DOOM.MONSTERS.caco.infight_damage
+        theme = "!urban"
+    }
+}
+
+BRUTALDOOM4.MONSTERS =
+{
+    D4caco =
+    {
+        id = 316
+        r = DOOM.MONSTERS.caco.r
+        h = DOOM.MONSTERS.caco.h
+        level = DOOM.MONSTERS.caco.level
+        prob = DOOM.MONSTERS.caco.prob
+        health = DOOM.MONSTERS.caco.health
+        damage = DOOM.MONSTERS.caco.damage
+        attack = DOOM.MONSTERS.caco.attack
+        density = DOOM.MONSTERS.caco.density
+        weap_min_damage = DOOM.MONSTERS.caco.weap_min_damage
+        float = DOOM.MONSTERS.caco.float
+        room_size = DOOM.MONSTERS.caco.room_size
+        trap_factor = DOOM.MONSTERS.caco.trap_factor
+        infight_damage = DOOM.MONSTERS.caco.infight_damage
+        theme = "urban"
+    }   
 }

@@ -25,7 +25,23 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 
 ### Monsters
 
-**Done:** Belphegor, Juggernaut, Evil Marine, Evil Grunt, Flemoids 1-3 and Quadrumpus
+**Done:** 
+
+* Belphegor
+* Juggernaut
+* Evil Marine
+* Evil Grunt
+* Flemoids 1-3
+* Quadrumpus
+* Epic 2 Alien
+* Headless Zombie
+* Labguy
+* Ancient Arachnotron
+* Volcabus
+* Mummy
+* Zombie Tanks
+* Zombie Mech
+* Zombie Helicopter
 
 **Partially done:**
 
@@ -33,17 +49,26 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 
 **Future:**
 
-* If there are more unused monsters in Brutal Doom V21, and it looks like there will be, I'll be all over them!
+
 
 ### Weapons
 
-**Done:** BFG10k, Grenade Launcher, Railgun and Pistol. These all work as per Skulltag in purist mode (with the exception of the pistol which already had a purist version).
+**Done:** 
 
-**Future:** wait for V21!
+* Skulltag weapons: BFG10k, Grenade Launcher and Railgun
+* SMG
+* Assault Shotgun
+
+**Future:**
 
 ### Themes
 
 **Done:** Wolfenstein and Satan's Hankercheif.
+
+**Partially Done:**
+
+* New textures in existing themes
+* Scenery objects
 
 **Future:** Add extra Wolfenstein monsters to fill the roles of Doom monsters.
 
@@ -93,7 +118,7 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 
 ### Monsters
 
-**Partially done:** Evil Marine variants based on the friendly marines.
+**Future:** Evil Marine variants based on the friendly marines.
 
 ## BrutalDoom64
 
