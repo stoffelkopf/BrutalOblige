@@ -1,5 +1,7 @@
 //Brutal Doom additions
 #include "BRUMONS"
+#include "D4CACO"
+#include "BOSTELTH"
 #include "BRUWEPS"
 #include "CHEXKEYS"
 #include "CHEXPROP"

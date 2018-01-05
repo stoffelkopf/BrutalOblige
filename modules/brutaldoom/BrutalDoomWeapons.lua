@@ -57,6 +57,7 @@ BRUTALDOOM.WEAPONS =
         id = 296
         level = 8
 	    pref = 15
+        upgrades = "bfg"
 	    add_prob = 20
 	    mp_prob = 6
 	    attack = "missile"
@@ -159,10 +160,26 @@ BRUTALDOOM.WEAPONS =
         per = 1
         give = { {ammo="shell",count=10} }
     }
+    Unmaker =
+    {
+        id = 341
+        level = 9 --1 higher than the BFG
+        pref = 12
+        add_prob = 20
+        hide_prob = 35
+        attack = "missile"
+        rate = 8.5
+        accuracy = 80
+        damage = 47 --actually random(45,50)
+        ammo = "SoulAmmo"
+        per = 1
+        give = { {ammo="SoulAmmo",count=100} }
+    }
 }
 
 BRUTALDOOM.AMMOS =
 {
 	grenade = { start_bonus = 1  }
     clip1 = { start_bonus = 15 }
+    SoulAmmo = { start_bonus = 0 }
 }

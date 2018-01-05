@@ -86,4 +86,11 @@ BRUTALDOOM.PICKUPS =
         give = { {ammo="clip1",count=10} }
     }
 
+    fakesoulammo = --a hack to stop the unmaker causing an assertation fail
+    {
+        id = 342
+        kind = "ammo"
+        add_prob = 10
+        give = { {ammo="SoulAmmo",count=50} }
+    }
 }

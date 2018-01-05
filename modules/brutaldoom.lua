@@ -98,6 +98,8 @@ gui.import("brutaldoom/BrutalDoomMonsters")
 function BRUTALDOOM.decorate()
     gui.wad_insert_file("brutaloblige/decorates/Decorate.dec","DECORATE");
     gui.wad_insert_file("brutaloblige/decorates/BrutalMonsters.dec","BRUMONS");
+    gui.wad_insert_file("brutaloblige/decorates/D4Caco.dec","D4CACO");
+    gui.wad_insert_file("brutaloblige/decorates/BrutalStealthMonsters.dec","BOSTELTH");
 	gui.wad_insert_file("brutaloblige/decorates/BrutalWeapons.dec","BRUWEPS");
     gui.wad_insert_file("brutaloblige/decorates/BrutalPickups.dec","BRUPUPS");
     gui.wad_insert_file("brutaloblige/decorates/ChexKeys.dec","CHEXKEYS");
@@ -109,7 +111,7 @@ function BRUTALDOOM.decorate()
 end
 
 function BRUTALDOOM4.caco()
-	gui.wad_insert_file("brutaloblige/decorates/D4Caco.dec","DECORATE");
+	--gui.wad_insert_file("brutaloblige/decorates/D4Caco.dec","DECORATE");
 end
 
 function BRUTALDOOM.epic()
