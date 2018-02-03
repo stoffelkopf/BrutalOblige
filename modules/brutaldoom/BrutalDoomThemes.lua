@@ -1,449 +1,6 @@
 -------------------Themes---------------------------
-BRUTALDOOM.ENTITIES =
-{
-  --- KEYS ---
-
-  kc_red     = { id=332 }
-  kc_yellow  = { id=333  }
-  kc_blue    = { id=331  }
-}
-BRUTALDOOM.LIQUIDS =
-{
-  flem1 = { mat="SNOT1", light=172, special=5,  damage=10 }
-  flem2 = { mat="SNOT4", light=172, special=5,  damage=10 }
-  
-  --heretic-------------------------
-  --water  = { mat="FLTFLWW1", light_add=16, special=0 }
-  water2 = { mat="FLTWAWA1", light_add=16, special=0 }
-  hsludge = { mat="FLTSLUD1", light_add=16, special=16, damage=20 }
-  hlava   = { mat="FLATHUH1", light_add=24, special=16, damage=20 }
-  hmagma  = { mat="FLTHLAVA", light_add=16, special=16, damage=20 }
-}
-
-BRUTALDOOM.MATERIALS =
-{
-  CHEXROCK  = { t="CHEXROCK",    f="CHEXFLRK" }
-  CHEXROCK2  = { t="CHEXROCK2",    f="CHEXODF2" }
-
-  CHEXINDOOR1 = { t="CHEXWALL",    f="CHEXFLOR" }
-  CHEXINDOOR2 = { t="CHEXWAL2",    f="CHEXFLR2" }
-  CHEXINDOOR3 = { t="CHEXWAL3",    f="CHEXFLR3" }
-
-  CHEXOUTDOOR1   = { t="CHEXODW",   f="CHEXODF" }
-  CHEXOUTDOOR2   = { t="CHEXODW2",   f="CHEXODF2" }
-  CHEXOUTDOOR3   = { t="CHEXODW3",   f="RROCK10" }
-  CHEXOUTDOOR4   = { t="CHEXODW4",   f="FLAT5_5" }
-  CHEXOUTDOOR5   = { t="CHEXODW5",   f="FLOOR5_4" }
-
-  --Door
-  CHEXDOOR1 = { t="CHEXDOR", f="FLAT23" }
-
-  -- liquid stuff (using new patches)
-  SFALL1   = { t="SNTFL1", f="SNOT1", sane=1 }
-  SNOT1  = { t="SNTFL1", f="SNOT1", sane=1 }
-  SFALL2   = { t="SNTFL1", f="SNOT4", sane=1 }
-  SNOT4  = { t="SNTFL1", f="SNOT4", sane=1 }
-  
-  --Chex Crates
-  CXCRATE1 = { t="CXCRATE1", f="CRATOP2" }
-  CXCRATE2 = { t="CXCRATE2", f="CRATOP2" }
-  CXCRATE3 = { t="CXCRATE3", f="CRATOP2" }
-  CXCRATEL = { t="CXCRATEL", f="CRATOP2" }
-  CXCRATEW = { t="CXCRATEW", f="CRATOP2" }
-  CXCRATET = { t="CXCRATET", f="CRATOP2" }
-  
-  -- Tnt stuff (copied from the standard oblige defenitions)--
-  TNTDOOR  = { t="TNTDOOR",  f="FLAT23" }
-  DOC1     = { t="DOC1",     f="FLAT23" }
-  DISASTER = { t="DISASTER", f="FLOOR7_1" }
-  MTNT1    = { t="MTNT1",    f="FLOOR7_2" }
-
-  BTNTSLVR = { t="BTNTSLVR", f="FLAT23" }
-  BTNTMETL = { t="BTNTMETL", f="CEIL5_2" }
-  CUBICLE  = { t="CUBICLE",  f="CEIL5_1" }
-  M_TEC    = { t="M_TEC",    f="CEIL5_2" }
-  YELMETAL = { t="YELMETAL", f="CEIL5_2" }
-
-  METALDR  = { t="METALDR",  f="CEIL5_2" }
-  METAL_BD = { t="METAL-BD", f="CEIL5_2" }
-  METAL_RM = { t="METAL-RM", f="CEIL5_2" }
-  METAL2BD = { t="METAL2BD", f="CEIL5_2" }
-
-  M_RDOOR  = { t="M_RDOOR",  f="FLOOR7_1" }
-  M_YDOOR  = { t="M_RDOOR",  f="FLOOR7_1" }
-
-  MFLR8_4  = { t="ASPHALT",  f="MFLR8_4" }
-  FLAT8    = { f="FLAT8",    t="DOKODO1B" }
-
-  CAVERN1  = { t="CAVERN1",  f="RROCK07" }
-  CAVERN4  = { t="CAVERN4",  f="MFLR8_3" }
-  CAVERN6  = { t="CAVERN6",  f="RROCK17" }
-  CAVERN7  = { t="CAVERN7",  f="RROCK16" }
-
-  SMSTONE6 = { t="SMSTONE6", f="RROCK09" }
-  STONEW1  = { t="STONEW1",  f="RROCK09" }
-  STONEW5  = { t="STONEW5",  f="MFLR8_3" }
-
-  -- All the crates here! --
-
-  -- 64x64 etc
-  CR64LB  = { t="CR64LB",  f="CRATOP2" }
-  CRLWDS6 = { t="CRLWDS6", f="CRATOP2" } --64x32, not really useful
-
-  -- 64x128
-  CRBLWDH6 = { t="CRBLWDH6", f="CRATOP2" }
-  CRBWDH64 = { t="CRBWDH64", f="FLAT5_2" }
-  CRLWDL6B = { t="CRLWDL6B", f="CRATOP2" }
-  CR64HBRM = { t="CR64HBRM", f="CRATOP2" }
-  CR64HBBP = { t="CR64HBBP", f="CRATOP2" }
-  CR64HGBP = { t="CR64HGBP", f="CRATOP1" }
-  CR64SLGB = { t="CR64SLGB", f="CRATOP1" }
-  CR64HBG  = { t="CR64HBG",  f="CRATOP2" }
-  CR64HBB  = { t="CR64HBB",  f="CRATOP2" }
-  CR64HGB  = { t="CR64HGB",  f="CRATOP1" }
-  CR64HGG  = { t="CR64HGG",  f="CRATOP1" }
-  CRSMB    = { t="CRSMB",    f="CRATOP2" }
-  CRWDL64A = { t="CRWDL64A", f="FLAT5_2" }
-  CRWDL64B = { t="CRWDL64B", f="FLAT5_2" }
-  CRWDL64C = { t="CRWDL64C", f="FLAT5_2" }
-  CRWDT32  = { t="CRWDT32",  f="FLAT5_2" }
-  CRWDH64  = { t="CRWDH64",  f="FLAT5_2" }
-  CRWDH64B = { t="CRWDH64B", f="FLAT5_2" }
-  CRWDS64  = { t="CRWDH64",  f="FLAT5_2" }
-  CRLWDH6B = { t="CRLWDH6B", f="CRATOP2" }
-  CRLWDL6  = { t="CRLWDL6",  f="CRATOP2" }
-  CRLWDL6E = { t="CRLWDL6E", f="CRATOP2" }
-  CRLWDL6C = { t="CRLWDL6C", f="CRATOP2" }
-  CRLWDL6D = { t="CRLWDL6D", f="CRATOP2" }
-  CRTINYB  = { t="CRTINYB",  f="CRATOP2" }
-  CRLWDH6  = { t="CRLWDH6",  f="CRATOP2" }
-  CR64LG   = { t="CR64LG",   f="CRATOP1" }
-  CRLWDVS  = { t="CRLWDVS",  f="CRATOP2" }
-
-  -- 128x64
-  CR128LG  = { t="CR128LG",  f="CRATOP2" }
-  CRBWLBP  = { t="CRBWLBP",  f="CRATOP2" }
-  CR128LB  = { t="CR128LB",  f="CRATOP2" }
-
-  -- 128x128
-  CRWDL128 = { t="CRWDL128", f="FLAT5_2" }
-  CRAWHBP  = { t="CRAWHBP",  f="CRATOP1" }
-  CRAWLBP  = { t="CRAWLBP",  f="CRATOP2" }
-  CRBWHBP  = { t="CRBWHBP",  f="CRATOP1" }
-  CRLWDL12 = { t="CRLWDL12", f="CRATOP2" }
-  CRBWDL12 = { t="CRBWDL12", f="FLAT5_2" }
-  CR128HGB = { t="CR128HGB", f="CRATOP1" }
-
-  DOGRMSC  = { t="DOGRMSC",  f="RROCK20" }
-  DOKGRIR  = { t="DOKGRIR",  f="RROCK09" }
-  DOKODO1B = { t="DOKODO1B", f="FLAT5" }
-  DOKODO1B = { t="DOKODO2B", f="FLAT5" }
-  DOKGRIR  = { t="DOKGRIR",  f="RROCK20" }
-  DOPUNK4  = { t="DOPUNK4",  f="CEIL5_1" }
-  DORED    = { t="DORES",    f="CEIL5_1" }
-
-  PNK4EXIT = { t="PNK4EXIT", f="CEIL5_1" }
-
-  LITEGRN1 = { t="LITEGRN1", f="FLAT1" }
-  LITERED1 = { t="LITERED1", f="FLAT1" }
-  LITERED2 = { t="LITERED2", f="FLAT23" }
-  LITEYEL1 = { t="LITEYEL1", f="CEIL5_1" }
-  LITEYEL2 = { t="LITEYEL2", f="FLAT23" }
-  LITEYEL3 = { t="LITEYEL3", f="FLAT23" }
-
-  EGGREENI = { t="EGGREENI", f="RROCK20" }
-  EGREDI   = { t="EGREDI",   f="FLAT5_3" }
-  ALTAQUA  = { t="ALTAQUA",  f="RROCK20" }
-
-  -- Egypt stuff --
-
-  BIGMURAL = { t="BIGMURAL", f="FLAT1_1" }
-  MURAL1   = { t="MURAL1",   f="FLAT1_1" }
-  MURAL2   = { t="MURAL2",   f="FLAT1_1" }
-
-  PILLAR   = { t="PILLAR",   f="FLAT1_1" }
-  BIGWALL  = { t="BIGWALL",  f="FLAT8"   } --256x128, Egyptian mural decor
-  DRSIDE1  = { t="DRSIDE1",  f="FLAT1_1" } --32x128, useful for small supports, doesn't tile too well
-  DRSIDE2  = { t="DRSIDE2",  f="FLAT1_1" } --32x128, useful for small supports, doesn't tile too well
-  DRTOPFR  = { t="DRTOPFR",  f="FLAT1_1" } --32x65
-  DRTOPSID = { t="DRTOPSID", f="FLAT1_1" } --32x65
-  LONGWALL = { t="LONGWALL", f="FLAT1_1" } --256x128, Anubis mural
-  SKIRTING = { t="SKIRTING", f="FLAT1_1" } --256x43, Egyptian hieroglyphics
-  STWALL   = { t="STWALL",   f="CRATOP2" }
-  DRFRONT  = { t="DRFRONT",  rail_h=128  } --Transparent in center, not really useful
-
-  -- Transparent openings --
-
-  GRNOPEN = { t="GRNOPEN", rail_h=128 } --SP_ROCK1 64x128 opening
-  REDOPEN = { t="REDOPEN", rail_h=128 } --ROCKRED 64x128 opening
-  BRNOPEN = { t="BRNOPEN", rail_h=128 } --STONE6 64x128 opening
-
-  -- Rails --
-
-  DOGRID   = { t="DOGRID",   rail_h=128 }
-  DOWINDOW = { t="DOWINDOW", rail_h=68 } --Yea, it's 64x68
-  DOGLPANL = { t="DOGLPANL", rail_h=128 }
-  DOBWIRE  = { t="DOBWIRE",  rail_h=128 }
-  DOBWIRE2 = { t="DOBWIRE2", rail_h=128 } --Has no real use, no X flipped variant
-  SMGLASS1 = { t="SMGLASS",  rail_h=128  }
-  TYIRONLG = { t="TYIRONLG", rail_h=128 }
-  TYIRONSM = { t="TYIRONSM", rail_h=72  }
-  WEBL = { t="WEBL", rail_h=128 } --Not really useful
-  WEBR = { t="WEBR", rail_h=128 } --Not really useful
-  
-  ---Plutonia Stuff---
-  A_CAMO1 =  { t="A-CAMO1",  f="GRASS1" }
-  A_CAMO2 =  { t="A-CAMO2",  f="SLIME13" }
-  A_CAMO3 =  { t="A-CAMO3",  f="SLIME13" }
-  A_CAMO4 =  { t="A-CAMO4",  f="FLOOR7_2" }
-  
-  PLUTONIADOOR  = { t="A-BROWN4", f="CEIL5_2" }
-}
-
-
-BRUTALDOOM.HMATERIALS =
-{
-  --heretic stuff--
-  -- walls --
-
-  BANNER1  = { t="BANNER1",  f="FLOOR03" }
-  BANNER2  = { t="BANNER2",  f="FLOOR03" }
-  BANNER3  = { t="BANNER3",  f="FLAT520" }
-  BANNER4  = { t="BANNER4",  f="FLAT520" }
-  BANNER5  = { t="BANNER5",  f="FLOOR25" }
-  BANNER6  = { t="BANNER6",  f="FLOOR25" }
-  BANNER7  = { t="BANNER7",  f="FLOOR00" }
-  BANNER8  = { t="BANNER8",  f="FLOOR00" }
-  BLUEFRAG = { t="BLUEFRAG", f="FLOOR16" }
-  BRWNRCKS = { t="BRWNRCKS", f="FLOOR17" }
-
-  CELTIC   = { t="CELTIC",   f="FLOOR06" }
-  CHAINMAN = { t="CHAINMAN", f="FLAT520" }
-  CSTLMOSS = { t="CSTLMOSS", f="FLOOR03" }
-  CSTLRCK  = { t="CSTLRCK",  f="FLOOR03" }
-  CTYSTCI1 = { t="CTYSTCI1", f="FLOOR11" }
-  CTYSTCI2 = { t="CTYSTCI2", f="FLOOR11" }
-  CTYSTCI4 = { t="CTYSTCI4", f="FLOOR11" }
-  CTYSTUC1 = { t="CTYSTUC1", f="FLOOR11" }
-  CTYSTUC2 = { t="CTYSTUC2", f="FLOOR11" }
-  CTYSTUC3 = { t="CTYSTUC3", f="FLOOR11" }
-  CTYSTUC4 = { t="CTYSTUC4", f="FLOOR11" }
-  CTYSTUC5 = { t="CTYSTUC5", f="FLOOR11" }
-
-  DMNMSK   = { t="DMNMSK",   f="FLAT521" }
-  DOOREXIT = { t="DOOREXIT", f="FLAT520" }
-  DOORSTON = { t="DOORSTON", f="FLOOR30" }
-  DOORWOOD = { t="DOORWOOD", f="FLAT507" }
-  DRIPWALL = { t="DRIPWALL", f="FLOOR27" }
-
-  GRNBLOK1 = { t="GRNBLOK1", f="FLOOR19" }
-  GRNBLOK2 = { t="GRNBLOK2", f="FLOOR19" }
-  GRNBLOK3 = { t="GRNBLOK3", f="FLOOR19" }
-  GRNBLOK4 = { t="GRNBLOK4", f="FLOOR19" }
-  GRSKULL1 = { t="GRSKULL1", f="FLAT521" }
-  GRSKULL2 = { t="GRSKULL2", f="FLAT521" }
-  GRSKULL3 = { t="GRSKULL3", f="FLAT521" }
-  GRSTNPB  = { t="GRSTNPB",  f="FLAT520" }
-  GRSTNPBV = { t="GRSTNPBV", f="FLAT520" }
-  GRSTNPBW = { t="GRSTNPBW", f="FLAT520" }
-  HORSES1  = { t="HORSES1",  f="FLAT520" }
-
-  LOOSERCK = { t="LOOSERCK", f="FLOOR04" }
-  METL1    = { t="METL1",    f="FLOOR29" }
-  METL2    = { t="METL2",    f="FLOOR28" }
-  MOSAIC1  = { t="MOSAIC1",  f="FLAT502" }
-  MOSAIC2  = { t="MOSAIC2",  f="FLAT502" }
-  MOSAIC3  = { t="MOSAIC3",  f="FLAT502" }
-  MOSAIC4  = { t="MOSAIC4",  f="FLAT502" }
-  MOSAIC5  = { t="MOSAIC5",  f="FLAT502" }
-  MOSSRCK1 = { t="MOSSRCK1", f="FLOOR05" }
-
-  ORNGRAY  = { t="ORNGRAY",  f="FLAT504" }
-  RCKSNMUD = { t="RCKSNMUD", f="FLOOR01" }
-  REDWALL  = { t="REDWALL",  f="FLOOR09" }
-  ROOTWALL = { t="ROOTWALL", f="FLAT506" }
-
-  SAINT1   = { t="SAINT1",   f="FLAT523" }
-  SANDSQ2  = { t="SANDSQ2",  f="FLOOR06" }
-  SKULLSB1 = { t="SKULLSB1", f="FLOOR30" }
-  SNDBLCKS = { t="SNDBLCKS", f="FLOOR06" }
-  SNDCHNKS = { t="SNDCHNKS", f="FLAT522" }
-  SNDPLAIN = { t="SNDPLAIN", f="FLOOR25" }
-  SPINE1   = { t="SPINE1",   f="FLOOR25" }
-  SPINE2   = { t="SPINE2",   f="FLOOR25" }
-
-  SQPEB1   = { t="SQPEB1",   f="FLAT504" }
-  SQPEB2   = { t="SQPEB2",   f="FLOOR27" }
-  STNGLS1  = { t="STNGLS1",  f="FLOOR30" }
-  STNGLS2  = { t="STNGLS2",  f="FLOOR30" }
-  STNGLS3  = { t="STNGLS3",  f="FLOOR30" }
-
-  TMBSTON1 = { t="TMBSTON1", f="FLAT521" }
-  TMBSTON2 = { t="TMBSTON2", f="FLAT521" }
-  TRISTON1 = { t="TRISTON1", f="FLOOR00" }
-  TRISTON2 = { t="TRISTON2", f="FLOOR17" }
-  WOODWL   = { t="WOODWL",   f="FLOOR10" }
-
-  -- switches --
-
-  SW1OFF   = { t="SW1OFF",   f="FLOOR28" }
-  SW1ON    = { t="SW1ON",    f="FLOOR28" }
-
-  -- floors --
-
-  FLAT500  = { f="FLAT500", t="SQPEB1" }
-  FLAT502  = { f="FLAT502", t="BLUEFRAG" }
-  FLAT503  = { f="FLAT503", t="SQPEB1" }
-  FLAT504  = { f="FLAT504", t="SQPEB1" }
-  FLAT506  = { f="FLAT506", t="ROOTWALL" }
-  FLAT507  = { f="FLAT507", t="DOORWOOD" }
-  FLAT508  = { f="FLAT508", t="DOORWOOD" }
-  FLAT509  = { f="FLAT509", t="LOOSERCK" }
-  FLAT510  = { f="FLAT510", t="BRWNRCKS" }
-
-  FLAT512  = { f="FLAT512", t="GRNBLOK1" }
-  FLAT513  = { f="FLAT513", t="GRNBLOK1" }
-  FLAT516  = { f="FLAT516", t="LOOSERCK" }
-  FLAT517  = { f="FLAT517", t="BLUEFRAG" }
-  FLAT520  = { f="FLAT520", t="CSTLRCK" }
-  FLAT521  = { f="FLAT521", t="SQPEB1" }
-  FLAT522  = { f="FLAT522", t="SNDCHNKS" }
-  FLAT523  = { f="FLAT523", t="GRSTNPB" }
-
-  FLOOR00  = { f="FLOOR00", t="TRISTON1" }
-  FLOOR01  = { f="FLOOR01", t="LOOSERCK" }
-  FLOOR03  = { f="FLOOR03", t="CSTLRCK" }
-  FLOOR04  = { f="FLOOR04", t="CSTLRCK" }
-  FLOOR05  = { f="FLOOR05", t="MOSSRCK1" }
-  FLOOR06  = { f="FLOOR06", t="SANDSQ2" }
-  FLOOR07  = { f="FLOOR07", t="MOSAIC1" }
-  FLOOR08  = { f="FLOOR08", t="CHAINSD" }
-  FLOOR09  = { f="FLOOR09", t="REDWALL" }
-  FLOOR10  = { f="FLOOR10", t="WOODWL" }
-  FLOOR11  = { f="FLOOR11", t="WOODWL" }
-  FLOOR12  = { f="FLOOR12", t="WOODWL" }
-  FLOOR16  = { f="FLOOR16", t="BLUEFRAG" }
-  FLOOR17  = { f="FLOOR17", t="BRWNRCKS" }
-  FLOOR18  = { f="FLOOR18", t="GRNBLOK1" }
-  FLOOR19  = { f="FLOOR19", t="GRNBLOK1" }
-
-  FLOOR20  = { f="FLOOR20", t="SQPEB2" }
-  FLOOR21  = { f="FLOOR21", t="CHAINSD" }
-  FLOOR22  = { f="FLOOR22", t="CHAINSD" }
-  FLOOR23  = { f="FLOOR23", t="CHAINSD" }
-  FLOOR24  = { f="FLOOR24", t="CHAINSD" }
-  FLOOR25  = { f="FLOOR25", t="SPINE2" }
-  FLOOR26  = { f="FLOOR26", t="CHAINSD" }
-  FLOOR27  = { f="FLOOR27", t="SANDSQ2" }
-  FLOOR28  = { f="FLOOR28", t="METL2" }
-  FLOOR29  = { f="FLOOR29", t="METL1" }
-  FLOOR30  = { f="FLOOR30", t="METL1" }
-
-  -- rails --
-
-  WOODGATE = { t="WDGAT64", rail_h=64 }
-
-  GATE_BIG = { t="GATMETL",  rail_h=128 }
-  GATMETL2 = { t="GATMETL2", rail_h=32 }
-  GATMETL3 = { t="GATMETL3", rail_h=32 }
-  GATMETL4 = { t="GATMETL4", rail_h=64 }
-  GATMETL5 = { t="GATMETL5", rail_h=128 }
-
-  WEB1_B = { t="WEB1_B", rail_h=32 }
-  WEB1_F = { t="WEB1_F", rail_h=32 }
-  WEB2_B = { t="WEB2_B", rail_h=32 }
-  WEB2_F = { t="WEB2_F", rail_h=32 }
-  WEB3_M = { t="WEB3_M", rail_h=32 }
-
-  -- liquids / animated --
-
-  -- TODO: simplify this
-  HLAVA    = { t="HLAVA",    f="FLAT506" }
-  LAVAFL1  = { t="LAVAFL1",  f="FLATHUH1" }
-  WATRWAL1 = { t="WATRWAL1", f="FLTFLWW1" }
-
-  FLATHUH1 = { f="FLATHUH1", t="LAVAFL1"  }
-  FLTFLWW1 = { f="FLTFLWW1", t="WATRWAL1" }
-  FLTHLAVA = { f="FLTHLAVA", t="HLAVA"    }
-  FLTSLUD1 = { f="FLTSLUD1", t="HLAVA"    }
-  FLTTELE1 = { f="FLTTELE1", t="CHAINSD"  }
-  FLTWAWA1 = { f="FLTWAWA1", t="WATRWAL1" }
-}
-
 BRUTALDOOM.THEMES =
 {
-  --[[egypt2 =
-  {
-    liquids =
-    {
-      slime = 60
-      blood = 30
-      water = 20
-      lava  = 10
-    }
-
-    entity_remap =
-    {
-      k_red    = "ks_red"
-      k_blue   = "ks_blue"
-      k_yellow = "ks_yellow"
-    }
-
-    facades =
-    {
-      SMSTONE6 = 30
-      STONEW1  = 20
-      STWALL   = 20
-      CAVERN1  = 10
-
-      BIGBRIK1 = 30
-      BSTONE2  = 20
-      BRICK4   = 10
-    }
-
-    prefab_remap =
-    {
-      DOORBLU  = "DOORBLU2"
-      DOORRED  = "DOORRED2"
-      DOORYEL  = "DOORYEL2"
-
-      SILVER3  = "MURAL1"
-      GATE3    = "FLAT22"
-      GATE4    = "FLAT22"
-      REDWALL  = "DOKGRIR"
-      SW1COMP  = "SW1CMT"
-	  
-	  BIGDOOR1 = "METALDR"
-	  BIGDOOR2 = "METALDR"
-	  BIGDOOR3 = "METALDR"
-	  BIGDOOR4 = "METALDR"
-	  BIGDOOR5 = "METALDR"
-	  BIGDOOR6 = "METALDR"
-	  BIGDOOR7 = "METALDR"
-    }
-
-    outdoor_torches =
-    {
-      blue_torch = 50
-      green_torch = 50
-      red_torch = 50
-      candelabra = 20
-    }
-
---Mostly based on what is seen in TNT.WAD MAP31
-    monster_prefs =
-    {
-      gunner = 1.2
-      mancubus = 1.3
-      demon   = 1.5
-    }
-
-    archy_arches = true
-
---Any rocky/stonelike/metal doors (IE METALDR) would do great for this theme -Chris
-
-  }]]--
-  
   satanshankerchief = 
   {
     liquids =
@@ -516,9 +73,7 @@ BRUTALDOOM.THEMES =
       Flemoid2 = 2.0
       Flemoid3 = 1.5
     }
-
-    archy_arches = true
-    techy_doors = true
+    
   }
   
   --wolfenstein
@@ -645,141 +200,6 @@ BRUTALDOOM.THEMES =
 
 BRUTALDOOM.ROOM_THEMES =
 {
-  --[[egypt2_Tomb =
-  {
-    env  = "building"
-    prob = 50
-
-    walls =
-    {
-      STWALL  = 30
-      BIGWALL = 20
-      STONEW1 = 20
-      STONEW5 = 10
-      LONGWALL = 5
-
-      BRICK7   = 30
-      BRICK4   = 20
-      BRICK5   = 10
-    }
-
-    floors =
-    {
-      RROCK14  = 20
-      FLAT1_2  = 20
-      FLOOR5_4 = 20
-      MFLR8_1  = 20
-
-      FLAT5_5 = 10
-      RROCK12 = 10
-      FLAT8   = 10
-      SLIME13 = 10
-    }
-
-    ceilings =
-    {
-      FLAT8    = 20
-      FLAT1_1  = 20
-      FLOOR6_2 = 20
-
-      RROCK11 = 10
-      RROCK12 = 10
-      RROCK15 = 10
-      CEIL1_1 = 5
-    }
-  }
-
-
-  egypt2_Hallway =
-  {
-    env  = "hallway"
-    prob = 50
-
-    walls =
-    {
-      STWALL = 30
-      MURAL1 = 15
-      MURAL2 = 15
-      STONE6 = 10
-      BIGMURAL = 5
-    }
-
-    floors =
-    {
-      FLAT5 = 30
-      FLAT1_1 = 30
-      FLAT1_2 = 30
-      FLAT8   = 20
-      FLOOR5_3 = 20
-    }
-
-    ceilings =
-    {
-      FLAT5 = 20
-      FLAT1_1 = 20
-      FLAT1_2 = 20
-      FLAT8   = 20
-      RROCK12 = 20
-      RROCK15 = 20
-      CEIL1_1 = 20
-    }
-  }
-
-
-  egypt2_Outdoors =
-  {
-    env  = "outdoor"
-    prob = 50
-
-    floors =
-    {
-      RROCK09 = 30
-      RROCK16 = 30
-      RROCK13 = 20
-      RROCK04 = 20
-      MFLR8_3 = 20
-      RROCK03 = 10
-      RROCK19 = 10
-    }
-
-    naturals =
-    {
-      ROCK3 = 25
-      ROCK4 = 25
-      ROCK5 = 25
-    }
-  }
-
-
-  egypt2_Cave =
-  {
-    env  = "cave"
-    prob = 50
-
-    walls =
-    {
-      ALTAQUA  = 20
-      ASHWALL7 = 20
-      TANROCK7 = 20
-      TANROCK8 = 20
-
-      ROCK4   = 20
-      BSTONE1 = 20
-      STONE6  = 20
-    }
-
-    floors =
-    {
-      BSTONE1 = 20
-      FLAT10  = 20
-      STONE4  = 20
-
-      SP_ROCK1 = 20 -- MFLR8_3
-      RROCK18  = 20
-      ASHWALL2 = 10
-    }
-  }]]--
-  
   satanshankerchief_Indoors =
   {
     prob = 50
@@ -1392,6 +812,131 @@ BRUTALDOOM.ROOM_THEMES.egypt2_Tomb=TNT.ROOM_THEMES.egypt_Tomb
 BRUTALDOOM.ROOM_THEMES.egypt2_Hallway=TNT.ROOM_THEMES.egypt_Hallway
 BRUTALDOOM.ROOM_THEMES.egypt2_Outdoors=TNT.ROOM_THEMES.egypt_Outdoors
 BRUTALDOOM.ROOM_THEMES.egypt2_Cave=TNT.ROOM_THEMES.egypt_Cave
+
+BRUTALDOOM.THEMES.egypt2.monster_prefs =
+{
+    gunner = 1.2
+    mancubus = 1.3
+    demon   = 1.3
+    mummy = 2.0
+    HeadlessZombie = 1.9 --Serious Sam had ancient Egypt themed levels and headless enemies so this seems appropriate
+    Zyberdemon = 1.2
+}
+
+BRUTALDOOM.ROOM_THEMES.egypt2_Outdoors.floors =
+{
+    DSAND1 = 40
+    DSAND2 = 40
+    DSAND3 = 30
+    DSAND4 = 30
+    DSAND5 = 30
+    RROCK03 = 10
+    RROCK19 = 10
+}
+
+--Edits and additions to existing themes--
+BRUTALDOOM.THEMES.tech = DOOM.THEMES.tech
+BRUTALDOOM.THEMES.urban = DOOM.THEMES.urban
+BRUTALDOOM.THEMES.hell = DOOM.THEMES.hell
+BRUTALDOOM.THEMES.DEFAULTS = DOOM.THEMES.DEFAULTS
+
+BRUTALDOOM.THEMES.DEFAULTS.barrels =
+{
+    barrel = 50
+    BDECBarrel = 25
+}
+--tech
+BRUTALDOOM.THEMES.tech.prefab_remap =
+{
+    BIGDOOR5 = "TNTDOOR2"
+    BIGDOOR6 = "TNTDOOR2"
+    BIGDOOR7 = "TNTDOOR2"
+}
+BRUTALDOOM.THEMES.tech.monster_prefs =
+{
+    PistolZombie  = 1.5
+    shooter = 1.2
+    arach   = 1.5
+    Labguy = 1.6
+}
+BRUTALDOOM.THEMES.tech.facades =
+{      
+    BROWN1   = 40
+    STARTAN3 = 40
+    STARG3   = 40
+    STARGR2  = 40
+    STARBR2  = 30
+    
+    BROWN96  = 25
+    BROWNGRN = 25
+    SLADWALL = 20
+    METAL2   = 10
+    METAL1   = 5
+    
+    BUNKER01 = 30
+    BUNKER02 = 30
+    BUNKER03 = 30
+    BUNKER05 = 30
+}
+BRUTALDOOM.THEMES.tech.fences.BROWN144 = 0 --doesn't tile properly on y
+BRUTALDOOM.ROOM_THEMES.tech_Gray = DOOM.ROOM_THEMES.tech_Gray
+BRUTALDOOM.ROOM_THEMES.tech_Gray.walls =
+{
+    GRAY1 = 50
+    GRAY4 = 30
+    GRAY7 = 30
+    ICKWALL1 = 40
+    ICKWALL3 = 20
+    
+    BUNKER01 = 30
+    BUNKER02 = 30
+    BUNKER03 = 30
+    BUNKER05 = 30
+}
+--Urban
+BRUTALDOOM.THEMES.urban.monster_prefs =
+{
+    PistolZombie = 0.8
+    RifleZombie = 1.2
+    revenant = 1.2
+    knight   = 1.5
+    gunner   = 1.5
+    ZombieMainBattleTank = 1.1
+    ZombieLightTank = 1.2
+    ZombieMech = 1.1
+}
+BRUTALDOOM.THEMES.urban.passable_decor =
+{
+    UrbanRubble = 100
+        
+    gibs = 20
+    pool_blood_1 = 20
+    pool_blood_2 = 20
+    pool_brains  = 10
+
+    gibbed_player = 10
+    dead_player = 10
+    dead_zombie = 3
+    dead_shooter = 3
+    dead_imp = 3
+    dead_demon = 1
+    dead_caco  = 1
+}
+BRUTALDOOM.ROOM_THEMES.urban_Outdoors_generic=DOOM.ROOM_THEMES.urban_Outdoors_generic
+BRUTALDOOM.ROOM_THEMES.urban_Outdoors_generic.floors =
+{
+    JUNKY15 = 60
+    JUNKY16 = 60
+    APOCTX1 = 60
+    APOCTX1B = 60
+    APOCTX2 = 60
+    APOCTX3 = 60
+    
+    STONE    = 50
+    FLAT5_2  = 50
+    ROCK3    = 25
+    MFLR8_3  = 10
+}
 
 OB_THEMES["satanshankerchief"] =
 {
@@ -2021,7 +1566,7 @@ STARTERPACK.ROOM_THEMES =
 
 }
 
-OB_THEMES["nukem"] =
+--[[OB_THEMES["nukem"] =
 {
   label = "Duke Nukem"
   priority = 1
@@ -2030,4 +1575,4 @@ OB_THEMES["nukem"] =
   name_class = "URBAN"
   mixed_prob = 0
   shown = False --if this is true it shows even without STARTERPACK being in use, which causes errors. Need to find a good solution.
-}
+}]]--

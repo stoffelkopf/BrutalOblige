@@ -17,7 +17,7 @@ NIGHTMARE.MONSTERS =
 	    weap_prefs = { launch=0.2 }
 	    species = "demon"
 	    room_size = "any"
-		project_brutaliy="spawner"
+        game= { doom1=true, doom2=true, brutaldoom=true }
 	  }
 	  nightmare_imp =
 	  {
@@ -30,7 +30,7 @@ NIGHTMARE.MONSTERS =
 	    health = 60
 	    damage = 30
 	    attack = "missile"
-		project_brutaliy="spawner"
+        game= { doom1=true, doom2=true, brutaldoom=true }
 	  }
 	  nightmare_trite =
 	  {
@@ -44,7 +44,7 @@ NIGHTMARE.MONSTERS =
 	    damage = 2
 	    attack = "melee"
 	    room_size = "small"
-	    project_brutaliy="true"
+        game= { brutality=true }
 	  }
 }
 
@@ -57,7 +57,8 @@ function NIGHTMARE.decorate()
 	}
 
 if OB_CONFIG.game == "brutaldoom" then
-  data =
+    gui.wad_insert_file("NightmareMonsters/decorates/BrutalDoomNightmareMonsters.dec","DECORATE");
+  --[[data =
 	{
 		--nightmare spectre
 		'actor nightmare_spectre : Demon 255\n' --BullDemon 255\n'
@@ -1269,9 +1270,10 @@ if OB_CONFIG.game == "brutaldoom" then
 		'Decal DoomImpScorch\n'
 		'}\n'
 		'\n'
-	}
+	}--]]
 elseif OB_CONFIG.game == "brutality" then
-  data =
+    gui.wad_insert_file("NightmareMonsters/decorates/ProjectBrutalityNightmareMonsters.dec","DECORATE");
+  --[[data =
 	{
 		'actor nightmare_spectre : Demon\n' --handled by spawner hence no spawn number
 		'{\n'
@@ -2813,9 +2815,10 @@ elseif OB_CONFIG.game == "brutality" then
 		'	Loop\n'
 		'}\n'
 		'}\n'
-	}
+	}--]]
 else
-  data =
+    gui.wad_insert_file("NightmareMonsters/decorates/DoomNightmareMonsters.dec","DECORATE");
+  --[[data =
 	{
 		'actor nightmare_spectre : Demon 255\n'
 		'{\n'
@@ -2850,11 +2853,11 @@ else
 		'Decal DoomImpScorch\n'
 		'}\n'
 		'\n'
-	}
+	}]]--
 
 end
 
-  gui.wad_add_text_lump("DECORATE", data);
+  --gui.wad_add_text_lump("DECORATE", data);
 end
 
 NIGHTMARE.PARAMETERS =
@@ -2894,8 +2897,19 @@ function NIGHTMARE.setup(self)
 	    end
 		
     if OB_CONFIG.game == "brutality" then    --handle by spawners in pb
-	M.prob = 0
+        M.prob = 0
     end
+    
+    local oldprob = M.prob
+    M.prob = 0
+    for gamename,_ in pairs(M.game) do
+        gui.printf('For ' .. name .. '\n gamename is ' .. gamename .. "\n")
+        if gamename == OB_CONFIG.game then --don't place monsters in games they're not in
+            M.prob = oldprob
+            gui.printf('So M.prob = ' .. M.prob .. "\n")
+        end
+    end
+    
   end
 end
 

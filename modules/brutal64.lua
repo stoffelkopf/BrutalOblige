@@ -9,8 +9,8 @@ BRUTAL64 = { }
 BRUTAL64.MATERIALS = BRUTALDOOM.MATERIALS
 BRUTAL64.LIQUIDS = BRUTALDOOM.LIQUIDS
 BRUTAL64.ENTITIES = BRUTALDOOM.ENTITIES
-BRUTAL64.THEMES = BRUTALDOOM.THEMES
-BRUTAL64.ROOM_THEMES = BRUTALDOOM.ROOM_THEMES
+BRUTAL64.THEMES = DOOM.THEMES
+BRUTAL64.ROOM_THEMES = DOOM.ROOM_THEMES
 
 local modversion = "bd64gamev2.pk3"
 
@@ -332,6 +332,7 @@ function BRUTAL64.all_done()
 	BRUTAL64.monstersdecorate();
 	BRUTAL64.weaponsdecorate();
     BRUTAL64.ukeymaps();
+    gui.wad_insert_file("brutaloblige/TRNSLATE","TRNSLATE");
 	BRUTAL64.create_mapinfo();
 	gui.printf("OB_THEMES:\n" .. table.tostring(OB_THEMES) ..'\n')
 	if BRUTALDOOM.PARAMETERS.iwad == "heretic.wad" then

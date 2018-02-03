@@ -75,4 +75,7 @@ function MINI_MASTERMIND.setupforb64()
   if info and info.r > 50 then
     info.r = 50
   end
+  if info and info.h > 80 then
+    info.r = 80
+  end
 end

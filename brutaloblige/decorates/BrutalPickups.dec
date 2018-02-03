@@ -1,0 +1,5 @@
+actor ObligeBlurSphere : Blursphere 318 {}
+
+actor ObligeCapturedMarineShotgun : CapturedMarineShotgun 345 {}
+actor ObligeCapturedMarineMinigun : CapturedMarineMinigun 346 {}
+actor ObligeCapturedMarinePlasma : CapturedMarinePlasma 347 {}

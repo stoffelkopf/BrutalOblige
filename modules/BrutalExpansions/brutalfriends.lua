@@ -1,13 +1,13 @@
 BRUTALFRIENDS.MONSTERS =
 {
- EnemyMarine3 =
+ EnemyMarine3 = --Very broken due to the latest V21 changes to the evil marines, prob set to 0 until I get around to fixing
 	  {
 	    id = 319
 	    r = BRUTALDOOM.MONSTERS.EasyMarine.r
 	    h = BRUTALDOOM.MONSTERS.EasyMarine.h
 	    level = BRUTALDOOM.MONSTERS.EasyMarine.level
-	    prob = BRUTALDOOM.MONSTERS.EasyMarine.prob
-	    crazy_prob = BRUTALDOOM.MONSTERS.EasyMarine.crazy_prob
+	    prob = 0--BRUTALDOOM.MONSTERS.EasyMarine.prob
+	    crazy_prob = 0--BRUTALDOOM.MONSTERS.EasyMarine.crazy_prob
 	    health = BRUTALDOOM.MONSTERS.EasyMarine.health
 	    damage = BRUTALDOOM.MONSTERS.EasyMarine.damage
 	    attack = BRUTALDOOM.MONSTERS.EasyMarine.attack
@@ -23,22 +23,13 @@ end
 
 BRUTALFRIENDS.NICE_ITEMS =
 {
-    invis = REMOVE_ME
-    replacementinvis =
-  {
-    id = 318
-    kind = "powerup"
-    add_prob = 5
-    secret_prob = 50 --vanilla is 70
-    time_limit = 100
-  }
-  FriendTeleportBeacon =
-  {
-    id = 2024
-    kind = "other"
-    add_prob = 5
-    secret_prob = 110
-  }
+    FriendTeleportBeacon =
+    {
+        id = 2024
+        kind = "other"
+        add_prob = 5
+        secret_prob = 110
+    }
 }
 
 OB_MODULES["brutalfriends"] =

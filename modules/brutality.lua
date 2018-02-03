@@ -246,4 +246,5 @@ local data =
 	  gui.wad_insert_file("brutaloblige/decorates/brutality/bulldemonspawner.dec","PBBDSPN");
 	  gui.wad_insert_file("brutaloblige/decorates/brutality/tritespawner.dec","PBTRSPN");
 	  gui.wad_insert_file("brutaloblige/decorates/brutality/shadowspawner.dec","PBSHSPN");
+      gui.wad_insert_file("brutaloblige/TRNSLATE","TRNSLATE");
 end

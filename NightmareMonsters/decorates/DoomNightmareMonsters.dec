@@ -1,0 +1,34 @@
+//Nightmare monsters for Doom/Doom II
+
+actor nightmare_spectre : Demon 255
+{
+//$Category "Monsters/Nightmare Monsters"
+//$EditorSprite "SARGA1"
+Tag "Nightmare Spectre"
+Health 300
+RenderStyle Subtract
+}
+
+actor nightmare_imp : DoomImp 256
+{
+//$Category "Monsters/Nightmare Monsters"
+//$EditorSprite "TROOA1"
+Tag "Nightmare Imp"
+Speed 16
+RenderStyle Subtract
+States
+{
+Melee:
+Missile:
+TROO EF 8 A_FaceTarget
+TROO G 6 A_CustomComboAttack("NightmareImpBall", 32, 3 * random(1, 8), "imp/melee")
+Goto See
+}
+}
+
+actor NightmareImpBall : DoomImpBall 
+{
+Speed 20
+RenderStyle Subtract
+Decal DoomImpScorch
+}

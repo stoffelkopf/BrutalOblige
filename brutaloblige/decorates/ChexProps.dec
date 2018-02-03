@@ -1,0 +1,19 @@
+ACTOR ObligePropStool : PropStool 348
+{
+	Game Doom
+}
+
+ACTOR ObligePropHangingPlant1 : PropHangingPlant1 349
+{
+	Game Doom
+}
+
+ACTOR ObligePropHangingPlant2 : PropHangingPlant2 350
+{
+	Game Doom
+}
+
+ACTOR ObligePropHangingPots : PropHangingPots 351
+{
+	Game Doom
+}
