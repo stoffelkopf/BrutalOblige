@@ -296,7 +296,10 @@ ACTOR AssaultShotgunOblige : BrutalObligeWeaponPlacer 340 //this one doesn't hav
     BrutalObligeWeaponPlacer.defaultweapon "Shotgun"
 }
 
-Actor UnmakerOblige : UnmakerSpawner 341 {}
+Actor UnmakerOblige : UnmakerSpawner 341
+{
+    Inventory.PickupMessage "What the fuck is this?"
+}
 
 Actor Clip1DropOblige : Clip1Drop 342 {}
 

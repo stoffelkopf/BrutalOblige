@@ -173,7 +173,7 @@ BRUTALDOOM.WEAPONS =
         damage = 47 --actually random(45,50)
         ammo = "SoulAmmo"
         per = 1
-        give = { {ammo="SoulAmmo",count=100} }
+        give = { {ammo="SoulAmmo",count=200} }
     }
 }
 

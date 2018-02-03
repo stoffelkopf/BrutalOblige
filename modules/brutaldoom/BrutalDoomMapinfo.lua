@@ -364,7 +364,11 @@ Intermission BrutalDoomCast
 		table.insert(data, 'Translator = "OBXLAT"')
 	  end
       table.insert(data, 'cluster = 10\n')
-      table.insert(data, 'music = "' .. dest[mapnum] .. '"\n')
+      if #dest >= mapnum then
+          table.insert(data, 'music = "' .. dest[mapnum] .. '"\n')
+      else
+          table.insert(data, 'music = "' .. dest[rand.irange(1,#dest)] .. '"\n')
+      end
       mapnum = mapnum + 1
     end
   end -- for L

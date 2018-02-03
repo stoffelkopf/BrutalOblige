@@ -1,4 +1,4 @@
-**This has not yet been updated to support the Brutal Doom 21 public beta version!** I will be working on V21 support but I haven't got there yet. Hopefully I will have something ready by the time V21 comes out of beta.
+**The currently supported version of Brutal Doom is bd21test-jan02.pk3**
 
 # BrutalOblige
 
@@ -18,9 +18,10 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 * Kicking with the new weapons is no longer invisible.
 * Support for SGtMarkIV's Brutal Friends addon, this has it's own section for full details.
 
+
 **How to use**
 
-1) Download Oblige if you haven't already (at time of writing the most up to date version is 7.5, I imagine this addon should remain compatible with future versions but I can't be sure). Also make sure you have the latest Brutal Doom (v20b).
+1) Download Oblige if you haven't already and make sure you have the latest supported Brutal Doom. See versions section for what is currently supported.
 
 2) Download or clone this repository.
 
@@ -34,9 +35,19 @@ Note that if you downloaded this from github rather than cloning the repo you ca
 
 6) Click build to generate a wad with the new maps.
 
-7) Load this wad. If you have brutalv20b.pk3 somewhere gzdoom knows where to look it should be loaded automatically. If you have renamed the pk3 something else then you will need to load it manually (before the generated wad).
+7) Load this wad. If you have the .pk3 somewhere gzdoom knows where to look it should be loaded automatically. If you have renamed the pk3 something else then you will need to load it manually (before the generated wad).
 
 8) Rip and tear.
+
+# Versions supported in this release
+
+  | Version | Expected filename
+-- | -- | --
+Oblige | 7.70 |  
+Brutal Doom | 21 public beta | bd21test-jan02.pk3
+Project Brutality | 2.03 | Project Brutality 2.03.pk3
+Brutal Doom 64 | 2 | bd64gamev2.pk3
+
 
 **Now with Project Brutality Support!**
 
@@ -75,12 +86,10 @@ As for the starter pack check the box and bfriend1.pk3 should load automatically
 
 * Somewhere along the line it stopped working with Zandronum. I'm willing to attempt to fix this is anyone asks but if not, screw Zandronum.
 * This is just an addon so any known issues with Oblige or Brutal Doom will still be present.
-* Duke Nukem theme will never appear in random. This is to do with the awful hack I've used to do the posters so I can't really fix this I'm afraid.
 * Doom 4 Cacos might be missing a few death states. If you see one disappear when you kill it please let me know, ideally with as much detail about how you killed it as possible.
-* D4 Machine gun can't be dual wielded, this was a deliberate decision, let me know if you disagree with it.
 * If you use the starter pack the music will always be randomised regardless of your settings.
 * If you get "Script error, "brutalv20b.pk3:cvarinfo" line 1: cvar 'bd_bloodamount' already exists" then you are loading brutal doom twice. Try loading *just* the generated wad, it should pull in brutal automatically.
-* ~~Sometimes you get an unexpected value in pairs error. I'm trying to find out what is causing it but until then it is only happening some of the time. So just keep trying until it works.~~ I think I've got this one. I'd set the ammo type to clip rather than bullet for the mg42. As there was no clip ammo type the pickup placing script couldn't handle it.
+* Currently any vanilla Doom/Doom2 maps generated while this mod is active can have missing textures or objects. This will be fixed before the next release.
 
 [Screenshots](http://imgur.com/a/SRr9f)
 
