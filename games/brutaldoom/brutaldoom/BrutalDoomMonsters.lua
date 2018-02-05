@@ -45,7 +45,7 @@ BRUTALDOOM.MONSTERS =
 	    r = 20
 	    h = 56 
 	    level = 1
-	    prob = 35
+	    prob = 140
 	    crazy_prob = 35
 	    health = 70
 	    damage = 1
@@ -53,7 +53,7 @@ BRUTALDOOM.MONSTERS =
 	    density = 1.5
 	    room_size = "small"
 	    infights = true
-	    theme = "satanshankerchief"
+	    allow_in_theme = "satanshankerchief"
 	  }
 	  Flemoid2 =
 	  {
@@ -61,7 +61,7 @@ BRUTALDOOM.MONSTERS =
 	    r = 20
 	    h = 56 
 	    level = 2
-	    prob = 35
+	    prob = 140
 	    crazy_prob = 35
 	    health = 90
 	    damage = 1
@@ -69,7 +69,7 @@ BRUTALDOOM.MONSTERS =
 	    density = 1.5
 	    room_size = "small"
 	    infights = true
-	    theme = "satanshankerchief"
+	    allow_in_theme = "satanshankerchief"
 	  }
 	  Flemoid3 =
 	  {
@@ -77,7 +77,7 @@ BRUTALDOOM.MONSTERS =
 	    r = 20
 	    h = 56 
 	    level = 3
-	    prob = 35
+	    prob = 140
 	    crazy_prob = 35
 	    health = 200
 	    damage = 1
@@ -85,7 +85,7 @@ BRUTALDOOM.MONSTERS =
 	    density = 1.5
 	    room_size = "small"
 	    infights = true
-	    theme = "satanshankerchief"
+	    allow_in_theme = "satanshankerchief"
 	  }
 	  Quadrumpus =
 	  {
@@ -101,7 +101,7 @@ BRUTALDOOM.MONSTERS =
 	    density = 0.7
 	    room_size = "medium"
 	    infights = true
-	    theme = "satanshankerchief"
+	    allow_in_theme = "satanshankerchief"
 	  }
 	--As of v20b the evil marine replaces the ss. A script checks if it is in a wolfenstein themed level and changes it back if so.
 	ss_nazi = REMOVE_ME
@@ -133,7 +133,7 @@ BRUTALDOOM.MONSTERS =
 	    attack = "hitscan"
 	    cage_factor = 0  -- never put in cages
 	    density = 1.0
-	    theme = "wolf"
+	    allow_in_theme = "wolf"
         give = { {weapon="Mp40"}, {ammo="bullet",count=20} }
 	  }
 	  EasyMarine =
@@ -184,7 +184,7 @@ BRUTALDOOM.MONSTERS =
           r = DOOM.MONSTERS.ss_nazi.r
           h = DOOM.MONSTERS.ss_nazi.h
           level = DOOM.MONSTERS.ss_nazi.level
-          prob  = DOOM.MONSTERS.ss_nazi.prob
+          prob  = 140
           crazy_prob = DOOM.MONSTERS.ss_nazi.crazy_prob
           health = DOOM.MONSTERS.ss_nazi.health
           damage = DOOM.MONSTERS.ss_nazi.damage
@@ -192,7 +192,7 @@ BRUTALDOOM.MONSTERS =
           give = DOOM.MONSTERS.ss_nazi.give
           density = DOOM.MONSTERS.ss_nazi.density
           infight_damage = DOOM.MONSTERS.ss_nazi.infight_damage
-          theme = "wolf"
+          allow_in_theme = "wolf"
       }
       Zyberdemon =
       {
@@ -288,9 +288,9 @@ BRUTALDOOM.MONSTERS =
         disloyal = DOOM.MONSTERS.zombie.disloyal
         trap_factor = DOOM.MONSTERS.zombie.trap_factor
         infight_damage = DOOM.MONSTERS.zombie.infight_damage
-        theme = "tech"
         give = { {weapon="Axe"} }
         species = "zombie"
+        allow_in_theme = "tech"
      }
      AncientArachnotron =
      {
@@ -342,7 +342,7 @@ BRUTALDOOM.MONSTERS =
         weap_min_damage = 40
         room_size = "any"
         infight_damage = 3.5
-        theme = "egypt2"
+        allow_in_theme = "egypt2"
      }
      --Seperate Rifle and Pistol Zombie so Oblige can model them more accurately
      zombie = REMOVE_ME
@@ -395,8 +395,7 @@ BRUTALDOOM.MONSTERS =
          density = 0.1
          weap_needed = { launch=true }
          room_size = "large"
-         cage_factor = 0 
-         theme = { urban = true, egypt2 = true }
+         cage_factor = 0
      }
      ZombieLightTank =
      {
@@ -413,7 +412,6 @@ BRUTALDOOM.MONSTERS =
          weap_needed = { launch=true }
          room_size = "large"
          cage_factor = 0
-         theme = { urban = true, egypt2 = true }
      }
      ZombieHelicopter =
      {
@@ -430,7 +428,6 @@ BRUTALDOOM.MONSTERS =
          room_size = "large"
          cage_factor = 0
          float = true
-         theme = { urban = true, egypt2 = true }
      }
      ZombieMech = --basically copied from the default Cyberdemon, to which it is very similar
      {
@@ -449,7 +446,6 @@ BRUTALDOOM.MONSTERS =
          weap_min_damage = 150
          weap_prefs = { bfg=10.0 }
          room_size = "large"
-         theme = { urban = true, egypt2 = true }
      }
      --Since I replaced the chaingun with the minigun in the weapons table I need to edit the chaingunner monster
      gunner =
@@ -472,25 +468,6 @@ BRUTALDOOM.MONSTERS =
          trap_factor = DOOM.MONSTERS.gunner.trap_factor
          infight_damage = DOOM.MONSTERS.gunner.infight_damage
      }
-     --Redefine Caco to not appear in Urban theme, where the D4 caco replaces it
-     caco =
-    {
-        id = DOOM.MONSTERS.caco.id
-        r = DOOM.MONSTERS.caco.r
-        h = DOOM.MONSTERS.caco.h
-        level = DOOM.MONSTERS.caco.level
-        prob = DOOM.MONSTERS.caco.prob
-        health = DOOM.MONSTERS.caco.health
-        damage = DOOM.MONSTERS.caco.damage
-        attack = DOOM.MONSTERS.caco.attack
-        density = DOOM.MONSTERS.caco.density
-        weap_min_damage = DOOM.MONSTERS.caco.weap_min_damage
-        float = DOOM.MONSTERS.caco.float
-        room_size = DOOM.MONSTERS.caco.room_size
-        trap_factor = DOOM.MONSTERS.caco.trap_factor
-        infight_damage = DOOM.MONSTERS.caco.infight_damage
-        theme = "!urban"
-    }
 }
 
 BRUTALDOOM4.MONSTERS =
@@ -511,6 +488,6 @@ BRUTALDOOM4.MONSTERS =
         room_size = DOOM.MONSTERS.caco.room_size
         trap_factor = DOOM.MONSTERS.caco.trap_factor
         infight_damage = DOOM.MONSTERS.caco.infight_damage
-        theme = "urban"
+        allow_in_theme = "urban"
     }   
 }

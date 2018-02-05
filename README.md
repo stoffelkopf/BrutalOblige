@@ -21,11 +21,7 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 
 **How to use**
 
-<<<<<<< HEAD
-1) Download Oblige if you haven't already (at time of writing the most up to date version is 7.70, allegedly this is the final version). Also make sure you have the latest Brutal Doom (v20b).
-=======
 1) Download Oblige if you haven't already and make sure you have the latest supported Brutal Doom. See versions section for what is currently supported.
->>>>>>> v21beta
 
 2) Download or clone this repository.
 

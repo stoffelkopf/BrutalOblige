@@ -2,54 +2,54 @@
 
 actor classicwolf : WolfensteinSS 313
 {
-//$Category "Monsters/Wolfenstein"
+//$Category Monsters/Wolfenstein
 //$EditorSprite "SSWVA1"
 Tag "Vanilla Wolfenstein 3D SS"
 }
 actor ObligeBelphegor : Belphegor2 302
 {
-//$Category "Monsters"
+//$Category Monsters
 //$EditorSprite "BOS3A1"
 Tag "Belphegor"
 }
 
 actor ObligeJuggernaut : Juggernaut 303
 {
-//$Category "Monsters"
+//$Category Monsters
 //$EditorSprite "BS1WA1"
 Tag "Juggernaut"
 }
 
 actor ObligeFlemoid1 : Flemoid1 304
 {
-//$Category "Monsters/Chex"
+//$Category Monsters/Chex
 //$EditorSprite "FLE1A1"
 Tag "Flemoidus Commonus"
 }
 
 actor ObligeFlemoid2 : Flemoid2 305
 {
-//$Category "Monsters/Chex"
+//$Category Monsters/Chex
 //$EditorSprite "FLE2A1"
 Tag "Flemoidus Bipedicus"
 }
 
 actor ObligeFlemoid3 : Flemoid3 306
 {
-//$Category "Monsters/Chex"
+//$Category Monsters/Chex
 //$EditorSprite "FLE3A1"
 Tag "Armored Flemoidus Bipedicus"
 }
 
 actor ObligeEasyMarine : EvilMarineRifle 307
 {
-//$Category "Monsters/Evil Marines"
+//$Category Monsters/Evil Marines
 //$EditorSprite "PLAYA1"
 Tag "Evil Grunt"
 }
 actor ObligeEpic2Alien : BrutalObligeMonster 309
 {
-    //$Category "Monsters"
+    //$Category Monsters
     //$EditorSprite "EPTAA1"
     Health 80
 	Radius 20
@@ -135,14 +135,14 @@ Tag "Flemoidus Quadrumpus"
 
 actor ObligeSS : Nazi 311
 {
-//$Category "Monsters/Wolfenstein"
+//$Category Monsters/Wolfenstein
 //$EditorSprite "NAZIA1"
 Tag "Brutal Doom SS"
 }
 
 ACTOR BrutalZyberdemon : TheCyberdemon 324
 {
-//$Category "Monsters"
+//$Category Monsters
 //$EditorSprite "ZYBRA1"
 Tag "Zyberdemon"
 Health 4500
@@ -338,31 +338,31 @@ States
 //bd21testnov01
 actor ObligeHeadlessZombie : HeadlessZombie 334
 {
-//$Category "Monsters"
+//$Category Monsters
 //$EditorSprite "PONHB1"
 Tag "Headless Zombie"
 }
 actor ObligeLabguy : Labguy 335
 {
-//$Category "Monsters"
+//$Category Monsters
 //$EditorSprite "SCZAA1"
 Tag "Lab Zombie"
 }
 actor ObligeAncientArachnotron : Arachnotron2 336
 {
-//$Category "Monsters"
+//$Category Monsters
 //$EditorSprite "ARACA1"
 Tag "Ancient Arachnotron"
 }
 actor ObligeVolcabus : Hectebus2 337
 {
-//$Category "Monsters"
+//$Category Monsters
 //$EditorSprite "FAT2B1"
 Tag "Volcabus"
 }
 actor ObligeMummy : BDMummy 338
 {
-//$Category "Monsters"
+//$Category Monsters
 //$EditorSprite "MUMAB1"
 Tag "Mummy"
 states
@@ -374,7 +374,7 @@ states
 }
 actor ObligeRifleZombie : RifleZombie 343
 {
-//$Category "Monsters"
+//$Category Monsters
 //$EditorSprite "PSSSB1"
 Tag "Rifle Zombie"
 States
@@ -397,13 +397,13 @@ States
 }
 actor ObligePistolZombie : PistolZombie 344
 {
-//$Category "Monsters"
+//$Category Monsters
 //$EditorSprite "PONHB1"
 Tag "Pistol Zombie"
 }
 actor ObligeEvilMarinePlasma : EvilMarinePlasma replaces WolfensteinSS
 {
-    //$Category "Monsters/Evil Marines"
+    //$Category Monsters/Evil Marines
     //$EditorSprite "PLAYA1"
     Tag "Evil Marine"
 }

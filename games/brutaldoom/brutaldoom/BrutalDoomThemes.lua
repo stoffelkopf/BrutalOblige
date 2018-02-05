@@ -3,6 +3,8 @@ BRUTALDOOM.THEMES =
 {
   satanshankerchief = 
   {
+    allow_mons_for_theme = "satanshankerchief"  
+    
     liquids =
     {
       flem1   = 100
@@ -79,6 +81,8 @@ BRUTALDOOM.THEMES =
   --wolfenstein
   wolf =
   {
+    allow_mons_for_theme = "wolf"  
+    
     prob = 10
 
     square_caves = 1
@@ -846,6 +850,7 @@ BRUTALDOOM.THEMES.DEFAULTS.barrels =
     BDECBarrel = 25
 }
 --tech
+BRUTALDOOM.THEMES.tech.allow_mons_for_theme = "tech"
 BRUTALDOOM.THEMES.tech.prefab_remap =
 {
     BIGDOOR5 = "TNTDOOR2"
@@ -894,6 +899,7 @@ BRUTALDOOM.ROOM_THEMES.tech_Gray.walls =
     BUNKER05 = 30
 }
 --Urban
+BRUTALDOOM.THEMES.urban.allow_mons_for_theme = "urban"
 BRUTALDOOM.THEMES.urban.monster_prefs =
 {
     PistolZombie = 0.8
@@ -937,6 +943,8 @@ BRUTALDOOM.ROOM_THEMES.urban_Outdoors_generic.floors =
     ROCK3    = 25
     MFLR8_3  = 10
 }
+--hell
+BRUTALDOOM.THEMES.hell.allow_mons_for_theme = "hell"
 
 OB_THEMES["satanshankerchief"] =
 {

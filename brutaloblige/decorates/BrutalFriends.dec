@@ -479,7 +479,7 @@ ACTOR FriendBJPathfinder
 }
 Actor EnemyMarine3: EvilMarineRifle 319
 {
-//$Category "Monsters/Evil Marines"
+//$Category Monsters/Evil Marines
 //$EditorSprite "NPM2A1"
 Tag "Evil Grunt (alt)"
 Translation "EvilMarine"

@@ -433,6 +433,9 @@ for i = 1, (#data) do --for every value in data
           data[i] = string.gsub(data[i], '"d_openin"//changeifdoommetal','"d_e3m8"')
       end
   end
+  if OB_CONFIG.game == "brutality" then
+      data[i] = string.gsub(data[i], 'episode bom01','episode map01')
+  end
 end
 
 if BRUTALDOOM.PARAMETERS.starterpack == true then

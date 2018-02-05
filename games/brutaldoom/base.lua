@@ -863,7 +863,8 @@ OB_GAMES["brutality"] =
 {
   label = "Project Brutality"
 
-  extends = "brutaldoom"
+  --extends = "brutaldoom"
+  extends = "doom2"
 
   format = "doom"
 

@@ -1,6 +1,6 @@
 ACTOR d4cacodemon 316
 {
-	//$Category "Monsters"
+	//$Category Monsters
    //$EditorSprite "HED4A1"
 	Game Doom
   bloodtype "Blue_Blood", "BlueSawBlood"

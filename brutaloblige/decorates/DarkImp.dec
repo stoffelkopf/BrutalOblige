@@ -1,6 +1,6 @@
 ACTOR ObligeDarkImp : DoomImp 308
 {
-//$Category "Monsters"
+//$Category Monsters
 //$EditorSprite "DRKSA1"
 Tag "Dark Imp"
 Translation "48:63=96:111", "64:79=5:8", "208:223=5:8"

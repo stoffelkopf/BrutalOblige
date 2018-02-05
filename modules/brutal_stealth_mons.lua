@@ -278,7 +278,7 @@ OB_MODULES["brutal_stealth_mons"] =
 {
   label = _("Brutal Stealth Monsters")
 
-  game = "doomish"
+  game = "brutaldoom"
 
   engine = { edge=1, zdoom=1, gzdoom=1, skulltag=1 }
 
