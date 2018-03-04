@@ -58,6 +58,7 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 * Skulltag weapons: BFG10k, Grenade Launcher and Railgun
 * SMG
 * Assault Shotgun
+* Unmaker
 
 **Future:**
 
@@ -96,7 +97,7 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 
 **Done:** Heavy Machine Gun, Dogs.
 
-**Future:** If I can figure out the prefab system then possibly tanks.
+**Future:** 
 
 ### Themes
 

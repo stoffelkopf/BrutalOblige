@@ -838,6 +838,8 @@ BRUTALDOOM.ROOM_THEMES.egypt2_Outdoors.floors =
     RROCK19 = 10
 }
 
+BRUTALDOOM.THEMES.egypt2.allow_mons_for_theme = "egypt2"
+
 --Edits and additions to existing themes--
 BRUTALDOOM.THEMES.tech = DOOM.THEMES.tech
 BRUTALDOOM.THEMES.urban = DOOM.THEMES.urban

@@ -21,7 +21,7 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 
 **How to use**
 
-1) Download Oblige if you haven't already and make sure you have the latest supported Brutal Doom. See versions section for what is currently supported.
+1) Download Oblige if you haven't already and make sure you have the latest supported Brutal Doom. See below for current supported versions.
 
 2) Download or clone this repository.
 
@@ -39,7 +39,7 @@ Note that if you downloaded this from github rather than cloning the repo you ca
 
 8) Rip and tear.
 
-# Versions supported in this release
+# Current supported versions
 
   | Version | Expected filename
 -- | -- | --

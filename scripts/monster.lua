@@ -1144,6 +1144,16 @@ function Monster_fill_room(R)
     if R.is_outdoor then
       prob = prob * (info.outdoor_factor or 1)
     end
+    
+    --check theme
+    if info.allow_in_theme and THEME.allow_mons_for_theme then
+        if not string.find(info.allow_in_theme, THEME.allow_mons_for_theme) then
+            prob = 0
+        else
+            prob = info.theme_prob
+            gui.printf("Setting " .. info.id .. " prob to " .. prob .."\n")
+        end
+    end
 
     if prob == 0 then return 0 end
 
@@ -1162,15 +1172,6 @@ function Monster_fill_room(R)
       if info.level > max_level then
         prob = prob / 20
       end
-    end
-    
-    --check theme
-    if info.allow_in_theme and THEME.allow_mons_for_theme then
-        gui.printf("info.theme = " .. info.allow_in_theme .. " THEME = " .. THEME.allow_mons_for_theme .. "\n")
-    end
-    if info.allow_in_theme and THEME.allow_mons_for_theme and not string.find(info.allow_in_theme, THEME.allow_mons_for_theme) then --this checks if the string THEME.allow_mons_for_theme is not included anywhere in info.allow_in_theme
-        gui.printf("Themes not equal so setting prob to 0\n")
-        prob = 0
     end
 
     return prob
