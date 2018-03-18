@@ -19,7 +19,21 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 * Support for SGtMarkIV's Brutal Friends addon, this has it's own section for full details.
 
 
-**How to use**
+**How to use - Release version**
+
+1) Download Oblige if you haven't already and make sure you have the latest supported Brutal Doom. See below for current supported versions.
+
+2) Download the latest release from the [releases page](https://github.com/CloudOfShame/BrutalOblige/releases) to Oblige's addon directory. This will be in the same place as Oblige.exe on Windows or /usr/share/oblige/addons on Linux.
+
+5) Run Oblige, select Menu, Addon List and check the box for BrutalOblige. Restart Oblige, Brutal Doom should now appear as an option in the game menu.
+
+6) Click build to generate a wad with the new maps.
+
+7) Load this wad. If you have the .pk3 somewhere gzdoom knows where to look it should be loaded automatically. If you have renamed the pk3 something else then you will need to load it manually (before the generated wad).
+
+8) Rip and tear.
+
+**How to use - Latest development version**
 
 1) Download Oblige if you haven't already and make sure you have the latest supported Brutal Doom. See below for current supported versions.
 
@@ -37,7 +51,7 @@ Note that if you downloaded this from github rather than cloning the repo you ca
 
 7) Load this wad. If you have the .pk3 somewhere gzdoom knows where to look it should be loaded automatically. If you have renamed the pk3 something else then you will need to load it manually (before the generated wad).
 
-8) Rip and tear.
+8) Happy bug hunting.
 
 # Current supported versions
 
