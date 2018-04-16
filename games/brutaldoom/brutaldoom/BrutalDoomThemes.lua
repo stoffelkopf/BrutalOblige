@@ -862,6 +862,7 @@ BRUTALDOOM.THEMES.tech.prefab_remap =
 BRUTALDOOM.THEMES.tech.monster_prefs =
 {
     PistolZombie  = 1.5
+    RifleZombie = 0.5
     shooter = 1.2
     arach   = 1.5
     Labguy = 1.6
@@ -906,6 +907,8 @@ BRUTALDOOM.THEMES.urban.monster_prefs =
 {
     PistolZombie = 0.8
     RifleZombie = 1.2
+    shooter = 0.8
+    SMGZombie = 1.2
     revenant = 1.2
     knight   = 1.5
     gunner   = 1.5

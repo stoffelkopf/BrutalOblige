@@ -99,6 +99,7 @@ BRUTALDOOM.MONSTERS =
         boss_type = "minor"
 	    theme_prob = 20
         prob=0
+        boss_prob = 20
 	    --crazy_prob = 20
 	    health = 400
 	    damage = 1
@@ -267,7 +268,7 @@ BRUTALDOOM.MONSTERS =
         r = DOOM.MONSTERS.zombie.r
         h = DOOM.MONSTERS.zombie.h
         level = DOOM.MONSTERS.zombie.level
-        prob = 0.1
+        prob = 1
         health = 150
         damage = DOOM.MONSTERS.zombie.damage
         attack = DOOM.MONSTERS.zombie.attack
@@ -396,7 +397,8 @@ BRUTALDOOM.MONSTERS =
          r = 64
          h = 100
          level = 5
-         prob = 2.5
+         boss_type = "nasty" --nasty is lower than tough apparently
+         prob = 1.5
          crazy_prob = 15
          health = 4000
          damage = 150
@@ -412,7 +414,8 @@ BRUTALDOOM.MONSTERS =
          r = 64
          h = 100
          level = 5
-         prob = 4
+         boss_type = "nasty"
+         prob = 2.5
          crazy_prob = 20
          health = 2000
          damage = 100
@@ -428,6 +431,7 @@ BRUTALDOOM.MONSTERS =
          r = 56
          h = 150 --actually 96 but made higher so it doesn't put it in rooms where it has no room to fly
          level = 5
+         boss_type = "nasty"
          prob = 2.5
          crazy_prob = 15
          health = 1000
@@ -445,6 +449,7 @@ BRUTALDOOM.MONSTERS =
          h = 160
          level = 7
          boss_type = "tough"
+         boss_replacement = "Cyberdemon"
          boss_prob = 50
          prob = 1.6
          crazy_prob = 10
@@ -496,7 +501,28 @@ BRUTALDOOM.MONSTERS =
         trap_factor = DOOM.MONSTERS.caco.trap_factor
         infight_damage = DOOM.MONSTERS.caco.infight_damage
         allow_in_theme = "tech, hell, wolf, satanshankerchief"
-     }   
+     }
+     --SMG Zombie supposedly has the exact same DPS etc as shotgun zombie
+     SMGZombie =
+     {
+         id = 363
+         r = DOOM.MONSTERS.shooter.r
+         h = DOOM.MONSTERS.shooter.h
+         level = DOOM.MONSTERS.shooter.level
+         prob = DOOM.MONSTERS.shooter.prob
+         health = DOOM.MONSTERS.shooter.health
+         damage = DOOM.MONSTERS.shooter.damage
+         attack = DOOM.MONSTERS.shooter.attack
+         give = { {weapon="Smg"}, {ammo="clip1",count=10} }
+         weap_needed = { Smg=true }
+         weap_min_damage = DOOM.MONSTERS.shooter.weap_min_damage
+         density = DOOM.MONSTERS.shooter.density
+         species = DOOM.MONSTERS.shooter.species
+         room_size = DOOM.MONSTERS.shooter.room_size
+         disloyal = DOOM.MONSTERS.shooter.disloyal
+         trap_factor = DOOM.MONSTERS.shooter.trap_factor
+         infight_damage = DOOM.MONSTERS.shooter.infight_damage
+     }
 }
 
 BRUTALDOOM4.MONSTERS =

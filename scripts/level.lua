@@ -474,8 +474,12 @@ function Episode_plan_monsters()
 
 
   local function is_boss_usable(LEV, mon, info)
-    if info.prob <= 0 then return false end
+    if info.prob <= 0 and not info.theme_prob then return false end
     if info.boss_prob == 0 then return false end
+    --boss theme check
+    if info.allow_in_theme then
+        if info.allow_in_theme != LEV.theme_name then return false end
+    end
 
     if info.level > LEV.monster_level + BOSS_AHEAD then return false end
 

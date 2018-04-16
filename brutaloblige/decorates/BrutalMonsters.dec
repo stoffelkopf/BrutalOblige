@@ -372,7 +372,7 @@ states
 		Loop
     }
 }
-actor ObligeRifleZombie : RifleZombie 343
+actor ObligeRifleZombie : RifleZombie 343 //remove the chance to replace with variants as Oblige handles these seperately
 {
 //$Category Monsters
 //$EditorSprite "PSSSB1"
@@ -406,4 +406,30 @@ actor ObligeEvilMarinePlasma : EvilMarinePlasma replaces WolfensteinSS
     //$Category Monsters/Evil Marines
     //$EditorSprite "PLAYA1"
     Tag "Evil Marine"
+}
+//bd21testfeb24
+actor ObligeShotgunGuy : ShotgunGuy1 replaces ShotgunGuy1 //remove the chance to replace with variants as Oblige handles these seperately
+{
+    //$Category Monsters
+    //$EditorSprite "SPSSZ1"
+    Tag "Shotgun Zombie"
+    states
+    {
+        Spawn:
+            SHID A 1
+            TNT1 A 0 ACS_ExecuteAlways(796, 0, 0, 0, 0)//Check if Vanilla Mode is activated
+            TNT1 A 0
+            TNT1 A 0 ACS_ExecuteAlways(728)//Check if new monsters are disabled
+            TNT1 A 0 ACS_ExecuteAlways(796, 0, 0, 0, 0)//Check if Vanilla Mode is activated
+            SHID A 2
+            TNT1 A 0 A_JumpIfInventory("nonewenemies", 1, "Stand")
+            //TNT1 A 0 A_Jump(32, "ReplaceSMG")
+        Goto Stand
+    }
+}
+actor ObligeSMGZombie: SMGGuy 363
+{
+    //$Category Monsters
+    //$EditorSprite "PSS3A1"
+    Tag "SMG Zombie"
 }

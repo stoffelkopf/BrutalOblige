@@ -54,7 +54,7 @@ BRUTALDOOM.YES_NO =
 BRUTALDOOM.VERSIONS = 
 {
 	"brutalv20b.pk3",	"V20b"
-    "bd21test-jan02.pk3",    "V21Beta"
+    "bd21testMar27.pk3",    "V21Beta"
 }
 
 BRUTALDOOM.PARAMETERS =
@@ -65,7 +65,7 @@ BRUTALDOOM.PARAMETERS =
 	brutalfriends = false
     iwad = 'Doom2.wad'
     musicpreset = 'iwad'
-	brutalversion = "bd21test-jan02.pk3"
+	brutalversion = "bd21testMar27.pk3"
 	brutalityversion = "Project Brutality 2.03.pk3"
 	usingui = false
     usingextrakeys = false
@@ -837,16 +837,15 @@ OB_GAMES["brutaldoom"] =
 {
   label = "Brutal Doom"
 
-  extends = "doom2"
+  --extends = "doom2"
 
   format = "doom"
-  
+  iwad_name = "doom2.wad"
   game_dir = "brutaldoom"
-
-  engine = { boom=0, gzdoom=1, zandronum=0 }
 
   tables =
   {
+    DOOM
     BRUTALDOOM
     BRUTALDOOM4
   }
@@ -855,6 +854,7 @@ OB_GAMES["brutaldoom"] =
   {
     setup       = BRUTALDOOM.setup
     get_levels  = BRUTALDOOM.get_levels
+    end_level  = DOOM.end_level
     all_done	= BRUTALDOOM.all_done
   }
 }

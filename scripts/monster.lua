@@ -1117,8 +1117,12 @@ function Monster_fill_room(R)
             prob = 0
             gui.printf("String " .. THEME.allow_mons_for_theme .. " not found in " .. info.allow_in_theme .."\n")
         else
-            prob = info.theme_prob
-            gui.printf("Setting " .. info.id .. " prob to " .. prob .."\n")
+            if info.theme_prob then
+                prob = info.theme_prob
+                gui.printf("Setting " .. info.id .. " prob to " .. prob .."\n")
+            else
+                prob=0
+            end
         end
     end
 
