@@ -1,4 +1,4 @@
-**The currently supported version of Brutal Doom is bd21testfeb24.pk3**
+**The currently supported version of Brutal Doom is bd21testApr25.pk3**
 
 # BrutalOblige
 
@@ -58,7 +58,7 @@ Note that if you downloaded this from github rather than cloning the repo you ca
   | Version | Expected filename
 -- | -- | --
 Oblige | 7.70 |  
-Brutal Doom | 21 public beta | bd21testfeb24.pk3
+Brutal Doom | 21 public beta | bd21testApr25.pk3
 Project Brutality | 2.03 | Project Brutality 2.03.pk3
 Brutal Doom 64 | 2 | bd64gamev2.pk3
 

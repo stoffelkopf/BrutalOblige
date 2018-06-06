@@ -109,6 +109,25 @@ BRUTALDOOM.MONSTERS =
 	    infights = true
 	    allow_in_theme = "satanshankerchief"
 	  }
+      SuperCycloptis =
+      {
+        id = 364
+        r = 31
+        h = 56
+        level = DOOM.MONSTERS.caco.level
+        theme_prob = DOOM.MONSTERS.caco.prob
+        prob=0
+        health = 400
+        damage = DOOM.MONSTERS.caco.damage
+        attack = DOOM.MONSTERS.caco.attack
+        density = DOOM.MONSTERS.caco.density
+        weap_min_damage = DOOM.MONSTERS.caco.weap_min_damage
+        float = DOOM.MONSTERS.caco.float
+        room_size = DOOM.MONSTERS.caco.room_size
+        trap_factor = DOOM.MONSTERS.caco.trap_factor
+        infight_damage = DOOM.MONSTERS.caco.infight_damage
+        allow_in_theme = "satanshankerchief"
+      }
 	--As of v20b the evil marine replaces the ss. A script checks if it is in a wolfenstein themed level and changes it back if so.
 	ss_nazi = REMOVE_ME
 	EvilMarine =

@@ -54,7 +54,7 @@ BRUTALDOOM.YES_NO =
 BRUTALDOOM.VERSIONS = 
 {
 	"brutalv20b.pk3",	"V20b"
-    "bd21testMar27.pk3",    "V21Beta"
+    "bd21testApr25.pk3",    "V21Beta"
 }
 
 BRUTALDOOM.PARAMETERS =
@@ -65,7 +65,7 @@ BRUTALDOOM.PARAMETERS =
 	brutalfriends = false
     iwad = 'Doom2.wad'
     musicpreset = 'iwad'
-	brutalversion = "bd21testMar27.pk3"
+	brutalversion = "bd21testApr25.pk3"
 	brutalityversion = "Project Brutality 2.03.pk3"
 	usingui = false
     usingextrakeys = false
@@ -108,6 +108,7 @@ function BRUTALDOOM.decorate()
     gui.wad_insert_file("brutaloblige/decorates/BrutalPickups.dec","BRUPUPS");
     gui.wad_insert_file("brutaloblige/decorates/ChexKeys.dec","CHEXKEYS");
     gui.wad_insert_file("brutaloblige/decorates/ChexProps.dec","CHEXPROP");
+    gui.wad_insert_file("brutaloblige/decorates/ExtraChexMonsters.dec","CHEXMONS");
 	gui.wad_insert_file("brutaloblige/decorates/DarkImp.dec","DARKIMPD");
 	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
     gui.wad_insert_file("brutaloblige/zscript/wolfmons.zscript","WOLFMONS");
@@ -772,6 +773,12 @@ end
 
 function BRUTALDOOM.flem_nukage()
 	gui.wad_merge_sections("brutaloblige/flem.wad")
+    gui.wad_insert_file("brutaloblige/sounds/DSCYCSIT.wav","DSCYCSIT");
+    gui.wad_insert_file("brutaloblige/sounds/DSCYACT.wav","DSCYACT");
+    gui.wad_insert_file("brutaloblige/sounds/DSCYPAIN.wav","DSCYPAIN");
+    gui.wad_insert_file("brutaloblige/sounds/DSCYCDTH.wav","DSCYCDTH");
+    gui.wad_insert_file("brutaloblige/sounds/DSCYCSHT.wav","DSCYCSHT");
+    gui.wad_insert_file("brutaloblige/sounds/DSCYCXPL.wav","DSCYCXPL");
 	local flemdata =
 	{
 	'flat SNOT1\n'

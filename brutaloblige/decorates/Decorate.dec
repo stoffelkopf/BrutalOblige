@@ -5,6 +5,7 @@
 #include "BRUWEPS"
 #include "CHEXKEYS"
 #include "CHEXPROP"
+#include "CHEXMONS"
 #include "BRUPUPS"
 
 actor hanglamp : BDECCeilLamp 362 {}
