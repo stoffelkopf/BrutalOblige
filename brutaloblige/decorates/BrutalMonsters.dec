@@ -4,7 +4,8 @@ actor classicwolf : WolfensteinSS 313
 {
 //$Category Monsters/Wolfenstein
 //$EditorSprite "SSWVA1"
-Tag "Vanilla Wolfenstein 3D SS"
+Tag "Classic Wolfenstein 3D SS"
+DropItem "Clip1"
 }
 actor ObligeBelphegor : Belphegor2 302
 {
@@ -128,7 +129,7 @@ actor ObligeEpic2Alien : BrutalObligeMonster 309
 
 actor ObligeQuadrumpus : Quadrumpus 310
 {
-//$Category "Monsters/Chex"
+//$Category Monsters/Chex
 //$EditorSprite "QUADA1"
 Tag "Flemoidus Quadrumpus"
 }
@@ -354,7 +355,7 @@ actor ObligeAncientArachnotron : Arachnotron2 336
 //$EditorSprite "ARACA1"
 Tag "Ancient Arachnotron"
 }
-actor ObligeVolcabus : Hectebus2 337
+actor ObligeVolcabus : Volcabus 337
 {
 //$Category Monsters
 //$EditorSprite "FAT2B1"
@@ -432,4 +433,11 @@ actor ObligeSMGZombie: SMGGuy 363
     //$Category Monsters
     //$EditorSprite "PSS3A1"
     Tag "SMG Zombie"
+}
+
+actor ObligeUbersoldat: Ubersoldat 366
+{
+    //$Category Monsters/Wolfenstein
+    //$EditorSprite "CPOSB1"
+    Tag "Ubersoldat"
 }

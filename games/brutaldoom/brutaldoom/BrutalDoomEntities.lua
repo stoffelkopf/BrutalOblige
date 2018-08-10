@@ -20,6 +20,8 @@ BRUTALDOOM.ENTITIES =
     BusSign = { id=11002, r=12, h=4 }
     StopSign = { id=11003, r=12, h=4 }
     
+    BDCritterMouse = { id=367, r=6, h=6 }
+    
     BDECGrass = { id=15848, r=12, h=4 }
     BDECBush = { id=15849, r=12, h=4 }
     BDECGreenTree1 = { id=15850, r=12, h=4 }

@@ -113,7 +113,7 @@ BRUTALDOOM.MONSTERS =
       {
         id = 364
         r = 31
-        h = 56
+        h = 70
         level = DOOM.MONSTERS.caco.level
         theme_prob = DOOM.MONSTERS.caco.prob
         prob=0
@@ -127,6 +127,27 @@ BRUTALDOOM.MONSTERS =
         trap_factor = DOOM.MONSTERS.caco.trap_factor
         infight_damage = DOOM.MONSTERS.caco.infight_damage
         allow_in_theme = "satanshankerchief"
+        cage_factor = 0  -- never put in cages
+      }
+      SuperCacloptis =
+      {
+        id = 365
+        r = 31
+        h = 70
+        level = DOOM.MONSTERS.caco.level
+        theme_prob = DOOM.MONSTERS.caco.prob*0.9
+        prob=0
+        health = 400
+        damage = DOOM.MONSTERS.caco.damage
+        attack = DOOM.MONSTERS.caco.attack
+        density = DOOM.MONSTERS.caco.density
+        weap_min_damage = DOOM.MONSTERS.caco.weap_min_damage
+        float = DOOM.MONSTERS.caco.float
+        room_size = DOOM.MONSTERS.caco.room_size
+        trap_factor = DOOM.MONSTERS.caco.trap_factor
+        infight_damage = DOOM.MONSTERS.caco.infight_damage
+        allow_in_theme = "satanshankerchief"
+        cage_factor = 0  -- never put in cages
       }
 	--As of v20b the evil marine replaces the ss. A script checks if it is in a wolfenstein themed level and changes it back if so.
 	ss_nazi = REMOVE_ME
@@ -220,6 +241,7 @@ BRUTALDOOM.MONSTERS =
           density = DOOM.MONSTERS.ss_nazi.density
           infight_damage = DOOM.MONSTERS.ss_nazi.infight_damage
           allow_in_theme = "wolf"
+          give = {ammo="bullet",count=10}
       }
       Zyberdemon =
       {
@@ -487,7 +509,8 @@ BRUTALDOOM.MONSTERS =
          r = DOOM.MONSTERS.gunner.r
          h = DOOM.MONSTERS.gunner.h
          level = DOOM.MONSTERS.gunner.level
-         prob = DOOM.MONSTERS.gunner.prob
+         theme_prob = DOOM.MONSTERS.gunner.prob
+         prob=0
          health = DOOM.MONSTERS.gunner.health
          damage = DOOM.MONSTERS.gunner.damage
          attack = DOOM.MONSTERS.gunner.attack
@@ -500,6 +523,7 @@ BRUTALDOOM.MONSTERS =
          disloyal = DOOM.MONSTERS.gunner.disloyal
          trap_factor = DOOM.MONSTERS.gunner.trap_factor
          infight_damage = DOOM.MONSTERS.gunner.infight_damage
+         allow_in_theme = "tech, hell, urban, eygpt2, satanshankerchief" --ubersoldat replaces it in wolf
      }
      --default caco for all themes other than urban where the D4 style Caco replaces it
      caco =
@@ -519,7 +543,7 @@ BRUTALDOOM.MONSTERS =
         room_size = DOOM.MONSTERS.caco.room_size
         trap_factor = DOOM.MONSTERS.caco.trap_factor
         infight_damage = DOOM.MONSTERS.caco.infight_damage
-        allow_in_theme = "tech, hell, wolf, satanshankerchief"
+        allow_in_theme = "tech, hell, eygpt2, satanshankerchief"
      }
      --SMG Zombie supposedly has the exact same DPS etc as shotgun zombie
      SMGZombie =
@@ -541,6 +565,29 @@ BRUTALDOOM.MONSTERS =
          disloyal = DOOM.MONSTERS.shooter.disloyal
          trap_factor = DOOM.MONSTERS.shooter.trap_factor
          infight_damage = DOOM.MONSTERS.shooter.infight_damage
+     }
+    --ubersoldat is a Wolfenstein themed version of the Chaingunner with less health
+    Ubersoldat =
+     {
+         id = 366
+         r = 16
+         h = 52
+         level = DOOM.MONSTERS.gunner.level
+         theme_prob = DOOM.MONSTERS.gunner.prob
+         prob=0
+         health = 100
+         damage = DOOM.MONSTERS.gunner.damage
+         attack = DOOM.MONSTERS.gunner.attack
+         give = { {weapon="Minigun"}, {ammo="bullet",count=10} }
+         weap_needed = { AssaultRifle=true }
+         weap_min_damage = DOOM.MONSTERS.gunner.weap_min_damage
+         density = DOOM.MONSTERS.gunner.density
+         species = DOOM.MONSTERS.gunner.species
+         room_size = DOOM.MONSTERS.gunner.room_size
+         disloyal = DOOM.MONSTERS.gunner.disloyal
+         trap_factor = DOOM.MONSTERS.gunner.trap_factor
+         infight_damage = DOOM.MONSTERS.gunner.infight_damage
+         allow_in_theme = "wolf"
      }
 }
 

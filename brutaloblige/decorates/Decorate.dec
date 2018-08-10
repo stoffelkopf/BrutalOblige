@@ -9,3 +9,4 @@
 #include "BRUPUPS"
 
 actor hanglamp : BDECCeilLamp 362 {}
+actor ObligeBDCritterMouse : BDCritterMouse 367 {}

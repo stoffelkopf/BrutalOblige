@@ -54,7 +54,7 @@ ACTOR BrutalStealthAncientArachnotron : Arachnotron2 358
 	Alpha 0
 }
 
-ACTOR BrutalStealthVolcabus : Hectebus2 359
+ACTOR BrutalStealthVolcabus : Volcabus 359
 {
 	+STEALTH
 	RenderStyle Translucent
