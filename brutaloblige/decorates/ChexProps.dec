@@ -17,3 +17,8 @@ ACTOR ObligePropHangingPots : PropHangingPots 351
 {
 	Game Doom
 }
+
+ACTOR ObligePropStool : PropStool 368
+{
+    Game Doom
+}

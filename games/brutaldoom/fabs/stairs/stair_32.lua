@@ -25,7 +25,7 @@ PREFABS.Stair_slope_32 =
   file   = "stairs/stair_32.wad"
   map    = "MAP02"
 
-  prob   = 90
+  prob   = 0
 
   where  = "seeds"
   shape  = "I"

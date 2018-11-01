@@ -1,4 +1,4 @@
-**The currently supported version of Brutal Doom is bd21testApr25.pk3**
+**The currently supported version of Brutal Doom is bd21testaug09.pk3**
 
 # BrutalOblige
 
@@ -19,29 +19,17 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 * Support for SGtMarkIV's Brutal Friends addon, this has it's own section for full details.
 
 
-**How to use - Release version**
-
-1) Download Oblige if you haven't already and make sure you have the latest supported Brutal Doom. See below for current supported versions.
-
-2) Download the latest release from the [releases page](https://github.com/CloudOfShame/BrutalOblige/releases) to Oblige's addon directory. This will be in the same place as Oblige.exe on Windows or /usr/share/oblige/addons on Linux.
-
-5) Run Oblige, select Menu, Addon List and check the box for BrutalOblige. Restart Oblige, Brutal Doom should now appear as an option in the game menu.
-
-6) Click build to generate a wad with the new maps.
-
-7) Load this wad. If you have the .pk3 somewhere gzdoom knows where to look it should be loaded automatically. If you have renamed the pk3 something else then you will need to load it manually (before the generated wad).
-
-8) Rip and tear.
-
 **How to use - Latest development version**
 
 1) Download Oblige if you haven't already and make sure you have the latest supported Brutal Doom. See below for current supported versions.
 
 2) Download or clone this repository.
 
-3) Add all the folders to a zip folder (if you didn't download it as a zip anyway) and rename it to change the extension from .zip to .pk3
+3) Add all the folders to a zip folder called BrutalOblige.zip
 
-Note that if you downloaded this from github rather than cloning the repo you can't just rename that .zip, first you must unzip it, then put the folders that are *inside* the BrutalOblige-whatever folder that comes out into a zip.
+Rename it to change the extension from .zip to .pk3, if on Windows you can use the included zip2pk3.bat to do this for you.
+
+Note that if you downloaded this from gitlab rather than cloning the repo you can't just rename that .zip, first you must unzip it, then put the folders that are *inside* the BrutalOblige-whatever folder that comes out into a zip. This is the way Gitlab works, there's nothing I can do about it.
 
 4) Copy or move the pk3 to Oblige's addon directory. This will be in the same place as Oblige.exe on Windows or /usr/share/oblige/addons on Linux.
 
@@ -104,6 +92,7 @@ As for the starter pack check the box and bfriend1.pk3 should load automatically
 * If you use the starter pack the music will always be randomised regardless of your settings.
 * If you get "Script error, "brutalv20b.pk3:cvarinfo" line 1: cvar 'bd_bloodamount' already exists" then you are loading brutal doom twice. Try loading *just* the generated wad, it should pull in brutal automatically.
 * Currently any vanilla Doom/Doom2 maps generated while this mod is active can have missing textures or objects. This will be fixed before the next release.
+* double check that the pk3 is BrutalOblige.pk3 not BrutalOblige.pk3.zip
 
 [Screenshots](http://imgur.com/a/SRr9f)
 

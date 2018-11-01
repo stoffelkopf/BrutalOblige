@@ -169,7 +169,7 @@ BRUTALDOOM.musicpresets =
 {
     "iwad", "All music in the iwad"
     "doom2",    "Doom 2 only"
-    "doommetal",    "Doom Metal Vol 4"
+    "doommetal",    "Doom Metal Vol 5"
     "idkfa",    "IDKFA"
     "generic",  "Unspecified music mod (Doom 1 and 2 tracks)"
     "doom1",    "Doom 1 music mod"
@@ -224,7 +224,7 @@ function BRUTALDOOM.gameinfo()
       table.insert(data,',"bfriend1.pk3"')
   end
   if BRUTALDOOM.PARAMETERS.musicpreset == "doommetal" then
-      table.insert(data,',"DoomMetalVol4.wad"')
+      table.insert(data,',"DoomMetalVol5.wad"')
   end
   if BRUTALDOOM.PARAMETERS.musicpreset == "idkfa" then
       table.insert(data,',"IDKFAv2.wad"')
