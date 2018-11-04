@@ -25,7 +25,12 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 
 2) Download or clone this repository.
 
-3) Add all the folders to a zip folder called BrutalOblige.zip
+3) If on Windows run BuildPK3.bat, requires an up to date version of Powershell and .NET
+If on *nix run BuildPK3.sh, requires zip
+
+If this builds successfully then move on to step 4. If this method fails or otherwise can't be used then try the manual method in the next step
+
+3 - Manual) Add all the folders to a zip folder called BrutalOblige.zip
 
 Rename it to change the extension from .zip to .pk3, if on Windows you can use the included zip2pk3.bat to do this for you.
 
