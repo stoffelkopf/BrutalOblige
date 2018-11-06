@@ -366,12 +366,6 @@ actor ObligeMummy : BDMummy 338
 //$Category Monsters
 //$EditorSprite "MUMAB1"
 Tag "Mummy"
-states
-    {
-    Spawn:
-		MUMA B 10 A_Look
-		Loop
-    }
 }
 actor ObligeRifleZombie : RifleZombie 343 //remove the chance to replace with variants as Oblige handles these seperately
 {
@@ -440,4 +434,10 @@ actor ObligeUbersoldat: Ubersoldat 366
     //$Category Monsters/Wolfenstein
     //$EditorSprite "CPOSB1"
     Tag "Ubersoldat"
+}
+actor ObligeExperiment : Experiment 369
+{
+//$Category Monsters
+//$EditorSprite "ZKELB1"
+Tag "Experiment"
 }

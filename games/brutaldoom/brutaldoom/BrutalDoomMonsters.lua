@@ -305,7 +305,7 @@ BRUTALDOOM.MONSTERS =
      --V21Beta monsters
      HeadlessZombie =
      {
-        id = 334
+        id = 343 ----Should be 334. Sprites missing in bd21rc2b.pk3 for some reason so replaced with the id of the regular rifle zombie as a temp fix
         r = DOOM.MONSTERS.zombie.r
         h = DOOM.MONSTERS.zombie.h
         level = DOOM.MONSTERS.zombie.level
@@ -394,6 +394,20 @@ BRUTALDOOM.MONSTERS =
         room_size = "any"
         infight_damage = 3.5
         allow_in_theme = "egypt2"
+     }
+    Experiment =
+    {
+        id = 369
+        r = DOOM.MONSTERS.revenant.r
+        h = 48
+        level = 2
+        prob=50
+        health = 100
+        damage = 0.2
+        attack = "melee"
+        density = 0.85
+        room_size = "any"
+        infight_damage = 3.5
      }
      --Seperate Rifle and Pistol Zombie so Oblige can model them more accurately
      zombie = REMOVE_ME

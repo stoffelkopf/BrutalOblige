@@ -24,6 +24,7 @@ BRUTALDOOM.THEMES.tech.monster_prefs =
     shooter = 1.2
     arach   = 1.5
     Labguy = 1.6
+    Experiment = 1.5
 }
 BRUTALDOOM.THEMES.tech.facades =
 {      
@@ -73,6 +74,7 @@ BRUTALDOOM.THEMES.urban.monster_prefs =
     ZombieMainBattleTank = 1.1
     ZombieLightTank = 1.2
     ZombieMech = 1.1
+    Experiment = 0.8
 }
 BRUTALDOOM.THEMES.urban.passable_decor =
 {

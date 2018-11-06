@@ -51,7 +51,7 @@ Note that if you downloaded this from gitlab rather than cloning the repo you ca
   | Version | Expected filename
 -- | -- | --
 Oblige | 7.70 |  
-Brutal Doom | 21 public beta | bd21testaug09.pk3
+Brutal Doom | 21 public beta | bd21rc2b.pk3
 Project Brutality | 2.03 | Project Brutality 2.03.pk3
 Brutal Doom 64 | 2 | bd64gamev2.pk3
 
