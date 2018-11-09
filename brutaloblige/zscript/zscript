@@ -1,6 +1,7 @@
 version 2.4
 
 #include "wolfmons"
+#include "basemons"
 
 class BrutalObligeHandler : EventHandler
 {

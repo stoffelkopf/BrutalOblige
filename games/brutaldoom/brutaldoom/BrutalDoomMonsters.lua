@@ -603,6 +603,21 @@ BRUTALDOOM.MONSTERS =
          infight_damage = DOOM.MONSTERS.gunner.infight_damage
          allow_in_theme = "wolf"
      }
+    ADog =
+    {
+        id = 370
+        r = 12
+        h = 28 
+        level = 1
+        theme_prob = 140
+        prob=0
+        health = 80
+        damage = 3
+        attack = "melee"
+        min_weapon = 1
+        room_size = "any"
+        allow_in_theme = "wolf"
+    }
 }
 
 BRUTALDOOM4.MONSTERS =

@@ -1,4 +1,4 @@
-class semiclassicwolf : WolfensteinSS
+class semiclassicwolf : BOBaseWolfensteinSS
 {
 	Default
 	{

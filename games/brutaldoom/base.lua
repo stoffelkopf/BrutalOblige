@@ -114,6 +114,7 @@ function BRUTALDOOM.decorate()
 	gui.wad_insert_file("brutaloblige/decorates/DarkImp.dec","DARKIMPD");
 	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
     gui.wad_insert_file("brutaloblige/zscript/wolfmons.zscript","WOLFMONS");
+    gui.wad_insert_file("brutaloblige/zscript/BaseMonsters.zscript","BASEMONS");
     gui.wad_insert_file("brutaloblige/TRNSLATE","TRNSLATE");
 end
 

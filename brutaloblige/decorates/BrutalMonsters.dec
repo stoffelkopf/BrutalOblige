@@ -1,6 +1,6 @@
 #include "DARKIMPD"
 
-actor classicwolf : WolfensteinSS 313
+actor classicwolf : BOBaseWolfensteinSS 313
 {
 //$Category Monsters/Wolfenstein
 //$EditorSprite "SSWVA1"
@@ -440,4 +440,13 @@ actor ObligeExperiment : Experiment 369
 //$Category Monsters
 //$EditorSprite "ZKELB1"
 Tag "Experiment"
+}
+actor ADog : mbfhelperdog 370
+{
+    //$Category Monsters/Wolfenstein
+    Tag "Dog"
+    Health 80
+    Speed 8
+    PainChance 180
+    PainChance "Kick", 255
 }
