@@ -116,6 +116,8 @@ BRUTALDOOM.MATERIALS =
   CRBWLBP  = { t="CRBWLBP",  f="CRATOP2" }
   CR128LB  = { t="CR128LB",  f="CRATOP2" }
 
+  WLFCRATE  = { t="WLFCRATE",  f="FLAT5_2" }
+
   -- 128x128
   CRWDL128 = { t="CRWDL128", f="FLAT5_2" }
   CRAWHBP  = { t="CRAWHBP",  f="CRATOP1" }

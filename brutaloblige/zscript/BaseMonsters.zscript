@@ -114,6 +114,7 @@ class BOBaseWolfensteinSS : BrutalObligeMonster
 {
 	Default
 	{
+        BloodType "Brutal_Blood", "SawBlood", "SawBlood";
 		Health 50;
 		Radius 20;
 		Height 56;

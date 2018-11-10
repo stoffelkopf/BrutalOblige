@@ -101,11 +101,10 @@ BRUTALDOOM.THEMES =
 
     monster_prefs =
     {
-      BrutalSS = 70
-	  ClassicSS = 100
-      Ubersoldat = 60
-      demon   = 10  -- kinda like a dog
-      imp     =  5  -- kinda like a mutant
+      BrutalSS = 1.2
+	  ClassicSS = 1.5
+      Ubersoldat = 1.5
+      ADog = 1.1
     }
 	
 	prefab_remap =
@@ -121,6 +120,15 @@ BRUTALDOOM.THEMES =
 	  MARBFAC2 = "ZZWOLF2"
 	  MARBFAC3 = "ZZWOLF3"
 	  MARBFACE = "ZZWOLF4"
+    
+      CRATE1 = "WLFCRATE"
+	  CRATE2 = "WLFCRATE"
+	  CRATE3 = "WLFCRATE"
+      CRATWIDE = "WLFCRATE"
+      CRATELIT = "WLFCRATE"
+    
+      CRATOP1 = "FLAT5_2"
+      CRATOP2 = "FLAT5_2"
 	}
   }
   
@@ -826,6 +834,7 @@ BRUTALDOOM.THEMES.egypt2.monster_prefs =
     mummy = 2.0
     HeadlessZombie = 1.9 --Serious Sam had ancient Egypt themed levels and headless enemies so this seems appropriate
     Zyberdemon = 1.2
+    Experiment = 0 --it gets confusing having these on screen with the mummy
 }
 
 BRUTALDOOM.ROOM_THEMES.egypt2_Outdoors.floors =

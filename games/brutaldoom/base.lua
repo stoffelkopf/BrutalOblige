@@ -33,13 +33,14 @@ BRUTALDOOM.SECRET_EXITS = { }
 STARTERPACK = { }
 
  --this all has to come after the tables are declared
+gui.import("DebugFunctions")
 gui.import("brutaldoom/BrutalDoomMaterials")
 gui.import("brutaldoom/BrutalDoomThemes")
 gui.import("brutaldoom/BrutalDoomPickups")
 gui.import("brutaldoom/BrutalDoomEntities")
 gui.import("hereticbrutal")
 gui.import("brutality")
-gui.import("starterpack")
+--gui.import("starterpack")
 gui.import("UniversalIntermissionCompat/BrutalINTM")
 gui.import("ExtraKeysCompat/BrutalExtraKeys")
 gui.import("functions/tablecontains")
@@ -285,6 +286,15 @@ function BRUTALDOOM.texturesetup()
 	  'Patch SKELJ1, 7, 2\n'
       'Graphic BO_DOOM, 0, 33\n'
       '}\n'
+    'Texture "WLFCRATE", 64, 128\n'
+    '{\n'
+        'Patch "W96_1", 0, 0\n'
+        'Patch "WALL42_3", 49, 0\n'
+        'Patch "WALL42_3", -8, 0\n'
+        'Patch "W96_2", 0, 60\n'
+        'Patch "WALL42_3", 49, 72\n'
+        'Patch "W96_2", 0, 116\n'
+    '}\n'
 	'Texture "CXCRATE1", 64, 128\n'
     '{\n'
     '	Patch "CCRATEL1", 0, 0\n'
@@ -476,6 +486,10 @@ function BRUTALDOOM.texturesetup()
 	'{\n'
 	'	Patch FLNGWALL, 0, 0\n'
 	'}\n'
+    'Texture "DOKGRIR", 128, 128\n'
+    '{\n'
+        'Patch FDOKGRIR, 0, 0\n'
+    '}\n'
   }
   local plutoniadata =
   {

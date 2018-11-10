@@ -51,6 +51,24 @@ BRUTALDOOM.NICE_ITEMS =
         secret_prob = 0
         give = DOOM.NICE_ITEMS.berserk.give
     }
+    DemonRuneBaron =
+    {
+        id = 370
+        kind = "powerup"
+        add_prob = 6
+        start_prob = 0
+        closet_prob = 12
+        time_limit = 30
+    }
+    DemonRuneRevenant =
+    {
+        id = 371
+        kind = "powerup"
+        add_prob = 6
+        start_prob = 0
+        closet_prob = 12
+        time_limit = 30
+    }
 }
 
 BRUTALDOOM.PICKUPS =
