@@ -141,6 +141,7 @@ function BRUTALITY.decorate()
     gui.wad_add_text_lump("BRUMONS", data);
 	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
 	gui.wad_insert_file("brutaloblige/zscript/wolfmons.zscript","WOLFMONS");
+    gui.wad_insert_file("brutaloblige/zscript/BaseMonsters.zscript","BASEMONS");
 end
 
 function BRUTALITY.gameinfo()

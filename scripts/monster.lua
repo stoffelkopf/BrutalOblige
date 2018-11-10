@@ -1112,14 +1112,14 @@ function Monster_fill_room(R)
     
     --check theme
     if info.allow_in_theme and THEME.allow_mons_for_theme then
-        gui.printf("Theme check for  " .. THEME.allow_mons_for_theme .. " with monster theme " .. info.allow_in_theme .."\n")
+        --gui.printf("Theme check for  " .. THEME.allow_mons_for_theme .. " with monster theme " .. info.allow_in_theme .."\n")
         if not string.find(info.allow_in_theme, THEME.allow_mons_for_theme) then
             prob = 0
-            gui.printf("String " .. THEME.allow_mons_for_theme .. " not found in " .. info.allow_in_theme .."\n")
+            --gui.printf("String " .. THEME.allow_mons_for_theme .. " not found in " .. info.allow_in_theme .."\n")
         else
             if info.theme_prob then
                 prob = info.theme_prob
-                gui.printf("Setting " .. info.id .. " prob to " .. prob .."\n")
+                --gui.printf("Setting " .. info.id .. " prob to " .. prob .."\n")
             else
                 prob=0
             end
