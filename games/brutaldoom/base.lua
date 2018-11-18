@@ -32,6 +32,16 @@ BRUTALDOOM.SECRET_EXITS = { }
 
 STARTERPACK = { }
 
+BRUTALDOOM.music =
+{
+  songs =
+  {
+    "d_runnin", "d_runni2", "d_stalks", "d_stlks2", "d_stlks3", "d_countd", "d_count2", "d_betwee", "d_doom", "d_doom2", "d_the_da", "d_theda2", "d_theda3", "d_shawn", "d_shawn2", "d_shawn3", "d_ddtblu", "d_ddtbl2", "d_ddtbl3", "d_in_cit", "d_dead", "d_dead2", "d_romero", "d_romer2", "d_messag", "d_messg2", "d_ampie", "d_adrian", "d_tense", "d_openin", 
+    --wolf
+    "d_evil", "d_ultima"
+  }
+}
+
  --this all has to come after the tables are declared
 gui.import("DebugFunctions")
 gui.import("brutaldoom/BrutalDoomMaterials")
@@ -74,6 +84,8 @@ BRUTALDOOM.PARAMETERS =
     usingextrakeys = false
     playerclass = "Doomer"
     puristrailgunreload = "None"
+    usingbrutal64maps = false
+    bd64mapsversion = "bd64mapsV2.pk3"
 }
 
 BRUTALDOOM.IWADS =
@@ -134,16 +146,6 @@ end
 function BRUTALDOOM.castcalldecorate()
 	gui.wad_insert_file("brutaloblige/decorates/CastCall/BrutalCastCall.dec","DECORATE");
 end
-
-BRUTALDOOM.music =
-{
-  songs =
-  {
-    "d_runnin", "d_runni2", "d_stalks", "d_stlks2", "d_stlks3", "d_countd", "d_count2", "d_betwee", "d_doom", "d_doom2", "d_the_da", "d_theda2", "d_theda3", "d_shawn", "d_shawn2", "d_shawn3", "d_ddtblu", "d_ddtbl2", "d_ddtbl3", "d_in_cit", "d_dead", "d_dead2", "d_romero", "d_romer2", "d_messag", "d_messg2", "d_ampie", "d_adrian", "d_tense", "d_openin", 
-    --wolf
-    "d_evil", "d_ultima"
-  }
-}
 
 BRUTALDOOM.doom1songs = --not in the iwad but might be in doom metal etc
 {
@@ -233,6 +235,9 @@ function BRUTALDOOM.gameinfo()
   end
   if BRUTALDOOM.PARAMETERS.musicpreset == "ZD64MUSIC" then
       table.insert(data,',"ZD64MUSIC.PK3"')
+  end
+  if BRUTALDOOM.PARAMETERS.usingbrutal64maps == true then
+      table.insert(data,',"' .. BRUTALDOOM.PARAMETERS.bd64mapsversion .. '"')
   end
   
   table.insert(data,'\n')
@@ -873,6 +878,7 @@ function BRUTALDOOM.all_done()
   end
   if BRUTALDOOM.PARAMETERS.usingui == true then
 	BRUTALDOOM.createintm();
+    BRUTALDOOM.mergeintm();
   end
   BRUTALDOOM.create_mapinfo();
   --BRUTALDOOM.createkeyconf();

@@ -229,7 +229,13 @@ function BRUTALDOOM.createintm()
 	elseif MAP_NUM == 32 then
 		gui.wad_add_text_lump("BINTM", BRUTALDOOM.intermissionmw32);
 	end
-	
+end
+
+function BRUTALDOOM.mergeintm()
+    gui.wad_merge_sections("uidata/graphics.wad");
+	gui.wad_insert_file("uidata/D_READ_M.ogg","D_READ_M");
+	gui.wad_insert_file("uidata/D_DM2INT.ogg","D_DM2INT");
+	gui.wad_insert_file("uidata/D_DM2TTL.ogg","D_DM2TTL");
 end
 
 function BRUTALDOOM.checkuintm()
