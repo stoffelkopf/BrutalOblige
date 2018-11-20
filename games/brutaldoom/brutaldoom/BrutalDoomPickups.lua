@@ -53,7 +53,7 @@ BRUTALDOOM.NICE_ITEMS =
     }
     DemonRuneBaron =
     {
-        id = 370
+        id = 371
         kind = "powerup"
         add_prob = 6
         start_prob = 0
@@ -62,7 +62,7 @@ BRUTALDOOM.NICE_ITEMS =
     }
     DemonRuneRevenant =
     {
-        id = 371
+        id = 372
         kind = "powerup"
         add_prob = 6
         start_prob = 0
