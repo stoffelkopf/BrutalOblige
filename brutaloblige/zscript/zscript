@@ -86,6 +86,8 @@ Class BrutalObligeMonster : BrutalObligeActor
     Default
     {
         //$Category "Monsters"
+        +USEKILLSCRIPTS
+        Monster;
     }
     
     States

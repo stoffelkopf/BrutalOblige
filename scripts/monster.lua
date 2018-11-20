@@ -1474,8 +1474,7 @@ function Monster_fill_room(R)
 
 
   local function mon_fits(mon, spot)
-    local info  = GAME.MONSTERS[mon] or
-                  GAME.ENTITIES[mon]
+    local info  = GAME.MONSTERS[mon] or GAME.ENTITIES[mon]
 
     if info.h >= (spot.z2 - spot.z1) then return 0 end
 

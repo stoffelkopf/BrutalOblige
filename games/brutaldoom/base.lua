@@ -125,10 +125,18 @@ function BRUTALDOOM.decorate()
     gui.wad_insert_file("brutaloblige/decorates/ChexProps.dec","CHEXPROP");
     gui.wad_insert_file("brutaloblige/decorates/ExtraChexMonsters.dec","CHEXMONS");
 	gui.wad_insert_file("brutaloblige/decorates/DarkImp.dec","DARKIMPD");
+    gui.wad_insert_file("brutaloblige/decorates/Bolognese.dec","BOLOGNES");
+    
 	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
     gui.wad_insert_file("brutaloblige/zscript/wolfmons.zscript","WOLFMONS");
     gui.wad_insert_file("brutaloblige/zscript/BaseMonsters.zscript","BASEMONS");
+    
     gui.wad_insert_file("brutaloblige/TRNSLATE","TRNSLATE");
+    
+    gui.wad_insert_file("brutaloblige/acs/LOADACS","LOADACS");
+    gui.wad_insert_file("brutaloblige/acs/A_START","A_START");
+    gui.wad_insert_file("brutaloblige/acs/BOLOGACS.o","BOLOGACS");
+    gui.wad_insert_file("brutaloblige/acs/A_START","A_END");
 end
 
 function BRUTALDOOM4.caco()

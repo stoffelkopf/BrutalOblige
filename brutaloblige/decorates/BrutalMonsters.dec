@@ -449,4 +449,5 @@ actor ADog : mbfhelperdog 370
     Speed 8
     PainChance 180
     PainChance "Kick", 255
+    +USEKILLSCRIPTS
 }

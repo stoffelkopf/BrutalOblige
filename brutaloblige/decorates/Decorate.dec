@@ -7,6 +7,7 @@
 #include "CHEXPROP"
 #include "CHEXMONS"
 #include "BRUPUPS"
+#include "BOLOGNES"
 
 actor hanglamp : BDECCeilLamp 362 {}
 actor ObligeBDCritterMouse : BDCritterMouse 367 {}

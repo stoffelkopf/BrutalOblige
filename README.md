@@ -1,4 +1,4 @@
-**The currently supported version of Brutal Doom is bd21testaug09.pk3**
+**The currently supported version of Brutal Doom is bd21rc2b.pk3**
 
 # BrutalOblige
 
@@ -98,6 +98,9 @@ As for the starter pack check the box and bfriend1.pk3 should load automatically
 * If you get "Script error, "brutalv20b.pk3:cvarinfo" line 1: cvar 'bd_bloodamount' already exists" then you are loading brutal doom twice. Try loading *just* the generated wad, it should pull in brutal automatically.
 * Currently any vanilla Doom/Doom2 maps generated while this mod is active can have missing textures or objects. This will be fixed before the next release.
 * double check that the pk3 is BrutalOblige.pk3 not BrutalOblige.pk3.zip
+
+**A note on compiled acs code**
+This mod contains some precompiled acs objects in brutaloblige/acs. The sourcecode for these is inlcuded in the same folder with the .acs extension. If you prefer to compile this code yourself you will need acc (I compiled with version 1.56) which is available in source and binary forms on the zdoom [download page](https://zdoom.org/downloads). The compiled object should have the same name as the source file but with .acs replaced with .o and be placed in the acs folder.
 
 [Screenshots](http://imgur.com/a/SRr9f)
 

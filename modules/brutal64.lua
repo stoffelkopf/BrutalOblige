@@ -1,16 +1,16 @@
 --gui.import("brutaldoom")
 --gui.import("brutalthemes")
-gui.import("hereticbrutal")
+--gui.import("hereticbrutal")
 
 puristrailgunreload={}
 
 BRUTAL64 = { }
 
-BRUTAL64.MATERIALS = BRUTALDOOM.MATERIALS
-BRUTAL64.LIQUIDS = BRUTALDOOM.LIQUIDS
-BRUTAL64.ENTITIES = BRUTALDOOM.ENTITIES
-BRUTAL64.THEMES = DOOM.THEMES
-BRUTAL64.ROOM_THEMES = DOOM.ROOM_THEMES
+--BRUTAL64.MATERIALS = BRUTALDOOM.MATERIALS
+--BRUTAL64.LIQUIDS = BRUTALDOOM.LIQUIDS
+--BRUTAL64.ENTITIES = BRUTALDOOM.ENTITIES
+--BRUTAL64.THEMES = DOOM.THEMES
+--BRUTAL64.ROOM_THEMES = DOOM.ROOM_THEMES
 
 local modversion = "bd64gamev2.pk3"
 
@@ -43,6 +43,9 @@ function BRUTAL64.gameinfo()
   end
   if BRUTALDOOM.PARAMETERS.musicpreset == "idkfa" then
       table.insert(data,',"IDKFAv2.wad"')
+  end
+  if BRUTALDOOM.PARAMETERS.usingbrutal64maps == true then
+      table.insert(data,',"' .. BRUTALDOOM.PARAMETERS.bd64mapsversion .. '"')
   end
   
   table.insert(data,'\n')
@@ -96,6 +99,22 @@ function BRUTAL64.weaponsdecorate()
 		'actor ObligeRifleSpawner : RifleSpawner 330 {}\n'
 		'actor ObligeSoulAmmo : SoulAmmo 331 {}\n'
 	}
+    gui.wad_add_text_lump("DECORATE", data);
+end
+
+function BRUTAL64.entitiesdecorate()
+
+  local data = {
+      '//Because brutal64 inherits from brutal it will sometimes spawn brutal decorations in maps\n'
+      "//These don't exist in 64 so this decorate replaces them with a Small Blood Pool\n\n"
+      }
+  
+  for name,_ in pairs(BRUTALDOOM.ENTITIES) do
+    local M = BRUTALDOOM.ENTITIES[name]
+    
+    table.insert(data,'actor nil' .. name .. ': SmallBloodPool ' .. M.id .. ' {}\n')
+  end
+    
     gui.wad_add_text_lump("DECORATE", data);
 end
 
@@ -327,18 +346,19 @@ end
 
 function BRUTAL64.all_done()
 	DOOM.all_done();
-	BRUTALDOOM.texturesetup();
+	--BRUTALDOOM.texturesetup();
 	BRUTAL64.gameinfo();
 	BRUTAL64.monstersdecorate();
 	BRUTAL64.weaponsdecorate();
+    BRUTAL64.entitiesdecorate();
     BRUTAL64.ukeymaps();
     gui.wad_insert_file("brutaloblige/TRNSLATE","TRNSLATE");
 	BRUTAL64.create_mapinfo();
 	gui.printf("OB_THEMES:\n" .. table.tostring(OB_THEMES) ..'\n')
-	if BRUTALDOOM.PARAMETERS.iwad == "heretic.wad" then
+	--[[if BRUTALDOOM.PARAMETERS.iwad == "heretic.wad" then
 		heretic64_monstersetup();
 		heretic_soundsetup();
-	end
+	end ]]--
 end
 
 OB_GAMES["brutal64"] =

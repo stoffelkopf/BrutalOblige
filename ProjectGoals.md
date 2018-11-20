@@ -34,7 +34,7 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 * Flemoids 1-3
 * Quadrumpus
 * Epic 2 Alien
-* Headless Zombie
+* ~~Headless Zombie~~ Missing sprites in bd21rc2b.pk3
 * Labguy
 * Ancient Arachnotron
 * Volcabus
@@ -42,12 +42,15 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 * Zombie Tanks
 * Zombie Mech
 * Zombie Helicopter
+* Experiment
 
 **Partially done:**
 
 * Dark Imp; needs more and better death states.
 
 **Future:**
+
+* Arachnorb; has sprites and decorate code in bd21rc2b.pk3 but is commented out
 
 
 
@@ -92,6 +95,8 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 **Future:** Try and keep in sync with core Brutal.
 
 ## Hell on Earth Starterpack
+
+**Future:** Update for/replace with Extermination Day once released
 
 ### Monsters
 
@@ -160,7 +165,7 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 
 * Generated maps named to BOMxy (as opposed to MAPxy) so they can potentially exit to existing maps.
 * Support for an arbitrary number of music tracks in the random selection. Presets for some commonly available music configurations.
-* Secret exits to brutal's included boss levels. Sometimes puts the hellonearthstarterpack bosses in these levels if Starterpack is being used.
+* ~~Secret exits to brutal's included boss levels. Sometimes puts the hellonearthstarterpack bosses in these levels if Starterpack is being used.~~ Still puts in the secret exits but these levels are not included in bd21rc2b.pk3 so the exits just go to the next level.
 
 ## Other
 

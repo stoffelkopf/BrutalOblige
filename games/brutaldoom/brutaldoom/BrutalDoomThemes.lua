@@ -860,7 +860,7 @@ OB_THEMES["egypt2"] =
   game = { brutaldoom = 1, brutal64 = 0 }
   priority = 5
   name_class = "GOTHIC"
-  mixed_prob = 5
+  mixed_prob = 3
 }
 
 OB_THEMES["satanshankerchief"] =
@@ -869,7 +869,7 @@ OB_THEMES["satanshankerchief"] =
   priority = 2
   name_class = "TECH"
   game = "brutaldoom"
-  mixed_prob = 5
+  mixed_prob = 3
 }
 
 OB_THEMES["wolf"] =

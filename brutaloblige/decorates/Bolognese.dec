@@ -1,0 +1,41 @@
+Actor MeatDeathGiant: MeatDeath 
+{ 
+    States
+    {
+    Spawn:
+         TNT1 AAAAAAAAA 0 A_CustomMissile ("CeilBloodLauncherLong", 0, 0, random (0, 360), 2, random (50, 130))
+         TNT1 A 0 A_CustomMissile ("XDeath2", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_CustomMissile ("XDeath3", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_CustomMissile ("XDeath4", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AA 0 A_CustomMissile ("XDeath2b", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AA 0 A_CustomMissile ("XDeath3b", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_CustomMissile ("XDeath5Big", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_CustomMissile ("XDeath6Big", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AAAAAAAA 0 A_CustomMissile ("BloodMistExtraBig", 80, 0, random (0, 360), 2, random (20, 90))
+		 TNT1 AAAAAAAA 0 A_CustomMissile ("BloodmistSpray", 80, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_CustomMissile ("XDeathOrgan1", 24, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_CustomMissile ("XDeathOrgan2", 24, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AAAA 0 A_CustomMissile ("Guts", 64, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnItem ("BigBloodSpot")
+		 TNT1 AAAAA 0 A_CustomMissile ("SuperGoreSpawner2", 124, 0, random (0, 360), 2, random (20, 40))
+	Death:
+	    TNT1 A 0
+        Stop
+    }
+}
+
+Actor MeatDeathFat: MeatDeath 
+{ 
+    States
+    {
+    Spawn:
+		TNT1 A 0
+		 TNT1 AA 0 A_CustomMissile ("XDeath5Big", 45, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AAA 0 A_CustomMissile ("XDeath6Big", 45, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AA 0 A_CustomMissile ("SuperGoreSpawner2", 32, 0, random (0, 360), 2, random (20, 40))
+		 TNT1 AA 0 A_CustomMissile ("Guts", 42, 0, random (0, 360), 2, random (30, 90))
+	Death:
+	    TNT1 A 0
+        Stop
+    }
+}
