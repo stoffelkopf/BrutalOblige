@@ -32,3 +32,13 @@ PREFABS.Joiner_door2_hell =
   theme  = "hell"
 }
 
+PREFABS.Joiner_door2_tnt =
+{
+  template = "Joiner_door2"
+  map      = "MAP03"
+
+  prob = 255
+
+  theme  = "tech"
+}
+

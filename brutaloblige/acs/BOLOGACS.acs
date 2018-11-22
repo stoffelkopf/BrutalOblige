@@ -8,7 +8,7 @@ script "BBGORE_CheckKill" KILL
 	if (CheckFlag(0, "ISMONSTER")  || !CheckFlag(0, "NOBLOOD"))
 		{
 				//Minimal health for gibbing.
-				if (GetActorProperty(0, APROP_Health) < (GetCvar("bd_mingibhealth")))
+				if (GetActorProperty(0, APROP_Health) < (-30))
 					{
 					
 					//Possibly a Lost Soul or something similar, don't spawn anything.
@@ -22,16 +22,16 @@ script "BBGORE_CheckKill" KILL
 					
 					//Possibly a medium thing like a dog.
 					if (GetActorProperty(0, APROP_Height) < 32.0) {	
-					Spawn("MeatDeathSmall", GetACtorX(0), GetACtorY(0), GetActorZ(0)); 
+					Spawn("MeatDeath_BologneseSmall", GetACtorX(0), GetACtorY(0), GetActorZ(0)); 
 					SetActorProperty(0, APROP_ScaleX, 0.001); SetActorProperty(0, APROP_ScaleY, 0.001);
 					terminate;}	
 					
 					//Normal gibs
-					Spawn("MeatDeath", GetACtorX(0), GetACtorY(0), GetActorZ(0));
+					Spawn("MeatDeath_Bolognese", GetACtorX(0), GetACtorY(0), GetActorZ(0));
 					//Might be a large enemy, like a Cacodemon or a Mancubus, spawn extra gibs.
-					if (GetActorProperty(0, APROP_Radius) > 30.0) {	Spawn("MeatDeathFat", GetACtorX(0), GetACtorY(0), GetActorZ(0));}	
+					if (GetActorProperty(0, APROP_Radius) > 30.0) {	Spawn("MeatDeath_BologneseFat", GetACtorX(0), GetACtorY(0), GetActorZ(0));}	
 					//Might be a huge enemy, like a Cyberdemon, spawn extra gibs.
-					if (GetActorProperty(0, APROP_Height) > 100.0){	Spawn("MeatDeathGiant", GetACtorX(0), GetACtorY(0), GetActorZ(0));}	
+					if (GetActorProperty(0, APROP_Height) > 100.0){	Spawn("MeatDeath_BologneseGiant", GetACtorX(0), GetACtorY(0), GetActorZ(0));}	
 					SetActorProperty(0, APROP_ScaleX, 0.001);
 					SetActorProperty(0, APROP_ScaleY, 0.001);
 					terminate;

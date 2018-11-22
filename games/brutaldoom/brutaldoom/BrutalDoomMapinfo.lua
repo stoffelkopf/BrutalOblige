@@ -275,29 +275,30 @@ Intermission BrutalDoomCast
 
       local nextmap = 'next = "' .. L.name ..'"\n'
 
-      local sky1 = 'sky1 = "RSKY1' --default sky. Final " deliberately ommitted so a B can be added before it, see the roll for extra sky bit.
+      local sky1 = 'sky1 = "'
+      local skyname = 'RSKY1'
       local enterpic = '"INTERPIC"' --default intermissionpic
-      if L.theme_name == "hell" then
-        sky1 = 'sky1 = "RSKY3'
-      elseif L.theme_name == "urban" then
-        sky1 = 'sky1 = "RSKY2'
-      elseif L.theme_name == "satanshankerchief" then
-	local n = rand.irange(1,3)
-        sky1 = 'sky1 = "CHEXSKY' .. n
-        enterpic = '"CHEXINT"'
+      if L.theme_name == "tech" then
+        skyname = BRUTALDOOM.skies.tech[ rand.irange(1,#BRUTALDOOM.skies.tech) ]
       end
+      if L.theme_name == "urban" then
+        skyname = BRUTALDOOM.skies.urban[ rand.irange(1,#BRUTALDOOM.skies.urban) ]
+      end
+      if L.theme_name == "hell" then
+        skyname = BRUTALDOOM.skies.hell[ rand.irange(1,#BRUTALDOOM.skies.hell) ]
+      end
+      if L.theme_name == "satanshankerchief" then
+        skyname = BRUTALDOOM.skies.satanshankerchief[ rand.irange(1,#BRUTALDOOM.skies.satanshankerchief) ]
+      end
+      
+        sky1 = sky1 .. skyname .. '"\n'
 	  
 	  --Universal Intermission Screen
 	  if BRUTALDOOM.PARAMETERS.usingui == true then
 		enterpic = '"$BINTM"'
 	  end
-      
-      --roll for extra sky
-      if BRUTALDOOM.PARAMETERS.skygenerator == true and rand.irange(1,2) == 2 and L.theme_name != "satanshankerchief" then
-          sky1 = sky1 .. 'B'
-      end
 
-      sky1 = sky1 .. '"\n' --put in the newline here for convinience
+      --sky1 = sky1 .. '"\n' --put in the newline here for convinience
       enterpic = enterpic .. '\n'
 
       local text = L.name .. ' "' .. L.description ..'"'; --the mapinfo key
