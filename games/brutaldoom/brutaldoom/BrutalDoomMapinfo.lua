@@ -278,18 +278,12 @@ Intermission BrutalDoomCast
       local sky1 = 'sky1 = "'
       local skyname = 'RSKY1'
       local enterpic = '"INTERPIC"' --default intermissionpic
-      if L.theme_name == "tech" then
-        skyname = BRUTALDOOM.skies.tech[ rand.irange(1,#BRUTALDOOM.skies.tech) ]
+      local skytab = BRUTALDOOM.skies[ L.theme_name ]
+      if not skytab then --i.e. if no entry for the them in BrutalDoomSkies.lua
+          skytab = BRUTALDOOM.skies.any
       end
-      if L.theme_name == "urban" then
-        skyname = BRUTALDOOM.skies.urban[ rand.irange(1,#BRUTALDOOM.skies.urban) ]
-      end
-      if L.theme_name == "hell" then
-        skyname = BRUTALDOOM.skies.hell[ rand.irange(1,#BRUTALDOOM.skies.hell) ]
-      end
-      if L.theme_name == "satanshankerchief" then
-        skyname = BRUTALDOOM.skies.satanshankerchief[ rand.irange(1,#BRUTALDOOM.skies.satanshankerchief) ]
-      end
+      
+      skyname = skytab[ rand.irange(1,#skytab) ]
       
         sky1 = sky1 .. skyname .. '"\n'
 	  

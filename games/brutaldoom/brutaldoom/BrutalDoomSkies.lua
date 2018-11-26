@@ -1,8 +1,11 @@
 BRUTALDOOM.skies = 
         {
-            tech =
+            any = 
             {
              'RSKY1'
+            }
+            tech =
+            {
              'SKYPHO'
              'SKYIJ1'
              'SKYIJ2'
