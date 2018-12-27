@@ -140,6 +140,8 @@ function BRUTALITY.decorate()
 	}
     gui.wad_add_text_lump("BRUMONS", data);
 	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
+    gui.wad_insert_file("brutaloblige/zscript/base.zscript","ZBASE");
+    gui.wad_insert_file("brutaloblige/NullFile","ZBASE2");
 	gui.wad_insert_file("brutaloblige/zscript/wolfmons.zscript","WOLFMONS");
     gui.wad_insert_file("brutaloblige/zscript/BaseMonsters.zscript","BASEMONS");
 end
@@ -174,7 +176,8 @@ function BRUTALITY.gameinfo()
 end
 
 function BRUTALITY.setup()
-
+gui.printf("\nBrutal Oblige version: " .. BRUTALDOOM.PARAMETERS.modversion.."\n")
+gui.printf("For Project Brutality version: " .. BRUTALDOOM.PARAMETERS.brutalityversion.."\n\n")
 local data =
 	{
 		'//Brutality additions\n'

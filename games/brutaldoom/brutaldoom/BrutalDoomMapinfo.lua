@@ -279,7 +279,7 @@ Intermission BrutalDoomCast
       local skyname = 'RSKY1'
       local enterpic = '"INTERPIC"' --default intermissionpic
       local skytab = BRUTALDOOM.skies[ L.theme_name ]
-      if not skytab then --i.e. if no entry for the them in BrutalDoomSkies.lua
+      if not skytab or OB_CONFIG.game == "brutality" then --i.e. if no entry for the theme in BrutalDoomSkies.lua
           skytab = BRUTALDOOM.skies.any
       end
       
@@ -292,7 +292,6 @@ Intermission BrutalDoomCast
 		enterpic = '"$BINTM"'
 	  end
 
-      --sky1 = sky1 .. '"\n' --put in the newline here for convinience
       enterpic = enterpic .. '\n'
 
       local text = L.name .. ' "' .. L.description ..'"'; --the mapinfo key
