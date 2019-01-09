@@ -347,7 +347,9 @@ end
 function BRUTAL64.all_done()
 	DOOM.all_done();
 	--BRUTALDOOM.texturesetup();
-	BRUTAL64.gameinfo();
+    if BRUTALDOOM.PARAMETERS.autoload == true then
+        BRUTAL64.gameinfo();
+    end
 	BRUTAL64.monstersdecorate();
 	BRUTAL64.weaponsdecorate();
     BRUTAL64.entitiesdecorate();

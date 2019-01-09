@@ -88,6 +88,7 @@ BRUTALDOOM.PARAMETERS =
     puristrailgunreload = "None"
     usingbrutal64maps = false
     bd64mapsversion = "bd64mapsV2.pk3"
+    autoload = false
 }
 
 BRUTALDOOM.IWADS =
@@ -224,7 +225,7 @@ function DOOMMETAL.setup(self)
 end
 
 function BRUTALDOOM.gameinfo()
-
+    
   local data =
   {
       '//ZDoom GAMEINFO lump for Brutal Oblige\n'
@@ -320,7 +321,9 @@ function BRUTALDOOM.all_done()
   BRUTALDOOM.flem_nukage();
   DOOM.all_done();
   BRUTALDOOM.epic();
-  BRUTALDOOM.gameinfo();
+  if BRUTALDOOM.PARAMETERS.autoload == true then
+      BRUTALDOOM.gameinfo();
+  end
   BRUTALDOOM.mixhanky();
   BRUTALDOOM.texturesetup();
   BRUTALDOOM.mergesongs();
@@ -349,7 +352,9 @@ function BRUTALITY.all_done()
   BRUTALDOOM.flem_nukage();
   DOOM.all_done();
   BRUTALDOOM.epic();
-  BRUTALITY.gameinfo();
+  if BRUTALDOOM.PARAMETERS.autoload == true then
+      BRUTALITY.gameinfo();
+  end
   BRUTALDOOM.mixhanky();
   BRUTALDOOM.texturesetup();
   BRUTALDOOM.setsecretexits();
@@ -680,7 +685,7 @@ OB_MODULES["brutaltweaks"] =
   
   side = "left"
 
-  game = { brutaldoom=1, brutal64=1 }
+  game = { brutaldoom=1, brutal64=1, brutality=1 }
   playmode = { sp=1, coop=1 }
   
   tables =
@@ -715,6 +720,13 @@ OB_MODULES["brutaltweaks"] =
           label="Additional Skies"
           choices=BRUTALDOOM.YES_NO
           tooltip="Generates an extra sky texture for each theme. The will be a 50/50 split between levels of that theme which use the original and those which use this new texture."
+      }
+  
+      autoload =
+      {
+          label="Autoload Mods"
+          choices=BRUTALDOOM.YES_NO
+          tooltip="If set to yes then the generated was will tell GZDoom to load the mods needed for it to work (such as the correct version of Brutal Doom) without these needing to be specified through command line parameters or a launcher"
       }
   }
 }
