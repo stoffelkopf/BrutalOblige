@@ -42,7 +42,7 @@ Note that if you downloaded this from gitlab rather than cloning the repo you ca
 
 6) Click build to generate a wad with the new maps.
 
-7) Load this wad. If you have the .pk3 somewhere gzdoom knows where to look it should be loaded automatically. If you have renamed the pk3 something else then you will need to load it manually (before the generated wad).
+7) Load this wad **after** Brutal Doom/Project Brutality/Brutal Doom 64
 
 8) Happy bug hunting.
 
@@ -51,7 +51,7 @@ Note that if you downloaded this from gitlab rather than cloning the repo you ca
   | Version | Expected filename
 -- | -- | --
 Oblige | 7.70 |  
-Brutal Doom | 21 public beta | bd21rc2b.pk3
+Brutal Doom | 21 public beta | bd21RC9.pk3
 Project Brutality | 2.03 | Project Brutality 2.03.pk3
 Brutal Doom 64 | 2 | bd64gamev2.pk3
 
@@ -77,7 +77,6 @@ If you downloaded before the Brutality support was added then Satan's Hankerchei
 * Secret levels: If you make a full 32 map wad there will be 3 secret exits on random levels. The first on levels 1-9, the second on levels 11-19 and the third on levels 21-29. The second goes to map 31 (which itself has a secret exit to 32), where the others go I will leave as a surprise.
 * A proper ending after the last Oblige level, no matter how many there are.
 * A few new textures
-* Duke Nukem theme
 
 Just check the box for Brutal Doom Starter Pack and as long as you have hellonearthstarterpack.wad it should load automatically. Load it manually if you've renamed it.
 

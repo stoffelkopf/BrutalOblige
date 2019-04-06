@@ -5,6 +5,7 @@
 PREFABS.Start_closet1 =
 {
   file  = "start/closet1.wad"
+  map    = "MAP01"
 
   prob  = 80
 
@@ -21,5 +22,16 @@ PREFABS.Start_closet1 =
 
   -- wall variations
   tex_BROWN1 = { BROWN1=50, BRONZE3=50, BROWNGRN=50, SLADWALL=50 }
+}
+
+PREFABS.Start_closet1_rainy =
+{
+    template = "Start_closet1"
+
+    prob    = 0 --doesn't fit on the yaxis
+
+    map    = "MAP02"
+    
+    theme = "urban"
 }
 

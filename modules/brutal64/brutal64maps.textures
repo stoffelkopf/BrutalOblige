@@ -1,0 +1,25 @@
+Texture "G64VINE1", 256, 128
+{
+	Patch "TILED173", 0, 0
+	Patch "TILED173", 64, 0
+	Patch "TILED173", 128, 0
+	Patch "TILED173", 192, 0
+	Patch "TILED173", 0, 64
+	Patch "TILED173", 64, 64
+	Patch "TILED173", 128, 64
+	Patch "TILED173", 192, 64
+	Patch "W106_1", 0, 0
+}
+
+Texture "G64VINE2", 256, 128
+{
+	Patch "TILED173", 0, 0
+	Patch "TILED173", 64, 0
+	Patch "TILED173", 128, 0
+	Patch "TILED173", 192, 0
+	Patch "TILED173", 0, 64
+	Patch "TILED173", 64, 64
+	Patch "TILED173", 128, 64
+	Patch "TILED173", 192, 64
+	Patch "W107_1", 0, 0
+}

@@ -287,20 +287,18 @@ function BRUTAL64.create_mapinfo()
 
       local nextmap = 'next = "' .. L.name ..'"\n'
 
-      local sky1 = 'sky1 = "RSKY1' --default sky. Final " deliberately ommitted so a B can be added before it, see the roll for extra sky bit.
+      local sky1 = 'sky1 = "'
+      local skyname = 'RSKY1'
       local enterpic = '"INTERPIC"' --default intermissionpic
-      if L.theme_name == "hell" then
-        sky1 = 'sky1 = "RSKY3'
-      elseif L.theme_name == "urban" then
-        sky1 = 'sky1 = "RSKY2'
+      local skytab = BRUTAL64.SKIES[ L.theme_name ]
+      if not skytab then --i.e. if no entry for the theme in BrutalDoomSkies.lua
+          skytab = BRUTAL64.SKIES.any
       end
       
-      --roll for extra sky --may not work
-      --if BRUTALDOOM.PARAMETERS.skygenerator == true and rand.irange(1,2) == 2 and L.theme_name != "satanshankerchief" then
-      --    sky1 = sky1 .. 'B'
-      --end
-
-      sky1 = sky1 .. '"\n' --put in the newline here for convinience
+      skyname = skytab[ rand.irange(1,#skytab) ]
+      
+        sky1 = sky1 .. skyname .. '"\n'
+        
       enterpic = enterpic .. '\n'
 
       local text = L.name .. ' "' .. L.description ..'"'; --the mapinfo key

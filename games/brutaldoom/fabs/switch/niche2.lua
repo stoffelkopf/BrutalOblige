@@ -7,6 +7,8 @@ PREFABS.Switch_niche2 =
   file   = "switch/niche2.wad"
   map    = "MAP01"
 
+  theme  = "!hell"
+
   key    = "sw_metal"
   prob   = 50
 
@@ -20,3 +22,13 @@ PREFABS.Switch_niche2 =
   tag_1 = "?switch_tag"
 }
 
+PREFABS.Switch_niche2_hell =
+{
+  
+  template = "Switch_niche2"
+  
+  file   = "switch/niche2.wad"
+  map    = "MAP02"
+
+  theme  = "hell"
+}

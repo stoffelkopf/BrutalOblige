@@ -1,4 +1,4 @@
-BRUTALDOOM.skies = 
+BRUTALDOOM.SKIES = 
         {
             any = 
             {

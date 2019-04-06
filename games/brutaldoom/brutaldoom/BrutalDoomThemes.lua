@@ -863,6 +863,7 @@ OB_THEMES["egypt2"] =
   mixed_prob = 3
 }
 
+--[[ Flemoid sprites are missing in RC9
 OB_THEMES["satanshankerchief"] =
 {
   label = "Satan's Hankerchief"
@@ -871,6 +872,7 @@ OB_THEMES["satanshankerchief"] =
   game = "brutaldoom"
   mixed_prob = 3
 }
+]]--
 
 OB_THEMES["wolf"] =
 {

@@ -34,6 +34,7 @@ PREFABS.Cage_wall_hell =
   theme = "hell"
 
    tex_SHAWN2 = "REDWALL"
+   tex_MIDBARS1 = "BDHEL07"
   flat_FLAT23 = "RROCK03"
 }
 

@@ -53,3 +53,11 @@ PREFABS.Joiner_simple1_wide =
   x_fit    = { 176,224 }
 }
 
+--a version of simple 1 with a small BDec caged light
+PREFABS.Joiner_simple1_cagelight =
+{
+  template = "Joiner_simple1"
+  map      = "MAP04"
+
+  prob=255
+}

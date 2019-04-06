@@ -39,7 +39,6 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 * Ancient Arachnotron
 * Volcabus
 * Mummy
-* Zombie Tanks
 * Zombie Mech
 * Zombie Helicopter
 * Experiment
@@ -47,6 +46,7 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 **Partially done:**
 
 * Dark Imp; needs more and better death states.
+* Zombie Tanks; needs a lot better balancing.
 
 **Future:**
 
@@ -67,7 +67,11 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 
 ### Themes
 
-**Done:** Wolfenstein and Satan's Hankercheif.
+**Done:**
+
+* Wolfenstein
+* Satan's Hankercheif
+* New skies
 
 **Partially Done:**
 
@@ -100,17 +104,19 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 
 ### Monsters
 
-**Done:** Heavy Machine Gun, Dogs.
+**Done:**
 
 **Future:** 
 
 ### Themes
 
-**Done:** Snowy Wolfenstein
+**Done:**
+
+* Snowy Wolfenstein
+* Additional skies
 
 **Partially done:**
 
-* Duke Nukem Theme.
 * Using the extra textures in existing themes.
 
 ## Brutal Friends
@@ -153,7 +159,10 @@ Everything that follows I want to be at least sort of an expansion of this idea.
 
 ## BrutalDoom64 Maps
 
-**Done:** Option to add the deathmatch music tracks to the list of potential bgm for each map.
+**Done:**
+
+* Option to add the deathmatch music tracks to the list of potential bgm for each map.
+* Additional skies.
 
 **Future:** Doom 64 themes; tech and hell, using the appropriate textures.
 

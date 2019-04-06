@@ -68,7 +68,7 @@ BRUTALDOOM.YES_NO =
 BRUTALDOOM.VERSIONS = 
 {
 	"brutalv20b.pk3",	"V20b"
-    "bd21RC3.pk3",    "V21Beta"
+    "bd21RC9.pk3",    "V21Beta"
 }
 
 BRUTALDOOM.PARAMETERS =
@@ -80,7 +80,7 @@ BRUTALDOOM.PARAMETERS =
 	brutalfriends = false
     iwad = 'Doom2.wad'
     musicpreset = 'iwad'
-	brutalversion = "bd21RC3.pk3"
+	brutalversion = "bd21RC9.pk3"
 	brutalityversion = "Project Brutality 2.03.pk3"
 	usingui = false
     usingextrakeys = false
@@ -88,6 +88,8 @@ BRUTALDOOM.PARAMETERS =
     puristrailgunreload = "None"
     usingbrutal64maps = false
     bd64mapsversion = "bd64mapsV2.pk3"
+    usingeday = false
+    edayversion = "eday"
     autoload = false
 }
 
@@ -225,7 +227,7 @@ function DOOMMETAL.setup(self)
 end
 
 function BRUTALDOOM.gameinfo()
-    
+  --eday and bd64maps only work together if eday is loaded first
   local data =
   {
       '//ZDoom GAMEINFO lump for Brutal Oblige\n'
@@ -234,8 +236,8 @@ function BRUTALDOOM.gameinfo()
   table.insert(data,'IWAD="' .. BRUTALDOOM.PARAMETERS.iwad .. '"\n')
 
   table.insert(data,'LOAD="' .. BRUTALDOOM.PARAMETERS.brutalversion .. '"')
-  if BRUTALDOOM.PARAMETERS.starterpack == true then
-      table.insert(data,',"hellonearthstarterpack.wad"')
+  if BRUTALDOOM.PARAMETERS.usingeday == true then
+      table.insert(data,',"' .. BRUTALDOOM.PARAMETERS.edayversion .. '"')
   end
   if BRUTALDOOM.PARAMETERS.brutalfriends == true then
       table.insert(data,',"bfriend1.pk3"')

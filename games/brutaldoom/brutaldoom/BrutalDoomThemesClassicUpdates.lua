@@ -72,8 +72,9 @@ BRUTALDOOM.THEMES.urban.monster_prefs =
     knight   = 1.5
     gunner   = 1.5
     ZombieMainBattleTank = 1.1
-    ZombieLightTank = 1.2
+    ZombieLightTank = 1.1
     ZombieMech = 1.1
+    ZombieHelicopter = 1.1
     Experiment = 0.8
 }
 BRUTALDOOM.THEMES.urban.passable_decor =
@@ -93,7 +94,7 @@ BRUTALDOOM.THEMES.urban.passable_decor =
     dead_shooter = 3
     dead_imp = 3
     dead_demon = 1
-    dead_caco  = 1
+    dead_caco  = 0
 }
 BRUTALDOOM.ROOM_THEMES.urban_Outdoors_generic=DOOM.ROOM_THEMES.urban_Outdoors_generic
 BRUTALDOOM.ROOM_THEMES.urban_Outdoors_generic.floors =

@@ -1,6 +1,7 @@
 BD64MAPS = { }
 
---gui.import("brutal64/brutal64mapsthemes")
+gui.import("brutal64/brutal64mapsthemes")
+gui.import("brutal64/brutal64mapsSkies")
 
 BD64MAPS.deathmatchmusic =
 {
@@ -20,11 +21,18 @@ end
 
 function BD64MAPS.setup()
     BRUTALDOOM.PARAMETERS.usingbrutal64maps = true;
+    
+    for name,_ in pairs(BD64MAPS.SKIES) do
+      BRUTALDOOM.SKIES[name] = BD64MAPS.SKIES[name]
+      BRUTAL64.SKIES[name] = BD64MAPS.SKIES[name]
+  end
+  
+  gui.wad_insert_file("modules/brutal64/brutal64maps.textures","TEXTURES");
+  
 end
 
 function BD64MAPS.all_done()
 	BD64MAPS.mergesongs();
-    gui.wad_insert_file("brutaloblige/textures/Brutal64Maps.textures","TEXTURES");
 end
 
 OB_MODULES["brutal64maps"] =

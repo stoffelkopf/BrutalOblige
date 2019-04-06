@@ -21,6 +21,7 @@ BRUTAL64.music =
 BRUTAL64.music.songs = BRUTALDOOM.music.songs
 
 gui.import("brutal64maps")
+gui.import("brutal64/brutal64Skies")
 gui.import("brutal64/brutal64mapinfo")
 gui.import("brutal64/brutal64getlevels")
 
