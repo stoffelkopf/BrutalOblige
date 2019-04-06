@@ -1,6 +1,6 @@
 BD64MAPS = { }
 
-gui.import("brutal64/brutal64mapsthemes")
+--gui.import("brutal64/brutal64mapsthemes")
 gui.import("brutal64/brutal64mapsSkies")
 
 BD64MAPS.deathmatchmusic =
