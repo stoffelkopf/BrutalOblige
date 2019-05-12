@@ -68,7 +68,7 @@ BRUTALDOOM.YES_NO =
 BRUTALDOOM.VERSIONS = 
 {
 	"brutalv20b.pk3",	"V20b"
-    "bd21RC9.pk3",    "V21Beta"
+    "BD21RC10.pk3",    "V21Beta"
 }
 
 BRUTALDOOM.PARAMETERS =
@@ -80,7 +80,7 @@ BRUTALDOOM.PARAMETERS =
 	brutalfriends = false
     iwad = 'Doom2.wad'
     musicpreset = 'iwad'
-	brutalversion = "bd21RC9.pk3"
+	brutalversion = "BD21RC10.pk3"
 	brutalityversion = "Project Brutality 2.03.pk3"
 	usingui = false
     usingextrakeys = false
@@ -91,6 +91,7 @@ BRUTALDOOM.PARAMETERS =
     usingeday = false
     edayversion = "eday"
     autoload = false
+    urbanmonsterskins = true
 }
 
 BRUTALDOOM.IWADS =
@@ -346,6 +347,7 @@ function BRUTALDOOM.all_done()
   BRUTALDOOM.create_mapinfo();
   --BRUTALDOOM.createkeyconf();
   BRUTALDOOM.castcalldecorate();
+  BRUTALDOOM.parameters_to_wad();
 end
 
 function BRUTALITY.all_done()
@@ -373,6 +375,15 @@ function BRUTALDOOM.mixhanky()
     if OB_CONFIG.length == 32 then --if a full game then only map32 will be chex themed.
         OB_THEMES["satanshankerchief"].mixed_prob=0
     end
+end
+
+function BRUTALDOOM.parameters_to_wad()
+    local BOPARAMS = { }
+    local ParamsAsString = string.gsub(table.tostring(BRUTALDOOM.PARAMETERS), ",",";\n");
+    ParamsAsString = string.gsub(ParamsAsString,"{","");
+    ParamsAsString = string.gsub(ParamsAsString,"}","");
+    BOPARAMS[1]=ParamsAsString;
+    gui.wad_add_text_lump("BOPARAMS", BOPARAMS );
 end
 
 function BRUTALDOOM.freedoom_language()
@@ -728,7 +739,14 @@ OB_MODULES["brutaltweaks"] =
       {
           label="Autoload Mods"
           choices=BRUTALDOOM.YES_NO
-          tooltip="If set to yes then the generated was will tell GZDoom to load the mods needed for it to work (such as the correct version of Brutal Doom) without these needing to be specified through command line parameters or a launcher"
+          tooltip="If set to yes then the generated was will tell GZDoom to load the mods needed for it to work (such as the correct version of Brutal Doom) without these needing to be specified through command line parameters or a launcher."
+      }
+  
+      urbanmonsterskins =
+      {
+          label="Urban Monster Skins"
+          choices=BRUTALDOOM.YES_NO
+          tooltip="Special skins for some monsters when playing on an Urban themed map. If set to no then all monsters will use their regular skins."
       }
   }
 }

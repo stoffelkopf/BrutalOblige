@@ -9,6 +9,40 @@ class BrutalObligeHandler : EventHandler
 			//e.Thing.A_
 		}
 	}
+	
+	override void CheckReplacement (ReplaceEvent e)
+	{
+		//replace themed skinned monsters with originals
+		if ( GetDefaultByType(e.Replacee).GetClassName() == "d4cacodemon" && BrutalObligeGetParameter("urbanmonsterskins") == "false" )
+		{
+			e.Replacement = 'Cacodemon_';
+		}
+	}
+	
+    //on loading into map
+	override void WorldLoaded( WorldEvent e )
+	{
+        Actor.Spawn("BrutalObligeTester",(0,0,0));
+	}
+	
+	//read parameters
+	virtual string BrutalObligeGetParameter(string param)
+	{
+        int lmp;
+		if ( (lmp = Wads.FindLump("BOPARAMS")) == -1 )
+		{
+			return("parameter not found");
+		}
+        string pstring = Wads.ReadLump(lmp);
+		int ppos = pstring.IndexOf(param);
+		int pposr = pstring.IndexOf(';',ppos);
+		int pposlen = pposr-ppos;
+		pstring = pstring.Mid(ppos,pposlen);
+		ppos = pstring.IndexOf('=')+1;
+		pposlen = pstring.Length();
+		string retstring = pstring.Mid(ppos,pposlen);
+		return(retstring);
+	}
 }
 
 
@@ -74,6 +108,41 @@ class BrutalObligeActor : Actor
 		}
 		
 	}
+	
+	//read parameters
+	virtual string BrutalObligeGetParameter(string param)
+	{
+        int lmp;
+		if ( (lmp = Wads.FindLump("BOPARAMS")) == -1 )
+		{
+			A_Log("BOPARAMS not found");
+			return("parameter not found");
+		}
+        string pstring = Wads.ReadLump(lmp);
+		int ppos = pstring.IndexOf(param);
+		int pposr = pstring.IndexOf(';',ppos);
+		int pposlen = pposr-ppos;
+		pstring = pstring.Mid(ppos,pposlen);
+		ppos = pstring.IndexOf('=')+1;
+		pposlen = pstring.Length();
+		string retstring = pstring.Mid(ppos,pposlen);
+		return(retstring);
+	}
+}
+
+Class BrutalObligeTester : BrutalObligeActor
+{
+    Default
+    {
+    }
+    
+    States
+    {
+		Spawn:
+			TNT1 AA 1;
+		stop;
+    }
+
 }
 
 Class BrutalObligeMonster : BrutalObligeActor

@@ -168,6 +168,10 @@ Intermission BrutalDoomCast
     "//\n"
     "//Secret exits are in maps " .. tostring(secretexit1) .. ', ' .. tostring(secretexit2) .. ' and ' .. tostring(secretexit3) .. '\n'
     '\n'
+    'GameInfo\n'
+    '{\n'
+    'AddEventHandlers = "BrutalObligeHandler"\n'
+    '}\n\n'
     "clearepisodes\n\n"
     'episode bom01\n'
     '{\n'
