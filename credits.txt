@@ -14,3 +14,7 @@ SS firing rotation sprites - ItsNatureToDie
 SS pain rotation sprites - PSTrooper
 
 This mod uses some code from Sgt Mark IV's Bolognese mod in addition to reusing/adapting some code from Brutal Doom itself
+
+This mod uses some code from the ObAddon project: https://github.com/caligari87/ObAddon
+As with the code in vanilla Oblige this code is GPL3.
+At the moment this is the code from the render.lua script to allow skyboxes. The skybox prefabs being used are original.
