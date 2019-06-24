@@ -2,3 +2,5 @@ curent highest used id number 373 (SkyboxRainSpawner)
 
 wolfenstein blue to black translation:
 "192:207=240:247", "240:247=0:0"
+
+BDECSpecimenTankHasSpecimen in MapSpecificDec.txt is the tank that spawns the experiment

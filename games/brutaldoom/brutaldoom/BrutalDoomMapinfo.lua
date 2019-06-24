@@ -235,7 +235,9 @@ Intermission BrutalDoomCast
   local dest = { }
 
   each _,src in epi_list do
-    dest = table.copy(src)
+      dest = table.copy(src)
+    
+  gui.printf("dest: \n" .. table.tostring(dest) ..'\n')
     
     -- this shuffle algorithm ensures first entry is never the same
     --once again I can't quite work out the code so I have left this even though I only need half of it

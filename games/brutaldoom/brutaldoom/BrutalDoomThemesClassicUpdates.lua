@@ -111,6 +111,11 @@ BRUTALDOOM.ROOM_THEMES.urban_Outdoors_generic.floors =
     ROCK3    = 25
     MFLR8_3  = 10
 }
+BRUTALDOOM.THEMES.urban.skyboxes =
+{
+    Skybox_rain = 20
+    Skybox_generic = 50
+}
 --hell
 BRUTALDOOM.THEMES.hell.allow_mons_for_theme = "hell"
 
