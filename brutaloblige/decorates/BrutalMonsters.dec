@@ -374,20 +374,12 @@ actor ObligeRifleZombie : RifleZombie 343 //remove the chance to replace with va
 Tag "Rifle Zombie"
 States
 {
-    Spawn:
-		PSSS B 1
-		TNT1 A 0 A_GiveInventory("SKZombieman", 1)
-		TNT1 A 0 A_GiveInventory("TypeZombieMan", 1)
-		TNT1 A 0 A_TakeInventory("ZombiemanAmmo", 20)
-		TNT1 A 0 A_GiveInventory("ZombieManAmmo", random(1,10))
-		TNT1 A 0 ACS_ExecuteAlways(728)//Check if new monsters are disabled
-		TNT1 A 0 ACS_ExecuteAlways(796, 0, 0, 0, 0)//Check if Vanilla Mode is activated
-		PSSS B 2
-		TNT1 A 0 A_JumpIfInventory("nonewenemies", 1, "Stand")
-		//TNT1 A 0 A_Jump(1, "ReplaceAxeman")
-		//TNT1 A 0 A_Jump(1, "ReplaceBeheaded")
-		//TNT1 A 0 A_Jump(140, "ReplacePistol")
-	Goto Stand
+    ReplaceAxeman:
+        Goto Stand
+    ReplaceBeheaded:
+        Goto Stand
+    ReplacePistol:
+        Goto Stand
 }
 }
 actor ObligePistolZombie : PistolZombie 344
@@ -410,16 +402,8 @@ actor ObligeShotgunGuy : ShotgunGuy1 replaces ShotgunGuy1 //remove the chance to
     Tag "Shotgun Zombie"
     states
     {
-        Spawn:
-            SHID A 1
-            TNT1 A 0 ACS_ExecuteAlways(796, 0, 0, 0, 0)//Check if Vanilla Mode is activated
-            TNT1 A 0
-            TNT1 A 0 ACS_ExecuteAlways(728)//Check if new monsters are disabled
-            TNT1 A 0 ACS_ExecuteAlways(796, 0, 0, 0, 0)//Check if Vanilla Mode is activated
-            SHID A 2
-            TNT1 A 0 A_JumpIfInventory("nonewenemies", 1, "Stand")
-            //TNT1 A 0 A_Jump(32, "ReplaceSMG")
-        Goto Stand
+        ReplaceSMG:
+            Goto Stand
     }
 }
 actor ObligeSMGZombie: SMGGuy 363
