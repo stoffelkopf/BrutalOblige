@@ -1,6 +1,6 @@
 EDAY = { }
 
-local modversion = "hellonearthstarterpack.wad"
+local modversion = "EdayPreBetaX.pk3" --"hellonearthstarterpack.wad"
 
 gui.import("eday/EdayThemes")
 gui.import("eday/EdaySkies")

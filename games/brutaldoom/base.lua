@@ -39,6 +39,7 @@ gui.import("brutaldoom/BrutalDoomThemes")
 gui.import("brutaldoom/BrutalDoomPickups")
 gui.import("brutaldoom/BrutalDoomEntities")
 gui.import("brutaldoom/BrutalDoomSkies")
+gui.import("brutaldoom/BrutalDoomInterpics")
 gui.import("brutaldoom/BrutalDoomMusic")
 gui.import("hereticbrutal")
 gui.import("brutality")
@@ -80,7 +81,7 @@ BRUTALDOOM.PARAMETERS =
     usingbrutal64maps = false
     bd64mapsversion = "bd64mapsV2.pk3"
     usingeday = false
-    edayversion = "eday"
+    edayversion = "eday" --this is a placeholder which gets overwritten by the eday module
     autoload = false
     urbanmonsterskins = true
 }

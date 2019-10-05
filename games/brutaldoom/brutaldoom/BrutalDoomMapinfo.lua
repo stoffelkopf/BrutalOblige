@@ -284,6 +284,8 @@ Intermission BrutalDoomCast
       local sky1 = 'sky1 = "'
       local skyname = 'RSKY1'
       local enterpic = '"INTERPIC"' --default intermissionpic
+      
+      --Choose Sky texture
       local skytab = BRUTALDOOM.SKIES[ L.theme_name ]
       if not skytab or OB_CONFIG.game == "brutality" then --i.e. if no entry for the theme in BrutalDoomSkies.lua
           skytab = BRUTALDOOM.SKIES.any
@@ -292,6 +294,14 @@ Intermission BrutalDoomCast
       skyname = skytab[ rand.irange(1,#skytab) ]
       
         sky1 = sky1 .. skyname .. '"\n'
+        
+    --Choose Intermission pic
+    local intptab = BRUTALDOOM.INTERPICS[ L.theme_name ]
+      if not intptab or OB_CONFIG.game == "brutality" then --i.e. if no entry for the theme in BrutalDoomSkies.lua
+          intptab = BRUTALDOOM.INTERPICS.any
+      end
+      
+      enterpic = intptab[ rand.irange(1,#intptab) ]
 	  
 	  --Universal Intermission Screen
 	  if BRUTALDOOM.PARAMETERS.usingui == true then

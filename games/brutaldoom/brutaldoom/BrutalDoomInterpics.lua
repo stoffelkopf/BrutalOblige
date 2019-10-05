@@ -1,0 +1,7 @@
+BRUTALDOOM.INTERPICS = 
+        {
+            any = 
+            {
+             'INTERPIC'
+            }
+        }
