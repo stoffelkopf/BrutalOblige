@@ -297,7 +297,7 @@ Intermission BrutalDoomCast
         
     --Choose Intermission pic
     local intptab = BRUTALDOOM.INTERPICS[ L.theme_name ]
-      if not intptab or OB_CONFIG.game == "brutality" then --i.e. if no entry for the theme in BrutalDoomSkies.lua
+      if not intptab or OB_CONFIG.game == "brutality" then --i.e. if no entry for the theme in BrutalDoomInterpics.lua
           intptab = BRUTALDOOM.INTERPICS.any
       end
       

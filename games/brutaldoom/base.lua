@@ -32,6 +32,8 @@ BRUTALDOOM.SECRET_EXITS = { }
 
 STARTERPACK = { }
 
+DOOMCOMPLETE = { }
+
  --this all has to come after the tables are declared
 gui.import("DebugFunctions")
 gui.import("brutaldoom/BrutalDoomMaterials")
@@ -46,6 +48,8 @@ gui.import("brutality")
 --gui.import("starterpack")
 gui.import("UniversalIntermissionCompat/BrutalINTM")
 gui.import("ExtraKeysCompat/BrutalExtraKeys")
+gui.import("DoomComplete/DoomCompleteInterpics")
+gui.import("DoomComplete/DoomCompleteSkies")
 gui.import("functions/tablecontains")
 gui.import("functions/tablemerge")
 gui.import("functions/filereading")
@@ -283,6 +287,16 @@ function BRUTALDOOM.all_done()
 	heretic_monstersetup();
 	heretic_iwadsetup();
   end
+  if BRUTALDOOM.PARAMETERS.iwad == "doom_complete.pk3" then
+      gui.printf('Using doom_complete.pk3\n')
+      for name,_ in pairs(DOOMCOMPLETE.INTERPICS) do
+          BRUTALDOOM.INTERPICS[name] = DOOMCOMPLETE.INTERPICS[name]
+      end
+      for name,_ in pairs(DOOMCOMPLETE.SKIES) do
+          BRUTALDOOM.SKIES[name] = DOOMCOMPLETE.SKIES[name]
+      end
+  end
+  gui.printf('Interpics:\n' .. table.tostring(BRUTALDOOM.INTERPICS) .. '\n')
   if BRUTALDOOM.PARAMETERS.usingui == true then
 	BRUTALDOOM.createintm();
     BRUTALDOOM.mergeintm();
@@ -425,6 +439,7 @@ function BRUTALDOOM.setup()
     BRUTALDOOM.checkextrakeys();
         
     BRUTALDOOM.setsecretexits();
+    
 end
 
 function BRUTALDOOM.puristrailgundecorate()

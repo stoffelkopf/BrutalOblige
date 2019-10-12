@@ -6,6 +6,7 @@ gui.import("eday/EdayThemes")
 gui.import("eday/EdaySkies")
 gui.import("eday/EdayTextures")
 gui.import("eday/EdayEntities")
+gui.import("eday/EdayInterpics")
 
 function EDAY.setup(self)
     
@@ -14,6 +15,10 @@ function EDAY.setup(self)
 
   for name,_ in pairs(EDAY.SKIES) do
       BRUTALDOOM.SKIES[name] = EDAY.SKIES[name]
+  end
+  
+  for name,_ in pairs(EDAY.INTERPICS) do
+      BRUTALDOOM.INTERPICS[name] = EDAY.INTERPICS[name]
   end
   
   EDAY.decalsetup();
