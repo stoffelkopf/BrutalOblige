@@ -1,4 +1,4 @@
-**The currently supported version of Brutal Doom is bd21rc2b.pk3**
+**The curently supported version of Brutal Doom is brutalv21.pk3**
 
 # BrutalOblige
 
@@ -51,12 +51,13 @@ Note that if you downloaded this from gitlab rather than cloning the repo you ca
   | Version | Expected filename
 -- | -- | --
 Oblige | 7.70 |  
-Brutal Doom | 21 public beta | bd21RC9.pk3
-Project Brutality | 2.03 | Project Brutality 2.03.pk3
+Brutal Doom | 21 | brutalv21.pk3
+Project Brutality | 2 | Project Brutality 2.03.pk3
 Brutal Doom 64 | 2 | bd64gamev2.pk3
+Extermination Day | 0 | EdayPreBetaX.pk3
 
 
-**Now with Project Brutality Support!**
+**Project Brutality Support!**
 
 * Keeps the Epic 2 Alien, Evil Grunt and Evil Marine without conflicting with PB's built in Belphegor, Dark Imps or Juggernaut.
 * Wolfenstein fix still applies.
@@ -67,7 +68,7 @@ Use the same way as for Brutal Doom but with the latest Project Brutality (v2.03
 
 If you downloaded before the Brutality support was added then Satan's Hankercheif maps may sometimes have a missing floor texture, that's my bad and I've fixed it in the latest download. The changed files are brutaldoom.lua, nightmare_monsters.lua and flem.wad
 
-**Now with additional content from hellonearthstarterpack.wad**
+**Additional content from Extermination Day**
 
 * Works with brutal or brutality
 * New interpics for each theme
@@ -80,7 +81,7 @@ If you downloaded before the Brutality support was added then Satan's Hankerchei
 
 Just check the box for Brutal Doom Starter Pack and as long as you have hellonearthstarterpack.wad it should load automatically. Load it manually if you've renamed it.
 
-**How with support for Brutal Friends**
+**Support for Brutal Friends**
 
 * Both the teleport device and blur spheres can appear in maps (in vanilla maps the teleport device replaces the blursphere)
 * Blur sphere spawn probabilities are as for vanilla Oblige, teleport device has a very low chance of appearing normally, but a high chance of appearing in secret areas.
