@@ -54,7 +54,7 @@ OB_MODULES["small_spiderdemon"] =
     "Makes the Spider Mastermind smaller " ..
     "which allows her to be placed in maps more often " ..
     "(her default size is so large that there is rarely enough space). " ..
-    "Compatible with Brutal Doom 64 but not currently Brutal Doom v20b or Brutality."
+    "Compatible with Brutal Doom 64 but not currently Brutal Doom or Brutality."
             )
 
 }
