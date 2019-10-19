@@ -365,10 +365,10 @@ BRUTALDOOM.MONSTERS =
         id = 337
         r = DOOM.MONSTERS.mancubus.r
         h = DOOM.MONSTERS.mancubus.h
-        level = DOOM.MONSTERS.mancubus.level+1
-        prob = 7
+        level = DOOM.MONSTERS.mancubus.level+2
+        prob = 5
         boss_type = "minor"
-        boss_prob = 50
+        boss_prob = 20
         health = 1050
         damage = DOOM.MONSTERS.mancubus.damage*1.2
         attack = DOOM.MONSTERS.mancubus.attack
@@ -378,7 +378,7 @@ BRUTALDOOM.MONSTERS =
         disloyal = DOOM.MONSTERS.mancubus.disloyal
         trap_factor = DOOM.MONSTERS.mancubus.trap_factor
         infight_damage = DOOM.MONSTERS.mancubus.infight_damage
-        weap_min_damage = 110
+        weap_min_damage = 115
      }
      Mummy =
      {
@@ -403,13 +403,15 @@ BRUTALDOOM.MONSTERS =
         r = DOOM.MONSTERS.revenant.r
         h = 48
         level = 2
-        prob=40
+        theme_prob=40
+        prob=0
         health = 100
         damage = 0.2
         attack = "melee"
         density = 0.85
         room_size = "any"
         infight_damage = 3.5
+        allow_in_theme = "tech, hell, urban, wolf, satanshankerchief" --let the mummy replace it in eygpt2
      }
      --Seperate Rifle and Pistol Zombie so Oblige can model them more accurately
      zombie = REMOVE_ME

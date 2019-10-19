@@ -88,6 +88,7 @@ BRUTALDOOM.PARAMETERS =
     edayversion = "eday" --this is a placeholder which gets overwritten by the eday module
     autoload = false
     urbanmonsterskins = true
+    mini_mastermind = false
 }
 
 BRUTALDOOM.IWADS =

@@ -1116,6 +1116,7 @@ function Monster_fill_room(R)
         if not string.find(info.allow_in_theme, THEME.allow_mons_for_theme) then
             prob = 0
             --gui.printf("String " .. THEME.allow_mons_for_theme .. " not found in " .. info.allow_in_theme .."\n")
+            gui.printf("Excluding " .. info.id .. " as not allowed in this theme\n")
         else
             if info.theme_prob then
                 prob = info.theme_prob
