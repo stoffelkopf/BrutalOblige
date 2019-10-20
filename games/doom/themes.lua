@@ -2270,7 +2270,7 @@ OB_THEMES["hell"] =
 OB_THEMES["mostly_tech"] =
 {
   label = _("Tech-ish")
-  game = "doomish"
+   game =  {brutaldoom=1, doom1=1, doom2=1}
   priority = 17
 }
 
@@ -2278,7 +2278,7 @@ OB_THEMES["mostly_tech"] =
 OB_THEMES["mostly_urban"] =
 {
   label = _("Urban-ish")
-  game = "doom2"
+   game =  {brutaldoom=1, doom2=1}
   priority = 14
 }
 
@@ -2286,7 +2286,7 @@ OB_THEMES["mostly_urban"] =
 OB_THEMES["mostly_hell"] =
 {
   label = _("Hell-ish")
-  game = "doomish"
+   game =  {brutaldoom=1, doom1=1, doom2=1}
   priority = 11
 }
 

@@ -43,13 +43,10 @@ BRUTALDOOM.zd64music =
 
 BRUTALDOOM.musicpresets =
 {
-    "iwad", "All music in the iwad"
+    "iwad", "Doom Complete"
+    "doom1",    "Doom 1 only"
     "doom2",    "Doom 2 only"
-    "doommetal",    "Doom Metal Vol 5"
-    "idkfa",    "IDKFA"
-    "generic",  "Unspecified music mod (Doom 1 and 2 tracks)"
-    "doom1",    "Doom 1 music mod"
-	"ZD64MUSIC", "Doom 64"
+    "ZD64MUSIC", "Doom 64"
 }
 
 BRUTALDOOM.doom_completesongs = {}
@@ -66,13 +63,10 @@ function BRUTALDOOM.mergesongs()
     BRUTALDOOM.doomcompleteallsongs()
     BRUTALDOOM.music.songs=BRUTALDOOM.doom2songs
     
-    if BRUTALDOOM.PARAMETERS.musicpreset == "doommetal" or BRUTALDOOM.PARAMETERS.musicpreset == "generic" or (BRUTALDOOM.PARAMETERS.musicpreset == "iwad" and BRUTALDOOM.PARAMETERS.iwad == "doom_complete.pk3") then
-        for k,v in pairs(BRUTALDOOM.doom1songs) do table.insert(BRUTALDOOM.music.songs, v) end
-    end
     if BRUTALDOOM.PARAMETERS.musicpreset == "iwad" and BRUTALDOOM.PARAMETERS.iwad == "doom_complete.pk3" then
         for k,v in pairs(BRUTALDOOM.doom_completesongs) do table.insert(BRUTALDOOM.music.songs, v) end
     end
-    if BRUTALDOOM.PARAMETERS.musicpreset == "idkfa" or BRUTALDOOM.PARAMETERS.musicpreset == "doom1" then --just doom1 songs
+    if BRUTALDOOM.PARAMETERS.musicpreset == "doom1" then --just doom1 songs
         BRUTALDOOM.music.songs=BRUTALDOOM.doom1songs
     end
 	if BRUTALDOOM.PARAMETERS.musicpreset == "ZD64MUSIC" then --just the songs in ZD64MUSIC.PK3, which are named differently.

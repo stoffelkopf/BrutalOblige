@@ -20,19 +20,9 @@ puristrailgunreloadDecorate = [[
 
 BRUTALDOOM = { }
 
-BRUTALITY = { }
-
 BRUTALDOOM4 = { }
 
-BRUTALFRIENDS = { }
-
-DOOMMETAL = { }
-
 BRUTALDOOM.SECRET_EXITS = { }
-
-STARTERPACK = { }
-
-DOOMCOMPLETE = { }
 
  --this all has to come after the tables are declared
 gui.import("DebugFunctions")
@@ -40,20 +30,12 @@ gui.import("brutaldoom/BrutalDoomMaterials")
 gui.import("brutaldoom/BrutalDoomThemes")
 gui.import("brutaldoom/BrutalDoomPickups")
 gui.import("brutaldoom/BrutalDoomEntities")
-gui.import("brutaldoom/BrutalDoomSkies")
-gui.import("brutaldoom/BrutalDoomInterpics")
 gui.import("brutaldoom/BrutalDoomMusic")
-gui.import("hereticbrutal")
-gui.import("brutality")
---gui.import("starterpack")
 gui.import("UniversalIntermissionCompat/BrutalINTM")
-gui.import("ExtraKeysCompat/BrutalExtraKeys")
-gui.import("DoomComplete/DoomCompleteInterpics")
-gui.import("DoomComplete/DoomCompleteSkies")
 gui.import("functions/tablecontains")
 gui.import("functions/tablemerge")
 gui.import("functions/filereading")
---brutal friends imported at the end so it can inherit monster probs from the easy marine
+
 
 BRUTALDOOM.YES_NO =
 {
@@ -70,25 +52,19 @@ BRUTALDOOM.VERSIONS =
 BRUTALDOOM.PARAMETERS =
 {
     modversion = 'dev version following v2.0.1'
-	doom_metal = false
-    starterpack = false
     skygenerator = false
-	brutalfriends = false
     iwad = 'Doom2.wad'
     musicpreset = 'iwad'
 	brutalversion = "brutalv21.pk3"
-	brutalityversion = "Project Brutality 2.03.pk3"
 	usingui = false
-    usingextrakeys = false
     playerclass = "Doomer"
     puristrailgunreload = "None"
     usingbrutal64maps = false
     bd64mapsversion = "bd64mapsV2.pk3"
     usingeday = false
-    edayversion = "eday" --this is a placeholder which gets overwritten by the eday module
+    edayversion = "eday"
     autoload = false
     urbanmonsterskins = true
-    mini_mastermind = false
 }
 
 BRUTALDOOM.IWADS =
@@ -98,7 +74,6 @@ BRUTALDOOM.IWADS =
     "Plutonia.wad", "Plutonia"
     "doom_complete.pk3",    "Doom Complete"
     "freedoom2.wad",    "Freedoom 2"
-	--"heretic.wad",	"Heretic" --Nowhere near ready yet!
 }
 
 BRUTALDOOM.PLAYERCLASSES =
@@ -120,16 +95,9 @@ gui.import("brutaldoom/BrutalDoomMonsters")
 function BRUTALDOOM.decorate()
     gui.wad_insert_file("brutaloblige/decorates/Decorate.dec","DECORATE");
     gui.wad_insert_file("brutaloblige/decorates/BrutalMonsters.dec","BRUMONS");
-    gui.wad_insert_file("brutaloblige/decorates/D4Caco.dec","D4CACO");
-    gui.wad_insert_file("brutaloblige/decorates/BrutalStealthMonsters.dec","BOSTELTH");
 	gui.wad_insert_file("brutaloblige/decorates/BrutalWeapons.dec","BRUWEPS");
     gui.wad_insert_file("brutaloblige/decorates/BrutalPickups.dec","BRUPUPS");
-    gui.wad_insert_file("brutaloblige/decorates/ChexKeys.dec","CHEXKEYS");
-    gui.wad_insert_file("brutaloblige/decorates/ChexProps.dec","CHEXPROP");
-    gui.wad_insert_file("brutaloblige/decorates/ExtraChexMonsters.dec","CHEXMONS");
-	gui.wad_insert_file("brutaloblige/decorates/DarkImp.dec","DARKIMPD");
-    gui.wad_insert_file("brutaloblige/decorates/Bolognese.dec","BOLOGNES");
-    
+    gui.wad_insert_file("brutaloblige/decorates/Bolognese.dec","BOLOGNES");   
 	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
     gui.wad_insert_file("brutaloblige/zscript/base.zscript","ZBASE");
     gui.wad_insert_file("brutaloblige/zscript/NotCompatibleWithBrutality.zscript","ZBASE2");
@@ -142,37 +110,11 @@ function BRUTALDOOM.decorate()
     gui.wad_insert_file("brutaloblige/acs/A_START","A_START");
     gui.wad_insert_file("brutaloblige/acs/BOLOGACS.o","BOLOGACS");
     gui.wad_insert_file("brutaloblige/acs/A_START","A_END");
-end
-
-function BRUTALDOOM4.caco()
-	--gui.wad_insert_file("brutaloblige/decorates/D4Caco.dec","DECORATE");
-end
-
-function BRUTALDOOM.epic()
-  gui.wad_merge_sections("brutaloblige/brutaloblige.wad");
-  gui.wad_insert_file("brutaloblige/SNDINFO","SNDINFO");
-  gui.wad_insert_file("brutaloblige/gldefs/epic2alien.gl","GLDEFS");
-  gui.wad_insert_file("brutaloblige/sounds/DSGSSIT","DSGSSIT");
-  gui.wad_insert_file("brutaloblige/sounds/DSGSDTH","DSGSDTH");
+    gui.wad_merge_sections("brutaloblige/brutaloblige.wad");
 end
 
 function BRUTALDOOM.castcalldecorate()
 	gui.wad_insert_file("brutaloblige/decorates/CastCall/BrutalCastCall.dec","DECORATE");
-end
-
-
-
-function DOOMMETAL.setup(self)
-    for name,opt in pairs(self.options) do
-        local value = self.options[name].value
-        if value == "yes" then
-            BRUTALDOOM.PARAMETERS[name] = true
-        elseif value == "no" then
-            BRUTALDOOM.PARAMETERS[name] = false
-        else
-            BRUTALDOOM.PARAMETERS[name] = value
-        end
-    end
 end
 
 function BRUTALDOOM.gameinfo()
@@ -188,15 +130,6 @@ function BRUTALDOOM.gameinfo()
   if BRUTALDOOM.PARAMETERS.usingeday == true then
       table.insert(data,',"' .. BRUTALDOOM.PARAMETERS.edayversion .. '"')
   end
-  if BRUTALDOOM.PARAMETERS.brutalfriends == true then
-      table.insert(data,',"bfriend1.pk3"')
-  end
-  if BRUTALDOOM.PARAMETERS.musicpreset == "doommetal" then
-      table.insert(data,',"DoomMetalVol5.wad"')
-  end
-  if BRUTALDOOM.PARAMETERS.musicpreset == "idkfa" then
-      table.insert(data,',"IDKFAv2.wad"')
-  end
   if BRUTALDOOM.PARAMETERS.musicpreset == "ZD64MUSIC" then
       table.insert(data,',"ZD64MUSIC.PK3"')
   end
@@ -211,35 +144,35 @@ end
 
 function BRUTALDOOM.setsecretexits()
   --GAME.SECRET_EXITS.MAP08 = false --works to set secret exit
-  if secretexit1 == 1 then GAME.SECRET_EXITS.BOM01 = true end --there must be a better way but I don't know it
-  if secretexit1 == 2 then GAME.SECRET_EXITS.BOM02 = true end
-  if secretexit1 == 3 then GAME.SECRET_EXITS.BOM03 = true end
-  if secretexit1 == 4 then GAME.SECRET_EXITS.BOM04 = true end
-  if secretexit1 == 5 then GAME.SECRET_EXITS.BOM05 = true end
-  if secretexit1 == 6 then GAME.SECRET_EXITS.BOM06 = true end
-  if secretexit1 == 7 then GAME.SECRET_EXITS.BOM07 = true end
-  if secretexit1 == 8 then GAME.SECRET_EXITS.BOM08 = true end
-  if secretexit1 == 9 then GAME.SECRET_EXITS.BOM09 = true end
-  if secretexit1 == 10 then GAME.SECRET_EXITS.BOM10 = true end
-  if secretexit2 == 11 then GAME.SECRET_EXITS.BOM11 = true end
-  if secretexit2 == 12 then GAME.SECRET_EXITS.BOM12 = true end
-  if secretexit2 == 13 then GAME.SECRET_EXITS.BOM13 = true end
-  if secretexit2 == 14 then GAME.SECRET_EXITS.BOM14 = true end
-  if secretexit2 == 15 then GAME.SECRET_EXITS.BOM15 = true end
-  if secretexit2 == 16 then GAME.SECRET_EXITS.BOM16 = true end
-  if secretexit2 == 17 then GAME.SECRET_EXITS.BOM17 = true end
-  if secretexit2 == 18 then GAME.SECRET_EXITS.BOM18 = true end
-  if secretexit2 == 19 then GAME.SECRET_EXITS.BOM19 = true end
-  if secretexit3 == 20 then GAME.SECRET_EXITS.BOM20 = true end
-  if secretexit3 == 21 then GAME.SECRET_EXITS.BOM21 = true end
-  if secretexit3 == 22 then GAME.SECRET_EXITS.BOM22 = true end
-  if secretexit3 == 23 then GAME.SECRET_EXITS.BOM23 = true end
-  if secretexit3 == 24 then GAME.SECRET_EXITS.BOM24 = true end
-  if secretexit3 == 25 then GAME.SECRET_EXITS.BOM25 = true end
-  if secretexit3 == 26 then GAME.SECRET_EXITS.BOM26 = true end
-  if secretexit3 == 27 then GAME.SECRET_EXITS.BOM27 = true end
-  if secretexit3 == 28 then GAME.SECRET_EXITS.BOM28 = true end
-  if secretexit3 == 29 then GAME.SECRET_EXITS.BOM29 = true end
+  if secretexit1 == 1 then GAME.SECRET_EXITS.MAP01 = true end --there must be a better way but I don't know it
+  if secretexit1 == 2 then GAME.SECRET_EXITS.MAP02 = true end
+  if secretexit1 == 3 then GAME.SECRET_EXITS.MAP03 = true end
+  if secretexit1 == 4 then GAME.SECRET_EXITS.MAP04 = true end
+  if secretexit1 == 5 then GAME.SECRET_EXITS.MAP05 = true end
+  if secretexit1 == 6 then GAME.SECRET_EXITS.MAP06 = true end
+  if secretexit1 == 7 then GAME.SECRET_EXITS.MAP07 = true end
+  if secretexit1 == 8 then GAME.SECRET_EXITS.MAP08 = true end
+  if secretexit1 == 9 then GAME.SECRET_EXITS.MAP09 = true end
+  if secretexit1 == 10 then GAME.SECRET_EXITS.MAP10 = true end
+  if secretexit2 == 11 then GAME.SECRET_EXITS.MAP11 = true end
+  if secretexit2 == 12 then GAME.SECRET_EXITS.MAP12 = true end
+  if secretexit2 == 13 then GAME.SECRET_EXITS.MAP13 = true end
+  if secretexit2 == 14 then GAME.SECRET_EXITS.MAP14 = true end
+  if secretexit2 == 15 then GAME.SECRET_EXITS.MAP15 = true end
+  if secretexit2 == 16 then GAME.SECRET_EXITS.MAP16 = true end
+  if secretexit2 == 17 then GAME.SECRET_EXITS.MAP17 = true end
+  if secretexit2 == 18 then GAME.SECRET_EXITS.MAP18 = true end
+  if secretexit2 == 19 then GAME.SECRET_EXITS.MAP19 = true end
+  if secretexit3 == 20 then GAME.SECRET_EXITS.MAP20 = true end
+  if secretexit3 == 21 then GAME.SECRET_EXITS.MAP21 = true end
+  if secretexit3 == 22 then GAME.SECRET_EXITS.MAP22 = true end
+  if secretexit3 == 23 then GAME.SECRET_EXITS.MAP23 = true end
+  if secretexit3 == 24 then GAME.SECRET_EXITS.MAP24 = true end
+  if secretexit3 == 25 then GAME.SECRET_EXITS.MAP25 = true end
+  if secretexit3 == 26 then GAME.SECRET_EXITS.MAP26 = true end
+  if secretexit3 == 27 then GAME.SECRET_EXITS.MAP27 = true end
+  if secretexit3 == 28 then GAME.SECRET_EXITS.MAP28 = true end
+  if secretexit3 == 29 then GAME.SECRET_EXITS.MAP29 = true end
   gui.printf('Secret exit table:\n' .. table.tostring(GAME.SECRET_EXITS) .. '\n')
 end
 
@@ -266,12 +199,12 @@ function BRUTALDOOM.respectplayerclass()
 end
 
 function BRUTALDOOM.all_done()
+  gui.set_import_dir("games/brutaldoom")
+  gui.import("brutaldoom/BrutalDoomSkies")
+  gui.import("brutaldoom/BrutalDoomInterpics")
   BRUTALDOOM.puristrailgundecorate();
   BRUTALDOOM.decorate();
-  BRUTALDOOM4.caco();
-  BRUTALDOOM.flem_nukage();
   DOOM.all_done();
-  BRUTALDOOM.epic();
   if BRUTALDOOM.PARAMETERS.autoload == true then
       BRUTALDOOM.gameinfo();
   end
@@ -284,20 +217,6 @@ function BRUTALDOOM.all_done()
   if BRUTALDOOM.PARAMETERS.iwad == 'freedoom2.wad' then
       BRUTALDOOM.freedoom_language();
   end
-  if BRUTALDOOM.PARAMETERS.iwad == "heretic.wad" then
-	heretic_monstersetup();
-	heretic_iwadsetup();
-  end
-  if BRUTALDOOM.PARAMETERS.iwad == "doom_complete.pk3" then
-      gui.printf('Using doom_complete.pk3\n')
-      for name,_ in pairs(DOOMCOMPLETE.INTERPICS) do
-          BRUTALDOOM.INTERPICS[name] = DOOMCOMPLETE.INTERPICS[name]
-      end
-      for name,_ in pairs(DOOMCOMPLETE.SKIES) do
-          BRUTALDOOM.SKIES[name] = DOOMCOMPLETE.SKIES[name]
-      end
-  end
-  gui.printf('Interpics:\n' .. table.tostring(BRUTALDOOM.INTERPICS) .. '\n')
   if BRUTALDOOM.PARAMETERS.usingui == true then
 	BRUTALDOOM.createintm();
     BRUTALDOOM.mergeintm();
@@ -308,30 +227,9 @@ function BRUTALDOOM.all_done()
   BRUTALDOOM.parameters_to_wad();
 end
 
-function BRUTALITY.all_done()
-  BRUTALITY.decorate();
-  BRUTALDOOM4.caco();
-  BRUTALDOOM.flem_nukage();
-  DOOM.all_done();
-  BRUTALDOOM.epic();
-  if BRUTALDOOM.PARAMETERS.autoload == true then
-      BRUTALITY.gameinfo();
-  end
-  BRUTALDOOM.mixhanky();
-  BRUTALDOOM.texturesetup();
-  BRUTALDOOM.setsecretexits();
-  if doom_metal == true then
-      DOOMMETAL.mergesongs();
-  end
-  if skygenerator == true then
-      BRUTALDOOM.generate_skies();
-  end
-  BRUTALDOOM.create_mapinfo();
-end
-
 function BRUTALDOOM.mixhanky()
     if OB_CONFIG.length == 32 then --if a full game then only map32 will be chex themed.
-        OB_THEMES["satanshankerchief"].mixed_prob=0
+        OB_THEMES["wolf"].mixed_prob=0
     end
 end
 
@@ -434,13 +332,9 @@ function BRUTALDOOM.setup()
     gui.printf("For Brutal Doom version: " .. BRUTALDOOM.PARAMETERS.brutalversion.."\n\n")
     
     gui.printf("Universal Intermission check:\n");
-    BRUTALDOOM.checkuintm();
-    
-    gui.printf("ExtraKeys check:\n");
-    BRUTALDOOM.checkextrakeys();
-        
+    BRUTALDOOM.checkuintm();   
+       
     BRUTALDOOM.setsecretexits();
-    
 end
 
 function BRUTALDOOM.puristrailgundecorate()
@@ -535,75 +429,6 @@ local data =
 
 end
 
-function BRUTALDOOM.flem_nukage()
-	gui.wad_merge_sections("brutaloblige/flem.wad")
-    gui.wad_insert_file("brutaloblige/sounds/DSCYCSIT.wav","DSCYCSIT");
-    gui.wad_insert_file("brutaloblige/sounds/DSCYACT.wav","DSCYACT");
-    gui.wad_insert_file("brutaloblige/sounds/DSCYPAIN.wav","DSCYPAIN");
-    gui.wad_insert_file("brutaloblige/sounds/DSCYCDTH.wav","DSCYCDTH");
-    gui.wad_insert_file("brutaloblige/sounds/DSCYCSHT.wav","DSCYCSHT");
-    gui.wad_insert_file("brutaloblige/sounds/DSCYCXPL.wav","DSCYCXPL");
-	local flemdata =
-	{
-	'flat SNOT1\n'
-		'pic SNOT1 tics 5\n'
-		'pic SNOT2 tics 5\n'
-		'pic SNOT3 tics 5\n'
-	'flat SNOT4\n'
-		'pic SNOT4 tics 4\n'
-		'pic SNOT5 tics 4\n'
-		'pic SNOT6 tics 4\n'
-		'pic SNOT7 tics 4\n'
-	'texture SNTFL1\n'
-		'pic SNTFL1 tics 4\n'
-		'pic SNTFL2 tics 4\n'
-		'pic SNTFL3 tics 4\n'
-	'// CQ3 Animated Sky\n'
-	'texture CHEXSKY3\n'
-		'pic CHEXSKY3 tics 3\n'
-		'pic CJSKY3B tics 3\n'
-		'pic CJSKY3C tics 3\n'
-		'pic CJSKY3D tics 3\n'
-		'pic CJSKY3E tics 3\n'
-		'pic CJSKY3F tics 3\n'
-		'pic CJSKY3G tics 3\n'
-		'pic CJSKY3H tics 3\n'
-	}
-gui.wad_add_text_lump("ANIMDEFS", flemdata);
-	flemdata =
-	{
-		'splash 	Flem\n'
-		'{\n'
-		 'smallclass 	nukageSplashBase\n'
-		 'smallclip		6\n'
-		 'baseclass		nukageSplashBase\n'
-		 'chunkclass	    sludgechunk\n'
-		 'chunkxvelshift	8\n'
-		 'chunkyvelshift	8\n'
-		 'chunkzvelshift	6\n'
-		 'chunkbasezvel	2\n'
-		 'sound		world/lavasizzle\n'
-		 'NoAlert\n'
-		'}\n'
-		'\n'
-		'terrain	 Flem\n'
-		'{\n'
-		 'splash 	Flem\n'
-		 'footclip	 6\n'
-		 'liquid\n'
-		'}\n'
-		'\n'
-		'floor SNOT1 Flem\n'
-		'floor SNOT2 Flem\n'
-		'floor SNOT3 Flem\n'
-		'floor SNOT4 Flem\n'
-		'floor SNOT5 Flem\n'
-		'floor SNOT6 Flem\n'
-		'floor SNOT7 Flem\n'
-	}
-gui.wad_add_text_lump("TERRAIN", flemdata);
-end
-
 OB_GAMES["brutaldoom"] =
 {
   label = "Brutal Doom"
@@ -630,45 +455,15 @@ OB_GAMES["brutaldoom"] =
   }
 }
 
-OB_GAMES["brutality"] =
-{
-  label = "Project Brutality"
-
-  --extends = "brutaldoom"
-  extends = "doom2"
-
-  format = "doom"
-
-  tables =
-  {
-    BRUTALITY
-  }
-
-  hooks =
-  {
-    setup = BRUTALITY.setup
-    all_done = BRUTALITY.all_done
-  }
-}
-
 OB_MODULES["brutaltweaks"] =
 {
   label = "Brutal Doom Tweaks"
   
   side = "left"
 
-  game = { brutaldoom=1, brutal64=1, brutality=1 }
+  game = { brutaldoom=1, brutal64=1}
   playmode = { sp=1, coop=1 }
   
-  tables =
-  {
-      DOOMMETAL
-  }
-  
-  hooks =
-  {
-    setup = DOOMMETAL.setup
-  }
   options =
   {
       puristrailgunreload =
@@ -699,14 +494,7 @@ OB_MODULES["brutaltweaks"] =
           label="Autoload Mods"
           choices=BRUTALDOOM.YES_NO
           tooltip="If set to yes then the generated was will tell GZDoom to load the mods needed for it to work (such as the correct version of Brutal Doom) without these needing to be specified through command line parameters or a launcher."
-      }
-  
-      urbanmonsterskins =
-      {
-          label="Urban Monster Skins"
-          choices=BRUTALDOOM.YES_NO
-          tooltip="Special skins for some monsters when playing on an Urban themed map. If set to no then all monsters will use their regular skins."
-      }
+      } 
   }
 }
 
@@ -1113,11 +901,6 @@ function BRUTALDOOM.generate_skies()
   gui.printf("\n")
 end
 
---------------------------------------------
-        --Import Expansions etc--
---------------------------------------------
-
-gui.import("BrutalExpansions/brutalfriends")
 
 --------------------------------------------
         --More functions--

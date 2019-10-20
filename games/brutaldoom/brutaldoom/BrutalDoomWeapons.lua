@@ -183,3 +183,101 @@ BRUTALDOOM.AMMOS =
     clip1 = { start_bonus = 15 }
     SoulAmmo = { start_bonus = 0 }
 }
+
+BRUTALDOOM.WEAPON_CHOICES =
+{
+  "default", _("DEFAULT"),
+  "none",    _("None at all"),
+  "scarce",  _("Scarce"),
+  "less",    _("Less"),
+  "plenty",  _("Plenty"),
+  "more",    _("More"),
+  "heaps",   _("Heaps"),
+  "loveit",  _("I LOVE IT"),
+}
+
+BRUTALDOOM.WEAPON_PROBS =
+{
+  none   = 0
+  scarce = 2
+  less   = 15
+  plenty = 50
+  more   = 120
+  heaps  = 300
+  loveit = 1000
+}
+
+BRUTALDOOM.WEAPON_PREFS =
+{
+  none   = 1
+  scarce = 10
+  less   = 25
+  plenty = 40
+  more   = 70
+  heaps  = 100
+  loveit = 170
+}
+
+BRUTALDOOM.WEAPON_LIST_BRUTAL=
+{
+    GrenadeLauncher =
+    {
+        label="Grenade Launcher",
+        choices=BRUTALDOOM.WEAPON_CHOICES
+    }
+    railgun =
+    {
+        label="Railgun",
+        choices=BRUTALDOOM.WEAPON_CHOICES
+    }
+    bfg10k =
+    {
+        label="B.F.G 10000",
+        choices=BRUTALDOOM.WEAPON_CHOICES
+    }
+    Smg =
+    {
+        label="SMG",
+        choices=BRUTALDOOM.WEAPON_CHOICES
+    }
+    AssaultShotgun =
+    {
+        label="Assault Shotgun",
+        choices=BRUTALDOOM.WEAPON_CHOICES
+    }
+    Unmaker =
+    {
+        label="The Unmaker",
+        choices=BRUTALDOOM.WEAPON_CHOICES
+    }
+}
+
+
+
+function BRUTALDOOM.weapon_setup(self)
+  for name,opt in pairs(self.options) do
+    local W = GAME.WEAPONS[name]
+
+    if W and opt.value != "default" then
+      W.add_prob = BRUTALDOOM.WEAPON_PROBS[opt.value]
+      W.pref     = BRUTALDOOM.WEAPON_PREFS[opt.value]
+
+      -- loosen some of the normal restrictions
+      W.level = 1
+    end
+  end -- for opt
+end
+
+OB_MODULES["brutal_weapon_control"] =
+{
+  label = _("Brutal Doom Weapon Control")
+
+  game = "brutaldoom"
+
+  hooks =
+  {
+    setup = BRUTALDOOM.weapon_setup
+  }
+
+  options = BRUTALDOOM.WEAPON_LIST_BRUTAL
+}

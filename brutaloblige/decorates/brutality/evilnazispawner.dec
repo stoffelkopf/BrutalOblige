@@ -1,8 +1,0 @@
-//The name is from PB, personally I question if there is any other type of Nazi
-Actor BrutalObligeEvilNaziSpawner : PBZspawner 311
-{
-	PBZSpawner.tiers 3
-	PBZSpawner.tier1 "classicwolf"
-	PBZSpawner.tier2 "semiclassicwolf"
-	PBZSpawner.tier3 "Nazi"
-}

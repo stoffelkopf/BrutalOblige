@@ -2240,9 +2240,22 @@ function Level_handle_prebuilt()
   assert(info)
   assert(info.file)
   assert(info.map)
-
+  assert(info.boss)
+  assert(LEVEL.name)
   if GAME.format == "doom" then
     gui.wad_transfer_map(info.file, info.map, LEVEL.name)
+	
+		if LEVEL.name == "MAP04" then
+	      BRUTALDOOM.PARAMETERS.BOSSX=info.boss
+		elseif LEVEL.name == "MAP10" then
+		  BRUTALDOOM.PARAMETERS.BOSS1=info.boss
+		elseif LEVEL.name == "MAP20" then
+		  BRUTALDOOM.PARAMETERS.BOSS2=info.boss	
+		elseif LEVEL.name == "MAP30" then
+		  BRUTALDOOM.PARAMETERS.BOSS3=info.boss		  
+        end
+        gui.printf("Level Boss:%s\n",info.boss)		
+	  
   else
     -- FIXME: support other games (Wolf3d, Quake, etc)
   end

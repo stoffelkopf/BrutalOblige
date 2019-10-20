@@ -77,83 +77,6 @@ CTL_DOOM.MON_LIST =
     Spiderdemon = { label=_("Spiderdemon"),  choices=CTL_DOOM.MON_CHOICES }
 }
 
-CTL_DOOM.MON_LIST_BRUTAL=
-{
-    --Brutal monsters
-    EasyMarine =
-    {
-        label="Evil Grunt",
-        choices=CTL_DOOM.MON_CHOICES
-        tooltip="Immitation is the sincerest form of flattery."
-    }
-    EvilMarine =
-    {
-        label="Evil Marine",
-        choices=CTL_DOOM.MON_CHOICES
-        tooltip="Plasma guns are the sincerest form of murder."
-    }
-    Belphegor =
-    {
-        label="Belphegor",
-        choices=CTL_DOOM.MON_CHOICES
-        tooltip="Imagine fighting a Baron of Hell on steroids. You can use that as your happy place when you have to go up against this guy."
-    }
-    Juggernaut =
-    {
-        label="Juggernaut",
-        choices=CTL_DOOM.MON_CHOICES
-        tooltip="Do you know how much damage the Juggernaut would take if it just rolled straight over you? I'll give you a clue, it's none at all."
-    }
-    DarkImp =
-    {
-        label="Dark Imp",
-        choices=CTL_DOOM.MON_CHOICES
-        tooltip="Like an Imp but with a more damaging projectile."
-    }
-    Epic2Alien =
-    {
-        label="Epic 2 Alien",
-        choices=CTL_DOOM.MON_CHOICES
-        tooltip="There's this megawad called epic2. It has an alien in it."
-    }
-    Zyberdemon =
-    {
-        label="Zyberdemon",
-        choices=CTL_DOOM.MON_CHOICES
-        tooltip="A Cyberdemon with the rocket launcher replaced with a chaingun"
-    }
-    HeadlessZombie =
-    {
-        label="Headless Zombie",
-        choices=CTL_DOOM.MON_CHOICES
-        tooltip="A Zombieman variant filled with such sheer force of malice that even decapitation wont stop it."
-    }
-    Labguy =
-    {
-        label="Labguy",
-        choices=CTL_DOOM.MON_CHOICES
-        tooltip="A former human scientist armed with an axe."
-    }
-    AncientArachnotron =
-    {
-        label="Ancient Arachnotron",
-        choices=CTL_DOOM.MON_CHOICES
-        tooltip="An Arachnotron running on ancient demonic tech. Bigger and tougher than their more modernised cousins."
-    }
-    Volcabus =
-    {
-        label="Volcabus",
-        choices=CTL_DOOM.MON_CHOICES
-        tooltip="An even fatter Mancubus with even more massive cannons."
-    }
-    Mummy =
-    {
-        label="Mummy",
-        choices=CTL_DOOM.MON_CHOICES
-        tooltip="Preserved by ancient science, reanimated by the forces of hell. Unarmed but hits like a truck."
-    }
-}
-
 
 function CTL_DOOM.monster_setup(self)  
   for name,opt in pairs(self.options) do
@@ -187,29 +110,16 @@ OB_MODULES["doom_mon_control"] =
 {
   label = _("Doom Monster Control")
 
-  game = "doomish"
+    game =  {brutaldoom=1, doom1=1, doom2=1}
 
   hooks =
   {
     setup = CTL_DOOM.monster_setup
   }
 
-  options = CTL_DOOM.MON_LIST
+ options = CTL_DOOM.MON_LIST
 }
 
-OB_MODULES["brutal_mon_control"] =
-{
-  label = _("Brutal Doom Monster Control")
-
-  game = "brutaldoom"
-
-  hooks =
-  {
-    setup = CTL_DOOM.monster_setup
-  }
-
-  options = CTL_DOOM.MON_LIST_BRUTAL
-}
 
 OB_MODULES["brutality_mon_control"] =
 {
@@ -277,41 +187,6 @@ CTL_DOOM.WEAPON_LIST =
     bfg      = { label=_("BFG"),             choices=CTL_DOOM.WEAPON_CHOICES }
 }
 
-CTL_DOOM.WEAPON_LIST_BRUTAL=
-{
-    GrenadeLauncher =
-    {
-        label="Grenade Launcher",
-        choices=CTL_DOOM.WEAPON_CHOICES
-    }
-    railgun =
-    {
-        label="Railgun",
-        choices=CTL_DOOM.WEAPON_CHOICES
-    }
-    bfg10k =
-    {
-        label="B.F.G 10000",
-        choices=CTL_DOOM.WEAPON_CHOICES
-    }
-    Smg =
-    {
-        label="SMG",
-        choices=CTL_DOOM.WEAPON_CHOICES
-    }
-    AssaultShotgun =
-    {
-        label="Assault Shotgun",
-        choices=CTL_DOOM.WEAPON_CHOICES
-    }
-    Unmaker =
-    {
-        label="The Unmaker",
-        choices=CTL_DOOM.WEAPON_CHOICES
-    }
-}
-
-
 
 function CTL_DOOM.weapon_setup(self)
   for name,opt in pairs(self.options) do
@@ -332,7 +207,7 @@ OB_MODULES["doom_weapon_control"] =
 {
   label = _("Doom Weapon Control")
 
-  game = "doomish"
+   game =  {brutaldoom=1, doom1=1, doom2=1}
 
   hooks =
   {
@@ -342,17 +217,4 @@ OB_MODULES["doom_weapon_control"] =
   options = CTL_DOOM.WEAPON_LIST
 }
 
-OB_MODULES["brutal_weapon_control"] =
-{
-  label = _("Brutal Doom Weapon Control")
-
-  game = "brutaldoom"
-
-  hooks =
-  {
-    setup = CTL_DOOM.weapon_setup
-  }
-
-  options = CTL_DOOM.WEAPON_LIST_BRUTAL
-}
 

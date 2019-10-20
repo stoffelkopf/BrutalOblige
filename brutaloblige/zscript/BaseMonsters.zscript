@@ -176,7 +176,7 @@ extend class BrutalObligeMonster
 {
     void A_ZombieManTracer()
     {
-        A_CustomMissile("ZombieManTracer", 38, 0, random(-2, 2), 1);
+        A_SpawnProjectile("ZombieManTracer", 38, 0, random(-2, 2), 1);
         A_PlaySound("MP40");
         A_SpawnItem ("HeadshotTarget4", 0, 44,0);
         A_SpawnItem ("RifleCaseSpawn", 0, 30,0);
@@ -191,7 +191,7 @@ extend class BrutalObligeMonster
         double slope = AimLineAttack(angle, MISSILERANGE);
         double ang = angle + Random2[SPosAttack]() * (22.5/256);
         int damage = Random[CPosAttack](1, 5) * 3;
-        A_CustomMissile("ZombieManTracer", 30, 0, random(-2, 2), 1);
+        A_SpawnProjectile("ZombieManTracer", 30, 0, random(-2, 2), 1);
         }
     }
 }

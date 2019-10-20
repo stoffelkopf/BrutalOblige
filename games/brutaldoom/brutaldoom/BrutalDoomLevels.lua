@@ -1,5 +1,68 @@
 function BRUTALDOOM.get_levels()
-    gui.printf("brutaldoom.get_levels code is running\n")
+  gui.printf("brutaldoom.get_levels code is running\n")
+if OB_CONFIG.prebuilt_levels == "yes" then
+  gui.printf("Using Prebuilt Levels")
+  if OB_CONFIG.iwad_usage == "complete" then
+    gui.printf(" for doom_complete.pk3...\n")
+    GAME.PREBUILT_LEVELS =
+    {
+--	    MAP04 =
+--       {
+
+--	   }
+       MAP10 =
+      {
+        { prob=50, file="games/doom/data/boss1/anomaly2.wad", map="E1M8", boss="baron" }
+		{ prob=50, file="games/doom/data/boss1/anomaly3.wad", map="E1M8", boss="baron" }
+		{ prob=50, file="games/doom/data/boss1/ult_anomaly.wad", map="E1M8", boss="baron" }
+        { prob=50, file="games/doom/data/boss1/ult_anomaly2.wad", map="E1M8", boss="baron" }		
+		-- because it sucks { prob=50, file="games/doom/data/boss1/anomaly1.wad", map="E1M8", boss="baron" }  
+      }
+      MAP20 =
+      {
+        { prob=50, file="games/doom/data/boss2/gallow1.wad", map="MAP01", boss="none" }
+        { prob=50, file="games/doom/data/boss2/gallow2.wad", map="MAP01", boss="none" }
+        { prob=50, file="games/doom/data/boss2/gallow1_bd1.wad", map="MAP01", boss="none" }
+        { prob=50, file="games/doom/data/boss2/gallow2_bd1.wad", map="MAP01", boss="none" }
+        { prob=50, file="games/doom/data/boss1/ult_tower.wad", map="E2M8", boss="cyber"}
+        { prob=50, file="games/doom/data/boss1/tower1.wad", map="E2M8", boss="cyber" }
+        { prob=50, file="games/doom/data/boss1/tower2.wad", map="E2M8", boss="cyber" }
+      }
+      MAP30 =
+      {
+        { prob=50, file="games/doom/data/boss2/gotcha1.wad", map="MAP01", boss="none" }
+        { prob=50, file="games/doom/data/boss2/gotcha2.wad", map="MAP01", boss="none" }
+        { prob=50, file="games/doom/data/boss2/gotcha3.wad", map="MAP01", boss="none" }
+        { prob=50, file="games/doom/data/boss2/gotcha4.wad", map="MAP01", boss="none" }
+	    { prob=50, file="games/doom/data/boss1/dis1.wad", map="E3M8", boss="spider" }
+	    { prob=50, file="games/doom/data/boss1/ult_dis.wad", map="E3M8", boss="spider" }
+      }
+    }
+  elseif OB_CONFIG.iwad_usage == "doom2" then
+    gui.printf(" for doom2.wad...\n")
+   GAME.PREBUILT_LEVELS =
+    {
+      MAP20 =
+      {
+        { prob=50, file="games/doom/data/boss2/gallow1.wad", map="MAP01" }
+        { prob=50, file="games/doom/data/boss2/gallow2.wad", map="MAP01" }
+        { prob=50, file="games/doom/data/boss2/gallow1_bd1.wad", map="MAP01" }
+        { prob=50, file="games/doom/data/boss2/gallow2_bd1.wad", map="MAP01" }
+
+      }
+      MAP30 =
+      {
+        { prob=50, file="games/doom/data/boss2/gotcha1.wad", map="MAP01" }
+        { prob=50, file="games/doom/data/boss2/gotcha2.wad", map="MAP01" }
+        { prob=50, file="games/doom/data/boss2/gotcha3.wad", map="MAP01" }
+        { prob=50, file="games/doom/data/boss2/gotcha4.wad", map="MAP01" }
+      }
+    }
+  end
+  else
+    GAME.PREBUILT_LEVELS = {}
+    gui.printf("No prebuilt maps will be used.\n")
+end
   local MAP_LEN_TAB = { few=4, episode=11, game=32 }
 
   local MAP_NUM = MAP_LEN_TAB[OB_CONFIG.length] or 1
@@ -58,7 +121,7 @@ function BRUTALDOOM.get_levels()
     {
       episode = EPI
 
-      name  = string.format("BOM%02d", map)
+      name  = string.format("MAP%02d", map)
       patch = string.format("BOP%02d", map-1)
 
       ep_along = ep_along
@@ -76,20 +139,24 @@ function BRUTALDOOM.get_levels()
     -- secret levels
     if map == 31 then
       LEV.is_secret = true
-      if BRUTALDOOM.PARAMETERS.iwad == "Tnt.wad" and
-        (OB_CONFIG.theme == "original" or OB_CONFIG.theme == "mostly_original")
-      then
+      if BRUTALDOOM.PARAMETERS.iwad == "Tnt.wad" then
         LEV.theme_name = "egypt2"
-        LEV.name_class = "GOTHIC"
+        --LEV.name_class = "GOTHIC"
       else
           LEV.theme_name = "wolf"
           LEV.name_class = "URBAN"
       end
     end
     if map == 32 then
-      LEV.theme_name = "satanshankerchief"
-      LEV.name_class = "TECH"
-      LEV.is_secret = true
+      if OB_CONFIG.iwad_usage == "complete" then
+        LEV.theme_name = "egypt2"
+        --LEV.name_class = "Gothic"
+        LEV.is_secret = true
+      else 
+          LEV.theme_name = "wolf"
+          LEV.name_class = "URBAN"
+          LEV.is_secret = true
+      end
     end
 
     if map == 23 then
@@ -108,7 +175,9 @@ function BRUTALDOOM.get_levels()
     -- prebuilt levels
     local pb_name = LEV.name
 
-    LEV.prebuilt = GAME.PREBUILT_LEVELS[pb_name]
+    if OB_CONFIG.prebuilt_levels == "yes" then
+      LEV.prebuilt = GAME.PREBUILT_LEVELS[pb_name]
+    end
 
     if LEV.prebuilt then
       LEV.name_class = LEV.prebuilt.name_class or "BOSS"

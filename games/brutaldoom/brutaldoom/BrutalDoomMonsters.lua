@@ -39,116 +39,6 @@ BRUTALDOOM.MONSTERS =
 		nasty = true
 		boss_replacement = "Spiderdemon"
 	  }
-	  Flemoid1 =
-	  {
-	    id = 304
-	    r = 20
-	    h = 56 
-	    level = 1
-	    theme_prob = 140
-        prob=0
-	    --crazy_prob = 35
-	    health = 70
-	    damage = 1
-	    attack = "Missile"
-	    density = 1.5
-	    room_size = "small"
-	    infights = true
-	    allow_in_theme = "satanshankerchief"
-	  }
-	  Flemoid2 =
-	  {
-	    id = 305
-	    r = 20
-	    h = 56 
-	    level = 2
-	    theme_prob = 140
-        prob=0
-	    --crazy_prob = 35
-	    health = 90
-	    damage = 1
-	    attack = "Missile"
-	    density = 1.5
-	    room_size = "small"
-	    infights = true
-	    allow_in_theme = "satanshankerchief"
-	  }
-	  Flemoid3 =
-	  {
-	    id = 306
-	    r = 20
-	    h = 56 
-	    level = 3
-	    theme_prob = 140
-        prob=0
-	    --crazy_prob = 35
-	    health = 200
-	    damage = 1
-	    attack = "Missile"
-	    density = 1.5
-	    room_size = "small"
-	    infights = true
-	    allow_in_theme = "satanshankerchief"
-	  }
-	  Quadrumpus =
-	  {
-	    id = 310
-	    r = 20
-	    h = 64 
-	    level = 7
-        boss_type = "minor"
-	    theme_prob = 20
-        prob=0
-        boss_prob = 20
-	    --crazy_prob = 20
-	    health = 400
-	    damage = 1
-	    attack = "Missile"
-	    density = 0.7
-	    room_size = "medium"
-	    infights = true
-	    allow_in_theme = "satanshankerchief"
-	  }
-      SuperCycloptis =
-      {
-        id = 364
-        r = 31
-        h = 70
-        level = DOOM.MONSTERS.caco.level
-        theme_prob = DOOM.MONSTERS.caco.prob
-        prob=0
-        health = 400
-        damage = DOOM.MONSTERS.caco.damage
-        attack = DOOM.MONSTERS.caco.attack
-        density = DOOM.MONSTERS.caco.density
-        weap_min_damage = DOOM.MONSTERS.caco.weap_min_damage
-        float = DOOM.MONSTERS.caco.float
-        room_size = DOOM.MONSTERS.caco.room_size
-        trap_factor = DOOM.MONSTERS.caco.trap_factor
-        infight_damage = DOOM.MONSTERS.caco.infight_damage
-        allow_in_theme = "satanshankerchief"
-        cage_factor = 0  -- never put in cages
-      }
-      SuperCacloptis =
-      {
-        id = 365
-        r = 31
-        h = 70
-        level = DOOM.MONSTERS.caco.level
-        theme_prob = DOOM.MONSTERS.caco.prob*0.9
-        prob=0
-        health = 400
-        damage = DOOM.MONSTERS.caco.damage
-        attack = DOOM.MONSTERS.caco.attack
-        density = DOOM.MONSTERS.caco.density
-        weap_min_damage = DOOM.MONSTERS.caco.weap_min_damage
-        float = DOOM.MONSTERS.caco.float
-        room_size = DOOM.MONSTERS.caco.room_size
-        trap_factor = DOOM.MONSTERS.caco.trap_factor
-        infight_damage = DOOM.MONSTERS.caco.infight_damage
-        allow_in_theme = "satanshankerchief"
-        cage_factor = 0  -- never put in cages
-      }
 	--As of v20b the evil marine replaces the ss. A script checks if it is in a wolfenstein themed level and changes it back if so.
 	ss_nazi = REMOVE_ME
 	EvilMarine =
@@ -157,7 +47,7 @@ BRUTALDOOM.MONSTERS =
 	    r = 20 --the evil marine is actually 14 but I've left it as 20 incase it does somehow end up as an ss guard.
 	    h = 56 
 	    level = 8
-	    prob = 5
+	    prob = 0 --5
 	    crazy_prob = 7
 	    health = 200
 	    damage = 75
@@ -189,7 +79,7 @@ BRUTALDOOM.MONSTERS =
 	    r = 14
 	    h = 56 
 	    level = 5
-	    prob = 9
+	    prob = 0 --9
 	    crazy_prob = 7
 	    health = 80
 	    damage = 5
@@ -209,21 +99,6 @@ BRUTALDOOM.MONSTERS =
 	    damage = 3
 	    attack = "missile"
 	    room_size = "small"
-	  }
-	  Epic2Alien =
-	  {
-	    id = 309
-	    r = 20
-	    h = 56 
-	    level = 4
-	    prob = 6
-	    crazy_prob = 6
-	    health = 80
-	    damage = 20
-	    attack = "hitscan"
-	    cage_factor = 0  -- never put in cages
-	    density = 1.0
-        invis = true
 	  }
       ClassicSS =
       {
@@ -309,7 +184,8 @@ BRUTALDOOM.MONSTERS =
         r = DOOM.MONSTERS.zombie.r
         h = DOOM.MONSTERS.zombie.h
         level = DOOM.MONSTERS.zombie.level
-        prob = 1
+        prob = 0 --1
+        theme_prob = 10 
         health = 150
         damage = DOOM.MONSTERS.zombie.damage
         attack = DOOM.MONSTERS.zombie.attack
@@ -321,6 +197,7 @@ BRUTALDOOM.MONSTERS =
         infight_damage = DOOM.MONSTERS.zombie.infight_damage
         give = { {weapon="AssaultRifle"}, {ammo="bullet",count=10} }
         species = "zombie"
+        allow_in_theme = "egypt2"
      }
      Labguy =
      {
@@ -328,7 +205,7 @@ BRUTALDOOM.MONSTERS =
         r = DOOM.MONSTERS.zombie.r
         h = DOOM.MONSTERS.zombie.h
         level = DOOM.MONSTERS.zombie.level
-        theme_prob = 50
+        theme_prob = 0 --50
         prob=0
         health = 100
         damage = DOOM.MONSTERS.zombie.damage
@@ -348,7 +225,7 @@ BRUTALDOOM.MONSTERS =
         r = DOOM.MONSTERS.arach.r
         h = DOOM.MONSTERS.arach.h
         level = DOOM.MONSTERS.arach.level+1
-        prob = 10
+        prob = 10 --8
         health = 800
         damage = DOOM.MONSTERS.arach.damage
         attack = DOOM.MONSTERS.arach.attack
@@ -365,10 +242,10 @@ BRUTALDOOM.MONSTERS =
         id = 337
         r = DOOM.MONSTERS.mancubus.r
         h = DOOM.MONSTERS.mancubus.h
-        level = DOOM.MONSTERS.mancubus.level+2
-        prob = 5
-        boss_type = "minor"
-        boss_prob = 20
+        level = DOOM.MONSTERS.mancubus.level+1
+        prob = 7 --10
+   	    boss_type = "nasty"
+        boss_prob = 50
         health = 1050
         damage = DOOM.MONSTERS.mancubus.damage*1.2
         attack = DOOM.MONSTERS.mancubus.attack
@@ -378,15 +255,15 @@ BRUTALDOOM.MONSTERS =
         disloyal = DOOM.MONSTERS.mancubus.disloyal
         trap_factor = DOOM.MONSTERS.mancubus.trap_factor
         infight_damage = DOOM.MONSTERS.mancubus.infight_damage
-        weap_min_damage = 115
+        weap_min_damage = 110
      }
-     Mummy =
+     Mummy = --needs a bit of tweaking
      {
         id = 338
         r = DOOM.MONSTERS.revenant.r
         h = 48
         level = 2
-        theme_prob = 40
+        theme_prob = 40 
         prob=0
         health = 200
         damage = 0.4
@@ -403,15 +280,13 @@ BRUTALDOOM.MONSTERS =
         r = DOOM.MONSTERS.revenant.r
         h = 48
         level = 2
-        theme_prob=40
-        prob=0
+        prob=0 --40
         health = 100
         damage = 0.2
         attack = "melee"
         density = 0.85
         room_size = "any"
         infight_damage = 3.5
-        allow_in_theme = "tech, hell, urban, wolf, satanshankerchief" --let the mummy replace it in eygpt2
      }
      --Seperate Rifle and Pistol Zombie so Oblige can model them more accurately
      zombie = REMOVE_ME
@@ -456,10 +331,10 @@ BRUTALDOOM.MONSTERS =
          r = 64
          h = 100
          level = 6
+         prob = 0 -- 0.01
          boss_type = "tough"
-         boss_prob = 5
-         prob = 1
-         crazy_prob = 5
+         boss_prob = 0 --1
+         crazy_prob = 0 -- 5
          health = 4000
          damage = 200
          attack = "missile"
@@ -477,9 +352,9 @@ BRUTALDOOM.MONSTERS =
          h = 100
          level = 5
          boss_type = "minor"
-         boss_prob = 5
-         prob = 1
-         crazy_prob = 6
+         boss_prob = 0 --5
+         prob = 0 -- 1
+         crazy_prob = 0 -- 6
          health = 2000
          damage = 175
          attack = "missile"
@@ -496,8 +371,8 @@ BRUTALDOOM.MONSTERS =
          r = 56
          h = 140 --actually 96 but made higher so it doesn't put it in rooms where it has no room to fly
          level = 5
-         prob = 0.01
-         crazy_prob = 15
+         prob = 0 --0.01
+         crazy_prob = 0 --15
          health = 1000
          damage = 120
          attack = "missile"
@@ -515,9 +390,9 @@ BRUTALDOOM.MONSTERS =
          level = 7
          boss_type = "tough"
          boss_replacement = "Cyberdemon"
-         boss_prob = 50
-         prob = 1
-         crazy_prob = 10
+         boss_prob = 0 --50
+         prob = 0 --1
+         crazy_prob = 0 -- 10
          health = 3000
          damage = 125
          attack = "missile"
@@ -527,48 +402,30 @@ BRUTALDOOM.MONSTERS =
          room_size = "large"
      }
      --Since I replaced the chaingun with the minigun in the weapons table I need to edit the chaingunner monster
-     gunner =
-     {
-         id = DOOM.MONSTERS.gunner.id
-         r = DOOM.MONSTERS.gunner.r
-         h = DOOM.MONSTERS.gunner.h
-         level = DOOM.MONSTERS.gunner.level
-         theme_prob = DOOM.MONSTERS.gunner.prob
-         prob=0
-         health = DOOM.MONSTERS.gunner.health
-         damage = DOOM.MONSTERS.gunner.damage
-         attack = DOOM.MONSTERS.gunner.attack
-         give = { {weapon="Minigun"}, {ammo="bullet",count=10} }
-         weap_needed = { AssaultRifle=true }
-         weap_min_damage = DOOM.MONSTERS.gunner.weap_min_damage
-         density = DOOM.MONSTERS.gunner.density
-         species = DOOM.MONSTERS.gunner.species
-         room_size = DOOM.MONSTERS.gunner.room_size
-         disloyal = DOOM.MONSTERS.gunner.disloyal
-         trap_factor = DOOM.MONSTERS.gunner.trap_factor
-         infight_damage = DOOM.MONSTERS.gunner.infight_damage
-         allow_in_theme = "tech, hell, urban, eygpt2, satanshankerchief" --ubersoldat replaces it in wolf
-     }
+     -- gunner =
+     -- {
+         -- id = DOOM.MONSTERS.gunner.id
+         -- r = DOOM.MONSTERS.gunner.r
+         -- h = DOOM.MONSTERS.gunner.h
+         -- level = DOOM.MONSTERS.gunner.level
+         -- theme_prob = DOOM.MONSTERS.gunner.prob
+         -- prob=DOOM.MONSTERS.gunner.prob
+         -- health = DOOM.MONSTERS.gunner.health
+         -- damage = DOOM.MONSTERS.gunner.damage
+         -- attack = DOOM.MONSTERS.gunner.attack
+         -- give = { {weapon="Minigun"}, {ammo="bullet",count=10} }
+        --weap_needed = { AssaultRifle=true }
+         -- weap_min_damage = DOOM.MONSTERS.gunner.weap_min_damage
+         -- density = DOOM.MONSTERS.gunner.density
+         -- species = DOOM.MONSTERS.gunner.species
+         -- room_size = DOOM.MONSTERS.gunner.room_size
+         -- disloyal = DOOM.MONSTERS.gunner.disloyal
+         -- trap_factor = DOOM.MONSTERS.gunner.trap_factor
+         -- infight_damage = DOOM.MONSTERS.gunner.infight_damage
+         -- allow_in_theme = "tech, hell, urban, eygpt2" --ubersoldat replaces it in wolf
+     -- }
      --default caco for all themes other than urban where the D4 style Caco replaces it
-     caco =
-     {
-        id = DOOM.MONSTERS.caco.id
-        r = DOOM.MONSTERS.caco.r
-        h = DOOM.MONSTERS.caco.h
-        level = DOOM.MONSTERS.caco.level
-        theme_prob = DOOM.MONSTERS.caco.prob
-        prob=0
-        health = DOOM.MONSTERS.caco.health
-        damage = DOOM.MONSTERS.caco.damage
-        attack = DOOM.MONSTERS.caco.attack
-        density = DOOM.MONSTERS.caco.density
-        weap_min_damage = DOOM.MONSTERS.caco.weap_min_damage
-        float = DOOM.MONSTERS.caco.float
-        room_size = DOOM.MONSTERS.caco.room_size
-        trap_factor = DOOM.MONSTERS.caco.trap_factor
-        infight_damage = DOOM.MONSTERS.caco.infight_damage
-        allow_in_theme = "tech, hell, eygpt2, satanshankerchief"
-     }
+
      --SMG Zombie supposedly has the exact same DPS etc as shotgun zombie
      SMGZombie =
      {
@@ -630,25 +487,120 @@ BRUTALDOOM.MONSTERS =
     }
 }
 
-BRUTALDOOM4.MONSTERS =
+BRUTALDOOM.MON_CHOICES =
 {
-    D4caco =
+  "default", _("DEFAULT"),
+  "none",    _("None at all"),
+  "scarce",  _("Scarce"),
+  "less",    _("Less"),
+  "plenty",  _("Plenty"),
+  "more",    _("More"),
+  "heaps",   _("Heaps"),
+  "insane",  _("INSANE"),
+}
+
+BRUTALDOOM.MON_PROBS =
+{
+  none   = 0
+  scarce = 2
+  less   = 15
+  plenty = 50
+  more   = 120
+  heaps  = 300
+  insane = 2000
+}
+
+BRUTALDOOM.DENSITIES =
+{
+  none   = 0.1
+  scarce = 0.2
+  less   = 0.4
+  plenty = 0.7
+  more   = 1.2
+  heaps  = 3.3
+  insane = 9.9
+}
+
+BRUTALDOOM.MON_LIST_BRUTAL=
+{
+    --Brutal monsters
+
+    Belphegor =
     {
-        id = 316
-        r = DOOM.MONSTERS.caco.r
-        h = DOOM.MONSTERS.caco.h
-        level = DOOM.MONSTERS.caco.level
-        theme_prob = DOOM.MONSTERS.caco.prob
-        prob=0
-        health = DOOM.MONSTERS.caco.health
-        damage = DOOM.MONSTERS.caco.damage
-        attack = DOOM.MONSTERS.caco.attack
-        density = DOOM.MONSTERS.caco.density
-        weap_min_damage = DOOM.MONSTERS.caco.weap_min_damage
-        float = DOOM.MONSTERS.caco.float
-        room_size = DOOM.MONSTERS.caco.room_size
-        trap_factor = DOOM.MONSTERS.caco.trap_factor
-        infight_damage = DOOM.MONSTERS.caco.infight_damage
-        allow_in_theme = "urban"
-    }   
+        label="Belphegor",
+        choices=BRUTALDOOM.MON_CHOICES
+        tooltip="Imagine fighting a Baron of Hell on steroids. You can use that as your happy place when you have to go up against this guy."
+    }
+    Juggernaut =
+    {
+        label="Juggernaut",
+        choices=BRUTALDOOM.MON_CHOICES
+        tooltip="Do you know how much damage the Juggernaut would take if it just rolled straight over you? I'll give you a clue, it's none at all."
+    }
+  
+    Zyberdemon =
+    {
+        label="Zyberdemon",
+        choices=BRUTALDOOM.MON_CHOICES
+        tooltip="A Cyberdemon with the rocket launcher replaced with a chaingun"
+    }
+ 
+    AncientArachnotron =
+    {
+        label="Ancient Arachnotron",
+        choices=BRUTALDOOM.MON_CHOICES
+        tooltip="An Arachnotron running on ancient demonic tech. Bigger and tougher than their more modernised cousins."
+    }
+    Volcabus =
+    {
+        label="Volcabus",
+        choices=BRUTALDOOM.MON_CHOICES
+        tooltip="An even fatter Mancubus with even more massive cannons."
+    }
+	PistolZombie = { label=_("Pistol Zombie"), choices=BRUTALDOOM.MON_CHOICES }
+    RifleZombie =  { label=_("Rifle Zombie"), choices=BRUTALDOOM.MON_CHOICES }
+    SMGZombie =    { label=_("SMG Zombie"), choices=BRUTALDOOM.MON_CHOICES }
+  
+}
+
+
+function BRUTALDOOM.monster_setup(self)  
+  for name,opt in pairs(self.options) do
+    M = GAME.MONSTERS[name]
+
+    if M and opt.value != "default" then
+      M.prob    = BRUTALDOOM.MON_PROBS[opt.value]
+      M.density = BRUTALDOOM.DENSITIES[opt.value]
+
+      -- allow Spectres to be controlled individually
+      M.replaces = nil
+
+      -- loosen some of the normal restrictions
+      M.skip_prob = nil
+      M.crazy_prob = nil
+
+      if M.prob > 40 then
+        M.level = 1
+        M.weap_min_damage = nil
+      end
+
+      if M.prob > 200 then
+        M.boss_type = nil
+      end
+    end
+  end -- for opt
+end
+
+OB_MODULES["brutal_mon_control"] =
+{
+  label = _("Brutal Doom Monster Control")
+
+  game = { brutaldoom=1 }
+
+  hooks =
+  {
+    setup = BRUTALDOOM.monster_setup
+  }
+
+  options = BRUTALDOOM.MON_LIST_BRUTAL
 }

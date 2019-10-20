@@ -17,15 +17,15 @@ BRUTALDOOM.THEMES.tech.prefab_remap =
     BIGDOOR6 = "TNTDOOR2"
     BIGDOOR7 = "TNTDOOR2"
 }
-BRUTALDOOM.THEMES.tech.monster_prefs =
-{
-    PistolZombie  = 1.5
-    RifleZombie = 0.5
-    shooter = 1.2
-    arach   = 1.5
-    Labguy = 1.6
-    Experiment = 1.5
-}
+--BRUTALDOOM.THEMES.tech.monster_prefs =
+--{
+--    PistolZombie  = 1.5
+--    RifleZombie = 0.5
+--    shooter = 1.2
+--    arach   = 1.5
+--    Labguy = 1.6
+--    Experiment = 1.5
+--}
 BRUTALDOOM.THEMES.tech.facades =
 {      
     BROWN1   = 40
@@ -62,21 +62,21 @@ BRUTALDOOM.ROOM_THEMES.tech_Gray.walls =
 }
 --Urban
 BRUTALDOOM.THEMES.urban.allow_mons_for_theme = "urban"
-BRUTALDOOM.THEMES.urban.monster_prefs =
-{
-    PistolZombie = 0.8
-    RifleZombie = 1.2
-    shooter = 0.8
-    SMGZombie = 1.2
-    revenant = 1.2
-    knight   = 1.5
-    gunner   = 1.5
-    ZombieMainBattleTank = 1.1
-    ZombieLightTank = 1.1
-    ZombieMech = 1.1
-    ZombieHelicopter = 1.1
-    Experiment = 0.8
-}
+--BRUTALDOOM.THEMES.urban.monster_prefs =
+--{
+--    PistolZombie = 0.8
+--    RifleZombie = 1.2
+--    shooter = 0.8
+--    SMGZombie = 1.2
+--    revenant = 1.2
+--    knight   = 1.5
+--    gunner   = 1.5
+--    ZombieMainBattleTank = 1.1
+--    ZombieLightTank = 1.1
+--    ZombieMech = 1.1
+--    ZombieHelicopter = 1.1
+--    Experiment = 0.8
+--}
 BRUTALDOOM.THEMES.urban.passable_decor =
 {
     UrbanRubble = 100

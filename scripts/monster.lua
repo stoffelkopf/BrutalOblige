@@ -1112,15 +1112,14 @@ function Monster_fill_room(R)
     
     --check theme
     if info.allow_in_theme and THEME.allow_mons_for_theme then
-        --gui.printf("Theme check for  " .. THEME.allow_mons_for_theme .. " with monster theme " .. info.allow_in_theme .."\n")
+       -- gui.printf("Theme check for  " .. THEME.allow_mons_for_theme .. " with monster theme " .. info.allow_in_theme .."\n")
         if not string.find(info.allow_in_theme, THEME.allow_mons_for_theme) then
             prob = 0
             --gui.printf("String " .. THEME.allow_mons_for_theme .. " not found in " .. info.allow_in_theme .."\n")
-            gui.printf("Excluding " .. info.id .. " as not allowed in this theme\n")
         else
             if info.theme_prob then
                 prob = info.theme_prob
-                --gui.printf("Setting " .. info.id .. " prob to " .. prob .."\n")
+               -- gui.printf("Setting " .. info.id .. " prob to " .. prob .."\n")
             else
                 prob=0
             end
@@ -1128,22 +1127,22 @@ function Monster_fill_room(R)
     end
 
     if not LEVEL.global_pal[mon] then
-        gui.printf("Excluding " .. info.id .. " as not in global pallette\n")
+     --   gui.printf("Excluding " .. info.id .. " as not in global pallette\n")
       return 0
     end
 
     if R.avoid_mons[mon] then
-        gui.printf("Excluding " .. info.id .. " as avoided\n")
+    --    gui.printf("Excluding " .. info.id .. " as avoided\n")
       return 0
     end
 
     if info.weap_min_damage and info.weap_min_damage > Player_max_damage() then
-        gui.printf("Excluding " .. info.id .. " as requires better guns\n")
+      --  gui.printf("Excluding " .. info.id .. " as requires better guns\n")
       return 0
     end
 
     if info.weap_needed and not Player_has_weapon(info.weap_needed) then
-        gui.printf("Excluding " .. info.id .. " as requires a specific gun\n")
+        --gui.printf("Excluding " .. info.id .. " as requires a specific gun\n")
       return 0
     end
 
@@ -1167,7 +1166,7 @@ function Monster_fill_room(R)
     end
 
     if prob == 0 then
-        gui.printf("Exiting with prob=0 for " .. info.id .. "\n")
+      --  gui.printf("Exiting with prob=0 for " .. info.id .. "\n")
         return 0
     end
 
@@ -1187,7 +1186,8 @@ function Monster_fill_room(R)
         prob = prob / 20
       end
     end
-
+--gui.printf(mon)
+--gui.printf(" Prob: %s \n",prob)
     return prob
   end
 
@@ -1414,7 +1414,7 @@ function Monster_fill_room(R)
     end
 
     table.insert(R.monster_list, { info=info, is_cage=(mode == "cage") })
-
+   gui.printf("Placing: %s\n",mon)
     -- decide deafness and where to look
     local deaf, focus
 

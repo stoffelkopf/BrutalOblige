@@ -1,12 +1,6 @@
 //Brutal Doom additions
-#include "BrutalChexQuest.txt" //not included by default in RC9
 #include "BRUMONS"
-#include "D4CACO"
-#include "BOSTELTH"
 #include "BRUWEPS"
-#include "CHEXKEYS"
-#include "CHEXPROP"
-#include "CHEXMONS"
 #include "BRUPUPS"
 #include "BOLOGNES"
 

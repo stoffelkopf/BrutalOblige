@@ -20,27 +20,27 @@ ACTOR MeatDeath_Bolognese
     Spawn:
 		 TNT1 A 0
 		 TNT1 A 0 A_PlaySound("misc/xdeath4", 4)
-         TNT1 AAAAAAAAA 0 A_CustomMissile ("CeilBloodLauncherLong", 0, 0, random (0, 360), 2, random (50, 130))
-		 TNT1 AAAAAAAAAAAA 0 A_CustomMissile ("SuperWallRedBlood", 40, 0, random (0, 360), 2, random (0, 15))
-		 TNT1 AAAAAA 0 A_CustomMissile ("Brutal_FlyingBlood", 50, 0, random (0, 360), 2, random (0, 15))
-         TNT1 AA 0 A_CustomMissile ("Blood", 55, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeath2", 42, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeath3", 42, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeath4", 42, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("GibEyeball", 42, 0, random (0, 360), 2, random (40, 60))
-		 TNT1 AA 0 A_CustomMissile ("SmallBrainPiece", 42, 0, random (0, 360), 2, random (30, 60))
-		 TNT1 A 0 A_CustomMissile ("SmallBrainPieceFast", 42, 0, random (0, 360), 2, random (30, 60))
-		 TNT1 AA 0 A_CustomMissile ("XDeath2b", 42, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 AA 0 A_CustomMissile ("XDeath3b", 42, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeath5", 42, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 AA 0 A_CustomMissile ("XDeath6", 42, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeathOrgan1", 24, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeathOrgan2", 24, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 AAA 0 A_CustomMissile ("Guts", 32, 0, random (0, 360), 2, random (20, 30))
-		 TNT1 A 0 A_CustomMissile ("BloodMistExtraBig", 10, 0, random (0, 360), 2, random (40, 60))
-		 TNT1 A 0 A_CustomMissile ("BloodMistExtraBig", 30, 0, random (0, 360), 2, random (40, 60))
-		 TNT1 AAA 0 A_CustomMissile ("BloodMistExtraBig", 40, 0, random (0, 360), 2, random (40, 90))
-		 TNT1 AAAA 0 A_CustomMissile ("BloodmistSpray", 40, 0, random (0, 360), 2, random (40, 90))
+         TNT1 AAAAAAAAA 0 A_SpawnProjectile ("CeilBloodLauncherLong", 0, 0, random (0, 360), 2, random (50, 130))
+		 TNT1 AAAAAAAAAAAA 0 A_SpawnProjectile ("SuperWallRedBlood", 40, 0, random (0, 360), 2, random (0, 15))
+		 TNT1 AAAAAA 0 A_SpawnProjectile ("Brutal_FlyingBlood", 50, 0, random (0, 360), 2, random (0, 15))
+         TNT1 AA 0 A_SpawnProjectile ("Blood", 55, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeath2", 42, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeath3", 42, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeath4", 42, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("GibEyeball", 42, 0, random (0, 360), 2, random (40, 60))
+		 TNT1 AA 0 A_SpawnProjectile ("SmallBrainPiece", 42, 0, random (0, 360), 2, random (30, 60))
+		 TNT1 A 0 A_SpawnProjectile ("SmallBrainPieceFast", 42, 0, random (0, 360), 2, random (30, 60))
+		 TNT1 AA 0 A_SpawnProjectile ("XDeath2b", 42, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AA 0 A_SpawnProjectile ("XDeath3b", 42, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeath5", 42, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AA 0 A_SpawnProjectile ("XDeath6", 42, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeathOrgan1", 24, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeathOrgan2", 24, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AAA 0 A_SpawnProjectile ("Guts", 32, 0, random (0, 360), 2, random (20, 30))
+		 TNT1 A 0 A_SpawnProjectile ("BloodMistExtraBig", 10, 0, random (0, 360), 2, random (40, 60))
+		 TNT1 A 0 A_SpawnProjectile ("BloodMistExtraBig", 30, 0, random (0, 360), 2, random (40, 60))
+		 TNT1 AAA 0 A_SpawnProjectile ("BloodMistExtraBig", 40, 0, random (0, 360), 2, random (40, 90))
+		 TNT1 AAAA 0 A_SpawnProjectile ("BloodmistSpray", 40, 0, random (0, 360), 2, random (40, 90))
 		 TNT1 A 0 A_SpawnItem ("BigBloodSpot")
 		 TNT1 A 10
 	Death:
@@ -55,21 +55,21 @@ Actor MeatDeathGiant_Bolognese : MeatDeath_Bolognese
     States
     {
     Spawn:
-         TNT1 AAAAAAAAA 0 A_CustomMissile ("CeilBloodLauncherLong", 0, 0, random (0, 360), 2, random (50, 130))
-         TNT1 A 0 A_CustomMissile ("XDeath2", 82, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeath3", 82, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeath4", 82, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 AA 0 A_CustomMissile ("XDeath2b", 82, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 AA 0 A_CustomMissile ("XDeath3b", 82, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeath5Big", 82, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeath6Big", 82, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 AAAAAAAA 0 A_CustomMissile ("BloodMistExtraBig", 80, 0, random (0, 360), 2, random (20, 90))
-		 TNT1 AAAAAAAA 0 A_CustomMissile ("BloodmistSpray", 80, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeathOrgan1", 24, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeathOrgan2", 24, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 AAAA 0 A_CustomMissile ("Guts", 64, 0, random (0, 360), 2, random (30, 90))
+         TNT1 AAAAAAAAA 0 A_SpawnProjectile ("CeilBloodLauncherLong", 0, 0, random (0, 360), 2, random (50, 130))
+         TNT1 A 0 A_SpawnProjectile ("XDeath2", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeath3", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeath4", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AA 0 A_SpawnProjectile ("XDeath2b", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AA 0 A_SpawnProjectile ("XDeath3b", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeath5Big", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeath6Big", 82, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AAAAAAAA 0 A_SpawnProjectile ("BloodMistExtraBig", 80, 0, random (0, 360), 2, random (20, 90))
+		 TNT1 AAAAAAAA 0 A_SpawnProjectile ("BloodmistSpray", 80, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeathOrgan1", 24, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeathOrgan2", 24, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AAAA 0 A_SpawnProjectile ("Guts", 64, 0, random (0, 360), 2, random (30, 90))
 		 TNT1 A 0 A_SpawnItem ("BigBloodSpot")
-		 TNT1 AAAAA 0 A_CustomMissile ("SuperGoreSpawner2", 124, 0, random (0, 360), 2, random (20, 40))
+		 TNT1 AAAAA 0 A_SpawnProjectile ("SuperGoreSpawner2", 124, 0, random (0, 360), 2, random (20, 40))
 	Death:
 	    TNT1 A 0
         Stop
@@ -82,10 +82,10 @@ Actor MeatDeathFat_Bolognese : MeatDeath_Bolognese
     {
     Spawn:
 		TNT1 A 0
-		 TNT1 AA 0 A_CustomMissile ("XDeath5Big", 45, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 AAA 0 A_CustomMissile ("XDeath6Big", 45, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 AA 0 A_CustomMissile ("SuperGoreSpawner2", 32, 0, random (0, 360), 2, random (20, 40))
-		 TNT1 AA 0 A_CustomMissile ("Guts", 42, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AA 0 A_SpawnProjectile ("XDeath5Big", 45, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AAA 0 A_SpawnProjectile ("XDeath6Big", 45, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AA 0 A_SpawnProjectile ("SuperGoreSpawner2", 32, 0, random (0, 360), 2, random (20, 40))
+		 TNT1 AA 0 A_SpawnProjectile ("Guts", 42, 0, random (0, 360), 2, random (30, 90))
 	Death:
 	    TNT1 A 0
         Stop
@@ -97,15 +97,15 @@ Actor MeatDeathSmall_Bolognese: MeatDeath_Bolognese
     States
     {
     Spawn:
-         TNT1 AAAAAAAAA 0 A_CustomMissile ("CeilBloodLauncherLong", 0, 0, random (0, 360), 2, random (50, 130))
-         TNT1 A 0 A_CustomMissile ("XDeath2", 32, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeath3", 32, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeath4", 32, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 AAA 0 A_CustomMissile ("XDeath2b", 32, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 AAA 0 A_CustomMissile ("XDeath3b", 32, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeathOrgan1", 24, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 A 0 A_CustomMissile ("XDeathOrgan2", 24, 0, random (0, 360), 2, random (30, 90))
-		 TNT1 AA 0 A_CustomMissile ("Guts", 16, 0, random (0, 360), 2, random (30, 90))
+         TNT1 AAAAAAAAA 0 A_SpawnProjectile ("CeilBloodLauncherLong", 0, 0, random (0, 360), 2, random (50, 130))
+         TNT1 A 0 A_SpawnProjectile ("XDeath2", 32, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeath3", 32, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeath4", 32, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AAA 0 A_SpawnProjectile ("XDeath2b", 32, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AAA 0 A_SpawnProjectile ("XDeath3b", 32, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeathOrgan1", 24, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 A 0 A_SpawnProjectile ("XDeathOrgan2", 24, 0, random (0, 360), 2, random (30, 90))
+		 TNT1 AA 0 A_SpawnProjectile ("Guts", 16, 0, random (0, 360), 2, random (30, 90))
 		 TNT1 A 0 A_SpawnItem ("BigBloodSpot")
 	Death:
 	    TNT1 A 0

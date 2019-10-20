@@ -2,7 +2,10 @@ BRUTALDOOM.MAPINFO = { }
 
 function BRUTALDOOM.create_mapinfo()
     gui.printf("Mapinfo code is starting\n");
-	
+	gui.printf("boss:%s\n",BRUTALDOOM.PARAMETERS.BOSSX)
+		gui.printf("boss:%s\n",BRUTALDOOM.PARAMETERS.BOSS1)
+			gui.printf("boss:%s\n",BRUTALDOOM.PARAMETERS.BOSS2)
+				gui.printf("boss:%s\n",BRUTALDOOM.PARAMETERS.BOSS3)
     
 local castcall =
 [[
@@ -173,13 +176,13 @@ Intermission BrutalDoomCast
     'AddEventHandlers = "BrutalObligeHandler"\n'
     '}\n\n'
     "clearepisodes\n\n"
-    'episode bom01\n'
+    'episode MAP01\n'
     '{\n'
     'name = "Brutal Oblige"\n'
     '}\n\n'
     'map E2M8 "Tower of Babel" //brutality\n'
     '{\n'
-    'next = "BOM0' .. tostring(secretexit1 + 1) .. '"\n'
+    'next = "MAP0' .. tostring(secretexit1 + 1) .. '"\n'
     'sky1 = "SKY3"\n'
     'EnterPic = "INTERPIC"//changeifdoomcomplete\n'
     'ExitPic = "INTERPIC"//changeifdoomcomplete\n'
@@ -192,7 +195,7 @@ Intermission BrutalDoomCast
     '}\n'
     'map E3M8 "Dis" //brutality\n'
     '{\n'
-    'next = "BOM' .. tostring(secretexit3 + 1) .. '"\n'
+    'next = "MAP' .. tostring(secretexit3 + 1) .. '"\n'
     'sky1 = "SKY3"\n'
     'EnterPic = "INTERPIC"//changeifdoomcomplete\n'
     'ExitPic = "INTERPIC"//changeifdoomcomplete\n'
@@ -204,7 +207,7 @@ Intermission BrutalDoomCast
     --brutality has the naming correct whilst brutal has this bollocks
     'map E5M8 "Tower of Babel" //brutalv20b\n'
     '{\n'
-    'next = "BOM0' .. tostring(secretexit1 + 1) .. '"\n'
+    'next = "MAP0' .. tostring(secretexit1 + 1) .. '"\n'
     'sky1 = "SKY3"\n'
     'EnterPic = "INTERPIC"//changeifdoomcomplete\n'
     'ExitPic = "INTERPIC"//changeifdoomcomplete\n'
@@ -217,7 +220,7 @@ Intermission BrutalDoomCast
     '}\n'
     'map E3M10 "Dis" //brutalv20b\n'
     '{\n'
-    'next = "BOM' .. tostring(secretexit3 + 1) .. '"\n'
+    'next = "MAP' .. tostring(secretexit3 + 1) .. '"\n'
     'sky1 = "SKY3"\n'
     'EnterPic = "INTERPIC"//changeifdoomcomplete\n'
     'ExitPic = "INTERPIC"//changeifdoomcomplete\n'
@@ -267,25 +270,21 @@ Intermission BrutalDoomCast
 
       if string.sub(L.name, 1, 1) == 'E' then
         -- Doom I : ExMy
-        id = "bom" .. L.name
+        id = "MAP" .. L.name
 
       else
         local pos = 4
         if string.sub(L.name, pos, pos) == '0' then
           pos = pos + 1
         end
-
         -- Doom II / Final Doom : HUSTR_%d
-        id = "bom" .. string.sub(L.name, pos)
+        id = "MAP" .. string.sub(L.name, pos)
       end
-
       local nextmap = 'next = "' .. L.name ..'"\n'
 
       local sky1 = 'sky1 = "'
       local skyname = 'RSKY1'
       local enterpic = '"INTERPIC"' --default intermissionpic
-      
-      --Choose Sky texture
       local skytab = BRUTALDOOM.SKIES[ L.theme_name ]
       if not skytab or OB_CONFIG.game == "brutality" then --i.e. if no entry for the theme in BrutalDoomSkies.lua
           skytab = BRUTALDOOM.SKIES.any
@@ -294,10 +293,9 @@ Intermission BrutalDoomCast
       skyname = skytab[ rand.irange(1,#skytab) ]
       
         sky1 = sky1 .. skyname .. '"\n'
-        
-    --Choose Intermission pic
-    local intptab = BRUTALDOOM.INTERPICS[ L.theme_name ]
-      if not intptab or OB_CONFIG.game == "brutality" then --i.e. if no entry for the theme in BrutalDoomInterpics.lua
+    
+      local intptab = BRUTALDOOM.INTERPICS[ L.theme_name ]
+      if not intptab then --i.e. if no entry for the theme in BrutalDoomInterpics.lua
           intptab = BRUTALDOOM.INTERPICS.any
       end
       
@@ -311,7 +309,7 @@ Intermission BrutalDoomCast
       enterpic = enterpic .. '\n'
 
       local text = L.name .. ' "' .. L.description ..'"'; --the mapinfo key
-
+	  
       --say that this map comes after the last map
       if firstmap == 0 then
 	if mapnum != 31 and mapnum != 32 and mapnum != 33 then --yes I could just do <31 but it might be possible to make Oblige do more than 32 maps in which case this will still work. Number is 1 higher because this is inserted at the start of the next map.
@@ -322,7 +320,7 @@ Intermission BrutalDoomCast
 	  end
 	end
         if mapnum >=11 and mapnum < 21 then--mapnum == 17 then --map 16 has the secret exit to wolf levels. Number is 1 higher because this is inserted at the start of the next map.
-          table.insert(data, 'secretnext = "BOM31"\n')
+          table.insert(data, 'secretnext = "MAP31"\n')
         end
         if mapnum < 11 then --give map 8 a secret exit to tower of bable (included in the brutal and brutality pk3s)
 	  if boss1 == "cyberlordmajor" then --if big CyberLord at babel then make that the second boss battle 
@@ -355,8 +353,8 @@ Intermission BrutalDoomCast
 	  end
         end
         if mapnum == 32 then --first secret level (wolf)
-          table.insert(data, 'next = "BOM' .. tostring(secretexit2 + 1) .. '"\n')
-          table.insert(data, 'secretnext = "BOM32"\n')
+          table.insert(data, 'next = "MAP' .. tostring(secretexit2 + 1) .. '"\n')
+          table.insert(data, 'secretnext = "MAP32"\n')
         end
         table.insert(data, '\n}\n') --close last map's definition
       else
@@ -379,12 +377,55 @@ Intermission BrutalDoomCast
       else
           table.insert(data, 'music = "' .. dest[rand.irange(1,#dest)] .. '"\n')
       end
+	  if OB_CONFIG.prebuilt_levels == "yes" then
+	    if mapnum == 4 then
+		  if BRUTALDOOM.PARAMETERS.BOSSX == "cyber" then
+		    table.insert(data, 'SpecialAction = "CyberDemon", "Exit_Normal", 0\n')
+		  elseif BRUTALDOOM.PARAMETERS.BOSSX == "spider" then
+		     table.insert(data, 'SpecialAction = "SpiderMastermind", "Exit_Normal", 0\n')
+		  elseif BRUTALDOOM.PARAMETERS.BOSSX == "baron" then
+		     table.insert(data, 'BaronSpecial\nSpecialAction_LowerFloor\n')		
+		  elseif BRUTALDOOM.PARAMETERS.BOSSX == "belphegor_floor" then
+		     table.insert(data, 'SpecialAction = "ObligeBelphegor", "Floor_LowerToLowest",666, 2\n')					 
+		  end
+		elseif mapnum == 10 then
+		  if BRUTALDOOM.PARAMETERS.BOSS1 == "cyber" then
+		    table.insert(data, 'SpecialAction = "CyberDemon", "Exit_Normal", 0\n')
+		  elseif BRUTALDOOM.PARAMETERS.BOSS1 == "spider" then
+		    table.insert(data, 'SpecialAction = "SpiderMastermind", "Exit_Normal", 0\n')
+		  elseif BRUTALDOOM.PARAMETERS.BOSS1 == "baron" then
+		     table.insert(data, 'BaronSpecial\nSpecialAction_LowerFloor\n')		
+		  elseif BRUTALDOOM.PARAMETERS.BOSS1 == "belphegor_floor" then
+		     table.insert(data, 'SpecialAction = "ObligeBelphegor", "Floor_LowerToLowest",666, 2\n')					 
+		  end
+	    elseif mapnum == 20 then
+		  if BRUTALDOOM.PARAMETERS.BOSS2 == "cyber" then
+		    table.insert(data, 'SpecialAction = "CyberDemon", "Exit_Normal", 0\n')
+		  elseif BRUTALDOOM.PARAMETERS.BOSS2 == "spider" then
+		     table.insert(data, 'SpecialAction = "SpiderMastermind", "Exit_Normal", 0\n')
+		  elseif BRUTALDOOM.PARAMETERS.BOSS2 == "baron" then
+		     table.insert(data, 'BaronSpecial\nSpecialAction_LowerFloor\n')		
+		  elseif BRUTALDOOM.PARAMETERS.BOSS2 == "belphegor_floor" then
+		     table.insert(data, 'SpecialAction = "ObligeBelphegor", "Floor_LowerToLowest",666, 2\n')					 
+		  end  
+	    elseif mapnum == 30 then
+		  if BRUTALDOOM.PARAMETERS.BOSS3 == "cyber" then
+		    table.insert(data, 'SpecialAction = "CyberDemon", "Exit_Normal", 0\n')
+		  elseif BRUTALDOOM.PARAMETERS.BOSS3 == "spider" then
+		    table.insert(data, 'SpecialAction = "SpiderMastermind", "Exit_Normal", 0\n')
+		  elseif BRUTALDOOM.PARAMETERS.BOSS3 == "baron" then
+		    table.insert(data, 'BaronSpecial\nSpecialAction_LowerFloor\n')		
+		  elseif BRUTALDOOM.PARAMETERS.BOSS3 == "belphegor_floor" then
+		    table.insert(data, 'SpecialAction = "ObligeBelphegor", "Floor_LowerToLowest",666, 2\n')					 
+		  end		  
+		end
+	  end
       mapnum = mapnum + 1
     end
   end -- for L
 
   if mapnum == 33 then --second secret level (chex)
-    table.insert(data, 'next = "BOM' .. tostring(secretexit2 + 1) .. '"\n')
+    table.insert(data, 'next = "MAP' .. tostring(secretexit2 + 1) .. '"\n')
   else
     table.insert(data, 'next = EndSequence, "Brutal_FinalIntermission"\n') --last map ends the game unless it is a secret level (ie anything more or less than full game)
   end
@@ -395,38 +436,38 @@ Intermission BrutalDoomCast
 
 --make sure there are no 0s in stupid places
 for i = 1, (#data) do --for every value in data
-  data[i] = string.gsub(data[i], '"BOM010"','"BOM10"')
-  data[i] = string.gsub(data[i], '"BOM011"','"BOM11"')
-  data[i] = string.gsub(data[i], '"BOM012"','"BOM12"')
-  data[i] = string.gsub(data[i], '"BOM013"','"BOM13"')
-  data[i] = string.gsub(data[i], '"BOM014"','"BOM14"')
-  data[i] = string.gsub(data[i], '"BOM015"','"BOM15"')
-  data[i] = string.gsub(data[i], '"BOM016"','"BOM16"')
-  data[i] = string.gsub(data[i], '"BOM017"','"BOM17"')
-  data[i] = string.gsub(data[i], '"BOM018"','"BOM18"')
-  data[i] = string.gsub(data[i], '"BOM019"','"BOM19"')
-  data[i] = string.gsub(data[i], '"BOM020"','"BOM20"')
-  data[i] = string.gsub(data[i], '"BOM021"','"BOM21"')
-  data[i] = string.gsub(data[i], '"BOM022"','"BOM22"')
-  data[i] = string.gsub(data[i], '"BOM023"','"BOM23"')
-  data[i] = string.gsub(data[i], '"BOM024"','"BOM24"')
-  data[i] = string.gsub(data[i], '"BOM025"','"BOM25"')
-  data[i] = string.gsub(data[i], '"BOM026"','"BOM26"')
-  data[i] = string.gsub(data[i], '"BOM027"','"BOM27"')
-  data[i] = string.gsub(data[i], '"BOM028"','"BOM28"')
-  data[i] = string.gsub(data[i], '"BOM029"','"BOM29"')
-  data[i] = string.gsub(data[i], '"BOM030"','"BOM30"')
-  data[i] = string.gsub(data[i], '"BOM031"','"BOM31"')
-  data[i] = string.gsub(data[i], '"BOM032"','"BOM32"')
-  data[i] = string.gsub(data[i], '"BOM1"','"BOM01"')
-  data[i] = string.gsub(data[i], '"BOM2"','"BOM02"')
-  data[i] = string.gsub(data[i], '"BOM3"','"BOM03"')
-  data[i] = string.gsub(data[i], '"BOM4"','"BOM04"')
-  data[i] = string.gsub(data[i], '"BOM5"','"BOM05"')
-  data[i] = string.gsub(data[i], '"BOM6"','"BOM06"')
-  data[i] = string.gsub(data[i], '"BOM7"','"BOM07"')
-  data[i] = string.gsub(data[i], '"BOM8"','"BOM08"')
-  data[i] = string.gsub(data[i], '"BOM9"','"BOM09"')
+  data[i] = string.gsub(data[i], '"MAP010"','"MAP10"')
+  data[i] = string.gsub(data[i], '"MAP011"','"MAP11"')
+  data[i] = string.gsub(data[i], '"MAP012"','"MAP12"')
+  data[i] = string.gsub(data[i], '"MAP013"','"MAP13"')
+  data[i] = string.gsub(data[i], '"MAP014"','"MAP14"')
+  data[i] = string.gsub(data[i], '"MAP015"','"MAP15"')
+  data[i] = string.gsub(data[i], '"MAP016"','"MAP16"')
+  data[i] = string.gsub(data[i], '"MAP017"','"MAP17"')
+  data[i] = string.gsub(data[i], '"MAP018"','"MAP18"')
+  data[i] = string.gsub(data[i], '"MAP019"','"MAP19"')
+  data[i] = string.gsub(data[i], '"MAP020"','"MAP20"')
+  data[i] = string.gsub(data[i], '"MAP021"','"MAP21"')
+  data[i] = string.gsub(data[i], '"MAP022"','"MAP22"')
+  data[i] = string.gsub(data[i], '"MAP023"','"MAP23"')
+  data[i] = string.gsub(data[i], '"MAP024"','"MAP24"')
+  data[i] = string.gsub(data[i], '"MAP025"','"MAP25"')
+  data[i] = string.gsub(data[i], '"MAP026"','"MAP26"')
+  data[i] = string.gsub(data[i], '"MAP027"','"MAP27"')
+  data[i] = string.gsub(data[i], '"MAP028"','"MAP28"')
+  data[i] = string.gsub(data[i], '"MAP029"','"MAP29"')
+  data[i] = string.gsub(data[i], '"MAP030"','"MAP30"')
+  data[i] = string.gsub(data[i], '"MAP031"','"MAP31"')
+  data[i] = string.gsub(data[i], '"MAP032"','"MAP32"')
+  data[i] = string.gsub(data[i], '"MAP1"','"MAP01"')
+  data[i] = string.gsub(data[i], '"MAP2"','"MAP02"')
+  data[i] = string.gsub(data[i], '"MAP3"','"MAP03"')
+  data[i] = string.gsub(data[i], '"MAP4"','"MAP04"')
+  data[i] = string.gsub(data[i], '"MAP5"','"MAP05"')
+  data[i] = string.gsub(data[i], '"MAP6"','"MAP06"')
+  data[i] = string.gsub(data[i], '"MAP7"','"MAP07"')
+  data[i] = string.gsub(data[i], '"MAP8"','"MAP08"')
+  data[i] = string.gsub(data[i], '"MAP9"','"MAP09"')
   --if using doom metal E2M8 and E3M8 can use the doom1 music
   if BRUTALDOOM.PARAMETERS.musicpreset == "doommetal" or BRUTALDOOM.PARAMETERS.musicpreset == "generic" then
       data[i] = string.gsub(data[i], '"d_messag"//changeifdoommetal','"d_e2m8"')
@@ -444,7 +485,7 @@ for i = 1, (#data) do --for every value in data
       end
   end
   if OB_CONFIG.game == "brutality" then
-      data[i] = string.gsub(data[i], 'episode bom01','episode map01')
+      data[i] = string.gsub(data[i], 'episode MAP01','episode map01')
   end
 end
 

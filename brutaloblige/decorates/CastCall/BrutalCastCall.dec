@@ -2,54 +2,6 @@
 Decorate for the cast call. Basic versions of the monsters with no TNT1 or 0 frame states so they don't flicker.
 *************************************/
 
-Actor CastCallEvilMarine: EvilMarine
-{
-States
-{
-Spawn:
-		PLAY A 3 A_Look
-		Loop
-See:
-        PLAY AAAA 1 A_Chase
-		PLAY BBBB 1 A_Chase
-		PLAY CCCC 1 A_Chase
-		PLAY DDDD 1 A_Chase
-		Loop
-Missile:
-		PLAY E 6 A_FaceTarget
-		PLAY F 3 BRIGHT A_CustomMissile("EnemyPlasmaBall",35,0,0,0)
-		PLAY E 3 A_Facetarget
-		PLAY F 3 BRIGHT A_CustomMissile("EnemyPlasmaBall",35,0,0,0)
-		PLAY E 3 A_Facetarget
-		PLAY F 3 BRIGHT A_CustomMissile("EnemyPlasmaBall",35,0,0,0)
-		PLAY E 6 A_Facetarget
-		Goto ChasePlayer
-Death:
-		PLAY H 10 A_PlayerScream
-		PLAY I 10 A_NoBlocking
-		PLAY J 10 
-		PLAY KLM 10
-		PLAY N -1
-		Stop
-}
-}
-
-Actor CastCallEasyMarine: CastCallEvilMarine
-{
-States
-{
-Missile:
-		PLAY E 6 A_FaceTarget
-		PLAY F 3 BRIGHT A_CustomMissile("ZombiemanTracer",35,0,0,0)
-		PLAY E 3 A_Facetarget
-		PLAY F 3 BRIGHT A_CustomMissile("ZombiemanTracer",35,0,0,0)
-		PLAY E 3 A_Facetarget
-		PLAY F 3 BRIGHT A_CustomMissile("ZombiemanTracer",35,0,0,0)
-		PLAY E 6 A_Facetarget
-		Goto ChasePlayer
-}
-}
-
 Actor CastCallBelphegor : Belphegor2
 {
 States
@@ -66,50 +18,7 @@ States
     Missile:
 		BOS3 F 8 A_FaceTarget
 		BOS3 G 8 A_FaceTarget
-		BOS3 H 8 A_CustomMissile("BelphegorGreenPlasmaBall", 50, 0, 0, 1) 
+		BOS3 H 8 A_SpawnProjectile("BelphegorGreenPlasmaBall", 50, 0, 0, 1) 
 		Goto See
-}
-}
-
-Actor CastCallHectebus : Juggernaut
-{
-States
-{
-    Spawn:
-		BS1W A 1
-	Goto Standby
-	See:
-	    BS1W A 1
-	Goto Rolling
-	Missile:
-		BS1B A 2 A_Chase("","")
-		BS1B A 2 A_Recoil(-2)
-		BS1B A 2 A_Recoil(-2)
-		Loop
-    Death:
-		BS1B B 5 A_CustomMissile ("ExplosionSmoke", 60, 0, random (0, 360), 2, random (70, 110))
-		BS1B B 5 A_CustomMissile ("RealFlameTrailsMedium", 60, 0, random (0, 360), 2, random (0, 160))
-		BS1B B 5 A_CustomMissile ("ExplosionSmoke", 60, 0, random (0, 360), 2, random (70, 110))
-		BS1B B 5 A_CustomMissile ("RealFlameTrailsMedium", 60, 0, random (0, 360), 2, random (0, 160))
-		BS1B B 5 A_CustomMissile ("ExplosionSmoke", 60, 0, random (0, 360), 2, random (70, 110))
-		BS1B B 5 A_CustomMissile ("RealFlameTrailsMedium", 60, 0, random (0, 360), 2, random (0, 160))
-		BS1B B 5 A_CustomMissile ("ExplosionSmoke", 60, 0, random (0, 360), 2, random (70, 110))
-		BS1B B 5 A_CustomMissile ("RealFlameTrailsMedium", 60, 0, random (0, 360), 2, random (0, 160))
-		BS1B B 5 A_CustomMissile ("ExplosionSmoke", 60, 0, random (0, 360), 2, random (70, 110))
-		BS1B B 5 A_CustomMissile ("RealFlameTrailsMedium", 60, 0, random (0, 360), 2, random (0, 160))
-		BS1B B 5 A_CustomMissile ("ExplosionSmoke", 60, 0, random (0, 360), 2, random (70, 110))
-		BS1B B 5 A_CustomMissile ("RealFlameTrailsMedium", 60, 0, random (0, 360), 2, random (0, 160))
-		BS1B B 5 A_CustomMissile ("ExplosionSmoke", 60, 0, random (0, 360), 2, random (70, 110))
-		BS1B B 5 A_CustomMissile ("RealFlameTrailsMedium", 60, 0, random (0, 360), 2, random (0, 160))
-		BS1B B 5 A_CustomMissile ("ExplosionSmoke", 60, 0, random (0, 360), 2, random (70, 110))
-		BS1B B 5 A_CustomMissile ("RealFlameTrailsMedium", 60, 0, random (0, 360), 2, random (0, 160))
-		BS1B B 5 A_CustomMissile ("ExplosionSmoke", 60, 0, random (0, 360), 2, random (70, 110))
-		BS1B B 5 A_CustomMissile ("RealFlameTrailsMedium", 60, 0, random (0, 360), 2, random (0, 160))
-		BS1B B 5 A_CustomMissile ("ExplosionSmoke", 60, 0, random (0, 360), 2, random (70, 110))
-		BS1B B 5 A_CustomMissile ("RealFlameTrailsMedium", 60, 0, random (0, 360), 2, random (0, 160))
-        BS1B B 5 A_CustomMissile ("ExplosionSmoke", 60, 0, random (0, 360), 2, random (70, 110))
-		BS1B B 5 A_CustomMissile ("RealFlameTrailsMedium", 60, 0, random (0, 360), 2, random (0, 160))
-		BS1B B 8 A_CustomMissile ("ExplosionSmoke", 60, 0, random (0, 360), 2, random (70, 110))
-		Loop
 }
 }
