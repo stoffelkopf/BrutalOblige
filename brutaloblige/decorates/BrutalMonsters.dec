@@ -227,14 +227,6 @@ States
 		Goto FireMissile	
 	}
 }
-
-//bd21testnov01
-actor ObligeHeadlessZombie : HeadlessZombie 334
-{
-//$Category Monsters
-//$EditorSprite "PONHB1"
-Tag "Headless Zombie"
-}
 actor ObligeLabguy : Labguy 335
 {
 //$Category Monsters
@@ -326,4 +318,16 @@ actor ADog : mbfhelperdog 370
     PainChance 180
     PainChance "Kick", 255
     +USEKILLSCRIPTS
+}
+actor ObligeMother : Motherdemon 348
+{
+  Tag "Motherdemon"
+}
+//actor ObligeAracnorb : Aracnorb 349
+//{
+//  Tag "Aracnorb"
+//}
+actor ObligeGatekeeper : IconOfSin 350
+{
+  Tag "Gatekeeper"
 }

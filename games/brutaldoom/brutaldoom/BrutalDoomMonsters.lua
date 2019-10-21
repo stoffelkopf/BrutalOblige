@@ -39,6 +39,64 @@ BRUTALDOOM.MONSTERS =
 		nasty = true
 		boss_replacement = "Spiderdemon"
 	  }
+	  -- found it in BD21.pk3 - needs testing
+	  Motherdemon =  
+	  {
+	    id = 348
+		r = 60
+		h = 110
+	    level = 9
+		health = 10000
+		boss_type = "tough"
+		boss_prob = 0 --15
+		boss_limit = 1
+		prob = 0 --10
+		crazy_prob = 0 --10
+		damage = 200
+		attack = "hitscan"
+	    outdoor_factor = 3.0
+	    density = 0.1
+	    weap_prefs = { bfg=5.0 }
+	    room_size = "large"
+		nasty = true
+		boss_replacement = "Spiderdemon"		
+	  }
+	  -- found it in BD21.pk3 - needs testing
+	  Gatekeeper =  
+	  {
+	    id = 350
+		r = 60
+		h = 110
+		health = 40000
+	    level = 9
+		prob = 0 --10
+		crazy_prob = 0 --10
+		damage = 200		
+		boss_type = "tough"
+		boss_prob = 0 --10
+		boss_limit = 1
+	    outdoor_factor = 3.0
+	    density = 0.1
+	    weap_prefs = { bfg=5.0 }
+	    room_size = "large"
+		nasty = true
+		boss_replacement = "Spiderdemon"		
+	  }	    
+	  -- its in the pk3 but the aracnorb.txt is not included 
+	  -- Aracnorb =  
+	  -- {
+	    -- id = 349
+		-- r = 24
+		-- h = 56
+        -- level = 4
+		-- health = 200
+		-- damage = 25
+		-- attack = "hitscan"
+	    -- prob =  30
+		-- density = 1.0
+	    -- cage_factor = 0  -- never put in cages
+	  -- }	
+      -- found it in BD21.pk3 - needs testing	  
 	--As of v20b the evil marine replaces the ss. A script checks if it is in a wolfenstein themed level and changes it back if so.
 	ss_nazi = REMOVE_ME
 	EvilMarine =
@@ -47,7 +105,7 @@ BRUTALDOOM.MONSTERS =
 	    r = 20 --the evil marine is actually 14 but I've left it as 20 incase it does somehow end up as an ss guard.
 	    h = 56 
 	    level = 8
-	    prob = 0 --5
+	    prob = 0
 	    crazy_prob = 7
 	    health = 200
 	    damage = 75
@@ -64,7 +122,6 @@ BRUTALDOOM.MONSTERS =
 	    level = 1
 	    theme_prob = 35
         prob=0
-	    --crazy_prob = 20
 	    health = 90
 	    damage = 20
 	    attack = "hitscan"
@@ -88,18 +145,6 @@ BRUTALDOOM.MONSTERS =
 	    density = 0.5
         infight_damage = 8.0
 	  }
-	  DarkImp =
-	  {
-	    id = 308
-	    r = 25
-	    h = 56 
-	    level = 1
-	    prob = 0 --35 --No Dark Imp sprites in RC9!!!
-	    health = 120
-	    damage = 3
-	    attack = "missile"
-	    room_size = "small"
-	  }
       ClassicSS =
       {
           id = 313
@@ -108,7 +153,6 @@ BRUTALDOOM.MONSTERS =
           level = DOOM.MONSTERS.ss_nazi.level
           theme_prob  = 140
           prob=0
-          --crazy_prob = DOOM.MONSTERS.ss_nazi.crazy_prob
           health = DOOM.MONSTERS.ss_nazi.health
           damage = DOOM.MONSTERS.ss_nazi.damage
           attack = DOOM.MONSTERS.ss_nazi.attack
@@ -122,7 +166,7 @@ BRUTALDOOM.MONSTERS =
       {
           id = 324
           r = 40
-          h = 132
+          h = 110
           level = DOOM.MONSTERS.Cyberdemon.level
           boss_type = DOOM.MONSTERS.Cyberdemon.boss_type
           boss_prob = DOOM.MONSTERS.Cyberdemon.boss_prob
@@ -137,75 +181,13 @@ BRUTALDOOM.MONSTERS =
           room_size = DOOM.MONSTERS.Cyberdemon.room_size
           infight_damage = DOOM.MONSTERS.Cyberdemon.infight_damage
       }
-      --existing monsters height corrected
-      Cyberdemon =
-      {
-          id = DOOM.MONSTERS.Cyberdemon.id
-          r = 40
-          h = 132
-          level = DOOM.MONSTERS.Cyberdemon.level
-          boss_type = DOOM.MONSTERS.Cyberdemon.boss_type
-          boss_prob = DOOM.MONSTERS.Cyberdemon.boss_prob
-          prob = DOOM.MONSTERS.Cyberdemon.prob
-          crazy_prob = DOOM.MONSTERS.Cyberdemon.crazy_prob
-          health = DOOM.MONSTERS.Cyberdemon.health
-          damage = DOOM.MONSTERS.Cyberdemon.damage
-          attack = DOOM.MONSTERS.Cyberdemon.attack
-          density = DOOM.MONSTERS.Cyberdemon.density
-          weap_min_damage = DOOM.MONSTERS.Cyberdemon.weap_min_damage
-          weap_prefs = DOOM.MONSTERS.Cyberdemon.weap_prefs
-          room_size = DOOM.MONSTERS.Cyberdemon.room_size
-          infight_damage = DOOM.MONSTERS.Cyberdemon.infight_damage
-      }
-      Spiderdemon =
-      {
-          id = DOOM.MONSTERS.Spiderdemon.id
-          r = 128
-          h = 100
-          level = DOOM.MONSTERS.Spiderdemon.level
-		  boss_type = DOOM.MONSTERS.Spiderdemon.boss_type
-		  boss_prob = DOOM.MONSTERS.Spiderdemon.boss_prob
-		  boss_limit = DOOM.MONSTERS.Spiderdemon.boss_limit
-          prob = DOOM.MONSTERS.Spiderdemon.prob
-          crazy_prob = DOOM.MONSTERS.Spiderdemon.crazy_prob
-          health = DOOM.MONSTERS.Spiderdemon.health
-          damage = DOOM.MONSTERS.Spiderdemon.damage
-          attack = DOOM.MONSTERS.Spiderdemon.attack
-          density = DOOM.MONSTERS.Spiderdemon.density
-          min_weapon = DOOM.MONSTERS.Spiderdemon.min_weapon
-          weap_prefs = DOOM.MONSTERS.Spiderdemon.weap_prefs
-          room_size = DOOM.MONSTERS.Spiderdemon.room_size
-		  boss_replacement = DOOM.MONSTERS.Spiderdemon.boss_replacement
-      }
-     --V21Beta monsters
-     HeadlessZombie =
-     {
-        id = 343 ----Should be 334. Sprites missing in bd21rc2b.pk3 for some reason so replaced with the id of the regular rifle zombie as a temp fix
-        r = DOOM.MONSTERS.zombie.r
-        h = DOOM.MONSTERS.zombie.h
-        level = DOOM.MONSTERS.zombie.level
-        prob = 0 --1
-        theme_prob = 10 
-        health = 150
-        damage = DOOM.MONSTERS.zombie.damage
-        attack = DOOM.MONSTERS.zombie.attack
-        give = DOOM.MONSTERS.zombie.give
-        density = DOOM.MONSTERS.zombie.density
-        room_size = DOOM.MONSTERS.zombie.room_size
-        disloyal = DOOM.MONSTERS.zombie.disloyal
-        trap_factor = DOOM.MONSTERS.zombie.trap_factor
-        infight_damage = DOOM.MONSTERS.zombie.infight_damage
-        give = { {weapon="AssaultRifle"}, {ammo="bullet",count=10} }
-        species = "zombie"
-        allow_in_theme = "egypt2"
-     }
      Labguy =
      {
         id = 335
         r = DOOM.MONSTERS.zombie.r
         h = DOOM.MONSTERS.zombie.h
         level = DOOM.MONSTERS.zombie.level
-        theme_prob = 0 --50
+        theme_prob = 0
         prob=0
         health = 100
         damage = DOOM.MONSTERS.zombie.damage
@@ -225,7 +207,7 @@ BRUTALDOOM.MONSTERS =
         r = DOOM.MONSTERS.arach.r
         h = DOOM.MONSTERS.arach.h
         level = DOOM.MONSTERS.arach.level+1
-        prob = 10 --8
+        prob = 10
         health = 800
         damage = DOOM.MONSTERS.arach.damage
         attack = DOOM.MONSTERS.arach.attack
@@ -243,7 +225,7 @@ BRUTALDOOM.MONSTERS =
         r = DOOM.MONSTERS.mancubus.r
         h = DOOM.MONSTERS.mancubus.h
         level = DOOM.MONSTERS.mancubus.level+1
-        prob = 7 --10
+        prob = 7
    	    boss_type = "nasty"
         boss_prob = 50
         health = 1050
@@ -257,13 +239,13 @@ BRUTALDOOM.MONSTERS =
         infight_damage = DOOM.MONSTERS.mancubus.infight_damage
         weap_min_damage = 110
      }
-     Mummy = --needs a bit of tweaking
+     Mummy =
      {
         id = 338
         r = DOOM.MONSTERS.revenant.r
         h = 48
         level = 2
-        theme_prob = 40 
+        theme_prob = 50 
         prob=0
         health = 200
         damage = 0.4
@@ -401,31 +383,6 @@ BRUTALDOOM.MONSTERS =
          weap_prefs = { bfg=10.0 }
          room_size = "large"
      }
-     --Since I replaced the chaingun with the minigun in the weapons table I need to edit the chaingunner monster
-     -- gunner =
-     -- {
-         -- id = DOOM.MONSTERS.gunner.id
-         -- r = DOOM.MONSTERS.gunner.r
-         -- h = DOOM.MONSTERS.gunner.h
-         -- level = DOOM.MONSTERS.gunner.level
-         -- theme_prob = DOOM.MONSTERS.gunner.prob
-         -- prob=DOOM.MONSTERS.gunner.prob
-         -- health = DOOM.MONSTERS.gunner.health
-         -- damage = DOOM.MONSTERS.gunner.damage
-         -- attack = DOOM.MONSTERS.gunner.attack
-         -- give = { {weapon="Minigun"}, {ammo="bullet",count=10} }
-        --weap_needed = { AssaultRifle=true }
-         -- weap_min_damage = DOOM.MONSTERS.gunner.weap_min_damage
-         -- density = DOOM.MONSTERS.gunner.density
-         -- species = DOOM.MONSTERS.gunner.species
-         -- room_size = DOOM.MONSTERS.gunner.room_size
-         -- disloyal = DOOM.MONSTERS.gunner.disloyal
-         -- trap_factor = DOOM.MONSTERS.gunner.trap_factor
-         -- infight_damage = DOOM.MONSTERS.gunner.infight_damage
-         -- allow_in_theme = "tech, hell, urban, eygpt2" --ubersoldat replaces it in wolf
-     -- }
-     --default caco for all themes other than urban where the D4 style Caco replaces it
-
      --SMG Zombie supposedly has the exact same DPS etc as shotgun zombie
      SMGZombie =
      {
@@ -453,14 +410,13 @@ BRUTALDOOM.MONSTERS =
          id = 366
          r = 16
          h = 52
-         level = DOOM.MONSTERS.gunner.level
-         theme_prob = DOOM.MONSTERS.gunner.prob
+         level = 2
+         theme_prob = 50
          prob=0
          health = 100
          damage = DOOM.MONSTERS.gunner.damage
          attack = DOOM.MONSTERS.gunner.attack
          give = { {weapon="Minigun"}, {ammo="bullet",count=10} }
-         weap_needed = { AssaultRifle=true }
          weap_min_damage = DOOM.MONSTERS.gunner.weap_min_damage
          density = DOOM.MONSTERS.gunner.density
          species = DOOM.MONSTERS.gunner.species

@@ -58,7 +58,7 @@ function BRUTAL64.get_levels()
     {
       episode = EPI
 
-      name  = string.format("BOM%02d", map)
+      name  = string.format("MAP%02d", map)
       patch = string.format("BOP%02d", map-1)
 
       ep_along = ep_along

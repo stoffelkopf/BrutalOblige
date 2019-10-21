@@ -55,16 +55,15 @@ BRUTALDOOM.PARAMETERS =
     skygenerator = false
     iwad = 'Doom2.wad'
     musicpreset = 'iwad'
-	brutalversion = "brutalv21.pk3"
-	usingui = false
+    brutalversion = "brutalv21.pk3"
+    usingui = false
     playerclass = "Doomer"
     puristrailgunreload = "None"
     usingbrutal64maps = false
     bd64mapsversion = "bd64mapsV2.pk3"
-    usingeday = false
-    edayversion = "eday"
     autoload = false
-    urbanmonsterskins = true
+    mini_mastermind = false
+
 }
 
 BRUTALDOOM.IWADS =
@@ -230,6 +229,7 @@ end
 function BRUTALDOOM.mixhanky()
     if OB_CONFIG.length == 32 then --if a full game then only map32 will be chex themed.
         OB_THEMES["wolf"].mixed_prob=0
+		OB_THEMES["egypt2"].mixed_prob=0
     end
 end
 

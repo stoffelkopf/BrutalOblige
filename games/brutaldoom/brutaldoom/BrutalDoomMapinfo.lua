@@ -251,10 +251,6 @@ Intermission BrutalDoomCast
   end
     --after this dest[1-#src] are the music tracks
     dest[31] = "d_evil" --map 31 always wolf themed
-	
-	if OB_CONFIG.game == "brutality" then
-		dest[30] = "TitleMap" --Brutality Theme for final level
-	end
 
   local firstmap = 1
   local mapnum = 1
@@ -286,7 +282,7 @@ Intermission BrutalDoomCast
       local skyname = 'RSKY1'
       local enterpic = '"INTERPIC"' --default intermissionpic
       local skytab = BRUTALDOOM.SKIES[ L.theme_name ]
-      if not skytab or OB_CONFIG.game == "brutality" then --i.e. if no entry for the theme in BrutalDoomSkies.lua
+      if not skytab then --i.e. if no entry for the theme in BrutalDoomSkies.lua
           skytab = BRUTALDOOM.SKIES.any
       end
       
@@ -324,30 +320,22 @@ Intermission BrutalDoomCast
         end
         if mapnum < 11 then --give map 8 a secret exit to tower of bable (included in the brutal and brutality pk3s)
 	  if boss1 == "cyberlordmajor" then --if big CyberLord at babel then make that the second boss battle 
-	    if OB_CONFIG.game == "brutality" then
-              table.insert(data, 'secretnext = "E3M8"\n')
-	    elseif OB_CONFIG.game == "brutaldoom" then
+	    if OB_CONFIG.game == "brutaldoom" then
               table.insert(data, 'secretnext = "E3M10"\n')
 	    end
 	  else
-	    if OB_CONFIG.game == "brutality" then
-              table.insert(data, 'secretnext = "E2M8"\n')
-	    elseif OB_CONFIG.game == "brutaldoom" then
+	    if OB_CONFIG.game == "brutaldoom" then
               table.insert(data, 'secretnext = "E5M8"\n')
 	    end
 	  end
         end
         if mapnum >= 21 and mapnum < 30 then --give map 24 a secret exit to spider mastermind battle (included in the brutal and brutality pk3s)
 	  if boss1 == "cyberlordmajor" then --if big CyberLord at babel then make this the first boss battle 
-	    if OB_CONFIG.game == "brutality" then
-              table.insert(data, 'secretnext = "E2M8"\n')
-	    elseif OB_CONFIG.game == "brutaldoom" then
+	    if OB_CONFIG.game == "brutaldoom" then
               table.insert(data, 'secretnext = "E5M8"\n')
 	    end
 	  else
-	    if OB_CONFIG.game == "brutality" then
-              table.insert(data, 'secretnext = "E3M8"\n')
-	    elseif OB_CONFIG.game == "brutaldoom" then
+	    if OB_CONFIG.game == "brutaldoom" then
               table.insert(data, 'secretnext = "E3M10"\n')
 	    end
 	  end
@@ -484,15 +472,6 @@ for i = 1, (#data) do --for every value in data
           data[i] = string.gsub(data[i], '"d_openin"//changeifdoommetal','"d_e3m8"')
       end
   end
-  if OB_CONFIG.game == "brutality" then
-      data[i] = string.gsub(data[i], 'episode MAP01','episode map01')
-  end
 end
-
-if BRUTALDOOM.PARAMETERS.starterpack == true then
-    gui.wad_add_text_lump("BASEMI", data);
-else
-    gui.wad_add_text_lump("MAPINFO", data);
-end
-
+gui.wad_add_text_lump("MAPINFO", data);
 end

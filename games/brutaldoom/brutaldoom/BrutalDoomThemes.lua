@@ -26,7 +26,7 @@ BRUTALDOOM.THEMES =
     monster_prefs =
     {
       BrutalSS = 1.2
-	  ClassicSS = 1.5
+      ClassicSS = 1.5
       Ubersoldat = 1.5
       ADog = 1.1
     }

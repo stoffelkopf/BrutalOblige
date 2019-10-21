@@ -31,6 +31,17 @@ function BRUTALDOOM.texturesetup()
 	   'YScale 1.0\n'
 	   'Patch GTGREN01, 0, 0\n'
 	'}\n'
+        'Texture "COMPOHSO", 128, 128\n'
+        '{\n'
+          'Patch "COMP03_1", 0, 0\n'
+          'Patch "COMP03_1", 0, 64\n'
+          'Patch "COMP03_1", 64, 0\n'
+          'Patch "COMP03_1", 64, 64\n'
+          'Patch "WALL21_1", 64, 70\n'
+          'Patch "WALL21_5", 0, 70\n'
+          'Patch "WALL21_3", 0, -2\n'
+          'Patch "WALL21_5", 64, -2\n'
+         '}\n'
   }
   local tntdata =
   {

@@ -210,7 +210,7 @@ DOOM.MONSTERS =
   {
     id = 16
     r = 40
-    h = 110
+    h = 110 --132
     level = 7
     boss_type = "tough"
     boss_prob = 50
@@ -263,7 +263,7 @@ DOOM.MONSTERS =
     attack = "hitscan"
     --give = { {weapon="chain"}, {ammo="bullet",count=10} }
 	give = { {weapon="Minigun"}, {ammo="bullet",count=10} }
-  --  weap_needed = { chain=true }
+    --  weap_needed = { chain=true }
     weap_needed = { AssaultRifle=true }
     weap_min_damage = 50
     density = 0.75
@@ -272,7 +272,7 @@ DOOM.MONSTERS =
     disloyal = true
     trap_factor = 2.4
     infight_damage = 25
---	allow_in_theme = "tech, hell, urban, eygpt2" --ubersoldat replaces it in wolf
+	--allow_in_theme = "tech, hell, urban, eygpt2" --ubersoldat replaces it in wolf
   }
 
   revenant =

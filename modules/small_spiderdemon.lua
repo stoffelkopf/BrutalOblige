@@ -21,14 +21,22 @@ MINI_MASTERMIND = {}
 
 function MINI_MASTERMIND.setup(self)
   if OB_CONFIG.game == "brutaldoom" then
-    -- make smaller via decorate
-	-- also requires the bits that fly off
-  elseif OB_CONFIG.game == "brutality" then
-    -- would require doing all the variants
-	-- frankly I can't be arsed, if you really want this feature do it yourself as a pull request
+    BRUTALDOOM.PARAMETERS.mini_mastermind = true
+    if DOOM.MONSTERS.Spiderdemon then
+		gui.wad_insert_file("brutaloblige/decorates/SmallSpiderMastermind.dec","DECORATE");
+		DOOM.MONSTERS.Spiderdemon.r = 104		
+		DOOM.MONSTERS.Spiderdemon.h = 81		
+	end 
+--    local info = GAME.MONSTERS["Spiderdemon"]
+--    if info and info.r > 104 then
+--        info.r = 104
+--    end
+--    if info and info.h > 81 then
+--        info.h = 81
+--    end
   elseif OB_CONFIG.game == "brutal64" then
     -- make smaller via decorate
-	MINI_MASTERMIND.setupforb64()
+    MINI_MASTERMIND.setupforb64()
   else
 	-- leave normal behaviour for normal doom
     -- this will be checked in engines/boom.lua
