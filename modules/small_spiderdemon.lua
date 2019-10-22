@@ -23,17 +23,14 @@ function MINI_MASTERMIND.setup(self)
   if OB_CONFIG.game == "brutaldoom" then
     BRUTALDOOM.PARAMETERS.mini_mastermind = true
     if DOOM.MONSTERS.Spiderdemon then
+		local info = GAME.MONSTERS["Spiderdemon"]
+		info.r = 104
+		info.h = 81
 		gui.wad_insert_file("brutaloblige/decorates/SmallSpiderMastermind.dec","DECORATE");
 		DOOM.MONSTERS.Spiderdemon.r = 104		
-		DOOM.MONSTERS.Spiderdemon.h = 81		
+		DOOM.MONSTERS.Spiderdemon.h = 81
+		
 	end 
---    local info = GAME.MONSTERS["Spiderdemon"]
---    if info and info.r > 104 then
---        info.r = 104
---    end
---    if info and info.h > 81 then
---        info.h = 81
---    end
   elseif OB_CONFIG.game == "brutal64" then
     -- make smaller via decorate
     MINI_MASTERMIND.setupforb64()

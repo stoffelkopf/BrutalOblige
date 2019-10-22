@@ -40,17 +40,18 @@ BRUTALDOOM.MONSTERS =
 		boss_replacement = "Spiderdemon"
 	  }
 	  -- found it in BD21.pk3 - needs testing
+	  -- is working but more tests required -> make a prebuilt map with this boss
 	  Motherdemon =  
 	  {
 	    id = 348
 		r = 60
 		h = 110
 	    level = 9
-		health = 10000
+		health = 6000
 		boss_type = "tough"
-		boss_prob = 0 --15
+		boss_prob = 15
 		boss_limit = 1
-		prob = 0 --10
+		prob = 10 --10
 		crazy_prob = 0 --10
 		damage = 200
 		attack = "hitscan"
@@ -62,6 +63,7 @@ BRUTALDOOM.MONSTERS =
 		boss_replacement = "Spiderdemon"		
 	  }
 	  -- found it in BD21.pk3 - needs testing
+	  -- Icon of Sin -> to big :) 
 	  Gatekeeper =  
 	  {
 	    id = 350
@@ -170,6 +172,7 @@ BRUTALDOOM.MONSTERS =
           level = DOOM.MONSTERS.Cyberdemon.level
           boss_type = DOOM.MONSTERS.Cyberdemon.boss_type
           boss_prob = DOOM.MONSTERS.Cyberdemon.boss_prob
+		  boss_limit = 1
           prob = DOOM.MONSTERS.Cyberdemon.prob
           crazy_prob = DOOM.MONSTERS.Cyberdemon.crazy_prob
           health = DOOM.MONSTERS.Cyberdemon.health
@@ -245,7 +248,7 @@ BRUTALDOOM.MONSTERS =
         r = DOOM.MONSTERS.revenant.r
         h = 48
         level = 2
-        theme_prob = 50 
+        theme_prob = 60 
         prob=0
         health = 200
         damage = 0.4
@@ -513,6 +516,13 @@ BRUTALDOOM.MON_LIST_BRUTAL=
         choices=BRUTALDOOM.MON_CHOICES
         tooltip="An even fatter Mancubus with even more massive cannons."
     }
+	Motherdemon =
+    {
+        label="Mother Demon (Beta)",
+        choices=BRUTALDOOM.MON_CHOICES
+        tooltip="A large demonic larva with dead black eyes, four arms and a skull-like face. Her mouth is filled with many long, sharp teeth. Good luck :)"
+    }
+	
 	PistolZombie = { label=_("Pistol Zombie"), choices=BRUTALDOOM.MON_CHOICES }
     RifleZombie =  { label=_("Rifle Zombie"), choices=BRUTALDOOM.MON_CHOICES }
     SMGZombie =    { label=_("SMG Zombie"), choices=BRUTALDOOM.MON_CHOICES }

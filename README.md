@@ -52,58 +52,22 @@ Note that if you downloaded this from gitlab rather than cloning the repo you ca
 -- | -- | --
 Oblige | 7.70 |  
 Brutal Doom | 21 | brutalv21.pk3
-Project Brutality | 2 | Project Brutality 2.03.pk3
 Brutal Doom 64 | 2 | bd64gamev2.pk3
-Extermination Day | 0 | EdayPreBetaX.pk3
 
 
-**Project Brutality Support!**
-
-* Keeps the Epic 2 Alien, Evil Grunt and Evil Marine without conflicting with PB's built in Belphegor, Dark Imps or Juggernaut.
-* Wolfenstein fix still applies.
-* Satan's Hankerchief still available.
-* Nightmare Imps behave like the Brutality Imps including the ability to crawl on the ceiling.
-
-Use the same way as for Brutal Doom but with the latest Project Brutality (v2.03) and select Project Brutality from the game menu. Wads made for PB wont work with Brutal and vice-versa because each has some stuff the other doesn't.
-
-If you downloaded before the Brutality support was added then Satan's Hankercheif maps may sometimes have a missing floor texture, that's my bad and I've fixed it in the latest download. The changed files are brutaldoom.lua, nightmare_monsters.lua and flem.wad
-
-**Additional content from Extermination Day**
-
-* Works with brutal or brutality
-* New interpics for each theme
-* Theme specific skys
-* Wolfenstein theme now snowy (as in the starter pack) and features classic SS, Brutal SS and dogs (all toggleable)
-* Heavy Machinegun emplacements (warning: not at all balanced!), toggleable
 * Secret levels: If you make a full 32 map wad there will be 3 secret exits on random levels. The first on levels 1-9, the second on levels 11-19 and the third on levels 21-29. The second goes to map 31 (which itself has a secret exit to 32), where the others go I will leave as a surprise.
 * A proper ending after the last Oblige level, no matter how many there are.
-* A few new textures
 
-Just check the box for Brutal Doom Starter Pack and as long as you have hellonearthstarterpack.wad it should load automatically. Load it manually if you've renamed it.
-
-**Support for Brutal Friends**
-
-* Both the teleport device and blur spheres can appear in maps (in vanilla maps the teleport device replaces the blursphere)
-* Blur sphere spawn probabilities are as for vanilla Oblige, teleport device has a very low chance of appearing normally, but a high chance of appearing in secret areas.
-* Watch this space, I have further plans...
-
-As for the starter pack check the box and bfriend1.pk3 should load automatically unless you've renamed it.
 
 **Known issues**
 
 * Somewhere along the line it stopped working with Zandronum. I'm willing to attempt to fix this is anyone asks but if not, screw Zandronum.
 * This is just an addon so any known issues with Oblige or Brutal Doom will still be present.
-* Doom 4 Cacos might be missing a few death states. If you see one disappear when you kill it please let me know, ideally with as much detail about how you killed it as possible.
-* If you use the starter pack the music will always be randomised regardless of your settings.
 * If you get "Script error, "brutalv20b.pk3:cvarinfo" line 1: cvar 'bd_bloodamount' already exists" then you are loading brutal doom twice. Try loading *just* the generated wad, it should pull in brutal automatically.
 * Currently any vanilla Doom/Doom2 maps generated while this mod is active can have missing textures or objects. This will be fixed before the next release.
 * double check that the pk3 is BrutalOblige.pk3 not BrutalOblige.pk3.zip
 
 **A note on compiled acs code**
 This mod contains some precompiled acs objects in brutaloblige/acs. The sourcecode for these is inlcuded in the same folder with the .acs extension. If you prefer to compile this code yourself you will need acc (I compiled with version 1.56) which is available in source and binary forms on the zdoom [download page](https://zdoom.org/downloads). The compiled object should have the same name as the source file but with .acs replaced with .o and be placed in the acs folder.
-
-[Screenshots](http://imgur.com/a/SRr9f)
-
-[More screenshots](http://imgur.com/a/TNK8k)
 
 [Oblige Download](http://oblige.sourceforge.net/i_download.html)

@@ -215,6 +215,7 @@ DOOM.MONSTERS =
     boss_type = "tough"
     boss_prob = 50
     prob = 1.6
+    boss_limit = 1	
     crazy_prob = 10
     health = 4000
     damage = 125

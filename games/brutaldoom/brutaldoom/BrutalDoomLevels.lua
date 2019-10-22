@@ -44,18 +44,18 @@ if OB_CONFIG.prebuilt_levels == "yes" then
     {
       MAP20 =
       {
-        { prob=50, file="games/doom/data/boss2/gallow1.wad", map="MAP01" }
-        { prob=50, file="games/doom/data/boss2/gallow2.wad", map="MAP01" }
-        { prob=50, file="games/doom/data/boss2/gallow1_bd1.wad", map="MAP01" }
-        { prob=50, file="games/doom/data/boss2/gallow2_bd1.wad", map="MAP01" }
+        { prob=50, file="games/doom/data/boss2/gallow1.wad", map="MAP01", boss="none" }
+        { prob=50, file="games/doom/data/boss2/gallow2.wad", map="MAP01", boss="none" }
+        { prob=50, file="games/doom/data/boss2/gallow1_bd1.wad", map="MAP01", boss="none" }
+        { prob=50, file="games/doom/data/boss2/gallow2_bd1.wad", map="MAP01", boss="none" }
 
       }
       MAP30 =
       {
-        { prob=50, file="games/doom/data/boss2/gotcha1.wad", map="MAP01" }
-        { prob=50, file="games/doom/data/boss2/gotcha2.wad", map="MAP01" }
-        { prob=50, file="games/doom/data/boss2/gotcha3.wad", map="MAP01" }
-        { prob=50, file="games/doom/data/boss2/gotcha4.wad", map="MAP01" }
+        { prob=50, file="games/doom/data/boss2/gotcha1.wad", map="MAP01", boss="none" }
+        { prob=50, file="games/doom/data/boss2/gotcha2.wad", map="MAP01", boss="none" }
+        { prob=50, file="games/doom/data/boss2/gotcha3.wad", map="MAP01", boss="none" }
+        { prob=50, file="games/doom/data/boss2/gotcha4.wad", map="MAP01", boss="none" }
       }
     }
   end

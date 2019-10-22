@@ -17,6 +17,7 @@ actor ObligeJuggernaut : Juggernaut 303
 //$Category Monsters
 //$EditorSprite "BS1WA1"
 Tag "Juggernaut"
+Health 5000  
 }
 
 actor ObligeEasyMarine : EvilMarineRifle 307
@@ -322,6 +323,7 @@ actor ADog : mbfhelperdog 370
 actor ObligeMother : Motherdemon 348
 {
   Tag "Motherdemon"
+  Health 6000  
 }
 //actor ObligeAracnorb : Aracnorb 349
 //{
