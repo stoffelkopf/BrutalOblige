@@ -476,6 +476,11 @@ function Episode_plan_monsters()
   local function is_boss_usable(LEV, mon, info)
     if info.prob <= 0 and not info.theme_prob then return false end
     if info.boss_prob == 0 then return false end
+	
+	--Prebuilt Level Bosses only
+	if OB_CONFIG.tough_bosses == "no" and info.boss_type == "tough" then	 
+		return false
+	end
     --boss theme check
     if info.allow_in_theme then
         if info.allow_in_theme != LEV.theme_name then return false end
@@ -1843,6 +1848,18 @@ function Level_choose_themes()
     if LEV.theme_name then
       name = LEV.theme_name
     end
+	
+    -- special handling for Psychedelic theme
+    if name == "psycho" then
+      LEV.psychedelic = true
+
+      if not LEV.name_class and ((LEV.id % 2) == 1) then
+        LEV.name_class = "PSYCHO"
+      end
+
+      -- pick a real theme to use
+      name = rand.key_by_probs(theme_tab)
+    end	
 
     local info = OB_THEMES[name]
 
@@ -2115,6 +2132,10 @@ function Level_do_styles()
   if LEVEL.secret_exit then
     STYLE.secrets = "heaps"
   end
+
+  if LEVEL.psychedelic then
+    Mat_prepare_trip()
+  end 
 end
 
 
@@ -2242,24 +2263,22 @@ function Level_handle_prebuilt()
   assert(info.map)
   assert(info.boss)
   assert(LEVEL.name)
+  
   if GAME.format == "doom" then
-    gui.wad_transfer_map(info.file, info.map, LEVEL.name)
-	
-		if LEVEL.name == "MAP04" then
-	      BRUTALDOOM.PARAMETERS.BOSSX=info.boss
-		elseif LEVEL.name == "MAP10" then
-		  BRUTALDOOM.PARAMETERS.BOSS1=info.boss
-		elseif LEVEL.name == "MAP20" then
-		  BRUTALDOOM.PARAMETERS.BOSS2=info.boss	
-		elseif LEVEL.name == "MAP30" then
-		  BRUTALDOOM.PARAMETERS.BOSS3=info.boss		  
-        end
-        gui.printf("Level Boss:%s\n",info.boss)		
-	  
+	gui.wad_transfer_map(info.file, info.map, LEVEL.name)
+	if LEVEL.name == "MAP04" then
+	    BRUTALDOOM.PARAMETERS.BOSSX=info.boss
+	elseif LEVEL.name == "MAP10" then
+		BRUTALDOOM.PARAMETERS.BOSS1=info.boss
+	elseif LEVEL.name == "MAP20" then
+		BRUTALDOOM.PARAMETERS.BOSS2=info.boss	
+	elseif LEVEL.name == "MAP30" then
+		BRUTALDOOM.PARAMETERS.BOSS3=info.boss		  
+    end
+    gui.printf("Level Boss:%s\n",info.boss)			 
   else
     -- FIXME: support other games (Wolf3d, Quake, etc)
   end
-
   return "ok"
 end
 

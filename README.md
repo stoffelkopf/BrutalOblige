@@ -7,16 +7,13 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 
 **Features**
 
-* New monsters: Belphegor, Dark Imp, Epic 2 Alien, Evil Grunt, Evil Marine and Juggernaut
+* New monsters: Belphegor, Juggernaut, Mother Demon, Zyberdemon, Volcabus, Ancient Arachnotron, Mummy
 * New weapons: BFG 10k, Grenade Launcher and Railgun
 * Probability of each of the new monsters/weapons appearing can be tweaked or switched off completely
 * Grenades appear alongside other ammo pickups 
 * Wolfenstein theme fixed so that it is populated by SS guards (if you run a Wolf themed map made without this addon it is filled with evil marines)
-* Satan's Hankerchief theme; did someone order Brutal Chex Quest? Features textures from everyone's favourite cereal based fps and 4 different types of flemoids to zorch your way through.
 * Nightmare Monsters; a separate module I've made which adds the Nightmare Demon from PSX Doom and the Nightmare Imp from Doom64. This can be used without Brutal Doom but if used with the monsters have more and gorier death states.
-* Doom 4 style cacodemons can appear. This is an additional monster, classic cacos remain intact. Credit to [Merser](http://www.moddb.com/mods/brutal-doom/addons/mersers-sprites-enhancements) for the sprites and code for this one.
 * Kicking with the new weapons is no longer invisible.
-* Support for SGtMarkIV's Brutal Friends addon, this has it's own section for full details.
 
 
 **How to use - Latest development version**
@@ -42,7 +39,7 @@ Note that if you downloaded this from gitlab rather than cloning the repo you ca
 
 6) Click build to generate a wad with the new maps.
 
-7) Load this wad **after** Brutal Doom/Project Brutality/Brutal Doom 64
+7) Load this wad **after** Brutal Doom
 
 8) Happy bug hunting.
 

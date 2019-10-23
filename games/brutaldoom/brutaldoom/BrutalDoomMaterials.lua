@@ -1,10 +1,5 @@
 BRUTALDOOM.LIQUIDS =
 {
-  flem1 = { mat="SNOT1", light=172, special=5,  damage=10 }
-  flem2 = { mat="SNOT4", light=172, special=5,  damage=10 }
-  
-  --heretic-------------------------
-  --water  = { mat="FLTFLWW1", light_add=16, special=0 }
   water2 = { mat="FLTWAWA1", light_add=16, special=0 }
   hsludge = { mat="FLTSLUD1", light_add=16, special=16, damage=20 }
   hlava   = { mat="FLATHUH1", light_add=24, special=16, damage=20 }
@@ -12,37 +7,7 @@ BRUTALDOOM.LIQUIDS =
 }
 
 BRUTALDOOM.MATERIALS =
-{
-  CHEXROCK  = { t="CHEXROCK",    f="CHEXFLRK" }
-  CHEXROCK2  = { t="CHEXROCK2",    f="CHEXODF2" }
-
-  CHEXINDOOR1 = { t="CHEXWALL",    f="CHEXFLOR" }
-  CHEXINDOOR2 = { t="CHEXWAL2",    f="CHEXFLR2" }
-  CHEXINDOOR3 = { t="CHEXWAL3",    f="CHEXFLR3" }
-
-  CHEXOUTDOOR1   = { t="CHEXODW",   f="CHEXODF" }
-  CHEXOUTDOOR2   = { t="CHEXODW2",   f="CHEXODF2" }
-  CHEXOUTDOOR3   = { t="CHEXODW3",   f="RROCK10" }
-  CHEXOUTDOOR4   = { t="CHEXODW4",   f="FLAT5_5" }
-  CHEXOUTDOOR5   = { t="CHEXODW5",   f="FLOOR5_4" }
-
-  --Door
-  CHEXDOOR1 = { t="CHEXDOR", f="FLAT23" }
-
-  -- liquid stuff (using new patches)
-  SFALL1   = { t="SNTFL1", f="SNOT1", sane=1 }
-  SNOT1  = { t="SNTFL1", f="SNOT1", sane=1 }
-  SFALL2   = { t="SNTFL1", f="SNOT4", sane=1 }
-  SNOT4  = { t="SNTFL1", f="SNOT4", sane=1 }
-  
-  --Chex Crates
-  CXCRATE1 = { t="CXCRATE1", f="CRATOP2" }
-  CXCRATE2 = { t="CXCRATE2", f="CRATOP2" }
-  CXCRATE3 = { t="CXCRATE3", f="CRATOP2" }
-  CXCRATEL = { t="CXCRATEL", f="CRATOP2" }
-  CXCRATEW = { t="CXCRATEW", f="CRATOP2" }
-  CXCRATET = { t="CXCRATET", f="CRATOP2" }
-  
+{ 
   -- Tnt stuff (copied from the standard oblige defenitions)--
   TNTDOOR  = { t="TNTDOOR",  f="FLAT23" }
   DOC1     = { t="DOC1",     f="FLAT23" }

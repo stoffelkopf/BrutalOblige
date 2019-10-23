@@ -378,7 +378,7 @@ function Monster_assign_bosses()
     if R then
       R.boss_fight = bf
 
-      gui.debugf("Boss fight '%s' in %s\n", bf.mon, R.name)
+      gui.printf("Boss fight '%s' in %s\n", bf.mon, R.name)
 
       if bf.boss_type == "guard" then
         avoid_guard_monster(R, bf.mon)
@@ -1112,7 +1112,7 @@ function Monster_fill_room(R)
     
 	 --check theme
     if info.allow_in_theme and THEME.allow_mons_for_theme then
-       -- gui.printf("Theme check for  " .. THEME.allow_mons_for_theme .. " with monster theme " .. info.allow_in_theme .."\n")
+        -- gui.printf("Theme check for  " .. THEME.allow_mons_for_theme .. " with monster theme " .. info.allow_in_theme .."\n")
         if not string.find(info.allow_in_theme, THEME.allow_mons_for_theme) then
             prob = 0
 		else
@@ -1125,9 +1125,14 @@ function Monster_fill_room(R)
         end
     -- Remove Doom Monsters from Wolfenstein Levels
 	elseif not info.allow_in_theme and THEME.allow_mons_for_theme == "wolf" then
-      prob = 0
+		prob = 0
 	end
-
+	
+	--Prebuilt Level Bosses only
+	if OB_CONFIG.tough_bosses == "no" and info.boss_type == "tough" then
+		return 0
+	end
+	
     if not LEVEL.global_pal[mon] then
       return 0
     end

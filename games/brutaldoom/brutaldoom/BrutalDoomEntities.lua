@@ -1,14 +1,5 @@
 BRUTALDOOM.ENTITIES =
-{
-    --Chex stuff
-    kc_red     = { id=332 }
-    kc_yellow  = { id=333  }
-    kc_blue    = { id=331  }
-    PropStool = { id=348, r=16, h=32 }
-    PropHangingPlant1 = { id=349, r=20, h=64, ceil=true }
-    PropHangingPlant2 = { id=350, r=20, h=64, ceil=true }
-    PropHangingPots = { id=351, r=20, h=64, ceil=true }
-    
+{   
     --Urban Junk
     DestroyedCarGreen = { id=11004, r=28, h=48 }
     DestroyedCarBlue = { id=11005, r=28, h=48 }

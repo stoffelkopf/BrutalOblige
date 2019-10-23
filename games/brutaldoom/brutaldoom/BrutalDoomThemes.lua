@@ -265,6 +265,12 @@ OB_THEMES["wolf"] =
   priority = 2
   game = "brutaldoom"
   name_class = "URBAN"
-
   -- this theme is special, hence no mixed_prob
+}
+
+OB_THEMES["psycho"] =
+{
+  label = _("Psychedelic")
+  game = {brutaldoom=1,doom1=1,doom2=1}
+  priority = -99  -- bottom most
 }
