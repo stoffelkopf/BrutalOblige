@@ -1,10 +1,12 @@
 Brutal Oblige Original Version from Robert Cross - https://gitlab.com/CloudOfShame/BrutalOblige
 
 Zyberdemon sprites - 00_Zombie_00
+Kamikazeguy - Captain Toenail / Croteam
 
 Wolfenstein SS firing rotation sprites - DoomJedi
 SS firing rotation sprites - ItsNatureToDie
 SS pain rotation sprites - PSTrooper
+
 
 This mod uses some code from Sgt Mark IV's Bolognese mod in addition to reusing/adapting some code from Brutal Doom itself
 

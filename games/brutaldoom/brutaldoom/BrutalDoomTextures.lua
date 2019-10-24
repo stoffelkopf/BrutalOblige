@@ -173,7 +173,11 @@ function BRUTALDOOM.texturesetup()
         '	Patch BOSFA0, 47, 49\n'
         '}\n'
   }
-  if BRUTALDOOM.PARAMETERS.iwad != "heretic.wad" then
+	if OB_CONFIG.iwad_usage == "complete" then
+		combine(data,tntdata)
+		combine(data,doom1data)
+		combine(data,plutoniadata)
+	elseif BRUTALDOOM.PARAMETERS.iwad != "heretic.wad" then
 	  if BRUTALDOOM.PARAMETERS.iwad != "Tnt.wad" and BRUTALDOOM.PARAMETERS.iwad != "doom_complete.pk3" then
 		  combine(data,tntdata)
 	  end

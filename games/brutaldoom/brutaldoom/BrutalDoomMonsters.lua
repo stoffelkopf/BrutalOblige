@@ -47,28 +47,6 @@ BRUTALDOOM.MONSTERS =
 		nasty = true
 		boss_replacement = "Spiderdemon"		
 	}
-	-- found it in BD21.pk3 - needs testing
-	-- Icon of Sin -> to big :) 
-	Gatekeeper =  
-	{
-		id = 350
-		r = 60
-		h = 110
-		health = 40000
-		level = 9
-		prob = 0 --10
-		crazy_prob = 0 --10
-		damage = 200		
-		boss_type = "tough"
-		boss_prob = 0 --10
-		boss_limit = 1
-		outdoor_factor = 3.0
-		density = 0.1
-		weap_prefs = { bfg=5.0 }
-		room_size = "large"
-		nasty = true
-		boss_replacement = "Spiderdemon"		
-	}	    
 	Zyberdemon =
 	{
 		id = 324
@@ -263,7 +241,7 @@ BRUTALDOOM.MONSTERS =
        h = 48
        level = 2
        theme_prob = 60 
-       prob=0
+       prob = 0
        health = 200
        damage = 0.4
        attack = "melee"
@@ -273,6 +251,23 @@ BRUTALDOOM.MONSTERS =
        infight_damage = 3.5
        allow_in_theme = "egypt2"
     }
+    KamikazeGuy =
+    {
+		id = 10300 
+        r = 16
+        h = 56
+        level = 2
+		theme_prob = 60 --50 
+        prob = 0
+        health = 20
+        damage = 50
+        attack = "melee"
+        density = 0.85
+        room_size = "any"
+        trap_factor = 0
+        give = { {weapon="AssaultRifle"}, {ammo="bullet",count=10} }
+		allow_in_theme = "egypt2"
+    }	
     Experiment =
     {
        id = 369

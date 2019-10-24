@@ -110,6 +110,11 @@ function BRUTALDOOM.decorate()
     gui.wad_insert_file("brutaloblige/acs/BOLOGACS.o","BOLOGACS");
     gui.wad_insert_file("brutaloblige/acs/A_START","A_END");
     gui.wad_merge_sections("brutaloblige/brutaloblige.wad");
+	gui.wad_merge_sections("brutaloblige/kamikazeguy.wad");
+	gui.wad_insert_file("brutaloblige/gldefs/GLDEFS.txt","GLDEFS");
+	gui.wad_insert_file("brutaloblige/sounds/DSKAMAAH.wav","DSKAMAAH");
+	gui.wad_insert_file("brutaloblige/sounds/DSKAMIDL.wav","DSKAMIDL");	
+	gui.wad_insert_file("brutaloblige/sounds/SNDINFO.txt","SNDINFO");		
 end
 
 function BRUTALDOOM.castcalldecorate()
