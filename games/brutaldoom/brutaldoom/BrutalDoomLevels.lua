@@ -1,68 +1,72 @@
 function BRUTALDOOM.get_levels()
-  gui.printf("brutaldoom.get_levels code is running\n")
-if OB_CONFIG.prebuilt_levels == "yes" then
-  gui.printf("Using Prebuilt Levels")
-  if OB_CONFIG.iwad_usage == "complete" then
-    gui.printf(" for doom_complete.pk3...\n")
-    GAME.PREBUILT_LEVELS =
-    {
---	    MAP04 =
---       {
-
---	   }
-       MAP10 =
-      {
-        { prob=50, file="games/doom/data/boss1/anomaly2.wad", map="E1M8", boss="baron" }
-		{ prob=50, file="games/doom/data/boss1/anomaly3.wad", map="E1M8", boss="baron" }
-		{ prob=50, file="games/doom/data/boss1/ult_anomaly.wad", map="E1M8", boss="baron" }
-        { prob=50, file="games/doom/data/boss1/ult_anomaly2.wad", map="E1M8", boss="baron" }		
-		-- because it sucks { prob=50, file="games/doom/data/boss1/anomaly1.wad", map="E1M8", boss="baron" }  
-      }
-      MAP20 =
-      {
-        { prob=50, file="games/doom/data/boss2/gallow1.wad", map="MAP01", boss="none" }
-        { prob=50, file="games/doom/data/boss2/gallow2.wad", map="MAP01", boss="none" }
-        { prob=50, file="games/doom/data/boss2/gallow1_bd1.wad", map="MAP01", boss="none" }
-        { prob=50, file="games/doom/data/boss2/gallow2_bd1.wad", map="MAP01", boss="none" }
-        { prob=50, file="games/doom/data/boss1/ult_tower.wad", map="E2M8", boss="cyber"}
-        { prob=50, file="games/doom/data/boss1/tower1.wad", map="E2M8", boss="cyber" }
-        { prob=50, file="games/doom/data/boss1/tower2.wad", map="E2M8", boss="cyber" }
-      }
-      MAP30 =
-      {
-        { prob=50, file="games/doom/data/boss2/gotcha1.wad", map="MAP01", boss="none" }
-        { prob=50, file="games/doom/data/boss2/gotcha2.wad", map="MAP01", boss="none" }
-        { prob=50, file="games/doom/data/boss2/gotcha3.wad", map="MAP01", boss="none" }
-        { prob=50, file="games/doom/data/boss2/gotcha4.wad", map="MAP01", boss="none" }
-	    { prob=50, file="games/doom/data/boss1/dis1.wad", map="E3M8", boss="spider" }
-	    { prob=50, file="games/doom/data/boss1/ult_dis.wad", map="E3M8", boss="spider" }
-      }
-    }
-  elseif OB_CONFIG.iwad_usage == "doom2" then
-    gui.printf(" for doom2.wad...\n")
-   GAME.PREBUILT_LEVELS =
-    {
-      MAP20 =
-      {
-        { prob=50, file="games/doom/data/boss2/gallow1.wad", map="MAP01", boss="none" }
-        { prob=50, file="games/doom/data/boss2/gallow2.wad", map="MAP01", boss="none" }
-        { prob=50, file="games/doom/data/boss2/gallow1_bd1.wad", map="MAP01", boss="none" }
-        { prob=50, file="games/doom/data/boss2/gallow2_bd1.wad", map="MAP01", boss="none" }
-
-      }
-      MAP30 =
-      {
-        { prob=50, file="games/doom/data/boss2/gotcha1.wad", map="MAP01", boss="none" }
-        { prob=50, file="games/doom/data/boss2/gotcha2.wad", map="MAP01", boss="none" }
-        { prob=50, file="games/doom/data/boss2/gotcha3.wad", map="MAP01", boss="none" }
-        { prob=50, file="games/doom/data/boss2/gotcha4.wad", map="MAP01", boss="none" }
-      }
-    }
-  end
-  else
-    GAME.PREBUILT_LEVELS = {}
-    gui.printf("No prebuilt maps will be used.\n")
-end
+	gui.printf("brutaldoom.get_levels code is running\n")
+	if DOOM.MONSTERS.gunner then
+		DOOM.MONSTERS.gunner.give={ {weapon="Minigun"}, {ammo="bullet",count=10} }
+		GAME.MONSTERS["gunner"].give={ {weapon="Minigun"}, {ammo="bullet",count=10} }
+		DOOM.MONSTERS.gunner.weap_needed={ AssaultRifle=true }
+		GAME.MONSTERS["gunner"].weap_needed={ AssaultRifle=true }
+	end
+	if OB_CONFIG.prebuilt_levels == "yes" then
+		gui.printf("Using Prebuilt Levels")
+		if OB_CONFIG.iwad_usage == "complete" then
+			gui.printf(" for doom_complete.pk3...\n")
+			GAME.PREBUILT_LEVELS =
+			{
+--				MAP04 =
+--				{
+--				}
+			MAP10 =
+			{
+				{ prob=50, file="games/doom/data/boss1/anomaly2.wad", map="E1M8", boss="baron" }
+				{ prob=50, file="games/doom/data/boss1/anomaly3.wad", map="E1M8", boss="baron" }
+				{ prob=50, file="games/doom/data/boss1/ult_anomaly.wad", map="E1M8", boss="baron" }
+				{ prob=50, file="games/doom/data/boss1/ult_anomaly2.wad", map="E1M8", boss="baron" }		
+--because it sucks { prob=50, file="games/doom/data/boss1/anomaly1.wad", map="E1M8", boss="baron" }  
+			}
+			MAP20 =
+			{
+				{ prob=50, file="games/doom/data/boss2/gallow1.wad", map="MAP01", boss="none" }
+				{ prob=50, file="games/doom/data/boss2/gallow2.wad", map="MAP01", boss="none" }
+				{ prob=50, file="games/doom/data/boss2/gallow1_bd1.wad", map="MAP01", boss="none" }
+				{ prob=50, file="games/doom/data/boss2/gallow2_bd1.wad", map="MAP01", boss="none" }
+				{ prob=50, file="games/doom/data/boss1/ult_tower.wad", map="E2M8", boss="cyber"}
+				{ prob=50, file="games/doom/data/boss1/tower1.wad", map="E2M8", boss="cyber" }
+				{ prob=50, file="games/doom/data/boss1/tower2.wad", map="E2M8", boss="cyber" }
+			}
+			MAP30 =
+			{
+				{ prob=50, file="games/doom/data/boss2/gotcha1.wad", map="MAP01", boss="none" }
+				{ prob=50, file="games/doom/data/boss2/gotcha2.wad", map="MAP01", boss="none" }
+				{ prob=50, file="games/doom/data/boss2/gotcha3.wad", map="MAP01", boss="none" }
+				{ prob=50, file="games/doom/data/boss2/gotcha4.wad", map="MAP01", boss="none" }
+				{ prob=50, file="games/doom/data/boss1/dis1.wad", map="E3M8", boss="spider" }
+				{ prob=50, file="games/doom/data/boss1/ult_dis.wad", map="E3M8", boss="spider" }
+			}
+		}
+		elseif OB_CONFIG.iwad_usage == "doom2" then
+			gui.printf(" for doom2.wad...\n")
+			GAME.PREBUILT_LEVELS =
+			{
+				MAP20 =
+				{
+					{ prob=50, file="games/doom/data/boss2/gallow1.wad", map="MAP01", boss="none" }
+					{ prob=50, file="games/doom/data/boss2/gallow2.wad", map="MAP01", boss="none" }
+					{ prob=50, file="games/doom/data/boss2/gallow1_bd1.wad", map="MAP01", boss="none" }
+					{ prob=50, file="games/doom/data/boss2/gallow2_bd1.wad", map="MAP01", boss="none" }
+				}
+				MAP30 =
+				{
+					{ prob=50, file="games/doom/data/boss2/gotcha1.wad", map="MAP01", boss="none" }
+					{ prob=50, file="games/doom/data/boss2/gotcha2.wad", map="MAP01", boss="none" }
+					{ prob=50, file="games/doom/data/boss2/gotcha3.wad", map="MAP01", boss="none" }
+					{ prob=50, file="games/doom/data/boss2/gotcha4.wad", map="MAP01", boss="none" }
+				}
+			}
+		end
+	else
+		GAME.PREBUILT_LEVELS = {}
+		gui.printf("No prebuilt maps will be used.\n")
+	end
   local MAP_LEN_TAB = { few=4, episode=11, game=32 }
 
   local MAP_NUM = MAP_LEN_TAB[OB_CONFIG.length] or 1

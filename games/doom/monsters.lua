@@ -262,10 +262,8 @@ DOOM.MONSTERS =
     health = 70
     damage = 5.5
     attack = "hitscan"
-    --give = { {weapon="chain"}, {ammo="bullet",count=10} }
-	give = { {weapon="Minigun"}, {ammo="bullet",count=10} }
-    --  weap_needed = { chain=true }
-    weap_needed = { AssaultRifle=true }
+    give = { {weapon="chain"}, {ammo="bullet",count=10} }
+    weap_needed = { chain=true }
     weap_min_damage = 50
     density = 0.75
     species = "zombie"
@@ -273,7 +271,6 @@ DOOM.MONSTERS =
     disloyal = true
     trap_factor = 2.4
     infight_damage = 25
-	--allow_in_theme = "tech, hell, urban, eygpt2" --ubersoldat replaces it in wolf
   }
 
   revenant =

@@ -18,7 +18,7 @@ BRUTAL64.music =
 {
 	songs = { }
 }
-BRUTAL64.music.songs = BRUTALDOOM.music.songs
+BRUTAL64.music.songs = BRUTALDOOM.zd64music
 
 gui.import("brutal64maps")
 gui.import("brutal64/brutal64Skies")
