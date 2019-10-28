@@ -59,8 +59,6 @@ BRUTALDOOM.PARAMETERS =
     usingui = false
     playerclass = "Doomer"
     puristrailgunreload = "None"
-    usingbrutal64maps = false
-    bd64mapsversion = "bd64mapsV2.pk3"
     autoload = false
     mini_mastermind = false
 
@@ -122,7 +120,6 @@ function BRUTALDOOM.castcalldecorate()
 end
 
 function BRUTALDOOM.gameinfo()
-  --eday and bd64maps only work together if eday is loaded first
   local data =
   {
       '//ZDoom GAMEINFO lump for Brutal Oblige\n'
@@ -136,9 +133,6 @@ function BRUTALDOOM.gameinfo()
   end
   if BRUTALDOOM.PARAMETERS.musicpreset == "ZD64MUSIC" then
       table.insert(data,',"ZD64MUSIC.PK3"')
-  end
-  if BRUTALDOOM.PARAMETERS.usingbrutal64maps == true then
-      table.insert(data,',"' .. BRUTALDOOM.PARAMETERS.bd64mapsversion .. '"')
   end
   
   table.insert(data,'\n')
@@ -466,7 +460,7 @@ OB_MODULES["brutaltweaks"] =
   
   side = "left"
 
-  game = { brutaldoom=1, brutal64=1}
+  game = { brutaldoom=1}
   playmode = { sp=1, coop=1 }
   
   options =

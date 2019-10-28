@@ -253,7 +253,7 @@ OB_THEMES["egypt2"] =
   -- TNT Evilution theme
 
   label = "Egypt"
-  game = { brutaldoom = 1, brutal64 = 0 }
+  game = { brutaldoom = 1 }
   priority = 5
   name_class = "GOTHIC"
   mixed_prob = 0

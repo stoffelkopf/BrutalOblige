@@ -177,7 +177,7 @@ function BRUTALDOOM.texturesetup()
 		combine(data,tntdata)
 		combine(data,doom1data)
 		combine(data,plutoniadata)
-	elseif BRUTALDOOM.PARAMETERS.iwad != "heretic.wad" then
+	else
 	  if BRUTALDOOM.PARAMETERS.iwad != "Tnt.wad" and BRUTALDOOM.PARAMETERS.iwad != "doom_complete.pk3" then
 		  combine(data,tntdata)
 	  end
@@ -187,9 +187,7 @@ function BRUTALDOOM.texturesetup()
 	  if BRUTALDOOM.PARAMETERS.iwad != "Plutonia.wad" and BRUTALDOOM.PARAMETERS.iwad != "doom_complete.pk3" then
 		  combine(data,plutoniadata)
 	  end
-  else
-      heretic_freetexture();
-  end
+	end
     gui.wad_add_text_lump("TEXTURES", data);
     
     local decaldata = 

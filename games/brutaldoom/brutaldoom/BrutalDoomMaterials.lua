@@ -197,7 +197,7 @@ BRUTALDOOM.MATERIALS =
   BDHEL07 = { t="BDHEL07", f="BDHEL07" }
 }
 
-
+--[[
 BRUTALDOOM.HMATERIALS =
 {
   --heretic stuff--
@@ -366,3 +366,4 @@ BRUTALDOOM.HMATERIALS =
   FLTTELE1 = { f="FLTTELE1", t="CHAINSD"  }
   FLTWAWA1 = { f="FLTWAWA1", t="WATRWAL1" }
 }
+]]

@@ -49,7 +49,6 @@ Note that if you downloaded this from gitlab rather than cloning the repo you ca
 -- | -- | --
 Oblige | 7.70 |  
 Brutal Doom | 21 | brutalv21.pk3
-Brutal Doom 64 | 2 | bd64gamev2.pk3
 
 
 * Secret levels: If you make a full 32 map wad there will be 3 secret exits on random levels. The first on levels 1-9, the second on levels 11-19 and the third on levels 21-29. The second goes to map 31 (which itself has a secret exit to 32), where the others go I will leave as a surprise.
