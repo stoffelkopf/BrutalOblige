@@ -1126,6 +1126,9 @@ function Monster_fill_room(R)
     -- Remove Doom Monsters from Wolfenstein Levels
 	elseif not info.allow_in_theme and THEME.allow_mons_for_theme == "wolf" then
 		prob = 0
+    -- Remove Doom Monsters from Egypt Levels		
+	elseif not info.allow_in_theme and THEME.allow_mons_for_theme == "egypt2" then
+		prob = 0
 	end
 	
 	--Prebuilt Level Bosses only

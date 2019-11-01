@@ -6,7 +6,25 @@ function BRUTALDOOM.create_mapinfo()
 		gui.printf("boss:%s\n",BRUTALDOOM.PARAMETERS.BOSS1)
 			gui.printf("boss:%s\n",BRUTALDOOM.PARAMETERS.BOSS2)
 				gui.printf("boss:%s\n",BRUTALDOOM.PARAMETERS.BOSS3)
-    
+
+local id_number =
+[[
+	DoomEdNums
+	{
+		10301 = Hellion
+		10302 = HellWarrior
+		10303 = ZombieFodder
+		10304 = SnakeImp
+		10305 = Roach
+		10306 = Hierophant
+		10307 = DemonDog
+		10308 = PyroSuccubus
+		10309 = PyroSuccubusWalk
+		10310 = PyroSuccubusFly
+		10311 = Azazel
+	}
+]]
+				
 local castcall =
 [[
 Intermission Brutal_FinalIntermission
@@ -174,7 +192,7 @@ Intermission BrutalDoomCast
     'GameInfo\n'
     '{\n'
     'AddEventHandlers = "BrutalObligeHandler"\n'
-    '}\n\n'
+    '}\n\n'	
     "clearepisodes\n\n"
     'episode MAP01\n'
     '{\n'
@@ -421,6 +439,7 @@ Intermission BrutalDoomCast
   
   --insert final intermission
   table.insert(data, castcall)
+  table.insert(data, id_number)  
 
 --make sure there are no 0s in stupid places
 for i = 1, (#data) do --for every value in data

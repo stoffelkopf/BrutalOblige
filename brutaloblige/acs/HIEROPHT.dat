@@ -1,0 +1,103 @@
+#library "hieropht"
+#include "zcommon.acs"
+
+#define HIERO_CURSENUM      3 // Number of curses.
+
+#define HIERO_CURSE_GIVER   0
+#define HIERO_CURSE_POWER   1
+#define HIERO_CURSE_MESSAGE 2
+
+str hiero_curses[HIERO_CURSENUM][3] =
+{
+      // Giver       // Power       // Message
+    { "HieroWeaken", "PowerWeaken", "\c[Cyan]Your weapons weaken."    }, // 0 = Weaken
+    { "HieroAmpDMG", "PowerAmpDMG", "\c[Red]Your defenses weaken."    }, // 1 = AmpDMG
+    { "HieroSlow",   "PowerSlow",   "\c[Yellow]Your legs feel heavy." }  // 2 = Slow
+};
+
+// ------------------------------------------------------------------------------------------------
+//
+//   Gets the shooter's species.
+//
+// ------------------------------------------------------------------------------------------------
+
+Script "Hiero_GetShooterSpecies" (void)
+{
+    str species = "Null";
+
+    // A projectile's target is the actor that shot it.
+    If(SetActivator(0, AAPTR_TARGET))
+    {
+        species = GetActorProperty(0, APROP_Species);
+    }
+
+    SetResultValue(species);
+}
+
+// ------------------------------------------------------------------------------------------------
+//
+//   Checks the eligibility of the actor the curse projectile hit (the "victim").
+//
+// ------------------------------------------------------------------------------------------------
+
+Script "Hiero_IsCurseable" (void)
+{
+    // Shooter's species must be gotten here. Getting it down there where the species are compared
+    // is too late, since at that point, the caller/activator of the script is no longer the
+    // projectile.
+    str shootspecies = ACS_NamedExecuteWithResult("Hiero_GetShooterSpecies");
+
+    SetResultValue(SetActivator(0, AAPTR_MASTER) &&
+
+                   // Victim must either be a player or monster.
+                   (ClassifyActor(0) & (ACTOR_PLAYER | ACTOR_MONSTER)) &&
+
+                   // Victim must be alive.
+                   (ClassifyActor(0) & ACTOR_ALIVE) &&
+
+                   // Victim must not be invulnerable.
+                   !CheckFlag(0, "INVULNERABLE") &&
+
+                   // Victim and the curse projectile's shooter must be of different species.
+                   StrIcmp(GetActorProperty(0, APROP_Species), shootspecies));
+}
+
+// ------------------------------------------------------------------------------------------------
+//
+//   Called by the curse projectile to inflict a curse.
+//
+// ------------------------------------------------------------------------------------------------
+
+Script "Hiero_InflictCurse" (void)
+{
+    If(ACS_NamedExecuteWithResult("Hiero_IsCurseable"))
+    {
+        // Change the script activator to the victim, so that everything which follows, is called
+        // by the victim/works in the context of the victim.
+        SetActivator(0, AAPTR_MASTER);
+
+        // Randomly pick a curse to inflict.
+        int curse = Random(0, HIERO_CURSENUM - 1);
+
+        // PowerSpeed, which the Slow curse is based on, only works on players. So for non-players,
+        // i.e monsters in this case, pick one of the other two curses instead.
+        If(!(ClassifyActor(0) & ACTOR_PLAYER))
+        {
+            While(curse == 2)
+            {
+                curse = Random(0, HIERO_CURSENUM - 1);
+            }
+        }
+
+        // Print the curse message only if this actor (player) is not currently under the effect of
+        // this curse.
+        If(!CheckInventory(hiero_curses[curse][HIERO_CURSE_POWER]))
+        {
+            HudMessage(s:hiero_curses[curse][HIERO_CURSE_MESSAGE];
+                       HUDMSG_FADEOUT | HUDMSG_LOG, 5742891, -1, 0.5, 0.15, 3.0, 0.25);
+        }
+
+        // Debuff the actor.
+        GiveInventory(hiero_curses[curse][HIERO_CURSE_GIVER], 1);
+    }
+}

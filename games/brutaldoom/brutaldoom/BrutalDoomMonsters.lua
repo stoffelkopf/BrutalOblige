@@ -234,12 +234,26 @@ BRUTALDOOM.MONSTERS =
         infight_damage = DOOM.MONSTERS.arach.infight_damage
 		weap_min_damage = 90
     }
+    Experiment =
+    {
+       id = 369
+       r = DOOM.MONSTERS.revenant.r
+       h = 48
+       level = 2
+       prob=0 --40
+       health = 100
+       damage = 0.2
+       attack = "melee"
+       density = 0.85
+       room_size = "any"
+       infight_damage = 3.5
+    }
     Mummy =
     {
        id = 338
        r = DOOM.MONSTERS.revenant.r
        h = 48
-       level = 2
+       level = 1
        theme_prob = 60 
        prob = 0
        health = 200
@@ -256,32 +270,191 @@ BRUTALDOOM.MONSTERS =
 		id = 10300 
         r = 16
         h = 56
-        level = 2
-		theme_prob = 60 --50 
+        level = 1
+		theme_prob = 80 --50 
         prob = 0
         health = 20
         damage = 50
         attack = "melee"
-        density = 0.85
+        density = 1
         room_size = "any"
         trap_factor = 0
         give = { {weapon="AssaultRifle"}, {ammo="bullet",count=10} }
-		allow_in_theme = "egypt2"
+		allow_in_theme = "egypt2"	
     }	
-    Experiment =
+    Hellion =
     {
-       id = 369
-       r = DOOM.MONSTERS.revenant.r
-       h = 48
-       level = 2
-       prob=0 --40
-       health = 100
-       damage = 0.2
-       attack = "melee"
-       density = 0.85
-       room_size = "any"
-       infight_damage = 3.5
+		id = 10301
+        r = 20
+        h = 56
+        level = 1
+		theme_prob = 100--70 --50 
+        prob = 0
+        health = 20
+        damage = 8
+        attack = "missile"
+        density = 1
+        room_size = "any"
+        trap_factor = 0
+		allow_in_theme = "egypt2"
     }
+    HellWarrior =
+	{
+		id = 10302
+		r = 24
+		h = 64 
+		level = 1 --4
+		theme_prob = 60 
+		prob = 0
+		health = 400
+		damage = 4.0
+		attack = "missile"
+		weap_min_damage = 50
+		density = 0.75
+		species = "baron"
+		room_size = "medium"
+		infight_damage = 36
+		allow_in_theme = "egypt2"		
+	}
+	ZombieFodder = 
+    {
+        id = 10303
+        r = 20
+        h = 56 
+        level = 1
+        prob = 0
+		theme_prob = 100 --60		
+        health = 15
+        damage = 10
+        attack = "melee"
+        density = 2
+        room_size = "small"
+		allow_in_theme = "egypt2"				
+    }	
+	SnakeImp =
+	{
+		id = 10304
+		r = 20
+		h = 56 
+		level = 1
+		prob = 0
+		theme_prob = 140
+		health = 100
+		damage = 1.3
+		attack = "missile"
+		density = 1.0
+		room_size = "small"
+		trap_factor = 0.3
+		infight_damage = 4.0
+		allow_in_theme = "egypt2"				
+	}	
+	Roach =
+	{
+		id = 10305
+		r = 19
+		h = 48 
+		level = 1
+		prob = 0
+		theme_prob = 140
+		health = 150
+		damage = 5
+		attack = "missile"
+		density = 1.0
+		room_size = "any"
+		trap_factor = 0.3
+		infight_damage = 5.0
+		cage_factor = 0
+		allow_in_theme = "egypt2"				
+	}
+	PyroSuccubus =
+	{
+		id = 10308
+		r = 16
+		h = 50 
+		level = 1
+		prob = 0
+		theme_prob = 140
+		health = 200
+		damage = 2
+		attack = "missile"
+		density = 1.0
+		room_size = "small"
+		trap_factor = 0.3
+		allow_in_theme = "egypt2"				
+	}	
+	PyroSuccubusWalk =
+	{
+		id = 10309
+		r = 16
+		h = 50 
+		level = 1
+		prob = 0
+		theme_prob = 100
+		health = 200
+		damage = 2
+		attack = "missile"
+		density = 1.0
+		room_size = "small"
+		trap_factor = 0.3
+		allow_in_theme = "egypt2"				
+	}	
+	PyroSuccubusFly =
+	{
+		id = 10310
+		r = 16
+		h = 50 
+		level = 1
+		prob = 0
+		theme_prob = 100
+		health = 200
+		damage = 2
+		attack = "missile"
+		density = 1.0
+		room_size = "small"
+		trap_factor = 0.3
+		allow_in_theme = "egypt2"				
+	}	
+	Hierophant =
+	{
+		id = 10306
+		r = 24
+		h = 60
+		level = 1
+--		boss_type = "minor"
+--		boss_prob = 50
+		prob = 0
+		theme_prob = 4
+		health = 1800
+		damage = 10
+		attack = "missile"
+		density = 0.1
+		nasty = true		
+--		weap_min_damage = 88
+		room_size = "medium"
+		infight_damage = 40
+		allow_in_theme = "egypt2"			
+	}
+	Azazel =
+	{
+		id = 10311
+		r = 22
+		h = 64
+		level = 1
+--		boss_type = "minor"
+--		boss_prob = 50
+		prob = 0
+		theme_prob = 4
+		health = 2400
+		damage = 10
+		attack = "missile"
+		density = 0.1
+		nasty = true		
+--		weap_min_damage = 88
+		room_size = "medium"
+		infight_damage = 40
+		allow_in_theme = "egypt2"			
+	}
+	
     --Seperate Rifle and Pistol Zombie so Oblige can model them more accurately
     zombie = REMOVE_ME
 	
@@ -377,6 +550,22 @@ BRUTALDOOM.MONSTERS =
         room_size = "any"
         allow_in_theme = "wolf"
     }
+    DemonDog =
+    {
+        id = 10307
+        r = 20
+        h = 32 
+        level = 1
+        theme_prob = 120
+        prob=0
+        health = 50
+        damage = 3
+        attack = "melee"
+        min_weapon = 1
+        room_size = "any"
+        allow_in_theme = "wolf"
+    }
+
    --Vehicles not used atm
     ZombieMainBattleTank =
     {
