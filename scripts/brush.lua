@@ -55,7 +55,6 @@ function raw_add_entity(ent)
   if GAME.format == "quake" then
     ent.mangle = ent.angles ; ent.angles = nil
   end
-
   if GAME.format == "doom" then
     -- this is mainly for Legacy (spawning things on 3D floors)
     -- it is OK for this to be NIL

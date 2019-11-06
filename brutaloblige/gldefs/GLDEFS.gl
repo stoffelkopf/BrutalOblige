@@ -1980,3 +1980,101 @@ Frame MSP1N { Light SatyrLordRedMissile9 }
 Frame MSP1O { Light SatyrLordRedMissile10 }
 Frame MSP1P { Light SatyrLordRedMissile11 }
 }
+
+//Dynamic Lights
+
+PointLight WhiteLight
+{
+  color 0.85 0.9 1
+  size 128
+  offset 0 -48 0
+}
+
+PointLight RedLight
+{
+  color 1 0 0
+  size 128
+  offset 0 -48 0
+}
+
+PointLight YellowLight
+{
+  color 1 0.8 0
+  size 128
+  offset 0 -48 0
+}
+
+PointLight OrangeLight
+{
+  color 1 0.5 0
+  size 128
+  offset 0 -48 0
+}
+
+PointLight BlueLight
+{
+  color 0.1 0.1 1
+  size 128
+  offset 0 -48 0
+}
+
+PointLight GreenLight
+{
+  color 0 0.8 0
+  size 128
+  offset 0 -48 0
+}
+
+PointLight BeigeLight
+{
+  color 1 0.8 0.5
+  size 128
+  offset 0 -48 0
+}
+
+PointLight PurpleLight
+{
+  color 0.7 0 0.95
+  size 128
+  offset 0 -48 0
+}
+
+object ObLightWhite
+{
+  frame CAND { light WhiteLight }
+}
+
+object ObLightRed
+{
+  frame CAND { light RedLight }
+}
+
+object obLightOrange
+{
+  frame CAND { light OrangeLight }
+}
+
+object obLightYellow
+{
+  frame CAND { light YellowLight }
+}
+
+object obLightBlue
+{
+  frame CAND { light BlueLight }
+}
+
+object obLightGreen
+{
+  frame CAND { light GreenLight }
+}
+
+object ObLightBeige
+{
+  frame CAND { light BeigeLight }
+}
+
+object ObLightPurple
+{
+  frame CAND { light PurpleLight }
+}

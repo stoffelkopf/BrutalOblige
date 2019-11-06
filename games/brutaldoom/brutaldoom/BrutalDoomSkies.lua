@@ -4,7 +4,9 @@ BRUTALDOOM.SKIES =
         {
             any = 
             {
-             'RSKY1'
+             'SKY1'
+             'SKY2'			 
+             'SKY3'			 			 
             }
             tech =
             {
@@ -20,14 +22,12 @@ BRUTALDOOM.SKIES =
             }
             urban =
             {
-             'RSKY2'
              'SKYCIT1'
              'SKYCITH'
              'PSKY2'
             }
             hell =
             {
-             'RSKY3'
              'SKYHEL'
              'SKYHEL1'
              'SKYHELF'
@@ -41,7 +41,9 @@ BRUTALDOOM.SKIES =
         {
             any = 
             {
-             'RSKY1'
+             'SKY1'
+             'SKY2'			 
+             'SKY3'
             }
             tech =
             {
@@ -54,13 +56,11 @@ BRUTALDOOM.SKIES =
             }
             urban =
             {
-             'RSKY2'
              'SKYCIT1'
              'SKYCITH'
             }
             hell =
             {
-             'RSKY3'
              'SKYHEL'
              'SKYHEL1'
              'SKYHELF'

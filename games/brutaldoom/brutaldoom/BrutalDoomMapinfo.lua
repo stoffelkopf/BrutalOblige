@@ -2,11 +2,69 @@ BRUTALDOOM.MAPINFO = { }
 
 function BRUTALDOOM.create_mapinfo()
     gui.printf("Mapinfo code is starting\n");
-	gui.printf("boss:%s\n",BRUTALDOOM.PARAMETERS.BOSSX)
-		gui.printf("boss:%s\n",BRUTALDOOM.PARAMETERS.BOSS1)
-			gui.printf("boss:%s\n",BRUTALDOOM.PARAMETERS.BOSS2)
-				gui.printf("boss:%s\n",BRUTALDOOM.PARAMETERS.BOSS3)
 
+    local fog_color = ''
+    local fog_intensity = "48"
+
+  local function pick_sky_color_from_skygen_map(skytable, cur_level)
+    local color
+
+    local skyname = skytable[cur_level]
+
+    if skyname == "SKY_CLOUDS" then
+      color = "a7 c3 ef"
+    elseif skyname == "BLUE_CLOUDS" then
+      color = "17 4f a8"
+    elseif skyname == "WHITE_CLOUDS" then
+      color = "f2 f4 f7"
+    elseif skyname == "GREY_CLOUDS" then
+      color = "9d 9e a0"
+    elseif skyname == "DARK_CLOUDS" then
+      color = "4f 50 51"
+    elseif skyname == "BROWN_CLOUDS" then
+      color = "ba 68 1b"
+    elseif skyname == "BROWNISH_CLOUDS" then
+      color = "ba 85 53"
+    elseif skyname == "PEACH_CLOUDS" then
+      color = "d3 b1 bb"
+    elseif skyname == "YELLOW_CLOUDS" then
+      color = "db dd 44"
+    elseif skyname == "ORANGE_CLOUDS" then
+      color = "d3 95 5b"
+    elseif skyname == "GREEN_CLOUDS" then
+      color = "76 ce 40"
+    elseif skyname == "JADE_CLOUDS" then
+      color = "92 c4 73"
+    elseif skyname == "DARKRED_CLOUDS" then
+      color = "9e 1b 0c"
+    elseif skyname == "HELLISH_CLOUDS" then
+      color = "d8 27 13"
+    elseif skyname == "HELL_CLOUDS" then
+      color = "d8 27 13"
+    elseif skyname == "STARS" then
+      color = "00 00 00"
+    else
+      color = "00 00 00"
+    end
+
+    if color then
+      return color
+    else
+      gui.printf("\nCould not resolve skybox generator color.\n")
+      return "00 00 00"
+    end
+  end
+  
+ local function pick_random_fog_color()
+    local function give_random_hex()
+      return rand.pick({'0','1','2','3','4','5','6','8','9','a','b','c','d','e','f'})
+    end
+    local octet1 = give_random_hex() .. give_random_hex()
+    local octet2 = give_random_hex() .. give_random_hex()
+    local octet3 = give_random_hex() .. give_random_hex()
+    return octet1 .. " " .. octet2 .. " " .. octet3
+  end
+  
 local id_number =
 [[
 	DoomEdNums
@@ -251,6 +309,7 @@ Intermission BrutalDoomCast
     '}\n'
   }
 
+  
   --- music ---
   local epi_list = BRUTALDOOM.music
   local dest = { }
@@ -297,17 +356,89 @@ Intermission BrutalDoomCast
       local nextmap = 'next = "' .. L.name ..'"\n'
 
       local sky1 = 'sky1 = "'
-      local skyname = 'RSKY1'
+      local skyname = 'SKY1'
       local enterpic = '"INTERPIC"' --default intermissionpic
-      local skytab = BRUTALDOOM.SKIES[ L.theme_name ]
-      if not skytab then --i.e. if no entry for the theme in BrutalDoomSkies.lua
+	  if PARAM.episode_sky_color then
+		gui.printf("Brutal Doom Skies: Using Skies from Sky Generator.\n")
+	    if mapnum <= 11 then
+			skyname = "RSKY1"
+		elseif mapnum > 11 and mapnum <= 20 then
+			skyname = "RSKY2"
+		elseif mapnum > 20 then
+			skyname = "RSKY3"
+		end
+	  else
+	  	gui.printf("Brutal Doom Skies: Using Random Skies from Wad.\n")
+		local skytab = BRUTALDOOM.SKIES[ L.theme_name ]
+		if not skytab then --i.e. if no entry for the theme in BrutalDoomSkies.lua
           skytab = BRUTALDOOM.SKIES.any
+		end
+		skyname = skytab[ rand.irange(1,#skytab) ]
+	  end
+      
+
+      
+      sky1 = sky1 .. skyname .. '"\n'
+--GZDoom Specials
+gui.printf("Debug: %s %s",PARAM.episode_sky_color,PARAM.fog_generator)
+     if not PARAM.episode_sky_color and PARAM.fog_generator == "per_sky_gen" then
+      gui.printf("WARNING: User set fog color to be set by Sky Generator " ..
+      "but Sky Generator is turned off! Behavior will now be Random instead.\n")
+      PARAM.fog_generator = "random"
+    end
+
+    if PARAM.fog_generator == "per_sky_gen" then
+		gui.printf("Debug: treffer")
+      if mapnum <= 11 then
+        fog_color = pick_sky_color_from_skygen_map(PARAM.episode_sky_color,1)
+      elseif mapnum > 11 and mapnum <= 20 then
+        fog_color = pick_sky_color_from_skygen_map(PARAM.episode_sky_color,2)
+      elseif mapnum > 20 then
+        fog_color = pick_sky_color_from_skygen_map(PARAM.episode_sky_color,3)
       end
-      
-      skyname = skytab[ rand.irange(1,#skytab) ]
-      
-        sky1 = sky1 .. skyname .. '"\n'
-    
+    elseif PARAM.fog_generator == "random" then
+      fog_color = pick_random_fog_color()
+    else
+      fog_color = ""
+    end
+	local fog_color_line = '  fade = "' .. fog_color .. '"\n'
+	
+    -- resolve fog intensity
+    if PARAM.fog_intensity == "subtle" then
+      fog_intensity = "16"
+    elseif PARAM.fog_intensity == "misty" then
+      fog_intensity = "48"
+    elseif PARAM.fog_intensity == "smoky" then
+      fog_intensity = "128"
+    elseif PARAM.fog_intensity == "foggy" then
+      fog_intensity = "255"
+    elseif PARAM.fog_intensity == "dense" then
+      fog_intensity = "368"
+    elseif PARAM.fog_intensity == "mixed" then
+      fog_intensity = "" .. rand.irange(16,368)
+    end
+
+    local fog_intensity_line = '  fogdensity = ' .. fog_intensity .. '\n'
+
+    -- fog forced to outdoors only
+    if PARAM.fog_env == "outdoor" then
+      fog_color_line = '  OutsideFog  = "' .. fog_color .. '"\n'
+      fog_intensity_line = '  outsidefogdensity = ' .. fog_intensity .. '\n'
+    end
+
+    -- if fog tints sky, based on ZDoom GL specs
+    if PARAM.fog_affects_sky == "yes" then
+      fog_intensity_line = fog_intensity_line .. '  skyfog = ' .. fog_intensity + 16 .. '\n'
+    end
+
+    -- no fog in MAPINFO at all if the fog generator is off
+    if PARAM.fog_generator == "no" then
+      fog_color_line = ""
+      fog_intensity_line = ""
+    end  
+	
+	
+	
       local intptab = BRUTALDOOM.INTERPICS[ L.theme_name ]
       if not intptab then --i.e. if no entry for the theme in BrutalDoomInterpics.lua
           intptab = BRUTALDOOM.INTERPICS.any
@@ -371,6 +502,9 @@ Intermission BrutalDoomCast
       table.insert(data, string.format("%s %s\n{\n", "map", text))
       --enter map information
       table.insert(data, sky1)
+      table.insert(data, fog_color_line)
+      table.insert(data, fog_intensity_line)
+	  gui.printf("Fog: %s \n Fog2: %s \n",fog_color_line,fog_intensity_line)
 	  table.insert(data, 'LevelNum = ' .. mapnum .. "\n")
       table.insert(data, 'EnterPic = ' .. enterpic)
       table.insert(data, 'ExitPic = ' .. enterpic)

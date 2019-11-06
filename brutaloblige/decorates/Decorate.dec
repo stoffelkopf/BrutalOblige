@@ -42,3 +42,24 @@ actor SkyboxRainSpawner : LargeRainSpawner 373
         
     }
 }
+
+actor ObLightWhite 14999
+{
+  Scale 0 //Should really use a nice corona sprite but whatever
+  Height 16
+
+  +NOGRAVITY
+  +SPAWNCEILING
+
+  States{
+    Spawn:
+      CAND A -1
+  }
+}
+actor ObLightRed : ObLightWhite 14998 {}
+actor ObLightOrange : ObLightWhite 14997 {}
+actor ObLightYellow : ObLightWhite 14996 {}
+actor ObLightBlue : ObLightWhite 14995 {}
+actor ObLightGreen : ObLightWhite 14994 {}
+actor ObLightBeige : ObLightWhite 14993 {}
+actor ObLightPurple : ObLightWhite 14992 {}

@@ -1847,6 +1847,49 @@ chunk.goal.action = "S1_OpenDoor"  -- FIXME IT SHOULD BE SET WHEN JOINER IS REND
     local skin = { ceil=ceil_mat }
     local T = Trans.spot_transform(chunk.mx, chunk.my, ceil_h, chunk.prefab_dir or 2)
 
+ -- dynamic light fabrication for ZDoom dynamic lights module
+    if PARAM.dynamic_lights == "yes" then
+      if def.kind == "light" and def.light_color != "none" then
+        local light_ent = {
+          x = chunk.mx
+          y = chunk.my
+          z = ceil_h - def.bound_z1 - 8
+        }
+
+        if def.light_color == "red" then
+          light_ent.id = 14998
+        elseif def.light_color == "orange" then
+          light_ent.id = 14997
+        elseif def.light_color == "yellow" then
+          light_ent.id = 14996
+        elseif def.light_color == "blue" then
+          light_ent.id = 14995
+        elseif def.light_color == "green" then
+          light_ent.id = 14994
+        elseif def.light_color == "beige" then
+          light_ent.id = 14993
+        elseif def.light_color == "purple" then
+          light_ent.id = 14992
+        elseif def.light_color == "white" then
+          light_ent.id = 14999
+        end
+		gui.printf("Light %s File: %s map: %s\n",def.light_color,def.file,def.map)
+ for k, v in pairs(light_ent) do
+ indent = 0
+    formatting = string.rep("  ", indent) .. k .. ": "
+    if type(v) == "table" then
+      print(formatting)
+      tprint(v, indent+1)
+    elseif type(v) == 'boolean' then
+      print(formatting .. tostring(v))      
+    else
+      print(formatting .. v)
+    end
+  end	
+        raw_add_entity(light_ent)
+      end
+    end	
+	
     assert(def.z_fit == nil)
 
     Fabricate(A.room, def, T, { skin })
