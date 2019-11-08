@@ -380,15 +380,13 @@ Intermission BrutalDoomCast
       
       sky1 = sky1 .. skyname .. '"\n'
 --GZDoom Specials
-gui.printf("Debug: %s %s",PARAM.episode_sky_color,PARAM.fog_generator)
-     if not PARAM.episode_sky_color and PARAM.fog_generator == "per_sky_gen" then
+    if not PARAM.episode_sky_color and PARAM.fog_generator == "per_sky_gen" then
       gui.printf("WARNING: User set fog color to be set by Sky Generator " ..
       "but Sky Generator is turned off! Behavior will now be Random instead.\n")
       PARAM.fog_generator = "random"
     end
 
     if PARAM.fog_generator == "per_sky_gen" then
-		gui.printf("Debug: treffer")
       if mapnum <= 11 then
         fog_color = pick_sky_color_from_skygen_map(PARAM.episode_sky_color,1)
       elseif mapnum > 11 and mapnum <= 20 then
@@ -504,7 +502,6 @@ gui.printf("Debug: %s %s",PARAM.episode_sky_color,PARAM.fog_generator)
       table.insert(data, sky1)
       table.insert(data, fog_color_line)
       table.insert(data, fog_intensity_line)
-	  gui.printf("Fog: %s \n Fog2: %s \n",fog_color_line,fog_intensity_line)
 	  table.insert(data, 'LevelNum = ' .. mapnum .. "\n")
       table.insert(data, 'EnterPic = ' .. enterpic)
       table.insert(data, 'ExitPic = ' .. enterpic)
@@ -609,16 +606,11 @@ for i = 1, (#data) do --for every value in data
   data[i] = string.gsub(data[i], '"MAP7"','"MAP07"')
   data[i] = string.gsub(data[i], '"MAP8"','"MAP08"')
   data[i] = string.gsub(data[i], '"MAP9"','"MAP09"')
-  --if using doom metal E2M8 and E3M8 can use the doom1 music
-  if BRUTALDOOM.PARAMETERS.musicpreset == "doommetal" or BRUTALDOOM.PARAMETERS.musicpreset == "generic" then
-      data[i] = string.gsub(data[i], '"d_messag"//changeifdoommetal','"d_e2m8"')
-      data[i] = string.gsub(data[i], '"d_openin"//changeifdoommetal','"d_e3m8"')
-  end
   --change interpics for babel and dis if using Universial Intermissions
   if BRUTALDOOM.PARAMETERS.usingui == true then
 	data[i] = string.gsub(data[i], '"INTERPIC"//changeifdoomcomplete','"$BINTM"')
   end
-  if BRUTALDOOM.PARAMETERS.iwad == "doom_complete.pk3" then
+  if OB_CONFIG.iwad_usage == "complete" then
       data[i] = string.gsub(data[i], '"INTERPIC"//changeifdoomcomplete','"INTER_E4"')
       if BRUTALDOOM.PARAMETERS.musicpreset == "iwad" then
           data[i] = string.gsub(data[i], '"d_messag"//changeifdoommetal','"d_e2m8"')

@@ -1,7 +1,21 @@
-Brutal Oblige Original Version from Robert Cross - https://gitlab.com/CloudOfShame/BrutalOblige
+Brutal Oblige Original Version from Robert Cross
+https://gitlab.com/CloudOfShame/BrutalOblige
+
+
+Monster from Realm 667 
+https://www.realm667.com
 
 Zyberdemon sprites - 00_Zombie_00
 Kamikazeguy - Captain Toenail / Croteam
+Rottweiler
+Snake Imp
+Hell Warrior
+Hellion
+Zombie Fodder
+Roach
+Pyro Succubus
+Azazel
+
 
 Wolfenstein SS firing rotation sprites - DoomJedi
 SS firing rotation sprites - ItsNatureToDie
@@ -15,5 +29,7 @@ As with the code in vanilla Oblige this code is GPL3.
 
 The following code ist used:
 
-- render.lua script to allow skyboxes (he skybox prefabs being used are original)
 - Psychadelic theme code
+- Sky Generator
+- Fog Generator
+- Dynamic Lightning

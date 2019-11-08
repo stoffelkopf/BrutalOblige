@@ -63,7 +63,7 @@ function BRUTALDOOM.mergesongs()
     BRUTALDOOM.doomcompleteallsongs()
     BRUTALDOOM.music.songs=BRUTALDOOM.doom2songs
     
-    if BRUTALDOOM.PARAMETERS.musicpreset == "iwad" and BRUTALDOOM.PARAMETERS.iwad == "doom_complete.pk3" then
+    if BRUTALDOOM.PARAMETERS.musicpreset == "iwad" and OB_CONFIG.iwad_usage == "complete" then
         for k,v in pairs(BRUTALDOOM.doom_completesongs) do table.insert(BRUTALDOOM.music.songs, v) end
     end
     if BRUTALDOOM.PARAMETERS.musicpreset == "doom1" then --just doom1 songs
@@ -72,7 +72,7 @@ function BRUTALDOOM.mergesongs()
 	if BRUTALDOOM.PARAMETERS.musicpreset == "ZD64MUSIC" then --just the songs in ZD64MUSIC.PK3, which are named differently.
         BRUTALDOOM.music.songs=BRUTALDOOM.zd64music
     end
-    gui.printf("iwad: " .. BRUTALDOOM.PARAMETERS.iwad ..'\n')
+    gui.printf("iwad: " .. OB_CONFIG.iwad_usage ..'\n')
     gui.printf("Music preset: " .. BRUTALDOOM.PARAMETERS.musicpreset ..'\n')
     gui.printf("Music: \n" .. table.tostring(BRUTALDOOM.music) ..'\n')
 end

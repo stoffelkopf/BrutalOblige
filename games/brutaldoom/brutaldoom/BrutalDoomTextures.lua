@@ -177,16 +177,6 @@ function BRUTALDOOM.texturesetup()
 		combine(data,tntdata)
 		combine(data,doom1data)
 		combine(data,plutoniadata)
-	else
-	  if BRUTALDOOM.PARAMETERS.iwad != "Tnt.wad" and BRUTALDOOM.PARAMETERS.iwad != "doom_complete.pk3" then
-		  combine(data,tntdata)
-	  end
-	  if BRUTALDOOM.PARAMETERS.iwad != "doom_complete.pk3" then
-		  combine(data,doom1data)
-	  end
-	  if BRUTALDOOM.PARAMETERS.iwad != "Plutonia.wad" and BRUTALDOOM.PARAMETERS.iwad != "doom_complete.pk3" then
-		  combine(data,plutoniadata)
-	  end
 	end
     gui.wad_add_text_lump("TEXTURES", data);
     

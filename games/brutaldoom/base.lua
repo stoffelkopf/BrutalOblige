@@ -45,31 +45,19 @@ BRUTALDOOM.YES_NO =
 
 BRUTALDOOM.VERSIONS = 
 {
-	"brutalv20b.pk3",	"V20b"
     "brutalv21.pk3",    "V21"
 }
 
 BRUTALDOOM.PARAMETERS =
 {
     modversion = 'dev version following v2.0.1'
-    skygenerator = false
-    iwad = 'Doom2.wad'
-    musicpreset = 'iwad'
+    musicpreset = 'doom2'
     brutalversion = "brutalv21.pk3"
     usingui = false
     playerclass = "Doomer"
     puristrailgunreload = "None"
     mini_mastermind = false
 
-}
-
-BRUTALDOOM.IWADS =
-{
-    "Doom2.wad",    "Doom 2"
-    "Tnt.wad",      "TNT:Eviloution"
-    "Plutonia.wad", "Plutonia"
-    "doom_complete.pk3",    "Doom Complete"
-    "freedoom2.wad",    "Freedoom 2"
 }
 
 BRUTALDOOM.PLAYERCLASSES =
@@ -477,9 +465,6 @@ function BRUTALDOOM.all_done()
   BRUTALDOOM.mixhanky();
   BRUTALDOOM.texturesetup();
   BRUTALDOOM.mergesongs();
-  if BRUTALDOOM.PARAMETERS.iwad == 'freedoom2.wad' then
-      BRUTALDOOM.freedoom_language();
-  end
   if BRUTALDOOM.PARAMETERS.usingui == true then
 	BRUTALDOOM.createintm();
     BRUTALDOOM.mergeintm();
@@ -505,69 +490,7 @@ function BRUTALDOOM.parameters_to_wad()
     gui.wad_add_text_lump("BOPARAMS", BOPARAMS );
 end
 
-function BRUTALDOOM.freedoom_language()
-    --overwrites the freedoom dehacked which turns Imp to serpent etc
-    local data =
-    {
-        '[STRINGS]\n\n'
-        'OB_STEALTHBABY = %o thought %g saw an arachnotron.\n'
-        'OB_STEALTHVILE = %o thought %g saw an archvile.\n'
-        'OB_STEALTHBARON = %o thought %g saw a Baron of Hell.\n'
-        'OB_STEALTHCACO = %o thought %g saw a cacodemon.\n'
-        'OB_STEALTHCHAINGUY = %o thought %g saw a chaingunner.\n'
-        'OB_STEALTHDEMON = %o thought %g saw a demon.\n'
-        'OB_STEALTHKNIGHT = %o thought %g saw a Hell Knight.\n'
-        'OB_STEALTHIMP = %o thought %g saw an imp.\n'
-        'OB_STEALTHFATSO = %o thought %g saw a mancubus.\n'
-        'OB_STEALTHUNDEAD = %o thought %g saw a revenant.\n'
-        'OB_STEALTHSHOTGUY = %o thought %g saw a sergeant.\n'
-        'OB_STEALTHZOMBIE = %o thought %g saw a zombieman.\n'
-        'OB_UNDEADHIT = %o was punched by a revenant.\n'
-        'OB_IMPHIT = %o was slashed by an imp.\n'
-        'OB_CACOHIT = %o got too close to a cacodemon.\n'
-        'OB_DEMONHIT = %o was bit by a demon.\n'
-        'OB_SPECTREHIT = %o was eaten by a spectre.\n'
-        'OB_BARONHIT = %o was ripped open by a Baron of Hell.\n'
-        'OB_KNIGHTHIT = %o was gutted by a Hell Knight.\n'
-        'OB_ZOMBIE = %o was killed by a zombieman.\n'
-        'OB_SHOTGUY = %o was shot by a sergeant.\n'
-        'OB_VILE = %o was incinerated by an archvile.\n'
-        "OB_UNDEAD = %o couldn't evade a revenant's fireball.\n"
-        'OB_FATSO = %o was squashed by a mancubus.\n'
-        'OB_CHAINGUY = %o was perforated by a chaingunner.\n'
-        'OB_SKULL = %o was spooked by a lost soul.\n'
-        'OB_IMP = %o was burned by an imp.\n'
-        'OB_CACO = %o was smitten by a cacodemon.\n'
-        'OB_BARON = %o was bruised by a Baron of Hell.\n'
-        'OB_KNIGHT = %o was splayed by a Hell Knight.\n'
-        'OB_SPIDER = %o stood in awe of the spider demon.\n'
-        'OB_BABY = %o let an arachnotron get %h.\n'
-        'OB_CYBORG = %o was splattered by a cyberdemon.\n'
-        'OB_WOLFSS = %o met a Nazi.\n'
-        'CC_ZOMBIE = ZOMBIEMAN\n'
-        'CC_SHOTGUN = SHOTGUN GUY\n'
-        'CC_HEAVY = HEAVY WEAPON DUDE\n'
-        'CC_IMP = IMP\n'
-        'CC_DEMON = DEMON\n'
-        'CC_LOST = LOST SOUL\n'
-        'CC_CACO = CACODEMON\n'
-        'CC_HELL = HELL KNIGHT\n'
-        'CC_BARON = BARON OF HELL\n'
-        'CC_ARACH = ARACHNOTRON\n'
-        'CC_PAIN = PAIN ELEMENTAL\n'
-        'CC_REVEN = REVENANT\n'
-        'CC_MANCU = MANCUBUS\n'
-        'CC_ARCH = ARCH-VILE\n'
-        'CC_SPIDER = THE SPIDER MASTERMIND\n'
-        'CC_CYBER = THE CYBERDEMON\n'
-        'CC_HERO = OUR HERO\n'
-    }
-    gui.wad_add_text_lump("DEHACKED", data);
-end
-----------------------------------------------------------------
 gui.import("brutaldoom/BrutalDoomWeapons");
-
-
 
 
 BRUTALDOOM.PLAYER_MODEL =
@@ -729,22 +652,19 @@ OB_MODULES["brutaltweaks"] =
   
   options =
   {
-      puristrailgunreload =
-      {
-          label="Purist Railgun\n Reloading"
-          choices=BRUTALDOOM.PURISTRAILGUNRELOADOPTIONS
-      }
-      iwad =
-      {
-          label="iwad"
-          choices=BRUTALDOOM.IWADS
-          tooltip="Sets which iwad to load Brutal Doom with"
-      }
       musicpreset =
       {
           label="Music"
           choices=BRUTALDOOM.musicpresets
+		  default="doom2"
       } 
+
+      puristrailgunreload =
+      {
+          label="Purist Railgun\n Reloading"
+          choices=BRUTALDOOM.PURISTRAILGUNRELOADOPTIONS
+		  default="None"
+      }
   }
 }
 

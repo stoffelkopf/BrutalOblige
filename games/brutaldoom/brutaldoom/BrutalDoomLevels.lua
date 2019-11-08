@@ -143,13 +143,8 @@ function BRUTALDOOM.get_levels()
     -- secret levels
     if map == 31 then
       LEV.is_secret = true
-      if BRUTALDOOM.PARAMETERS.iwad == "Tnt.wad" then
-        LEV.theme_name = "egypt2"
-        --LEV.name_class = "GOTHIC"
-      else
-          LEV.theme_name = "wolf"
-          LEV.name_class = "URBAN"
-      end
+      LEV.theme_name = "wolf"
+      LEV.name_class = "URBAN"
     end
     if map == 32 then
       if OB_CONFIG.iwad_usage == "complete" then

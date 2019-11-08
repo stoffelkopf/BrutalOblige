@@ -1874,18 +1874,6 @@ chunk.goal.action = "S1_OpenDoor"  -- FIXME IT SHOULD BE SET WHEN JOINER IS REND
           light_ent.id = 14999
         end
 		gui.printf("Light %s File: %s map: %s\n",def.light_color,def.file,def.map)
- for k, v in pairs(light_ent) do
- indent = 0
-    formatting = string.rep("  ", indent) .. k .. ": "
-    if type(v) == "table" then
-      print(formatting)
-      tprint(v, indent+1)
-    elseif type(v) == 'boolean' then
-      print(formatting .. tostring(v))      
-    else
-      print(formatting .. v)
-    end
-  end	
         raw_add_entity(light_ent)
       end
     end	
