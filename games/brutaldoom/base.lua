@@ -269,21 +269,6 @@ function BRUTALDOOM.decorate()
 	gui.wad_insert_file("brutaloblige/brightmaps/BMHWSHH0.png","BMHWSHH0");		
 	gui.wad_insert_file("brutaloblige/brightmaps/BMHWSHI0.png","BMHWSHI0");		
 
---ZombieFodder
-	gui.wad_insert_file("brutaloblige/zscript/ZOMBIEF.zscript","ZOMBIEF");	
-	
-	gui.wad_insert_file("brutaloblige/sounds/FODDSEE1.ogg","FODDSEE1");	
-	gui.wad_insert_file("brutaloblige/sounds/FODDSEE2.ogg","FODDSEE2");	
-	gui.wad_insert_file("brutaloblige/sounds/FODDACT1.ogg","FODDACT1");	
-	gui.wad_insert_file("brutaloblige/sounds/FODDACT2.ogg","FODDACT2");	
-	gui.wad_insert_file("brutaloblige/sounds/FODDPAIN.ogg","FODDPAIN");	
-	gui.wad_insert_file("brutaloblige/sounds/FODDDIE1.ogg","FODDDIE1");	
-	gui.wad_insert_file("brutaloblige/sounds/FODDDIE2.ogg","FODDDIE2");	
-	gui.wad_insert_file("brutaloblige/sounds/FODDATK.ogg","FODDATK");	
-	gui.wad_insert_file("brutaloblige/sounds/FODDMISS.ogg","FODDMISS");	
-	gui.wad_insert_file("brutaloblige/sounds/FODDHIT.ogg","FODDHIT");	
-	gui.wad_insert_file("brutaloblige/sounds/FODDSOUL.ogg","FODDSOUL");		
-	
 --Rottweiler
 	gui.wad_insert_file("brutaloblige/zscript/ROTTW.zscript","ROTTW");		
 	
@@ -292,17 +277,6 @@ function BRUTALDOOM.decorate()
 	gui.wad_insert_file("brutaloblige/sounds/DSDOGIDL.ogg","DSDOGIDL");			
 	gui.wad_insert_file("brutaloblige/sounds/DSDOGPAN.ogg","DSDOGPAN");			
 	gui.wad_insert_file("brutaloblige/sounds/DSDOGSEE.ogg","DSDOGSEE");				
-	
---Succubus
-	gui.wad_insert_file("brutaloblige/sounds/PYROBRN.ogg","PYROBRN");			
-	gui.wad_insert_file("brutaloblige/sounds/PYROXXPL.ogg","PYROXXPL");			
-	gui.wad_insert_file("brutaloblige/sounds/PYRODTH.ogg","PYRODTH");			
-	gui.wad_insert_file("brutaloblige/sounds/PYROPAIN.ogg","PYROPAIN");			
-	gui.wad_insert_file("brutaloblige/sounds/PYROACT1.ogg","PYROACT1");			
-	gui.wad_insert_file("brutaloblige/sounds/PYROACT2.ogg","PYROACT2");			
-	gui.wad_insert_file("brutaloblige/sounds/PYROSIT1.ogg","PYROSIT1");			
-	gui.wad_insert_file("brutaloblige/sounds/PYROSIT2.ogg","PYROSIT2");			
-	gui.wad_insert_file("brutaloblige/sounds/PYROHEAL.ogg","PYROHEAL");				
 	
 --Roach
 	gui.wad_insert_file("brutaloblige/zscript/ROACH.zscript","ROACH");		

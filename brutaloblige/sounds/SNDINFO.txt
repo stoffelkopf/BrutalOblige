@@ -6,26 +6,6 @@ monster/hlnpai		dshlnpai
 monster/hlndth		dshlndth
 monster/hlnatk		dshlnatk
 monster/hlnexp		dshlnexp
-$random ZombieFodder/Sight { FODDERSEE1 FODDERSEE2 }
-FODDERSEE1	FODDSEE1
-FODDERSEE2	FODDSEE2
-
-$random ZombieFodder/Active { FODDERACT1 FODDERACT2 }
-FODDERACT1	FODDACT1
-FODDERACT2	FODDACT2
-
-ZombieFodder/Pain	FODDPAIN
-
-$random ZombieFodder/Death { FODDERDIE1 FODDERDIE2 }
-FODDERDIE1	FODDDIE1
-FODDERDIE2	FODDDIE2
-
-ZombieFodder/Melee DSCLAW
-ZombieFodder/Soul	FODDSOUL
-
-ZFlesh/Throw	FODDATK
-ZFlesh/Miss		FODDMISS
-ZFlesh/Hit		FODDHIT
 
 $Random Roach/Sight { ROACSIG1 ROACSIG2 ROACSIG3 }
 ROACSIG1	ROACSIG1
@@ -58,27 +38,6 @@ Dog/Active		DSDOGIDL
 Dog/Pain		DSDOGPAN
 Dog/Attack		DSDOGATK
 Dog/Death		DSDOGDIE
-
-$random pyr/sight   { pyr/sight1  pyr/sight2 }
-pyr/pain            pyropain
-pyr/death           pyrodth
-pyr/sight1          pyrosit1
-pyr/active          pyroact
-weapons/pyrobrn      pyrobrn
-weapons/pyroxxpl      pyroxxpl
-
-$random pyr/active { pyr/active1 pyr/active2 }
-$random pyr/attack { pyr/attack2 pyr/attack2 pyr/attack2 pyr/attack2 pyr/attack2 pyr/attack2 pyr/attack1 }
-pyr/sight1		pyrosit1
-pyr/sight2		pyrosit2
-pyr/active1		pyroact1
-pyr/active2		pyroact2
-pyr/attack2		nosound
-pyr/pain		pyropain
-pyr/death		pyrodth
-weapons/pyrobrn		pyrobrn
-weapons/pyroxxpl    pyroxxpl
-pyr/resurrected		pyroheal
 
 diablo2/goatman/attack		011att
 diablo2/goatman/death		011deth

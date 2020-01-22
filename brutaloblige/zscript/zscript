@@ -6,7 +6,6 @@ version 4.1
 #include "basemons"
 #include "HELLION"
 #include "HELLW"
-#include "ZOMBIEF"
 #include "ROACH"
 #include "HIEROP"
 #include "ROTTW"

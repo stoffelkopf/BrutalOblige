@@ -316,21 +316,6 @@ BRUTALDOOM.MONSTERS =
 		infight_damage = 36
 		allow_in_theme = "egypt2"		
 	}
-	ZombieFodder = 
-    {
-        id = 10303
-        r = 20
-        h = 56 
-        level = 1
-        prob = 0
-		theme_prob = 100 --60		
-        health = 15
-        damage = 10
-        attack = "melee"
-        density = 2
-        room_size = "small"
-		allow_in_theme = "egypt2"				
-    }	
 	SnakeImp =
 	{
 		id = 10304
@@ -366,54 +351,6 @@ BRUTALDOOM.MONSTERS =
 		cage_factor = 0
 		allow_in_theme = "egypt2"				
 	}
-	PyroSuccubus =
-	{
-		id = 10308
-		r = 16
-		h = 50 
-		level = 1
-		prob = 0
-		theme_prob = 140
-		health = 200
-		damage = 2
-		attack = "missile"
-		density = 1.0
-		room_size = "small"
-		trap_factor = 0.3
-		allow_in_theme = "egypt2"				
-	}	
-	PyroSuccubusWalk =
-	{
-		id = 10309
-		r = 16
-		h = 50 
-		level = 1
-		prob = 0
-		theme_prob = 100
-		health = 200
-		damage = 2
-		attack = "missile"
-		density = 1.0
-		room_size = "small"
-		trap_factor = 0.3
-		allow_in_theme = "egypt2"				
-	}	
-	PyroSuccubusFly =
-	{
-		id = 10310
-		r = 16
-		h = 50 
-		level = 1
-		prob = 0
-		theme_prob = 100
-		health = 200
-		damage = 2
-		attack = "missile"
-		density = 1.0
-		room_size = "small"
-		trap_factor = 0.3
-		allow_in_theme = "egypt2"				
-	}	
 	Hierophant =
 	{
 		id = 10306
@@ -432,6 +369,7 @@ BRUTALDOOM.MONSTERS =
 --		weap_min_damage = 88
 		room_size = "medium"
 		infight_damage = 40
+		boss_limit = 2
 		allow_in_theme = "egypt2"			
 	}
 	Azazel =
@@ -452,6 +390,7 @@ BRUTALDOOM.MONSTERS =
 --		weap_min_damage = 88
 		room_size = "medium"
 		infight_damage = 40
+		boss_limit = 1
 		allow_in_theme = "egypt2"			
 	}
 	

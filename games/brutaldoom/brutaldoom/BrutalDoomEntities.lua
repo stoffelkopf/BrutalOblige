@@ -30,7 +30,4 @@ BRUTALDOOM.ENTITIES =
     LargeRainSpawner = { id=15868, r=1, h=1 }
     SkyboxRainSpawner = { id=373, r=1, h=1 }
 
-    --EDay entities
-    --Oblige seems to want to use these even if EDay is not enabled so put fake versions in here
-    GraffitiPainter = { id=11001, r=14, h=4 } --actually UrbanRubble
 }

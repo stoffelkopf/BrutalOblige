@@ -71,14 +71,10 @@ local id_number =
 	{
 		10301 = Hellion
 		10302 = HellWarrior
-		10303 = ZombieFodder
 		10304 = SnakeImp
 		10305 = Roach
 		10306 = Hierophant
 		10307 = DemonDog
-		10308 = PyroSuccubus
-		10309 = PyroSuccubusWalk
-		10310 = PyroSuccubusFly
 		10311 = Azazel
 	}
 ]]

@@ -32,6 +32,7 @@ function BRUTALDOOM.get_levels()
 				{ prob=50, file="games/doom/data/boss1/ult_tower.wad", map="E2M8", boss="cyber"}
 				{ prob=50, file="games/doom/data/boss1/tower1.wad", map="E2M8", boss="cyber" }
 				{ prob=50, file="games/doom/data/boss1/tower2.wad", map="E2M8", boss="cyber" }
+				{ prob=50, file="games/doom/data/boss1/cyber_arena1.wad", map="E2M8", boss="cyber" }				
 			}
 			MAP30 =
 			{
@@ -41,6 +42,8 @@ function BRUTALDOOM.get_levels()
 				{ prob=50, file="games/doom/data/boss2/gotcha4.wad", map="MAP01", boss="none" }
 				{ prob=50, file="games/doom/data/boss1/dis1.wad", map="E3M8", boss="spider" }
 				{ prob=50, file="games/doom/data/boss1/ult_dis.wad", map="E3M8", boss="spider" }
+				{ prob=50, file="games/doom/data/boss1/spider_arena1.wad", map="E3M8", boss="spider" }				
+				{ prob=50, file="games/doom/data/boss1/spider_arena2.wad", map="E4M8", boss="spider" }								
 			}
 		}
 		elseif OB_CONFIG.iwad_usage == "doom2" then
