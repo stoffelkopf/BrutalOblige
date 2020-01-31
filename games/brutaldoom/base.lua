@@ -32,6 +32,7 @@ gui.import("brutaldoom/BrutalDoomPickups")
 gui.import("brutaldoom/BrutalDoomEntities")
 gui.import("brutaldoom/BrutalDoomMusic")
 gui.import("UniversalIntermissionCompat/BrutalINTM")
+gui.import("REALM667Compat/REALM667")
 gui.import("functions/tablecontains")
 gui.import("functions/tablemerge")
 gui.import("functions/filereading")
@@ -54,6 +55,7 @@ BRUTALDOOM.PARAMETERS =
     musicpreset = 'doom2'
     brutalversion = "brutalv21.pk3"
     usingui = false
+	realm667 = false
     playerclass = "Doomer"
     puristrailgunreload = "None"
     mini_mastermind = false
@@ -82,7 +84,11 @@ function BRUTALDOOM.decorate()
 	gui.wad_insert_file("brutaloblige/decorates/BrutalWeapons.dec","BRUWEPS");
     gui.wad_insert_file("brutaloblige/decorates/BrutalPickups.dec","BRUPUPS");
     gui.wad_insert_file("brutaloblige/decorates/Bolognese.dec","BOLOGNES");   
-	gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
+	if BRUTALDOOM.PARAMETERS.realm667 == true then   	
+		gui.wad_insert_file("brutaloblige/zscript/zscript667","ZSCRIPT");
+	else
+		gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
+	end
     gui.wad_insert_file("brutaloblige/zscript/base.zscript","ZBASE");
     gui.wad_insert_file("brutaloblige/zscript/NotCompatibleWithBrutality.zscript","ZBASE2");
     gui.wad_insert_file("brutaloblige/zscript/wolfmons.zscript","WOLFMONS");
@@ -365,8 +371,14 @@ function BRUTALDOOM.decorate()
 	gui.wad_insert_file("brutaloblige/sounds/SCREAM2.wav","SCREAM2");			
 	gui.wad_insert_file("brutaloblige/sounds/FLAMSTRT.wav","FLAMSTRT");				
 	
-	gui.wad_insert_file("brutaloblige/gldefs/GLDEFS.gl","GLDEFS");	
-	gui.wad_insert_file("brutaloblige/sounds/SNDINFO.txt","SNDINFO");		
+	if BRUTALDOOM.PARAMETERS.realm667 == true then   	
+		gui.wad_insert_file("brutaloblige/gldefs/GLDEFS667.gl","GLDEFS");	
+		gui.wad_insert_file("brutaloblige/sounds/SNDINFO667.txt","SNDINFO");		
+	else
+		gui.wad_insert_file("brutaloblige/gldefs/GLDEFS.gl","GLDEFS");		
+		gui.wad_insert_file("brutaloblige/sounds/SNDINFO.txt","SNDINFO");		
+	end
+	
 end
 
 function BRUTALDOOM.castcalldecorate()
@@ -493,7 +505,7 @@ function BRUTALDOOM.setup()
     
     gui.printf("Universal Intermission check:\n");
     BRUTALDOOM.checkuintm();   
-       
+	BRUTALDOOM.checkrealm667()       
     BRUTALDOOM.setsecretexits();
 end
 

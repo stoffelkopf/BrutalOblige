@@ -78,6 +78,40 @@ local id_number =
 		10311 = Azazel
 	}
 ]]
+
+local id_number_realm667 =
+[[
+	DoomEdNums
+	{
+		10301 = Hellion
+		10302 = HellWarrior
+		10304 = SnakeImp
+		10305 = Roach
+		10306 = Hierophant
+		10307 = DemonDog
+		10311 = Azazel
+		10501 = Arachnophyte
+		10502 = AracnorbQueen
+		10503 = BFGGuy
+		10504 = Cyberbaron
+		10505 = Haedexebus
+		10506 = Terror
+		10507 = ForgottenOne
+		10508 = BloodDemonClone
+		10509 = CGunSpider
+		10510 = cyberImp
+		10511 = Cybruiser
+		10512 = QuadShotgunZombie
+		10513 = RocketImp 
+		10514 = MaulerDemon
+		10515 = LordofHeresy
+		10516 = CrackoDemon
+		10517 = Terminator
+		10518 = SupremeFiend 
+		10519 = OverLord
+		10520 = Helemental		
+	}
+]]
 				
 local castcall =
 [[
@@ -563,11 +597,17 @@ Intermission BrutalDoomCast
     table.insert(data, 'next = EndSequence, "Brutal_FinalIntermission"\n') --last map ends the game unless it is a secret level (ie anything more or less than full game)
   end
   table.insert(data, "}\n"); --close final map definition
-  
+   
   --insert final intermission
   table.insert(data, castcall)
-  table.insert(data, id_number)  
-
+  
+  --insert DoomEdNums 
+  if BRUTALDOOM.PARAMETERS.realm667 == true then   
+	table.insert(data, id_number_realm667)  
+  else
+    table.insert(data, id_number)  
+  end
+  
 --make sure there are no 0s in stupid places
 for i = 1, (#data) do --for every value in data
   data[i] = string.gsub(data[i], '"MAP010"','"MAP10"')

@@ -187,5 +187,27 @@ function BRUTALDOOM.texturesetup()
         '    pic SKELPOSTER\n'
         '}\n'
     }
-    gui.wad_add_text_lump("DECALDEF", decaldata);
+    local decaldata_667 = 
+    {
+        'decal Skel_Poster\n'
+        '{\n'
+        '    pic SKELPOSTER\n'
+        '}\n'
+		'decal RocketImpScorch\n'
+		'{\n'
+		'	pic SCORCH2\n'
+		'	shade "00 00 00"\n'
+		'	x-scale 0.75\n'
+		'	y-scale 0.75\n'
+		'	randomflipx\n'
+		'	randomflipy\n'
+		'}\n'
+		'generator CrackodemonBall CacoScorch\n'
+		'generator Blusoul CacoScorch\n'
+	}
+	if BRUTALDOOM.PARAMETERS.realm667 == true then   		
+		gui.wad_add_text_lump("DECALDEF", decaldata_667);
+	else
+		gui.wad_add_text_lump("DECALDEF", decaldata);
+	end
 end
