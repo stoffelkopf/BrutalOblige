@@ -31,6 +31,7 @@ gui.import("brutaldoom/BrutalDoomThemes")
 gui.import("brutaldoom/BrutalDoomPickups")
 gui.import("brutaldoom/BrutalDoomEntities")
 gui.import("brutaldoom/BrutalDoomMusic")
+gui.import("brutaldoom/BrutalDoomGL_Data")
 gui.import("UniversalIntermissionCompat/BrutalINTM")
 gui.import("REALM667Compat/REALM667")
 gui.import("functions/tablecontains")
@@ -372,10 +373,8 @@ function BRUTALDOOM.decorate()
 	gui.wad_insert_file("brutaloblige/sounds/FLAMSTRT.wav","FLAMSTRT");				
 	
 	if BRUTALDOOM.PARAMETERS.realm667 == true then   	
-		gui.wad_insert_file("brutaloblige/gldefs/GLDEFS667.gl","GLDEFS");	
 		gui.wad_insert_file("brutaloblige/sounds/SNDINFO667.txt","SNDINFO");		
 	else
-		gui.wad_insert_file("brutaloblige/gldefs/GLDEFS.gl","GLDEFS");		
 		gui.wad_insert_file("brutaloblige/sounds/SNDINFO.txt","SNDINFO");		
 	end
 	
@@ -456,6 +455,7 @@ function BRUTALDOOM.all_done()
     BRUTALDOOM.mergeintm();
   end
   BRUTALDOOM.create_mapinfo();
+  BRUTALDOOM.create_gldata()
   BRUTALDOOM.castcalldecorate();
   BRUTALDOOM.parameters_to_wad();
 end

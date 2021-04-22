@@ -1,3 +1,10 @@
+BRUTALDOOM.GLDATA = { }
+
+function BRUTALDOOM.create_gldata()
+    gui.printf("GLData Merger code is starting\n");
+
+local GL_DOOM =
+[[
 //Kamikaze Guy
 
 Pointlight SuicideBomberDeath1
@@ -1856,6 +1863,10 @@ Frame MSP1O { Light SatyrLordRedMissile10 }
 Frame MSP1P { Light SatyrLordRedMissile11 }
 }
 
+]]
+
+local GL_LIGHTS =
+[[
 //Dynamic Lights
 
 PointLight WhiteLight
@@ -1954,6 +1965,10 @@ object ObLightPurple
   frame CAND { light PurpleLight }
 }
 
+]]
+
+local GL_667 =
+[[
 FlickerLight2 ArachnophyteWalk
 {
 color 1.0 0.8 0.2
@@ -6130,3 +6145,104 @@ BrightMap Sprite HELEP0
 Map BMHELEP0
 DisableFullBright
 }
+
+]]
+
+local GL_GLOW =
+[[
+Glow
+{
+  Flats
+  {
+    // vanilla ceiling lights
+    CEIL1_2
+    CEIL1_3
+    CEIL3_4
+    CEIL3_6
+    CEIL4_1
+    CEIL4_2
+    CEIL4_3
+    FLAT17
+    FLAT2
+    FLAT22
+    FLOOR1_7
+    TLITE6_1
+    TLITE6_4
+    TLITE6_5
+    TLITE6_6
+    GATE1
+    GATE2
+    GATE3
+    GATE4
+    GRNLITE1
+
+    // vanilla liquids
+    BLOOD1
+    BLOOD2
+    BLOOD3
+    LAVA1
+    LAVA2
+    LAVA3
+    LAVA4
+    NUKAGE1
+    NUKAGE2
+    NUKAGE3
+    SLIME01
+    SLIME02
+    SLIME03
+    SLIME04
+    SLIME05
+    SLIME06
+    SLIME07
+    SLIME08
+
+    //teleporter gate textures
+    GATE1
+    GATE2
+    GATE3
+    GATE4
+    GATE3TN
+    GATE4BL
+    GATE4MG
+    GATE4OR
+    GATE4PU
+    GATE4RD
+    GATE4YL
+
+    //composite flats
+    T_GHFLY
+    T_GHFLG
+    T_GHFLB
+    T_GHFLP
+
+    T_CL43R
+    T_CL43Y
+    T_CL43G
+    T_CL43P
+  }
+
+  Texture "FWATER1", 0a0ac4, 128
+  Texture "FWATER2", 0a0ac4, 128
+  Texture "FWATER3", 0a0ac4, 128
+  Texture "FWATER4", 0a0ac4, 128
+  Texture "F_SKY1", 808080, 128
+}
+]]
+
+	gui.printf("GLData code is running\n");
+	local data = {}
+	table.insert(data, GL_DOOM)  
+	if PARAM.dynamic_lights == "yes" then
+		table.insert(data, GL_LIGHTS)  
+		gui.printf("Added Dynamic Lights GLData\n");			
+	end	
+	if PARAM.glowing_flats == "yes" then
+		table.insert(data, GL_GLOW)  
+		gui.printf("Added Glowing Floors GLData\n");			
+	end	
+	if BRUTALDOOM.PARAMETERS.realm667 == true then   
+		table.insert(data, GL_667)  
+		gui.printf("Added 667 GLData\n");
+	end
+	gui.wad_add_text_lump("GLDEFS", data);
+end
