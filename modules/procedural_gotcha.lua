@@ -45,6 +45,7 @@ PROCEDURAL_GOTCHA_FINE_TUNE.GOTCHA_MAP_SIZES =
   "regular", _("Regular"),
   "small", _("Small"),
   "tiny", _("Tiny"),
+  "micro", _("Micro"),  
 }
 
 PROCEDURAL_GOTCHA_FINE_TUNE.FORCE_BOSS_FIGHT_CHOICES =

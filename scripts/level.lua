@@ -215,6 +215,8 @@ function Episode_determine_map_sizes()
           W = 22
         elseif PARAM.gotcha_map_size == "tiny" then
           W = 16
+        elseif PARAM.gotcha_map_size == "micro" then
+          W = 10
         end
       else
         W = 26
