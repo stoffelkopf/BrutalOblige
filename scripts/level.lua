@@ -205,6 +205,23 @@ function Episode_determine_map_sizes()
   each LEV in GAME.levels do
     local W, H = Level_determine_map_size(LEV)
 
+    if LEV.is_procedural_gotcha == true then
+      if PARAM.gotcha_map_size then
+        if PARAM.gotcha_map_size == "large" then
+          W = 30
+        elseif PARAM.gotcha_map_size == "regular" then
+          W = 26
+        elseif PARAM.gotcha_map_size == "small" then
+          W = 22
+        elseif PARAM.gotcha_map_size == "tiny" then
+          W = 16
+        end
+      else
+        W = 26
+      end
+      H = W
+    end
+
     -- sanity check
     assert(W + 4 <= SEED_W)
     assert(H + 4 <= SEED_H)
@@ -360,7 +377,31 @@ function Episode_plan_monsters()
     -- add some randomness
     mon_along = mon_along + 0.7 * (gui.random() ^ 2)
 
-    LEV.monster_level = mon_along
+    if LEV.is_procedural_gotcha then
+      local gotcha_strength = 2
+
+      if PARAM.gotcha_strength then
+        if PARAM.gotcha_strength == "none" then
+          gotcha_strength = 0
+        elseif PARAM.gotcha_strength == "harder" then
+          gotcha_strength = 2
+        elseif PARAM.gotcha_strength == "tougher" then
+          gotcha_strength = 4
+        elseif PARAM.gotcha_strength == "crazier" then
+          gotcha_strength = 8
+        end
+      end
+
+      LEV.monster_level = mon_along + gotcha_strength
+      if LEV.monster_level < 1 then
+        LEV.monster_level = 1
+      end
+
+    else
+
+    -- used by standard levels
+      LEV.monster_level = mon_along
+	end
   end
 
 
@@ -458,7 +499,7 @@ function Episode_plan_monsters()
 
     each name,_ in LEV.seen_monsters do
       local info = GAME.MONSTERS[name]
-      if not info.boss_type or OB_CONFIG.strength == "crazy" then
+      if not info.boss_type or OB_CONFIG.strength == "crazy" or LEV.is_procedural_gotcha then
         LEV.global_pal[name] = 1
       end
     end
@@ -482,6 +523,7 @@ function Episode_plan_monsters()
 
 
   local function is_boss_usable(LEV, mon, info)
+    if LEV.is_procedural_gotcha then return true end
     if info.prob <= 0 and not info.theme_prob then return false end
     if info.boss_prob == 0 then return false end
 	
@@ -806,6 +848,21 @@ function Episode_plan_monsters()
       if OB_CONFIG.bosses   == "none"  then continue end
 
       pick_boss_quotas(LEV)
+	  
+      -- hax for procedural gotchas
+      if LEV.is_procedural_gotcha and PARAM.gotcha_boss_fight == "yes" then
+        if LEV.game_along <= 0.33 then
+          if LEV.boss_quotas.minor < 1 then LEV.boss_quotas.minor = 1 end
+        elseif LEV.game_along > 0.33 and LEV.game_along <= 0.66 then
+          if LEV.boss_quotas.nasty < 1 then LEV.boss_quotas.nasty = 1 end
+        elseif LEV.game_along > 0.66 then
+          if LEV.boss_quotas.tough < 1 then LEV.boss_quotas.tough = 1 end
+        end
+
+        if LEV.boss_quotas.guard < 2 then
+          LEV.boss_quotas.guard = rand.int(2, 4)
+        end
+      end  
 
       for i = 1, LEV.boss_quotas.tough do create_fight(LEV, "tough", i) end
       for i = 1, LEV.boss_quotas.nasty do create_fight(LEV, "nasty", i) end
@@ -1425,7 +1482,7 @@ function Episode_plan_weapons()
 
     -- prefer simpler weapons for start rooms
     -- [ except in crazy monsters mode, player may need a bigger weapon! ]
-    if is_start and OB_CONFIG.strength != "crazy" then
+    if is_start and OB_CONFIG.strength != "crazy" or LEV.is_procedural_gotcha != "true" then
       if level <= 2 then prob = prob * 4 end
       if level == 3 then prob = prob * 2 end
 
@@ -2144,6 +2201,19 @@ function Level_do_styles()
   if LEVEL.psychedelic then
     Mat_prepare_trip()
   end 
+  
+  if LEVEL.is_procedural_gotcha then
+    STYLE.hallways = "none"
+    STYLE.doors = "heaps"
+    STYLE.switches = "heaps"
+    STYLE.big_rooms = "heaps"
+    STYLE.traps = "none"
+    STYLE.ambushes = "none"
+    STYLE.caves = "none"
+    STYLE.parks = "none"
+    STYLE.symmetry = "more"
+    STYLE.teleporters = "none"
+  end 
 end
 
 
@@ -2265,25 +2335,27 @@ function Level_handle_prebuilt()
   end
 
   local info = LEVEL.prebuilt[rand.index_by_probs(probs)]
-
   assert(info)
   assert(info.file)
   assert(info.map)
-  assert(info.boss)
-  assert(LEVEL.name)
-  
+  if OB_CONFIG.game == "brutaldoom" then
+	assert(info.boss)
+    assert(LEVEL.name)	
+  end
   if GAME.format == "doom" then
 	gui.wad_transfer_map(info.file, info.map, LEVEL.name)
-	if LEVEL.name == "MAP04" then
-	    BRUTALDOOM.PARAMETERS.BOSSX=info.boss
-	elseif LEVEL.name == "MAP10" then
-		BRUTALDOOM.PARAMETERS.BOSS1=info.boss
-	elseif LEVEL.name == "MAP20" then
-		BRUTALDOOM.PARAMETERS.BOSS2=info.boss	
-	elseif LEVEL.name == "MAP30" then
-		BRUTALDOOM.PARAMETERS.BOSS3=info.boss		  
-    end
-    gui.printf("Level Boss:%s\n",info.boss)			 
+	if OB_CONFIG.game == "brutaldoom" then
+		if LEVEL.name == "MAP04" then
+			BRUTALDOOM.PARAMETERS.BOSSX=info.boss
+		elseif LEVEL.name == "MAP10" then
+			BRUTALDOOM.PARAMETERS.BOSS1=info.boss
+		elseif LEVEL.name == "MAP20" then
+			BRUTALDOOM.PARAMETERS.BOSS2=info.boss	
+		elseif LEVEL.name == "MAP30" then
+			BRUTALDOOM.PARAMETERS.BOSS3=info.boss		  
+		end		
+		gui.printf("Prebuilt Level Boss:%s\n",info.boss)
+	end
   else
     -- FIXME: support other games (Wolf3d, Quake, etc)
   end
@@ -2317,6 +2389,10 @@ function Level_make_level(LEV)
   -- must create the description before the copy (else games/modules won't see it)
   if not LEV.description and LEV.name_class then
     LEV.description = Naming_grab_one(LEV.name_class)
+  end
+
+  if LEV.is_procedural_gotcha then
+    LEV.description = Naming_grab_one("BOSS")
   end
 
   -- copy level info, so that all new information added into the LEVEL

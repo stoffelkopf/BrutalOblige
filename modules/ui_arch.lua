@@ -36,6 +36,22 @@ UI_ARCH.SIZES =
   "extreme", _("Extreme"),
 }
 
+
+UI_ARCH.PROC_GOTCHA_CHOICES =
+{
+  "none",  _("NONE"),
+  "final", _("Final Map Only"),
+  "epi",   _("Episodic (MAP11, MAP20, MAP30)"),
+  "2epi",   _("2 per ep (5,11,16,20,25,30)"),
+  "3epi",   _("3 per ep (3,7,11,14,17,20,23,27,30)"),
+  "4epi",   _("4 per ep (3,6,9,11,14,16,18,20,23,26,28,30)"),
+  "_",     _("_"),
+  "5p",    _("5% Chance, Any Map After MAP04"),
+  "10p",   _("10% Chance, Any Map After MAP04"),
+  "all",   _("Everything"),
+}
+	
+
 OB_MODULES["ui_arch"] =
 {
   label = _("Architecture")
@@ -53,7 +69,16 @@ OB_MODULES["ui_arch"] =
 
     { name="hallways",     label=_("Hallways"),   choices=STYLE_CHOICES }
     { name="teleporters",  label=_("Teleports"),  choices=STYLE_CHOICES }
-    { name="steepness",    label=_("Steepness"),  choices=STYLE_CHOICES }
+    { name="steepness",    label=_("Steepness"),  choices=STYLE_CHOICES, gap=1 }
+    {
+      name="procedural_gotchas"
+      label=_("Procedural Gotcha")
+      choices=UI_ARCH.PROC_GOTCHA_CHOICES
+      default="none"
+      tooltip = "Procedural Gotchas are two room maps, where the second is an immediate " ..
+      "but immensely-sized exit room with gratitiously intensified monster strength. " ..
+      "Essentially an arena - prepare for a tough, tough fight!\n\nNotes:\n\n" ..
+      "5% of levels may create at least 1 or 2 gotcha maps in a standard full game."
+    }
   }
 }
-

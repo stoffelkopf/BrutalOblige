@@ -866,6 +866,39 @@ function Monster_fill_room(R)
       assert(qty)
     end
 
+    -- oh the pain
+    if LEVEL.is_procedural_gotcha then
+
+      local gotcha_qty = 1.25
+
+      if PARAM["gotcha_qty"] then
+        if PARAM["gotcha_qty"] == "-50" then
+          gotcha_qty = 0.5
+        elseif PARAM["gotcha_qty"] == "-25" then
+          gotcha_qty = 0.75
+        elseif PARAM["gotcha_qty"] == "none" then
+          gotcha_qty = 1.0
+        elseif PARAM["gotcha_qty"] == "25" then
+          gotcha_qty = 1.25
+        elseif PARAM["gotcha_qty"] == "50" then
+          gotcha_qty = 1.5
+        elseif PARAM["gotcha_qty"] == "100" then
+          gotcha_qty = 2.0
+        elseif PARAM["gotcha_qty"] == "200" then
+          gotcha_qty = 4.0
+        elseif PARAM["gotcha_qty"] == "400" then
+          gotcha_qty = 8.0
+        end
+      end
+
+      qty = qty * gotcha_qty
+
+      if qty < 0.1 then
+        qty = 0.1
+      end
+
+    end
+
     -- hallways have limited spots
     if R.is_hallway then
       return qty * rand.pick({10,20,30})
@@ -1204,7 +1237,7 @@ function Monster_fill_room(R)
     local d = info.density or 1
 
     -- level check
-    if OB_CONFIG.strength != "crazy" then
+    if OB_CONFIG.strength != "crazy" or LEVEL.is_procedural_gotcha == false then
       local max_level = LEVEL.monster_level * R.lev_along
       if max_level < 2 then max_level = 2 end
 

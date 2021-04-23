@@ -20,8 +20,6 @@ puristrailgunreloadDecorate = [[
 
 BRUTALDOOM = { }
 
-BRUTALDOOM4 = { }
-
 BRUTALDOOM.SECRET_EXITS = { }
 
  --this all has to come after the tables are declared
@@ -615,7 +613,6 @@ OB_GAMES["brutaldoom"] =
   {
     DOOM
     BRUTALDOOM
-    BRUTALDOOM4
   }
 
   hooks =

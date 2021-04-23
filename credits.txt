@@ -2,7 +2,7 @@ Brutal Oblige Original Version from Robert Cross
 https://gitlab.com/CloudOfShame/BrutalOblige
 
 
-Monster from Realm 667 
+Monsters from Realm 667 
 https://www.realm667.com
 
 Zyberdemon sprites - 00_Zombie_00
@@ -29,7 +29,9 @@ As with the code in vanilla Oblige this code is GPL3.
 
 The following code ist used:
 
-- Psychadelic theme code
+- Psychadelic Theme 
 - Sky Generator
 - Fog Generator
 - Dynamic Lightning
+- Glowing Flats
+- Procedural Gotchas
