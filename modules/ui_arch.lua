@@ -40,15 +40,16 @@ UI_ARCH.SIZES =
 UI_ARCH.PROC_GOTCHA_CHOICES =
 {
   "none",  _("NONE"),
-  "final", _("Final Map Only"),
-  "epi",   _("Episodic (MAP11, MAP20, MAP30)"),
-  "2epi",   _("2 per ep (5,11,16,20,25,30)"),
-  "3epi",   _("3 per ep (3,7,11,14,17,20,23,27,30)"),
-  "4epi",   _("4 per ep (3,6,9,11,14,16,18,20,23,26,28,30)"),
+  "final", _("Final Map Only (if not prebuilt)"),
+  "epi",   _("Episodic (MAP06, MAP16, MAP26)"),
+  "2epi",   _("2 per ep (4,8,14,18,24,28)"),
+  "3epi",   _("3 per ep (3,7,11,14,16,18,24,26,28)"),
   "_",     _("_"),
-  "5p",    _("5% Chance, Any Map After MAP04"),
+  "5p",    _("05% Chance, Any Map After MAP04"),
   "10p",   _("10% Chance, Any Map After MAP04"),
-  "all",   _("Everything"),
+  "15p",   _("15% Chance, Any Map After MAP04"),
+  "20p",   _("20% Chance, Any Map After MAP04"),
+  "all",   _("Everything o_O"),
 }
 	
 

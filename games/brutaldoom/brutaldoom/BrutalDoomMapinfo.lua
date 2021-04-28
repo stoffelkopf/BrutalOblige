@@ -64,6 +64,42 @@ function BRUTALDOOM.create_mapinfo()
     local octet3 = give_random_hex() .. give_random_hex()
     return octet1 .. " " .. octet2 .. " " .. octet3
   end
+
+local function rgbToHex(rgb)
+	local hexadecimal = '0X'
+
+	for key, value in pairs(rgb) do
+		local hex = ''
+
+		while(value > 0)do
+			local index = math.fmod(value, 16) + 1
+			value = math.floor(value / 16)
+			hex = string.sub('0123456789ABCDEF', index, index) .. hex			
+		end
+
+		if(string.len(hex) == 0)then
+			hex = '00'
+
+		elseif(string.len(hex) == 1)then
+			hex = '0' .. hex
+		end
+
+		hexadecimal = hexadecimal .. hex
+	end
+	return hexadecimal
+end
+
+local function pick_random_real_fog()
+	red = rand.irange(0,35)
+	green = rand.irange(0,35)
+	blue = rand.irange(0,35)
+
+	colstr = rgbToHex({red, green, blue})
+        rstr = string.sub(colstr,3,4)
+        gstr = string.sub(colstr,5,6)
+        bstr = string.sub(colstr,7,8)
+        return rstr .. " " .. gstr .. " " ..  bstr
+end  
   
 local id_number =
 [[
@@ -426,6 +462,8 @@ Intermission BrutalDoomCast
       end
     elseif PARAM.fog_generator == "random" then
       fog_color = pick_random_fog_color()
+    elseif PARAM.fog_generator == "dark" then
+      fog_color = pick_random_real_fog()  
     else
       fog_color = ""
     end

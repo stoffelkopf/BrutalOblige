@@ -27,6 +27,7 @@ gzds.YES_NO =
 gzds.FOG_GEN_CHOICES =
 {
   "per_sky_gen",    _("Per Sky Generator"),
+  "dark",	_("Dark"),
   "random", _("Random"),
   "no",     _("No"),
 }

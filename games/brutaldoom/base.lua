@@ -9,7 +9,13 @@ math.random()
 
 secretexit1 = math.random(1,9)
 secretexit2 = math.random(11,19)
-secretexit3 = math.random(20,29)
+if secretexit2 == 15 then
+	while secretexit2 == 15 do
+		secretexit2 = math.random(11,19)
+		gui.printf('Rerolling Secret Exit 2 (15)\n')
+	end
+end
+secretexit3 = math.random(21,29)
 
 local boss1 = "cyberdemon"
 local boss2 = "mastermind"
@@ -393,17 +399,14 @@ function BRUTALDOOM.setsecretexits()
   if secretexit1 == 7 then GAME.SECRET_EXITS.MAP07 = true end
   if secretexit1 == 8 then GAME.SECRET_EXITS.MAP08 = true end
   if secretexit1 == 9 then GAME.SECRET_EXITS.MAP09 = true end
-  if secretexit1 == 10 then GAME.SECRET_EXITS.MAP10 = true end
   if secretexit2 == 11 then GAME.SECRET_EXITS.MAP11 = true end
   if secretexit2 == 12 then GAME.SECRET_EXITS.MAP12 = true end
   if secretexit2 == 13 then GAME.SECRET_EXITS.MAP13 = true end
   if secretexit2 == 14 then GAME.SECRET_EXITS.MAP14 = true end
-  if secretexit2 == 15 then GAME.SECRET_EXITS.MAP15 = true end
   if secretexit2 == 16 then GAME.SECRET_EXITS.MAP16 = true end
   if secretexit2 == 17 then GAME.SECRET_EXITS.MAP17 = true end
   if secretexit2 == 18 then GAME.SECRET_EXITS.MAP18 = true end
   if secretexit2 == 19 then GAME.SECRET_EXITS.MAP19 = true end
-  if secretexit3 == 20 then GAME.SECRET_EXITS.MAP20 = true end
   if secretexit3 == 21 then GAME.SECRET_EXITS.MAP21 = true end
   if secretexit3 == 22 then GAME.SECRET_EXITS.MAP22 = true end
   if secretexit3 == 23 then GAME.SECRET_EXITS.MAP23 = true end
