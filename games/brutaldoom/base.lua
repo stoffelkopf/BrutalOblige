@@ -7,11 +7,11 @@ math.randomseed( os.time() ) --get some randomisation
 math.random()
 math.random()
 
-secretexit1 = math.random(1,9)
-secretexit2 = math.random(11,19)
+secretexit1 = math.random(1,10)
+secretexit2 = math.random(12,19)
 if secretexit2 == 15 then
 	while secretexit2 == 15 do
-		secretexit2 = math.random(11,19)
+		secretexit2 = math.random(12,19)
 		gui.printf('Rerolling Secret Exit 2 (15)\n')
 	end
 end
@@ -399,7 +399,7 @@ function BRUTALDOOM.setsecretexits()
   if secretexit1 == 7 then GAME.SECRET_EXITS.MAP07 = true end
   if secretexit1 == 8 then GAME.SECRET_EXITS.MAP08 = true end
   if secretexit1 == 9 then GAME.SECRET_EXITS.MAP09 = true end
-  if secretexit2 == 11 then GAME.SECRET_EXITS.MAP11 = true end
+  if secretexit2 == 10 then GAME.SECRET_EXITS.MAP11 = true end
   if secretexit2 == 12 then GAME.SECRET_EXITS.MAP12 = true end
   if secretexit2 == 13 then GAME.SECRET_EXITS.MAP13 = true end
   if secretexit2 == 14 then GAME.SECRET_EXITS.MAP14 = true end

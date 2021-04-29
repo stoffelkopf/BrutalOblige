@@ -6,6 +6,26 @@ function BRUTALDOOM.create_mapinfo()
     local fog_color = ''
     local fog_intensity = "48"
 
+  local function create_episode_selection()
+	
+	local episode_selection = ''
+
+	each EPI in GAME.episodes do
+		if table.empty(EPI.levels) then continue end
+		if _index == 1 then 
+			episode_selection = '\nepisode MAP01 {\n name = "' .. EPI.description .. '"\n}\n'
+		end
+		if _index == 2 then 
+			episode_selection = episode_selection .. 'episode MAP12 {\n name = "' .. EPI.description .. '"\n}\n'
+		end
+		if _index == 3 then 
+			episode_selection = episode_selection .. 'episode MAP21 {\n name = "' .. EPI.description .. '"\n}\n'
+		end			
+		episode_selection = episode_selection .. '\n'
+	end
+	return episode_selection	
+  end
+  
   local function pick_sky_color_from_skygen_map(skytable, cur_level)
     local color
 
@@ -306,6 +326,13 @@ Intermission BrutalDoomCast
 ]]
     
   gui.printf("Mapinfo code is running\n");
+
+--    "clearepisodes\n\n"
+--    'episode MAP01\n'
+--    '{\n'
+--    'name = "Brutal Oblige"\n'
+--    '}\n\n'
+  
   local data =
   {
     "//\n"
@@ -316,12 +343,8 @@ Intermission BrutalDoomCast
     'GameInfo\n'
     '{\n'
     'AddEventHandlers = "BrutalObligeHandler"\n'
-    '}\n\n'	
-    "clearepisodes\n\n"
-    'episode MAP01\n'
-    '{\n'
-    'name = "Brutal Oblige"\n'
     '}\n\n'
+    "clearepisodes\n\n"
     'map E2M8 "Tower of Babel" //brutality\n'
     '{\n'
     'next = "MAP0' .. tostring(secretexit1 + 1) .. '"\n'
@@ -395,13 +418,17 @@ Intermission BrutalDoomCast
     --after this dest[1-#src] are the music tracks
     dest[31] = "d_evil" --map 31 always wolf themed
 
+  if PARAM.episode_sky_color then
+	gui.printf("Brutal Doom Skies: Using Skies from Sky Generator.\n")
+  end
+
   local firstmap = 1
   local mapnum = 1
 
   --- level names ---
   --L.name is MAP01 etc, L.descritption is the nice name
   --L.theme_name gives the theme
-  each L in GAME.levels do
+      each L in GAME.levels do
     local prefix = PARAM.bex_map_prefix
 
     if L.description and prefix then --keep the prefix stuff from the bex incase something else relies on it
@@ -425,7 +452,6 @@ Intermission BrutalDoomCast
       local skyname = 'SKY1'
       local enterpic = '"INTERPIC"' --default intermissionpic
 	  if PARAM.episode_sky_color then
-		gui.printf("Brutal Doom Skies: Using Skies from Sky Generator.\n")
 	    if mapnum <= 11 then
 			skyname = "RSKY1"
 		elseif mapnum > 11 and mapnum <= 20 then
@@ -593,7 +619,7 @@ Intermission BrutalDoomCast
 		  elseif BRUTALDOOM.PARAMETERS.BOSSX == "belphegor_floor" then
 		     table.insert(data, 'SpecialAction = "ObligeBelphegor", "Floor_LowerToLowest",666, 2\n')					 
 		  end
-		elseif mapnum == 10 then
+		elseif mapnum == 11 then
 		  if BRUTALDOOM.PARAMETERS.BOSS1 == "cyber" then
 		    table.insert(data, 'SpecialAction = "CyberDemon", "Exit_Normal", 0\n')
 		  elseif BRUTALDOOM.PARAMETERS.BOSS1 == "spider" then
@@ -635,7 +661,11 @@ Intermission BrutalDoomCast
     table.insert(data, 'next = EndSequence, "Brutal_FinalIntermission"\n') --last map ends the game unless it is a secret level (ie anything more or less than full game)
   end
   table.insert(data, "}\n"); --close final map definition
-   
+  
+  if PARAM.bdepi == "yes" then
+	table.insert(data,create_episode_selection())  
+  end
+    
   --insert final intermission
   table.insert(data, castcall)
   

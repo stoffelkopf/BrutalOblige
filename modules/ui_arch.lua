@@ -43,7 +43,7 @@ UI_ARCH.PROC_GOTCHA_CHOICES =
   "final", _("Final Map Only (if not prebuilt)"),
   "epi",   _("Episodic (MAP06, MAP16, MAP26)"),
   "2epi",   _("2 per ep (4,8,14,18,24,28)"),
-  "3epi",   _("3 per ep (3,7,11,14,16,18,24,26,28)"),
+  "3epi",   _("3 per ep (3,7,10,14,16,18,24,26,28)"),
   "_",     _("_"),
   "5p",    _("05% Chance, Any Map After MAP04"),
   "10p",   _("10% Chance, Any Map After MAP04"),

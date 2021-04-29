@@ -2349,7 +2349,7 @@ function Level_handle_prebuilt()
 	if OB_CONFIG.game == "brutaldoom" then
 		if LEVEL.name == "MAP04" then
 			BRUTALDOOM.PARAMETERS.BOSSX=info.boss
-		elseif LEVEL.name == "MAP10" then
+		elseif LEVEL.name == "MAP11" then
 			BRUTALDOOM.PARAMETERS.BOSS1=info.boss
 		elseif LEVEL.name == "MAP20" then
 			BRUTALDOOM.PARAMETERS.BOSS2=info.boss	

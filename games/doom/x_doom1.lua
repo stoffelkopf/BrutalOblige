@@ -2359,6 +2359,20 @@ function ULTDOOM.get_levels()
             if rand.odds(10) then LEV.is_procedural_gotcha = true end
           end
         end
+		
+	   -- 15% of maps after map 4
+      if OB_CONFIG.procedural_gotchas == "15p" then
+        if map > 4 and map != 15 and map != 31 then
+          if rand.odds(15) then LEV.is_procedural_gotcha = true end
+        end
+      end	  
+
+      -- 20% of maps after map 4
+      if OB_CONFIG.procedural_gotchas == "20p" then
+        if map > 4 and map != 15 and map != 31 then
+          if rand.odds(20) then LEV.is_procedural_gotcha = true end
+        end
+      end		
 
         -- for masochists... or debug testing
         if OB_CONFIG.procedural_gotchas == "all" then

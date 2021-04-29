@@ -15,7 +15,7 @@ function BRUTALDOOM.get_levels()
 --				MAP04 =
 --				{
 --				}
-			MAP10 =
+			MAP11 =
 			{
 				{ prob=50, file="games/doom/data/boss1/anomaly2.wad", map="E1M8", boss="baron" }
 				{ prob=50, file="games/doom/data/boss1/anomaly3.wad", map="E1M8", boss="baron" }
@@ -217,7 +217,7 @@ function BRUTALDOOM.get_levels()
         end
       end
       if OB_CONFIG.procedural_gotchas == "3epi" then
-        if map == 3 or map == 7 or map == 11 or map == 14 or map == 16 or map == 18 or map == 24 or map == 26 or map == 28 then
+        if map == 3 or map == 7 or map == 10 or map == 14 or map == 16 or map == 18 or map == 24 or map == 26 or map == 28 then
           LEV.is_procedural_gotcha = true
         end
       end

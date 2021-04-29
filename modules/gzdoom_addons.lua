@@ -75,6 +75,14 @@ OB_MODULES["gzds"] =
 
   options =
   {
+    bdepi = {
+      label = _("BD Episodes"),
+      priority = 12
+      choices = gzds.YES_NO
+      default = "no"
+      tooltip = "Adds an episode selection to Brutal Doom."
+	  gap = 1
+    }
     fog_generator = {
       label = _("Fog Generator"),
       priority = 11
