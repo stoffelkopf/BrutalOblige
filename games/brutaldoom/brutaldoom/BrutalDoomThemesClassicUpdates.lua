@@ -7,8 +7,9 @@ BRUTALDOOM.THEMES.DEFAULTS = DOOM.THEMES.DEFAULTS
 BRUTALDOOM.THEMES.DEFAULTS.barrels =
 {
     barrel = 50
-    BDECBarrel = 25
+    BDECBarrel = 20
 }
+
 --tech
 BRUTALDOOM.THEMES.tech.allow_mons_for_theme = "tech"
 BRUTALDOOM.THEMES.tech.prefab_remap =
@@ -17,15 +18,7 @@ BRUTALDOOM.THEMES.tech.prefab_remap =
     BIGDOOR6 = "TNTDOOR2"
     BIGDOOR7 = "TNTDOOR2"
 }
---BRUTALDOOM.THEMES.tech.monster_prefs =
---{
---    PistolZombie  = 1.5
---    RifleZombie = 0.5
---    shooter = 1.2
---    arach   = 1.5
---    Labguy = 1.6
---    Experiment = 1.5
---}
+
 BRUTALDOOM.THEMES.tech.facades =
 {      
     BROWN1   = 40
@@ -60,26 +53,12 @@ BRUTALDOOM.ROOM_THEMES.tech_Gray.walls =
     BUNKER03 = 30
     BUNKER05 = 30
 }
+
 --Urban
 BRUTALDOOM.THEMES.urban.allow_mons_for_theme = "urban"
---BRUTALDOOM.THEMES.urban.monster_prefs =
---{
---    PistolZombie = 0.8
---    RifleZombie = 1.2
---    shooter = 0.8
---    SMGZombie = 1.2
---    revenant = 1.2
---    knight   = 1.5
---    gunner   = 1.5
---    ZombieMainBattleTank = 1.1
---    ZombieLightTank = 1.1
---    ZombieMech = 1.1
---    ZombieHelicopter = 1.1
---    Experiment = 0.8
---}
+
 BRUTALDOOM.THEMES.urban.passable_decor =
 {
-    UrbanRubble = 100
 
     BDCritterMouse = 90
         
@@ -94,7 +73,8 @@ BRUTALDOOM.THEMES.urban.passable_decor =
     dead_shooter = 3
     dead_imp = 3
     dead_demon = 1
-    dead_caco  = 0
+    dead_caco  = 0  
+	BDECPentagram = 25
 }
 BRUTALDOOM.ROOM_THEMES.urban_Outdoors_generic=DOOM.ROOM_THEMES.urban_Outdoors_generic
 BRUTALDOOM.ROOM_THEMES.urban_Outdoors_generic.floors =
@@ -111,12 +91,76 @@ BRUTALDOOM.ROOM_THEMES.urban_Outdoors_generic.floors =
     ROCK3    = 25
     MFLR8_3  = 10
 }
+
 BRUTALDOOM.THEMES.urban.skyboxes =
 {
-    Skybox_rain = 20
+    Skybox_generic_Plain = 30
+	Skybox_generic_Plain_cloud = 30
+	Skybox_generic_Plain_rain = 15	
+	Skybox_generic_Plain_snow = 10
+	Skybox_garrett_city = 50
+	Skybox_garrett_city_cloud = 30
+	Skybox_garrett_city_rain = 30
+	Skybox_garrett_city_snow = 15
     Skybox_generic = 50
+	Skybox_generic_cloud = 30
+	Skybox_generic_rain = 30
+	Skybox_generic_snow = 15
+	Skybox_hellish_city = 20	
 }
---hell
+
+
+BRUTALDOOM.THEMES.hell.skyboxes =
+{
+    Skybox_generic_Plain = 30
+    Skybox_generic_Plain_ash = 15
+    Skybox_generic_Plain_cinder = 15	
+    Skybox_generic_Plain_cloud = 15	
+	Skybox_generic = 20
+	Skybox_garrett_hell = 50
+	Skybox_garrett_hell_ash	= 30
+	Skybox_garrett_hell_cinder	= 30
+	Skybox_garrett_hell_cloud	= 30	
+	Skybox_hellish_city = 50
+	Skybox_hellish_city_ash = 30
+	Skybox_hellish_city_cinder = 30
+	Skybox_hellish_city_cloud = 30	
+}
+
+
+BRUTALDOOM.THEMES.tech.skyboxes =
+{
+    Skybox_generic_Plain = 30
+	Skybox_generic_Plain_cloud = 15
+	Skybox_generic_Plain_rain = 15
+	Skybox_generic_Plain_snow = 10	
+    Skybox_generic = 50
+	Skybox_generic_cloud = 30
+	Skybox_generic_rain = 30
+	Skybox_generic_snow = 15	
+	Skybox_garrett_city = 50
+	Skybox_garrett_city_cloud = 30	
+	Skybox_garrett_city_rain = 30	
+	Skybox_garrett_city_snow = 15
+	Skybox_hellish_city = 20
+}
+
+BRUTALDOOM.THEMES.wolf.skyboxes =
+{
+    Skybox_generic_Plain = 50
+	Skybox_generic_Plain_cloud = 50
+	Skybox_generic_Plain_rain = 50	
+	Skybox_generic_Plain_snow = 30
+}
+
+BRUTALDOOM.THEMES.egypt2.skyboxes =
+{
+    Skybox_generic_Plain = 50
+	Skybox_generic_Plain_cloud = 50
+	Skybox_generic_Plain_rain = 50	
+	Skybox_generic_Plain_snow = 30
+}
+
 BRUTALDOOM.THEMES.hell.allow_mons_for_theme = "hell"
 
 OB_THEMES["tech"] =

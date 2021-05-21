@@ -335,7 +335,7 @@ function Trans.entity(name, x, y, z, props)
     gui.printf("\nLACKING ENTITY : %s\n\n", name)
     return
   end
-
+  
   assert(info.id)
 
   x, y = Trans.apply_xy(x, y)
@@ -358,7 +358,12 @@ function Trans.entity(name, x, y, z, props)
   ent.y  = y
   ent.z  = z
 
+  if PARAM.dbg_entities != "no" and GAME.ENTITIES[name] then
+	gui.printf("Entity: " .. name .. " ID: " .. ent.id .. " {" .. ent.x .. "," .. ent.y .. "," .. ent.z .. "}\n")
+  end
+
   raw_add_entity(ent)
+
 end
 
 
