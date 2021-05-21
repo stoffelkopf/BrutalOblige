@@ -352,12 +352,6 @@ function Render_edge(E)
       T = Trans.edge_transform(E, z, 0, 0, def.deep, def.over)
     end
 
-	if def.z_fit then
-      local min_ceil = math.min(E.area.ceil_h, E.peer.area.ceil_h)
-      local max_floor = math.max(E.area.floor_h, E.peer.area.floor_h)
-      Trans.set_fitted_z(T, max_floor, min_ceil)
-    end
-	
     -- choose lighting to be the minimum of each side
     local min_light = math.min(E.area.lighting, E.peer.area.lighting)
     Ambient_push(min_light)
@@ -649,19 +643,6 @@ stderrf("dA = (%1.1f %1.1f)  dB = (%1.1f %1.1f)\n", adx, ady, bdx, bdy)
       T = Trans.edge_transform(E, z, 0, 0, def.deep, def.over, flip_it)
     end
 
-   -- MSSP: allow fitted_z use for doors and windows! Yaay!
-    if def.z_fit then
-      local min_ceil = math.min(E.area.ceil_h, E.peer.area.ceil_h)
-      local max_floor
-
-      if E.kind == "window" then
-        max_floor = math.max(E.area.floor_h, E.peer.area.floor_h)
-      elseif E.kind == "doorway" then
-        max_floor = z
-      end
-      Trans.set_fitted_z(T, max_floor, min_ceil)
-
-    end
     -- choose lighting to be the minimum of each side
     local min_light = math.min(E.area.lighting, E.peer.area.lighting)
     Ambient_push(min_light)
@@ -1052,15 +1033,7 @@ function Render_sink_part(A, S, where, sink)
 
       T.light_add = sink.trim_light
 
-     local trim_mat
-      if sink.trim_mat == "_FLOOR" then
-        trim_mat = assert(A.room.floor_sink_mat or "_ERROR")
-      elseif sink.trim_mat == "_WALL" then
-        trim_mat = A.room.main_tex
-      elseif sink.trim_mat == "_CEIL" then
-        trim_mat = assert(A.room.ceil_sink_mat or "_ERROR")
-      else trim_mat = sink.trim_mat end
-      brushlib.set_mat(brush, trim_mat, trim_mat)
+      brushlib.set_mat(brush, sink.trim_mat, sink.trim_mat)
 
       -- ensure trim is unpeg (especially for trims like COMPTALL)
       if where == "ceil" then
@@ -1074,16 +1047,7 @@ function Render_sink_part(A, S, where, sink)
       T.light_add = sink.light
       T.special   = sink.special
 
-      local sink_mat
-      if sink.mat == "_FLOOR" then
-        sink_mat = assert(A.room.floor_sink_mat or "_ERROR")
-      elseif sink.mat == "_WALL" then
-        sink_mat = A.room.main_tex
-      elseif sink.mat == "_CEIL" then
-        sink_mat = assert(A.room.ceil_sink_mat or "_ERROR")
-      else sink_mat = sink.mat end
-
-      brushlib.set_mat(brush, sink_mat, sink_mat)
+      brushlib.set_mat(brush, sink.mat, sink.mat)
     end
 
     Trans.brush(brush)
@@ -1909,7 +1873,7 @@ chunk.goal.action = "S1_OpenDoor"  -- FIXME IT SHOULD BE SET WHEN JOINER IS REND
         elseif def.light_color == "white" then
           light_ent.id = 14999
         end
---		gui.printf("Light %s File: %s map: %s\n",def.light_color,def.file,def.map)
+		gui.printf("Light %s File: %s map: %s\n",def.light_color,def.file,def.map)
         raw_add_entity(light_ent)
       end
     end	
@@ -2214,19 +2178,6 @@ chunk.goal.action = "S1_OpenDoor"  -- FIXME IT SHOULD BE SET WHEN JOINER IS REND
 
   local T = Trans.box_transform(x1, y1, x2, y2, z1, dir)
 
-  if def.z_fit then
-    if not z2 and chunk.from_area.ceil_h then
-      z2 = chunk.from_area.ceil_h
-    end
-
-    if R.is_outdoor then
-      z2 = z2 + 16
-    end
-
-    if z2 then
-      Trans.set_fitted_z(T, z1, z2)
-    end
-  end
   if (chunk.kind == "stair" or chunk.kind == "joiner" or chunk.kind == "hallway") and
      chunk.shape == "L" and
      chunk.dest_dir == geom.LEFT[chunk.from_dir]
@@ -2234,19 +2185,7 @@ chunk.goal.action = "S1_OpenDoor"  -- FIXME IT SHOULD BE SET WHEN JOINER IS REND
     T.mirror_x = chunk.sw * SEED_SIZE / 2
   end
 
-  -- MSSP: special code for flipped hallway sections, mostly for stairs
-  if chunk.hallway_flip then
-    T.mirror_y = chunk.sw * SEED_SIZE / 2
-  end
 
-  -- code for mirroring hallway sections sideways (mostly for plain I pieces)
-  if chunk.hallway_mirror then
-    T.mirror_x = chunk.sw * SEED_SIZE / 2
-  end
-
-  if def.mirror_x and rand.odds(50) then
-    T.mirror_x = chunk.sw * SEED_SIZE / 2
-  end
   Ambient_push(A.lighting)
 
   Fabricate(A.room, def, T, { skin })
@@ -3305,18 +3244,15 @@ function Render_skybox()
   end
 
   if not GAME.THEMES[LEVEL.theme_name].skyboxes then
-      skyfab = PREFABS["Skybox_generic_Plain"]
+      skyfab = PREFABS["Skybox_generic"]
   else
       skyfab_name = rand.key_by_probs(GAME.THEMES[LEVEL.theme_name].skyboxes)
       skyfab = PREFABS[skyfab_name]
   end
+
   if not skyfab then
     gui.printf("WARNING: Could not find a proper skybox for theme '" .. LEVEL.theme_name .. "'\n")
     return
-  end
-
-  if PARAM.dbg_skybox != "no" then
-	gui.printf("Skybox: " .. skyfab.name .. " (" .. skyfab.map .. ")\nFile: " .. skyfab.file .. "\n\n")
   end
   
   local T = Trans.spot_transform(SEED_H*128, SEED_W*128, 4, 4)

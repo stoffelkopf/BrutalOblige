@@ -394,6 +394,7 @@ function Layout_place_importants(R, imp_pass)
     end
 
 -- stderrf("Layout_place_importants: goal '%s' @ %s\n", goal.kind, R.name)
+
     chunk.content_item = goal.item
     chunk.goal = goal
 
@@ -1256,7 +1257,6 @@ function Layout_decorate_rooms(pass)
       end
     end
 
-    if chunk.ceil_above then reqs.filled_ceiling = true end														   
     if A.room then
       reqs.env = A.room:get_env()
     end
@@ -1269,9 +1269,6 @@ function Layout_decorate_rooms(pass)
     chunk.content    = "CAGE"
     chunk.prefab_def = prefab_def
 
-    if prefab_def.plain_ceiling then
-      chunk.floor_below = true
-    end
     -- in symmetrical rooms, handle the peer too
     if chunk.peer and not chunk.peer.content then
       local peer = chunk.peer
@@ -1279,9 +1276,6 @@ function Layout_decorate_rooms(pass)
       peer.content    = chunk.content
       peer.prefab_def = chunk.prefab_def
 
-      if prefab_def.plain_ceiling then
-        peer.floor_below = true
-      end
       if chunk.kind != "closet" and chunk.prefab_dir then
         local A = chunk.area
         assert(A.room.symmetry)
@@ -1819,7 +1813,7 @@ stderrf("Cages in %s [%s pressure] --> any_prob=%d  per_prob=%d\n",
       tab = R.theme.ceiling_sinks or THEME.ceiling_sinks
     end
 
---    assert(tab["PLAIN"])
+    assert(tab["PLAIN"])
 
     tab = table.copy(tab)
 
@@ -1832,11 +1826,7 @@ stderrf("Cages in %s [%s pressure] --> any_prob=%d  per_prob=%d\n",
         error("Unknown sink: " .. name)
       end
 
-      if sink.mat == "_LIQUID" or sink.trim_mat == "_LIQUID" then
-        if not LEVEL.liquid then
-          tab[name] = 0
-        end
-      end
+      -- TODO : check floor/ceiling material
 
       if (sink.trim_mat and sink.trim_mat == R.main_tex)
       then
@@ -1859,18 +1849,15 @@ stderrf("Cages in %s [%s pressure] --> any_prob=%d  per_prob=%d\n",
 
       local name = rand.key_by_probs(tab)
 
-      -- PLAIN keyword for sinks should now be ignored in
-      -- favor of this direct prob
-      if rand.odds(75) then name = "PLAIN" end					  
       if name != "PLAIN" then
         fg.sink = GAME.SINKS[name]
         assert(fg.sink)
-		
-		if PARAM.dbg_ceilfloor != "no" then
-		  gui.printf("Floor: " .. name .. "\n")
-		end
-      
-	  end
+
+        -- TODO : prune liquid sinks first
+        if fg.sink.mat == "_LIQUID" and not LEVEL.liquid then
+          fg.sink = nil
+        end
+      end
     end
   end
 
@@ -1889,17 +1876,9 @@ stderrf("Cages in %s [%s pressure] --> any_prob=%d  per_prob=%d\n",
 
       local name = rand.key_by_probs(tab)
 
-      -- PLAIN keyword for sinks should now be ignored in
-      -- favor of this direct prob
-      if rand.odds(75) then name = "PLAIN" end
-
       if name != "PLAIN" then
         cg.sink = GAME.SINKS[name]
         assert(cg.sink)
-		
-		if PARAM.dbg_ceilfloor != "no" then
-			gui.printf("Ceil: " .. name .. "\n")
-		end
 
         -- inhibit ceiling lights and pillars
         each chunk in R.ceil_chunks do

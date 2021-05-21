@@ -52,25 +52,6 @@ UI_ARCH.PROC_GOTCHA_CHOICES =
   "all",   _("Everything o_O"),
 }
 	
-UI_ARCH.LEVEL_PERCENTAGE_CHOICES =
-{
-  "all",  _("All Levels"),
-  "75",   _("75% of All Levels"),
-  "50",   _("50% of All Levels"),
-  "25",   _("25% of All Levels"),
-  "10",   _("10% of All Levels"),
-  "5",    _("5% of All Levels"),
-  "none", _("NONE"),
-}
-
-UI_ARCH.ABSURDITY_CHOICES =
-{
-  "none", _("NONE"),
-  "all",  _("Every Level"),
-  "75",   _("75% of Levels"),
-  "50",   _("50% of Levels"),
-  "25",   _("25% of Levels"),
-}
 
 OB_MODULES["ui_arch"] =
 {
@@ -91,17 +72,6 @@ OB_MODULES["ui_arch"] =
     { name="teleporters",  label=_("Teleports"),  choices=STYLE_CHOICES }
     { name="steepness",    label=_("Steepness"),  choices=STYLE_CHOICES, gap=1 }
     {
-      name = "layout_absurdity"
-      label = _("Layout Absurdity")
-      choices=UI_ARCH.ABSURDITY_CHOICES
-      default="none"
-      tooltip = "The layout absurdifier attempts to cause levels to overprefer specific shape " ..
-      "rules from the ruleset in order to create odd and possibly broken but interesting combinations. " ..
-      "Use at your own risk. These options will affect the amount of levels have the absurdity module activated on. " ..
-      "Selecting ALL will not necessarily make all levels absurd as it is all still based on chance."
-      gap=1
-    }
-    {
       name="procedural_gotchas"
       label=_("Procedural Gotcha")
       choices=UI_ARCH.PROC_GOTCHA_CHOICES
@@ -110,14 +80,6 @@ OB_MODULES["ui_arch"] =
       "but immensely-sized exit room with gratitiously intensified monster strength. " ..
       "Essentially an arena - prepare for a tough, tough fight!\n\nNotes:\n\n" ..
       "5% of levels may create at least 1 or 2 gotcha maps in a standard full game."
-    }
-    {
-      name = "linear_mode"
-      label = _("Call of Duty Mode")
-      choices = UI_ARCH.LEVEL_PERCENTAGE_CHOICES
-      default = "none"
-      tooltip = "Creates linear levels, where rooms are connected along a " ..
-      "linear layout from start to exit."
     }
   }
 }

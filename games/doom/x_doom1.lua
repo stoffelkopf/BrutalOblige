@@ -2379,19 +2379,6 @@ function ULTDOOM.get_levels()
           LEV.is_procedural_gotcha = true
         end
       end
-	  
-	-- handling for linear mode chance choices
-    if not LEV.prebuilt then
-      if OB_CONFIG.linear_mode == "all" then
-        LEV.is_linear = true
-      elseif OB_CONFIG.linear_mode != "none" then
-        if rand.odds(int(OB_CONFIG.linear_mode)) then
-          LEV.is_linear = true
-		  gui.printf("Linear Mode on map %i!\n",map)
-        end
-      end	
-	end	  
-	  
       if MAP_NUM == 1 or map == 3 then
         LEV.demo_lump = string.format("DEMO%d", ep_index)
       end

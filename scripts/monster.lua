@@ -1453,15 +1453,7 @@ function Monster_fill_room(R)
     end
 
     table.insert(R.monster_list, { info=info, is_cage=(mode == "cage") })
-
-    if PARAM.dbg_monsters != "no" then
-		if PARAM.dbg_monsters == "all" then
-		  gui.printf("Placing Monster: " .. mon .. "\n")
-		elseif PARAM.dbg_monsters == "boss" and info.boss_type then
-		  gui.printf("Placing Boss: " .. mon .. "\n")
-		end	
-	end
-
+   gui.printf("Placing Monster: %s\n",mon)
     -- decide deafness and where to look
     local deaf, focus
 
@@ -2091,7 +2083,7 @@ gui.debugf("   doing spot : Mon=%s\n", tostring(mon))
 ---???   end
 
       local all_skills = (i <= 2)
-		
+
       place_in_spot(mon, spot, all_skills)
     end
   end

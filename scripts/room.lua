@@ -1632,14 +1632,6 @@ function Room_choose_size(R, not_big)
     R. size_limit = sum
     R.floor_limit = rand.pick({ 4,5,5,6,6,7 })
   end
-  
-  if not R.is_start then 
-	if  not R.is_secret then
-	  if LEVEL.has_absurd_new_area_rules then
-        R.floor_limit = R.floor_limit * 4
-      end
-    end
-  end
 
   -- Special instructions for procedural gotcha rooms
   if LEVEL.is_procedural_gotcha then

@@ -24,7 +24,7 @@ SS pain rotation sprites - PSTrooper
 
 This mod uses some code from Sgt Mark IV's Bolognese mod in addition to reusing/adapting some code from Brutal Doom itself
 
-This mod uses some code and Prefabs from the ObAddon project: https://github.com/caligari87/ObAddon
+This mod uses some code from the ObAddon project: https://github.com/caligari87/ObAddon
 As with the code in vanilla Oblige this code is GPL3.
 
 The following code ist used:
@@ -35,5 +35,3 @@ The following code ist used:
 - Dynamic Lightning
 - Glowing Flats
 - Procedural Gotchas
-- Layout Absurdities
-- Call of Duty Mode

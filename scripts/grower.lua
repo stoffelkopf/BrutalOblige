@@ -718,7 +718,7 @@ function Grower_preprocess_grammar()
   table.name_up(grammar)
 
   table.expand_templates(grammar)
-  
+
   each name,cur_def in grammar do
     if cur_def.is_processed then continue end
     cur_def.is_processed = true
@@ -837,86 +837,6 @@ function Grower_calc_rule_probs()
   each name,rule in SHAPE_GRAMMAR do
     rule.use_prob = calc_prob(rule)
   end
-  -- Layout Absurdifier					   
- 
- if OB_CONFIG.layout_absurdity then
-    gui.printf("\n--== Layout Absurdity Module ==--\n\n")
-  end 
- if not LEVEL.is_procedural_gotcha then
-    if OB_CONFIG.layout_absurdity == "all" then
-      LEVEL.is_absurd = true
-    elseif OB_CONFIG.layout_absurdity != "none" then
-      if rand.odds(int(OB_CONFIG.layout_absurdity)) then
-        LEVEL.is_absurd = true
-      end
-    end
-  end
-  if LEVEL.is_absurd then
-    gui.printf("This level is absurd!\n\n")
-  else
-    gui.printf("This level is not absurd...\n\n")
-  end
-  
- local function Grower_absurdify()
- 
-    local function reset_absurdities()
-
-      each name,rule in SHAPE_GRAMMAR do
-        if rule.is_absurd then rule.is_absurd = nil end
-      end
-	
-	end
-	
-	reset_absurdities()
-	
-    local rules_to_absurdify = rand.pick({1,2,2,2,3,3,3,4,4,5,6,7,8})
-    gui.printf(rules_to_absurdify .. " rules will be absurd!\n\n")
-
-    local grammarset = {}
-    each name,rule in SHAPE_GRAMMAR do
-      table.insert(grammarset, rule.name)
-    end
-
-    while rules_to_absurdify > 0 do
-
-      local absurded_rule = rand.pick(grammarset)
-
-      if not string.match(absurded_rule,"ROOT")
-      and not string.match(absurded_rule,"JOINER")
-      and not string.match(absurded_rule,"EMERGENCY")
- --     and not string.match(absurded_rule,"hall")
- --     and not string.match(absurded_rule,"HALL")
-      and SHAPE_GRAMMAR[absurded_rule].is_absurd != true
-      and SHAPE_GRAMMAR[absurded_rule].use_prob != 0 then
-
-        local ab_factor = 0
-        if rand.odds(75) then
-          ab_factor = rand.range( 100,1000000 )
-          SHAPE_GRAMMAR[absurded_rule].use_prob = SHAPE_GRAMMAR[absurded_rule].use_prob * ab_factor
-          if SHAPE_GRAMMAR[absurded_rule].new_area then
-            LEVEL.has_absurd_new_area_rules = true
-          end
-        else
-          ab_factor = rand.range( 0.01,0.75 )
-          SHAPE_GRAMMAR[absurded_rule].use_prob = SHAPE_GRAMMAR[absurded_rule].use_prob * ab_factor
-        end
-        SHAPE_GRAMMAR[absurded_rule].is_absurd = true
-
-        gui.printf(absurded_rule .. " is now ABSURDIFIED! WOOO!!!\n")
-        gui.printf("Factor: x" .. ab_factor .. " Prob: " .. SHAPE_GRAMMAR[absurded_rule].use_prob .. "\n\n")
-
-        rules_to_absurdify = rules_to_absurdify - 1
-      end
-    end
-  end
-
-  if LEVEL.is_absurd then
-    Grower_absurdify()
-	if LEVEL.has_absurd_new_area_rules then
-		gui.printf("Level has absurd new area rules\n\n")
-	end
-	gui.printf("--== Layout Absurdity Module end ==--\n\n")    
-  end
 end
 
 
@@ -998,14 +918,9 @@ function Grower_decide_extents()
   gui.debugf("Target # of rooms : %d .. %d\n", LEVEL.min_rooms, LEVEL.max_rooms)
 
 
-  -- calculate the coverage 
-  
-   LEVEL.min_coverage = int(LEVEL.map_W * LEVEL.map_H * 0.85)
-  
-   if LEVEL.is_linear then
-    gui.printf("--==| Linear mode activated! |==--\n\n")
-  end
+  -- calculate the coverage target
 
+  LEVEL.min_coverage = int(LEVEL.map_W * LEVEL.map_H * 0.85)
 end
 
 
@@ -1515,17 +1430,13 @@ function Grower_grammatical_pass(R, pass, apply_num, stop_prob,
   local function prob_for_rule(rule)
     -- the 'use_prob' field is computed earler, and already takes styles
     -- into account.
+
     local prob = rule.use_prob or 0
 
     if prob <= 0 then return 0 end
 
     if rule.emergency then
       if not is_emergency then return 0 end
-    end
-	
-    -- hallways cannot be used for teleporter breaks in Linear Mode
-	if LEVEL.is_linear and is_emergency then
-      if string.match(rule.name, "hallway") then return 0 end
     end
 
     if not ob_match_level_theme(rule) then return 0 end
@@ -1599,8 +1510,8 @@ function Grower_grammatical_pass(R, pass, apply_num, stop_prob,
 
   local function collect_matching_rules(want_pass, stop_prob, no_new_areas)
     local tab = {}
+
     each name,rule in grammar do
-	
       if rule.pass != want_pass then continue end
 
       if no_new_areas and rule.new_area then continue end
@@ -3023,6 +2934,7 @@ end
     R.aversions[rule.name] = R.aversions[rule.name] / rule.aversion
   end
 
+
   local function auxiliary_name(index)
     local name = "auxiliary"
 
@@ -3085,26 +2997,13 @@ end
 
     -- SUCCESS --
 
-    gui.debugf("APPLIED rule: %s \n", cur_rule.name)
-	if PARAM.dbg_absurd_rules != "no" and cur_rule.is_absurd then
-		gui.printf("APPLIED absurd rule: " .. cur_rule.name .. " " .. cur_rule.use_prob .. "\n")
-    end
+    gui.debugf("APPLIED rule: %s\n", cur_rule.name)
+
     update_aversions(cur_rule)
-								
+
     -- apply any auxiliary rules
     if cur_rule.auxiliary then
       apply_auxiliary_rules()
-    end
-    if is_emergency and LEVEL.is_linear then
-      gui.printf("Emergency in ROOM_" .. R.id .. " is resolved OMG AMAZING!!!!\n")
-      if not R.emergency_sprout_attempts then
-        R.emergency_sprout_attempts = 1
-      else
-        emergency_sprout_attempts = emergency_sprout_attempts + 1
-      end
-    end
-    if PARAM.dbg_linear != "no" and R.emergency_sprout_attempts and LEVEL.is_linear then
-      gui.printf("Room_" .. R.id .. " Emergency Sprout attempts: " .. R.emergency_sprout_attempts .. "\n")
     end
   end
 
@@ -3132,22 +3031,6 @@ end
     -- exit rooms must have only a single entrance
     if pass == "sprout" and R.is_exit and R:prelim_conn_num() >= 1 then
       break;
-    end
-	
-    -- Linear Mode
-    if LEVEL.is_linear then
-
-      if pass == "sprout" then
-
-        if R:prelim_conn_num() >= 2 then
-          break;
-        end
-
-        if R.is_start and R:prelim_conn_num() >= 1 then
-          break;
-        end
-
-      end
     end
 
     -- stderrf("LOOP %d\n", loop)
@@ -3186,10 +3069,6 @@ function Grower_grammatical_room(R, pass, is_emergency)
 
     if R.is_hallway then
       pass = R.grow_pass .. "_sprout"
-    end
-	
-    if LEVEL.is_linear then
-      apply_num = 1
     end
 
   elseif pass == "decorate" then
@@ -3347,8 +3226,7 @@ function Grower_grow_room(R)
 
   local function is_too_small(R)
   
-    if LEVEL.is_linear or
-    LEVEL.is_procedural_gotcha then
+    if LEVEL.is_procedural_gotcha then
       if R.is_start then return false end
     end
   
@@ -3373,30 +3251,9 @@ function Grower_grow_room(R)
   if not R.is_hallway and is_too_small(R) then
     Grower_grammatical_room(R, "grow")
 
-    if is_too_small(R) and not LEVEL.is_linear then
+    if is_too_small(R) then
       Grower_kill_room(R)
       return
-    end
-  end
- 
-  -- Linear Mode, kill mirrored sprouts of symmetric rooms
-  if LEVEL.is_linear then
-  if R.grow_parent then
-    if R.grow_parent:prelim_conn_num() > 2 then
-        gui.printf("ROOM_" .. R.id .. " was SHOT DOWN VIOLENTLY by the Linear Mode thugz.\n")
-        Grower_kill_room(R)
-        return
-      end
-    end
-  end
-  
-   if LEVEL.is_linear then
-    if R.grow_parent then
-      if R.grow_parent.is_start and R.grow_parent:prelim_conn_num() > 1 then
-        gui.printf("'OH SHIT HERE WE GO AGAIN', says ROOM_" .. R.id .. " before " ..
-        "he was violently gunned down by the Linear Mode thugz...\n")
-        Grower_kill_room(R)
-      end
     end
   end
 
@@ -3531,11 +3388,6 @@ function Grower_begin_trunks()
     end
   end
 
-  -- ignore teleporter style setting for linear mode
-  -- don't you get enough teleporters already anyway?!
-  if LEVEL.is_linear then
-    max_trunks = 1
-  end
 
   LEVEL.trunks = {}
 
@@ -3570,7 +3422,7 @@ end
 
 
 
-function Grower_add_teleporter_trunk(parent_R, is_emergency)
+function Grower_add_teleporter_trunk(parent_R)
 
   local trunk = Grower_add_a_trunk()
   local info  = {}
@@ -3579,7 +3431,7 @@ function Grower_add_teleporter_trunk(parent_R, is_emergency)
   if rand.odds(LEVEL.cave_trunk_prob) then
     info.env = "cave"
   end
---]]				  						   
+--]]
 
   local R = Grower_create_and_grow_room(trunk, "normal", info)
 
@@ -3708,33 +3560,6 @@ gui.debugf("=== Coverage seeds: %d/%d  rooms: %d/%d\n",
     end
   end
 
-  local function emergency_teleport_break()
-    local final_R = LEVEL.rooms[#LEVEL.rooms]
-
-    gui.printf("ROOM_" .. final_R.id .. " in critical condition! " ..
-    "GET THE TELEPORNEPHERINE!\n")
-    Grower_add_teleporter_trunk(final_R, true)
-  end
-
-  -- a version of emergency_sprouts() except for the last
-  -- room in the stack only of a linear level only
-  local function emergency_linear_sprouts()
-    local R = LEVEL.rooms[#LEVEL.rooms]
-    if not reached_coverage() then
-
-      if R.is_hallway then return end
-
-      gui.printf("\nOh noes! Attempting emergency sprout in ROOM_" .. R.id .. "!!!\n")
-      Grower_grammatical_room(R, "sprout", "is_emergency")
-    end
-
-    if not R.emergency_sprout_attempts then
-      return "oof"
-    elseif R.emergency_sprout_attempts > 1 then
-      return "oof"
-    end
-    return "yas queen"
-  end
 
   ---| Grower_grow_all_rooms |---
 
@@ -3766,14 +3591,7 @@ gui.debugf("=== Coverage seeds: %d/%d  rooms: %d/%d\n",
 
     expand_limits()
 
-    if LEVEL.is_linear then
-      if emergency_linear_sprouts() == "oof" then
-        emergency_teleport_break()
-      end
-    else
-      emergency_sprouts()
-    end
-	
+    emergency_sprouts()
   end
 end
 
@@ -4147,13 +3965,11 @@ function Grower_create_rooms()
   Seed_squarify()
 
   -- debugging aid
-  if PARAM.dbg_svg != "no" or OB_CONFIG.svg then
+  if OB_CONFIG.svg then
     Seed_save_svg_image("grow_" .. OB_CONFIG.seed .. "_" .. LEVEL.name .. ".svg")
   end
 
   Seed_draw_minimap()
-  
-  gui.printf("\n")  
 
 -- FIXME : VALIDATION CRUD
     for sx = 1, SEED_W do
