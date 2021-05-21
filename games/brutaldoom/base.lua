@@ -42,13 +42,6 @@ gui.import("functions/tablecontains")
 gui.import("functions/tablemerge")
 gui.import("functions/filereading")
 
-
-BRUTALDOOM.YES_NO =
-{
-    "yes", "Yes"
-    "no", "No"
-}
-
 BRUTALDOOM.VERSIONS = 
 {
     "brutalv21.pk3",    "V21"
@@ -57,26 +50,10 @@ BRUTALDOOM.VERSIONS =
 BRUTALDOOM.PARAMETERS =
 {
     modversion = 'dev version following v2.0.1'
-    musicpreset = 'doom2'
     brutalversion = "brutalv21.pk3"
     usingui = false
 	realm667 = false
-    playerclass = "Doomer"
-    puristrailgunreload = "None"
     mini_mastermind = false
-
-}
-
-BRUTALDOOM.PLAYERCLASSES =
-{
-    "Doomer",   "Modern"
-    "Purist",   "Classic"
-}
-
-BRUTALDOOM.PURISTRAILGUNRELOADOPTIONS =
-{
-    "Skulltag",   "Skulltag"
-    "None",   "None"
 }
 
 gui.import("brutaldoom/BrutalDoomMonsters")
@@ -84,16 +61,19 @@ gui.import("brutaldoom/BrutalDoomMonsters")
 
 --decorate definition
 function BRUTALDOOM.decorate()
+
     gui.wad_insert_file("brutaloblige/decorates/Decorate.dec","DECORATE");
     gui.wad_insert_file("brutaloblige/decorates/BrutalMonsters.dec","BRUMONS");
 	gui.wad_insert_file("brutaloblige/decorates/BrutalWeapons.dec","BRUWEPS");
     gui.wad_insert_file("brutaloblige/decorates/BrutalPickups.dec","BRUPUPS");
     gui.wad_insert_file("brutaloblige/decorates/Bolognese.dec","BOLOGNES");   
+
 	if BRUTALDOOM.PARAMETERS.realm667 == true then   	
 		gui.wad_insert_file("brutaloblige/zscript/zscript667","ZSCRIPT");
 	else
 		gui.wad_insert_file("brutaloblige/zscript/zscript","ZSCRIPT");
 	end
+
     gui.wad_insert_file("brutaloblige/zscript/base.zscript","ZBASE");
     gui.wad_insert_file("brutaloblige/zscript/NotCompatibleWithBrutality.zscript","ZBASE2");
     gui.wad_insert_file("brutaloblige/zscript/wolfmons.zscript","WOLFMONS");
@@ -106,6 +86,7 @@ function BRUTALDOOM.decorate()
     gui.wad_insert_file("brutaloblige/acs/BOLOGACS.o","BOLOGACS");
 	gui.wad_insert_file("brutaloblige/acs/HIEROPHT.lmp","HIEROPHT");	
     gui.wad_insert_file("brutaloblige/acs/A_START","A_END");
+
 -- Extra Monsters    
 
 --Kamikaze Guy
@@ -425,22 +406,6 @@ gui.import("brutaldoom/BrutalDoomTextures")
 
 gui.import("brutaldoom/BrutalDoomMapinfo")
 
-function BRUTALDOOM.createkeyconf()
-local confdata =
-	{
-	'addslot 5 SkulltagGrenadeLauncher\n'
-	'addslot 6 SkulltagRailGun PuristRailGun\n'
-    }    
-    
-    gui.wad_add_text_lump("KEYCONF", confdata);
-end
-
-function BRUTALDOOM.respectplayerclass()
-    if BRUTALDOOM.PARAMETERS.playerclass == "Purist" then
-        BRUTALDOOM.WEAPONS.pistol.add_prob = 0
-    end
-end
-
 function BRUTALDOOM.all_done()
   gui.set_import_dir("games/brutaldoom")
   gui.import("brutaldoom/BrutalDoomSkies")
@@ -498,8 +463,7 @@ BRUTALDOOM.PLAYER_MODEL =
         stats   = { health=100, bullet=61, shell=0, rocket=0, cell=0, grenade=1, clip1=16 }
         weapons = { fist=1, bdpistol=1, AssaultRifle=1, HandGrenade=1 }
     }
-}
-
+} 
 function BRUTALDOOM.setup()
     gui.printf("\nBrutal Oblige version: " .. BRUTALDOOM.PARAMETERS.modversion.."\n")
     gui.printf("For Brutal Doom version: " .. BRUTALDOOM.PARAMETERS.brutalversion.."\n\n")
@@ -511,26 +475,14 @@ function BRUTALDOOM.setup()
 end
 
 function BRUTALDOOM.puristrailgundecorate()
-    if BRUTALDOOM.PARAMETERS.puristrailgunreload == "Skulltag" then
+	if PARAM.puristrailgunreload == "Skulltag" then
         PuristRailGunReloadDecorate = 'RAIF B 6 A_CheckForReload(4, "Reloaded")\n'
-    elseif BRUTALDOOM.PARAMETERS.puristrailgunreload == "None" then
+    elseif PARAM.puristrailgunreload == "None" then
         PuristRailGunReloadDecorate = 'RAIF B 6 A_Jump(256, "Reloaded")\n'
-    elseif BRUTALDOOM.PARAMETERS.puristrailgunreload == "Every" then
+    elseif PARAM.puristrailgunreload == "Every" then
         PuristRailGunReloadDecorate = 'RAIF B 6\n'
     end
-
-local pistolpickupmessage = {
-    "You got the Pistol! Woop-de-fucking-do!",
-    "You got a tiny pistol! It'll look great next to your assault rifle!",
-    "You got the Pistol! Hoo-fucking-ray!",
-    "They say guns don't kill people, looking at this thing, I believe them",
-    "The pen is mightier than the sword. And the sword is better than this.",
-    "A standard issue UAC Pistol. Proof that the UAC are bastards who hate you.",
-    "What the fuck is this?! And I don't mean that in a maybe it will be good if you find three secret keys way...",
-    "Picked up a pistol that you really don't need!",
-    "Picked up 15 bullets. Unfortunately they're inside this shitty pistol."
-}
-    
+  
 local data =
 	{
         'ACTOR PuristRailgun : ClassicWeapon\n'
@@ -626,34 +578,6 @@ OB_GAMES["brutaldoom"] =
     all_done	= BRUTALDOOM.all_done
   }
 }
-
-OB_MODULES["brutaltweaks"] =
-{
-  label = "Brutal Doom Tweaks"
-  
-  side = "left"
-
-  game = { brutaldoom=1}
-  playmode = { sp=1, coop=1 }
-  
-  options =
-  {
-      musicpreset =
-      {
-          label="Music"
-          choices=BRUTALDOOM.musicpresets
-		  default="doom2"
-      } 
-
-      puristrailgunreload =
-      {
-          label="Purist Railgun\n Reloading"
-          choices=BRUTALDOOM.PURISTRAILGUNRELOADOPTIONS
-		  default="None"
-      }
-  }
-}
-
 
 --------------------------------------------
         --More functions--
