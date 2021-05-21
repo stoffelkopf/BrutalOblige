@@ -255,9 +255,22 @@ function BRUTALDOOM.get_levels()
         LEV.is_procedural_gotcha = true
       end
     end
-
+	
 	if LEV.is_procedural_gotcha == true then
 		gui.printf("Procedural Gotcha on map %i!\n",map)
+	end
+	
+	-- handling for linear mode chance choices
+    if not LEV.prebuilt then
+      if OB_CONFIG.linear_mode == "all" then
+        LEV.is_linear = true
+		gui.printf("Linear Mode on map %i!\n",map)
+      elseif OB_CONFIG.linear_mode != "none" then
+        if rand.odds(int(OB_CONFIG.linear_mode)) then
+          LEV.is_linear = true
+		  gui.printf("Linear Mode on map %i!\n",map)
+        end
+      end	
 	end
 
     if MAP_NUM == 1 or (map % 10) == 3 then

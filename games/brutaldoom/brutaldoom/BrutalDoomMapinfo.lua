@@ -9,8 +9,8 @@ function BRUTALDOOM.create_mapinfo()
   local function create_episode_selection()
 	
 	local episode_selection = ''
-
-	each EPI in GAME.episodes do
+	if PARAM.bdepi == "yes" then
+	  each EPI in GAME.episodes do
 		if table.empty(EPI.levels) then continue end
 		if _index == 1 then 
 			episode_selection = '\nepisode MAP01 {\n name = "' .. EPI.description .. '"\n}\n'
@@ -22,6 +22,9 @@ function BRUTALDOOM.create_mapinfo()
 			episode_selection = episode_selection .. 'episode MAP21 {\n name = "' .. EPI.description .. '"\n}\n'
 		end			
 		episode_selection = episode_selection .. '\n'
+	  end
+	else
+		episode_selection = 'episode MAP01 {\n name = "Gurksaft!"\n}\n'
 	end
 	return episode_selection	
   end
@@ -404,19 +407,22 @@ Intermission BrutalDoomCast
   local dest = { }
 
   each _,src in epi_list do
-      dest = table.copy(src)
-    
-  gui.printf("dest: \n" .. table.tostring(dest) ..'\n')
-    
+    dest = table.copy(src)
+
     -- this shuffle algorithm ensures first entry is never the same
     --once again I can't quite work out the code so I have left this even though I only need half of it
     for i = 1, (#dest) do
       local k = rand.irange(i + 1, #dest)
       dest[i], dest[k] = dest[k], dest[i]
     end
+  
   end
-    --after this dest[1-#src] are the music tracks
-    dest[31] = "d_evil" --map 31 always wolf themed
+
+  gui.printf("\n--==| Brutal Doom Music Shuffler |==--\n\n") 
+  gui.printf("Shuffled Songs: \n" .. table.tostring(dest) ..'\n\n')
+
+  --after this dest[1-#src] are the music tracks
+  dest[31] = "d_evil" --map 31 always wolf themed
 
   if PARAM.episode_sky_color then
 	gui.printf("Brutal Doom Skies: Using Skies from Sky Generator.\n")
@@ -662,10 +668,8 @@ Intermission BrutalDoomCast
   end
   table.insert(data, "}\n"); --close final map definition
   
-  if PARAM.bdepi == "yes" then
 	table.insert(data,create_episode_selection())  
-  end
-    
+     
   --insert final intermission
   table.insert(data, castcall)
   
