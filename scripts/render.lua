@@ -3310,13 +3310,26 @@ function Render_skybox()
       skyfab_name = rand.key_by_probs(GAME.THEMES[LEVEL.theme_name].skyboxes)
       skyfab = PREFABS[skyfab_name]
   end
+
   if not skyfab then
     gui.printf("WARNING: Could not find a proper skybox for theme '" .. LEVEL.theme_name .. "'\n")
     return
   end
+   
+  if (string.match(skyfab_name, "_cloud") or string.match(skyfab_name, "_rain")) and OB_CONFIG.engine == "gzdoom4brutal" then
+
+    if math.random(1,100) > 50 then
+      GAME.levels[LEVEL.id].has_thunder = true
+	end
+
+  end
 
   if PARAM.dbg_skybox != "no" then
-	gui.printf("Skybox: " .. skyfab.name .. " (" .. skyfab.map .. ")\nFile: " .. skyfab.file .. "\n\n")
+	gui.printf("\n" .. LEVEL.name .. " Skybox:" .. skyfab.name)
+	if GAME.levels[LEVEL.id].has_thunder then
+		gui.printf(" with Thunder ")
+	end
+    gui.printf(" (" .. skyfab.map .. ")\nFile: " .. skyfab.file .. "\n\n")
   end
   
   local T = Trans.spot_transform(SEED_H*128, SEED_W*128, 4, 4)

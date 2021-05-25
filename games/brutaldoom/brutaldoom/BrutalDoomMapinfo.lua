@@ -171,171 +171,9 @@ local id_number_realm667 =
 		10520 = Helemental		
 	}
 ]]
-				
-local castcall =
-[[
-Intermission Brutal_FinalIntermission
-    {
-    	Image
-    	{
-    		// This is only here to initialize the background and the music
-    		Background = "$bgcastcall"
-    		Time = -1
-    		Music = "$MUSIC_EVIL"
-    	}
-    	Link = BrutalDoomCast
-    }
-Intermission BrutalDoomCast
-    {
-    	Cast
-    	{
-    		CastClass = "Zombieman"
-    		CastName = "$CC_ZOMBIE"
-    		AttackSound = "Missile", 1, "grunt/attack"
-    	}
-    	Cast
-    	{
-    		CastClass = "ShotgunGuy"
-    		CastName = "$CC_SHOTGUN"
-    		AttackSound = "Missile", 1, "shotguy/attack"
-    	}
-    	Cast
-    	{
-    		CastClass = "ChaingunGuy"
-    		CastName = "$CC_HEAVY"
-    		AttackSound = "Missile", 1, "chainguy/attack"
-    		AttackSound = "Missile", 2, "chainguy/attack"
-    		AttackSound = "Missile", 3, "chainguy/attack"
-    	}
-    	Cast
-    	{
-    		CastClass = "DoomImp"
-    		CastName = "$CC_IMP"
-    		AttackSound = "Missile", 2, "imp/attack"
-    	}
-    	Cast
-    	{
-    		CastClass = "Demon"
-    		CastName = "$CC_DEMON"
-    		AttackSound = "Melee", 1, "demon/melee"
-    	}
-    	Cast
-    	{
-    		CastClass = "LostSoul"
-    		CastName = "$CC_LOST"
-    		AttackSound = "Missile", 1, "skull/melee"
-    	}
-    	Cast
-    	{
-    		CastClass = "Cacodemon"
-    		CastName = "$CC_CACO"
-    		AttackSound = "Missile", 1, "caco/attack"
-    	}
-    	Cast
-    	{
-    		CastClass = "CastCallEasyMarine"
-    		CastName = "Evil Grunt"
-    		AttackSound = "Missile", 1, "grunt/attack"
-    	}
-        Cast
-    	{
-    		CastClass = "CastCallEvilMarine"
-    		CastName = "Evil Marine"
-    		AttackSound = "Missile", 1, "PLSM9"
-    	}
-    	Cast
-    	{
-    		CastClass = "HellKnight"
-    		CastName = "$CC_HELL"
-    		AttackSound = "Missile", 1, "baron/attack"
-    	}
-    	Cast
-    	{
-    		CastClass = "BaronOfHell"
-    		CastName = "$CC_BARON"
-    		AttackSound = "Missile", 1, "baron/attack"
-    	}
-    	Cast
-    	{
-    		CastClass = "CastCallBelphegor"
-    		CastName = "Belphegor"
-    		AttackSound = "Missile", 1, "baron/attack"
-    	}
-    	Cast
-    	{
-    		CastClass = "Arachnotron"
-    		CastName = "$CC_ARACH"
-    		AttackSound = "Missile", 1, "baby/attack"
-    	}
-    	Cast
-    	{
-    		CastClass = "PainElemental"
-    		CastName = "$CC_PAIN"
-    		AttackSound = "Missile", 2, "skull/melee"
-    	}
-    	Cast
-    	{
-    		CastClass = "Revenant"
-    		CastName = "$CC_REVEN"
-    		AttackSound = "Missile", 1, "skeleton/attack"
-    		AttackSound = "Melee", 1, "skeleton/swing"
-    		AttackSound = "Melee", 3, "skeleton/melee"
-    	}
-    	Cast
-    	{
-    		CastClass = "Fatso"
-    		CastName = "$CC_MANCU"
-    		AttackSound = "Missile", 1, "fatso/attack"
-    		AttackSound = "Missile", 4, "fatso/attack"
-    		AttackSound = "Missile", 7, "fatso/attack"
-    	}
-    	Cast
-    	{
-    		CastClass = "Archvile"
-    		CastName = "$CC_ARCH"
-    		AttackSound = "Missile", 1, "vile/start"
-    	}
-    	Cast
-    	{
-    		CastClass = "SpiderMastermind"
-    		CastName = "$CC_SPIDER"
-    		AttackSound = "Missile", 1, "spider/attack"
-    		AttackSound = "Missile", 2, "spider/attack"
-    	}
-    	Cast
-    	{
-    		CastClass = "CastCallHectebus"
-    		CastName = "Juggernaut"
-    		AttackSound = "Missile", 1, "weapons/rocklf"
-    		AttackSound = "Missile", 3, "weapons/rocklf"
-    		AttackSound = "Missile", 5, "weapons/rocklf"
-    	}
-        Cast
-    	{
-    		CastClass = "Cyberdemon"
-    		CastName = "$CC_CYBER"
-    		AttackSound = "Missile", 1, "weapons/rocklf"
-    		AttackSound = "Missile", 3, "weapons/rocklf"
-    		AttackSound = "Missile", 5, "weapons/rocklf"
-    	}
-    	Cast
-    	{
-    		CastClass = "DoomPlayer"
-    		CastName = "$CC_HERO"
-    		AttackSound = "Missile", 0, "weapons/sshotf"
-    	}
-    	Link = BrutalDoomCast	// restart cast call
-    }
-]]
-    
+				  
   gui.printf("Mapinfo code is running\n");
-
---    "clearepisodes\n\n"
---    'episode MAP01\n'
---    '{\n'
---    'name = "Brutal Oblige"\n'
---    '}\n\n'
-  
+ 
   local data =
   {
     "//\n"
@@ -602,6 +440,9 @@ Intermission BrutalDoomCast
       table.insert(data, sky1)
       table.insert(data, fog_color_line)
       table.insert(data, fog_intensity_line)
+	  if L.has_thunder then
+	    table.insert(data, "lightning\n")
+	  end
 	  table.insert(data, 'LevelNum = ' .. mapnum .. "\n")
       table.insert(data, 'EnterPic = ' .. enterpic)
       table.insert(data, 'ExitPic = ' .. enterpic)
@@ -664,15 +505,16 @@ Intermission BrutalDoomCast
   if mapnum == 33 then --second secret level (chex)
     table.insert(data, 'next = "MAP' .. tostring(secretexit2 + 1) .. '"\n')
   else
-    table.insert(data, 'next = EndSequence, "Brutal_FinalIntermission"\n') --last map ends the game unless it is a secret level (ie anything more or less than full game)
+    if OB_CONFIG.iwad_usage == "complete" then
+      table.insert(data, 'next = EndPic, "ENDPIC"\n') -- Doom Complete Endpic
+    else
+	  table.insert(data, 'next = Endpic, "PFUB2"\n') -- Doom2 Endpic
+	end
   end
   table.insert(data, "}\n"); --close final map definition
   
 	table.insert(data,create_episode_selection())  
      
-  --insert final intermission
-  table.insert(data, castcall)
-  
   --insert DoomEdNums 
   if BRUTALDOOM.PARAMETERS.realm667 == true then   
 	table.insert(data, id_number_realm667)  

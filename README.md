@@ -14,6 +14,8 @@ Something you also might not know is that brutaldoomv20b.pk3 contains a lot of s
 * Wolfenstein theme fixed so that it is populated by SS guards (if you run a Wolf themed map made without this addon it is filled with evil marines)
 * Nightmare Monsters; a separate module I've made which adds the Nightmare Demon from PSX Doom and the Nightmare Imp from Doom64. This can be used without Brutal Doom but if used with the monsters have more and gorier death states.
 * Kicking with the new weapons is no longer invisible.
+* Secret levels: If you make a full 32 map wad there will be 3 secret exits on random levels. The first on levels 1-9, the second on levels 11-19 and the third on levels 21-29. The second goes to map 31 (which itself has a secret exit to 32), where the others go I will leave as a surprise.
+* A proper ending after the last Oblige level, no matter how many there are.
 
 
 **How to use - Latest development version**
@@ -45,25 +47,12 @@ Note that if you downloaded this from gitlab rather than cloning the repo you ca
 
 # Current supported versions
 
-  | Version | Expected filename
--- | -- | --
-Oblige | 7.70 |  
-Brutal Doom | 21 | brutalv21.pk3
-
-
-* Secret levels: If you make a full 32 map wad there will be 3 secret exits on random levels. The first on levels 1-9, the second on levels 11-19 and the third on levels 21-29. The second goes to map 31 (which itself has a secret exit to 32), where the others go I will leave as a surprise.
-* A proper ending after the last Oblige level, no matter how many there are.
-
 
 **Known issues**
 
 * Somewhere along the line it stopped working with Zandronum. I'm willing to attempt to fix this is anyone asks but if not, screw Zandronum.
 * This is just an addon so any known issues with Oblige or Brutal Doom will still be present.
 * If you get "Script error, "brutalv20b.pk3:cvarinfo" line 1: cvar 'bd_bloodamount' already exists" then you are loading brutal doom twice. Try loading *just* the generated wad, it should pull in brutal automatically.
-* Currently any vanilla Doom/Doom2 maps generated while this mod is active can have missing textures or objects. This will be fixed before the next release.
 * double check that the pk3 is BrutalOblige.pk3 not BrutalOblige.pk3.zip
-
-**A note on compiled acs code**
-This mod contains some precompiled acs objects in brutaloblige/acs. The sourcecode for these is inlcuded in the same folder with the .acs extension. If you prefer to compile this code yourself you will need acc (I compiled with version 1.56) which is available in source and binary forms on the zdoom [download page](https://zdoom.org/downloads). The compiled object should have the same name as the source file but with .acs replaced with .o and be placed in the acs folder.
 
 [Oblige Download](http://oblige.sourceforge.net/i_download.html)

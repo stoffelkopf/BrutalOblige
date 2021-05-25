@@ -365,10 +365,6 @@ function BRUTALDOOM.decorate()
 	
 end
 
-function BRUTALDOOM.castcalldecorate()
-	gui.wad_insert_file("brutaloblige/decorates/CastCall/BrutalCastCall.dec","DECORATE");
-end
-
 function BRUTALDOOM.setsecretexits()
   --GAME.SECRET_EXITS.MAP08 = false --works to set secret exit
   if secretexit1 == 1 then GAME.SECRET_EXITS.MAP01 = true end --there must be a better way but I don't know it
@@ -422,7 +418,6 @@ function BRUTALDOOM.all_done()
   end
   BRUTALDOOM.create_mapinfo();
   BRUTALDOOM.create_gldata()
-  BRUTALDOOM.castcalldecorate();
   BRUTALDOOM.parameters_to_wad();
 end
 
