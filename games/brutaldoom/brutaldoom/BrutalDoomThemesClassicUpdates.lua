@@ -94,25 +94,36 @@ BRUTALDOOM.ROOM_THEMES.urban_Outdoors_generic.floors =
 
 BRUTALDOOM.THEMES.urban.skyboxes =
 {
+	Skybox_craneo_space_shuttle = 50
+	Skybox_craneo_space_shuttle_rain = 30
+	Skybox_craneo_space_shuttle_cloud = 30
+	Skybox_craneo_space_shuttle_rain_cloud = 20
     Skybox_generic_Plain = 30
 	Skybox_generic_Plain_cloud = 30
-	Skybox_generic_Plain_rain = 15	
+	Skybox_generic_Plain_rain = 15
+	Skybox_generic_Plain_rain_cloud	= 12
 	Skybox_generic_Plain_snow = 10
 	Skybox_garrett_city = 50
 	Skybox_garrett_city_cloud = 30
 	Skybox_garrett_city_rain = 30
+	Skybox_garrett_city_rain_cloud = 20	
 	Skybox_garrett_city_snow = 15
     Skybox_generic = 50
 	Skybox_generic_cloud = 30
 	Skybox_generic_rain = 30
+	Skybox_generic_rain_cloud = 20
 	Skybox_generic_snow = 15
-	Skybox_hellish_city = 20	
+	Skybox_hellish_city = 10	
 }
 
 
 BRUTALDOOM.THEMES.hell.skyboxes =
 {
-    Skybox_generic_Plain = 30
+    Skybox_city_hell_bloodfalls = 50
+	Skybox_city_hell_bloodfalls_ash = 30
+	Skybox_city_hell_bloodfalls_cinder = 30
+	Skybox_garrett_hell_cloud = 30
+	Skybox_generic_Plain = 30
     Skybox_generic_Plain_ash = 15
     Skybox_generic_Plain_cinder = 15	
     Skybox_generic_Plain_cloud = 15	
@@ -130,35 +141,50 @@ BRUTALDOOM.THEMES.hell.skyboxes =
 
 BRUTALDOOM.THEMES.tech.skyboxes =
 {
+    Skybox_craneo_space_shuttle = 50
+	Skybox_craneo_space_shuttle_rain = 30
+	Skybox_craneo_space_shuttle_cloud = 30
+	Skybox_craneo_space_shuttle_rain_cloud = 20
     Skybox_generic_Plain = 30
 	Skybox_generic_Plain_cloud = 15
 	Skybox_generic_Plain_rain = 15
+	Skybox_generic_Plain_rain_cloud	= 12	
 	Skybox_generic_Plain_snow = 10	
     Skybox_generic = 50
 	Skybox_generic_cloud = 30
 	Skybox_generic_rain = 30
+	Skybox_generic_rain_cloud = 20	
 	Skybox_generic_snow = 15	
 	Skybox_garrett_city = 50
 	Skybox_garrett_city_cloud = 30	
-	Skybox_garrett_city_rain = 30	
+	Skybox_garrett_city_rain = 30
+	Skybox_garrett_city_rain_cloud = 20	
 	Skybox_garrett_city_snow = 15
-	Skybox_hellish_city = 20
+	Skybox_hellish_city = 10
 }
 
 BRUTALDOOM.THEMES.wolf.skyboxes =
 {
-    Skybox_generic_Plain = 50
+    Skybox_craneo_space_shuttle = 50
+	Skybox_craneo_space_shuttle_rain = 50
+	Skybox_craneo_space_shuttle_cloud = 50
+	Skybox_craneo_space_shuttle_rain_cloud = 40
+	Skybox_generic_Plain = 50
 	Skybox_generic_Plain_cloud = 50
 	Skybox_generic_Plain_rain = 50	
+	Skybox_generic_Plain_rain_cloud	= 40
 	Skybox_generic_Plain_snow = 30
+    Skybox_generic = 50
+	Skybox_generic_cloud = 50
+	Skybox_generic_rain = 50
+	Skybox_generic_rain_cloud = 40	
+	Skybox_generic_snow = 30
 }
 
 BRUTALDOOM.THEMES.egypt2.skyboxes =
 {
-    Skybox_generic_Plain = 50
-	Skybox_generic_Plain_cloud = 50
-	Skybox_generic_Plain_rain = 50	
-	Skybox_generic_Plain_snow = 30
+	Skybox_craneo_egypt = 50
+	Skybox_craneo_space_shuttle = 20
 }
 
 BRUTALDOOM.THEMES.hell.allow_mons_for_theme = "hell"

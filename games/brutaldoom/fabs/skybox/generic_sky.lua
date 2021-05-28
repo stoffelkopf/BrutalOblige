@@ -20,7 +20,7 @@ PREFABS.Skybox_generic_Plain_rain =
   prob  = 30
  }
  
- PREFABS.Skybox_generic_Plain_snow =
+PREFABS.Skybox_generic_Plain_snow =
 {
   template = "Skybox_generic_Plain"
 
@@ -29,7 +29,7 @@ PREFABS.Skybox_generic_Plain_rain =
   prob  = 20
  }
  
-  PREFABS.Skybox_generic_Plain_cloud =
+PREFABS.Skybox_generic_Plain_cloud =
 {
   template = "Skybox_generic_Plain"
 
@@ -38,7 +38,7 @@ PREFABS.Skybox_generic_Plain_rain =
   prob  = 30
  }
  
-   PREFABS.Skybox_generic_Plain_cinder =
+PREFABS.Skybox_generic_Plain_cinder =
 {
   template = "Skybox_generic_Plain"
 
@@ -47,7 +47,7 @@ PREFABS.Skybox_generic_Plain_rain =
   prob  = 30
  }
  
-   PREFABS.Skybox_generic_Plain_ash =
+PREFABS.Skybox_generic_Plain_ash =
 {
   template = "Skybox_generic_Plain"
 
@@ -55,3 +55,12 @@ PREFABS.Skybox_generic_Plain_rain =
   
   prob  = 30
  }
+ 
+PREFABS.Skybox_generic_Plain_rain_cloud =
+{
+  template = "Skybox_generic_Plain"
+
+  map = "MAP07"
+  
+  prob  = 30
+ } 

@@ -31,11 +31,20 @@ PREFABS.Skybox_garrett_city_snow =
   prob  = 30
  }
  
- PREFABS.Skybox_garrett_city_cloud =
+PREFABS.Skybox_garrett_city_cloud =
 {
   template = "Skybox_garrett_city"
 
   map = "MAP04"
+  
+  prob  = 30
+ }
+ 
+PREFABS.Skybox_garrett_city_rain_cloud =
+{
+  template = "Skybox_garrett_city"
+
+  map = "MAP05"
   
   prob  = 30
  }

@@ -22,7 +22,7 @@ PREFABS.Skybox_generic_rain =
   prob  = 30
  }
  
- PREFABS.Skybox_generic_snow =
+PREFABS.Skybox_generic_snow =
 {
   template = "Skybox_generic"
 
@@ -31,11 +31,20 @@ PREFABS.Skybox_generic_rain =
   prob  = 15
  }
  
-  PREFABS.Skybox_generic_cloud =
+PREFABS.Skybox_generic_cloud =
 {
   template = "Skybox_generic"
 
   map = "MAP04"
+  
+  prob  = 30
+ }
+ 
+PREFABS.Skybox_generic_rain_cloud =
+{
+  template = "Skybox_generic"
+
+  map = "MAP05"
   
   prob  = 30
  }
