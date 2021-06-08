@@ -1659,6 +1659,10 @@ function Room_choose_size(R, not_big)
     end
 
   end  
+
+  if LEVEL.theme_name == "wolf" then  
+    R.floor_limit = 128
+  end
 end
 
 
@@ -2742,11 +2746,17 @@ function Room_floor_ceil_heights()
 
       if A.peer and A.peer.ceil_h then
         A.ceil_h = A.peer.ceil_h
+		if LEVEL.theme_name == "wolf" then
+			A.ceil_h = 128
+		end
         continue
       end
 
       if A.ceil_group then
         set_ceil(A, assert(A.ceil_group.h))
+	    if LEVEL.theme_name == "wolf" then
+	      set_ceil(A, 128)		
+		end
         continue
       end
 
@@ -2755,7 +2765,10 @@ function Room_floor_ceil_heights()
       if A.is_porch then
         height = 144
       end
-
+	  
+	  if LEVEL.theme_name == "wolf" then
+	    height = 128
+	  end
 ---## if not A.floor_h then
 ---## gui.debugf("do_ceilings : no floor_h in %s %s in %s\n", A.name, A.mode, A.room.name)
 ---## end
@@ -2765,7 +2778,11 @@ function Room_floor_ceil_heights()
 
       if A.traverse_ceil_h then new_h = math.max(new_h, A.traverse_ceil_h) end
 
-      set_ceil(A, new_h)
+	  if LEVEL.theme_name == "wolf" then
+	    set_ceil(A, 128)
+	  else
+        set_ceil(A, new_h)
+	  end
     end
 
     -- now pick textures

@@ -1739,6 +1739,10 @@ stderrf("Cages in %s [%s pressure] --> any_prob=%d  per_prob=%d\n",
 
     reqs.env = R:get_env()
 
+    if LEVEL.theme_name == "wolf" and R.theme then
+		reqs.room_theme = R.theme.name
+	end
+
     if R.is_cave then
       reqs.kind = "decor"
       reqs.shape = "U"   -- TODO: chunk.shape,  FIXME: use for pictures too

@@ -165,10 +165,6 @@ BRUTALDOOM.THEMES.tech.skyboxes =
 
 BRUTALDOOM.THEMES.wolf.skyboxes =
 {
-    Skybox_craneo_space_shuttle = 50
-	Skybox_craneo_space_shuttle_rain = 50
-	Skybox_craneo_space_shuttle_cloud = 50
-	Skybox_craneo_space_shuttle_rain_cloud = 40
 	Skybox_generic_Plain = 50
 	Skybox_generic_Plain_cloud = 50
 	Skybox_generic_Plain_rain = 50	

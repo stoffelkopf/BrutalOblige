@@ -216,7 +216,6 @@ function Fab_expansion_groups(list, axis_name, fit_size, pf_size)
   if math.abs(extra) < 1 then return nil end
 
   if extra < 0 then
-    -- XXX error("Prefab does not fit! (on " .. axis_name .. " axis)")
     local problem_string = "\n\nPREFAB DOES NOT FIT!!!\n"
     problem_string = problem_string .. "(on " .. axis_name .. " axis)\n"
     problem_string = problem_string .. "Fab info:\n"
@@ -1989,8 +1988,9 @@ function Fabricate(room, def, T, skins)
   Fab_replacements (fab)
 
   fab.state = "skinned"
+
   if PARAM.dbg_prefab == "all" then
-      gui.printf(LEVEL.name .. ": " .. fab.file  .. " - " .. fab.name .. " ")
+      gui.printf(LEVEL.name .. " " .. fab.kind .. ": " .. fab.file  .. " - " .. fab.name .. " ")
       if fab.map then
 		gui.printf("(" .. fab.map .. ") ")	  
 	  end
@@ -2197,6 +2197,9 @@ function Fab_find_matches(reqs, match_state)
     -- darkness check
     if def.dark_map and not LEVEL.is_dark then return 0 end
 
+	-- Wolf Picture Check
+	if reqs.room_theme != def.room_theme then return 0 end
+
     return 1
   end
 
@@ -2230,10 +2233,30 @@ function Fab_find_matches(reqs, match_state)
 
     if prob <= 0 then return 0 end
 
-    if not ob_match_level_theme(def) then return 0 end
+	if not ob_match_level_theme(def) then return 0 end
     if not ob_match_feature(def)     then return 0 end
 
     if (def.rank or 0) < match_state.rank then return 0 end
+
+	if LEVEL.theme_name == "egypt2" then
+	  if def.kind == "decor" then return 0 end
+	  if def.kind == "picture" then return 0 end
+	  if def.kind == "light" and string.match(def.file, "tech") then return 0 end
+	  if def.kind != "window" and def.kind != "stairs" and def.kind != "skybox" and def.kind != "light" then
+	    if string.match(def.file, "gtd") or string.match(def.file, "garrett") or string.match(def.file, "armaetus") or string.match(def.file, "craneo") or string.match(def.file, "mogwaltz") or string.match(def.file, "scionox") or string.match(def.file, "beed28") then return 0 end
+	  end  
+	end
+
+	if LEVEL.theme_name == "wolf"  then
+	  if def.kind == "decor" then return 0 end
+	  if def.kind == "item" and def.key == "secret" and def.theme != "wolf" then return 0 end
+	  if def.kind == "picture" and def.theme != "wolf" then return 0 end
+	  if def.kind == "light" and def.theme != "wolf" then return 0 end	  
+	  if def.kind == "arch" and def.theme != "wolf" then return 0 end
+	  if def.kind == "door" and def.theme != "wolf" then return 0 end
+	  if def.kind == "joiner" and def.theme != "wolf" then return 0 end	  
+      if string.match(def.file, "gtd") or string.match(def.file, "garrett") or string.match(def.file, "armaetus") or string.match(def.file, "craneo") or string.match(def.file, "mogwaltz") or string.match(def.file, "scionox") or string.match(def.file, "beed28") then return 0 end
+	end
 
     prob = prob * match_requirements(def)
     prob = prob * style_factor(def)
@@ -2282,7 +2305,7 @@ function Fab_pick(reqs, allow_none)
 
     cur_req = cur_req.alt_req
   end
-
+  
   if DEBUG_FAB_PICK then
      gui.debugf("\n\nFAB_PICK = \n%s\n\n", table.tostr(tab))
   end

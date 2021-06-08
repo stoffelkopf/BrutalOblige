@@ -22,7 +22,7 @@ BRUTALDOOM.THEMES =
       ZZWOLF11 = 20
       ZZWOLF5  = 5
     }
-
+	
     monster_prefs =
     {
       BrutalSS = 1.2
@@ -30,99 +30,107 @@ BRUTALDOOM.THEMES =
       Ubersoldat = 1.5
       ADog = 1.1
     }
-	
-	prefab_remap =
-    {
-	  BIGDOOR1 = "ZELDOOR"
-	  BIGDOOR2 = "ZELDOOR"
-	  BIGDOOR3 = "ZELDOOR"
-	  BIGDOOR4 = "ZELDOOR"
-	  BIGDOOR5 = "ZELDOOR"
-	  BIGDOOR6 = "ZELDOOR"
-	  BIGDOOR7 = "ZELDOOR"
-	  
-	  MARBFAC2 = "ZZWOLF2"
-	  MARBFAC3 = "ZZWOLF3"
-	  MARBFACE = "ZZWOLF4"
-    
-      CRATE1 = "WLFCRATE"
-	  CRATE2 = "WLFCRATE"
-	  CRATE3 = "WLFCRATE"
-      CRATWIDE = "WLFCRATE"
-      CRATELIT = "WLFCRATE"
-    
-      CRATOP1 = "FLAT5_2"
-      CRATOP2 = "FLAT5_2"
-	}
   }
 }
 
-
 BRUTALDOOM.ROOM_THEMES =
 {
-  --wolfenstein
-  wolf_Cells =
-  {
-    env = "building"
-	prob = 50
-
-    walls =
-    {
-      ZZWOLF9 = 50
-    }
-
-    floors =
-    {
-      FLAT1 = 50
-    }
-
-    ceilings =
-    {
-      FLAT1 = 50
-    }
-  }
-
+  
   wolf_Stone =
   {
     env = "building"
+	pic = "stone"
 	prob = 50
 
-    walls =
-    {
-      ZZWOLF1 = 50
-    }
+	walls =
+	{
+	  ZZWOLF1 = 50
+	}
 
     floors =
     {
-      FLAT1 = 50
-      MFLR8_1 = 50
+      FLAT5_4 = 50
+	  FLAT1 = 25
+      MFLR8_1 = 25
     }
 
     ceilings =
     {
       FLAT1 = 50
+	  FLAT19 = 25
+    }
+  }
+
+  wolf_Wood =
+  {
+    env = "building"
+	prob = 40
+
+    walls =
+    {
+      ZZWOLF5 = 100  
+    }
+
+    floors =
+    {
+      FLAT5_5 = 50
+	  FLAT5_2 = 25
+	  FLAT5_1 = 25
+    }
+
+    ceilings =
+    {
+	  CEIL5_2 = 50
+	  CEIL1_1 = 50
     }
   }
 
   wolf_Brick =
   {
     env = "building"
-	prob = 50
+	prob = 40
 
     walls =
     {
-      ZZWOLF11 = 50
-    }
+      ZZWOLF11 = 100
 
+    }
+	
     floors =
     {
-      FLAT1 = 50
+      FLOOR0_3 = 50
+	  FLOOR0_5 = 25
+	  FLAT1 = 25
     }
 
     ceilings =
     {
-      FLAT5_3 = 30
+	  CEIL4_1 = 50
+      FLAT5_3 = 25
+    }	
+  }
+  
+  wolf_Cells =
+  {
+    env = "building"
+	prob = 30
+
+    walls =
+    {
+      ZZWOLF9 = 50
     }
+	
+    floors =
+    {
+      FLAT5_4 = 50
+	  FLAT1 = 25
+    }
+
+    ceilings =
+    {
+	  CEIL4_2 = 50
+      FLAT1 = 25
+    }	
   }
 
   wolf_Hallway =
@@ -145,8 +153,8 @@ BRUTALDOOM.ROOM_THEMES =
       CEIL1_1 = 50
       FLAT5_1 = 50
     }
-  }
-
+  } 
+  
   wolf_Outdoors =
   {
     env = "outdoor"
@@ -190,9 +198,8 @@ BRUTALDOOM.ROOM_THEMES =
       MFLR8_1 = 20
       FLAT1_1 = 10
       RROCK13 = 20
-    }
-	
-  } 
+    }	
+  }   
 }
 
 --egypt theme clones that from Oblige theme for tnt with a few adjustments

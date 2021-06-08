@@ -324,7 +324,101 @@ actor ObligeMother : Motherdemon 348
 {
   Tag "Motherdemon"
   Health 6000  
+  obituary "%o was obliterated by the mother of all demons."
+  radius 60
+  height 110
+  mass 1000
+  scale 1.1
+  painchance 20
+  reactiontime 8
+  speed 24
+  seesound "mother/sight"
+  attacksound "mother/attack"
+  painsound "mother/pain"
+  deathsound "mother/death"
+  activesound "mother/active"
+  MONSTER
+  +BOSS
+  +FLOAT
+  +NOGRAVITY
+  +DONTMORPH
+  +NORADIUSDMG
+  +MISSILEMORE
+  +TELESTOMP
+  DamageFactor "CauseSplash", 0.0 DamageFactor "CauseObjectsToSplashSlime", 0.0 DamageFactor "CauseObjectsToSplashNukage", 0.0
+  DamageFactor "CauseObjectsToSplashBlood", 0.0 DamageFactor "CauseObjectsToSplashLava", 0.0
+  +MISSILEEVENMORE
+  +LOOKALLAROUND
+  +FORCEXYBILLBOARD
+  +NOTARGET
+  states
+  {
+  Spawn:
+    MOTH ABCD 9 A_Look
+    loop
+  See:
+	TNT1 A 0
+	
+  Chasing:	
+    MOTH AAABBBCCCDDD 3 A_Chase
+    loop
+  Missile:
+    MOTH E 1 A_FaceTarget
+	TNT1 A 0 A_Jump(96, "SuperAttack")
+	MOTH EF 4 A_FaceTarget
+    MOTH E 0 A_PlaySoundEx ("Mother/attack", "Body")
+    MOTH G 0 bright A_CustomMissile (MotherFire,0,0,0,2,0)
+    MOTH G 0 bright A_CustomMissile (MotherFire,0,0,90,2,0)
+    MOTH G 0 bright A_CustomMissile (MotherFire,0,0,-90,2,0)
+    MOTH G 14 bright A_CustomMissile (MotherFire,0,0,180,2,0)
+    MOTH EF 8 A_FaceTarget
+    MOTH F 0 bright A_CustomMissile (MotherBall,100,-25,35)
+    MOTH F 0 bright A_CustomMissile (MotherBall,50,-25,35)
+    MOTH F 0 bright A_CustomMissile (MotherBall,100,25,-35)
+    MOTH G 14 bright A_CustomMissile (MotherBall,50,25,-35)
+    MOTH E 8
+    goto See
+	
+ SuperAttack:
+     TNT1 A 0
+	 MOTH HII 8 A_FaceTarget
+	 MOTH E 0 A_PlaySoundEx ("Mother/attack", "Body")
+    MOTH G 0 bright A_CustomMissile ("SuperMotherBall",100)
+    MOTH H 8 A_FaceTarget
+    goto See
+ 
+  Pain:
+    MOTH K 10
+    MOTH K 10 A_Pain
+    goto See
+ 
+  Death:
+    MOTH K 10
+    MOTH I 0 A_Scream
+	MOTH L 0 A_NoBlocking
+    MOTH KKKKKKKK 12 A_CustomMissile ("ExplosionSpawner", random (50, 90), 0, random (0, 360), 2, random (0, 90))
+	
+	TNT1 AA 0 A_CustomMissile ("XDeath1", 32, 0, random (0, 360), 2, random (0, 90))
+	TNT1 AA 0 A_CustomMissile ("XDeath2", 32, 0, random (0, 360), 2, random (0, 90))
+	TNT1 AA 0 A_CustomMissile ("XDeath3", 32, 0, random (0, 360), 2, random (0, 90))
+	
+	TNT1 AAAA 0 A_CustomMissile ("ExplosionSpawner", random (50, 90), 0, random (0, 360), 2, random (0, 90))
+	TNT1 AAAAAA 0 A_CustomMissile ("Bloodmist", 35, 0, random (0, 360), 2, random (0, 90))
+	TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile ("BloodmistExtraBig", 15, 0, random (0, 360), 2, random (10, 90))
+	
+    MOTH L 3
+    MOTH L 3
+    MOTH MNOPQRST 4
+    MOTH T 300
+    stop
+  Crush:
+    POL5 A 0
+    POL5 A 0 A_PlaySound ("Misc/Gibbed")
+    POL5 A -1
+    Stop
+  }
 }
+
 actor KamikazeGuy 10300
 {
   Tag "Kamikaze Guy"
