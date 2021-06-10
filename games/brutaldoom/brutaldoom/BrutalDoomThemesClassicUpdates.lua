@@ -94,6 +94,7 @@ BRUTALDOOM.ROOM_THEMES.urban_Outdoors_generic.floors =
 
 BRUTALDOOM.THEMES.urban.skyboxes =
 {
+	Skybox_craneo_egypt = 50
 	Skybox_craneo_space_shuttle = 50
 	Skybox_craneo_space_shuttle_rain = 30
 	Skybox_craneo_space_shuttle_cloud = 30
@@ -141,6 +142,7 @@ BRUTALDOOM.THEMES.hell.skyboxes =
 
 BRUTALDOOM.THEMES.tech.skyboxes =
 {
+	Skybox_craneo_egypt = 25
     Skybox_craneo_space_shuttle = 50
 	Skybox_craneo_space_shuttle_rain = 30
 	Skybox_craneo_space_shuttle_cloud = 30
@@ -175,12 +177,6 @@ BRUTALDOOM.THEMES.wolf.skyboxes =
 	Skybox_generic_rain = 50
 	Skybox_generic_rain_cloud = 40	
 	Skybox_generic_snow = 30
-}
-
-BRUTALDOOM.THEMES.egypt2.skyboxes =
-{
-	Skybox_craneo_egypt = 50
-	Skybox_craneo_space_shuttle = 20
 }
 
 BRUTALDOOM.THEMES.hell.allow_mons_for_theme = "hell"

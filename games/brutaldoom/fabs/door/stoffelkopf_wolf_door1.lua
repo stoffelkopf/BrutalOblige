@@ -24,7 +24,7 @@ PREFABS.Door_wolf_plain2 =
   bound_z1 = 0
   bound_z2 = 128
  
-  tex_ZELDOOR = { ZDOORB1=50, ZDOORF1=50 }  
+  tex_ZDOORB1 = { ZDOORB1=50, ZDOORF1=50, DOOR1_10=50, DOOR1_30=50 }  
 }
 
 
@@ -40,5 +40,5 @@ PREFABS.Door_wolf_plain_diag =
   bound_z1 = 0
   bound_z2 = 128
 
-  tex_ZELDOOR = { ZELDOOR=50, ZDOORB1=50, ZDOORF1=50 }  
+  tex_ZDOORB1 = { ZDOORB1=50, ZDOORF1=50, DOOR1_10=50, DOOR1_30=50 }  
 }

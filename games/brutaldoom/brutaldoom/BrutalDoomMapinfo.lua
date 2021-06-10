@@ -128,13 +128,7 @@ local id_number =
 [[
 	DoomEdNums
 	{
-		10301 = Hellion
-		10302 = HellWarrior
-		10304 = SnakeImp
-		10305 = Roach
-		10306 = Hierophant
 		10307 = DemonDog
-		10311 = Azazel
 	}
 ]]
 
@@ -142,13 +136,7 @@ local id_number_realm667 =
 [[
 	DoomEdNums
 	{
-		10301 = Hellion
-		10302 = HellWarrior
-		10304 = SnakeImp
-		10305 = Roach
-		10306 = Hierophant
 		10307 = DemonDog
-		10311 = Azazel
 		10501 = Arachnophyte
 		10502 = AracnorbQueen
 		10503 = BFGGuy

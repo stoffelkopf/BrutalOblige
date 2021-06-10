@@ -22,6 +22,8 @@ PREFABS.Locked_wolf_medium_red =
   x_fit  = "frame"
 
   flat_FLAT23 = "BIGDOOR1"
+  
+  tex_DOOR3_10 = { DOOR3_10=50, DOOR3_30=50 }  
 
   -- texture is already "DOORRED"
   -- line special is already #33
@@ -44,6 +46,8 @@ PREFABS.Locked_wolf_medium_red_diag =
   seed_h = 2
 
   flat_FLAT23 = "BIGDOOR1"
+  
+  tex_DOOR3_10 = { DOOR3_10=50, DOOR3_30=50 }  
 
   -- texture is already "DOORRED"
   -- line special is already #33

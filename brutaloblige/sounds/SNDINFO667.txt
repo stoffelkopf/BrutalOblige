@@ -1,76 +1,8 @@
-kamikazi/scream		DSKAMAAH
-kamikazi/idle		DSKAMIDL
-monster/hlnsit		dshlnsit
-monster/hlnact		dshlnact
-monster/hlnpai		dshlnpai
-monster/hlndth		dshlndth
-monster/hlnatk		dshlnatk
-monster/hlnexp		dshlnexp
-
-$Random Roach/Sight { ROACSIG1 ROACSIG2 ROACSIG3 }
-ROACSIG1	ROACSIG1
-ROACSIG2	ROACSIG2
-ROACSIG3	ROACSIG3
-$Random Roach/Active { ROACACT1 ROACACT2 }
-ROACACT1	ROACACT1
-ROACACT2	ROACACT2
-Roach/Fire	ROACFIRE
-Roach/Hit	ROACHIT
-$Random Roach/Pain { ROACPAI1 ROACPAI2 }
-ROACPAI1	ROACPAI1
-ROACPAI2	ROACPAI2
-Roach/Death	ROACDEAT
-
-$Limit Roach/Fire 0
-$Limit Roach/Hit 0
-
-weapons/firmfi	dsfirmfi
-weapons/firex5	dsfirex5
-monster/hiesit	dshiesit
-monster/hieact	dshieact
-monster/hiepai	dshiepai
-monster/hiedth	dshiedth
-monster/curse1	dscurse1
-monster/curse2	dscurse2 
-
 Dog/Sight		DSDOGSEE
 Dog/Active		DSDOGIDL
 Dog/Pain		DSDOGPAN
 Dog/Attack		DSDOGATK
 Dog/Death		DSDOGDIE
-
-diablo2/goatman/attack		011att
-diablo2/goatman/death		011deth
-diablo2/goatman/sight		011sit
-$random diablo2/goatman/idle	{ diablo2/goatman/idle1 diablo2/goatman/idle2 diablo2/goatman/idle3 }
-$random diablo2/goatman/pain	{ diablo2/goatman/pain1 diablo2/goatman/pain2 }
-
-diablo2/goatman/idle1		011idle1
-diablo2/goatman/idle2		011idle2
-diablo2/goatman/idle3		011idle3
-diablo2/goatman/pain1		011pain1
-diablo2/goatman/pain2		011pain2
-
-Goat/Attack				goata2
-Goat/death				goatbd2
-Goat/Pain				goath2
-Goat/Madattack			goats2
-
-missile1charge	h20017
-missile2charge	h20016
-
-waitingballsspawn	purfire
-whiteballssee		acidfire
-whiteballsdeth		acidhit
-redballssee		purfire3
-redballsdeth		r_exp3
-
-redballbsee		mmfire
-redballbdeth	explode
-whiteballbsee	scream
-whiteballbdeth	scream2
-
-groundfirestart  flamstrt
 
 arachnophyte/sight dsaphsit
 $RANDOM arachnophyte/pain { arachnophyte/pain1 arachnophyte/pain2 arachnophyte/pain3 }

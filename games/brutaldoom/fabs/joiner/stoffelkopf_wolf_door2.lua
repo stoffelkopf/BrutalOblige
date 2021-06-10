@@ -24,6 +24,6 @@ PREFABS.wolf_Joiner_door2 =
 
   x_fit  = "frame"
 
-  tex_ZELDOOR = { ZDOORB1=50, ZDOORF1=50 }  
+  tex_ZDOORB1 = { ZDOORB1=50, ZDOORF1=50, DOOR1_10=50, DOOR1_30=50 }  
 }
 

@@ -25,6 +25,8 @@ PREFABS.wolf_Locked_joiner_red =
   prob   = 100
 
   flat_FLOOR7_2 = "BIGDOOR3"
+  
+  tex_DOOR3_10 = { DOOR3_10=50, DOOR3_30=50 }  
 
   -- texture is already "DOORRED"
   -- line special is already #33

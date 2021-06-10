@@ -2238,23 +2238,16 @@ function Fab_find_matches(reqs, match_state)
 
     if (def.rank or 0) < match_state.rank then return 0 end
 
-	if LEVEL.theme_name == "egypt2" then
-	  if def.kind == "decor" then return 0 end
-	  if def.kind == "picture" then return 0 end
-	  if def.kind == "light" and string.match(def.file, "tech") then return 0 end
-	  if def.kind != "window" and def.kind != "stairs" and def.kind != "skybox" and def.kind != "light" then
-	    if string.match(def.file, "gtd") or string.match(def.file, "garrett") or string.match(def.file, "armaetus") or string.match(def.file, "craneo") or string.match(def.file, "mogwaltz") or string.match(def.file, "scionox") or string.match(def.file, "beed28") then return 0 end
-	  end  
-	end
-
 	if LEVEL.theme_name == "wolf"  then
-	  if def.kind == "decor" then return 0 end
+	  if def.kind == "decor" and def.theme != "wolf" then return 0 end
 	  if def.kind == "item" and def.key == "secret" and def.theme != "wolf" then return 0 end
 	  if def.kind == "picture" and def.theme != "wolf" then return 0 end
 	  if def.kind == "light" and def.theme != "wolf" then return 0 end	  
 	  if def.kind == "arch" and def.theme != "wolf" then return 0 end
 	  if def.kind == "door" and def.theme != "wolf" then return 0 end
 	  if def.kind == "joiner" and def.theme != "wolf" then return 0 end	  
+	  if def.kind == "start" and def.theme != "wolf" then return 0 end	  	  
+	  if def.kind == "exit" and def.where == "seeds" and def.theme != "wolf" then return 0 end	  	  	  
       if string.match(def.file, "gtd") or string.match(def.file, "garrett") or string.match(def.file, "armaetus") or string.match(def.file, "craneo") or string.match(def.file, "mogwaltz") or string.match(def.file, "scionox") or string.match(def.file, "beed28") then return 0 end
 	end
 

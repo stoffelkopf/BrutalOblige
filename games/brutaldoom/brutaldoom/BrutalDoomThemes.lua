@@ -39,12 +39,38 @@ BRUTALDOOM.ROOM_THEMES =
   wolf_Stone =
   {
     env = "building"
-	pic = "stone"
 	prob = 50
 
 	walls =
 	{
 	  ZZWOLF1 = 50
+	  GSTONEB1 = 50
+	  GSTONEC1 = 50
+	}
+
+    floors =
+    {
+      FLAT5_4 = 50
+	  FLAT1 = 25
+      MFLR8_1 = 25
+    }
+
+    ceilings =
+    {
+      FLAT1 = 50
+	  FLAT19 = 25
+    }
+  }
+
+  wolf_Marble =
+  {
+    env = "building"
+	prob = 50
+
+	walls =
+	{
+	  MARB1_1 = 50
+	  MARB2_1 = 50	  
 	}
 
     floors =
@@ -64,7 +90,7 @@ BRUTALDOOM.ROOM_THEMES =
   wolf_Wood =
   {
     env = "building"
-	prob = 40
+	prob = 50
 
     walls =
     {
@@ -88,7 +114,7 @@ BRUTALDOOM.ROOM_THEMES =
   wolf_Brick =
   {
     env = "building"
-	prob = 40
+	prob = 50
 
     walls =
     {
@@ -110,14 +136,64 @@ BRUTALDOOM.ROOM_THEMES =
     }	
   }
   
+  wolf_Brick_Mixed =
+  {
+    env = "building"
+	prob = 50
+
+    walls =
+    {
+      COBBLEA1 = 50
+	  COBBLEB1 = 50
+    }
+	
+    floors =
+    {
+      FLOOR0_3 = 50
+	  FLOOR0_5 = 25
+	  FLAT1 = 25
+    }
+
+    ceilings =
+    {
+	  CEIL4_1 = 50
+      FLAT5_3 = 25
+    }	
+  }  
+  
+ wolf_Brick_Gray =
+  {
+    env = "building"
+	prob = 50
+
+    walls =
+    {
+      GRYBRIK1 = 50
+    }
+	
+    floors =
+    {
+      FLOOR0_3 = 50
+	  FLOOR0_5 = 25
+	  FLAT1 = 25
+    }
+
+    ceilings =
+    {
+	  CEIL4_1 = 50
+      FLAT5_3 = 25
+    }	
+  }    
+  
   wolf_Cells =
   {
     env = "building"
-	prob = 30
+	prob = 50
 
     walls =
     {
       ZZWOLF9 = 50
+	  BSTONEB1 = 50
     }
 	
     floors =
@@ -130,9 +206,56 @@ BRUTALDOOM.ROOM_THEMES =
     {
 	  CEIL4_2 = 50
       FLAT1 = 25
-    }	
+    }
   }
 
+  wolf_Slime =
+  {
+    env = "building"
+	prob = 50
+
+    walls =
+    {
+      GSTSLME1 = 50
+	  GSTLSLM1 = 50	  
+    }
+	
+    floors =
+    {
+      FLAT5_4 = 50
+	  FLAT1 = 25
+    }
+
+    ceilings =
+    {
+	  CEIL4_2 = 50
+      FLAT1 = 25
+    }
+  }
+	
+  wolf_Brick_Blue =
+  {
+    env = "building"
+	prob = 50
+
+    walls =
+    {
+      BLUWALL1 = 50
+    }
+	
+    floors =
+    {
+      FLAT5_4 = 50
+	  FLAT1 = 25
+    }
+
+    ceilings =
+    {
+	  CEIL4_2 = 50
+      FLAT1 = 25
+    }		
+  }
+   
   wolf_Hallway =
   {
     env = "hallway"
@@ -202,69 +325,7 @@ BRUTALDOOM.ROOM_THEMES =
   }   
 }
 
---egypt theme clones that from Oblige theme for tnt with a few adjustments
-BRUTALDOOM.THEMES.egypt2=TNT.THEMES.egypt
-BRUTALDOOM.THEMES.egypt2.prefab_remap =
-    {
-      DOORBLU  = "DOORBLU2"
-      DOORRED  = "DOORRED2"
-      DOORYEL  = "DOORYEL2"
-
-      SILVER3  = "MURAL1"
-      GATE3    = "FLAT22"
-      GATE4    = "FLAT22"
-      REDWALL  = "DOKGRIR"
-      SW1COMP  = "SW1CMT"
-	  
-	  BIGDOOR1 = "METALDR"
-	  BIGDOOR2 = "METALDR"
-	  BIGDOOR3 = "METALDR"
-	  BIGDOOR4 = "METALDR"
-	  BIGDOOR5 = "METALDR"
-	  BIGDOOR6 = "METALDR"
-	  BIGDOOR7 = "METALDR"
-    }
-BRUTALDOOM.ROOM_THEMES.egypt2_Tomb=TNT.ROOM_THEMES.egypt_Tomb
-BRUTALDOOM.ROOM_THEMES.egypt2_Hallway=TNT.ROOM_THEMES.egypt_Hallway
-BRUTALDOOM.ROOM_THEMES.egypt2_Outdoors=TNT.ROOM_THEMES.egypt_Outdoors
-BRUTALDOOM.ROOM_THEMES.egypt2_Cave=TNT.ROOM_THEMES.egypt_Cave
-
-BRUTALDOOM.THEMES.egypt2.monster_prefs =
-{
-    gunner = 1.2
-    mancubus = 1.3
-    demon   = 1.3
-    mummy = 2.0
-    HeadlessZombie = 1.9 --Serious Sam had ancient Egypt themed levels and headless enemies so this seems appropriate
-    Zyberdemon = 1.2
-    Experiment = 0 --it gets confusing having these on screen with the mummy
-}
-
-BRUTALDOOM.ROOM_THEMES.egypt2_Outdoors.floors =
-{
-    DSAND1 = 40
-    DSAND2 = 40
-    DSAND3 = 30
-    DSAND4 = 30
-    DSAND5 = 30
-    RROCK03 = 10
-    RROCK19 = 10
-}
-
-BRUTALDOOM.THEMES.egypt2.allow_mons_for_theme = "egypt2"
-
 gui.import("brutaldoom/BrutalDoomThemesClassicUpdates")
-
-OB_THEMES["egypt2"] =
-{
-  -- TNT Evilution theme
-
-  label = "Egypt"
-  game = { brutaldoom = 1 }
-  priority = 5
-  name_class = "GOTHIC"
-  mixed_prob = 0
-}
 
 OB_THEMES["wolf"] =
 {

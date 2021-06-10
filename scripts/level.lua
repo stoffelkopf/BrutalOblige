@@ -2216,15 +2216,7 @@ function Level_do_styles()
     STYLE.symmetry = "more"
     STYLE.teleporters = "none"
   end 
-  
-  if LEVEL.theme_name == "egypt2" then
-	STYLE.barrels = "none"
-    STYLE.cages = "none"
-    STYLE.caves = "none"	
-	STYLE.hallways = "none"
-	STYLE.pictures	= "none"	
-  end      
-	  
+    
   if LEVEL.theme_name == "wolf" then
 	STYLE.barrels = "none"
 	STYLE.windows = "none"	
