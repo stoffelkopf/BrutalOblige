@@ -16,7 +16,7 @@ PREFABS.Start_Wolf =
   deep  =  16
   over  = -16
 
-  x_fit = "frame"
+  x_fit = { 0,32 , 160,192 }
   y_fit = "top"
 
 

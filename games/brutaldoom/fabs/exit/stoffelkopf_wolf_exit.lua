@@ -20,7 +20,7 @@ PREFABS.Exit_Wolf =
   x_fit = { 0,32 , 160,192 }
 }
 
-PREFABS.Exit_Wolf3 =
+PREFABS.Exit_Wolf2 =
 {
   file  = "exit/stoffelkopf_wolf_exit.wad"
   map    = "MAP01"
@@ -43,4 +43,3 @@ PREFABS.Exit_Wolf3 =
 
 }
 
-  
