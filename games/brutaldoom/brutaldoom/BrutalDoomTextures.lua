@@ -177,9 +177,9 @@ function BRUTALDOOM.texturesetup()
     '{\n'
     '	Patch METLSGN3, 0, 0\n'
     '}\n'	
-    'Texture METAL1, 128, 128\n'
+    'Texture WMETAL1, 128, 128\n'
     '{\n'
-    '	Patch METAL1, 0, 0\n'
+    '	Patch WMETAL1, 0, 0\n'
     '}\n'	
   }
 

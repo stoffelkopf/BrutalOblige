@@ -155,7 +155,7 @@ BRUTALDOOM.MATERIALS =
   METLSGN1  = { t="METLSGN1",  f="FLAT1" } 
   METSGNB1  = { t="METSGNB1",  f="FLAT1" } 
   METLSGN3  = { t="METLSGN3",  f="FLAT1" } 
-  METAL1  = { t="METAL1",  f="FLAT1" }   
+  WMETAL1  = { t="WMETAL1",  f="FLAT1" }   
   
   -- Egypt stuff --
 

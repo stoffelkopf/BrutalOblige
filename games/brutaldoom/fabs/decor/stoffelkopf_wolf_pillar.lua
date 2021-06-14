@@ -14,5 +14,5 @@ PREFABS.Decor_Wolf_Pillar =
   bound_z1 = 0,
   bound_z2 = 128,
   
-  tex_METAL1 = { METAL1=20, METLSGN1=50, METLSGN3=50, METSGNB1=50 },
+  tex_WMETAL1 = { WMETAL1=20, METLSGN1=50, METLSGN3=50, METSGNB1=50 },
 }

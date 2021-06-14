@@ -210,7 +210,7 @@ DOOM.MONSTERS =
   {
     id = 16
     r = 40
-    h = 110 --132
+    h = 132
     level = 7
     boss_type = "tough"
     boss_prob = 50

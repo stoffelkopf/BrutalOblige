@@ -51,7 +51,7 @@ BRUTALDOOM.MONSTERS =
 	{
 		id = 324
 		r = 40
-		h = 110
+		h = 132
 		level = DOOM.MONSTERS.Cyberdemon.level
 		boss_type = DOOM.MONSTERS.Cyberdemon.boss_type
 		boss_prob = DOOM.MONSTERS.Cyberdemon.boss_prob
