@@ -1,10 +1,3 @@
-actor classicwolf : BOBaseWolfensteinSS 313
-{
-//$Category Monsters/Wolfenstein
-//$EditorSprite "SSWVA1"
-Tag "Classic Wolfenstein 3D SS"
-DropItem "Clip1"
-}
 actor ObligeBelphegor : Belphegor2 302
 {
 //$Category Monsters
@@ -31,7 +24,7 @@ actor ObligeSS : Nazi 311
 {
 //$Category Monsters/Wolfenstein
 //$EditorSprite "NAZIA1"
-Tag "Brutal Doom SS"
+Tag "Obersturmfuhrer"
 }
 
 ACTOR BrutalZyberdemon : TheCyberdemon 324
@@ -309,16 +302,6 @@ actor ObligeExperiment : Experiment 369
 //$Category Monsters
 //$EditorSprite "ZKELB1"
 Tag "Experiment"
-}
-actor ADog : mbfhelperdog 370
-{
-    //$Category Monsters/Wolfenstein
-    Tag "Dog"
-    Health 80
-    Speed 8
-    PainChance 180
-    PainChance "Kick", 255
-    +USEKILLSCRIPTS
 }
 
 actor ObligeMother : Motherdemon 348

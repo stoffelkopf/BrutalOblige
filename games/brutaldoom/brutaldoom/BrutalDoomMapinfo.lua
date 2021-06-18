@@ -128,7 +128,6 @@ local id_number =
 [[
 	DoomEdNums
 	{
-		10307 = DemonDog
 	}
 ]]
 

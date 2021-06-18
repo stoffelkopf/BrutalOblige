@@ -525,6 +525,14 @@ function Episode_plan_monsters()
 
 
   local function is_boss_usable(LEV, mon, info)
+	
+	if LEV.theme_name == "wolf" and info.allow_in_theme != "wolf" then return false end
+    
+	--boss theme check
+    if info.allow_in_theme then
+        if info.allow_in_theme != LEV.theme_name then return false end
+    end
+	
     if LEV.is_procedural_gotcha then return true end
     if info.prob <= 0 and not info.theme_prob then return false end
     if info.boss_prob == 0 then return false end
@@ -533,10 +541,6 @@ function Episode_plan_monsters()
 	if OB_CONFIG.tough_bosses == "no" and info.boss_type == "tough" then	 
 		return false
 	end
-    --boss theme check
-    if info.allow_in_theme then
-        if info.allow_in_theme != LEV.theme_name then return false end
-    end
 
     if info.level > LEV.monster_level + BOSS_AHEAD then return false end
 
@@ -562,7 +566,8 @@ function Episode_plan_monsters()
 
 
   local function prob_for_guard(LEV, info)
-    if info.prob <= 0 then return 0 end
+
+    if LEV.theme_name != "wolf" and info.prob <= 0 then return 0 end
 
     -- simply too weak
     if info.health < 45 then return 0 end
@@ -573,6 +578,7 @@ function Episode_plan_monsters()
 
     -- ignore theme-specific monsters (SS NAZI)
     --if info.theme then return 0 end
+	if LEV.theme_name == "wolf" and info.allow_in_theme != "wolf" then return 0 end
 
     -- already used on this map?
     if LEV.seen_guards[info.name] then return 0 end

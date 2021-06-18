@@ -1,5 +1,82 @@
-Dog/Sight		DSDOGSEE
-Dog/Active		DSDOGIDL
-Dog/Pain		DSDOGPAN
-Dog/Attack		DSDOGATK
-Dog/Death		DSDOGDIE
+$random wolfguard/sight	{ wolfguard/sight1  wolfguard/sight2  wolfguard/sight3  wolfguard/sight4 }
+$random wolfguard/death	{ wolfguard/death1  wolfguard/death2  wolfguard/fart1 }
+wolfguard/attack	GUNSHT 
+wolfguard/sight1	ACHTUNG 
+wolfguard/sight2	HALT 
+wolfguard/sight3	HALT2 
+wolfguard/sight4	HALTEN 
+wolfguard/pain		PAIN 
+wolfguard/death1	DIE1 
+wolfguard/death2	DIE2 
+wolfguard/fart1		FART1 
+
+$random bluess/sight	{ bluess/sight1  bluess/sight2  bluess/sight3 }
+bluess/sight1		SHUTZSTF
+bluess/sight2		SS
+bluess/sight3		ACHTUN18
+bluess/pain		PAIN2
+bluess/death		EDIE2
+bluess/attack		GUNSHT2
+
+$random wolfdog/death	{ wolfdog/death1  wolfdog/death2 }
+wolfdog/sight		WOOF
+wolfdog/death1		YELP
+wolfdog/death2		YELP2
+wolfdog/attack		BITE
+
+$random officer/sight	{ officer/sight1  officer/sight2 }
+officer/sight1		HALT3
+officer/sight2		ACHTNG2
+officer/death		EDIE
+officer/pain		EPAIN
+officer/attack		GUNSHT
+
+gretel/sight		GRTSIT
+gretel/death		GRTDTH
+gretel/attack		GUNSHT3
+
+hans/sight		GUTENTAG
+hans/death		EDIE2
+hans/attack		GUNSHT3
+
+schabbs/sight		SCSIT
+schabbs/death		SCDIE
+schabbs/throw		THROW
+
+hitler/attack		GUNSHT3
+hitler/active		MECHSTEP
+hitler/sight		HITLSIT
+hitler/death		EVAAUF
+hitler/mechadeath	HITLSIT2
+misc/slurpie		SLURPIE
+
+missile/fire		ROCKET
+missile/hit		KABOOM
+
+fat/sight		BOSS2
+fat/death		BOSDIE
+fat/attack		GUNSHT3
+
+gift/sight		BOSS4
+gift/death		BOSDIE
+
+trans/sight		BOSS1
+trans/death		BOSDIE
+
+uber/sight		UBSIT
+uber/death		UBDIE
+uber/attack		GUNSHT3
+
+knight/sight		DKSIT
+knight/active		DKMECH
+knight/death		BOSDIE
+knight/attack		GUNSHT3
+knight/missile		DKMISS
+
+mutant/death		MUTDIE
+mutant/pain		MUTPAI
+mutant/attack		MUTSHT
+
+fake/sight		SCSIT
+fake/death		THUD
+flame/fire		DSFLAME

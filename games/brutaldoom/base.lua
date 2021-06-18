@@ -1,4 +1,4 @@
-gui.set_import_dir("games/doom")
+	gui.set_import_dir("games/doom")
 gui.import("base")
 gui.set_import_dir("games/brutaldoom")
 
@@ -67,6 +67,8 @@ function BRUTALDOOM.decorate()
 	gui.wad_insert_file("brutaloblige/decorates/BrutalWeapons.dec","BRUWEPS");
     gui.wad_insert_file("brutaloblige/decorates/BrutalPickups.dec","BRUPUPS");
     gui.wad_insert_file("brutaloblige/decorates/Bolognese.dec","BOLOGNES");   
+    gui.wad_insert_file("brutaloblige/decorates/WOLF.dec","WOLF");   	
+    gui.wad_insert_file("brutaloblige/decorates/WOLFMISC.dec","WOLFMISC");   		
 
 	if BRUTALDOOM.PARAMETERS.realm667 == true then   	
 		gui.wad_insert_file("brutaloblige/zscript/zscript667","ZSCRIPT");
@@ -86,19 +88,103 @@ function BRUTALDOOM.decorate()
     gui.wad_insert_file("brutaloblige/acs/BOLOGACS.o","BOLOGACS");
     gui.wad_insert_file("brutaloblige/acs/A_START","A_END");
 
--- Extra Monsters    
+-- Extra Monsters & Textures  
 
 	gui.wad_merge_sections("brutaloblige/brutaloblige.wad");
 
+--Wolf3d Guard
+	gui.wad_insert_file("brutaloblige/sounds/ACHTUNG.wav","ACHTUNG");				
+	gui.wad_insert_file("brutaloblige/sounds/DIE1.wav","DIE1");				
+	gui.wad_insert_file("brutaloblige/sounds/DIE2.wav","DIE2");					
+	gui.wad_insert_file("brutaloblige/sounds/FART1.wav","FART1");				
+	gui.wad_insert_file("brutaloblige/sounds/GUNSHT.wav","GUNSHT");				
+	gui.wad_insert_file("brutaloblige/sounds/HALT.wav","HALT");				
+	gui.wad_insert_file("brutaloblige/sounds/HALT2.wav","HALT2");				
+	gui.wad_insert_file("brutaloblige/sounds/HALTEN.wav","HALTEN");				
+	gui.wad_insert_file("brutaloblige/sounds/PAIN.wav","PAIN");				
 
---Rottweiler
-	gui.wad_insert_file("brutaloblige/zscript/ROTTW.zscript","ROTTW");		
+-- Blue SS
+	gui.wad_insert_file("brutaloblige/sounds/SHUTZSTF.wav","SHUTZSTF");				
+	gui.wad_insert_file("brutaloblige/sounds/SS.wav","SS");				
+	gui.wad_insert_file("brutaloblige/sounds/ACHTUN18.wav","ACHTUN18");				
+	gui.wad_insert_file("brutaloblige/sounds/PAIN2.wav","PAIN2");				
+	gui.wad_insert_file("brutaloblige/sounds/EDIE2.wav","EDIE2");				
+	gui.wad_insert_file("brutaloblige/sounds/GUNSHT2.wav","GUNSHT2");	
+
+-- Wolfenstein Dog
+	gui.wad_insert_file("brutaloblige/sounds/WOOF.wav","WOOF");				
+	gui.wad_insert_file("brutaloblige/sounds/YELP.wav","YELP");				
+	gui.wad_insert_file("brutaloblige/sounds/YELP2.wav","YELP2");				
+	gui.wad_insert_file("brutaloblige/sounds/BITE.wav","BITE");					
+
+-- Wolfenstein officer
 	
-	gui.wad_insert_file("brutaloblige/sounds/DSDOGATK.ogg","DSDOGATK");			
-	gui.wad_insert_file("brutaloblige/sounds/DSDOGDIE.ogg","DSDOGDIE");			
-	gui.wad_insert_file("brutaloblige/sounds/DSDOGIDL.ogg","DSDOGIDL");			
-	gui.wad_insert_file("brutaloblige/sounds/DSDOGPAN.ogg","DSDOGPAN");			
-	gui.wad_insert_file("brutaloblige/sounds/DSDOGSEE.ogg","DSDOGSEE");				
+	gui.wad_insert_file("brutaloblige/sounds/HALT3.wav","HALT3");				
+	gui.wad_insert_file("brutaloblige/sounds/ACHTNG2.wav","ACHTNG2");				
+	gui.wad_insert_file("brutaloblige/sounds/EDIE.wav","EDIE");				
+	gui.wad_insert_file("brutaloblige/sounds/EPAIN.wav","EPAIN");				
+
+-- Wolfenstein Gretel
+
+	gui.wad_insert_file("brutaloblige/sounds/GRTSIT.wav","GRTSIT");				
+	gui.wad_insert_file("brutaloblige/sounds/GRTDTH.wav","GRTDTH");				
+	gui.wad_insert_file("brutaloblige/sounds/GUNSHT3.wav","GUNSHT3");				
+
+-- Wolfenstein Hans
+
+	gui.wad_insert_file("brutaloblige/sounds/GUTENTAG.wav","GUTENTAG");			
+
+-- Wolfenstein Dr. Schabbs
+
+	gui.wad_insert_file("brutaloblige/sounds/SCSIT.wav","SCSIT");			
+	gui.wad_insert_file("brutaloblige/sounds/SCDIE.wav","SCDIE");			
+	gui.wad_insert_file("brutaloblige/sounds/THROW.wav","THROW");			
+	
+-- Wolfenstein Hitler
+
+	gui.wad_insert_file("brutaloblige/sounds/MECHSTEP.wav","MECHSTEP");				
+	gui.wad_insert_file("brutaloblige/sounds/HITLSIT.wav","HITLSIT");				
+	gui.wad_insert_file("brutaloblige/sounds/EDIE.wav","EDIE");				
+	gui.wad_insert_file("brutaloblige/sounds/EVAAUF.wav","EVAAUF");	
+	gui.wad_insert_file("brutaloblige/sounds/HITLSIT2.wav","HITLSIT2");	
+	gui.wad_insert_file("brutaloblige/sounds/SLURPIE.wav","SLURPIE");		
+
+-- Wolfenstein Fatface
+
+	gui.wad_insert_file("brutaloblige/sounds/BOSS2.wav","BOSS2");				
+	gui.wad_insert_file("brutaloblige/sounds/BOSDIE.wav","BOSDIE");				
+	gui.wad_insert_file("brutaloblige/sounds/ROCKET.wav","ROCKET");				
+	gui.wad_insert_file("brutaloblige/sounds/KABOOM.wav","KABOOM");	
+
+-- Wolfenstein Giftmacher
+
+	gui.wad_insert_file("brutaloblige/sounds/BOSS4.wav","BOSS4");				
+
+-- Wolfenstein Trans
+
+	gui.wad_insert_file("brutaloblige/sounds/BOSS1.wav","BOSS1");				
+	
+-- Wolfenstein Ubermutant
+
+	gui.wad_insert_file("brutaloblige/sounds/UBDIE.wav","UBDIE");					
+	gui.wad_insert_file("brutaloblige/sounds/UBSIT.wav","UBSIT");
+
+-- Wolfenstein Todesritter
+
+	gui.wad_insert_file("brutaloblige/sounds/DKMECH.wav","DKMECH");				
+	gui.wad_insert_file("brutaloblige/sounds/DKMISS.wav","DKMISS");				
+	gui.wad_insert_file("brutaloblige/sounds/DKSIT.wav","DKSIT");				
+
+-- Wolfenstein Mutant
+
+	gui.wad_insert_file("brutaloblige/sounds/MUTDIE.wav","MUTDIE");				
+	gui.wad_insert_file("brutaloblige/sounds/MUTPAI.wav","MUTPAI");				
+	gui.wad_insert_file("brutaloblige/sounds/MUTSHT.wav","MUTSHT");				
+
+-- Wolfenstein Fakehitler
+
+	gui.wad_insert_file("brutaloblige/sounds/THUD.wav","THUD");				
+	gui.wad_insert_file("brutaloblige/sounds/DSFLAME.wav","DSFLAME");					
 	
 	if BRUTALDOOM.PARAMETERS.realm667 == true then   	
 		gui.wad_insert_file("brutaloblige/sounds/SNDINFO667.txt","SNDINFO");		

@@ -24,7 +24,8 @@ BRUTALDOOM.MONSTERS =
 		nasty = true
 		boss_replacement = "Spiderdemon"
 	}
-	-- found it in BD21.pk3 - needs testing
+	
+	-- boss in BD21.pk3 - needs testing
 	-- is working but more tests required -> make a prebuilt map with this boss
 	Motherdemon =  
 	{
@@ -47,6 +48,7 @@ BRUTALDOOM.MONSTERS =
 		nasty = true
 		boss_replacement = "Spiderdemon"		
 	}
+	
 	Zyberdemon =
 	{
 		id = 324
@@ -89,6 +91,7 @@ BRUTALDOOM.MONSTERS =
 	    weap_prefs = { bfg=5.0 }
 	    room_size = "medium"
 	}	
+	
     Volcabus =
     {
         id = 337
@@ -133,6 +136,10 @@ BRUTALDOOM.MONSTERS =
 	--As of v20b the evil marine replaces the ss. A script checks if it is in a wolfenstein themed level and changes it back if so.
 	ss_nazi = REMOVE_ME
 	
+	-- remove vanilla doom2 wolf monsters -> replaced by wolfdog and bluess :)
+	ADog = REMOVE_ME
+	ClassicSS = REMOVE_ME
+		
 	EvilMarine =
 	{
 	    id = 84
@@ -148,22 +155,24 @@ BRUTALDOOM.MONSTERS =
 	    density = 0.5
         infight_damage = 8.0
 	}
+
 	BrutalSS = --the script often fails in Oblige levels hence this as well
 	{
 	    id = 311
 	    r = 20
 	    h = 56 
 	    level = 1
-	    theme_prob = 35
+	    theme_prob = 40
         prob=0
 	    health = 90
 	    damage = 20
 	    attack = "hitscan"
 	    cage_factor = 0  -- never put in cages
-	    density = 1.0
+	    density = 0.2
 	    allow_in_theme = "wolf"
         give = { {weapon="Mp40"}, {ammo="bullet",count=20} }
 	}
+
 	EasyMarine =
 	{
 	    id = 307
@@ -179,23 +188,7 @@ BRUTALDOOM.MONSTERS =
 	    density = 0.5
         infight_damage = 8.0
 	}
-    ClassicSS =
-    {
-        id = 313
-        r = DOOM.MONSTERS.ss_nazi.r
-        h = DOOM.MONSTERS.ss_nazi.h
-        level = DOOM.MONSTERS.ss_nazi.level
-        theme_prob  = 140
-        prob=0
-        health = DOOM.MONSTERS.ss_nazi.health
-        damage = DOOM.MONSTERS.ss_nazi.damage
-        attack = DOOM.MONSTERS.ss_nazi.attack
-        give = DOOM.MONSTERS.ss_nazi.give
-        density = DOOM.MONSTERS.ss_nazi.density
-        infight_damage = DOOM.MONSTERS.ss_nazi.infight_damage
-        allow_in_theme = "wolf"
-        give = {ammo="bullet",count=10}
-    }  
+	
     Labguy =
     {
         id = 335
@@ -216,6 +209,7 @@ BRUTALDOOM.MONSTERS =
         species = "zombie"
         allow_in_theme = "tech"
     }
+	
     AncientArachnotron =
     {
         id = 336
@@ -234,6 +228,7 @@ BRUTALDOOM.MONSTERS =
         infight_damage = DOOM.MONSTERS.arach.infight_damage
 		weap_min_damage = 90
     }
+	
     Experiment =
     {
        id = 369
@@ -248,6 +243,7 @@ BRUTALDOOM.MONSTERS =
        room_size = "any"
        infight_damage = 3.5
     }
+	
     Mummy =
     {
        id = 338
@@ -286,6 +282,7 @@ BRUTALDOOM.MONSTERS =
         trap_factor = 0.01
         infight_damage = 1.9
     }
+	
     RifleZombie = 
     {
         id = 343
@@ -303,6 +300,7 @@ BRUTALDOOM.MONSTERS =
         trap_factor = 0.01
         infight_damage = 2.2
     }
+	
     --SMG Zombie supposedly has the exact same DPS etc as shotgun zombie
     SMGZombie =
     {
@@ -324,6 +322,7 @@ BRUTALDOOM.MONSTERS =
         trap_factor = DOOM.MONSTERS.shooter.trap_factor
         infight_damage = DOOM.MONSTERS.shooter.infight_damage
     }
+	
     --ubersoldat is a Wolfenstein themed version of the Chaingunner with less health
     Ubersoldat =
     { 
@@ -331,7 +330,7 @@ BRUTALDOOM.MONSTERS =
         r = 16
         h = 52
         level = 2
-        theme_prob = 50
+        theme_prob = 0
         prob=0
         health = 100
         damage = DOOM.MONSTERS.gunner.damage
@@ -346,116 +345,330 @@ BRUTALDOOM.MONSTERS =
         infight_damage = DOOM.MONSTERS.gunner.infight_damage
         allow_in_theme = "wolf"
     }
-    ADog =
+	
+    wolfdog = 
     {
-        id = 370
+        id = 22003
         r = 12
-        h = 28 
-        level = 1
-        theme_prob = 120
-        prob=0
-        health = 80
-        damage = 3
-        attack = "melee"
-        min_weapon = 1
-        room_size = "any"
-        allow_in_theme = "wolf"
-    }
-    DemonDog =
-    {
-        id = 10307
-        r = 20
-        h = 32 
+        h = 38 
         level = 1
         theme_prob = 120
         prob=0
         health = 50
-        damage = 3
+        damage = 2
         attack = "melee"
         min_weapon = 1
         room_size = "any"
         allow_in_theme = "wolf"
     }
+	
+    wolfguard =
+    {
+        id = 22001
+        r = 20
+        h = 90
+        level = 1
+        theme_prob  = 140
+        prob=0
+        health = 50
+        damage = 3
+        attack = "hitscan"
+        density = 1.7
+        infight_damage = 2.2
+        allow_in_theme = "wolf"
+    }  	
+	
+	bluess = 
+	{
+	    id = 22002
+	    r = 20
+	    h = 90 
+	    level = 1
+	    theme_prob = 35
+        prob=0
+	    health = 100
+	    damage = DOOM.MONSTERS.ss_nazi.damage
+	    attack = "hitscan"
+	    cage_factor = 0  -- never put in cages
+	    density = DOOM.MONSTERS.ss_nazi.density
+        infight_damage = DOOM.MONSTERS.ss_nazi.infight_damage		
+	    allow_in_theme = "wolf"
+        give = { {weapon="Mp40"}, {ammo="bullet",count=20} }
+	}	
+	
+    wolfofficer =
+    {
+        id = 22004
+        r = 20
+        h = 90
+        level = 1
+        theme_prob  = 50
+        prob=0
+        health = 100
+        damage = 5
+        attack = "hitscan"
+        density = 1
+        infight_damage = 3.2
+        allow_in_theme = "wolf"
+    } 
 
-   --Vehicles not used atm
-    ZombieMainBattleTank =
+    wolfmutant =
     {
-        id = 9951
-        r = 64
-        h = 100
-        level = 6
-        prob = 0 -- 0.01
-        boss_type = "tough"
-        boss_prob = 0 --1
-        crazy_prob = 0 -- 5
-        health = 4000
-        damage = 200
-        attack = "missile"
-        density = 0.1
-        weap_needed = { railgun=true }
-        weap_min_damage = 150
-        room_size = "large"
-        cage_factor = 0
-        nasty = true
+        id = 22005
+        r = 20
+        h = 90
+        level = 1
+        theme_prob  = 140
+        prob=0
+        health = 65
+        damage = 5
+        attack = "hitscan"
+        density = 1.7
+        infight_damage = 2.2
+        allow_in_theme = "wolf"
+    } 
+
+    wolffakehitler =
+    { 
+        id = 22005
+        r = 20
+        h = 90
+        level = 2
+        theme_prob = 0
+        prob=0
+        health = 600
+        damage = DOOM.MONSTERS.gunner.damage
+        attack = DOOM.MONSTERS.gunner.attack
+        weap_min_damage = DOOM.MONSTERS.gunner.weap_min_damage
+        density = DOOM.MONSTERS.gunner.density
+        species = DOOM.MONSTERS.gunner.species
+        room_size = DOOM.MONSTERS.gunner.room_size
+        allow_in_theme = "wolf"
     }
-    ZombieLightTank =
+	
+	
+    wolfgretel =
     {
-        id = 9950
-        r = 64
-        h = 100
-        level = 5
-        boss_type = "minor"
-        boss_prob = 0 --5
-        prob = 0 -- 1
-        crazy_prob = 0 -- 6
-        health = 2000
-        damage = 175
-        attack = "missile"
-        density = 0.1
-        weap_needed = { railgun=true }
-        weap_min_damage = 150
-        room_size = "large"
-        cage_factor = 0
-        nasty = true
-    }
-    ZombieHelicopter =
-    {
-        id = 9953
-        r = 56
-        h = 140 --actually 96 but made higher so it doesn't put it in rooms where it has no room to fly
-        level = 5
-        prob = 0 --0.01
-        crazy_prob = 0 --15
-        health = 1000
-        damage = 120
-        attack = "missile"
-        weap_needed = { launch=true }
-        room_size = "large"
-        cage_factor = 0
-        float = true
-        nasty = true
-    }
-    ZombieMech = --basically copied from the default Cyberdemon, to which it is very similar
-    {
-        id = 9954
-        r = 48
-        h = 160
-        level = 7
-        boss_type = "tough"
-        boss_replacement = "Cyberdemon"
-        boss_prob = 0 --50
-        prob = 0 --1
-        crazy_prob = 0 -- 10
-        health = 3000
-        damage = 125
-        attack = "missile"
-        density = 0.1
-        weap_min_damage = 150
-        weap_prefs = { bfg=10.0 }
-        room_size = "large"
+      id = 22010
+      r = 90
+      h = 116
+      level = 1
+      boss_type = "minor"
+      boss_prob = 50
+      prob = 0
+	  theme_prob  = 7
+      crazy_prob = 20
+      health = 850
+      damage = 7.5
+      attack = "hitscan"
+      density = 0.3
+      weap_min_damage = 88
+      room_size = "medium"
+      infight_damage = 40
+	  allow_in_theme = "wolf"
+	  boss_limit = 1
     }	
-}
 
+    wolfhans =
+    {
+      id = 22011
+      r = 90
+      h = 116
+      level = 1
+      boss_type = "minor"
+      boss_prob = 50
+      prob = 0
+	  theme_prob  = 7
+      crazy_prob = 20
+      health = 950
+      damage = 7.5
+      attack = "hitscan"
+      density = 0.3
+      weap_min_damage = 88
+      room_size = "medium"
+      infight_damage = 40
+	  allow_in_theme = "wolf"
+	  boss_limit = 1
+    }	
+	
+    wolfdoctor =
+    {
+      id = 22012
+      r = 90
+      h = 116
+      level = 1
+      boss_type = "minor"
+      boss_prob = 50
+      prob = 0
+	  theme_prob  = 7
+      crazy_prob = 20
+      health = 1000
+      damage = 10
+      attack = "missile"
+      density = 0.3
+      weap_min_damage = 88
+      room_size = "medium"
+      infight_damage = 40
+	  allow_in_theme = "wolf"
+	  boss_limit = 1
+    }		
+	
+    wolfhitlermini =
+    {
+      id = 22014
+      r = 90
+      h = 116
+      level = 1
+      boss_type = "minor"
+      boss_prob = 50
+      prob = 0
+	  theme_prob  = 7
+      crazy_prob = 20
+      health = 1000
+      damage = 10
+      attack = "hitscan"
+      density = 0.3
+      weap_min_damage = 88
+      room_size = "medium"
+      infight_damage = 40
+	  allow_in_theme = "wolf"
+	  boss_limit = 1
+    }			
+
+    wolfhittlermech =
+    {
+      id = 22013
+      r = 90
+      h = 116
+      level = 1
+      boss_type = "tough"
+      boss_prob = 25
+      prob = 0
+	  theme_prob  = 2
+      crazy_prob = 20
+      health = 2000
+      damage = 10
+      attack = "hitscan"
+      density = 0.1
+      weap_min_damage = 88
+      room_size = "large"
+      infight_damage = 40
+	  allow_in_theme = "wolf"
+	  boss_limit = 1
+    }			
+
+    wolffatface =
+    {
+      id = 22015
+      r = 90
+      h = 116
+      level = 1
+      boss_type = "tough"
+      boss_prob = 25
+      prob = 0
+	  theme_prob  = 2
+      crazy_prob = 20
+      health = 1500
+      damage = 50
+      attack = "missile"
+      density = 0.1
+      weap_min_damage = 88
+      room_size = "large"
+      infight_damage = 40
+	  allow_in_theme = "wolf"
+	  boss_limit = 1
+    }
+
+    wolfgiftmacher =
+    {
+      id = 22016
+      r = 90
+      h = 116
+      level = 1
+      boss_type = "minor"
+      boss_prob = 40
+      prob = 0
+	  theme_prob  = 5
+      crazy_prob = 15
+      health = 900
+      damage = 15
+      attack = "missile"
+      density = 0.3
+      weap_min_damage = 88
+      room_size = "medium"
+      infight_damage = 40
+	  allow_in_theme = "rwolf"
+	  boss_limit = 1
+    }	
+
+    wolftrans =
+    {
+      id = 22017
+      r = 90
+      h = 116
+      level = 1
+      boss_type = "minor"
+      boss_prob = 50
+      prob = 0
+	  theme_prob  = 7
+      crazy_prob = 20
+      health = 1050
+      damage = 7.5
+      attack = "hitscan"
+      density = 0.3
+      weap_min_damage = 88
+      room_size = "medium"
+      infight_damage = 40
+	  allow_in_theme = "wolf"
+	  boss_limit = 1
+    }	
+	
+    wolfubermutant =
+    {
+      id = 22018
+      r = 90
+      h = 116
+      level = 1
+      boss_type = "tough"
+      boss_prob = 25
+      prob = 0
+	  theme_prob  = 2
+      crazy_prob = 20
+      health = 1500
+      damage = 10
+      attack = "hitscan"
+      density = 0.1
+      weap_min_damage = 88
+      room_size = "large"
+      infight_damage = 40
+	  allow_in_theme = "wolf"
+	  boss_limit = 1
+    }
+
+    wolftodesritter =
+    {
+      id = 22019
+      r = 90
+      h = 116
+      level = 1
+      boss_type = "tough"
+      boss_prob = 15
+      prob = 0
+	  theme_prob  = 1
+      crazy_prob = 20
+      health = 1750
+      damage = 100
+      attack = "missile"
+      density = 0.1
+      weap_min_damage = 88
+      room_size = "large"
+      infight_damage = 40
+	  allow_in_theme = "wolf"
+	  boss_limit = 1
+    }
+		
+}
+	
 BRUTALDOOM.MON_CHOICES =
 {
 	"default", _("DEFAULT"),

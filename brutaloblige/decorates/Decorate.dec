@@ -3,6 +3,8 @@
 #include "BRUWEPS"
 #include "BRUPUPS"
 #include "BOLOGNES"
+#include "WOLF"
+#include "WOLFMISC"
 
 actor hanglamp : BDECCeilLamp 362 {}
 actor ObligeBDCritterMouse : BDCritterMouse 367 {}
