@@ -34,8 +34,8 @@ ACTOR WolfRocket
 	States
 	{
 		Spawn:
-			MISL A 1 BRIGHT
-			MISL A 1 BRIGHT A_SpawnItemEx("WolfRocketSmoke", 0, 0, 0)
+			WMIS A 1 BRIGHT
+			WMIS A 1 BRIGHT A_SpawnItemEx("WolfRocketSmoke", 0, 0, 0)
 			Loop
 		Death:
 			BAL3 CDE 4 BRIGHT A_Explode(16, 32, 1)
