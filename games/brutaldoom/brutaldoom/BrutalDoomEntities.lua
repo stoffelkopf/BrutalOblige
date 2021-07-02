@@ -12,5 +12,11 @@ BRUTALDOOM.ENTITIES =
 
     BDECBarrel = { id=15855, r=12, h=40 }
     
-	BDECPentagram = { id=25856, r=1, h=1 }
+	BDECPentagram = { id=25856, r=12, h=1 }
+
+	--Wolfenstein Stuff
+	wolfpuddle = { id=22101, r=32, h=1 }
+	wolfblood = { id=22102, r=32, h=1 }
+	wolfskelflat = { id=22103, r=32, h=1 }
+	wolfbones = { id=22104, r=32, h=1 }		
 }

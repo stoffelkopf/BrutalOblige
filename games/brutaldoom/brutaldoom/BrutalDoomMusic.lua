@@ -57,6 +57,14 @@ BRUTALDOOM.geiler_shit =
 	"T_ROMER2", "T_RUNNI2", "T_RUNNIN", "T_STALKS", "T_STLKS2", "T_TENSE", "T_ULTIMA"
 }
 
+BRUTALDOOM.wolfmusic =
+{
+  songs = 
+  {
+	"DEATH", "EVIL", "FUNKIE", "FUNKYOU", "GETTHEM", "GETYOU", "GOINGAFT", "JAZNAZI", "NAZI_OMI", "PREGNANT", "PUTIT", "TIPTOE", 
+	"ULTIMATE", "WONDERIN", "ZEROHOUR"
+  }
+}
 
 BRUTALDOOM.doom_completesongs = {}
 

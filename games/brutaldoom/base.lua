@@ -67,7 +67,8 @@ function BRUTALDOOM.decorate()
 	gui.wad_insert_file("brutaloblige/decorates/BrutalWeapons.dec","BRUWEPS");
     gui.wad_insert_file("brutaloblige/decorates/BrutalPickups.dec","BRUPUPS");
     gui.wad_insert_file("brutaloblige/decorates/Bolognese.dec","BOLOGNES");   
-    gui.wad_insert_file("brutaloblige/decorates/WOLF.dec","WOLF");   	
+    gui.wad_insert_file("brutaloblige/decorates/WOLFTMP.dec","WOLFTMP");   		
+    gui.wad_insert_file("brutaloblige/decorates/WOLF.dec","WOLF");   		
     gui.wad_insert_file("brutaloblige/decorates/WOLFMISC.dec","WOLFMISC");   		
 
 	if BRUTALDOOM.PARAMETERS.realm667 == true then   	
@@ -191,6 +192,24 @@ function BRUTALDOOM.decorate()
 	else
 		gui.wad_insert_file("brutaloblige/sounds/SNDINFO.txt","SNDINFO");		
 	end
+
+-- Wolf Music
+
+	gui.wad_insert_file("brutaloblige/music/DEATH.ogg","DEATH");
+	gui.wad_insert_file("brutaloblige/music/EVIL.ogg","EVIL");
+	gui.wad_insert_file("brutaloblige/music/FUNKIE.ogg","FUNKIE");
+	gui.wad_insert_file("brutaloblige/music/FUNKYOU.ogg","FUNKYOU");
+	gui.wad_insert_file("brutaloblige/music/GETTHEM.ogg","GETTHEM");
+	gui.wad_insert_file("brutaloblige/music/GETYOU.ogg","GETYOU");
+	gui.wad_insert_file("brutaloblige/music/GOINGAFT.ogg","GOINGAFT");
+	gui.wad_insert_file("brutaloblige/music/JAZNAZI.ogg","JAZNAZI");
+	gui.wad_insert_file("brutaloblige/music/NAZI_OMI.ogg","NAZI_OMI");
+	gui.wad_insert_file("brutaloblige/music/PREGNANT.ogg","PREGNANT");
+	gui.wad_insert_file("brutaloblige/music/PUTIT.ogg","PUTIT");
+	gui.wad_insert_file("brutaloblige/music/TIPTOE.ogg","TIPTOE");
+	gui.wad_insert_file("brutaloblige/music/ULTIMATE.ogg","ULTIMATE");
+	gui.wad_insert_file("brutaloblige/music/WONDERIN.ogg","WONDERIN");
+	gui.wad_insert_file("brutaloblige/music/ZEROHOUR.ogg","ZEROHOUR");	
 	
 end
 

@@ -246,8 +246,26 @@ local id_number_realm667 =
   gui.printf("\n--==| Brutal Doom Music Shuffler |==--\n\n") 
   gui.printf("Shuffled Songs: \n" .. table.tostring(dest) ..'\n\n')
 
-  --after this dest[1-#src] are the music tracks
-  dest[31] = "d_evil" --map 31 always wolf themed
+  local epi_wolf = BRUTALDOOM.wolfmusic
+  local dest_wolf = { }
+  
+  gui.printf("Wolf Songs: \n" .. table.tostring(epi_wolf) ..'\n\n')
+  
+  each _,src in epi_wolf do
+    dest_wolf = table.copy(src)
+	
+    -- this shuffle algorithm ensures first entry is never the same
+    --once again I can't quite work out the code so I have left this even though I only need half of it
+    
+	for i = 1, (#dest_wolf) do
+      local k = rand.irange(i + 1, #dest_wolf)
+      dest_wolf[i], dest_wolf[k] = dest_wolf[k], dest_wolf[i]
+    end
+  end
+  
+  gui.printf("\n--==| Brutal Doom Wolf Music Shuffler |==--\n\n") 
+  gui.printf("Shuffled Wolf Songs: \n" .. table.tostring(dest_wolf) ..'\n\n')
+  
 
   if PARAM.episode_sky_color then
 	gui.printf("Brutal Doom Skies: Using Skies from Sky Generator.\n")
@@ -437,11 +455,19 @@ local id_number_realm667 =
 		table.insert(data, 'Translator = "OBXLAT"')
 	  end
       table.insert(data, 'cluster = 10\n')
-      if #dest >= mapnum then
+      if L.theme_name == "wolf" then
+        if #dest_wolf >= mapnum then
+            table.insert(data, 'music = "' .. dest_wolf[mapnum] .. '"\n')
+        else
+            table.insert(data, 'music = "' .. dest_wolf[rand.irange(1,#dest_wolf)] .. '"\n')
+        end
+	  else
+	    if #dest >= mapnum then
           table.insert(data, 'music = "' .. dest[mapnum] .. '"\n')
-      else
+        else
           table.insert(data, 'music = "' .. dest[rand.irange(1,#dest)] .. '"\n')
-      end
+        end
+	  end
 	  if OB_CONFIG.prebuilt_levels == "yes" then
 	    if mapnum == 4 then
 		  if BRUTALDOOM.PARAMETERS.BOSSX == "cyber" then

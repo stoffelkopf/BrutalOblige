@@ -97,6 +97,6 @@ PREFABS.Pic_Nazi_Marble =
 
   room_theme = "wolf_Marble"
 
-  tex_ZZWOLF12 = { MARB3_1=50 }  
+  tex_ZZWOLF12 = { MARB3_1=50, MARBEGL1=50 }  
 
 }

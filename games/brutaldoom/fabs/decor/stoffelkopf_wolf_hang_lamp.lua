@@ -19,5 +19,12 @@ PREFABS.wolf_Light_hanging =
 
   bound_z1 = -64
   bound_z2 = 0
+  
+  light_color = "white"
 }
 
+PREFABS.wolf_Light_hanging_2 =
+{
+  template = "wolf_Light_hanging"
+  light_color = "yellow"
+}

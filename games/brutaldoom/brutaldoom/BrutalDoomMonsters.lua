@@ -378,6 +378,22 @@ BRUTALDOOM.MONSTERS =
         allow_in_theme = "wolf"
     }  	
 	
+    wolfguardgreen =
+    {
+        id = 22008
+        r = 20
+        h = 90
+        level = 1
+        theme_prob  = 50
+        prob=0
+        health = 100
+        damage = 3
+        attack = "hitscan"
+        density = 1
+        infight_damage = 2.2
+        allow_in_theme = "wolf"
+    }	
+
 	bluess = 
 	{
 	    id = 22002
@@ -396,6 +412,24 @@ BRUTALDOOM.MONSTERS =
         give = { {weapon="Mp40"}, {ammo="bullet",count=20} }
 	}	
 	
+	blackss = 
+	{
+	    id = 22007
+	    r = 20
+	    h = 90 
+	    level = 1
+	    theme_prob = 20
+        prob=0
+	    health = 150
+	    damage = DOOM.MONSTERS.ss_nazi.damage
+	    attack = "hitscan"
+	    cage_factor = 0  -- never put in cages
+	    density = 1
+        infight_damage = DOOM.MONSTERS.ss_nazi.infight_damage		
+	    allow_in_theme = "wolf"
+        give = { {weapon="Mp40"}, {ammo="bullet",count=20} }
+	}		
+		
     wolfofficer =
     {
         id = 22004

@@ -89,3 +89,255 @@ ACTOR GhostFireBall
 			Stop
 	}
 }
+
+//Wolf Entities
+actor wolfpuddle 22101
+{
+	Scale 0.5
+	states
+	{
+		Spawn:
+			WATR A -1
+			stop
+	}
+}
+
+actor wolfblood 22102
+{
+	Scale 0.5
+	states
+	{
+		Spawn:
+			BLUD A -1
+			stop
+	}
+}
+
+actor wolfskelflat 22103
+{
+	Scale 0.5
+	states
+	{
+		Spawn:
+			SKEL A -1
+			stop
+	}
+}
+
+actor wolfbones 22104
+{
+	Scale 0.5
+	states
+	{
+		Spawn:
+			WBON A -1
+			stop
+	}
+}
+
+//Wolf Decorations
+actor wolfBarrel 22110
+{
+	radius 16
+	+SOLID
+	Mass 99999
+	Scale 0.5
+	Height 32
+	
+	states
+	{
+		Spawn:
+			DRUM A -1
+			stop
+	}
+}
+
+actor wolfHangedMan 22111
+{
+	radius 16
+	Mass 99999
+	+SOLID
+	Height 128
+	states
+	{
+		Spawn:
+			HANG A -1
+			stop
+	}
+}
+
+actor wolfWhitePillar 22112
+{
+	radius 35
+	Mass 99999
+	+SOLID
+	Height 128
+	states
+	{
+		Spawn:
+			COLU A -1
+			stop
+	}
+}
+
+actor wolfHangingCage 22113
+{
+	radius 25
+	Mass 99999	
+	+SOLID
+	Height 128	
+	states
+	{
+		Spawn:
+			CAG1 A -1
+			stop
+	}
+}
+
+actor wolfBarrelWood 22114
+{
+	radius 16
+	Scale 0.5
+	Mass 99999	
+	Height 32
+	+SOLID
+	states
+	{
+		Spawn:
+			BARL A -1
+			stop
+	}
+}
+
+actor wolfWell 22115
+{
+	radius 25
+	Mass 99999	
+	Scale 0.5	
+	Height 32	
+	+SOLID
+	states
+	{
+		Spawn:
+			WEL1 A -1
+			stop
+	}
+}
+
+actor wolfCageWithSkulls 22116
+{
+	radius 25
+	Mass 99999	
+	+SOLID
+	Height 128	
+	states
+	{
+		Spawn:
+			CAG4 A -1
+			stop
+	}
+}
+actor wolfCageWithGore 22117
+{
+	radius 25
+	Mass 99999	
+	+SOLID
+	Height 128	
+	states
+	{
+		Spawn:
+			CAG3 A -1
+			stop
+	}
+}
+
+
+actor wolfWellWithBlood 22118
+{
+	radius 25
+	Mass 99999	
+	Scale 0.5	
+	Height 32	
+	+SOLID
+	states
+	{
+		Spawn:
+			WEL3 A -1
+			stop
+	}
+}
+
+actor wolfSkeletonCage 22119
+{
+	radius 25
+	Mass 99999	
+	Height 128	
+	+SOLID
+	states
+	{
+		Spawn:
+			CAG2 A -1
+			stop
+	}
+}
+
+actor wolfTableWithChairs 22120
+{
+	radius 25
+	Scale 0.5		
+	Mass 99999
+	Height 32
+	+SOLID
+	states
+	{
+		Spawn:
+			TCHR A -1
+			stop
+	}
+}
+
+actor wolfArmor 22121
+{
+	radius 23
+	Scale 0.5			
+	Mass 99999	
+	Height 64
+	+SOLID
+	states
+	{
+		Spawn:
+			ARMR A -1
+			stop
+	}
+}
+
+//Wolf Light Decorations
+actor wolfChandelier 22131
+{
+	states
+	{
+		Spawn:
+			CHAN A -1 bright
+			stop
+	}
+}
+
+actor wolfCeilingLight 22132
+{
+	states
+	{
+		Spawn:
+			GLMP A -1 bright
+			stop
+	}
+}
+
+actor wolfRedCeilingLight 22133
+{
+	states
+	{
+		Spawn:
+			RLMP A -1 bright
+			stop
+	}
+}

@@ -1,8 +1,7 @@
 -------------------Themes---------------------------
 BRUTALDOOM.THEMES =
 {
- 
-  --wolfenstein
+   --wolfenstein
   wolf =
   {
     allow_mons_for_theme = "wolf"  
@@ -30,6 +29,14 @@ BRUTALDOOM.THEMES =
       Ubersoldat = 1.5
       ADog = 1.1
     }
+	
+    passable_decor =
+    {
+      wolfpuddle = 20
+	  wolfblood = 20
+	  wolfskelflat = 20
+	  wolfbones = 20
+    }
   }
 }
 
@@ -51,14 +58,16 @@ BRUTALDOOM.ROOM_THEMES =
     floors =
     {
       FLAT5_4 = 50
-	  FLAT1 = 25
-      MFLR8_1 = 25
+	  FLOOR0_5 = 50
+	  
+      MFLR8_1 = 50
+	  FLOOR0_3 = 50	  
     }
 
     ceilings =
     {
       FLAT1 = 50
-	  FLAT19 = 25
+	  FLAT19 = 50
     }
   }
 
@@ -76,14 +85,20 @@ BRUTALDOOM.ROOM_THEMES =
     floors =
     {
       FLAT5_4 = 50
-	  FLAT1 = 25
-      MFLR8_1 = 25
+	  FLOOR0_5 = 50
+	  
+	  FLOOR0_1 = 50
+	  FLOOR5_3 = 50
+	  FLOOR5_4 = 50
     }
 
     ceilings =
     {
       FLAT1 = 50
 	  FLAT19 = 25
+	  
+	  CEIL3_2 = 50
+	  CEIL3_3 = 50
     }
   }
 
@@ -99,15 +114,21 @@ BRUTALDOOM.ROOM_THEMES =
 
     floors =
     {
-      FLAT5_5 = 50
+	  FLAT5_4 = 50
+	  FLOOR0_5 = 50
+      
 	  FLAT5_2 = 25
 	  FLAT5_1 = 25
     }
 
     ceilings =
     {
+	  FLAT1 = 50
+	  FLAT19 = 50
+	  
 	  CEIL5_2 = 50
 	  CEIL1_1 = 50
+	  CEIL3_1 = 50
     }
   }
 
@@ -124,15 +145,21 @@ BRUTALDOOM.ROOM_THEMES =
 	
     floors =
     {
-      FLOOR0_3 = 50
+	  FLAT5_4 = 50
+	  FLOOR0_5 = 50
+      
+	  FLOOR0_3 = 50
 	  FLOOR0_5 = 25
-	  FLAT1 = 25
+	  FLOOR4_8 = 50
     }
 
     ceilings =
     {
+	  FLAT1 = 50
+	  FLAT19 = 50
+	  
 	  CEIL4_1 = 50
-      FLAT5_3 = 25
+
     }	
   }
   
@@ -149,15 +176,18 @@ BRUTALDOOM.ROOM_THEMES =
 	
     floors =
     {
-      FLOOR0_3 = 50
-	  FLOOR0_5 = 25
-	  FLAT1 = 25
+	  FLAT5_4 = 50
+	  FLOOR0_5 = 50
+      
+	  FLOOR0_3 = 50
     }
 
     ceilings =
     {
+	  FLAT1 = 50
+	  FLAT19 = 50
+	  
 	  CEIL4_1 = 50
-      FLAT5_3 = 25
     }	
   }  
   
@@ -173,15 +203,19 @@ BRUTALDOOM.ROOM_THEMES =
 	
     floors =
     {
-      FLOOR0_3 = 50
-	  FLOOR0_5 = 25
-	  FLAT1 = 25
+	  FLAT5_4 = 50
+	  FLOOR0_5 = 50
+      
+	  FLOOR0_3 = 50
+	  FLOOR4_8 = 50
     }
 
     ceilings =
     {
+	  FLAT1 = 50
+	  FLAT19 = 50
+	  
 	  CEIL4_1 = 50
-      FLAT5_3 = 25
     }	
   }    
   
@@ -199,13 +233,16 @@ BRUTALDOOM.ROOM_THEMES =
     floors =
     {
       FLAT5_4 = 50
-	  FLAT1 = 25
+	  FLOOR0_5 = 50	
+	  FLOOR4_8 = 50
     }
 
     ceilings =
     {
+	  FLAT1 = 50
+	  FLAT19 = 50
+	  
 	  CEIL4_2 = 50
-      FLAT1 = 25
     }
   }
 
@@ -221,15 +258,17 @@ BRUTALDOOM.ROOM_THEMES =
     }
 	
     floors =
-    {
-      FLAT5_4 = 50
-	  FLAT1 = 25
+    {    
+	  FLAT5_4 = 50
+	  FLOOR0_5 = 50 
     }
 
     ceilings =
     {
-	  CEIL4_2 = 50
-      FLAT1 = 25
+	  FLAT1 = 50
+	  FLAT19 = 50
+	  
+	  CEIL4_2 = 50 
     }
   }
 	
@@ -246,13 +285,15 @@ BRUTALDOOM.ROOM_THEMES =
     floors =
     {
       FLAT5_4 = 50
-	  FLAT1 = 25
+	  FLOOR0_5 = 50
     }
 
     ceilings =
     {
-	  CEIL4_2 = 50
-      FLAT1 = 25
+	  FLAT1 = 50
+	  FLAT19 = 50
+	  
+	  CEIL4_2 = 50  
     }		
   }
    
@@ -286,7 +327,6 @@ BRUTALDOOM.ROOM_THEMES =
     floors =
     {
       MFLR8_1 = 20
-      FLAT1_1 = 10
       RROCK13 = 20
     }
 
