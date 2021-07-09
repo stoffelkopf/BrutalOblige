@@ -175,7 +175,7 @@ actor wolfWhitePillar 22112
 	states
 	{
 		Spawn:
-			COLU A -1
+			WPIL A -1
 			stop
 	}
 }

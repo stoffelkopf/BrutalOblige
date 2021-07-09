@@ -70,7 +70,9 @@ function BRUTALDOOM.get_levels()
 		GAME.PREBUILT_LEVELS = {}
 		gui.printf("No prebuilt maps will be used.\n")
 	end
-  local MAP_LEN_TAB = { few=4, episode=11, game=32 }
+
+--  local MAP_LEN_TAB = { few=4, episode=11, game=32 }  
+  local MAP_LEN_TAB = { few=4, episode=12, game=34 }
 
   local MAP_NUM = MAP_LEN_TAB[OB_CONFIG.length] or 1
 
@@ -101,11 +103,21 @@ function BRUTALDOOM.get_levels()
     local game_along = map / MAP_NUM
 
     if map > 30 then
-      ep_index = 3 ; ep_along = 0.5 ; game_along = 0.5
+	  if map == 31 or map == 32  then
+		ep_index = 3 ; ep_along = 0.5 ; game_along = 0.5	
+	  elseif map == 33 then
+		ep_index = 1 ; ep_along = (secretexit1 / 10) ; game_along = (secretexit1 / 30)
+	  elseif map == 34 then
+		ep_index = 3 ; ep_along = ((secretexit3-20) / 10) ; game_along = (secretexit3 / 30)
+	  end
     elseif map > 20 then
       ep_index = 3 ; ep_along = (map - 20) / 10
     elseif map > 11 then
-      ep_index = 2 ; ep_along = (map - 11) / 9
+		if map == 12 and OB_CONFIG.length == "episode" then
+		  ep_index = 1 ; ep_along = (secretexit1 / 10) ; game_along = (secretexit1 / 11)
+		else
+		  ep_index = 2 ; ep_along = (map - 11) / 9
+		end
     else
       ep_index = 1 ; ep_along = map / 11
     end
@@ -144,16 +156,19 @@ function BRUTALDOOM.get_levels()
     end
 
     -- secret levels
-    if map == 31 then
+    if map > 30 then
       LEV.is_secret = true
       LEV.theme_name = "wolf"
       LEV.name_class = "URBAN"
+      if map > 32 then LEV.is_procedural_gotcha = true end      
     end
-    if map == 32 then
+
+    if OB_CONFIG.length == "episode" and map == 12 then 
+      LEV.is_secret = true
       LEV.theme_name = "wolf"
       LEV.name_class = "URBAN"
-      LEV.is_secret = true
-    end
+	  LEV.is_procedural_gotcha = true 
+	end	  	
 
     if map == 23 then
       LEV.style_list = { barrels = { heaps=100 } }
@@ -166,8 +181,10 @@ function BRUTALDOOM.get_levels()
       LEV.dist_to_end = 1
     elseif map == 16 or map == 23 then
       LEV.dist_to_end = 2
+    elseif map == 34 then
+	  LEV.dist_to_end = 5
     end
-
+	
     -- prebuilt levels
     local pb_name = LEV.name
 

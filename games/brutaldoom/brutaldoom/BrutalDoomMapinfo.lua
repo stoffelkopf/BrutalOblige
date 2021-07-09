@@ -24,7 +24,7 @@ function BRUTALDOOM.create_mapinfo()
 		episode_selection = episode_selection .. '\n'
 	  end
 	else
-		episode_selection = 'episode MAP01 {\n name = "Gurksaft!"\n}\n'
+		episode_selection = '\nepisode MAP01 {\n  name = "Gurksaft!"\n}\n\n'
 	end
 	return episode_selection	
   end
@@ -126,37 +126,37 @@ end
   
 local id_number =
 [[
-	DoomEdNums
-	{
-	}
+DoomEdNums
+{
+}
 ]]
 
 local id_number_realm667 =
 [[
-	DoomEdNums
-	{
-		10307 = DemonDog
-		10501 = Arachnophyte
-		10502 = AracnorbQueen
-		10503 = BFGGuy
-		10504 = Cyberbaron
-		10505 = Haedexebus
-		10506 = Terror
-		10507 = ForgottenOne
-		10508 = BloodDemonClone
-		10509 = CGunSpider
-		10510 = cyberImp
-		10511 = Cybruiser
-		10512 = QuadShotgunZombie
-		10513 = RocketImp 
-		10514 = MaulerDemon
-		10515 = LordofHeresy
-		10516 = CrackoDemon
-		10517 = Terminator
-		10518 = SupremeFiend 
-		10519 = OverLord
-		10520 = Helemental		
-	}
+DoomEdNums
+{
+	10307 = DemonDog
+	10501 = Arachnophyte
+	10502 = AracnorbQueen
+	10503 = BFGGuy
+	10504 = Cyberbaron
+	10505 = Haedexebus
+	10506 = Terror
+	10507 = ForgottenOne
+	10508 = BloodDemonClone
+	10509 = CGunSpider
+	10510 = cyberImp
+	10511 = Cybruiser
+	10512 = QuadShotgunZombie
+	10513 = RocketImp 
+	10514 = MaulerDemon
+	10515 = LordofHeresy
+	10516 = CrackoDemon
+	10517 = Terminator
+	10518 = SupremeFiend 
+	10519 = OverLord
+	10520 = Helemental		
+}
 ]]
 				  
   gui.printf("Mapinfo code is running\n");
@@ -166,67 +166,15 @@ local id_number_realm667 =
     "//\n"
     "// MAPINFO LUMP created by OBLIGE\n"
     "//\n"
-    "//Secret exits are in maps " .. tostring(secretexit1) .. ', ' .. tostring(secretexit2) .. ' and ' .. tostring(secretexit3) .. '\n'
+    "//Secret exits are in maps " .. tostring(secretexit1) .. ', 15 and ' .. tostring(secretexit3) .. '\n'
     '\n'
     'GameInfo\n'
     '{\n'
-    'AddEventHandlers = "BrutalObligeHandler"\n'
+    '  AddEventHandlers = "BrutalObligeHandler"\n'
     '}\n\n'
     "clearepisodes\n\n"
-    'map E2M8 "Tower of Babel" //brutality\n'
-    '{\n'
-    'next = "MAP0' .. tostring(secretexit1 + 1) .. '"\n'
-    'sky1 = "SKY3"\n'
-    'EnterPic = "INTERPIC"//changeifdoomcomplete\n'
-    'ExitPic = "INTERPIC"//changeifdoomcomplete\n'
-    'cluster = 10\n'
-    'music = "d_messag"//changeifdoommetal\n'
-    'SpecialAction = "ObligeCyberdemonLord", "Exit_Normal", 0\n'
-    'SpecialAction = "ObligeInfernal", "Exit_Normal", 0\n'
-    'SpecialAction = "ObligeCyberdemonBoss", "Exit_Normal", 0\n'
-    'SpecialAction = "CyberdemonBoss", "Exit_Normal", 0\n'
-    '}\n'
-    'map E3M8 "Dis" //brutality\n'
-    '{\n'
-    'next = "MAP' .. tostring(secretexit3 + 1) .. '"\n'
-    'sky1 = "SKY3"\n'
-    'EnterPic = "INTERPIC"//changeifdoomcomplete\n'
-    'ExitPic = "INTERPIC"//changeifdoomcomplete\n'
-    'cluster = 10\n'
-    'music = "d_openin"//changeifdoommetal\n'
-    'SpecialAction = "CyberdemonLordMinor", "Exit_Normal", 0\n'
-    'SpecialAction = "ObligeCyberdemonLordMinor", "Exit_Normal", 0\n'
-    '}\n'
-    --brutality has the naming correct whilst brutal has this bollocks
-    'map E5M8 "Tower of Babel" //brutalv20b\n'
-    '{\n'
-    'next = "MAP0' .. tostring(secretexit1 + 1) .. '"\n'
-    'sky1 = "SKY3"\n'
-    'EnterPic = "INTERPIC"//changeifdoomcomplete\n'
-    'ExitPic = "INTERPIC"//changeifdoomcomplete\n'
-    'cluster = 10\n'
-    'music = "d_messag"//changeifdoommetal\n'
-    'SpecialAction = "ObligeCyberdemonBoss", "Exit_Normal", 0\n'
-    'SpecialAction = "CyberdemonBoss", "Exit_Normal", 0\n'
-    'SpecialAction = "ObligeInfernal", "Exit_Normal", 0\n'
-    'SpecialAction = "ObligeCyberdemonLord", "Exit_Normal", 0\n'
-    '}\n'
-    'map E3M10 "Dis" //brutalv20b\n'
-    '{\n'
-    'next = "MAP' .. tostring(secretexit3 + 1) .. '"\n'
-    'sky1 = "SKY3"\n'
-    'EnterPic = "INTERPIC"//changeifdoomcomplete\n'
-    'ExitPic = "INTERPIC"//changeifdoomcomplete\n'
-    'cluster = 10\n'
-    'music = "d_openin"//changeifdoommetal\n'
-    'SpecialAction = "CyberdemonLordMinor", "Exit_Normal", 0\n'
-    'SpecialAction = "ObligeSuperMastermind", "Exit_Normal", 0\n'
-    'SpecialAction = "SuperMastermind", "Exit_Normal", 0\n'
-    'SpecialAction = "ObligeCyberdemonLordMinor", "Exit_Normal", 0\n'
-    '}\n'
-  }
-
-  
+ }
+ 
   --- music ---
   local epi_list = BRUTALDOOM.music
   local dest = { }
@@ -277,7 +225,8 @@ local id_number_realm667 =
   --- level names ---
   --L.name is MAP01 etc, L.descritption is the nice name
   --L.theme_name gives the theme
-      each L in GAME.levels do
+  
+  each L in GAME.levels do
     local prefix = PARAM.bex_map_prefix
 
     if L.description and prefix then --keep the prefix stuff from the bex incase something else relies on it
@@ -286,7 +235,6 @@ local id_number_realm667 =
       if string.sub(L.name, 1, 1) == 'E' then
         -- Doom I : ExMy
         id = "MAP" .. L.name
-
       else
         local pos = 4
         if string.sub(L.name, pos, pos) == '0' then
@@ -295,10 +243,9 @@ local id_number_realm667 =
         -- Doom II / Final Doom : HUSTR_%d
         id = "MAP" .. string.sub(L.name, pos)
       end
-      local nextmap = 'next = "' .. L.name ..'"\n'
-
-      local sky1 = 'sky1 = "'
-      local skyname = 'SKY1'
+      local nextmap = '  next = "' .. L.name ..'"\n'
+      local sky1 = '  sky1 = "'
+      local skyname = '  SKY1'
       local enterpic = '"INTERPIC"' --default intermissionpic
 	  if PARAM.episode_sky_color then
 	    if mapnum <= 11 then
@@ -315,70 +262,64 @@ local id_number_realm667 =
           skytab = BRUTALDOOM.SKIES.any
 		end
 		skyname = skytab[ rand.irange(1,#skytab) ]
-	  end
-      
-
-      
+	  end       
       sky1 = sky1 .. skyname .. '"\n'
---GZDoom Specials
-    if not PARAM.episode_sky_color and PARAM.fog_generator == "per_sky_gen" then
-      gui.printf("WARNING: User set fog color to be set by Sky Generator " ..
-      "but Sky Generator is turned off! Behavior will now be Random instead.\n")
-      PARAM.fog_generator = "random"
-    end
-
-    if PARAM.fog_generator == "per_sky_gen" then
-      if mapnum <= 11 then
-        fog_color = pick_sky_color_from_skygen_map(PARAM.episode_sky_color,1)
-      elseif mapnum > 11 and mapnum <= 20 then
-        fog_color = pick_sky_color_from_skygen_map(PARAM.episode_sky_color,2)
-      elseif mapnum > 20 then
-        fog_color = pick_sky_color_from_skygen_map(PARAM.episode_sky_color,3)
+      --GZDoom Specials
+      if not PARAM.episode_sky_color and PARAM.fog_generator == "per_sky_gen" then
+        gui.printf("WARNING: User set fog color to be set by Sky Generator " ..
+        "but Sky Generator is turned off! Behavior will now be Random instead.\n")
+        PARAM.fog_generator = "random"
       end
-    elseif PARAM.fog_generator == "random" then
-      fog_color = pick_random_fog_color()
-    elseif PARAM.fog_generator == "dark" then
-      fog_color = pick_random_real_fog()  
-    else
-      fog_color = ""
-    end
-	local fog_color_line = '  fade = "' .. fog_color .. '"\n'
+      if PARAM.fog_generator == "per_sky_gen" then
+        if mapnum <= 11 then
+          fog_color = pick_sky_color_from_skygen_map(PARAM.episode_sky_color,1)
+        elseif mapnum > 11 and mapnum <= 20 then
+          fog_color = pick_sky_color_from_skygen_map(PARAM.episode_sky_color,2)
+        elseif mapnum > 20 then
+          fog_color = pick_sky_color_from_skygen_map(PARAM.episode_sky_color,3)
+        end
+      elseif PARAM.fog_generator == "random" then
+        fog_color = pick_random_fog_color()
+      elseif PARAM.fog_generator == "dark" then
+        fog_color = pick_random_real_fog()  
+      else
+        fog_color = ""
+      end
+	  local fog_color_line = '  fade = "' .. fog_color .. '"\n'
 	
-    -- resolve fog intensity
-    if PARAM.fog_intensity == "subtle" then
-      fog_intensity = "16"
-    elseif PARAM.fog_intensity == "misty" then
-      fog_intensity = "48"
-    elseif PARAM.fog_intensity == "smoky" then
-      fog_intensity = "128"
-    elseif PARAM.fog_intensity == "foggy" then
-      fog_intensity = "255"
-    elseif PARAM.fog_intensity == "dense" then
-      fog_intensity = "368"
-    elseif PARAM.fog_intensity == "mixed" then
-      fog_intensity = "" .. rand.irange(16,368)
-    end
+      -- resolve fog intensity
+      if PARAM.fog_intensity == "subtle" then
+        fog_intensity = "16"
+      elseif PARAM.fog_intensity == "misty" then
+        fog_intensity = "48"
+      elseif PARAM.fog_intensity == "smoky" then
+        fog_intensity = "128"
+      elseif PARAM.fog_intensity == "foggy" then
+        fog_intensity = "255"
+      elseif PARAM.fog_intensity == "dense" then
+        fog_intensity = "368"
+      elseif PARAM.fog_intensity == "mixed" then
+        fog_intensity = "" .. rand.irange(16,368)
+      end
 
-    local fog_intensity_line = '  fogdensity = ' .. fog_intensity .. '\n'
+      local fog_intensity_line = '  fogdensity = ' .. fog_intensity .. '\n'
 
-    -- fog forced to outdoors only
-    if PARAM.fog_env == "outdoor" then
-      fog_color_line = '  OutsideFog  = "' .. fog_color .. '"\n'
-      fog_intensity_line = '  outsidefogdensity = ' .. fog_intensity .. '\n'
-    end
+      -- fog forced to outdoors only
+      if PARAM.fog_env == "outdoor" then
+        fog_color_line = '  OutsideFog  = "' .. fog_color .. '"\n'
+        fog_intensity_line = '  outsidefogdensity = ' .. fog_intensity .. '\n'
+      end
 
-    -- if fog tints sky, based on ZDoom GL specs
-    if PARAM.fog_affects_sky == "yes" then
-      fog_intensity_line = fog_intensity_line .. '  skyfog = ' .. fog_intensity + 16 .. '\n'
-    end
+      -- if fog tints sky, based on ZDoom GL specs
+      if PARAM.fog_affects_sky == "yes" then
+        fog_intensity_line = fog_intensity_line .. '  skyfog = ' .. fog_intensity + 16 .. '\n'
+      end
 
-    -- no fog in MAPINFO at all if the fog generator is off
-    if PARAM.fog_generator == "no" then
-      fog_color_line = ""
-      fog_intensity_line = ""
-    end  
-	
-	
+      -- no fog in MAPINFO at all if the fog generator is off
+      if PARAM.fog_generator == "no" then
+        fog_color_line = ""
+        fog_intensity_line = ""
+      end  
 	
       local intptab = BRUTALDOOM.INTERPICS[ L.theme_name ]
       if not intptab then --i.e. if no entry for the theme in BrutalDoomInterpics.lua
@@ -398,43 +339,58 @@ local id_number_realm667 =
 	  
       --say that this map comes after the last map
       if firstmap == 0 then
-	if mapnum != 31 and mapnum != 32 and mapnum != 33 then --yes I could just do <31 but it might be possible to make Oblige do more than 32 maps in which case this will still work. Number is 1 higher because this is inserted at the start of the next map.
-          table.insert(data, nextmap)
+	  
+	    if mapnum < 31 then 
+          if OB_CONFIG.length == "episode" and mapnum == 12 then 
+            if OB_CONFIG.iwad_usage == "complete" then
+              table.insert(data, '  next = EndPic, "ENDPIC"\n') -- Doom Complete Endpic
+            else
+              table.insert(data, '  next = Endpic, "PFUB2"\n') -- Doom2 Endpic
+            end	  
+		  else		
+		    table.insert(data, nextmap)
+		  end
         else
-	  if mapnum != 32 and mapnum != 33 then
-            table.insert(data, 'next = "EndGame3"\n')
-	  end
-	end
-        if mapnum >=11 and mapnum < 21 then--mapnum == 17 then --map 16 has the secret exit to wolf levels. Number is 1 higher because this is inserted at the start of the next map.
-          table.insert(data, 'secretnext = "MAP31"\n')
+  	      if mapnum != 32 and mapnum != 33 and mapnum != 34 and mapnum != 35 then
+            if OB_CONFIG.iwad_usage == "complete" then
+              table.insert(data, '  next = EndPic, "ENDPIC"\n') -- Doom Complete Endpic
+            else
+              table.insert(data, '  next = Endpic, "PFUB2"\n') -- Doom2 Endpic
+            end
+	      end
+		end
+
+        if mapnum > 11 and mapnum < 20 then -- Secret Exit to Wolfenstein Level          
+		  table.insert(data, '  secretnext = "MAP31"\n')
         end
-        if mapnum < 11 then --give map 8 a secret exit to tower of bable (included in the brutal and brutality pk3s)
-	  if boss1 == "cyberlordmajor" then --if big CyberLord at babel then make that the second boss battle 
-	    if OB_CONFIG.game == "brutaldoom" then
-              table.insert(data, 'secretnext = "E3M10"\n')
-	    end
-	  else
-	    if OB_CONFIG.game == "brutaldoom" then
-              table.insert(data, 'secretnext = "E5M8"\n')
-	    end
-	  end
+        
+		if mapnum < 11 then 
+          if OB_CONFIG.length == "episode" then 
+		    table.insert(data, '  secretnext = "MAP12"\n')
+		  else
+		    table.insert(data, '  secretnext = "MAP33"\n')
+		  end
         end
-        if mapnum >= 21 and mapnum < 30 then --give map 24 a secret exit to spider mastermind battle (included in the brutal and brutality pk3s)
-	  if boss1 == "cyberlordmajor" then --if big CyberLord at babel then make this the first boss battle 
-	    if OB_CONFIG.game == "brutaldoom" then
-              table.insert(data, 'secretnext = "E5M8"\n')
-	    end
-	  else
-	    if OB_CONFIG.game == "brutaldoom" then
-              table.insert(data, 'secretnext = "E3M10"\n')
-	    end
-	  end
+        
+		if mapnum >= 21 and mapnum < 30 then
+          table.insert(data, '  secretnext = "MAP34"\n')
         end
-        if mapnum == 32 then --first secret level (wolf)
-          table.insert(data, 'next = "MAP' .. tostring(secretexit2 + 1) .. '"\n')
-          table.insert(data, 'secretnext = "MAP32"\n')
+        
+		if mapnum == 32 then 
+          table.insert(data, '  next = "MAP16"\n')
+          table.insert(data, '  secretnext = "MAP32"\n')
         end
-        table.insert(data, '\n}\n') --close last map's definition
+
+		if mapnum == 33 then 
+          table.insert(data, '  next = "MAP16"\n')
+        end
+		
+		if mapnum == 34 then 
+          table.insert(data, '  next = "MAP0' ..tostring(secretexit1 + 1) ..'"\n')
+        end
+     
+		table.insert(data, '}\n\n') --close last map's definition
+		
       else
         firstmap = 0
       end
@@ -446,26 +402,26 @@ local id_number_realm667 =
       table.insert(data, fog_color_line)
       table.insert(data, fog_intensity_line)
 	  if L.has_thunder then
-	    table.insert(data, "lightning\n")
+	    table.insert(data, "  lightning\n")
 	  end
-	  table.insert(data, 'LevelNum = ' .. mapnum .. "\n")
-      table.insert(data, 'EnterPic = ' .. enterpic)
-      table.insert(data, 'ExitPic = ' .. enterpic)
+	  table.insert(data, '  LevelNum = ' .. mapnum .. "\n")
+      table.insert(data, '  EnterPic = ' .. enterpic)
+      table.insert(data, '  ExitPic = ' .. enterpic)
 	  if BRUTALDOOM.PARAMETERS.usingextrakeys == true then
 		table.insert(data, 'Translator = "OBXLAT"')
 	  end
-      table.insert(data, 'cluster = 10\n')
+      table.insert(data, '  cluster = 10\n')
       if L.theme_name == "wolf" then
         if #dest_wolf >= mapnum then
-            table.insert(data, 'music = "' .. dest_wolf[mapnum] .. '"\n')
+            table.insert(data, '  music = "' .. dest_wolf[mapnum] .. '"\n')
         else
-            table.insert(data, 'music = "' .. dest_wolf[rand.irange(1,#dest_wolf)] .. '"\n')
+            table.insert(data, '  music = "' .. dest_wolf[rand.irange(1,#dest_wolf)] .. '"\n')
         end
 	  else
 	    if #dest >= mapnum then
-          table.insert(data, 'music = "' .. dest[mapnum] .. '"\n')
+          table.insert(data, '  music = "' .. dest[mapnum] .. '"\n')
         else
-          table.insert(data, 'music = "' .. dest[rand.irange(1,#dest)] .. '"\n')
+          table.insert(data, '  music = "' .. dest[rand.irange(1,#dest)] .. '"\n')
         end
 	  end
 	  if OB_CONFIG.prebuilt_levels == "yes" then
@@ -515,18 +471,20 @@ local id_number_realm667 =
     end
   end -- for L
 
-  if mapnum == 33 then --second secret level (chex)
-    table.insert(data, 'next = "MAP' .. tostring(secretexit2 + 1) .. '"\n')
+  if mapnum == 35 then 
+    table.insert(data, '  next = "MAP' ..tostring(secretexit3 + 1) ..'"\n')
+  elseif OB_CONFIG.length == "episode" and mapnum == 13 then 
+    table.insert(data, '  next = "MAP' ..tostring(secretexit1 + 1) ..'"\n')
   else
     if OB_CONFIG.iwad_usage == "complete" then
-      table.insert(data, 'next = EndPic, "ENDPIC"\n') -- Doom Complete Endpic
+      table.insert(data, '  next = EndPic, "ENDPIC"\n') -- Doom Complete Endpic
     else
-	  table.insert(data, 'next = Endpic, "PFUB2"\n') -- Doom2 Endpic
-	end
+      table.insert(data, '  next = Endpic, "PFUB2"\n') -- Doom2 Endpic
+    end
   end
-  table.insert(data, "}\n"); --close final map definition
+  table.insert(data, "}\n\n"); --close final map definition
   
-	table.insert(data,create_episode_selection())  
+  table.insert(data,create_episode_selection())  
      
   --insert DoomEdNums 
   if BRUTALDOOM.PARAMETERS.realm667 == true then   
@@ -560,6 +518,8 @@ for i = 1, (#data) do --for every value in data
   data[i] = string.gsub(data[i], '"MAP030"','"MAP30"')
   data[i] = string.gsub(data[i], '"MAP031"','"MAP31"')
   data[i] = string.gsub(data[i], '"MAP032"','"MAP32"')
+  data[i] = string.gsub(data[i], '"MAP033"','"MAP34"')
+  data[i] = string.gsub(data[i], '"MAP034"','"MAP34"')  
   data[i] = string.gsub(data[i], '"MAP1"','"MAP01"')
   data[i] = string.gsub(data[i], '"MAP2"','"MAP02"')
   data[i] = string.gsub(data[i], '"MAP3"','"MAP03"')
@@ -575,10 +535,6 @@ for i = 1, (#data) do --for every value in data
   end
   if OB_CONFIG.iwad_usage == "complete" then
       data[i] = string.gsub(data[i], '"INTERPIC"//changeifdoomcomplete','"INTER_E4"')
-      if BRUTALDOOM.PARAMETERS.musicpreset == "iwad" then
-          data[i] = string.gsub(data[i], '"d_messag"//changeifdoommetal','"d_e2m8"')
-          data[i] = string.gsub(data[i], '"d_openin"//changeifdoommetal','"d_e3m8"')
-      end
   end
 end
 gui.wad_add_text_lump("MAPINFO", data);

@@ -350,9 +350,8 @@ function Episode_plan_monsters()
     end
 
     if LEV.is_secret then
-      -- secret levels are easier
-      mon_along = mon_along * 0.75
-
+      -- (old behavior mon_along = mon_along * 0.75) secret levels are easier 
+      mon_along = mon_along * 1.7
     elseif OB_CONFIG.length == "single" then
       -- for single level, use skew to occasionally make extremes
       mon_along = rand.skew(0.6, 0.3)
@@ -850,7 +849,7 @@ function Episode_plan_monsters()
       LEV.boss_quotas = { minor=0, nasty=0, tough=0 }
 
       if LEV.prebuilt  then continue end
-      if LEV.is_secret then continue end
+      -- removed we have Bosses in Wolf Levels -> if LEV.is_secret then continue end
 
       if OB_CONFIG.strength == "crazy" then continue end
       if OB_CONFIG.bosses   == "none"  then continue end
