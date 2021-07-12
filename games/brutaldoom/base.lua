@@ -166,7 +166,7 @@ function BRUTALDOOM.decorate()
 
 	gui.wad_insert_file("brutaloblige/sounds/DKMECH.wav","DKMECH");				
 	gui.wad_insert_file("brutaloblige/sounds/DKMISS.wav","DKMISS");				
-	gui.wad_insert_file("brutaloblige/sounds/DKSIT.wav","DKSIT");				
+	gui.wad_insert_file("brutaloblige/sounds/WDKSIT.wav","WDKSIT");				
 
 -- Wolfenstein Mutant
 

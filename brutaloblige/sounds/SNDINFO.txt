@@ -67,7 +67,7 @@ uber/sight		UBSIT
 uber/death		UBDIE
 uber/attack		GUNSHT3
 
-knight/sight		DKSIT
+knight/sight		WDKSIT
 knight/active		DKMECH
 knight/death		BOSDIE
 knight/attack		GUNSHT3

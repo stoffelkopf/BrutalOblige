@@ -119,7 +119,7 @@ actor wolfskelflat 22103
 	states
 	{
 		Spawn:
-			SKEL A -1
+			WSKE A -1
 			stop
 	}
 }
