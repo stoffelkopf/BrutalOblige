@@ -72,7 +72,7 @@ OB_MODULES["debugger"] =
       name = "dbg_prefab"
       label=_("Prefab Usage")
       choices=DEBUG_MSG.Prefab
-      tooltip="Displays used prefabs per map"
+      tooltip="Prints prefab picks"
       default="no"
       priority=98
     }
@@ -82,7 +82,7 @@ OB_MODULES["debugger"] =
       name = "dbg_absurd_rules"
       label=_("Absurd Rules Usage")
       choices=DEBUG_MSG.YES_NO
-      tooltip="Displays used absurd rules per map"
+      tooltip="Prints absurd rules"
       default="no"
       priority=97
     }
@@ -92,7 +92,7 @@ OB_MODULES["debugger"] =
       name = "dbg_monsters"
       label=_("Monster Placing")
       choices=DEBUG_MSG.Monsters
-      tooltip="Displays placed Monsters"
+      tooltip="Prints monster placing"
       default="no"
       priority=96
     }  
@@ -102,7 +102,7 @@ OB_MODULES["debugger"] =
       name = "dbg_skybox"
       label=_("Skybox")
       choices=DEBUG_MSG.YES_NO
-      tooltip="Prints Skybox Prefab"
+      tooltip="Prints Skybox Prefabs"
       default="no"
       priority=93
     }	
@@ -132,7 +132,7 @@ OB_MODULES["debugger"] =
       name = "dbg_linear"
       label=_("Emerg Sprouts")
       choices=DEBUG_MSG.YES_NO
-      tooltip="Displays Linear Mode Emergency Sprout Attempts"
+      tooltip="Displays CoD Mode Emergency Sprout Attempts"
       default="no"
       priority=91
     } 	

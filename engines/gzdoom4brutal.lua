@@ -1,7 +1,7 @@
 OB_ENGINES["gzdoom4brutal"] =
 {
   label = _("GZDoom")
-  priority = -1  -- keep at bottom with ZDoom
+  priority = 90
 
   extends = "gzdoom"
 

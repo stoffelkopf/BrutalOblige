@@ -20,32 +20,32 @@ PROCEDURAL_GOTCHA_FINE_TUNE = {}
 
 PROCEDURAL_GOTCHA_FINE_TUNE.GOTCHA_STRENGTH_CHOICES =
 {
-  "none",    _("NONE"),
-  "stronger", _("[+2] Stronger"),
-  "harder", _("[+4] Harder"),
-  "tougher", _("[+6] Tougher"),
-  "crazier", _("[+8] CRAZIER"),
+  "none",    _("Standard"),
+  "stronger", _("Strong"),
+  "harder", _("Hard"),
+  "tougher", _("Tough"),
+  "crazier", _("CRAZY!!!"),
 }
 
 PROCEDURAL_GOTCHA_FINE_TUNE.GOTCHA_QUANTITY_CHOICES =
 {
   "-50", _("-50% Monsters"),
   "-25", _("-25% Monsters"),
-  "none",  _("NONE"),
+  "none", _("Standard"),
   "25",  _("+25% Monsters"),
   "50",  _("+50% Monsters"),
   "100", _("+100% Monsters"),
-  "200",  _("+200% Monsters"),
+  "200", _("+200% Monsters"),
   "400", _("+400% Monsters"),
 }
 
 PROCEDURAL_GOTCHA_FINE_TUNE.GOTCHA_MAP_SIZES =
 {
-  "large", _("Large"),
-  "regular", _("Regular"),
-  "small", _("Small"),
-  "tiny", _("Tiny"),
   "micro", _("Micro"),  
+  "tiny", _("Tiny"),  
+  "small", _("Small"),
+  "regular", _("Regular"),  
+  "large", _("Large"),    
 }
 
 PROCEDURAL_GOTCHA_FINE_TUNE.FORCE_BOSS_FIGHT_CHOICES =
@@ -85,7 +85,7 @@ OB_MODULES["procedural_gotcha"] =
       name="gotcha_qty",
       label=_("Extra Quantity"),
       choices=PROCEDURAL_GOTCHA_FINE_TUNE.GOTCHA_QUANTITY_CHOICES,
-      default="lots",
+      default="none",
       tooltip = "Offset monster strength from your default quantity of choice plus the increasing level ramp. If your quantity choice is to reduce the monsters, the monster quantity will cap at a minimum of 0.1 (Scarce quantity setting).",
     }
 

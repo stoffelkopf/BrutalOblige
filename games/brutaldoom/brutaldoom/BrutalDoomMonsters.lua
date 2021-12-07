@@ -757,7 +757,7 @@ BRUTALDOOM.MON_LIST_BRUTAL=
     {
         label="Zyberdemon",
         choices=BRUTALDOOM.MON_CHOICES
-        tooltip="A Cyberdemon with the rocket launcher replaced with a chaingun"
+        tooltip="A Cyberdemon with a chaingun"
     }
  
     AncientArachnotron =

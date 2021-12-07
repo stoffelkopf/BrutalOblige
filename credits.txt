@@ -1,26 +1,11 @@
 Brutal Oblige Original Version from Robert Cross
 https://gitlab.com/CloudOfShame/BrutalOblige
 
-
-Monsters from Realm 667 
-https://www.realm667.com
-
 Zyberdemon sprites - 00_Zombie_00
-Kamikazeguy - Captain Toenail / Croteam
-Rottweiler
-Snake Imp
-Hell Warrior
-Hellion
-Zombie Fodder
-Roach
-Pyro Succubus
-Azazel
-
 
 Wolfenstein SS firing rotation sprites - DoomJedi
 SS firing rotation sprites - ItsNatureToDie
 SS pain rotation sprites - PSTrooper
-
 
 This mod uses some code from Sgt Mark IV's Bolognese mod in addition to reusing/adapting some code from Brutal Doom itself
 
