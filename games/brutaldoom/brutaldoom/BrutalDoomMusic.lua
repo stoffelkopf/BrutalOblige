@@ -80,19 +80,19 @@ function BRUTALDOOM.mergesongs()
     BRUTALDOOM.doomcompleteallsongs()
     BRUTALDOOM.music.songs=BRUTALDOOM.doom2songs
     
-    if PARAM.MUSIC_PRESETS == "iwad" and OB_CONFIG.iwad_usage == "complete" then
+    if OB_CONFIG.MUSIC_PRESETS == "iwad" and OB_CONFIG.iwad_usage == "complete" then
         for k,v in pairs(BRUTALDOOM.doom_completesongs) do table.insert(BRUTALDOOM.music.songs, v) end
     end
-    if PARAM.MUSIC_PRESETS == "doom1" then --just doom1 songs
+    if OB_CONFIG.MUSIC_PRESETS == "doom1" then --just doom1 songs
         BRUTALDOOM.music.songs=BRUTALDOOM.doom1songs
     end
-	if PARAM.MUSIC_PRESETS == "ZD64MUSIC" then --just the songs in ZD64MUSIC.PK3, which are named differently.
+	if OB_CONFIG.MUSIC_PRESETS == "ZD64MUSIC" then --just the songs in ZD64MUSIC.PK3, which are named differently.
         BRUTALDOOM.music.songs=BRUTALDOOM.zd64music
     end
-	if PARAM.MUSIC_PRESETS == "favorit" and OB_CONFIG.iwad_usage == "complete" then --geiler shit :)
+	if OB_CONFIG.MUSIC_PRESETS == "favorit" and OB_CONFIG.iwad_usage == "complete" then --geiler shit :)
         BRUTALDOOM.music.songs=BRUTALDOOM.geiler_shit
     end	
 	gui.printf("\n--==| Brutal Doom Music Module |==--\n\n")    
-    gui.printf("Music Preset: " .. PARAM.MUSIC_PRESETS .." (" .. OB_CONFIG.iwad_usage .. ")" .. "\n")
+    gui.printf("Music Preset: " .. OB_CONFIG.MUSIC_PRESETS .." (" .. OB_CONFIG.iwad_usage .. ")" .. "\n")
 	gui.printf("Songs: \n" .. table.tostring(BRUTALDOOM.music) .."\n\n")
 end

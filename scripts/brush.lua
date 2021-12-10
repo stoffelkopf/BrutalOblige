@@ -358,7 +358,7 @@ function Trans.entity(name, x, y, z, props)
   ent.y  = y
   ent.z  = z
 
-  if PARAM.dbg_entities != "no" and GAME.ENTITIES[name] then
+  if PARAM.dbg_entities == "yes" and GAME.ENTITIES[name] then
 	gui.printf("Entity: " .. name .. " ID: " .. ent.id .. " {" .. ent.x .. "," .. ent.y .. "," .. ent.z .. "}\n")
   end
 

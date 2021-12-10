@@ -1870,7 +1870,7 @@ stderrf("Cages in %s [%s pressure] --> any_prob=%d  per_prob=%d\n",
         fg.sink = GAME.SINKS[name]
         assert(fg.sink)
 		
-		if PARAM.dbg_ceilfloor != "no" then
+		if PARAM.dbg_ceilfloor == "yes" then
 		  gui.printf("Floor: " .. name .. "\n")
 		end
       

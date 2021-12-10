@@ -3086,7 +3086,7 @@ end
     -- SUCCESS --
 
     gui.debugf("APPLIED rule: %s \n", cur_rule.name)
-	if PARAM.dbg_absurd_rules != "no" and cur_rule.is_absurd then
+	if PARAM.dbg_absurd_rules == "yes" and cur_rule.is_absurd then
 		gui.printf("APPLIED absurd rule: " .. cur_rule.name .. " " .. cur_rule.use_prob .. "\n")
     end
     update_aversions(cur_rule)
@@ -3103,7 +3103,7 @@ end
         emergency_sprout_attempts = emergency_sprout_attempts + 1
       end
     end
-    if PARAM.dbg_linear != "no" and R.emergency_sprout_attempts and LEVEL.is_linear then
+    if PARAM.dbg_linear == "yes" and R.emergency_sprout_attempts and LEVEL.is_linear then
       gui.printf("Room_" .. R.id .. " Emergency Sprout attempts: " .. R.emergency_sprout_attempts .. "\n")
     end
   end
@@ -4147,7 +4147,7 @@ function Grower_create_rooms()
   Seed_squarify()
 
   -- debugging aid
-  if PARAM.dbg_svg != "no" or OB_CONFIG.svg then
+  if PARAM.dbg_svg == "yes" or OB_CONFIG.svg then
     Seed_save_svg_image("grow_" .. OB_CONFIG.seed .. "_" .. LEVEL.name .. ".svg")
   end
 

@@ -1451,13 +1451,11 @@ function Monster_fill_room(R)
 
     table.insert(R.monster_list, { info=info, is_cage=(mode == "cage") })
 
-    if PARAM.dbg_monsters != "no" then
-		if PARAM.dbg_monsters == "all" then
+	if PARAM.dbg_monsters == "all" then
 		  gui.printf("Placing Monster: " .. mon .. "\n")
-		elseif PARAM.dbg_monsters == "boss" and info.boss_type then
+	elseif PARAM.dbg_monsters == "boss" and info.boss_type then
 		  gui.printf("Placing Boss: " .. mon .. "\n")
-		end	
-	end
+	end	
 
     -- decide deafness and where to look
     local deaf, focus

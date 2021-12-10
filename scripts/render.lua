@@ -3324,7 +3324,7 @@ function Render_skybox()
 
   end
 
-  if PARAM.dbg_skybox != "no" then
+  if PARAM.dbg_skybox == "yes" then
 	gui.printf("\n" .. LEVEL.name .. " Skybox:" .. skyfab.name)
 	if GAME.levels[LEVEL.id].has_thunder then
 		gui.printf(" with Thunder ")
