@@ -18,12 +18,6 @@
 
 BRUTAL_TWEAKS = { }
 
-BRUTAL_TWEAKS.PURISTRAILGUNRELOADOPTIONS =
-{
-    "Skulltag",   "Skulltag"
-    "None",   "None"
-}
-
 BRUTAL_TWEAKS.MUSIC_PRESETS =
 {
     "iwad", "Doom Complete"
@@ -90,12 +84,5 @@ OB_MODULES["ui_brutal_tweaks"] =
 			choices=BRUTAL_TWEAKS.MUSIC_PRESETS
 			default="doom2"
         } 
-        
-		{
-			name="puristrailgunreload"
-			label="Purist Railgun\n Reloading"
-			choices=BRUTAL_TWEAKS.PURISTRAILGUNRELOADOPTIONS
-			default="None"
-        }
 	}
  }

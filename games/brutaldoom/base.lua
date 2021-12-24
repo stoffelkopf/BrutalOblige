@@ -10,10 +10,6 @@ secretexit3 = math.random(21,29)
 
 local boss1 = "cyberdemon"
 local boss2 = "mastermind"
-        
-puristrailgunreloadDecorate = [[
-    RAIF B 6 //A_CheckForReload(4, "Reloaded")
-    ]]
 
 BRUTALDOOM = { }
 
@@ -238,7 +234,6 @@ function BRUTALDOOM.all_done()
   gui.set_import_dir("games/brutaldoom")
   gui.import("brutaldoom/BrutalDoomSkies")
   gui.import("brutaldoom/BrutalDoomInterpics")
-  BRUTALDOOM.puristrailgundecorate();
   BRUTALDOOM.decorate();
   DOOM.all_done();
   BRUTALDOOM.mixhanky();
@@ -297,86 +292,6 @@ function BRUTALDOOM.setup()
     BRUTALDOOM.checkuintm();   
 	BRUTALDOOM.checkrealm667()       
     BRUTALDOOM.setsecretexits();
-end
-
-function BRUTALDOOM.puristrailgundecorate()
-	if OB_CONFIG.puristrailgunreload == "Skulltag" then
-        PuristRailGunReloadDecorate = 'RAIF B 6 A_CheckForReload(4, "Reloaded")\n'
-    elseif OB_CONFIG.puristrailgunreload == "None" then
-        PuristRailGunReloadDecorate = 'RAIF B 6 A_Jump(256, "Reloaded")\n'
-    elseif OB_CONFIG.puristrailgunreload == "Every" then
-        PuristRailGunReloadDecorate = 'RAIF B 6\n'
-    end
-	
-local data =
-	{
-        'ACTOR PuristRailgun : ClassicWeapon\n'
-        '{\n'
-        '  SpawnID 164\n'
-        '  Radius 20\n'
-        '  Height 16\n'
-        '  Weapon.Selectionorder 100\n'
-        '  Weapon.AmmoUse 10\n'
-        '  Weapon.AmmoGive 40\n'
-        '  Weapon.AmmoType "Cell"\n'
-        "  Weapon.SlotNumber 6 // This line isn't in skulltag.pk3, which instead defines the slot directly in DoomPlayer\n"
-        '  Inventory.Pickupmessage "You got the railgun!"\n'
-        '  Obituary "%o was railed by %k."\n'
-        '  States\n'
-        '  {\n'
-        '  Ready:\n'
-        '    RAIL A 1 A_WeaponReady\n'
-        '    Loop\n'
-        '  Deselect:\n'
-        '    RAIL A 1 A_Lower\n'
-        '    Loop\n'
-        '  Select:\n'
-        '    RAIL A 1 A_Raise\n'
-        '    Loop\n'
-        '  Fire:\n'
-        '    RAIF A 12 A_FireRailgun\n'
-        ,PuristRailGunReloadDecorate,
-        '    RAIR ABCDEDCB 6\n'
-        '    RAIR A 6 A_ResetReloadCounter\n'
-        '  Reloaded:\n'
-        '    RAIL A 6\n'
-        '    RAIL M 0 A_ReFire\n'
-        '    Goto Ready\n'
-        '  Flash:\n'
-        '    TNT1 A 5 bright A_Light1\n'
-        '    TNT1 A 5 bright A_Light2\n'
-        '    TNT1 A 0 bright A_Light0\n'
-        '    Goto LightDone\n'
-        '  Spawn:\n'
-        '    SRCG A -1\n'
-        '    Stop\n'
-        '  }\n'
-        '}\n'
-        '\n'
-        'actor SkelPosterDecal\n'
-		'{\n'
-		  'Radius 2\n'
-		  'Height 2\n'
-		  'Damage 0\n'
-		  'Speed 100\n'
-		  'Decal Skel_Poster\n'
-		  'Projectile\n'
-		  '+RIPPER\n'
-		  '+BLOODLESSIMPACT\n'
-		  'States\n'
-		  '{\n'
-		  'Spawn:\n'
-		    'TNT1 A 1\n'
-		    'goto Death\n' --only lasting 1 tic give it enough time to hit a nearby wall but not enough to cross a room (and hit a pillar)
-		  'Death:\n'
-		    'TNT1 A 1\n'
-		    'stop\n'
-		  '}\n'
-		'}\n'
-		
-	}
-    gui.wad_add_text_lump("DECORATE", data);
-
 end
 
 OB_GAMES["brutaldoom"] =

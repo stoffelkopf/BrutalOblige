@@ -135,7 +135,6 @@ local id_number_realm667 =
 [[
 DoomEdNums
 {
-	10307 = DemonDog
 	10501 = Arachnophyte
 	10502 = AracnorbQueen
 	10503 = BFGGuy
