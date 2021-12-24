@@ -1,7 +1,6 @@
 gui.set_import_dir("games/doom")
 gui.import("base")
 gui.set_import_dir("games/brutaldoom")
-
 math.randomseed( os.time() ) 
 math.random()
 math.random()
@@ -294,7 +293,6 @@ BRUTALDOOM.PLAYER_MODEL =
 function BRUTALDOOM.setup()
     gui.printf("\nBrutal Oblige version: " .. BRUTALDOOM.PARAMETERS.modversion.."\n")
     gui.printf("For Brutal Doom version: " .. BRUTALDOOM.PARAMETERS.brutalversion.."\n\n")
-    
     gui.printf("Universal Intermission check:\n");
     BRUTALDOOM.checkuintm();   
 	BRUTALDOOM.checkrealm667()       
@@ -302,14 +300,14 @@ function BRUTALDOOM.setup()
 end
 
 function BRUTALDOOM.puristrailgundecorate()
-	if PARAM.puristrailgunreload == "Skulltag" then
+	if OB_CONFIG.puristrailgunreload == "Skulltag" then
         PuristRailGunReloadDecorate = 'RAIF B 6 A_CheckForReload(4, "Reloaded")\n'
-    elseif PARAM.puristrailgunreload == "None" then
+    elseif OB_CONFIG.puristrailgunreload == "None" then
         PuristRailGunReloadDecorate = 'RAIF B 6 A_Jump(256, "Reloaded")\n'
-    elseif PARAM.puristrailgunreload == "Every" then
+    elseif OB_CONFIG.puristrailgunreload == "Every" then
         PuristRailGunReloadDecorate = 'RAIF B 6\n'
     end
-  
+	
 local data =
 	{
         'ACTOR PuristRailgun : ClassicWeapon\n'
