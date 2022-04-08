@@ -4,6 +4,7 @@
 **Requirements:**
 
 * Oblige / Onlige64 Version 7.70 (For those of you who don't know [Oblige](http://oblige.sourceforge.net/) is a random map generator for Doom. It's really good and you should check it out)
+* you can also use Oblige 7.70 enhanced (https://github.com/dashodanger/Obsidian/releases/tag/Oblige-770-Enhanced)
 * Brutal Doom Version 21
 * doom2.wad or doom_complete.pk3
 
@@ -11,35 +12,35 @@ This mod uses some code and Prefabs from the ObAddon project: https://github.com
 
 **Features**
 
-* New monsters: Belphegor, Juggernaut, Mother Demon, Volcabus, Ancient Arachnotron, Zyberdemon (from 00_Zombie_00) 
-* New weapons: BFG 10k, Grenade Launcher and Railgun
-* Probability of each of the new monsters/weapons appearing can be tweaked or switched off completely
-* Grenades appear alongside other ammo pickups 
+* Brutal Doom Monsters: Belphegor, Juggernaut, Mother Demon, Volcabus, Ancient Arachnotron, Zyberdemon (from 00_Zombie_00) 
+* Brutal Doom Weapons: BFG 10k, Grenade Launcher and Railgun
+* Probability of each BrutalDoom monsters/weapons appearing can be tweaked or switched off completely
+* Grenades and secret BrutalDoom Powerups appear alongside with other ammo and pickups 
+* Sky Generator (uses code from Obaddon)
 * Skyboxes with random weather effects
-* Secret levels: If you make a full 32 map wad there will be 3 secret exits on random levels. The first on levels 1-9, the second on level 15 and the third on levels 21-29. The second goes to map 31 (which itself has a secret exit to 32).
+* Secret levels: If you make a full 32 map wad there will be 3 secret exits (2 on random levels). The first on levels 1-9, the second on level 15 and the third on levels 21-29. The second goes to map 31 (which itself has a secret exit to 32).
 * Wolfenstein theme (Monsters, Bosses, Prefabs, Decorations)
 * More level sizes (from micro to extreme)
-* Sky Generator (Obaddon)
-* Layout Absurdity Module (Obaddon)
-* Call of Duty Mode (Obaddon)
-* Prebuilt Level Control
+* Layout Absurdity Module (uses code from Obaddon)
+* Call of Duty Mode (uses code from Obaddon)
+* Prebuilt Level Control and new prebuilt boss levels
 * DoomComplete.pk3 support
 * Music shuffler
-* Episode selection support
-* Fog generator (Obaddon)
-* Dynamic lights support (Obaddon)
-* Glowing flats support (Obaddon)
-* Psychadelic Theme (Obaddon)
+* Oblige Episode generation
+* Fog generator (uses code from Obaddon)
+* Dynamic lights support (uses code from Obaddon)
+* Glowing flats support (uses code from Obaddon)
+* Psychadelic Theme (uses code from Obaddon)
 * Brightness module (extra brightness for levels)
-* Nightmare Monsters; a separate module I've made which adds the Nightmare Demon from PSX Doom and the Nightmare Imp from Doom64. This can be used without Brutal Doom but if used with the monsters have more and gorier death states.
-* A proper ending after the last Oblige level, no matter how many there are
-* Debugging module
-* Universal Intermission Screen support
+* Nightmare Monsters; a separate module I've made which adds the Nightmare Demon from PSX Doom and the Nightmare Imp from Doom64. This can be used without BrutalDoom but if used with the monsters have more and gorier death states.
+* A proper ending after the last Oblige level - no matter how many there are
+* Debugging / Logging module
+* Universal Intermission Screen Addon support (https://forum.zdoom.org/viewtopic.php?t=55323)
 * Better floors and ceilings
-* Support for Extra Monsters from realm667.com (https://gitlab.com/Stoffelkopf/realm667-oblige)
+* Support for my Realm667 Oblige addon (Realm667 Monsters) (https://github.com/stoffelkopf/Realm667-Oblige)
 
 
-**How to use - Latest development version**
+**How to use - Latest version**
 
 1) Download or clone this repository.
 
@@ -62,7 +63,7 @@ Note that if you downloaded this from gitlab rather than cloning the repo you ca
 
 7) Load this wad **after** Brutal Doom
 
-8) Happy bug hunting.
+8) Happy hunting :)
 
 
 **Known issues**
@@ -72,3 +73,4 @@ Note that if you downloaded this from gitlab rather than cloning the repo you ca
 * double check that the pk3 is BrutalOblige.pk3 not BrutalOblige.pk3.zip
 
 [Oblige Download](http://oblige.sourceforge.net/i_download.html)
+[Oblige Enhanced Download](https://github.com/dashodanger/Obsidian/releases/tag/Oblige-770-Enhanced)
