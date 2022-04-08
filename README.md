@@ -4,7 +4,7 @@
 **Requirements:**
 
 * Oblige / Onlige64 Version 7.70 (For those of you who don't know [Oblige](http://oblige.sourceforge.net/) is a random map generator for Doom. It's really good and you should check it out)
-* you can also use Oblige 7.70 enhanced (https://github.com/dashodanger/Obsidian/releases/tag/Oblige-770-Enhanced)
+* you can also use [Oblige 7.70 enhanced](https://github.com/dashodanger/Obsidian/releases/tag/Oblige-770-Enhanced)
 * Brutal Doom Version 21
 * doom2.wad or doom_complete.pk3
 
@@ -73,4 +73,5 @@ Note that if you downloaded this from gitlab rather than cloning the repo you ca
 * double check that the pk3 is BrutalOblige.pk3 not BrutalOblige.pk3.zip
 
 [Oblige Download](http://oblige.sourceforge.net/i_download.html)
+
 [Oblige Enhanced Download](https://github.com/dashodanger/Obsidian/releases/tag/Oblige-770-Enhanced)
