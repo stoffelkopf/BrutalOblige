@@ -7,6 +7,7 @@
 * Brutal Doom Version 21
 * doom2.wad or doom_complete.pk3
 
+This mod uses some code and Prefabs from the ObAddon project: https://github.com/caligari87/ObAddon
 
 **Features**
 
