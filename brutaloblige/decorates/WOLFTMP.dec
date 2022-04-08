@@ -605,7 +605,7 @@ ACTOR WolfBossDeathKnightTemplate : WolfBoss
 		"####" A 5 A_Look
 		Loop
 	Chase:
-	    "####" D 0 A_PlaySound("knight/active")		
+	    "####" D 0 A_PlaySound("dknight/active")		
 		"####" AAAAA 1 A_Chase
 		"####" A 1
 		"####" BBBB 1 A_Chase
@@ -616,10 +616,10 @@ ACTOR WolfBossDeathKnightTemplate : WolfBoss
 	Missile:
 		"####" F 15 A_FaceTarget
 		"####" G 5 BRIGHT A_CustomMissile ("WolfRocketSoD", 64, 30, 0, CMF_OFFSETPITCH, -2)
-		"####" I 5 BRIGHT A_WolfAttack(0, "knight/attack", 1.0, 64, 64, 2, 4, 160.0)
+		"####" I 5 BRIGHT A_WolfAttack(0, "dknight/attack", 1.0, 64, 64, 2, 4, 160.0)
 		"####" I 0 A_FaceTarget
 		"####" H 5 BRIGHT A_CustomMissile ("WolfRocketSoD", 64, -30, 0, CMF_OFFSETPITCH, -2)
-		"####" I 5 BRIGHT A_WolfAttack(0, "knight/attack", 1.0, 64, 64, 2, 4, 160.0)
+		"####" I 5 BRIGHT A_WolfAttack(0, "dknight/attack", 1.0, 64, 64, 2, 4, 160.0)
 		Goto Chase
 	Death:
 		"####" A 20 A_Scream

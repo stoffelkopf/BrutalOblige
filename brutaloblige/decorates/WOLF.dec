@@ -294,8 +294,8 @@ Actor wolftodesritter : WolfBossDeathKnightTemplate  22019
 	Tag "Todesritter"
 	SCALE 0.9	
 	Health 1750		
-	SeeSound "knight/sight"
-	DeathSound "knight/death"
+	SeeSound "dknight/sight"
+	DeathSound "dknight/death"
 	States
 	{
 	Spawn:

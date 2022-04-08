@@ -67,11 +67,11 @@ uber/sight		UBSIT
 uber/death		UBDIE
 uber/attack		GUNSHT3
 
-knight/sight		WDKSIT
-knight/active		DKMECH
-knight/death		BOSDIE
-knight/attack		GUNSHT3
-knight/missile		DKMISS
+dknight/sight		WDKSIT
+dknight/active		DKMECH
+dknight/death		BOSDIE
+dknight/attack		GUNSHT3
+dknight/missile		DKMISS
 
 mutant/death		MUTDIE
 mutant/pain		MUTPAI
