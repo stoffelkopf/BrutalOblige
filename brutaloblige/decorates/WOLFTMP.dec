@@ -51,6 +51,7 @@ ACTOR WolfEnemy
 
 ACTOR WolfBoss : WolfEnemy
 {
+	Height 110
 	Painchance 0
 	+BOSS
 	+JUSTHIT
