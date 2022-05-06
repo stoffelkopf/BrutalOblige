@@ -263,6 +263,279 @@ function BRUTALDOOM.parameters_to_wad()
     gui.wad_add_text_lump("BOPARAMS", BOPARAMS );
 end
 
+function BRUTALDOOM.update_prefabs()
+
+	if OB_CONFIG.game == "brutaldoom" and OB_CONFIG.obaddon_prefabs == "yes" then	
+
+	  gui.printf("Using Obaddon Prefabs.\n")
+	  
+	  GAME.THEMES.DEFAULTS.narrow_halls =
+	  {
+		vent = 50
+		mineshaft = 50				
+	  }
+	  
+	  GAME.THEMES.DEFAULTS.wide_halls =
+	  {
+		deuce = 50
+		metro = 50			
+	  }
+
+	  GAME.THEMES.tech.narrow_halls =
+	  {
+		vent = 50
+		mineshaft = 50
+		access = 50
+	  }				  
+
+	  GAME.THEMES.tech.wall_groups =
+	  {
+		PLAIN = 90
+		low_gap = 30
+		low_gap2 = 5
+		low_gap3 = 10
+		mid_band = 22
+		mid_band2 = 10
+		lite1 = 5
+		lite2 = 15
+		torches1 = 15
+		gtd_computers = 25
+		gtd_generic_alt_colors = 25								
+		gtd_generic_artsy_bedazzled = 2							   
+		gtd_generic_artsy_center_braced_ind = 25	
+		gtd_generic_artsy_slope_y_inset = 20
+		gtd_generic_artsy_step1_banded = 20
+		gtd_generic_beamed_inset = 25
+		gtd_generic_beamed_green_inset = 25
+		gtd_generic_beamed_brown_inset = 25	  
+		gtd_generic_ceilwall = 25								 
+		gtd_generic_d64_1x = 4
+		gtd_generic_d64_1x_blue = 4
+		gtd_generic_d64_1x_yellow = 4
+		gtd_generic_d64_2x = 4
+		gtd_generic_d64_2x_blue = 4
+		gtd_generic_d64_2x_yellow = 4
+		gtd_generic_double_banded_ceil = 25								 
+		gtd_generic_frame_light_band = 25							   
+		gtd_generic_frame_metal = 25										 
+		gtd_generic_glow_wall = 25												 
+		gtd_generic_glow_wall = 25
+		gtd_generic_half_floor = 25
+		gtd_generic_mid_band = 25									 
+		gtd_generic_tek_grate = 25
+		gtd_generic_tek_grate_bottom_slope = 25	  
+		gtd_modquake_set = 14,
+		gtd_modquake_jawlike = 14
+		gtd_modquake_top_heavy_brace = 14
+		gtd_modquake_tek_slope_brace = 14
+		gtd_modquake_ex_light_slope_brace = 14
+		gtd_modquake_round_braced_lit_pillar = 14
+		gtd_modquake_hexagon_inset_braced = 14	  
+		gtd_ribbed_lights = 25
+		gtd_ribbed_lights_no3d = 20
+		gtd_ribbed_lights_slump = 20	  
+		gtd_wall_grated_machines = 25
+		gtd_wall_high_gap_alt_set = 12
+		gtd_wall_high_gap_set = 12
+		gtd_wall_octagon_insets = 50
+		gtd_wall_quakish_insets = 25
+		gtd_wall_server_room = 25
+		gtd_wall_sewer = 25
+		gtd_wall_tech_top_corner_light_set = 25
+		gtd_wall_urban_cement_frame = 10				  
+		gtd_wall_urban_storage = 25
+		gtd_writhing_mass = 2				   
+	  }
+
+	  GAME.THEMES.tech.window_groups =
+	  {
+		square = 70
+		tall   = 40
+		grate  = 40
+		barred = 5
+		supertall = 60				
+		gtd_window_absurdly_open = 25
+		gtd_window_bay = 20
+		gtd_window_cage_highbars = 20
+		gtd_window_cage_lowbars = 10
+		gtd_window_construction_frames = 5					
+		gtd_window_full_open = 30
+		gtd_window_full_open_tall = 30
+		gtd_window_hexagon = 30							 
+		gtd_window_low = 20
+		gtd_window_metal_frames = 30
+		gtd_window_quakeish = 30
+		gtd_window_slump_tall = 30	  
+		gtd_window_weabdows = 15
+	  }
+	  
+	  GAME.THEMES.urban.narrow_halls =
+	  {
+		vent = 50
+		mineshaft = 50
+		access = 25
+	  }
+
+	  GAME.THEMES.urban.wall_groups =
+	  {
+		gtd_computers = 4
+		gtd_drywall = 10
+		gtd_generic_alt_colors = 15
+		gtd_generic_artsy_bedazzled = 15
+		gtd_generic_artsy_center_braced_ind = 15
+		gtd_generic_artsy_slope_y_inset = 20	 
+		gtd_generic_artsy_step1_banded = 20
+		gtd_generic_beamed_inset = 15
+		gtd_generic_beamed_green_inset = 25
+		gtd_generic_beamed_brown_inset = 25	  
+		gtd_generic_ceilwall = 10
+		gtd_generic_d64_1x = 2
+		gtd_generic_d64_1x_blue = 2
+		gtd_generic_d64_1x_yellow = 2
+		gtd_generic_d64_2x = 2
+		gtd_generic_d64_2x_blue = 2
+		gtd_generic_d64_2x_yellow = 2
+		gtd_generic_double_banded_ceil = 15
+		gtd_generic_frame_light_band = 15
+		gtd_generic_frame_metal = 15
+		gtd_generic_glow_wall = 15
+		gtd_generic_half_floor = 10
+		gtd_generic_mid_band = 10
+		gtd_generic_tek_grate = 15
+		gtd_generic_tek_grate_bottom_slope = 40	  
+		gtd_library = 10
+		gtd_ribbed_lights = 4
+		gtd_ribbed_lights_no3d = 17
+		gtd_ribbed_lights_slump = 17	  
+		gtd_round_inset = 5
+		gtd_modquake_set = 11
+		gtd_modquake_jawlike = 11
+		gtd_modquake_top_heavy_brace = 11
+		gtd_modquake_tek_slope_brace = 11
+		gtd_modquake_ex_light_slope_brace = 11
+		gtd_modquake_round_braced_lit_pillar = 11
+		gtd_modquake_hexagon_inset_braced = 11	  
+		gtd_wall_grated_machines = 4
+		gtd_wall_high_gap_alt_set = 5
+		gtd_wall_high_gap_set = 5
+		gtd_wall_quakish_insets = 8
+		gtd_wall_sewer = 10
+		gtd_wall_tech_top_corner_light_set = 8
+		gtd_wall_urban_cement_frame = 7
+		gtd_wall_urban_storage = 8
+		gtd_woodframe = 5
+		gtd_woodframe_green = 5
+		gtd_writhing_mass = 2
+	  }
+		
+	  GAME.THEMES.urban.window_groups =
+	  {
+		barred = 80
+		tall   = 60
+		round  = 30
+		square = 10
+		grate  = 40				 
+		supertall = 50					
+		gtd_window_absurdly_open = 45
+		gtd_window_arched = 40
+		gtd_window_arched_tall = 20
+		gtd_window_arrowslit = 10
+		gtd_window_bay = 30
+		gtd_window_cage_highbars = 30
+		gtd_window_cage_lowbars = 40
+		gtd_window_construction_frames = 65								   
+		gtd_window_full_open = 70
+		gtd_window_full_open_tall = 65
+		gtd_window_hexagon = 25				 
+		gtd_window_low = 35
+		gtd_window_metal_frames = 70
+		gtd_window_pencil_holes = 35
+		gtd_window_quakeish = 20
+		gtd_window_weabdows = 70
+		gtd_window_slump_tall = 65	  
+	  }	  
+
+	  GAME.THEMES.hell.wall_groups =
+	  {
+		PLAIN = 80
+		torches1 = 40
+		torches2 = 15
+		low_gap = 20
+		runes1 = 7
+		runes2 = 7
+		runes3 = 7
+		cross1 = 7
+		cross2 = 15
+		gtd_generic_d64_1x = 6
+		gtd_generic_alt_colors = 40
+		gtd_generic_artsy_bedazzled = 40
+		gtd_generic_artsy_step1_banded = 20
+		gtd_generic_artsy_center_braced_hell = 20,
+		gtd_generic_artsy_slope_y_inset = 20
+		gtd_generic_beamed_inset = 40
+		gtd_generic_beamed_brown_inset = 35
+		gtd_generic_ceilwall = 30
+		gtd_generic_d64_1x_blue = 6
+		gtd_generic_d64_1x_yellow = 6
+		gtd_generic_d64_2x = 6
+		gtd_generic_d64_2x_blue = 6
+		gtd_generic_d64_2x_yellow = 6
+		gtd_generic_double_banded_ceil = 40				
+		gtd_generic_glow_wall = 40
+		gtd_generic_half_floor = 30
+		gtd_generic_mid_band = 10
+		gtd_generic_tek_grate = 40
+		gtd_generic_tek_grate_bottom_slope = 25	  
+		gtd_library = 40						 
+		gtd_modquake_set = 11
+		gtd_modquake_jawlike = 11
+		gtd_modquake_top_heavy_brace = 11
+		gtd_modquake_tek_slope_brace = 11
+		gtd_modquake_ex_light_slope_brace = 11
+		gtd_modquake_round_braced_lit_pillar = 11
+		gtd_modquake_hexagon_inset_braced = 11	  
+		gtd_round_inset = 30								
+		gtd_wall_hell_ossuary = 40
+		gtd_wall_hell_vaults = 40				
+		gtd_wall_high_gap_alt_set = 20
+		gtd_wall_high_gap_set = 20
+		gtd_wall_quakish_insets = 40
+		gtd_wall_tech_top_corner_light_set = 40				
+		gtd_woodframe = 15
+		gtd_woodframe_green = 15
+		gtd_writhing_mass = 40
+	  }
+
+	  GAME.THEMES.hell.window_groups =
+	  {
+		round  = 80
+		tall   = 40
+		barred = 20
+		grate  = 10
+		square = 30 --30
+		supertall = 60								   
+		gtd_window_absurdly_open = 60
+		gtd_window_arched = 60
+		gtd_window_arched_inverse = 30
+		gtd_window_arched_tall = 60
+		gtd_window_arrowslit = 60
+		gtd_window_cage_hell = 50
+		gtd_window_cage_highbars = 20
+		gtd_window_cage_lowbars = 20
+		gtd_window_construction_frames = 60
+		gtd_window_full_open = 40
+		gtd_window_full_open_tall = 40
+		gtd_window_low = 75
+		gtd_window_metal_frames = 60
+		gtd_window_pencil_holes = 60
+		gtd_window_quakeish = 30
+		gtd_window_slump_tall = 40  
+	  }
+	else
+	  gui.printf("Using Standard Prefabs.\n")
+	end
+end
+
 gui.import("brutaldoom/BrutalDoomWeapons");
 
 
@@ -285,12 +558,14 @@ BRUTALDOOM.PLAYER_MODEL =
         weapons = { fist=1, bdpistol=1, AssaultRifle=1, HandGrenade=1 }
     }
 } 
+
 function BRUTALDOOM.setup()
     gui.printf("\nBrutal Oblige version: " .. BRUTALDOOM.PARAMETERS.modversion.."\n")
     gui.printf("For Brutal Doom version: " .. BRUTALDOOM.PARAMETERS.brutalversion.."\n\n")
+	BRUTALDOOM.update_prefabs();	
     gui.printf("Universal Intermission check:\n");
     BRUTALDOOM.checkuintm();   
-	BRUTALDOOM.checkrealm667()       
+	BRUTALDOOM.checkrealm667();       
     BRUTALDOOM.setsecretexits();
 end
 

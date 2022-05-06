@@ -84,5 +84,14 @@ OB_MODULES["ui_brutal_tweaks"] =
 			choices=BRUTAL_TWEAKS.MUSIC_PRESETS
 			default="doom2"
         } 
+        {
+			name = "obaddon_prefabs"
+			label = _("Obaddon Prefabs")
+			choices = BRUTAL_TWEAKS.YES_NO
+			default = "no"
+			tooltip = "Use Prefabs from Obaddon\n" ..
+			"You must copy the Prefabs into this directory in the PK3\n" ..
+			"games/brutaldoom/fabs"
+		}			
 	}
  }
