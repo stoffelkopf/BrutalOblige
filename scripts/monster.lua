@@ -1143,24 +1143,29 @@ function Monster_fill_room(R)
     local info = GAME.MONSTERS[mon]
     local prob = info.prob
     
-	 --check theme
-    if info.allow_in_theme and THEME.allow_mons_for_theme then
-        -- gui.printf("Theme check for  " .. THEME.allow_mons_for_theme .. " with monster theme " .. info.allow_in_theme .."\n")
-        if not string.find(info.allow_in_theme, THEME.allow_mons_for_theme) then
-            prob = 0
-		else
-            if info.theme_prob then
-                prob = info.theme_prob
-				
-            else
-                prob=0
-            end
-        end
-    -- Remove Doom Monsters from Wolfenstein Levels
-	elseif not info.allow_in_theme and THEME.allow_mons_for_theme == "wolf" then
+	if not LEVEL.psychedelic then
+  	  --check theme
+      if info.allow_in_theme and THEME.allow_mons_for_theme then
+          -- gui.printf("Theme check for  " .. THEME.allow_mons_for_theme .. " with monster theme " .. info.allow_in_theme .."\n")
+          if not string.find(info.allow_in_theme, THEME.allow_mons_for_theme) then
+              prob = 0
+		  else
+              if info.theme_prob then
+                  prob = info.theme_prob			
+              else
+                  prob=0
+              end
+          end
+      -- Remove Doom Monsters from Wolfenstein Levels
+	  elseif not info.allow_in_theme and THEME.allow_mons_for_theme == "wolf" then
 		prob = 0
+	  end
+	else
+  	  if prob==0 and info.theme_prob then
+		prob = info.theme_prob
+	  end		
 	end
-	
+
 	--Prebuilt Level Bosses only
 	if OB_CONFIG.tough_bosses == "no" and info.boss_type == "tough" then
 		return 0

@@ -408,11 +408,14 @@ function Episode_plan_monsters()
 
   local function check_theme(LEV, info)
     -- if no theme specified, monster is usable in all themes
+
+	-- Psycho o_O
+	if LEV.psychedelic then return true end
+
     if not info.theme then return true end
 
     -- anything goes in CRAZY mode
     if OB_CONFIG.strength == "crazy" then return true end
-
     return info.theme == LEV.theme_name
   end
 
@@ -525,11 +528,11 @@ function Episode_plan_monsters()
 
   local function is_boss_usable(LEV, mon, info)
 	
-	if LEV.theme_name == "wolf" and info.allow_in_theme != "wolf" then return false end
+	if LEV.theme_name == "wolf" and info.allow_in_theme != "wolf" and not LEV.psychedelic then return false end
     
 	--boss theme check
     if info.allow_in_theme then
-        if info.allow_in_theme != LEV.theme_name then return false end
+        if info.allow_in_theme != LEV.theme_name and not LEV.psychedelic then return false end
     end
 	
     if LEV.is_procedural_gotcha then return true end
@@ -566,7 +569,7 @@ function Episode_plan_monsters()
 
   local function prob_for_guard(LEV, info)
 
-    if LEV.theme_name != "wolf" and info.prob <= 0 then return 0 end
+    if LEV.theme_name != "wolf" and info.prob <= 0 and not LEV.psychedelic then return 0 end
 
     -- simply too weak
     if info.health < 45 then return 0 end
@@ -577,7 +580,7 @@ function Episode_plan_monsters()
 
     -- ignore theme-specific monsters (SS NAZI)
     --if info.theme then return 0 end
-	if LEV.theme_name == "wolf" and info.allow_in_theme != "wolf" then return 0 end
+	if LEV.theme_name == "wolf" and info.allow_in_theme != "wolf" and not LEV.psychedelic then return 0 end
 
     -- already used on this map?
     if LEV.seen_guards[info.name] then return 0 end
@@ -1950,7 +1953,11 @@ function Level_choose_themes()
     -- this is optional (may be nil)
     LEV.name_class = LEV.name_class or info.name_class
 
-    gui.printf("Theme for level %s = %s\n", LEV.name, LEV.theme_name)
+    gui.printf("Theme for level %s = %s", LEV.name, LEV.theme_name)
+    if LEV.psychedelic then 
+		gui.printf(" (Psycho)") 
+	end
+	gui.printf("\n")
   end
 
 

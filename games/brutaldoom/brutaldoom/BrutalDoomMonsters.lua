@@ -631,7 +631,7 @@ BRUTALDOOM.MONSTERS =
       weap_min_damage = 88
       room_size = "medium"
       infight_damage = 40
-	  allow_in_theme = "rwolf"
+	  allow_in_theme = "wolf"
 	  boss_limit = 1
     }	
 
