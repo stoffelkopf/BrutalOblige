@@ -197,6 +197,7 @@ BRUTALDOOM.MONSTERS =
         level = DOOM.MONSTERS.zombie.level
         theme_prob = 0
         prob=0
+		theme_prob = 60
         health = 100
         damage = DOOM.MONSTERS.zombie.damage
         attack = "melee"
@@ -207,7 +208,7 @@ BRUTALDOOM.MONSTERS =
         infight_damage = DOOM.MONSTERS.zombie.infight_damage
         give = { {weapon="Axe"} }
         species = "zombie"
-        allow_in_theme = "tech"
+        allow_in_theme = "XXX"
     }
 	
     AncientArachnotron =
@@ -236,12 +237,14 @@ BRUTALDOOM.MONSTERS =
        h = 48
        level = 2
        prob=0 --40
+	   theme_prob = 40
        health = 100
        damage = 0.2
        attack = "melee"
        density = 0.85
        room_size = "any"
        infight_damage = 3.5
+	   allow_in_theme = "XXX"	   
     }
 	
     Mummy =
